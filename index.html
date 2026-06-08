@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9-Day Nordic Summer Escape | NordisTravel</title>
+  <meta name="description" content="Embark on an extraordinary 9-day summer journey through Sweden, Norway, and Denmark. Discover Stockholm, Oslo, Copenhagen, the Flåm Railway, and majestic fjords on a premium, curated Scandinavian vacation.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header id="main-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="#" class="logo-link">
+          <img src="images/logo.png" alt="NordisTravel Logo" id="header-logo">
+        </a>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#map-section">Route Map</a></li>
+          <li><a href="#itinerary-section">Itinerary</a></li>
+          <li><a href="#booking-section">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero-section">
+    <img src="images/day5_cruise_sunset.jpg" alt="Scandinavian Fjord Sunset" class="hero-bg-media">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Fjords, Castles & Capitals:<br>The Ultimate 9-Day Nordic Escape</h1>
+      <p>Discover the magic of Sweden, Norway, and Denmark on a premium, curated journey through Scandinavia’s most iconic landscapes and vibrant historic capitals.</p>
+      <div class="cta-group">
+        <a href="#booking-section" class="btn btn-primary" id="cta-book">Secure Your Nordic Summer Escape</a>
+        <a href="#itinerary-section" class="btn btn-secondary" id="cta-view">View Itinerary Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRIP ESSENTIALS AT A GLANCE -->
+  <section class="essentials-section">
+    <div class="essentials-grid">
+      <div class="essential-card" id="badge-duration">
+        <div class="essential-icon">⏱️</div>
+        <div class="essential-info">
+          <h4>Duration</h4>
+          <p>9 Epic Days</p>
+        </div>
+      </div>
+      <div class="essential-card" id="badge-route">
+        <div class="essential-icon">🗺️</div>
+        <div class="essential-info">
+          <h4>Route</h4>
+          <p>Stockholm ➔ Oslo ➔ Copenhagen</p>
+        </div>
+      </div>
+      <div class="essential-card" id="badge-style">
+        <div class="essential-icon">🚌</div>
+        <div class="essential-info">
+          <h4>Travel Style</h4>
+          <p>Coach, Rail & Cruise</p>
+        </div>
+      </div>
+      <div class="essential-card" id="badge-pace">
+        <div class="essential-icon">⚡</div>
+        <div class="essential-info">
+          <h4>Pace</h4>
+          <p>Active & Comprehensive</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MAP DECK -->
+  <section class="map-deck-section" id="map-section">
+    <div class="section-header">
+      <h2>THE MAP DECK</h2>
+      <p>Visualize your premium journey across Scandinavia’s scenic routes, mountains, and seas.</p>
+    </div>
+    <div class="map-layout">
+      <!-- Interactive SVG Map Canvas -->
+      <div class="map-canvas-container">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+          <!-- Realistic Background Map Image -->
+          <image href="images/scandinavia_map.png" x="0" y="0" width="1024" height="1024" />
+          
+          <!-- Route lines -->
+          <path id="route-path" class="map-route-line" d="M 885 458 L 610 475 L 463 399 L 350 350 L 220 290 L 463 399 C 463 560, 547 700, 547 873" style="stroke-width: 6; stroke: rgba(10,20,35,0.25);"/>
+          <path id="route-path-active" class="map-route-active" d="M 885 458 L 610 475 L 463 399 L 350 350 L 220 290 L 463 399 C 463 560, 547 700, 547 873" style="stroke-width: 8; stroke: var(--accent-gold);"/>
+          
+          <!-- Pins & Labels -->
+          <g class="map-pin" id="pin-stockholm" data-day="2">
+            <circle cx="885" cy="458" r="14"/>
+            <text x="885" y="430" class="map-pin-label" style="font-size: 16px; font-weight: 700; fill: var(--primary); text-shadow: 0 0 5px #fff;">Stockholm</text>
+          </g>
+          <g class="map-pin" id="pin-karlstad" data-day="2">
+            <circle cx="610" cy="475" r="14"/>
+            <text x="610" y="505" class="map-pin-label" style="font-size: 16px; font-weight: 700; fill: var(--primary); text-shadow: 0 0 5px #fff;">Karlstad</text>
+          </g>
+          <g class="map-pin" id="pin-oslo" data-day="3">
+            <circle cx="463" cy="399" r="14"/>
+            <text x="463" y="370" class="map-pin-label" style="font-size: 16px; font-weight: 700; fill: var(--primary); text-shadow: 0 0 5px #fff;">Oslo</text>
+          </g>
+          <g class="map-pin" id="pin-al" data-day="3">
+            <circle cx="350" cy="350" r="14"/>
+            <text x="350" y="325" class="map-pin-label" style="font-size: 16px; font-weight: 700; fill: var(--primary); text-shadow: 0 0 5px #fff;">Ål</text>
+          </g>
+          <g class="map-pin" id="pin-flam" data-day="4">
+            <circle cx="220" cy="290" r="14"/>
+            <text x="220" y="265" class="map-pin-label" style="font-size: 16px; font-weight: 700; fill: var(--primary); text-shadow: 0 0 5px #fff;">Flåm</text>
+          </g>
+          <g class="map-pin" id="pin-copenhagen" data-day="6">
+            <circle cx="547" cy="873" r="14"/>
+            <text x="547" y="905" class="map-pin-label" style="font-size: 16px; font-weight: 700; fill: var(--primary); text-shadow: 0 0 5px #fff;">Copenhagen</text>
+          </g>
+        </svg>
+      </div>
+      
+      <!-- Timeline Deck Details -->
+      <div class="route-details">
+        <div class="route-step active" id="step-day1-2" data-target="day-2">
+          <div class="step-marker">🇸🇪</div>
+          <div class="step-info">
+            <h3>Sweden Entrance</h3>
+            <p>Start in Stockholm, the Venice of the North. Cruise historical canals and unwind by the lake in Karlstad.</p>
+          </div>
+        </div>
+        <div class="route-step" id="step-day3-4" data-target="day-3">
+          <div class="step-marker">🇳🇴</div>
+          <div class="step-info">
+            <h3>Norway Fjordlands</h3>
+            <p>Cross into Norway. Explore Oslo's art parks, ski summits, and take the breathtaking Flåm Mountain Railway loop.</p>
+          </div>
+        </div>
+        <div class="route-step" id="step-day5-7" data-target="day-6">
+          <div class="step-marker">🇩🇰</div>
+          <div class="step-info">
+            <h3>Denmark Coast & Castles</h3>
+            <p>Sail overnight to Copenhagen. Immerse yourself in Tivoli, Danish Smørrebrød, and Shakespeare's Elsinore Castle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE DAILY BREAKDOWN TIMELINE -->
+  <section class="timeline-section" id="itinerary-section">
+    <div class="section-header">
+      <h2>🗺️ THE DAILY BREAKDOWN</h2>
+      <p>Follow your customized day-by-day travel breakdown.</p>
+    </div>
+    
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      
+      <!-- DAY 1 -->
+      <div class="day-card-container" id="day-1">
+        <div class="timeline-node">1</div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>DAY 1 | The Journey Begins</h3>
+            <div class="tagline">✈️ Departure: Bound for Scandinavia</div>
+          </div>
+          <div class="day-body">
+            <div class="vibe-box">
+              <h4>The Vibe</h4>
+              <p>Leave the ordinary behind. Board your flight and prepare to wake up in the capital of Nordic chic.</p>
+            </div>
+            <div class="highlights-title">📋 Today's Plan</div>
+            <ul class="highlight-list">
+              <li class="highlight-item">
+                <div class="icon">✈️</div>
+                <div class="details">
+                  <h5>Flight Departure</h5>
+                  <p>Depart your flight bound for Stockholm Arlanda Airport. Smooth boarding and flight preparations.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-card-container" id="day-2">
+        <div class="timeline-node">2</div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>DAY 2 | Royalty, Canals & Historic Cobblestone</h3>
+            <div class="tagline">🇸🇪 Stockholm to Karlstad: The Swedish Transition</div>
+          </div>
+          <div class="day-body">
+            <div class="vibe-box">
+              <h4>The Vibe</h4>
+              <p>Explore a city built across 14 islands before winding down by the scenic shores of Lake Vänern.</p>
+            </div>
+            <div class="highlights-title">📋 Today's Plan</div>
+            <ul class="highlight-list">
+              <li class="highlight-item">
+                <div class="icon">🏰</div>
+                <div class="details">
+                  <h5>Stockholm City Tour</h5>
+                  <p>Wander the medieval alleyways of Gamla Stan (Old Town), view the Royal Palace, the grand Opera House, and catch panoramic views from Fjällgatan Hill.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🚌</div>
+                <div class="details">
+                  <h5>Scenic Countryside Drive</h5>
+                  <p>Relax on a panoramic 2.5-hour coach ride (225 km) deep into the Swedish countryside to Karlstad.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🍽️</div>
+                <div class="details">
+                  <h5>Welcome Dinner</h5>
+                  <p>Regroup for an authentic dinner at a local Karlstad restaurant.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="stay-badge">🏨 Stay: Good Morning Karlstad (or similar)</div>
+            
+            <div class="day-media split-grid">
+              <img src="images/day2_stockholm.jpg" alt="Stockholm Gamla Stan historic townhouses">
+              <img src="images/day2_karlstad.jpg" alt="Peaceful lake and nature in Karlstad">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day-card-container" id="day-3">
+        <div class="timeline-node">3</div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>DAY 3 | Sculpture Parks & Majestic Fjords</h3>
+            <div class="tagline">🇳🇴 Crossing Borders: Karlstad to Oslo & Ål</div>
+          </div>
+          <div class="day-body">
+            <div class="vibe-box">
+              <h4>The Vibe</h4>
+              <p>Transition from Sweden to Norway. Experience masterfully crafted art parks before heading into the gateway of the majestic Norwegian fjords.</p>
+            </div>
+            <div class="highlights-title">📋 Today's Plan</div>
+            <ul class="highlight-list">
+              <li class="highlight-item">
+                <div class="icon">🌳</div>
+                <div class="details">
+                  <h5>Oslo City Tour</h5>
+                  <p>Walk among the 200+ mesmerizing masterworks in Vigeland Sculpture Park and Frogner Park, stand outside the Oslo Cathedral, and feel the energy of Karl Johans gate.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">📸</div>
+                <div class="details">
+                  <h5>Holmenkollen Panoramic View</h5>
+                  <p>Capture a panoramic snapshot at the world-famous Holmenkollen ski jump area overlooking the city and fjords.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🏔️</div>
+                <div class="details">
+                  <h5>Into the Highlands</h5>
+                  <p>Board your long-distance coach for a scenic 3-hour journey (195 km) to the mountain village of Ål.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🪵</div>
+                <div class="details">
+                  <h5>Alpine Feast</h5>
+                  <p>Indulge in a premium 3-course or buffet dinner hosted at your hotel.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="stay-badge">🏨 Stay: Thon Hotel Hallingdal (or similar)</div>
+            
+            <div class="day-media split-grid">
+              <img src="images/day3_oslo_vigeland.png" alt="Vigeland Sculpture Park monolith granite statues">
+              <img src="images/day3_road_al.jpg" alt="Scenic road winding into green mountain highlands">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-card-container" id="day-4">
+        <div class="timeline-node">4</div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>DAY 4 | The Crown Jewel of Rail Journeys</h3>
+            <div class="tagline">🚂 The Flåm Railway Experience</div>
+          </div>
+          <div class="day-body">
+            <div class="vibe-box">
+              <h4>The Vibe</h4>
+              <p>Prepare for one of the absolute highlights of your trip—a jaw-dropping train ride through steep ravines, cascading waterfalls, and deep fjords.</p>
+            </div>
+            <div class="highlights-title">📋 Today's Plan</div>
+            <ul class="highlight-list">
+              <li class="highlight-item">
+                <div class="icon">🚂</div>
+                <div class="details">
+                  <h5>The Legendary Flåm Railway</h5>
+                  <p>Board the legendary Flåm-Myrdal loop. Peer out panoramic windows as you ascend over 800 meters along the sheer walls of the valley.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🍽️</div>
+                <div class="details">
+                  <h5>Fjord-Side Lunch</h5>
+                  <p>Savor local specialties at a charming local restaurant in the heart of the valley.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🏔️</div>
+                <div class="details">
+                  <h5>Highland Return</h5>
+                  <p>Return to the serene comfort of Ål for another incredible 3-course hotel dinner.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="stay-badge">🏨 Stay: Thon Hotel Hallingdal (or similar)</div>
+            
+            <!-- Carousel Slider component -->
+            <div class="day-media carousel-container" id="carousel-day4">
+              <div class="carousel-slide active">
+                <img src="images/day4_flam_railway.jpg" alt="Vintage green Flåm railway train alongside cliff">
+                <div class="carousel-caption">
+                  <h4>The Flåm Railway</h4>
+                  <p>Ascend steep mountain cliffs passing roaring waterfalls.</p>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="images/day4_flam_fjord.jpg" alt="Spectacular green mountain valley in Flåm">
+                <div class="carousel-caption">
+                  <h4>Flåm Valley Fjord View</h4>
+                  <p>Verdant green peaks meeting crystal waters.</p>
+                </div>
+              </div>
+              <button class="carousel-btn prev">&lt;</button>
+              <button class="carousel-btn next">&gt;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="day-card-container" id="day-5">
+        <div class="timeline-node">5</div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>DAY 5 | Setting Sail on the Baltic Sea</h3>
+            <div class="tagline">🚢 Oslo to Copenhagen: The Overnight Luxury Cruise</div>
+          </div>
+          <div class="day-body">
+            <div class="vibe-box">
+              <h4>The Vibe</h4>
+              <p>Say goodbye to Norway's mountains with a grand farewell tour of Oslo, then step aboard a premium cruise liner to sleep your way across the sea to Denmark.</p>
+            </div>
+            <div class="highlights-title">📋 Today's Plan</div>
+            <ul class="highlight-list">
+              <li class="highlight-item">
+                <div class="icon">🏛️</div>
+                <div class="details">
+                  <h5>Oslo Farewell & Palace</h5>
+                  <p>See the Parliament building and enjoy a photo stop outside the elegant Royal Palace.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🚢</div>
+                <div class="details">
+                  <h5>Go Nordic Cruiseline Cabin</h5>
+                  <p>Check into your private, comfortable overnight ocean cruise cabin.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🦐</div>
+                <div class="details">
+                  <h5>The Grand Buffet</h5>
+                  <p>Celebrate the evening with a massive, premium dinner buffet on board as you cruise down the historic Oslofjord.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="stay-badge">🏨 Stay: Overnight Cruise Inside Cabin (Go Nordic Cruiseline)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARALLAX IMAGE SECTION -->
+      <section class="parallax-container" style="background-image: url('images/day5_cruise_sunset.jpg');">
+        <div class="parallax-content">
+          <h2>Cruise Across the Baltic Sea</h2>
+          <p>Dine, relax, and wake up in Copenhagen.</p>
+        </div>
+      </section>
+
+      <!-- DAY 6 -->
+      <div class="day-card-container" id="day-6">
+        <div class="timeline-node">6</div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>DAY 6 | Welcome to the Capital of "Hygge"</h3>
+            <div class="tagline">🇩🇰 Copenhagen: Leisure & Latitude</div>
+          </div>
+          <div class="day-body">
+            <div class="vibe-box">
+              <h4>The Vibe</h4>
+              <p>Wake up in Denmark! Disembark directly into the heart of Copenhagen for a day of absolute freedom to explore at your own pace.</p>
+            </div>
+            <div class="highlights-title">📋 Today's Plan</div>
+            <ul class="highlight-list">
+              <li class="highlight-item">
+                <div class="icon">🚢</div>
+                <div class="details">
+                  <h5>Copenhagen Terminal Arrival</h5>
+                  <p>Cruise into the Copenhagen Terminal and check into your downtown boutique hotel.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🚲</div>
+                <div class="details">
+                  <h5>Free at Leisure</h5>
+                  <p>Rent a bike, grab a coffee, stroll down the famous Strøget shopping street, or sit by the colorful townhouses along the canals of Nyhavn.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="stay-badge">🏨 Stay: Good Morning City Copenhagen Star (or similar)</div>
+            
+            <div class="day-media split-grid">
+              <img src="images/day6_copenhagen_nyhavn.jpg" alt="Vibrant townhouses along the canal in Nyhavn">
+              <img src="images/day6_copenhagen_tivoli.jpg" alt="Tivoli Gardens illuminated at night with lights">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 7 -->
+      <div class="day-card-container" id="day-7">
+        <div class="timeline-node">7</div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>DAY 7 | Of Castles, Queens & Open Sandwiches</h3>
+            <div class="tagline">👑 Copenhagen & The Shakespearean Castle</div>
+          </div>
+          <div class="day-body">
+            <div class="vibe-box">
+              <h4>The Vibe</h4>
+              <p>Dive deep into Danish history, indulge in world-class local cuisine, and explore the legendary seaside fortress that inspired Hamlet.</p>
+            </div>
+            <div class="highlights-title">📋 Today's Plan</div>
+            <ul class="highlight-list">
+              <li class="highlight-item">
+                <div class="icon">🧜‍♀️</div>
+                <div class="details">
+                  <h5>Copenhagen City Highlights</h5>
+                  <p>Visit the mystical Little Mermaid statue, Gefion Fountain, Amalienborg Palace, and the majestic Frederiks Kirke (The Marble Church).</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🍽&zwj;🍳</div>
+                <div class="details">
+                  <h5>The Smørrebrød Experience</h5>
+                  <p>Sit down for an authentic Danish lunch to try world-famous, beautifully arranged open-faced sandwiches.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🏰</div>
+                <div class="details">
+                  <h5>Elsinore Castle (Kronborg)</h5>
+                  <p>Travel north to Elsinore to stand in the real-life coastal fortress made immortal by William Shakespeare's Hamlet.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="stay-badge">🏨 Stay: Good Morning City Copenhagen Star (or similar)</div>
+            
+            <!-- Three Column Grid Gallery -->
+            <div class="day-media gallery-3col">
+              <div class="gallery-item">
+                <img src="images/day7_smorrebrod.jpg" alt="Beautifully styled traditional Danish Smørrebrød sandwich">
+                <div class="gallery-overlay">
+                  <h5>Smørrebrød</h5>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img src="images/day7_kronborg_castle.jpg" alt="Aerial view of seaside Kronborg Castle in Elsinore">
+                <div class="gallery-overlay">
+                  <h5>Kronborg Castle</h5>
+                </div>
+              </div>
+              <div class="gallery-item">
+                <img src="images/day7_little_mermaid.jpg" alt="Little Mermaid statue sitting on a rock in Copenhagen harbor">
+                <div class="gallery-overlay">
+                  <h5>The Little Mermaid</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAYS 8 & 9 -->
+      <div class="day-card-container" id="day-8-9">
+        <div class="timeline-node">8</div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3>DAYS 8 & 9 | Farewell Scandinavia</h3>
+            <div class="tagline">🛫 Copenhagen Departure to Destination</div>
+          </div>
+          <div class="day-body">
+            <div class="vibe-box">
+              <h4>The Vibe</h4>
+              <p>Savor your final morning of fresh Danish pastries and coffee before heading to the airport for your smooth journey home.</p>
+            </div>
+            <div class="highlights-title">📋 Today's Plan</div>
+            <ul class="highlight-list">
+              <li class="highlight-item">
+                <div class="icon">☕</div>
+                <div class="details">
+                  <h5>Leisurely Breakfast & Souvenirs</h5>
+                  <p>Enjoy breakfast at your hotel followed by last-minute souvenir hunting and boutique exploring at leisure.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🚌</div>
+                <div class="details">
+                  <h5>Hassle-Free Airport Transfer</h5>
+                  <p>Comfortable group airport transfer pickup timed perfectly with your departure flight.</p>
+                </div>
+              </li>
+              <li class="highlight-item">
+                <div class="icon">🌍</div>
+                <div class="details">
+                  <h5>Return Arrival (Day 9)</h5>
+                  <p>Arrive back at your destination airport with a lifetime of spectacular Nordic memories.</p>
+                </div>
+              </li>
+            </ul>
+            
+            <div class="day-media">
+              <img src="images/day8_copenhagen_departure.png" alt="Sleek, minimalist architecture layout of Copenhagen airport" style="width:100%; height: 320px; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE QUOTE & BOOKING FORM -->
+  <section class="booking-section" id="booking-section">
+    <div class="booking-container">
+      <div class="booking-info">
+        <h2>Secure Your Nordic Summer Escape</h2>
+        <p>Book your summer adventure today. Our premium package includes scenic transportation, luxury rail passes, overnight fjord cruise, hotel stays, and professional tour leadership.</p>
+        <ul class="booking-bullets">
+          <li><span>✓</span> All Premium Hotels Included</li>
+          <li><span>✓</span> Flåm Mountain Railway Return Ticket</li>
+          <li><span>✓</span> Overnight Baltic Cruise (Oslo ➔ Copenhagen)</li>
+          <li><span>✓</span> Daily Buffet Breakfasts & Highlight Dinners</li>
+        </ul>
+      </div>
+      <div class="booking-form-side">
+        <form id="booking-calculator">
+          <div class="form-group">
+            <label for="travel-date">Select Travel Date</label>
+            <select id="travel-date" required>
+              <option value="jul10">July 10, 2026 (Summer peak)</option>
+              <option value="aug05">August 05, 2026 (Mild summer)</option>
+              <option value="sep02">September 02, 2026 (Late summer)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="travelers">Number of Travelers</label>
+            <input type="number" id="travelers" min="1" max="10" value="2" required>
+          </div>
+          <div class="form-group">
+            <label for="cabin-style"> Baltic Cruise Cabin Type</label>
+            <select id="cabin-style">
+              <option value="inside" data-addon="0">Inside Shared Cabin (Included)</option>
+              <option value="outside" data-addon="150">Outside Sea View Cabin (+$150)</option>
+              <option value="suite" data-addon="450">Luxury Commodore Suite (+$450)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="single-supplement">Single Room Supplement</label>
+            <select id="single-supplement">
+              <option value="no">Shared Double Room (Included)</option>
+              <option value="yes">Private Single Room Throughout (+$550/person)</option>
+            </select>
+          </div>
+          
+          <div class="price-display-box">
+            <div class="price-label">
+              <h4>Estimated Price</h4>
+              <p>Includes flights, hotels, rail & cruise</p>
+            </div>
+            <div class="price-val" id="price-total">$4,990</div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;">Book My Journey</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE INSIGHTS & DETAILED LIST -->
+  <section class="value-insights">
+    <div class="section-header" style="margin-bottom: 3rem;">
+      <h2>VALUE INSIGHTS</h2>
+      <p>Premium value and total transparency. Here is exactly what is included in your tour.</p>
+    </div>
+    
+    <div class="value-grid">
+      <div class="value-box">
+        <h3>🎁 Included in Your Package</h3>
+        <ul>
+          <li><strong>Overnight Stays:</strong> 6 nights in premium standard rooms (Good Morning Karlstad, Thon Hotel Hallingdal, Good Morning City Copenhagen Star) plus 1 night in a cruise cabin.</li>
+          <li><strong>Premium Meals:</strong> 7 breakfasts on-board/hotels, 1 Danish Smørrebrød lunch, 1 buffet dinner on-board the cruise, and 2 alpine dinners in Ål.</li>
+          <li><strong>Scenic Transits:</strong> Long-distance coach services across Sweden and Norway.</li>
+          <li><strong>Activities & Passes:</strong> Flåm Railway return loop ticket, Oslo & Stockholm panoramic city tours, Kronborg Castle entry excursion.</li>
+        </ul>
+      </div>
+      <div class="value-box excludes">
+        <h3>✕ Excluded</h3>
+        <ul>
+          <li>Personal shopping, custom souvenirs, and optional local activities.</li>
+          <li>Lunches and dinners not explicitly detailed in the itinerary.</li>
+          <li>Entry tickets to sites not specified under inclusions.</li>
+          <li>Individual travel insurance.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER & CONTACT DETAILS -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <p>Providing premium, authentic travel experiences across the spectacular landscapes of Scandinavia. Our team organizes every detail so you can focus on making memories that last a lifetime.</p>
+        <p>
+          <strong>📍 Address:</strong> Vester Voldgade 83, 2 • 1552 København K, Denmark<br>
+          <strong>📞 Telephone:</strong> +45 2622 0288<br>
+          <strong>✉️ Email:</strong> sales@nordistravel.com<br>
+          <strong>🌐 Web:</strong> <a href="http://www.nordistravel.com" style="color: var(--accent-gold); text-decoration: none;">www.nordistravel.com</a>
+        </p>
+      </div>
+      <div class="footer-contact-img">
+        <img src="images/contact_footer.jpg" alt="NordisTravel Copenhagen Office Vibe">
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NordisTravel. All rights reserved. Registered in Denmark.</p>
+      <p>Designed for Ultimate Comfort</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
