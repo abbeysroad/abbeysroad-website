@@ -233,13 +233,103 @@ header.scrolled .nav-links a {
   line-height: 1.15;
 }
 
+/* Burger Menu Button default (hidden on desktop) */
+.burger-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1002;
+  transition: var(--transition-fast);
+}
+
+.burger-menu-btn .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-white);
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+
 @media (max-width: 768px) {
-  .nav-links {
+  .burger-menu-btn {
     display: flex;
-    gap: 1rem;
   }
+
+  /* Burger Open Animation into X */
+  .burger-menu-btn.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .burger-menu-btn.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .burger-menu-btn.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 280px;
+    background: rgba(10, 20, 35, 0.98);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: fadeInDown 0.3s ease-out;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
   .nav-links a {
-    font-size: 0.85rem;
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    text-shadow: none;
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  /* Adjust dropdown menus inside mobile drawer */
+  .dropdown-menu {
+    position: static;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .dropdown-menu a {
+    padding-left: 2.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .flags-menu {
+    padding: 0.5rem 1.5rem 0.5rem 2.5rem;
   }
 }
 
@@ -1571,6 +1661,20 @@ footer {
   color: var(--accent-gold) !important;
   background: rgba(255, 255, 255, 0.18);
   border-color: var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+  .hero-quick-links {
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+    padding: 0 10px;
+  }
+  .hero-quick-link {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    letter-spacing: 0.8px;
+    border-radius: 4px;
+  }
 }
 
 /* Viewport SPA Transitions */

@@ -652,6 +652,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Mobile Burger Menu Toggle
+  const burgerBtn = document.getElementById('burger-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (burgerBtn && navLinks) {
+    burgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      burgerBtn.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close when clicking a link inside nav-links
+    navLinks.querySelectorAll('a').forEach(link => {
+      if (!link.classList.contains('dropdown-trigger')) {
+        link.addEventListener('click', () => {
+          burgerBtn.classList.remove('open');
+          navLinks.classList.remove('open');
+        });
+      }
+    });
+
+    // Close when clicking outside
+    window.addEventListener('click', (e) => {
+      if (!burgerBtn.contains(e.target) && !navLinks.contains(e.target)) {
+        burgerBtn.classList.remove('open');
+        navLinks.classList.remove('open');
+      }
+    });
+  }
+
   // Load Itineraries menu and default view
   initItinerariesMenu();
   if (itineraries.length > 0) {
