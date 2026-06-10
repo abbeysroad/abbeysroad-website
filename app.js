@@ -1730,13 +1730,12 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('open');
     });
 
-    // Close when clicking a link inside nav-links
-    navLinks.querySelectorAll('a').forEach(link => {
-      if (!link.classList.contains('dropdown-trigger')) {
-        link.addEventListener('click', () => {
-          burgerBtn.classList.remove('open');
-          navLinks.classList.remove('open');
-        });
+    // Close when clicking a link inside nav-links (using delegation for dynamic links)
+    navLinks.addEventListener('click', (e) => {
+      const targetLink = e.target.closest('a');
+      if (targetLink && !targetLink.classList.contains('dropdown-trigger')) {
+        burgerBtn.classList.remove('open');
+        navLinks.classList.remove('open');
       }
     });
 
