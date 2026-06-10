@@ -1,0 +1,521 @@
+{
+  "id": "classic_scandinavia",
+  "countries": ["Denmark", "Norway", "Finland", "Sweden"],
+  "meta": {
+    "title": "Classic Scandinavia w/ Fjords | NordisTravel",
+    "description": "Embark on an extraordinary 8-day summer journey through Denmark, Norway, Finland, and Sweden. Discover Copenhagen, Oslo, Flåm, Bergen, Helsinki, and Stockholm on a premium, curated Scandinavian vacation."
+  },
+  "hero": {
+    "subtitle": "Denmark, Norway, Finland & Sweden:",
+    "title": "Classic Scandinavia with Fjords",
+    "description": "Discover the magic of Northern Europe on a premium, curated journey through spectacular Norwegian fjords and vibrant Nordic capitals.",
+    "background_image": "images/tour_hero_fjord.png",
+    "cta_book": "Secure Your Classic Scandinavia Tour",
+    "cta_view": "View Itinerary Details"
+  },
+  "essentials": [
+    {
+      "icon": "⏱️",
+      "title": "Duration",
+      "value": "8 Epic Days"
+    },
+    {
+      "icon": "🗺️",
+      "title": "Route",
+      "value": "Copenhagen ➔ Bergen ➔ Helsinki ➔ Stockholm"
+    },
+    {
+      "icon": "🚢",
+      "title": "Travel Style",
+      "value": "Coach, Rail, Cruise & Flight"
+    },
+    {
+      "icon": "⚡",
+      "title": "Pace",
+      "value": "Active & Comprehensive"
+    }
+  ],
+  "map_deck": {
+    "title": "THE MAP DECK",
+    "description": "Visualize your premium journey across Denmark, Norway, Finland, and Sweden.",
+    "background_image": "images/scandinavia_finland_map.png",
+    "route_path": "M 325 950 C 290 880, 310 780, 380 700 L 295 660 L 240 620 L 165 630 Q 490 470, 815 690 Q 680 730, 555 710",
+    "pins": [
+      {
+        "id": "pin-copenhagen",
+        "day": 2,
+        "cx": 325,
+        "cy": 950,
+        "label": "Copenhagen",
+        "label_x": 325,
+        "label_y": 985
+      },
+      {
+        "id": "pin-oslo",
+        "day": 3,
+        "cx": 380,
+        "cy": 700,
+        "label": "Oslo",
+        "label_x": 420,
+        "label_y": 705
+      },
+      {
+        "id": "pin-gol",
+        "day": 3,
+        "cx": 295,
+        "cy": 660,
+        "label": "Gol",
+        "label_x": 295,
+        "label_y": 685
+      },
+      {
+        "id": "pin-flam",
+        "day": 4,
+        "cx": 240,
+        "cy": 620,
+        "label": "Flåm",
+        "label_x": 240,
+        "label_y": 600
+      },
+      {
+        "id": "pin-bergen",
+        "day": 5,
+        "cx": 165,
+        "cy": 630,
+        "label": "Bergen",
+        "label_x": 130,
+        "label_y": 635
+      },
+      {
+        "id": "pin-helsinki",
+        "day": 6,
+        "cx": 815,
+        "cy": 690,
+        "label": "Helsinki",
+        "label_x": 815,
+        "label_y": 665
+      },
+      {
+        "id": "pin-stockholm",
+        "day": 7,
+        "cx": 555,
+        "cy": 710,
+        "label": "Stockholm",
+        "label_x": 555,
+        "label_y": 685
+      }
+    ],
+    "steps": [
+      {
+        "id": "step-day1-2",
+        "target": "day-2",
+        "marker": "🇩🇰",
+        "title": "Denmark Capital",
+        "description": "Start in historic Copenhagen. Stroll Nyhavn, visit royal palaces, and cruise overnight across the sea to Norway."
+      },
+      {
+        "id": "step-day3-4",
+        "target": "day-3",
+        "marker": "🇳🇴",
+        "title": "Norway Fjordlands",
+        "description": "Cross into Norway. Journey through Gol, cruise the breathtaking Aurlandsfjord, and ride the iconic Flåm Railway."
+      },
+      {
+        "id": "step-day5",
+        "target": "day-5",
+        "marker": "🇳🇴",
+        "title": "Bergen Wharf",
+        "description": "Explore Bergen's Bryggen wharf, ride the Fløibanen funicular, and fly over Sweden to Finland."
+      },
+      {
+        "id": "step-day6",
+        "target": "day-6",
+        "marker": "🇫🇮",
+        "title": "Helsinki Harbor",
+        "description": "Tour Helsinki's unique Rock Church, Uspenski Cathedral, and cruise overnight to Sweden."
+      },
+      {
+        "id": "step-day7-8",
+        "target": "day-7",
+        "marker": "🇸🇪",
+        "title": "Sweden Entrance",
+        "description": "Explore the historic Vasa Museum, Stockholm City Hall, and depart from Stockholm."
+      }
+    ],
+    "active_states": [
+      {
+        "max_day": 2,
+        "pins": ["pin-copenhagen"],
+        "step_id": "step-day1-2",
+        "route_percent": 0.20
+      },
+      {
+        "max_day": 4,
+        "pins": ["pin-oslo", "pin-gol", "pin-flam"],
+        "step_id": "step-day3-4",
+        "route_percent": 0.50
+      },
+      {
+        "max_day": 5,
+        "pins": ["pin-bergen"],
+        "step_id": "step-day5",
+        "route_percent": 0.65
+      },
+      {
+        "max_day": 6,
+        "pins": ["pin-helsinki"],
+        "step_id": "step-day6",
+        "route_percent": 0.85
+      },
+      {
+        "max_day": 8,
+        "pins": ["pin-stockholm"],
+        "step_id": "step-day7-8",
+        "route_percent": 1.00
+      }
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "Welcome to Denmark",
+      "tagline": "✈️ Arrival: Bound for Copenhagen",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Arrive in Denmark's charming capital. Check into your hotel and enjoy a relaxing evening at leisure.",
+      "highlights": [
+        {
+          "icon": "✈️",
+          "title": "Arrival & Transfer",
+          "description": "Arrive at Copenhagen Airport by flight, pick up, and transfer to your hotel."
+        },
+        {
+          "icon": "🚲",
+          "title": "Leisure Time",
+          "description": "Enjoy a free afternoon to relax and explore the surrounding neighborhood."
+        }
+      ],
+      "stay": "🏨 Stay: Scandic Sluseholmen (or similar)",
+      "media": {
+        "type": "none"
+      }
+    },
+    {
+      "day": "2",
+      "title": "Royalty, Canals & Seaside Mermaids",
+      "tagline": "🇩🇰 Copenhagen Sightseeing & Overnight Baltic Cruise",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Explore Copenhagen's historic palaces and iconic Nyhavn canals before boarding your premium overnight cruise to Norway.",
+      "highlights": [
+        {
+          "icon": "🧜‍♀️",
+          "title": "Copenhagen City Tour",
+          "description": "Visit the Little Mermaid statue, Gefion Fountain, Amalienborg Palace (outside), Nyhavn, and the City Hall."
+        },
+        {
+          "icon": "🚢",
+          "title": "Baltic Cruise Boarding",
+          "description": "Transfer to the Go Nordic Cruise Terminal and check in to your sea view cabin."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Grand Buffet Dinner",
+          "description": "Celebrate the evening with a massive dinner buffet on board as you cruise overnight to Oslo."
+        }
+      ],
+      "stay": "🏨 Stay: Overnight Cruise Sea View Cabin (Go Nordic Cruiseline)",
+      "media": {
+        "type": "split_grid",
+        "images": [
+          {
+            "src": "images/day6_copenhagen_nyhavn.jpg",
+            "alt": "Nyhavn Canal Copenhagen"
+          },
+          {
+            "src": "images/day7_little_mermaid.jpg",
+            "alt": "Little Mermaid Copenhagen"
+          }
+        ]
+      }
+    },
+    {
+      "day": "3",
+      "title": "From Fjordlands to Alpine Peaks",
+      "tagline": "🇳🇴 Oslo, Gol & Gudvangen Fjord Cruise",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Arrive in Oslo and transfer deep into the Norwegian highlands, ending with a spectacular 2-hour fjord cruise from Flåm to Gudvangen.",
+      "highlights": [
+        {
+          "icon": "🚌",
+          "title": "Oslo Port to Gol",
+          "description": "Arrive at Oslo Port, board your long-distance coach, and drive to Gol for a 3-course lunch at Pers Hotell."
+        },
+        {
+          "icon": "🏔️",
+          "title": "Transfer to Flåm",
+          "description": "Continue on a scenic highland drive towards the village of Flåm."
+        },
+        {
+          "icon": "⛵",
+          "title": "Spectacular Fjord Cruise",
+          "description": "Board a 2-hour cruise from Flåm to Gudvangen to experience the dramatic cliffs of the Nærøyfjord."
+        }
+      ],
+      "stay": "🏨 Stay: Fretheim Hotel (or similar)",
+      "media": {
+        "type": "single",
+        "src": "images/day4_flam_fjord.jpg",
+        "alt": "Spectacular Norwegian Fjord"
+      }
+    },
+    {
+      "day": "4",
+      "title": "The Legendary Rail & Waterfront Wharf",
+      "tagline": "🚂 Flåm Railway & Historic Bergen",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Ride the iconic Flåm Railway loop up steep mountain canyons, then transfer to Bergen for city sightseeing and Bryggen wharf views.",
+      "highlights": [
+        {
+          "icon": "🚂",
+          "title": "The Legendary Flåm Railway",
+          "description": "Embark on the world-famous return train journey from Flåm to Myrdal, ascending over 800 meters."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Fjord-Side Lunch",
+          "description": "Savor a buffet lunch at Flåmsbrygga Hotel / Flåmstova Restaurant."
+        },
+        {
+          "icon": "🏘️",
+          "title": "Bergen City Tour & Funicular",
+          "description": "Drive to Bergen. Tour the Bryggen wharf, visit the Bergen Fish Market, and ride the Fløibanen funicular for city views."
+        }
+      ],
+      "stay": "🏨 Stay: Scandic Bergen City (or similar)",
+      "media": {
+        "type": "carousel",
+        "id": "carousel-day4",
+        "slides": [
+          {
+            "src": "images/day4_flam_railway.jpg",
+            "alt": "Flåm Railway Train",
+            "title": "The Flåm Railway",
+            "caption": "Ride the historic train loop up steep cliffs."
+          },
+          {
+            "src": "images/day4_bergen_bryggen.jpg",
+            "alt": "Bergen Bryggen Wharf",
+            "title": "Bergen Bryggen Wharf",
+            "caption": "See the iconic colorful wooden houses on the canal."
+          }
+        ]
+      }
+    },
+    {
+      "day": "5",
+      "title": "Crossing the Baltic Airspace",
+      "tagline": "✈️ Bergen to Helsinki: Welcome to Finland",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Depart Norway on a short flight to Helsinki, Finland. Transfer to the city center and check in to your premium seaside hotel.",
+      "highlights": [
+        {
+          "icon": "✈️",
+          "title": "Flight to Helsinki",
+          "description": "Transfer to Bergen airport and board your flight to Helsinki, Finland."
+        },
+        {
+          "icon": "🚌",
+          "title": "City Center Transfer",
+          "description": "Arrive at Helsinki airport and drive to your downtown hotel."
+        },
+        {
+          "icon": "🏨",
+          "title": "Seaside Lodging",
+          "description": "Check in and enjoy dinner at your premium seaside hotel."
+        }
+      ],
+      "stay": "🏨 Stay: Scandic Grand Marina (or similar)",
+      "media": {
+        "type": "single",
+        "src": "images/day5_helsinki_city.jpg",
+        "alt": "Helsinki Cathedral Senate Square",
+        "style": "width:100%; height: 320px; object-fit: cover;"
+      }
+    },
+    {
+      "day": "6",
+      "title": "Rock Churches, Cathedrals & Baltic Cruise",
+      "tagline": "🇫🇮 Helsinki Highlights & Silja Line Overnight Cruise",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Tour Helsinki's architectural marvels, including the Rock Church, before setting sail on a premium overnight cruise to Stockholm.",
+      "highlights": [
+        {
+          "icon": "🏛️",
+          "title": "Helsinki Monuments",
+          "description": "Photo stop at Uspenski Cathedral, entrance to Temppeliaukio Rock Church, and a 3-course lunch at Ravintola Zetor."
+        },
+        {
+          "icon": "🛍️",
+          "title": "Market Square Shopping",
+          "description": "Visit Senate Square, the Market Square, and shop at the historic Stockmann mall."
+        },
+        {
+          "icon": "🚢",
+          "title": "Silja Line Cruise",
+          "description": "Transfer to Silja Line Terminal, check in to your A-Class sea view cabin, and enjoy the grand dinner buffet on board."
+        }
+      ],
+      "stay": "🏨 Stay: Overnight Cruise Sea View Cabin (Tallink Silja Line)",
+      "media": {
+        "type": "single",
+        "src": "images/day6_helsinki_rock_church.jpg",
+        "alt": "Helsinki Rock Church Interior"
+      }
+    },
+    {
+      "day": "7",
+      "title": "Venice of the North & Majestic Warships",
+      "tagline": "🇸🇪 Arrive Stockholm: Museums & City Sightseeing",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Sail into Stockholm and tour the historic capital, visiting the world-famous Vasa Museum and the grand Stockholm City Hall.",
+      "highlights": [
+        {
+          "icon": "🏰",
+          "title": "Stockholm City Tour",
+          "description": "Arrive Stockholm port and begin city sightseeing with your Tour Leader."
+        },
+        {
+          "icon": "⛵",
+          "title": "Vasa Museum & City Hall",
+          "description": "Entrance to Vasa Museum to see the 17th-century warship, and guided tour of Stockholm City Hall."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Agaton Swedish Lunch",
+          "description": "Enjoy a 3-course lunch at Restaurang Agaton, followed by hotel transfer."
+        }
+      ],
+      "stay": "🏨 Stay: Scandic Victoria Tower (or similar)",
+      "media": {
+        "type": "single",
+        "src": "images/day7_stockholm_vasa.jpg",
+        "alt": "Stockholm Vasa Museum Warship"
+      }
+    },
+    {
+      "day": "8",
+      "title": "Farewell Northern Europe",
+      "tagline": "🛫 Stockholm Departure to Destination",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Enjoy your final Swedish breakfast before transferring to the airport for your flight back home, carrying a lifetime of Baltic memories.",
+      "highlights": [
+        {
+          "icon": "☕",
+          "title": "Last Morning",
+          "description": "Enjoy breakfast at your hotel followed by last-minute souvenir shopping at leisure."
+        },
+        {
+          "icon": "🚌",
+          "title": "Airport Transfer",
+          "description": "Coach transfer from Scandic Victoria Tower to Stockholm airport."
+        },
+        {
+          "icon": "🌍",
+          "title": "Return Flight",
+          "description": "Arrive at the airport, check in, and board your flight home."
+        }
+      ],
+      "stay": null,
+      "media": {
+        "type": "single",
+        "src": "images/day8_copenhagen_departure.png",
+        "alt": "Modern Nordic Airport Lounge",
+        "style": "width:100%; height: 320px; object-fit: cover;"
+      }
+    }
+  ],
+  "parallax_sections": [
+    {
+      "insert_after_day": "2",
+      "background_image": "images/day5_cruise_sunset.jpg",
+      "title": "Cruise Across the Oslofjord",
+      "subtitle": "Dine, relax, and wake up in Norway."
+    }
+  ],
+  "booking": {
+    "title": "Secure Your Classic Scandinavia Journey",
+    "description": "Book your premium summer adventure today. Our package includes coach transits, rail passes, intra-tour flight (Bergen ➔ Helsinki), overnight cruise cabins, hotels, highlight meals, and professional tour leadership.",
+    "bullets": [
+      "All Premium Hotels & Cruise Cabins Included",
+      "Flåm Railway & Fjord Cruise Tickets",
+      "Intra-tour Flight (Bergen to Helsinki) Included",
+      "Daily Buffet Breakfasts & Highlight Dinners"
+    ],
+    "base_price": 2995,
+    "dates": [
+      {
+        "id": "jul12",
+        "label": "July 12, 2026 (Summer peak)",
+        "multiplier": 1.15
+      },
+      {
+        "id": "aug09",
+        "label": "August 09, 2026 (Mild summer)",
+        "multiplier": 1.05
+      },
+      {
+        "id": "sep06",
+        "label": "September 06, 2026 (Late summer)",
+        "multiplier": 1.0
+      }
+    ],
+    "cabins": [
+      {
+        "id": "inside",
+        "label": "Inside Shared Cabin (Included)",
+        "addon": 0
+      },
+      {
+        "id": "outside",
+        "label": "Outside Sea View Cabin (+€180)",
+        "addon": 180
+      },
+      {
+        "id": "suite",
+        "label": "Luxury Commodore Suite (+€490)",
+        "addon": 490
+      }
+    ],
+    "single_supplement": {
+      "addon": 650,
+      "no_label": "Shared Room (Included)",
+      "yes_label": "Private Single Room Throughout (+€650/person)"
+    }
+  },
+  "value_insights": {
+    "title": "VALUE INSIGHTS",
+    "description": "Premium value and total transparency. Here is exactly what is included in your tour.",
+    "inclusions_title": "🎁 Included in Your Package",
+    "inclusions": [
+      "<strong>Hotel Stays:</strong> 5 nights in premium hotels (Scandic Sluseholmen, Fretheim Hotel, Scandic Bergen City, Scandic Grand Marina, Scandic Victoria Tower) in standard double room sharing.",
+      "<strong>Baltic Cruises:</strong> 2 nights in overnight cruises (Copenhagen ➔ Oslo and Helsinki ➔ Stockholm) in standard 2/4-bed cabins with buffet dinners included.",
+      "<strong>Transit Flights:</strong> One-way flight ticket from Bergen to Helsinki (economy class, standard luggage).",
+      "<strong>Meals:</strong> 7 breakfasts, 3 premium lunches (Gol, Flåm, Stockholm), 4 dinners (including cruise buffets).",
+      "<strong>Activities & Excursions:</strong> Flåm Railway ticket, 2-hour fjord cruise, Vasa Museum entry, Rock Church entry, and guided city tours in Copenhagen, Bergen, Helsinki, and Stockholm."
+    ],
+    "exclusions_title": "✕ Excluded",
+    "exclusions": [
+      "Personal shopping, souvenirs, and optional sightseeing activities.",
+      "Lunches and dinners not explicitly detailed in the itinerary.",
+      "Individual international flights to Copenhagen and from Stockholm.",
+      "Travel insurance."
+    ]
+  },
+  "footer": {
+    "description": "Providing premium, authentic travel experiences across the spectacular landscapes of Scandinavia and the Baltic capitals. Our team organizes every detail so you can focus on making memories.",
+    "address": "Vester Voldgade 83, 2 • 1552 København K, Denmark",
+    "phone": "+45 2622 0288",
+    "email": "sales@nordistravel.com",
+    "web": "www.nordistravel.com",
+    "contact_image": "images/contact_footer.jpg"
+  }
+}

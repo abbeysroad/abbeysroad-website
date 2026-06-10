@@ -1,0 +1,662 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Embedded bundled itineraries data
+  const itineraries = {{ITINERARIES_DATA}};
+  let activeItineraryId = null;
+  let activeItinerary = null;
+
+  // --- STATE ELEMENTS ---
+  const itinerariesMenu = document.getElementById('itineraries-menu');
+  const viewport = document.getElementById('itinerary-viewport');
+  const footerContent = document.getElementById('footer-content-dynamic');
+
+  // --- HEADER SCROLL ACTION ---
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // --- RENDER ITINERARIES DROP DOWN MENU ---
+  function initItinerariesMenu() {
+    itinerariesMenu.innerHTML = '';
+    itineraries.forEach(it => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#';
+      a.textContent = it.hero.title;
+      a.setAttribute('data-id', it.id);
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        switchItinerary(it.id);
+        
+        // Sync checkboxes to match the active itinerary's countries
+        syncCheckboxesToItinerary(it);
+      });
+      li.appendChild(a);
+      itinerariesMenu.appendChild(li);
+    });
+  }
+
+  // Sync checkboxes to selected itinerary's countries
+  function syncCheckboxesToItinerary(itinerary) {
+    const checkboxes = document.querySelectorAll('.country-filter');
+    const itCountries = itinerary.countries || [];
+    checkboxes.forEach(cb => {
+      cb.checked = itCountries.includes(cb.value);
+    });
+  }
+
+  // --- SWITCH ITINERARY WITH FADE ---
+  function switchItinerary(id) {
+    if (activeItineraryId === id) return;
+    
+    viewport.classList.add('fade-out');
+    setTimeout(() => {
+      renderItinerary(id);
+      viewport.classList.remove('fade-out');
+      viewport.classList.add('fade-in');
+      setTimeout(() => viewport.classList.remove('fade-in'), 400);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 300);
+  }
+
+  // --- RENDER DYNAMIC VIEWPORT ---
+  function renderItinerary(id) {
+    activeItinerary = itineraries.find(it => it.id === id);
+    if (!activeItinerary) return;
+    activeItineraryId = id;
+
+    // 1. Update Title and Headers
+    document.title = activeItinerary.meta.title;
+    document.querySelector('meta[name="description"]').setAttribute('content', activeItinerary.meta.description);
+
+    // 2. Generate Hero HTML
+    const heroHTML = `
+      <section class="hero" id="hero-section">
+        <img src="${activeItinerary.hero.background_image}" alt="Hero Background" class="hero-bg-media">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-quick-links">
+            <a href="#map-section" class="hero-quick-link">Route Map</a>
+            <a href="#itinerary-section" class="hero-quick-link">Itinerary</a>
+            <a href="#booking-section" class="hero-quick-link">Book Now</a>
+          </div>
+          <h1>
+            <span class="hero-subtitle">${activeItinerary.hero.subtitle}</span>
+            <span class="hero-title">${activeItinerary.hero.title}</span>
+          </h1>
+          <p>${activeItinerary.hero.description}</p>
+          <div class="cta-group">
+            <a href="#booking-section" class="btn btn-primary" id="cta-book">${activeItinerary.hero.cta_book}</a>
+            <a href="#itinerary-section" class="btn btn-secondary" id="cta-view">${activeItinerary.hero.cta_view}</a>
+          </div>
+        </div>
+      </section>
+    `;
+
+    // 3. Generate Essentials HTML
+    const essentialsHTML = `
+      <section class="essentials-section">
+        <div class="essentials-grid">
+          ${activeItinerary.essentials.map(e => `
+            <div class="essential-card">
+              <div class="essential-icon">${e.icon}</div>
+              <div class="essential-info">
+                <h4>${e.title}</h4>
+                <p>${e.value}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `;
+
+    // 4. Generate Map Deck HTML
+    const mapPinsHTML = activeItinerary.map_deck.pins.map(pin => `
+      <g class="map-pin" id="${pin.id}" data-day="${pin.day}">
+        <circle cx="${pin.cx}" cy="${pin.cy}" r="14"/>
+        <text x="${pin.label_x}" y="${pin.label_y}" class="map-pin-label" style="font-size: 16px; font-weight: 700; fill: var(--primary); text-shadow: 0 0 5px #fff;">${pin.label}</text>
+      </g>
+    `).join('\n');
+
+    const mapStepsHTML = activeItinerary.map_deck.steps.map(step => `
+      <div class="route-step" id="${step.id}" data-target="${step.target}">
+        <div class="step-marker">${step.marker}</div>
+        <div class="step-info">
+          <h3>${step.title}</h3>
+          <p>${step.description}</p>
+        </div>
+      </div>
+    `).join('\n');
+
+    const mapDeckHTML = `
+      <section class="map-deck-section" id="map-section">
+        <div class="section-header">
+          <h2>${activeItinerary.map_deck.title}</h2>
+          <p>${activeItinerary.map_deck.description}</p>
+        </div>
+        <div class="map-layout">
+          <div class="map-canvas-container">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+              <image href="${activeItinerary.map_deck.background_image}" x="0" y="0" width="1024" height="1024" />
+              <path id="route-path" class="map-route-line" d="${activeItinerary.map_deck.route_path}"/>
+              <path id="route-path-active" class="map-route-active" d="${activeItinerary.map_deck.route_path}" style="stroke-width: 8; stroke: var(--accent-gold);"/>
+            </svg>
+          </div>
+          <div class="route-details">
+            ${mapStepsHTML}
+          </div>
+        </div>
+      </section>
+    `;
+
+    // 5. Generate Daily Breakdown HTML
+    const parallaxMap = {};
+    (activeItinerary.parallax_sections || []).forEach(p => {
+      parallaxMap[p.insert_after_day.toString()] = p;
+    });
+
+    const dayCardsHTML = activeItinerary.itinerary.map(dayInfo => {
+      const dayStr = dayInfo.day.toString();
+      const dayNodeLabel = dayStr.split('-')[0];
+
+      const highlightsHTML = dayInfo.highlights.map(hl => `
+        <li class="highlight-item">
+          <div class="icon">${hl.icon}</div>
+          <div class="details">
+            <h5>${hl.title}</h5>
+            <p>${hl.description}</p>
+          </div>
+        </li>
+      `).join('\n');
+
+      const stayHTML = dayInfo.stay ? `<div class="stay-badge">${dayInfo.stay}</div>` : '';
+
+      // Render Media
+      let mediaHTML = '';
+      const media = dayInfo.media || {};
+      if (media.type === 'single') {
+        const styleAttr = media.style ? ` style="${media.style}"` : '';
+        mediaHTML = `
+          <div class="day-media">
+            <img src="${media.src}" alt="${media.alt}"${styleAttr}>
+          </div>
+        `;
+      } else if (media.type === 'split_grid' && media.images && media.images.length >= 2) {
+        mediaHTML = `
+          <div class="day-media split-grid">
+            <img src="${media.images[0].src}" alt="${media.images[0].alt}">
+            <img src="${media.images[1].src}" alt="${media.images[1].alt}">
+          </div>
+        `;
+      } else if (media.type === 'carousel' && media.slides) {
+        const slidesHTML = media.slides.map((s, idx) => `
+          <div class="carousel-slide${idx === 0 ? ' active' : ''}">
+            <img src="${s.src}" alt="${s.alt}">
+            <div class="carousel-caption">
+              <h4>${s.title}</h4>
+              <p>${s.caption}</p>
+            </div>
+          </div>
+        `).join('\n');
+
+        mediaHTML = `
+          <div class="day-media carousel-container" id="${media.id}">
+            ${slidesHTML}
+            <button class="carousel-btn prev">&lt;</button>
+            <button class="carousel-btn next">&gt;</button>
+          </div>
+        `;
+      } else if (media.type === 'gallery_3col' && media.items) {
+        const itemsHTML = media.items.map(item => `
+          <div class="gallery-item">
+            <img src="${item.src}" alt="${item.alt}">
+            <div class="gallery-overlay">
+              <h5>${item.title}</h5>
+            </div>
+          </div>
+        `).join('\n');
+
+        mediaHTML = `
+          <div class="day-media gallery-3col">
+            ${itemsHTML}
+          </div>
+        `;
+      }
+
+      // Base Daily Card HTML
+      let baseCard = `
+        <div class="day-card-container" id="day-${dayStr}">
+          <div class="timeline-node">${dayNodeLabel}</div>
+          <div class="day-card">
+            <div class="day-header">
+              <h3>DAY ${dayStr} | ${dayInfo.title}</h3>
+              <div class="tagline">${dayInfo.tagline}</div>
+            </div>
+            <div class="day-body">
+              <div class="vibe-box">
+                <h4>${dayInfo.vibe_title || 'The Vibe'}</h4>
+                <p>${dayInfo.vibe_text}</p>
+              </div>
+              <div class="highlights-title">📋 Today's Plan</div>
+              <ul class="highlight-list">
+                ${highlightsHTML}
+              </ul>
+              ${stayHTML}
+              ${mediaHTML}
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Check if we should append a parallax section after this card
+      if (parallaxMap[dayStr]) {
+        const p = parallaxMap[dayStr];
+        baseCard += `
+          <section class="parallax-container" style="background-image: url('${p.background_image}');">
+            <div class="parallax-content">
+              <h2>${p.title}</h2>
+              <p>${p.subtitle}</p>
+            </div>
+          </section>
+        `;
+      }
+
+      return baseCard;
+    }).join('\n');
+
+    const timelineHTML = `
+      <section class="timeline-section" id="itinerary-section">
+        <div class="section-header">
+          <h2>🗺️ THE DAILY BREAKDOWN</h2>
+          <p>Follow your customized day-by-day travel breakdown.</p>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+          ${dayCardsHTML}
+        </div>
+      </section>
+    `;
+
+    // 6. Generate Booking HTML
+    const dateOptionsHTML = activeItinerary.booking.dates.map(d => `
+      <option value="${d.id}">${d.label}</option>
+    `).join('\n');
+
+    const cabinOptionsHTML = activeItinerary.booking.cabins.map(c => `
+      <option value="${c.id}" data-addon="${c.addon}">${c.label}</option>
+    `).join('\n');
+
+    const bookingHTML = `
+      <section class="booking-section" id="booking-section">
+        <div class="booking-container">
+          <div class="booking-info">
+            <h2>${activeItinerary.booking.title}</h2>
+            <p>${activeItinerary.booking.description}</p>
+            <ul class="booking-bullets">
+              ${activeItinerary.booking.bullets.map(b => `<li><span>✓</span> ${b}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="booking-form-side">
+            <form id="booking-calculator">
+              <div class="form-group">
+                <label for="travel-date">Select Travel Date</label>
+                <select id="travel-date" required>
+                  ${dateOptionsHTML}
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="travelers">Number of Travelers</label>
+                <input type="number" id="travelers" min="1" max="10" value="2" required>
+              </div>
+              <div class="form-group">
+                <label for="cabin-style">Cruise Cabin Type</label>
+                <select id="cabin-style">
+                  ${cabinOptionsHTML}
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="single-supplement">Single Room Supplement</label>
+                <select id="single-supplement">
+                  <option value="no">${activeItinerary.booking.single_supplement.no_label}</option>
+                  <option value="yes">${activeItinerary.booking.single_supplement.yes_label}</option>
+                </select>
+              </div>
+              
+              <div class="price-display-box">
+                <div class="price-label">
+                  <h4>Estimated Price</h4>
+                  <p>Includes flights, hotels, rail & cruise</p>
+                </div>
+                <div class="price-val" id="price-total">$0</div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;">Book My Journey</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    `;
+
+    // 7. Generate Value Insights HTML
+    const valueHTML = `
+      <section class="value-insights">
+        <div class="section-header" style="margin-bottom: 3rem;">
+          <h2>${activeItinerary.value_insights.title}</h2>
+          <p>${activeItinerary.value_insights.description}</p>
+        </div>
+        <div class="value-grid">
+          <div class="value-box">
+            <h3>${activeItinerary.value_insights.inclusions_title}</h3>
+            <ul>
+              ${activeItinerary.value_insights.inclusions.map(inc => `<li>${inc}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="value-box excludes">
+            <h3>${activeItinerary.value_insights.exclusions_title}</h3>
+            <ul>
+              ${activeItinerary.value_insights.exclusions.map(exc => `<li>${exc}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      </section>
+    `;
+
+    // 8. Generate Dynamic Footer Content
+    const footerHTML = `
+      <div class="footer-info">
+        <p>${activeItinerary.footer.description}</p>
+        <p>
+          <strong>📍 Address:</strong> ${activeItinerary.footer.address}<br>
+          <strong>📞 Telephone:</strong> ${activeItinerary.footer.phone}<br>
+          <strong>✉️ Email:</strong> ${activeItinerary.footer.email}<br>
+          <strong>🌐 Web:</strong> <a href="http://${activeItinerary.footer.web}" style="color: var(--accent-gold); text-decoration: none;">${activeItinerary.footer.web}</a>
+        </p>
+      </div>
+      <div class="footer-contact-img">
+        <img src="${activeItinerary.footer.contact_image}" alt="Office Vibe">
+      </div>
+    `;
+
+    // Write all into viewports
+    viewport.innerHTML = heroHTML + essentialsHTML + mapDeckHTML + timelineHTML + bookingHTML + valueHTML;
+    footerContent.innerHTML = footerHTML;
+
+    // 9. Reinitialize Interactive Components
+    initSPAInteraction();
+  }
+
+  // --- REINITIALIZE CAROUSELS, MAPS, CALCULATORS & SCROLLSPY ---
+  function initSPAInteraction() {
+    if (!activeItinerary) return;
+
+    // A. Init carousels
+    activeItinerary.itinerary.forEach(dayInfo => {
+      const media = dayInfo.media || {};
+      if (media.type === 'carousel' && media.id) {
+        initCarousel(media.id);
+      }
+    });
+
+    // B. Animate days on scroll
+    const dayCards = document.querySelectorAll('.day-card-container');
+    const scrollOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const dayObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, scrollOptions);
+
+    dayCards.forEach(card => dayObserver.observe(card));
+
+    // C. SVG path length drawing
+    const path = document.getElementById('route-path-active');
+    const pins = document.querySelectorAll('.map-pin');
+    const routeSteps = document.querySelectorAll('.route-step');
+    let pathLength = 0;
+
+    if (path) {
+      pathLength = path.getTotalLength();
+      path.style.strokeDasharray = pathLength;
+      path.style.strokeDashoffset = pathLength;
+    }
+
+    function updateRouteDraw(percent) {
+      if (!path) return;
+      const offset = pathLength - (pathLength * percent);
+      path.style.strokeDashoffset = offset;
+    }
+
+    function setActiveState(dayNum) {
+      // Reset active states
+      pins.forEach(pin => pin.classList.remove('active'));
+      routeSteps.forEach(step => step.classList.remove('active'));
+
+      // Find best active state based on active_states config
+      const activeStates = activeItinerary.map_deck.active_states;
+      let activeState = activeStates[activeStates.length - 1]; // Default to final
+      for (let i = 0; i < activeStates.length; i++) {
+        if (dayNum <= activeStates[i].max_day) {
+          activeState = activeStates[i];
+          break;
+        }
+      }
+
+      if (activeState) {
+        activeState.pins.forEach(pinId => {
+          const el = document.getElementById(pinId);
+          if (el) el.classList.add('active');
+        });
+        if (activeState.step_id) {
+          const el = document.getElementById(activeState.step_id);
+          if (el) el.classList.add('active');
+        }
+        updateRouteDraw(activeState.route_percent);
+      }
+    }
+
+    // SVG Pin clicks
+    pins.forEach(pin => {
+      pin.addEventListener('click', () => {
+        const targetDay = pin.getAttribute('data-day');
+        setActiveState(parseInt(targetDay));
+        const targetEl = document.getElementById(`day-${targetDay}`);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+
+    // Step cards clicks
+    routeSteps.forEach(step => {
+      step.addEventListener('click', () => {
+        const targetId = step.getAttribute('data-target');
+        const dayNum = parseInt(targetId.replace('day-', ''));
+        setActiveState(dayNum);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+
+    // Scrollspy to draw route
+    window.addEventListener('scroll', () => {
+      let currentDay = 1;
+      dayCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.4) {
+          const cleanId = card.id.replace('day-', '');
+          const dayVal = parseInt(cleanId.split('-')[0]);
+          if (!isNaN(dayVal)) {
+            currentDay = dayVal;
+          }
+        }
+      });
+      setActiveState(currentDay);
+    });
+
+    // Initial state draw
+    setActiveState(1);
+
+    // D. Live Price Calculator
+    const basePrice = activeItinerary.booking.base_price;
+    const calcForm = document.getElementById('booking-calculator');
+    const travelersInput = document.getElementById('travelers');
+    const cabinSelect = document.getElementById('cabin-style');
+    const singleSelect = document.getElementById('single-supplement');
+    const travelDateSelect = document.getElementById('travel-date');
+    const priceDisplay = document.getElementById('price-total');
+
+    function calculateQuote() {
+      const numTravelers = parseInt(travelersInput.value) || 1;
+      const dateVal = travelDateSelect.value;
+      
+      const dateOption = activeItinerary.booking.dates.find(d => d.id === dateVal);
+      const dateMultiplier = dateOption ? dateOption.multiplier : 1.0;
+
+      const cabinOption = cabinSelect.options[cabinSelect.selectedIndex];
+      const cabinAddon = cabinOption ? parseFloat(cabinOption.getAttribute('data-addon')) : 0;
+
+      let supplementAddon = 0;
+      if (singleSelect.value === 'yes') {
+        supplementAddon = activeItinerary.booking.single_supplement.addon;
+      }
+
+      const calculatedBase = basePrice * dateMultiplier;
+      const pricePerPerson = calculatedBase + cabinAddon + supplementAddon;
+      const totalPrice = Math.round(pricePerPerson * numTravelers);
+
+      priceDisplay.textContent = `$${totalPrice.toLocaleString()}`;
+    }
+
+    travelersInput.addEventListener('input', calculateQuote);
+    cabinSelect.addEventListener('change', calculateQuote);
+    singleSelect.addEventListener('change', calculateQuote);
+    travelDateSelect.addEventListener('change', calculateQuote);
+
+    // Run first quote calculate
+    calculateQuote();
+
+    // Submit handler
+    calcForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert(`Thank you for booking! We have reserved your journey: "${activeItinerary.hero.title}". A representative from NordisTravel will contact you shortly.`);
+    });
+
+    // E. Hero quick links smooth scrolls
+    document.querySelectorAll('.hero-quick-link').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          window.scrollTo({
+            top: targetEl.offsetTop - 80, // offset sticky header height
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
+
+  // --- COUNTRY FILTERING LOGIC ---
+  function handleCountryFilterChange() {
+    const checkedCountries = Array.from(document.querySelectorAll('.country-filter:checked')).map(cb => cb.value);
+    if (checkedCountries.length === 0) return;
+
+    let bestItinerary = null;
+    let bestScore = -1;
+
+    itineraries.forEach(it => {
+      let score = 0;
+      const itCountries = it.countries || [];
+      checkedCountries.forEach(c => {
+        if (itCountries.includes(c)) score++;
+      });
+      // Prioritize itineraries that have a higher percentage of the checked countries
+      if (score > bestScore) {
+        bestScore = score;
+        bestItinerary = it;
+      }
+    });
+
+    if (bestItinerary && bestItinerary.id !== activeItineraryId) {
+      switchItinerary(bestItinerary.id);
+    }
+  }
+
+  document.querySelectorAll('.country-filter').forEach(checkbox => {
+    checkbox.addEventListener('change', handleCountryFilterChange);
+  });
+
+  // --- CAROUSEL UTILITY ---
+  function initCarousel(carouselId) {
+    const container = document.getElementById(carouselId);
+    if (!container) return;
+
+    const slides = container.querySelectorAll('.carousel-slide');
+    const nextBtn = container.querySelector('.carousel-btn.next');
+    const prevBtn = container.querySelector('.carousel-btn.prev');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      if (index >= slides.length) currentIndex = 0;
+      else if (index < 0) currentIndex = slides.length - 1;
+      else currentIndex = index;
+      slides[currentIndex].classList.add('active');
+    }
+
+    nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+    prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+
+    // Auto play every 6s
+    let autoPlayInterval = setInterval(() => showSlide(currentIndex + 1), 6000);
+    container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    container.addEventListener('mouseleave', () => {
+      autoPlayInterval = setInterval(() => showSlide(currentIndex + 1), 6000);
+    });
+  }
+
+  // Initialize dropdown toggle listeners for mouse triggers
+  const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+  dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Toggles dropdown
+      const menu = trigger.nextElementSibling;
+      if (menu) {
+        menu.classList.toggle('show');
+      }
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  window.addEventListener('click', (e) => {
+    if (!e.target.matches('.dropdown-trigger') && !e.target.closest('.dropdown-menu')) {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.classList.remove('show');
+      });
+    }
+  });
+
+  // Load Itineraries menu and default view
+  initItinerariesMenu();
+  if (itineraries.length > 0) {
+    // Default to first itinerary
+    renderItinerary(itineraries[0].id);
+    syncCheckboxesToItinerary(itineraries[0]);
+  }
+});

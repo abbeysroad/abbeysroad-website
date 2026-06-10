@@ -1,0 +1,508 @@
+{
+  "id": "scandinavia",
+  "countries": ["Sweden", "Norway", "Denmark"],
+  "meta": {
+    "title": "9-Day Nordic Summer Escape | NordisTravel",
+    "description": "Embark on an extraordinary 9-day summer journey through Sweden, Norway, and Denmark. Discover Stockholm, Oslo, Copenhagen, the Flåm Railway, and majestic fjords on a premium, curated Scandinavian vacation."
+  },
+  "hero": {
+    "subtitle": "Fjords, Castles & Capitals:",
+    "title": "The Ultimate 9-Day Nordic Escape",
+    "description": "Discover the magic of Sweden, Norway, and Denmark on a premium, curated journey through Scandinavia’s most iconic landscapes and vibrant historic capitals.",
+    "background_image": "images/day5_cruise_sunset.jpg",
+    "cta_book": "Secure Your Nordic Summer Escape",
+    "cta_view": "View Itinerary Details"
+  },
+  "essentials": [
+    {
+      "icon": "⏱️",
+      "title": "Duration",
+      "value": "9 Epic Days"
+    },
+    {
+      "icon": "🗺️",
+      "title": "Route",
+      "value": "Stockholm ➔ Oslo ➔ Copenhagen"
+    },
+    {
+      "icon": "🚌",
+      "title": "Travel Style",
+      "value": "Coach, Rail & Cruise"
+    },
+    {
+      "icon": "⚡",
+      "title": "Pace",
+      "value": "Active & Comprehensive"
+    }
+  ],
+  "map_deck": {
+    "title": "THE MAP DECK",
+    "description": "Visualize your premium journey across Scandinavia’s scenic routes, mountains, and seas.",
+    "background_image": "images/scandinavia_map.png",
+    "route_path": "M 885 458 L 610 475 L 463 399 L 350 350 L 220 290 L 463 399 C 463 560, 547 700, 547 873",
+    "pins": [
+      {
+        "id": "pin-stockholm",
+        "day": 2,
+        "cx": 885,
+        "cy": 458,
+        "label": "Stockholm",
+        "label_x": 885,
+        "label_y": 430
+      },
+      {
+        "id": "pin-karlstad",
+        "day": 2,
+        "cx": 610,
+        "cy": 475,
+        "label": "Karlstad",
+        "label_x": 610,
+        "label_y": 505
+      },
+      {
+        "id": "pin-oslo",
+        "day": 3,
+        "cx": 463,
+        "cy": 399,
+        "label": "Oslo",
+        "label_x": 463,
+        "label_y": 370
+      },
+      {
+        "id": "pin-al",
+        "day": 3,
+        "cx": 350,
+        "cy": 350,
+        "label": "Ål",
+        "label_x": 350,
+        "label_y": 325
+      },
+      {
+        "id": "pin-flam",
+        "day": 4,
+        "cx": 220,
+        "cy": 290,
+        "label": "Flåm",
+        "label_x": 220,
+        "label_y": 265
+      },
+      {
+        "id": "pin-copenhagen",
+        "day": 6,
+        "cx": 547,
+        "cy": 873,
+        "label": "Copenhagen",
+        "label_x": 547,
+        "label_y": 905
+      }
+    ],
+    "steps": [
+      {
+        "id": "step-day1-2",
+        "target": "day-2",
+        "marker": "🇸🇪",
+        "title": "Sweden Entrance",
+        "description": "Start in Stockholm, the Venice of the North. Cruise historical canals and unwind by the lake in Karlstad."
+      },
+      {
+        "id": "step-day3-4",
+        "target": "day-3",
+        "marker": "🇳🇴",
+        "title": "Norway Fjordlands",
+        "description": "Cross into Norway. Explore Oslo's art parks, ski summits, and take the breathtaking Flåm Mountain Railway loop."
+      },
+      {
+        "id": "step-day5-7",
+        "target": "day-6",
+        "marker": "🇩🇰",
+        "title": "Denmark Coast & Castles",
+        "description": "Sail overnight to Copenhagen. Immerse yourself in Tivoli, Danish Smørrebrød, and Shakespeare's Elsinore Castle."
+      }
+    ],
+    "active_states": [
+      {
+        "max_day": 2,
+        "pins": ["pin-stockholm", "pin-karlstad"],
+        "step_id": "step-day1-2",
+        "route_percent": 0.25
+      },
+      {
+        "max_day": 4,
+        "pins": ["pin-oslo", "pin-al", "pin-flam"],
+        "step_id": "step-day3-4",
+        "route_percent": 0.60
+      },
+      {
+        "max_day": 9,
+        "pins": ["pin-copenhagen"],
+        "step_id": "step-day5-7",
+        "route_percent": 1.00
+      }
+    ]
+  },
+  "itinerary": [
+    {
+      "day": "1",
+      "title": "The Journey Begins",
+      "tagline": "✈️ Departure: Bound for Scandinavia",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Leave the ordinary behind. Board your flight and prepare to wake up in the capital of Nordic chic.",
+      "highlights": [
+        {
+          "icon": "✈️",
+          "title": "Flight Departure",
+          "description": "Depart your flight bound for Stockholm Arlanda Airport. Smooth boarding and flight preparations."
+        }
+      ],
+      "stay": null,
+      "media": {
+        "type": "none"
+      }
+    },
+    {
+      "day": "2",
+      "title": "Royalty, Canals & Historic Cobblestone",
+      "tagline": "🇸🇪 Stockholm to Karlstad: The Swedish Transition",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Explore a city built across 14 islands before winding down by the scenic shores of Lake Vänern.",
+      "highlights": [
+        {
+          "icon": "🏰",
+          "title": "Stockholm City Tour",
+          "description": "Wander the medieval alleyways of Gamla Stan (Old Town), view the Royal Palace, the grand Opera House, and catch panoramic views from Fjällgatan Hill."
+        },
+        {
+          "icon": "🚌",
+          "title": "Scenic Countryside Drive",
+          "description": "Relax on a panoramic 2.5-hour coach ride (225 km) deep into the Swedish countryside to Karlstad."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Welcome Dinner",
+          "description": "Regroup for an authentic dinner at a local Karlstad restaurant."
+        }
+      ],
+      "stay": "🏨 Stay: Good Morning Karlstad (or similar)",
+      "media": {
+        "type": "split_grid",
+        "images": [
+          {
+            "src": "images/day2_stockholm.jpg",
+            "alt": "Stockholm Gamla Stan historic townhouses"
+          },
+          {
+            "src": "images/day2_karlstad.jpg",
+            "alt": "Peaceful lake and nature in Karlstad"
+          }
+        ]
+      }
+    },
+    {
+      "day": "3",
+      "title": "Sculpture Parks & Majestic Fjords",
+      "tagline": "🇳🇴 Crossing Borders: Karlstad to Oslo & Ål",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Transition from Sweden to Norway. Experience masterfully crafted art parks before heading into the gateway of the majestic Norwegian fjords.",
+      "highlights": [
+        {
+          "icon": "🌳",
+          "title": "Oslo City Tour",
+          "description": "Walk among the 200+ mesmerizing masterworks in Vigeland Sculpture Park and Frogner Park, stand outside the Oslo Cathedral, and feel the energy of Karl Johans gate."
+        },
+        {
+          "icon": "📸",
+          "title": "Holmenkollen Panoramic View",
+          "description": "Capture a panoramic snapshot at the world-famous Holmenkollen ski jump area overlooking the city and fjords."
+        },
+        {
+          "icon": "🏔️",
+          "title": "Into the Highlands",
+          "description": "Board your long-distance coach for a scenic 3-hour journey (195 km) to the mountain village of Ål."
+        },
+        {
+          "icon": "🪵",
+          "title": "Alpine Feast",
+          "description": "Indulge in a premium 3-course or buffet dinner hosted at your hotel."
+        }
+      ],
+      "stay": "🏨 Stay: Thon Hotel Hallingdal (or similar)",
+      "media": {
+        "type": "split_grid",
+        "images": [
+          {
+            "src": "images/day3_oslo_vigeland.png",
+            "alt": "Vigeland Sculpture Park monolith granite statues"
+          },
+          {
+            "src": "images/day3_road_al.jpg",
+            "alt": "Scenic road winding into green mountain highlands"
+          }
+        ]
+      }
+    },
+    {
+      "day": "4",
+      "title": "The Crown Jewel of Rail Journeys",
+      "tagline": "🚂 The Flåm Railway Experience",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Prepare for one of the absolute highlights of your trip—a jaw-dropping train ride through steep ravines, cascading waterfalls, and deep fjords.",
+      "highlights": [
+        {
+          "icon": "🚂",
+          "title": "The Legendary Flåm Railway",
+          "description": "Board the legendary Flåm-Myrdal loop. Peer out panoramic windows as you ascend over 800 meters along the sheer walls of the valley."
+        },
+        {
+          "icon": "🍽️",
+          "title": "Fjord-Side Lunch",
+          "description": "Savor local specialties at a charming local restaurant in the heart of the valley."
+        },
+        {
+          "icon": "🏔️",
+          "title": "Highland Return",
+          "description": "Return to the serene comfort of Ål for another incredible 3-course hotel dinner."
+        }
+      ],
+      "stay": "🏨 Stay: Thon Hotel Hallingdal (or similar)",
+      "media": {
+        "type": "carousel",
+        "id": "carousel-day4",
+        "slides": [
+          {
+            "src": "images/day4_flam_railway.jpg",
+            "alt": "Vintage green Flåm railway train alongside cliff",
+            "title": "The Flåm Railway",
+            "caption": "Ascend steep mountain cliffs passing roaring waterfalls."
+          },
+          {
+            "src": "images/day4_flam_fjord.jpg",
+            "alt": "Spectacular green mountain valley in Flåm",
+            "title": "Flåm Valley Fjord View",
+            "caption": "Verdant green peaks meeting crystal waters."
+          }
+        ]
+      }
+    },
+    {
+      "day": "5",
+      "title": "Setting Sail on the Baltic Sea",
+      "tagline": "🚢 Oslo to Copenhagen: The Overnight Luxury Cruise",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Say goodbye to Norway's mountains with a grand farewell tour of Oslo, then step aboard a premium cruise liner to sleep your way across the sea to Denmark.",
+      "highlights": [
+        {
+          "icon": "🏛️",
+          "title": "Oslo Farewell & Palace",
+          "description": "See the Parliament building and enjoy a photo stop outside the elegant Royal Palace."
+        },
+        {
+          "icon": "🚢",
+          "title": "Go Nordic Cruiseline Cabin",
+          "description": "Check into your private, comfortable overnight ocean cruise cabin."
+        },
+        {
+          "icon": "🦐",
+          "title": "The Grand Buffet",
+          "description": "Celebrate the evening with a massive, premium dinner buffet on board as you cruise down the historic Oslofjord."
+        }
+      ],
+      "stay": "🏨 Stay: Overnight Cruise Inside Cabin (Go Nordic Cruiseline)",
+      "media": {
+        "type": "none"
+      }
+    },
+    {
+      "day": "6",
+      "title": "Welcome to the Capital of \"Hygge\"",
+      "tagline": "🇩🇰 Copenhagen: Leisure & Latitude",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Wake up in Denmark! Disembark directly into the heart of Copenhagen for a day of absolute freedom to explore at your own pace.",
+      "highlights": [
+        {
+          "icon": "🚢",
+          "title": "Copenhagen Terminal Arrival",
+          "description": "Cruise into the Copenhagen Terminal and check into your downtown boutique hotel."
+        },
+        {
+          "icon": "🚲",
+          "title": "Free at Leisure",
+          "description": "Rent a bike, grab a coffee, stroll down the famous Strøget shopping street, or sit by the colorful townhouses along the canals of Nyhavn."
+        }
+      ],
+      "stay": "🏨 Stay: Good Morning City Copenhagen Star (or similar)",
+      "media": {
+        "type": "split_grid",
+        "images": [
+          {
+            "src": "images/day6_copenhagen_nyhavn.jpg",
+            "alt": "Vibrant townhouses along the canal in Nyhavn"
+          },
+          {
+            "src": "images/day6_copenhagen_tivoli.jpg",
+            "alt": "Tivoli Gardens illuminated at night with lights"
+          }
+        ]
+      }
+    },
+    {
+      "day": "7",
+      "title": "Of Castles, Queens & Open Sandwiches",
+      "tagline": "👑 Copenhagen & The Shakespearean Castle",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Dive deep into Danish history, indulge in world-class local cuisine, and explore the legendary seaside fortress that inspired Hamlet.",
+      "highlights": [
+        {
+          "icon": "🧜‍♀️",
+          "title": "Copenhagen City Highlights",
+          "description": "Visit the mystical Little Mermaid statue, Gefion Fountain, Amalienborg Palace, and the majestic Frederiks Kirke (The Marble Church)."
+        },
+        {
+          "icon": "🍽&zwj;🍳",
+          "title": "The Smørrebrød Experience",
+          "description": "Sit down for an authentic Danish lunch to try world-famous, beautifully arranged open-faced sandwiches."
+        },
+        {
+          "icon": "🏰",
+          "title": "Elsinore Castle (Kronborg)",
+          "description": "Travel north to Elsinore to stand in the real-life coastal fortress made immortal by William Shakespeare's Hamlet."
+        }
+      ],
+      "stay": "🏨 Stay: Good Morning City Copenhagen Star (or similar)",
+      "media": {
+        "type": "gallery_3col",
+        "items": [
+          {
+            "src": "images/day7_smorrebrod.jpg",
+            "alt": "Beautifully styled traditional Danish Smørrebrød sandwich",
+            "title": "Smørrebrød"
+          },
+          {
+            "src": "images/day7_kronborg_castle.jpg",
+            "alt": "Aerial view of seaside Kronborg Castle in Elsinore",
+            "title": "Kronborg Castle"
+          },
+          {
+            "src": "images/day7_little_mermaid.jpg",
+            "alt": "Little Mermaid statue sitting on a rock in Copenhagen harbor",
+            "title": "The Little Mermaid"
+          }
+        ]
+      }
+    },
+    {
+      "day": "8-9",
+      "title": "Farewell Scandinavia",
+      "tagline": "🛫 Copenhagen Departure to Destination",
+      "vibe_title": "The Vibe",
+      "vibe_text": "Savor your final morning of fresh Danish pastries and coffee before heading to the airport for your smooth journey home.",
+      "highlights": [
+        {
+          "icon": "☕",
+          "title": "Leisurely Breakfast & Souvenirs",
+          "description": "Enjoy breakfast at your hotel followed by last-minute souvenir hunting and boutique exploring at leisure."
+        },
+        {
+          "icon": "🚌",
+          "title": "Hassle-Free Airport Transfer",
+          "description": "Comfortable group airport transfer pickup timed perfectly with your departure flight."
+        },
+        {
+          "icon": "🌍",
+          "title": "Return Arrival (Day 9)",
+          "description": "Arrive back at your destination airport with a lifetime of spectacular Nordic memories."
+        }
+      ],
+      "stay": null,
+      "media": {
+        "type": "single",
+        "src": "images/day8_copenhagen_departure.png",
+        "alt": "Sleek, minimalist architecture layout of Copenhagen airport",
+        "style": "width:100%; height: 320px; object-fit: cover;"
+      }
+    }
+  ],
+  "parallax_sections": [
+    {
+      "insert_after_day": "5",
+      "background_image": "images/day5_cruise_sunset.jpg",
+      "title": "Cruise Across the Baltic Sea",
+      "subtitle": "Dine, relax, and wake up in Copenhagen."
+    }
+  ],
+  "booking": {
+    "title": "Secure Your Nordic Summer Escape",
+    "description": "Book your summer adventure today. Our premium package includes scenic transportation, luxury rail passes, overnight fjord cruise, hotel stays, and professional tour leadership.",
+    "bullets": [
+      "All Premium Hotels Included",
+      "Flåm Mountain Railway Return Ticket",
+      "Overnight Baltic Cruise (Oslo ➔ Copenhagen)",
+      "Daily Buffet Breakfasts & Highlight Dinners"
+    ],
+    "base_price": 2495,
+    "dates": [
+      {
+        "id": "jul10",
+        "label": "July 10, 2026 (Summer peak)",
+        "multiplier": 1.15
+      },
+      {
+        "id": "aug05",
+        "label": "August 05, 2026 (Mild summer)",
+        "multiplier": 1.05
+      },
+      {
+        "id": "sep02",
+        "label": "September 02, 2026 (Late summer)",
+        "multiplier": 1.0
+      }
+    ],
+    "cabins": [
+      {
+        "id": "inside",
+        "label": "Inside Shared Cabin (Included)",
+        "addon": 0
+      },
+      {
+        "id": "outside",
+        "label": "Outside Sea View Cabin (+$150)",
+        "addon": 150
+      },
+      {
+        "id": "suite",
+        "label": "Luxury Commodore Suite (+$450)",
+        "addon": 450
+      }
+    ],
+    "single_supplement": {
+      "addon": 550,
+      "no_label": "Shared Double Room (Included)",
+      "yes_label": "Private Single Room Throughout (+$550/person)"
+    }
+  },
+  "value_insights": {
+    "title": "VALUE INSIGHTS",
+    "description": "Premium value and total transparency. Here is exactly what is included in your tour.",
+    "inclusions_title": "🎁 Included in Your Package",
+    "inclusions": [
+      "<strong>Overnight Stays:</strong> 6 nights in premium standard rooms (Good Morning Karlstad, Thon Hotel Hallingdal, Good Morning City Copenhagen Star) plus 1 night in a cruise cabin.",
+      "<strong>Premium Meals:</strong> 7 breakfasts on-board/hotels, 1 Danish Smørrebrød lunch, 1 buffet dinner on-board the cruise, and 2 alpine dinners in Ål.",
+      "<strong>Scenic Transits:</strong> Long-distance coach services across Sweden and Norway.",
+      "<strong>Activities & Passes:</strong> Flåm Railway return loop ticket, Oslo & Stockholm panoramic city tours, Kronborg Castle entry excursion."
+    ],
+    "exclusions_title": "✕ Excluded",
+    "exclusions": [
+      "Personal shopping, custom souvenirs, and optional local activities.",
+      "Lunches and dinners not explicitly detailed in the itinerary.",
+      "Entry tickets to sites not specified under inclusions.",
+      "Individual travel insurance."
+    ]
+  },
+  "footer": {
+    "description": "Providing premium, authentic travel experiences across the spectacular landscapes of Scandinavia. Our team organizes every detail so you can focus on making memories that last a lifetime.",
+    "address": "Vester Voldgade 83, 2 • 1552 København K, Denmark",
+    "phone": "+45 2622 0288",
+    "email": "sales@nordistravel.com",
+    "web": "www.nordistravel.com",
+    "contact_image": "images/contact_footer.jpg"
+  }
+}
