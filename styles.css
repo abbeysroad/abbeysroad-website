@@ -1854,3 +1854,38 @@ footer {
   line-height: 1.6;
 }
 
+/* HIGH-CONTRAST MOBILE STYLES FOR PARALLAX SECTIONS */
+@media (max-width: 768px) {
+  .map-deck-section .section-header h2,
+  .value-insights .section-header h2 {
+    color: var(--text-white) !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+  }
+  
+  .map-deck-section .section-header p,
+  .value-insights .section-header p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.85);
+  }
+
+  .value-box {
+    background: rgba(10, 20, 35, 0.88) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    padding: 1.5rem 1.25rem !important;
+    border-radius: var(--radius-md) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+  
+  .value-box h3 {
+    color: var(--accent-gold) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  .value-box li {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+  }
+}
+
