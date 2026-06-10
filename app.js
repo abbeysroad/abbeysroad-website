@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         "insert_after_day": "5",
         "background_image": "images/day5_cruise_sunset.jpg",
-        "title": "Cruise Across the Baltic Sea",
+        "title": "Cruise Across The Skagerrak",
         "subtitle": "Dine, relax, and wake up in Copenhagen."
       }
     ],
@@ -1747,6 +1747,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Book a Meeting Modal Logic
+  const bookMeetingBtn = document.getElementById('book-meeting-btn');
+  const meetingModal = document.getElementById('meeting-modal');
+  const closeModalBtn = document.getElementById('close-modal');
+
+  if (bookMeetingBtn && meetingModal) {
+    bookMeetingBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      meetingModal.classList.add('show');
+    });
+  }
+
+  if (closeModalBtn && meetingModal) {
+    closeModalBtn.addEventListener('click', () => {
+      meetingModal.classList.remove('show');
+    });
+  }
+
+  window.addEventListener('click', (e) => {
+    if (meetingModal && e.target === meetingModal) {
+      meetingModal.classList.remove('show');
+    }
+  });
 
   // Load Itineraries menu and default view
   initItinerariesMenu();
