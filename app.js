@@ -1658,7 +1658,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('.country-filter').forEach(checkbox => {
-    checkbox.addEventListener('change', handleCountryFilterChange);
+    checkbox.addEventListener('change', () => {
+      const val = checkbox.value;
+      const isChecked = checkbox.checked;
+      document.querySelectorAll(`.country-filter[value="${val}"]`).forEach(cb => {
+        cb.checked = isChecked;
+      });
+      handleCountryFilterChange();
+    });
   });
 
   // --- CAROUSEL UTILITY ---

@@ -17,6 +17,18 @@
           <img src="images/logo.png" alt="NordisTravel Logo" id="header-logo">
         </a>
       </div>
+      <!-- Mobile-only Destinations Dropdown -->
+      <div class="mobile-destinations dropdown-item">
+        <a href="#" class="dropdown-trigger" id="dropdown-flags-mobile">Destinations ▾</a>
+        <ul class="dropdown-menu flags-menu" id="flags-menu-mobile">
+          <li><label><input type="checkbox" class="country-filter" value="Denmark" checked> 🇩🇰 Denmark</label></li>
+          <li><label><input type="checkbox" class="country-filter" value="Norway" checked> 🇳🇴 Norway</label></li>
+          <li><label><input type="checkbox" class="country-filter" value="Sweden" checked> 🇸🇪 Sweden</label></li>
+          <li><label><input type="checkbox" class="country-filter" value="Finland" checked> 🇫🇮 Finland</label></li>
+          <li><label><input type="checkbox" class="country-filter" value="Iceland"> 🇮🇸 Iceland</label></li>
+        </ul>
+      </div>
+
       <!-- Mobile Burger Button -->
       <button class="burger-menu-btn" aria-label="Toggle menu" id="burger-btn">
         <span class="bar"></span>
@@ -31,7 +43,7 @@
               <!-- Dynamically populated -->
             </ul>
           </li>
-          <li class="dropdown-item">
+          <li class="dropdown-item desktop-destinations">
             <a href="#" class="dropdown-trigger" id="dropdown-flags">Destinations ▾</a>
             <ul class="dropdown-menu flags-menu" id="flags-menu">
               <li><label><input type="checkbox" class="country-filter" value="Denmark" checked> 🇩🇰 Denmark</label></li>

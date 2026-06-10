@@ -233,6 +233,10 @@ header.scrolled .nav-links a {
   line-height: 1.15;
 }
 
+.mobile-destinations {
+  display: none;
+}
+
 /* Burger Menu Button default (hidden on desktop) */
 .burger-menu-btn {
   display: none;
@@ -311,8 +315,56 @@ header.scrolled .nav-links a {
     border-bottom: none;
   }
 
+  .desktop-destinations {
+    display: none;
+  }
+
+  .mobile-destinations {
+    display: block;
+    position: relative;
+    margin: 0 auto; /* Center it */
+  }
+
+  .mobile-destinations .dropdown-trigger {
+    color: var(--text-white);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 8px 12px;
+  }
+
+  header.scrolled .mobile-destinations .dropdown-trigger {
+    text-shadow: none;
+  }
+
+  .mobile-destinations .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.75rem;
+    background: rgba(10, 20, 35, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    width: 180px;
+    padding: 0.75rem 1rem;
+    display: none;
+    z-index: 1001;
+  }
+
+  .mobile-destinations .dropdown-menu.show {
+    display: block;
+    animation: fadeInDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   /* Adjust dropdown menus inside mobile drawer */
-  .dropdown-menu {
+  .nav-links .dropdown-menu {
     position: static;
     background: rgba(255, 255, 255, 0.05);
     border: none;
@@ -323,12 +375,12 @@ header.scrolled .nav-links a {
     padding: 0.5rem 0;
   }
 
-  .dropdown-menu a {
+  .nav-links .dropdown-menu a {
     padding-left: 2.5rem;
     font-size: 0.9rem;
   }
   
-  .flags-menu {
+  .nav-links .flags-menu {
     padding: 0.5rem 1.5rem 0.5rem 2.5rem;
   }
 }
