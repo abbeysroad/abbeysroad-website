@@ -173,7 +173,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": null,
         "media": {
-          "type": "none"
+          "type": "carousel",
+          "id": "carousel-scandinavia-day1",
+          "slides": [
+            {
+              "type": "single",
+              "src": "images/day8_copenhagen_departure.png",
+              "alt": "Modern Aircraft Cabin View",
+              "title": "Boarding & Departure",
+              "caption": "Embarking on the journey of a lifetime to Northern Europe."
+            },
+            {
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day2_stockholm.jpg",
+                  "alt": "Stockholm Skyline",
+                  "title": "Nordic Destination",
+                  "caption": "Flying towards Sweden's beautiful capital."
+                },
+                {
+                  "src": "images/logo.png",
+                  "alt": "NordisTravel Premium Tour",
+                  "title": "Curated Escapes",
+                  "caption": "Uncompromising comfort and curated itineraries."
+                }
+              ]
+            }
+          ]
         }
       },
       {
@@ -201,15 +228,32 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Good Morning Karlstad (or similar)",
         "media": {
-          "type": "split_grid",
-          "images": [
+          "type": "carousel",
+          "id": "carousel-scandinavia-day2",
+          "slides": [
             {
+              "type": "single",
               "src": "images/day2_stockholm.jpg",
-              "alt": "Stockholm Gamla Stan historic townhouses"
+              "alt": "Stockholm Gamla Stan historic townhouses",
+              "title": "Stockholm Gamla Stan",
+              "caption": "Colorful medieval townhouses standing by the historic waterfront."
             },
             {
-              "src": "images/day2_karlstad.jpg",
-              "alt": "Peaceful lake and nature in Karlstad"
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day2_karlstad.jpg",
+                  "alt": "Lake Vänern Karlstad",
+                  "title": "Lake Vänern, Karlstad",
+                  "caption": "Relaxing views of Sweden's largest and most serene lake."
+                },
+                {
+                  "src": "images/day3_road_al.jpg",
+                  "alt": "Swedish Countryside Route",
+                  "title": "Swedish Countryside Drive",
+                  "caption": "Winding past fields and traditional wooden houses."
+                }
+              ]
             }
           ]
         }
@@ -244,15 +288,32 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Thon Hotel Hallingdal (or similar)",
         "media": {
-          "type": "split_grid",
-          "images": [
+          "type": "carousel",
+          "id": "carousel-scandinavia-day3",
+          "slides": [
             {
+              "type": "single",
               "src": "images/day3_oslo_vigeland.png",
-              "alt": "Vigeland Sculpture Park monolith granite statues"
+              "alt": "Vigeland Sculpture Park monolith granite statues",
+              "title": "Vigeland Sculpture Park, Oslo",
+              "caption": "Granite statues rising dynamically in Oslo's premium park."
             },
             {
-              "src": "images/day3_road_al.jpg",
-              "alt": "Scenic road winding into green mountain highlands"
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day3_road_al.jpg",
+                  "alt": "Scenic highland road to Ål",
+                  "title": "The Road to Ål",
+                  "caption": "Embarking on scenic highways towards mountain highlands."
+                },
+                {
+                  "src": "images/day4_flam_fjord.jpg",
+                  "alt": "Norwegian fjord mountain valley",
+                  "title": "Gateway to the Fjords",
+                  "caption": "Sweeping valleys where massive cliffs meet clear water."
+                }
+              ]
             }
           ]
         }
@@ -283,19 +344,31 @@ document.addEventListener('DOMContentLoaded', () => {
         "stay": "🏨 Stay: Thon Hotel Hallingdal (or similar)",
         "media": {
           "type": "carousel",
-          "id": "carousel-day4",
+          "id": "carousel-scandinavia-day4",
           "slides": [
             {
+              "type": "single",
               "src": "images/day4_flam_railway.jpg",
               "alt": "Vintage green Flåm railway train alongside cliff",
               "title": "The Flåm Railway",
-              "caption": "Ascend steep mountain cliffs passing roaring waterfalls."
+              "caption": "Ascending steep mountain cliffs alongside dramatic valleys."
             },
             {
-              "src": "images/day4_flam_fjord.jpg",
-              "alt": "Spectacular green mountain valley in Flåm",
-              "title": "Flåm Valley Fjord View",
-              "caption": "Verdant green peaks meeting crystal waters."
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day4_flam_fjord.jpg",
+                  "alt": "Spectacular green mountain valley in Flåm",
+                  "title": "Flåm Valley Fjord View",
+                  "caption": "Emerald waters reflecting towering Norwegian peaks."
+                },
+                {
+                  "src": "images/day4_bergen_bryggen.jpg",
+                  "alt": "Scenic fjord waters",
+                  "title": "Fjord Waterways",
+                  "caption": "Deep fjords presenting unforgettable scenic vistas."
+                }
+              ]
             }
           ]
         }
@@ -325,7 +398,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Overnight Cruise Inside Cabin (Go Nordic Cruiseline)",
         "media": {
-          "type": "none"
+          "type": "carousel",
+          "id": "carousel-scandinavia-day5",
+          "slides": [
+            {
+              "type": "single",
+              "src": "images/day5_cruise_sunset.jpg",
+              "alt": "Ocean cruise ship at sunset",
+              "title": "Sailing the Oslofjord",
+              "caption": "Cruising past tranquil inlets as the sun goes down."
+            },
+            {
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day5_cruise_buffet.png",
+                  "alt": "On-board cruise buffet",
+                  "title": "The Grand Buffet Dinner",
+                  "caption": "Premium dining featuring fresh seafood and local bites."
+                },
+                {
+                  "src": "images/day8_copenhagen_departure.png",
+                  "alt": "Sleek cruise ship lounge",
+                  "title": "Luxury Cruise Transit",
+                  "caption": "Comfortable ocean view salons and dynamic amenities."
+                }
+              ]
+            }
+          ]
         }
       },
       {
@@ -348,15 +448,32 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Good Morning City Copenhagen Star (or similar)",
         "media": {
-          "type": "split_grid",
-          "images": [
+          "type": "carousel",
+          "id": "carousel-scandinavia-day6",
+          "slides": [
             {
+              "type": "single",
               "src": "images/day6_copenhagen_nyhavn.jpg",
-              "alt": "Vibrant townhouses along the canal in Nyhavn"
+              "alt": "Vibrant townhouses along the canal in Nyhavn",
+              "title": "Nyhavn Canal, Copenhagen",
+              "caption": "Historic colorful townhouses lining the water's edge."
             },
             {
-              "src": "images/day6_copenhagen_tivoli.jpg",
-              "alt": "Tivoli Gardens illuminated at night with lights"
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day6_copenhagen_tivoli.jpg",
+                  "alt": "Tivoli Gardens illuminated at night",
+                  "title": "Tivoli Gardens",
+                  "caption": "Amusement park lights sparkling in the Danish night."
+                },
+                {
+                  "src": "images/day7_smorrebrod.jpg",
+                  "alt": "Danish Smørrebrød sandwiches",
+                  "title": "Danish Pastries & Cafes",
+                  "caption": "Soaking in the relaxing vibe of Copenhagen coffee culture."
+                }
+              ]
             }
           ]
         }
@@ -386,22 +503,32 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Good Morning City Copenhagen Star (or similar)",
         "media": {
-          "type": "gallery_3col",
-          "items": [
+          "type": "carousel",
+          "id": "carousel-scandinavia-day7",
+          "slides": [
             {
-              "src": "images/day7_smorrebrod.jpg",
-              "alt": "Beautifully styled traditional Danish Smørrebrød sandwich",
-              "title": "Smørrebrød"
-            },
-            {
+              "type": "single",
               "src": "images/day7_kronborg_castle.jpg",
               "alt": "Aerial view of seaside Kronborg Castle in Elsinore",
-              "title": "Kronborg Castle"
+              "title": "Kronborg Castle, Elsinore",
+              "caption": "The historic maritime stronghold that inspired Shakespeare's Hamlet."
             },
             {
-              "src": "images/day7_little_mermaid.jpg",
-              "alt": "Little Mermaid statue sitting on a rock in Copenhagen harbor",
-              "title": "The Little Mermaid"
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day7_little_mermaid.jpg",
+                  "alt": "Little Mermaid statue sitting on a rock in Copenhagen harbor",
+                  "title": "The Little Mermaid",
+                  "caption": "Graceful symbol of Denmark on Copenhagen's harbor."
+                },
+                {
+                  "src": "images/day7_smorrebrod.jpg",
+                  "alt": "Beautifully styled traditional Danish Smørrebrød sandwich",
+                  "title": "Danish Smørrebrød",
+                  "caption": "Elegant open-faced sandwiches styled with fresh ingredients."
+                }
+              ]
             }
           ]
         }
@@ -431,10 +558,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": null,
         "media": {
-          "type": "single",
-          "src": "images/day8_copenhagen_departure.png",
-          "alt": "Sleek, minimalist architecture layout of Copenhagen airport",
-          "style": "width:100%; height: 320px; object-fit: cover;"
+          "type": "carousel",
+          "id": "carousel-scandinavia-day8",
+          "slides": [
+            {
+              "type": "single",
+              "src": "images/day8_copenhagen_departure.png",
+              "alt": "Sleek, minimalist architecture layout of Copenhagen airport",
+              "title": "Nordic Departure",
+              "caption": "Departing from Copenhagen's modern, design-forward airport terminal."
+            },
+            {
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day6_copenhagen_nyhavn.jpg",
+                  "alt": "Last coffee in Copenhagen",
+                  "title": "Danish Pastries & Coffee",
+                  "caption": "Taking a final moment to savor local bakery specialties."
+                },
+                {
+                  "src": "images/day5_cruise_sunset.jpg",
+                  "alt": "Sunset flight view",
+                  "title": "Unforgettable Memories",
+                  "caption": "Heading home with a camera full of beautiful Scandinavian moments."
+                }
+              ]
+            }
+          ]
         }
       }
     ],
@@ -738,7 +889,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Scandic Sluseholmen (or similar)",
         "media": {
-          "type": "none"
+          "type": "carousel",
+          "id": "carousel-classic-day1",
+          "slides": [
+            {
+              "type": "single",
+              "src": "images/day6_copenhagen_nyhavn.jpg",
+              "alt": "Welcome to Copenhagen",
+              "title": "Welcome to Copenhagen",
+              "caption": "Bright canals and historic brick townhouses."
+            },
+            {
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day6_copenhagen_tivoli.jpg",
+                  "alt": "Tivoli Gardens",
+                  "title": "Tivoli Gardens",
+                  "caption": "Illuminated evening walks in Copenhagen's heart."
+                },
+                {
+                  "src": "images/day8_copenhagen_departure.png",
+                  "alt": "Modern Copenhagen",
+                  "title": "Modern Copenhagen",
+                  "caption": "Clean transport and high-fidelity comfort."
+                }
+              ]
+            }
+          ]
         }
       },
       {
@@ -766,15 +944,32 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Overnight Cruise Sea View Cabin (Go Nordic Cruiseline)",
         "media": {
-          "type": "split_grid",
-          "images": [
+          "type": "carousel",
+          "id": "carousel-classic-day2",
+          "slides": [
             {
+              "type": "single",
               "src": "images/day6_copenhagen_nyhavn.jpg",
-              "alt": "Nyhavn Canal Copenhagen"
+              "alt": "Nyhavn Waterfront",
+              "title": "Nyhavn Waterfront",
+              "caption": "Strolling along the historic harbor canals."
             },
             {
-              "src": "images/day7_little_mermaid.jpg",
-              "alt": "Little Mermaid Copenhagen"
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day7_little_mermaid.jpg",
+                  "alt": "The Little Mermaid",
+                  "title": "The Little Mermaid",
+                  "caption": "Graceful seaside symbol of Copenhagen."
+                },
+                {
+                  "src": "images/day5_cruise_buffet.png",
+                  "alt": "Overnight Cruise Buffet",
+                  "title": "Overnight Cruise Buffet",
+                  "caption": "Feast on Baltic specialties sailing to Norway."
+                }
+              ]
             }
           ]
         }
@@ -804,9 +999,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Fretheim Hotel (or similar)",
         "media": {
-          "type": "single",
-          "src": "images/day4_flam_fjord.jpg",
-          "alt": "Spectacular Norwegian Fjord"
+          "type": "carousel",
+          "id": "carousel-classic-day3",
+          "slides": [
+            {
+              "type": "single",
+              "src": "images/day4_flam_fjord.jpg",
+              "alt": "Nærøyfjord Cruise",
+              "title": "Nærøyfjord Cruise",
+              "caption": "Unbelievable views of dramatic cliffs rising from the water."
+            },
+            {
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day3_road_al.jpg",
+                  "alt": "Oslo to Gol Highland Route",
+                  "title": "Oslo to Gol Highland Route",
+                  "caption": "Charming alpine towns and sweeping mountain roads."
+                },
+                {
+                  "src": "images/day2_karlstad.jpg",
+                  "alt": "Scenic Norway Rivers",
+                  "title": "Scenic Norway Rivers",
+                  "caption": "Passing lakes and rushing rivers through high country."
+                }
+              ]
+            }
+          ]
         }
       },
       {
@@ -835,19 +1055,31 @@ document.addEventListener('DOMContentLoaded', () => {
         "stay": "🏨 Stay: Scandic Bergen City (or similar)",
         "media": {
           "type": "carousel",
-          "id": "carousel-day4",
+          "id": "carousel-classic-day4",
           "slides": [
             {
+              "type": "single",
               "src": "images/day4_flam_railway.jpg",
-              "alt": "Flåm Railway Train",
+              "alt": "The Flåm Railway",
               "title": "The Flåm Railway",
-              "caption": "Ride the historic train loop up steep cliffs."
+              "caption": "Spectacular engineering through wild mountain terrain."
             },
             {
-              "src": "images/day4_bergen_bryggen.jpg",
-              "alt": "Bergen Bryggen Wharf",
-              "title": "Bergen Bryggen Wharf",
-              "caption": "See the iconic colorful wooden houses on the canal."
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day4_bergen_bryggen.jpg",
+                  "alt": "Bergen Bryggen Wharf",
+                  "title": "Bergen Bryggen Wharf",
+                  "caption": "Colorful medieval Hanseatic wooden houses."
+                },
+                {
+                  "src": "images/day3_oslo_vigeland.png",
+                  "alt": "Bergen Fish Market",
+                  "title": "Bergen Fish Market",
+                  "caption": "Local atmosphere and fresh catches by the harbor."
+                }
+              ]
             }
           ]
         }
@@ -877,10 +1109,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Scandic Grand Marina (or similar)",
         "media": {
-          "type": "single",
-          "src": "images/day5_helsinki_city.jpg",
-          "alt": "Helsinki Cathedral Senate Square",
-          "style": "width:100%; height: 320px; object-fit: cover;"
+          "type": "carousel",
+          "id": "carousel-classic-day5",
+          "slides": [
+            {
+              "type": "single",
+              "src": "images/day5_helsinki_city.jpg",
+              "alt": "Helsinki Cathedral Senate Square",
+              "title": "Helsinki Cathedral",
+              "caption": "Stunning neoclassical white cathedral overlooking Senate Square."
+            },
+            {
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day8_copenhagen_departure.png",
+                  "alt": "Bergen Airport Departure",
+                  "title": "Bergen Airport Departure",
+                  "caption": "Boarding your short flight to Finland."
+                },
+                {
+                  "src": "images/day6_helsinki_rock_church.jpg",
+                  "alt": "Helsinki Seaside View",
+                  "title": "Seaside Harbor",
+                  "caption": "Arriving at the premium Grand Marina hotel."
+                }
+              ]
+            }
+          ]
         }
       },
       {
@@ -908,9 +1164,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Overnight Cruise Sea View Cabin (Tallink Silja Line)",
         "media": {
-          "type": "single",
-          "src": "images/day6_helsinki_rock_church.jpg",
-          "alt": "Helsinki Rock Church Interior"
+          "type": "carousel",
+          "id": "carousel-classic-day6",
+          "slides": [
+            {
+              "type": "single",
+              "src": "images/day6_helsinki_rock_church.jpg",
+              "alt": "Helsinki Rock Church Interior",
+              "title": "Temppeliaukio Rock Church",
+              "caption": "Unique architecture carved directly into solid rock."
+            },
+            {
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day5_helsinki_city.jpg",
+                  "alt": "Uspenski Cathedral",
+                  "title": "Uspenski Cathedral",
+                  "caption": "Red-brick Eastern Orthodox cathedral with gold domes."
+                },
+                {
+                  "src": "images/day5_cruise_sunset.jpg",
+                  "alt": "Silja Line Cruise Ship",
+                  "title": "Silja Line Cruise",
+                  "caption": "Overnight cruise sailing across the Baltic Sea to Sweden."
+                }
+              ]
+            }
+          ]
         }
       },
       {
@@ -938,9 +1219,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": "🏨 Stay: Scandic Victoria Tower (or similar)",
         "media": {
-          "type": "single",
-          "src": "images/day7_stockholm_vasa.jpg",
-          "alt": "Stockholm Vasa Museum Warship"
+          "type": "carousel",
+          "id": "carousel-classic-day7",
+          "slides": [
+            {
+              "type": "single",
+              "src": "images/day7_stockholm_vasa.jpg",
+              "alt": "Stockholm Vasa Museum Warship",
+              "title": "The Vasa Museum",
+              "caption": "Unbelievably preserved 17th-century royal warship."
+            },
+            {
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day2_stockholm.jpg",
+                  "alt": "Stockholm Gamla Stan",
+                  "title": "Stockholm Gamla Stan",
+                  "caption": "Historic palaces and old town streets of the capital."
+                },
+                {
+                  "src": "images/day3_oslo_vigeland.png",
+                  "alt": "Stockholm City Hall",
+                  "title": "Stockholm City Hall",
+                  "caption": "Iconic city landmark on the waterfront."
+                }
+              ]
+            }
+          ]
         }
       },
       {
@@ -968,10 +1274,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         "stay": null,
         "media": {
-          "type": "single",
-          "src": "images/day8_copenhagen_departure.png",
-          "alt": "Modern Nordic Airport Lounge",
-          "style": "width:100%; height: 320px; object-fit: cover;"
+          "type": "carousel",
+          "id": "carousel-classic-day8",
+          "slides": [
+            {
+              "type": "single",
+              "src": "images/day8_copenhagen_departure.png",
+              "alt": "Modern Nordic Airport Lounge",
+              "title": "Stockholm Arlanda Departure",
+              "caption": "Ready to check in for your return flight."
+            },
+            {
+              "type": "double",
+              "images": [
+                {
+                  "src": "images/day6_copenhagen_nyhavn.jpg",
+                  "alt": "Swedish Fika Coffee",
+                  "title": "Swedish Fika Coffee",
+                  "caption": "Final morning of coffee and cinnamon pastries."
+                },
+                {
+                  "src": "images/day5_cruise_sunset.jpg",
+                  "alt": "Baltic Sunset",
+                  "title": "Baltic Sunset",
+                  "caption": "Bidding farewell to the magical Scandinavian summers."
+                }
+              ]
+            }
+          ]
         }
       }
     ],
@@ -1254,15 +1584,39 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `;
       } else if (media.type === 'carousel' && media.slides) {
-        const slidesHTML = media.slides.map((s, idx) => `
-          <div class="carousel-slide${idx === 0 ? ' active' : ''}">
-            <img src="${s.src}" alt="${s.alt}">
-            <div class="carousel-caption">
-              <h4>${s.title}</h4>
-              <p>${s.caption}</p>
-            </div>
-          </div>
-        `).join('\n');
+        const slidesHTML = media.slides.map((s, idx) => {
+          const isActive = idx === 0 ? ' active' : '';
+          if (s.type === 'double' && s.images && s.images.length >= 2) {
+            return `
+              <div class="carousel-slide${isActive} double-slide">
+                <div class="double-slide-half">
+                  <img src="${s.images[0].src}" alt="${s.images[0].alt}">
+                  <div class="carousel-caption">
+                    <h4>${s.images[0].title}</h4>
+                    <p>${s.images[0].caption}</p>
+                  </div>
+                </div>
+                <div class="double-slide-half">
+                  <img src="${s.images[1].src}" alt="${s.images[1].alt}">
+                  <div class="carousel-caption">
+                    <h4>${s.images[1].title}</h4>
+                    <p>${s.images[1].caption}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+          } else {
+            return `
+              <div class="carousel-slide${isActive} single-slide">
+                <img src="${s.src}" alt="${s.alt}">
+                <div class="carousel-caption">
+                  <h4>${s.title}</h4>
+                  <p>${s.caption}</p>
+                </div>
+              </div>
+            `;
+          }
+        }).join('\n');
 
         mediaHTML = `
           <div class="day-media carousel-container" id="${media.id}">
