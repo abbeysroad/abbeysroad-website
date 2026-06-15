@@ -453,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             {
               "type": "single",
-              "src": "images/day6_copenhagen_nyhavn.jpg",
+              "src": "images/copenhagen_nyhavn.png",
               "alt": "Vibrant townhouses along the canal in Nyhavn",
               "title": "Nyhavn Canal, Copenhagen",
               "caption": "Historic colorful townhouses lining the water's edge."
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Amusement park lights sparkling in the Danish night."
                 },
                 {
-                  "src": "images/day7_smorrebrod.jpg",
+                  "src": "images/danish_pastry.png",
                   "alt": "Danish Smørrebrød sandwiches",
                   "title": "Danish Pastries & Cafes",
                   "caption": "Soaking in the relaxing vibe of Copenhagen coffee culture."
@@ -523,7 +523,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Graceful symbol of Denmark on Copenhagen's harbor."
                 },
                 {
-                  "src": "images/day7_smorrebrod.jpg",
+                  "src": "images/danish_smorrebrod.png",
                   "alt": "Beautifully styled traditional Danish Smørrebrød sandwich",
                   "title": "Danish Smørrebrød",
                   "caption": "Elegant open-faced sandwiches styled with fresh ingredients."
@@ -894,7 +894,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             {
               "type": "single",
-              "src": "images/day6_copenhagen_nyhavn.jpg",
+              "src": "images/copenhagen_nyhavn.png",
               "alt": "Welcome to Copenhagen",
               "title": "Welcome to Copenhagen",
               "caption": "Bright canals and historic brick townhouses."
@@ -949,7 +949,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             {
               "type": "single",
-              "src": "images/day6_copenhagen_nyhavn.jpg",
+              "src": "images/copenhagen_nyhavn.png",
               "alt": "Nyhavn Waterfront",
               "title": "Nyhavn Waterfront",
               "caption": "Strolling along the historic harbor canals."
