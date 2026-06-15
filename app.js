@@ -1239,7 +1239,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Historic palaces and old town streets of the capital."
                 },
                 {
-                  "src": "images/day3_oslo_vigeland.png",
+                  "src": "images/stockholm_city_hall.png",
                   "alt": "Stockholm City Hall",
                   "title": "Stockholm City Hall",
                   "caption": "Iconic city landmark on the waterfront."
