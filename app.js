@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
               "type": "double",
               "images": [
                 {
-                  "src": "images/day3_road_al.jpg",
+                  "src": "images/road_to_al.png",
                   "alt": "Scenic highland road to Ål",
                   "title": "The Road to Ål",
                   "caption": "Embarking on scenic highways towards mountain highlands."
@@ -1013,7 +1013,7 @@ document.addEventListener('DOMContentLoaded', () => {
               "type": "double",
               "images": [
                 {
-                  "src": "images/day3_road_al.jpg",
+                  "src": "images/road_to_al.png",
                   "alt": "Oslo to Gol Highland Route",
                   "title": "Oslo to Gol Highland Route",
                   "caption": "Charming alpine towns and sweeping mountain roads."
