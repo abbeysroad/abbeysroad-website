@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "subtitle": "Fjords, Castles & Capitals:",
       "title": "The Ultimate 9-Day Nordic Escape",
       "description": "Discover the magic of Sweden, Norway, and Denmark on a premium, curated journey through Scandinavia’s most iconic landscapes and vibrant historic capitals.",
-      "background_image": "images/day5_cruise_sunset.jpg",
+      "background_image": "images/oslofjord_sunset.png",
       "cta_book": "Secure Your Nordic Summer Escape",
       "cta_view": "View Itinerary Details"
     },
@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             {
               "type": "single",
-              "src": "images/day5_cruise_sunset.jpg",
+              "src": "images/oslofjord_sunset.png",
               "alt": "Ocean cruise ship at sunset",
               "title": "Sailing the Oslofjord",
               "caption": "Cruising past tranquil inlets as the sun goes down."
@@ -572,13 +572,13 @@ document.addEventListener('DOMContentLoaded', () => {
               "type": "double",
               "images": [
                 {
-                  "src": "images/day6_copenhagen_nyhavn.jpg",
+                  "src": "images/swedish_fika.png",
                   "alt": "Last coffee in Copenhagen",
                   "title": "Danish Pastries & Coffee",
                   "caption": "Taking a final moment to savor local bakery specialties."
                 },
                 {
-                  "src": "images/day5_cruise_sunset.jpg",
+                  "src": "images/oslofjord_sunset.png",
                   "alt": "Sunset flight view",
                   "title": "Unforgettable Memories",
                   "caption": "Heading home with a camera full of beautiful Scandinavian moments."
@@ -592,7 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "parallax_sections": [
       {
         "insert_after_day": "5",
-        "background_image": "images/day5_cruise_sunset.jpg",
+        "background_image": "images/oslofjord_sunset.png",
         "title": "Cruise Across The Skagerrak",
         "subtitle": "Dine, relax, and wake up in Copenhagen."
       }
@@ -1074,7 +1074,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Colorful medieval Hanseatic wooden houses."
                 },
                 {
-                  "src": "images/day3_oslo_vigeland.png",
+                  "src": "images/bergen_fish_market.png",
                   "alt": "Bergen Fish Market",
                   "title": "Bergen Fish Market",
                   "caption": "Local atmosphere and fresh catches by the harbor."
@@ -1129,7 +1129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Boarding your short flight to Finland."
                 },
                 {
-                  "src": "images/day6_helsinki_rock_church.jpg",
+                  "src": "images/helsinki_seaside.png",
                   "alt": "Helsinki Seaside View",
                   "title": "Seaside Harbor",
                   "caption": "Arriving at the premium Grand Marina hotel."
@@ -1184,7 +1184,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Red-brick Eastern Orthodox cathedral with gold domes."
                 },
                 {
-                  "src": "images/day5_cruise_sunset.jpg",
+                  "src": "images/oslofjord_sunset.png",
                   "alt": "Silja Line Cruise Ship",
                   "title": "Silja Line Cruise",
                   "caption": "Overnight cruise sailing across the Baltic Sea to Sweden."
@@ -1288,13 +1288,13 @@ document.addEventListener('DOMContentLoaded', () => {
               "type": "double",
               "images": [
                 {
-                  "src": "images/day6_copenhagen_nyhavn.jpg",
+                  "src": "images/swedish_fika.png",
                   "alt": "Swedish Fika Coffee",
                   "title": "Swedish Fika Coffee",
                   "caption": "Final morning of coffee and cinnamon pastries."
                 },
                 {
-                  "src": "images/day5_cruise_sunset.jpg",
+                  "src": "images/oslofjord_sunset.png",
                   "alt": "Baltic Sunset",
                   "title": "Baltic Sunset",
                   "caption": "Bidding farewell to the magical Scandinavian summers."
@@ -1308,7 +1308,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "parallax_sections": [
       {
         "insert_after_day": "2",
-        "background_image": "images/day5_cruise_sunset.jpg",
+        "background_image": "images/oslofjord_sunset.png",
         "title": "Cruise Across the Oslofjord",
         "subtitle": "Dine, relax, and wake up in Norway."
       }
