@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Relaxing views of Sweden's largest and most serene lake."
                 },
                 {
-                  "src": "images/day3_road_al.jpg",
+                  "src": "images/swedish_countryside.png",
                   "alt": "Swedish Countryside Route",
                   "title": "Swedish Countryside Drive",
                   "caption": "Winding past fields and traditional wooden houses."
