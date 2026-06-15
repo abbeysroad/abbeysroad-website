@@ -572,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
               "type": "double",
               "images": [
                 {
-                  "src": "images/swedish_fika.png",
+                  "src": "images/danish_pastry.png",
                   "alt": "Last coffee in Copenhagen",
                   "title": "Danish Pastries & Coffee",
                   "caption": "Taking a final moment to savor local bakery specialties."
@@ -1178,7 +1178,7 @@ document.addEventListener('DOMContentLoaded', () => {
               "type": "double",
               "images": [
                 {
-                  "src": "images/day5_helsinki_city.jpg",
+                  "src": "images/uspenski_cathedral.png",
                   "alt": "Uspenski Cathedral",
                   "title": "Uspenski Cathedral",
                   "caption": "Red-brick Eastern Orthodox cathedral with gold domes."
