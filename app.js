@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Emerald waters reflecting towering Norwegian peaks."
                 },
                 {
-                  "src": "images/day4_bergen_bryggen.jpg",
+                  "src": "images/fjord_waterways.png",
                   "alt": "Scenic fjord waters",
                   "title": "Fjord Waterways",
                   "caption": "Deep fjords presenting unforgettable scenic vistas."
@@ -1004,7 +1004,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             {
               "type": "single",
-              "src": "images/day4_flam_fjord.jpg",
+              "src": "images/naeroyfjord.png",
               "alt": "Nærøyfjord Cruise",
               "title": "Nærøyfjord Cruise",
               "caption": "Unbelievable views of dramatic cliffs rising from the water."
@@ -1019,7 +1019,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Charming alpine towns and sweeping mountain roads."
                 },
                 {
-                  "src": "images/day2_karlstad.jpg",
+                  "src": "images/norway_rivers.png",
                   "alt": "Scenic Norway Rivers",
                   "title": "Scenic Norway Rivers",
                   "caption": "Passing lakes and rushing rivers through high country."
@@ -1184,7 +1184,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Red-brick Eastern Orthodox cathedral with gold domes."
                 },
                 {
-                  "src": "images/oslofjord_sunset.png",
+                  "src": "images/silja_line_cruise.png",
                   "alt": "Silja Line Cruise Ship",
                   "title": "Silja Line Cruise",
                   "caption": "Overnight cruise sailing across the Baltic Sea to Sweden."
@@ -1294,7 +1294,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   "caption": "Final morning of coffee and cinnamon pastries."
                 },
                 {
-                  "src": "images/oslofjord_sunset.png",
+                  "src": "images/baltic_sunset.png",
                   "alt": "Baltic Sunset",
                   "title": "Baltic Sunset",
                   "caption": "Bidding farewell to the magical Scandinavian summers."
