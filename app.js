@@ -1584,7 +1584,34 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `;
       } else if (media.type === 'carousel' && media.slides) {
-        const slidesHTML = media.slides.map((s, idx) => {
+        const isMobile = window.innerWidth <= 768;
+        const processedSlides = [];
+        media.slides.forEach(s => {
+          if (s.type === 'double' && s.images && s.images.length >= 2) {
+            if (isMobile) {
+              processedSlides.push({
+                type: 'single',
+                src: s.images[0].src,
+                alt: s.images[0].alt,
+                title: s.images[0].title,
+                caption: s.images[0].caption
+              });
+              processedSlides.push({
+                type: 'single',
+                src: s.images[1].src,
+                alt: s.images[1].alt,
+                title: s.images[1].title,
+                caption: s.images[1].caption
+              });
+            } else {
+              processedSlides.push(s);
+            }
+          } else {
+            processedSlides.push(s);
+          }
+        });
+
+        const slidesHTML = processedSlides.map((s, idx) => {
           const isActive = idx === 0 ? ' active' : '';
           if (s.type === 'double' && s.images && s.images.length >= 2) {
             return `
@@ -2133,4 +2160,15 @@ document.addEventListener('DOMContentLoaded', () => {
     renderItinerary(itineraries[0].id);
     syncCheckboxesToItinerary(itineraries[0]);
   }
+
+  let lastWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    const currentWidth = window.innerWidth;
+    if ((lastWidth > 768 && currentWidth <= 768) || (lastWidth <= 768 && currentWidth > 768)) {
+      if (activeItineraryId) {
+        renderItinerary(activeItineraryId);
+      }
+    }
+    lastWidth = currentWidth;
+  });
 });
