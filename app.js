@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "tagline": "Handcrafted Philippines & Global Escapes",
       "address": "BGC High Street, Taguig • Metro Manila, Philippines",
       "phone": "+63 917 888 2622",
-      "email": "avsa@nordistravel.com",
+      "email": "abbey@abbeysroad.dk",
       "web": "www.abbeysroad.com",
       "contact_image": "images/philippines/el_nido_boat.jpeg"
     }
@@ -232,15 +232,15 @@ document.addEventListener('DOMContentLoaded', () => {
       "base_price": 2450,
       "currency": "€",
       "dates": [{ "id": "jul10", "label": "Jul 10 – Jul 18", "season": "Peak", "price_modifier": 0 }],
-      "cabin_options": [{ "id": "inside", "name": "Standard Room", "description": "Comfortable room", "price_per_person": 0 }],
+      "inside": [{ "id": "inside", "name": "Standard Room", "description": "Comfortable room", "price_per_person": 0 }],
       "supplements": []
     },
     "contact": {
       "company_name": "Abbey's Road Destinations",
       "tagline": "Destinations That Connect",
-      "address": "Vester Voldgade 83 • Copenhagen, Denmark",
+      "address": "Borgmestervangen 31, 2200 Copenhagen",
       "phone": "+45 2622 0288",
-      "email": "avsa@nordistravel.com",
+      "email": "abbey@abbeysroad.dk",
       "web": "www.abbeysroad.com",
       "contact_image": "images/contact_footer.jpg"
     }
@@ -661,6 +661,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modal) modal.classList.add('show');
       });
     });
+
+    // Close button and Backdrop click listener
+    const closeModalBtn = document.getElementById('close-modal');
+    if (closeModalBtn && modal) {
+      closeModalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.remove('show');
+      });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+        }
+      });
+    }
   }
 
   // Header Scroll Listener
