@@ -541,11 +541,20 @@ document.addEventListener('DOMContentLoaded', () => {
       a.href = '#';
       a.textContent = item.hero.title;
       a.dataset.id = item.id;
+      
+      // Wire up render and smooth scroll down on click
       a.addEventListener('click', (e) => {
         e.preventDefault();
         renderItinerary(item.id);
         itinerariesMenu.classList.remove('show');
+        
+        // Smoothly scroll down to the itineraries details section
+        const viewport = document.getElementById('itinerary-viewport');
+        if (viewport) {
+          viewport.scrollIntoView({ behavior: 'smooth' });
+        }
       });
+      
       li.appendChild(a);
       itinerariesMenu.appendChild(li);
     });

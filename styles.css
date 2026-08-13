@@ -261,11 +261,13 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   text-transform: none;
   letter-spacing: 0;
   font-weight: 700;
+  transition: color 0.15s ease, background 0.15s ease;
 }
 
+/* Submenu Hover Link Color changed to WHITE */
 .dropdown-menu li a:hover {
   background: var(--btn-blue);
-  color: var(--accent-gold);
+  color: #FFFFFF !important;
 }
 
 /* Mobile Burger Menu Button */
@@ -532,7 +534,6 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .chapter-content-container {
   max-width: 1000px;
   z-index: 10;
-  position: relative;
 }
 
 .chapter-content-container.center-aligned {
