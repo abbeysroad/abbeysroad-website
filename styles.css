@@ -339,8 +339,17 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
   margin-bottom: 2.5rem;
+}
+
+.mobile-section-header-title {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
 }
 
 .mobile-nav-link {
@@ -350,6 +359,12 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   font-weight: 800;
   letter-spacing: 2px;
   transition: color 0.2s ease;
+}
+
+.mobile-nav-link.sub-link {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
 }
 
 .mobile-nav-link:hover {

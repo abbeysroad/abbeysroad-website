@@ -501,6 +501,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
+  // MULTI-DROPDOWN MENU CLICK TOGGLE CONTROLLER
+  // ==========================================================================
+  function initDropdownMenus() {
+    const triggers = document.querySelectorAll('.dropdown-trigger');
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const menu = trigger.nextElementSibling;
+        
+        // Close all other dropdown menus
+        document.querySelectorAll('.dropdown-menu').forEach(m => {
+          if (m !== menu) m.classList.remove('show');
+        });
+        
+        if (menu) menu.classList.toggle('show');
+      });
+    });
+
+    // Close any open dropdown menu when clicking anywhere else
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+    });
+  }
+
+  // ==========================================================================
   // RENDER & MENU FUNCTIONS FOR ITINERARIES
   // ==========================================================================
   function initItinerariesMenu() {
@@ -692,6 +719,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGSAPScrollTrigger();
   initMobileCardFold();
   initMobileBurgerMenu();
+  initDropdownMenus();
   initItinerariesMenu();
   renderItinerary(itineraries[0].id);
   bindBookingTriggers();

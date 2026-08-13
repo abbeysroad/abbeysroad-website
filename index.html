@@ -25,31 +25,36 @@
   <!-- THREE.JS WEBGL CANVAS BACKGROUND -->
   <canvas id="hero-webgl-canvas"></canvas>
 
-  <!-- GLOBAL HEADER & NAVIGATION WITH EXACT LOGO BACKGROUND COLOR (#FAF5F0) -->
+  <!-- GLOBAL HEADER & NAVIGATION -->
   <header id="main-header" class="logo-bg-header-backdrop">
     <div class="header-container">
       
-      <!-- Left: Horizontal Logo Seamlessly Blending into #FAF5F0 -->
+      <!-- Left: Horizontal Logo -->
       <div class="logo-container">
         <a href="#" class="logo-link" title="Abbey's Road - Your Philippines Travel Concierge">
           <img src="images/philippines/logo_horizontal_cutout.png" alt="Abbey's Road Logo Horizontal" id="header-logo" class="extra-large-logo horizontal-logo">
         </a>
       </div>
 
-      <!-- Center Desktop Navigation -->
+      <!-- Center Desktop Navigation (Discover dropdown + Itineraries dropdown + Direct links) -->
       <nav class="desktop-nav">
         <ul class="nav-links">
-          <li><a href="#chapter-intro" class="nav-journey-link active">DISCOVER</a></li>
-          <li><a href="#chapter-palawan" class="nav-journey-link">ISLANDS</a></li>
-          <li><a href="#concierge-section" class="nav-journey-link">CONCIERGE</a></li>
-          <li><a href="#chapter-coron" class="nav-journey-link">ADVENTURE</a></li>
-          <li><a href="#events-section" class="nav-journey-link">EVENTS</a></li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-discover">Discover ▾</a>
+            <ul class="dropdown-menu" id="discover-menu">
+              <li><a href="#chapter-palawan">Islands</a></li>
+              <li><a href="#chapter-coron">Adventure</a></li>
+              <li><a href="#chapter-banaue">Mountains</a></li>
+              <li><a href="#chapter-manila">Culture</a></li>
+            </ul>
+          </li>
           <li class="dropdown-item">
             <a href="#" class="dropdown-trigger" id="dropdown-tours">Itineraries ▾</a>
             <ul class="dropdown-menu" id="itineraries-menu">
               <!-- Dynamically populated -->
             </ul>
           </li>
+          <li><a href="#concierge-section">Concierge</a></li>
           <li><a href="#about-section">About Us</a></li>
           <li><a href="#team-section">Team</a></li>
         </ul>
@@ -76,14 +81,17 @@
   <div id="mobile-nav-overlay" class="mobile-nav-overlay">
     <nav class="mobile-nav-content">
       <ul class="mobile-nav-links">
-        <li><a href="#chapter-intro" class="mobile-nav-link">DISCOVER</a></li>
-        <li><a href="#chapter-palawan" class="mobile-nav-link">ISLANDS</a></li>
-        <li><a href="#concierge-section" class="mobile-nav-link">CONCIERGE</a></li>
-        <li><a href="#chapter-coron" class="mobile-nav-link">ADVENTURE</a></li>
-        <li><a href="#events-section" class="mobile-nav-link">EVENTS</a></li>
-        <li><a href="#itinerary-viewport" class="mobile-nav-link">ITINERARIES</a></li>
-        <li><a href="#about-section" class="mobile-nav-link">ABOUT US</a></li>
-        <li><a href="#team-section" class="mobile-nav-link">OUR TEAM</a></li>
+        <li class="mobile-section-header-title">DISCOVER</li>
+        <li><a href="#chapter-palawan" class="mobile-nav-link sub-link">Islands</a></li>
+        <li><a href="#chapter-coron" class="mobile-nav-link sub-link">Adventure</a></li>
+        <li><a href="#chapter-banaue" class="mobile-nav-link sub-link">Mountains</a></li>
+        <li><a href="#chapter-manila" class="mobile-nav-link sub-link">Culture</a></li>
+        
+        <li class="mobile-section-header-title">EXPLORE</li>
+        <li><a href="#itinerary-viewport" class="mobile-nav-link">Itineraries</a></li>
+        <li><a href="#concierge-section" class="mobile-nav-link">Concierge</a></li>
+        <li><a href="#about-section" class="mobile-nav-link">About Us</a></li>
+        <li><a href="#team-section" class="mobile-nav-link">Our Team</a></li>
       </ul>
       <button class="mobile-nav-cta-btn open-booking-trigger" data-dest="Mobile Consultation">
         BOOK PRIVATE CONSULTATION
@@ -97,7 +105,7 @@
     <div class="map-svg-container">
       <svg viewBox="0 0 160 210" class="ph-map-svg">
         
-        <!-- Background Offset Outlines (Double-outline style matching Image 3) -->
+        <!-- Background Offset Outlines -->
         <g class="map-outlines" transform="translate(1.8, 1.8)">
           <!-- Luzon Outline -->
           <path d="M 68,14 L 84,10 L 92,26 L 86,52 L 78,72 L 95,78 L 96,88 L 78,92 L 68,88 L 62,72 L 66,54 L 54,46 L 58,34 Z" class="island-outline-path" />
@@ -682,7 +690,7 @@
     </div>
   </section>
 
-  <!-- MEETING MODAL POPUP (UPDATED EMAIL TO abbey@abbeysroad.dk) -->
+  <!-- MEETING MODAL POPUP -->
   <div id="meeting-modal" class="meeting-modal">
     <div class="meeting-modal-content">
       <button class="close-modal-btn" id="close-modal">&times;</button>
@@ -698,7 +706,7 @@
     </div>
   </div>
 
-  <!-- FOOTER & CONTACT DETAILS (UPDATED COPENHAGEN ADDRESS AND EMAIL) -->
+  <!-- FOOTER & CONTACT DETAILS -->
   <footer id="global-footer">
     <div class="footer-content" id="footer-content-dynamic">
       <div class="footer-grid">
