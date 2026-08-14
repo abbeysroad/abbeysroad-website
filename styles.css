@@ -1535,4 +1535,82 @@ footer#global-footer {
     opacity: 1;
     margin-top: 1rem;
   }
+
+  /* Responsive Contact Form Adaptability */
+  .booking-card {
+    padding: 1.8rem 1.2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .booking-card form {
+    gap: 0.9rem !important;
+  }
+
+  .booking-card input, 
+  .booking-card select, 
+  .booking-card textarea {
+    padding: 10px !important;
+    font-size: 0.85rem !important;
+  }
+
+  .booking-card h3 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Full Website Mobile Adaptation */
+  .film-chapter {
+    padding-bottom: 3.5rem;
+  }
+
+  .chapter-content-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .hero-cta-group a, 
+  .hero-cta-group button {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 !important;
+  }
+
+  .about-content-grid {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .about-text-card {
+    padding: 1.5rem 1.2rem !important;
+  }
+
+  .concierge-grid {
+    padding: 0 1rem;
+  }
+
+  .concierge-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .timeline-container {
+    padding: 1.5rem 0.8rem !important;
+  }
+
+  .day-card {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .essentials-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    padding: 0 1rem;
+  }
 }
