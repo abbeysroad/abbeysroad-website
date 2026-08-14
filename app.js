@@ -686,6 +686,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Modal open & close binds
   function bindBookingTriggers() {
     const triggers = document.querySelectorAll('.open-booking-trigger');
     const modal = document.getElementById('meeting-modal');
@@ -719,38 +720,6 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('scrolled');
     }
   });
-
-  // ==========================================================================
-  // DESIGN SYSTEM THEME SWITCHER CONTROLLER
-  // ==========================================================================
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  if (themeToggleBtn) {
-    const savedTheme = localStorage.getItem('abbeys-road-theme-selection') || 'abbeys-road';
-    
-    if (savedTheme === 'blixen-tours') {
-      document.body.classList.remove('abbeys-road-theme');
-      document.body.classList.add('blixen-tours-theme');
-      themeToggleBtn.innerText = '🎨 Blixen Tours Style';
-    } else {
-      document.body.classList.remove('blixen-tours-theme');
-      document.body.classList.add('abbeys-road-theme');
-      themeToggleBtn.innerText = '🎨 Abbey\'s Road Style';
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-      if (document.body.classList.contains('abbeys-road-theme')) {
-        document.body.classList.remove('abbeys-road-theme');
-        document.body.classList.add('blixen-tours-theme');
-        themeToggleBtn.innerText = '🎨 Blixen Tours Style';
-        localStorage.setItem('abbeys-road-theme-selection', 'blixen-tours');
-      } else {
-        document.body.classList.remove('blixen-tours-theme');
-        document.body.classList.add('abbeys-road-theme');
-        themeToggleBtn.innerText = '🎨 Abbey\'s Road Style';
-        localStorage.setItem('abbeys-road-theme-selection', 'abbeys-road');
-      }
-    });
-  }
 
   // Initialize features
   initThreeWebGL();
