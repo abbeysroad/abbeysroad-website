@@ -1,42 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Marcellus&family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* ==========================================================================
-   WARM-LUXURY DESIGN SYSTEM (BLIXEN TOURS EXTRACTED COLOR SCHEME)
-   Primary Background: oklch(98% 0.006 75) (Warm White)
-   Card Backgrounds: oklch(95% 0.015 75) (Sand)
-   Main Text/Ink: #2B2620 (Ink)
-   Primary Accent: #B09D6F (Brand Gold)
-   Secondary Accent / Headers & CTAs: #124C5C (Deep Teal)
-   Badge Accent: #672626 (Brick Red)
+   ABBEY'S ROAD BRANDING & DESIGN SYSTEM (WITH NEW FONTS)
+   Main Background / Primary: #202B22 (Dark Tropical Green)
+   Header Logo Background: #FAF5F0 (Warm Cream / Off-White)
+   Accent / Sun Gold: #FFD85F
+   Buttons / Deep Ocean Blue: #104C71 (Hover: #0D3A57)
+   Sub-elements / Soft Lagoon Cyan: #C3F8FE
    ========================================================================== */
 
 :root {
-  --bg-warm-white: oklch(98% 0.006 75);
-  --bg-sand: oklch(95% 0.015 75);
-  --color-ink: #2B2620;
-  --color-gold: #B09D6F;
-  --color-gold-hover: #9c895e;
-  --color-teal: #124C5C;
-  --color-teal-hover: #0d3844;
-  --color-brick-red: #672626;
+  --primary-dark: #202B22;
+  --primary-olive: #28362B;
+  --primary-dark-card: rgba(32, 43, 34, 0.94);
+  --primary-dark-solid: #1B261D;
+  --header-logo-bg: #FAF5F0;
   
-  --border-gold: rgba(176, 157, 111, 0.4);
-  --border-teal: rgba(18, 76, 92, 0.3);
+  --accent-gold: #FFD85F;
+  --accent-gold-hover: #E5C04A;
   
-  --shadow-sm: 0 4px 12px rgba(43, 38, 32, 0.08);
-  --shadow-md: 0 10px 30px rgba(43, 38, 32, 0.12);
-  --shadow-lg: 0 20px 50px rgba(43, 38, 32, 0.18);
+  --btn-blue: #104C71;
+  --btn-blue-hover: #0D3A57;
+  
+  --accent-cyan: #C3F8FE;
+  --accent-cyan-dark: #104C71;
+  
+  --bg-light: #F4F7F4;
+  --bg-card: rgba(32, 43, 34, 0.95);
+  
+  --text-dark: #202B22;
+  --text-light: #6E7E70;
+  --text-white: #FFFFFF;
+  --text-gold: #FFD85F;
+  --text-cyan: #C3F8FE;
+  
+  --border-glass: rgba(195, 248, 254, 0.35);
+  --border-gold: rgba(255, 216, 95, 0.6);
+  
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
   
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-pill: 50px;
   
-  --font-serif: 'Marcellus', serif;
-  --font-sans: 'Work Sans', sans-serif;
-  
   --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
   --transition-normal: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  
+  /* Fonts kept from the design system */
+  --font-serif: 'Marcellus', serif;
+  --font-sans: 'Work Sans', sans-serif;
 }
 
 * {
@@ -48,23 +63,23 @@
 html {
   font-size: 16px;
   font-family: var(--font-sans), sans-serif;
-  color: var(--color-ink);
-  background-color: var(--bg-warm-white);
+  color: var(--text-white);
+  background-color: var(--primary-dark);
 }
 
 body.abbeys-road-theme {
-  background-color: var(--bg-warm-white);
-  color: var(--color-ink);
+  background-color: var(--primary-dark);
+  color: var(--text-white);
   font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
-  line-height: 1.65;
+  line-height: 1.6;
   position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif), serif;
-  font-weight: 400;
-  color: var(--color-teal);
+  font-weight: 400; /* Marcellus looks premium at regular weight */
+  color: var(--accent-gold);
   line-height: 1.25;
 }
 
@@ -73,15 +88,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-warm-white);
+  background: var(--primary-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-teal);
-  border: 2px solid var(--bg-sand);
+  background: var(--btn-blue);
+  border: 2px solid var(--accent-cyan);
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold);
+  background: var(--accent-gold);
 }
 
 /* ==========================================================================
@@ -98,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   GLOBAL HEADER WITH DEEP TEAL BACKDROP MATCHING NAV BAND SPEC
+   GLOBAL HEADER WITH EXACT LOGO BACKGROUND COLOR (#FAF5F0)
    ========================================================================== */
 header#main-header.logo-bg-header-backdrop {
   position: fixed;
@@ -107,15 +122,15 @@ header#main-header.logo-bg-header-backdrop {
   width: 100%;
   z-index: 1000;
   transition: var(--transition-fast);
-  background: rgba(18, 76, 92, 0.98); /* Deep Teal background */
+  background: rgba(250, 245, 240, 0.98);
   backdrop-filter: blur(20px);
-  border-bottom: 2.5px solid var(--color-gold);
+  border-bottom: 2.5px solid var(--accent-gold);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
   padding: 0.25rem 2rem;
 }
 
 header#main-header.scrolled {
-  background: var(--color-teal);
+  background: #FAF5F0;
   padding: 0.15rem 2rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
 }
@@ -137,12 +152,12 @@ header#main-header.scrolled {
   align-items: center;
 }
 
-/* Transparent logo blends clean over Deep Teal header background */
+/* Horizontal Cutout Logo Blending Seamlessly into #FAF5F0 Header */
 .logo-link img.extra-large-logo.horizontal-logo {
   height: 72px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* Invert logo elements to white to pop over Deep Teal */
+  filter: none;
   box-shadow: none;
   transition: height 0.25s ease;
   margin-top: 0;
@@ -152,7 +167,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   height: 58px;
 }
 
-/* Center Desktop Navigation - Styled for White Text on Deep Teal */
+/* Center Desktop Navigation - Styled for #FAF5F0 Backdrop */
 .desktop-nav .nav-links {
   display: flex;
   gap: 1.8rem;
@@ -162,7 +177,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 
 .desktop-nav .nav-links a {
   text-decoration: none;
-  color: #FFFFFF; /* High contrast white over deep teal */
+  color: var(--primary-dark);
   font-weight: 700;
   font-size: 0.88rem;
   letter-spacing: 1.5px;
@@ -179,7 +194,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   left: 0;
   width: 0;
   height: 3px;
-  background-color: var(--color-gold);
+  background-color: var(--accent-gold);
   border-radius: 2px;
   transition: var(--transition-fast);
 }
@@ -191,19 +206,19 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 
 .desktop-nav .nav-links a:hover,
 .desktop-nav .nav-links a.active {
-  color: var(--color-gold);
+  color: var(--btn-blue);
 }
 
-/* Header Center CTA - Clean outline contrast */
+/* Header Center CTA */
 .header-center-cta {
   display: flex;
   align-items: center;
 }
 
 .header-cta-btn {
-  background: var(--color-gold);
-  color: #FFFFFF;
-  border: 2px solid var(--color-gold);
+  background: var(--btn-blue);
+  color: var(--accent-cyan);
+  border: 2px solid var(--btn-blue);
   padding: 12px 28px;
   border-radius: var(--radius-pill);
   font-weight: 700;
@@ -215,13 +230,14 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .header-cta-btn:hover {
-  background: transparent;
-  color: var(--color-gold);
-  box-shadow: 0 4px 15px rgba(176, 157, 111, 0.3);
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  border-color: var(--accent-gold);
+  box-shadow: 0 4px 15px rgba(255, 216, 95, 0.4);
   transform: translateY(-2px);
 }
 
-/* Dropdown Menu - Styled with sand background & high contrast text */
+/* Dropdown Menu */
 .dropdown-item {
   position: relative;
 }
@@ -230,8 +246,8 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--bg-sand);
-  border: 2px solid var(--color-gold);
+  background: #FFFFFF;
+  border: 2px solid var(--accent-gold);
   border-radius: var(--radius-md);
   padding: 0.8rem 0;
   min-width: 280px;
@@ -248,7 +264,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .dropdown-menu li a {
   display: block;
   padding: 0.7rem 1.4rem;
-  color: var(--color-ink) !important;
+  color: var(--primary-dark) !important;
   font-size: 0.9rem;
   text-transform: none;
   letter-spacing: 0;
@@ -257,8 +273,9 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   font-family: var(--font-sans), sans-serif;
 }
 
+/* Submenu Hover Link Color changed to WHITE */
 .dropdown-menu li a:hover {
-  background: var(--color-teal);
+  background: var(--btn-blue);
   color: #FFFFFF !important;
 }
 
@@ -279,7 +296,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .burger-menu-btn .bar {
   width: 100%;
   height: 3.5px;
-  background-color: #FFFFFF;
+  background-color: var(--primary-dark);
   border-radius: 3px;
   transition: transform 0.35s ease, opacity 0.35s ease, background-color 0.35s ease;
 }
@@ -287,14 +304,14 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 /* Burger Active X Animation */
 .burger-menu-btn.burger-active .bar:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
-  background-color: var(--color-gold);
+  background-color: var(--accent-gold);
 }
 .burger-menu-btn.burger-active .bar:nth-child(2) {
   opacity: 0;
 }
 .burger-menu-btn.burger-active .bar:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
-  background-color: var(--color-gold);
+  background-color: var(--accent-gold);
 }
 
 /* Mobile Navigation Full-Screen Drawer Overlay */
@@ -304,7 +321,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(18, 76, 92, 0.98); /* Deep Teal theme drawer */
+  background: rgba(32, 43, 34, 0.98);
   backdrop-filter: blur(25px);
   z-index: 1200;
   display: flex;
@@ -341,13 +358,13 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 2px;
-  color: var(--color-gold);
+  color: var(--accent-gold);
   margin-top: 1rem;
   margin-bottom: 0.2rem;
 }
 
 .mobile-nav-link {
-  color: #FFFFFF;
+  color: var(--text-white);
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: 800;
@@ -358,17 +375,17 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .mobile-nav-link.sub-link {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--accent-cyan);
 }
 
 .mobile-nav-link:hover {
-  color: var(--color-gold);
+  color: var(--accent-gold);
 }
 
 .mobile-nav-cta-btn {
-  background: var(--color-gold);
-  color: #FFFFFF;
-  border: 2px solid var(--color-gold);
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  border: 2px solid var(--accent-gold);
   width: 100%;
   padding: 16px;
   border-radius: var(--radius-pill);
@@ -379,21 +396,21 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 /* ==========================================================================
-   PERSISTENT ACCURATE GEOMETRIC PHILIPPINES MAP INDICATOR (SAND/GOLD THEME)
+   PERSISTENT ACCURATE GEOMETRIC PHILIPPINES MAP INDICATOR
    ========================================================================== */
 #philippines-map-indicator {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 900;
-  background: var(--bg-sand);
-  border: 2.5px solid var(--color-gold);
+  background: rgba(32, 43, 34, 0.96);
+  border: 2.5px solid var(--accent-gold);
   backdrop-filter: blur(20px);
   border-radius: 20px;
   padding: 1.1rem 1.2rem;
   width: 175px;
   text-align: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   transition: var(--transition-normal);
   pointer-events: none;
 }
@@ -402,7 +419,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 1.5px;
-  color: var(--color-teal);
+  color: var(--accent-gold);
   margin-bottom: 0.5rem;
 }
 
@@ -414,12 +431,13 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .ph-map-svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 2px 4px rgba(43,38,32,0.25));
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
 }
 
+/* Geometric Polygon SVG Island Path Styling */
 .island-path {
-  fill: rgba(18, 76, 92, 0.15);
-  stroke: var(--color-teal);
+  fill: rgba(195, 248, 254, 0.35);
+  stroke: var(--accent-cyan);
   stroke-width: 1.5;
   stroke-linejoin: round;
   stroke-linecap: round;
@@ -427,22 +445,23 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .island-path.active-region {
-  fill: var(--color-gold);
+  fill: var(--accent-gold);
   stroke: #FFFFFF;
   stroke-width: 2.2;
-  filter: drop-shadow(0 0 8px rgba(176, 157, 111, 0.75));
+  filter: drop-shadow(0 0 12px rgba(255, 216, 95, 0.95));
 }
 
+/* Double Outline Shadow Path matching Image 3 offset outline */
 .island-outline-path {
   fill: none;
-  stroke: rgba(18, 76, 92, 0.1);
+  stroke: rgba(195, 248, 254, 0.18);
   stroke-width: 2.5;
   stroke-linejoin: round;
   stroke-linecap: round;
 }
 
 .map-beacon {
-  fill: var(--color-brick-red);
+  fill: #FF3B30;
   stroke: #FFFFFF;
   stroke-width: 1;
   animation: pulse-beacon 1.5s infinite;
@@ -459,12 +478,12 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 1px;
-  color: var(--color-teal);
+  color: var(--accent-cyan);
   margin-top: 0.5rem;
 }
 
 /* ==========================================================================
-   CINEMATIC TRAVEL FILM HERO
+   CINEMATIC TRAVEL FILM HERO WITH IMMERSIVE SCROLL ZOOM MOTION
    ========================================================================== */
 .hero-film-container {
   position: relative;
@@ -485,6 +504,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   background: transparent;
 }
 
+/* Background Media & Stacking Layers */
 .chapter-background-media {
   position: absolute;
   top: 0;
@@ -503,12 +523,11 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  filter: brightness(0.9) contrast(1.05);
+  filter: brightness(0.95) contrast(1.05);
   transform: scale(1.0);
   will-change: transform;
 }
 
-/* Elegant blend to warm white theme backgrounds */
 .vignette-overlay {
   position: absolute;
   top: 0;
@@ -516,10 +535,11 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: linear-gradient(180deg, rgba(43, 38, 32, 0.4) 0%, rgba(43, 38, 32, 0) 50%, var(--bg-warm-white) 100%);
+  background: linear-gradient(180deg, rgba(32, 43, 34, 0.4) 0%, rgba(32, 43, 34, 0.1) 50%, rgba(32, 43, 34, 0.75) 100%);
   pointer-events: none;
 }
 
+/* Chapter Content Layout */
 .chapter-content-container {
   max-width: 1000px;
   z-index: 10;
@@ -543,19 +563,18 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   justify-content: flex-end;
 }
 
-/* Sand-Colored High-Contrast Destination Cards */
+/* Glassmorphic Destination Information Card */
 .dest-info-card {
-  background: var(--bg-sand);
-  border: 2.5px solid var(--color-gold);
+  background: rgba(32, 43, 34, 0.94);
+  border: 2.5px solid var(--accent-cyan);
   backdrop-filter: blur(25px);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   max-width: 500px;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  color: var(--color-ink);
+  transition: transform 0.3s ease, border-color 0.3s ease, padding 0.4s ease;
 }
 
 .dest-info-card::before {
@@ -565,12 +584,12 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   left: 0;
   width: 6px;
   height: 100%;
-  background: linear-gradient(180deg, var(--color-gold) 0%, var(--color-teal) 100%);
+  background: linear-gradient(180deg, var(--accent-gold) 0%, var(--btn-blue) 100%);
 }
 
 .dest-info-card:hover {
   transform: translateY(-4px);
-  border-color: var(--color-teal);
+  border-color: var(--accent-gold);
 }
 
 .dest-card-header-toggle {
@@ -584,7 +603,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 2px;
-  color: var(--color-teal);
+  color: var(--accent-gold);
   margin-bottom: 0.4rem;
   text-transform: uppercase;
 }
@@ -593,7 +612,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   font-family: var(--font-serif), serif;
   font-size: 2.4rem;
   font-weight: 400;
-  color: var(--color-ink);
+  color: var(--accent-gold);
   margin-bottom: 0.2rem;
   line-height: 1.1;
 }
@@ -612,49 +631,45 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.gold-chevron-icon path {
-  stroke: var(--color-gold);
-}
-
 .dest-card-collapsible-body {
   width: 100%;
 }
 
 .card-sub {
   font-size: 0.95rem;
-  color: var(--color-gold);
+  color: var(--accent-cyan);
   margin-bottom: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .card-desc {
   font-size: 0.98rem;
-  color: var(--color-ink);
+  color: #FFFFFF;
   line-height: 1.65;
   margin-bottom: 1.5rem;
 }
 
 .card-meta-list {
-  background: rgba(18, 76, 92, 0.08);
-  border: 1px solid var(--border-gold);
+  background: rgba(16, 76, 113, 0.45);
+  border: 1px solid var(--accent-cyan);
   border-radius: var(--radius-md);
   padding: 1rem 1.2rem;
   margin-bottom: 1.8rem;
   font-size: 0.85rem;
-  color: var(--color-ink);
+  color: rgba(255, 255, 255, 0.95);
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
 
 .card-meta-list strong {
-  color: var(--color-teal);
+  color: var(--accent-gold);
 }
 
 .card-cta-btn {
-  background: var(--color-teal);
-  color: #FFFFFF;
-  border: 2px solid var(--color-teal);
+  background: var(--btn-blue);
+  color: var(--accent-cyan);
+  border: 2px solid var(--accent-cyan);
   width: 100%;
   padding: 14px 20px;
   border-radius: var(--radius-pill);
@@ -667,9 +682,10 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .card-cta-btn:hover {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
-  box-shadow: 0 0 20px rgba(176, 157, 111, 0.4);
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(255, 216, 95, 0.4);
 }
 
 /* Editorial Typography */
@@ -677,7 +693,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 3px;
-  color: var(--color-gold);
+  color: var(--accent-cyan);
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
@@ -699,51 +715,19 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .gold-text {
-  color: var(--color-gold);
+  color: var(--accent-gold);
 }
 
 .cyan-text {
-  color: var(--color-teal);
-}
-
-/* High contrast white text for the primary hero backdrop */
-.chapter-intro .gold-text {
-  color: #FFD85F; /* Higher luminance gold specifically for dark image backings */
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-.chapter-intro .cyan-text {
-  color: #C3F8FE; /* High contrast cyan for dark image backings */
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-.chapter-intro .brand-eyebrow {
-  color: #C3F8FE;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-.chapter-intro .film-subtitle {
-  color: #FFFFFF;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  color: var(--accent-cyan);
 }
 
 .film-subtitle {
   font-size: 1.2rem;
-  color: var(--color-ink);
+  color: rgba(255, 255, 255, 0.95);
   font-weight: 400;
   line-height: 1.7;
   margin-bottom: 2.5rem;
-}
-
-/* High contrast finale text overlay */
-.chapter-finale .giant-editorial-title {
-  color: #FFFFFF;
-  text-shadow: 0 2px 15px rgba(0,0,0,0.6);
-}
-.chapter-finale .cyan-text {
-  color: #C3F8FE;
-}
-.chapter-finale .film-subtitle,
-.chapter-finale .brand-eyebrow {
-  color: #FFFFFF;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
 .max-width-700 {
@@ -758,7 +742,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  color: var(--color-gold);
+  color: var(--accent-gold);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 2px;
@@ -768,7 +752,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .mouse-icon {
   width: 24px;
   height: 38px;
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--accent-gold);
   border-radius: 12px;
   position: relative;
 }
@@ -776,7 +760,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .mouse-icon .wheel {
   width: 4px;
   height: 8px;
-  background: var(--color-teal);
+  background: var(--accent-cyan);
   border-radius: 2px;
   position: absolute;
   top: 6px;
@@ -799,9 +783,9 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .btn-primary-cyan {
-  background: var(--color-teal);
-  color: #FFFFFF;
-  border: 2px solid var(--color-teal);
+  background: var(--btn-blue);
+  color: var(--accent-cyan);
+  border: 2px solid var(--accent-cyan);
   padding: 16px 36px;
   border-radius: var(--radius-pill);
   font-weight: 700;
@@ -809,21 +793,22 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   letter-spacing: 1.5px;
   cursor: pointer;
   transition: var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   font-family: var(--font-sans), sans-serif;
 }
 
 .btn-primary-cyan:hover {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 30px rgba(255, 216, 95, 0.5);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
 }
 
 .btn-secondary-gold {
-  background: var(--color-gold);
-  color: #FFFFFF;
-  border: 2px solid var(--color-gold);
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  border: 2px solid var(--accent-gold);
   padding: 16px 36px;
   border-radius: var(--radius-pill);
   font-weight: 700;
@@ -837,8 +822,9 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .btn-secondary-gold:hover {
-  background: var(--color-teal);
-  border-color: var(--color-teal);
+  background: var(--btn-blue);
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
   transform: translateY(-3px);
 }
 
@@ -848,14 +834,14 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .concierge-section, .events-section {
   position: relative;
   z-index: 20;
-  background-color: var(--bg-warm-white);
+  background-color: var(--primary-dark);
   padding: 6rem 2.5rem;
 }
 
 .gold-badge {
   display: inline-block;
-  background: var(--color-gold);
-  color: #FFFFFF;
+  background: var(--accent-gold);
+  color: var(--primary-dark);
   font-weight: 700;
   font-size: 0.78rem;
   padding: 4px 16px;
@@ -874,17 +860,16 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .concierge-card {
-  background: var(--bg-sand);
-  border: 2px solid var(--border-gold);
+  background: rgba(32, 43, 34, 0.95);
+  border: 2px solid var(--accent-cyan);
   border-radius: var(--radius-lg);
   padding: 2.2rem;
   transition: transform 0.3s ease, border-color 0.3s ease;
-  color: var(--color-ink);
 }
 
 .concierge-card:hover {
   transform: translateY(-5px);
-  border-color: var(--color-teal);
+  border-color: var(--accent-gold);
 }
 
 .concierge-icon {
@@ -893,13 +878,13 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .concierge-card h3 {
-  color: var(--color-teal);
+  color: var(--accent-gold);
   font-size: 1.3rem;
   margin-bottom: 0.6rem;
 }
 
 .concierge-card p {
-  color: var(--color-ink);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.94rem;
   line-height: 1.6;
 }
@@ -908,8 +893,8 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .events-container {
   max-width: 1250px;
   margin: 0 auto;
-  background: var(--bg-sand);
-  border: 2.5px solid var(--color-gold);
+  background: rgba(16, 76, 113, 0.45);
+  border: 2.5px solid var(--accent-gold);
   border-radius: var(--radius-lg);
   padding: 3.5rem;
   display: grid;
@@ -920,14 +905,14 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 
 .event-subtitle {
   font-size: 1.15rem;
-  color: var(--color-teal);
+  color: var(--accent-cyan);
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .event-desc {
   font-size: 0.98rem;
-  color: var(--color-ink);
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.7;
   margin-bottom: 2rem;
 }
@@ -937,16 +922,16 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   height: 320px;
   object-fit: cover;
   border-radius: var(--radius-md);
-  border: 2px solid var(--border-gold);
+  border: 2px solid var(--accent-cyan);
 }
 
 /* ==========================================================================
-   PRESERVED ITINERARY VIEWPORT, ABOUT & TEAM SECTIONS IN BRAND COLORS
+   PRESERVED ITINERARY VIEWPORT, ABOUT & TEAM SECTIONS
    ========================================================================== */
 .itinerary-viewport {
   position: relative;
   z-index: 20;
-  background-color: var(--bg-warm-white);
+  background-color: var(--primary-dark);
   padding-top: 4rem;
 }
 
@@ -964,8 +949,8 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .essential-card {
-  background: var(--bg-sand);
-  border: 1px solid var(--border-gold);
+  background: rgba(16, 76, 113, 0.35);
+  border: 1px solid var(--accent-cyan);
   border-radius: var(--radius-md);
   padding: 1.8rem;
   text-align: center;
@@ -978,13 +963,13 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .essential-card h4 {
-  color: var(--color-teal);
+  color: var(--accent-gold);
   font-size: 1rem;
   margin-bottom: 0.2rem;
 }
 
 .essential-card p {
-  color: var(--color-gold);
+  color: var(--accent-cyan);
   font-weight: 700;
 }
 
@@ -996,7 +981,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .timeline-heading {
   font-family: var(--font-serif), serif;
   font-size: 2rem;
-  color: var(--color-teal);
+  color: var(--accent-gold);
   text-align: center;
   margin-bottom: 2.5rem;
   letter-spacing: 2px;
@@ -1009,8 +994,8 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .day-card {
-  background: var(--bg-sand);
-  border: 2px solid var(--border-gold);
+  background: rgba(32, 43, 34, 0.95);
+  border: 2px solid var(--accent-cyan);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   position: relative;
@@ -1018,8 +1003,8 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 
 .day-badge {
   display: inline-block;
-  background: var(--color-brick-red); /* High-contrast Brick Red badge */
-  color: #FFFFFF;
+  background: var(--accent-gold);
+  color: var(--primary-dark);
   font-weight: 700;
   font-size: 0.8rem;
   padding: 4px 14px;
@@ -1029,20 +1014,20 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .day-title {
-  color: var(--color-teal);
+  color: var(--accent-gold);
   font-size: 1.8rem;
   margin-bottom: 0.4rem;
 }
 
 .day-tagline {
-  color: var(--color-gold);
-  font-weight: 700;
+  color: var(--accent-cyan);
+  font-weight: 600;
   font-size: 1rem;
   margin-bottom: 1rem;
 }
 
 .day-vibe {
-  color: var(--color-ink);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1.5rem;
 }
 
@@ -1057,10 +1042,10 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  background: rgba(18, 76, 92, 0.08);
+  background: rgba(16, 76, 113, 0.3);
   padding: 0.8rem 1.2rem;
   border-radius: var(--radius-sm);
-  border-left: 3px solid var(--color-gold);
+  border-left: 3px solid var(--accent-gold);
 }
 
 .hl-icon {
@@ -1069,7 +1054,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 
 .day-stay {
   font-weight: 700;
-  color: var(--color-teal);
+  color: var(--accent-cyan);
   margin-bottom: 1.5rem;
 }
 
@@ -1078,7 +1063,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--accent-cyan);
 }
 
 .carousel-track {
@@ -1112,7 +1097,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   left: 0;
   width: 100%;
   padding: 1.5rem 2rem;
-  background: linear-gradient(180deg, transparent 0%, rgba(43, 38, 32, 0.92) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(32, 43, 34, 0.92) 100%);
   color: #FFFFFF;
 }
 
@@ -1142,8 +1127,8 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 
 /* Booking Section Box */
 .booking-card {
-  background: var(--bg-sand);
-  border: 2px solid var(--color-gold);
+  background: rgba(16, 76, 113, 0.45);
+  border: 2px solid var(--accent-gold);
   border-radius: var(--radius-lg);
   padding: 3rem;
   text-align: center;
@@ -1153,7 +1138,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 
 .booking-card h3 {
   font-size: 2rem;
-  color: var(--color-teal);
+  color: var(--accent-gold);
   margin-bottom: 0.8rem;
 }
 
@@ -1167,8 +1152,8 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .booking-bullets li {
-  color: var(--color-gold);
-  font-weight: 700;
+  color: var(--accent-cyan);
+  font-weight: 600;
 }
 
 .pricing-summary {
@@ -1178,20 +1163,20 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .price-label {
   display: block;
   font-size: 0.9rem;
-  color: var(--color-ink);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .price-val {
   font-size: 3rem;
   font-weight: 900;
-  color: var(--color-gold);
+  color: var(--accent-gold);
 }
 
 /* About & Team Sections */
 .about-section, .team-section {
   position: relative;
   z-index: 20;
-  background-color: var(--bg-warm-white);
+  background-color: var(--primary-dark);
   padding: 6rem 2.5rem;
 }
 
@@ -1204,14 +1189,14 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .section-header h2 {
   font-family: var(--font-serif), serif;
   font-size: 2.5rem;
-  color: var(--color-teal);
+  color: var(--accent-gold);
   letter-spacing: 2px;
   margin-bottom: 0.8rem;
 }
 
 .section-tagline {
   font-size: 1.1rem;
-  color: var(--color-gold);
+  color: var(--accent-cyan);
 }
 
 .about-content-grid {
@@ -1223,20 +1208,20 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .about-text-card {
-  background: var(--bg-sand);
-  border: 2px solid var(--border-gold);
+  background: rgba(32, 43, 34, 0.95);
+  border: 2px solid var(--accent-cyan);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
 }
 
 .about-text-card h3 {
-  color: var(--color-teal);
+  color: var(--accent-gold);
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
 .about-text-card p {
-  color: var(--color-ink);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.7;
 }
 
@@ -1250,8 +1235,8 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .team-card {
-  background: var(--bg-sand);
-  border: 2px solid var(--border-gold);
+  background: rgba(32, 43, 34, 0.95);
+  border: 2px solid var(--accent-cyan);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -1259,7 +1244,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 
 .team-card:hover {
   transform: translateY(-4px);
-  border-color: var(--color-teal);
+  border-color: var(--accent-gold);
 }
 
 .team-img-container img {
@@ -1273,31 +1258,31 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .team-info h4 {
-  color: var(--color-teal);
+  color: var(--accent-gold);
   font-size: 1.25rem;
 }
 
 .team-role {
-  color: var(--color-gold);
+  color: var(--accent-cyan);
   font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
 }
 
 .team-bio {
-  color: var(--color-ink);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.88rem;
   line-height: 1.5;
 }
 
-/* Meeting Modal - Sand colored popup */
+/* Meeting Modal */
 .meeting-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(43, 38, 32, 0.7);
+  background: rgba(22, 32, 24, 0.88);
   backdrop-filter: blur(15px);
   z-index: 2000;
   display: none;
@@ -1311,8 +1296,8 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .meeting-modal-content {
-  background: var(--bg-sand);
-  border: 2px solid var(--color-gold);
+  background: var(--primary-dark);
+  border: 2px solid var(--accent-gold);
   border-radius: var(--radius-lg);
   padding: 3rem;
   max-width: 500px;
@@ -1320,7 +1305,6 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   position: relative;
   text-align: center;
   box-shadow: var(--shadow-lg);
-  color: var(--color-ink);
 }
 
 .close-modal-btn {
@@ -1329,7 +1313,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   right: 1.5rem;
   background: transparent;
   border: none;
-  color: var(--color-gold);
+  color: var(--accent-cyan);
   font-size: 2rem;
   cursor: pointer;
 }
@@ -1337,9 +1321,9 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 .modal-avatar {
   width: 70px;
   height: 70px;
-  background: var(--color-teal);
-  color: var(--color-gold);
-  border: 2px solid var(--color-gold);
+  background: var(--btn-blue);
+  color: var(--accent-gold);
+  border: 2px solid var(--accent-gold);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1351,9 +1335,9 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 
 .modal-email-btn {
   display: inline-block;
-  background: var(--color-teal);
-  color: #FFFFFF;
-  border: 2px solid var(--color-teal);
+  background: var(--btn-blue);
+  color: var(--accent-cyan);
+  border: 2px solid var(--btn-blue);
   padding: 14px 28px;
   border-radius: var(--radius-pill);
   text-decoration: none;
@@ -1364,16 +1348,16 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .modal-email-btn:hover {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
+  background: var(--accent-gold);
+  color: var(--primary-dark);
 }
 
-/* Footer - Deep Teal Backdrop with high contrast elements */
+/* Footer */
 footer#global-footer {
   position: relative;
   z-index: 20;
-  background: var(--color-teal);
-  border-top: 2.5px solid var(--color-gold);
+  background: var(--primary-dark);
+  border-top: 2px solid var(--accent-gold);
   padding: 4rem 2.5rem 2rem;
   text-align: center;
 }
@@ -1390,26 +1374,25 @@ footer#global-footer {
 .footer-grid h4 {
   margin-bottom: 0.6rem;
   font-size: 1.1rem;
-  color: var(--color-gold); /* Gold title */
 }
 
 .footer-grid p {
-  color: #FFFFFF; /* High-contrast white text */
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
 }
 
 .footer-subtext {
-  color: var(--color-gold) !important;
+  color: var(--accent-cyan) !important;
   font-weight: 700;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(195, 248, 254, 0.2);
   padding-top: 1.5rem;
   margin-top: 2rem;
   font-size: 0.85rem;
-  color: var(--color-gold);
+  color: var(--accent-cyan);
 }
 
 /* ==========================================================================
@@ -1465,7 +1448,7 @@ footer#global-footer {
   .film-subtitle { font-size: 1rem; }
   .team-grid-4 { grid-template-columns: 1fr; }
   
-  /* Mobile Chapter Alignment - Align Cards at TOP of Destination Section */
+  /* Mobile Chapter Alignment */
   .film-chapter {
     align-items: flex-start;
     padding-top: 6.5rem;
@@ -1485,13 +1468,13 @@ footer#global-footer {
 
   /* Mobile Collapsible Olive Green Button Card */
   .dest-info-card {
-    background: var(--bg-sand);
-    border: 2.5px solid var(--color-gold);
+    background: var(--primary-olive);
+    border: 2.5px solid var(--accent-gold);
     border-radius: 22px;
     padding: 0.9rem 1.2rem;
     width: 100%;
     max-width: 100%;
-    box-shadow: 0 10px 30px rgba(43, 38, 32, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     margin-top: 0;
@@ -1503,7 +1486,7 @@ footer#global-footer {
 
   .card-dest-title {
     font-size: 1.35rem;
-    color: var(--color-teal);
+    color: var(--accent-gold);
     margin: 0;
   }
 
@@ -1524,8 +1507,8 @@ footer#global-footer {
   /* Expanded State */
   .dest-info-card.expanded {
     padding: 1.6rem 1.3rem;
-    border-color: var(--color-gold);
-    background: var(--bg-sand);
+    border-color: var(--accent-cyan);
+    background: rgba(32, 43, 34, 0.96);
   }
 
   .dest-info-card.expanded .gold-chevron-icon {
