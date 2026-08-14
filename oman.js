@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "subtitle": "5-Star Luxury Mountain & Coastal Retreats:",
       "title": "Omani Majesty: Mountains & Coast",
       "description": "Escape to the cooling heights of Jabal Akhdar and relax on the pristine beaches of Muscat on this curated 5-star getaway.",
-      "background_image": "images/contact_footer.jpg",
+      "background_image": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg",
       "cta_book": "Secure Your Luxury Oman Escape",
       "cta_view": "View Itinerary Details"
     },
@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-oman-day1",
           "slides": [
-            { "type": "single", "src": "images/contact_footer.jpg", "alt": "Chedi Muscat Water Gardens", "title": "The Chedi Water Gardens", "caption": "Lush landscape design blending with Arabian minimalist architecture." },
-            { "type": "single", "src": "images/oslofjord_sunset.png", "alt": "Chedi Muscat Beachfront", "title": "Private Shoreline Lounge", "caption": "Pristine sandy beach with luxury canopy cabanas." },
-            { "type": "single", "src": "images/road_to_al.png", "alt": "Luxury Hotel Lobby", "title": "1001 Nights Lobby Entrance", "caption": "Authentic lanterns and incense welcoming premium guests." },
-            { "type": "single", "src": "images/fjord_waterways.png", "alt": "Seaside Pools", "title": "The Serai Pool", "caption": "Temperature-controlled swimming pools overlooking the gulf." }
+            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Muscat Water Gardens", "title": "The Chedi Water Gardens", "caption": "Lush landscape design blending with Arabian minimalist architecture." },
+            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Dhow Sailing Muscat", "title": "Coastal Dhow Sailing", "caption": "Traditional wooden dhows navigating Muscat's clean coast." },
+            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Muscat Ocean Cliffs", "title": "Muscat Coastal Cliffs", "caption": "Turquoise waters spraying along dramatic shoreline rock formations." },
+            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Dolphins Swimming", "title": "Muscat Dolphin Watching", "caption": "Schools of dolphins swimming alongside the local dhow charters." }
           ]
         }
       },
@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-oman-day2",
           "slides": [
-            { "type": "single", "src": "images/uspenski_cathedral.png", "alt": "Sultan Qaboos Grand Mosque", "title": "Grand Mosque Dome", "caption": "Exquisite Islamic hand-carved details and marble pillars." },
-            { "type": "single", "src": "images/page_3_img_1_X22.jpg", "alt": "Mosque Chandelier", "title": "Swarovski Chandelier", "caption": "The grand prayer hall's legendary ceiling lighting." },
-            { "type": "single", "src": "images/page_1_img_2_X9.jpg", "alt": "Muttrah Souk Markets", "title": "Muttrah Souk Markets", "caption": "Vibrant spices, frankincense burners, and traditional artifacts." },
-            { "type": "single", "src": "images/page_2_img_4_X16.jpg", "alt": "Al Alam Palace Gates", "title": "Al Alam Palace Gates", "caption": "Gold and blue pillars of the Sultan's ceremonial palace." }
+            { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Sultan Qaboos Grand Mosque", "title": "Grand Mosque Exterior", "caption": "Exquisite Islamic hand-carved details and marble pillars." },
+            { "type": "single", "src": "images/oman/Royal_Opera_House_exterior_at_202608141639.jpeg", "alt": "Royal Opera House Muscat", "title": "Royal Opera House", "caption": "Stunning white limestone architecture and pristine geometric gardens." },
+            { "type": "single", "src": "images/oman/Frankincense_burning_in_Muttrah_…_202608141639.jpeg", "alt": "Muttrah Souk Incense", "title": "Incense Souk Stalls", "caption": "Fragrant local frankincense burning in decorative clay vessels." },
+            { "type": "single", "src": "images/oman/Sunbeams_streaming_into_historic…_202608141639.jpeg", "alt": "Sunbeams in Historic Building", "title": "Sultanate Heritage Interiors", "caption": "Warm golden sunbeams illuminating traditional arches and pottery." }
           ]
         }
       },
@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-oman-day3",
           "slides": [
-            { "type": "single", "src": "images/road_to_al.png", "alt": "Mountain Pass Ascent", "title": "Al Hajar Mountain Switchbacks", "caption": "Thrilling 4x4 winding roads climbing into the clouds." },
-            { "type": "single", "src": "images/naeroyfjord.png", "alt": "Birkat Al Mouz Mud Ruins", "title": "Birkat Al Mouz Mud Ruins", "caption": "Abandoned clay dwellings tucked beneath palm groves." },
-            { "type": "single", "src": "images/page_3_img_6_X27.png", "alt": "Alila Jabal Akhdar Cliff", "title": "Alila Jabal Akhdar Cliff Edge", "caption": "Luxury eco-resort constructed from local mountain stone." },
-            { "type": "single", "src": "images/page_3_img_4_X25.jpg", "alt": "Resort Horizon View", "title": "Horizon View Balcony", "caption": "Overlooking deep limestone gorges directly from your private suite." }
+            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Alila Jabal Akhdar Pool", "title": "Cliffside Mountain Pool", "caption": "Infinity pool overlooking sweeping canyon gorges at 2000m altitude." },
+            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Birkat Al Mouz Palms", "title": "Birkat Al Mouz Ruins", "caption": "Historic clay ruins nestled under green date palm plantations." },
+            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Balcony Walk Path", "title": "Wadi Ghul Mountain Ridges", "caption": "Rugged canyons climbing high into the sky." },
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Mountain mudbrick village", "title": "Misfat Al Abriyeen Terraces", "caption": "Multi-story clay houses hanging on the steep mountain slopes." }
           ]
         }
       },
@@ -107,10 +107,10 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-oman-day4",
           "slides": [
-            { "type": "single", "src": "images/fjord_waterways.png", "alt": "Canyon Ravines", "title": "Spectacular Canyon Ravines", "caption": "Limestone canyon walls plunging hundreds of meters below." },
-            { "type": "single", "src": "images/page_3_img_5_X26.jpg", "alt": "Mountain Rose Terraces", "title": "Jabal Akhdar Rose Terraces", "caption": "Fragrant rose fields clinging to the steep cliffs." },
-            { "type": "single", "src": "images/page_2_img_5_X18.jpg", "alt": "Ancient Village Walkway", "title": "Village Stone Walkway", "caption": "Walking paths connecting traditional Omani mountain communities." },
-            { "type": "single", "src": "images/page_2_img_3_X15.jpg", "alt": "Local Rosewater Distillery", "title": "Traditional Clay Stills", "caption": "Clay ovens cooking roses to distill pure rose water." }
+            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Wadi Ghul Balcony Walk", "title": "Wadi Ghul Balcony Walk", "caption": "Hiking routes following thin ridges with vertical mountain drops." },
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Mountain village stone path", "title": "Mountain Stone Terraces", "caption": "Stone terraces built by local tribes centuries ago." },
+            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Ancient village plantation", "title": "Ancient Terraced Farming", "caption": "Rose water crops watered by mountain streams." },
+            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Camels in mountain river", "title": "Omani Camels Grazing", "caption": "Wild camels roaming down natural mountain river banks." }
           ]
         }
       },
@@ -129,10 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-oman-day5",
           "slides": [
-            { "type": "single", "src": "images/uspenski_cathedral.png", "alt": "Nizwa Fort Tower", "title": "Nizwa Fort Main Tower", "caption": "Oman's largest historic circular defense structure." },
-            { "type": "single", "src": "images/page_1_img_3_X10.jpg", "alt": "Fort Ramparts view", "title": "Nizwa Clay Ramparts", "caption": "Mud-brick walls framing Nizwa town palm oases." },
-            { "type": "single", "src": "images/page_2_img_2_X14.jpg", "alt": "Traditional Silver Souk", "title": "Silver Handcraft Souk", "caption": "Browsing hand-crafted silver jewelry and traditional Omani daggers." },
-            { "type": "single", "src": "images/page_2_img_1_X13.png", "alt": "Clay Pottery Shops", "title": "Bahla Clay Pottery", "caption": "Traditional water vessels on display in Nizwa market." }
+            { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort Tower", "title": "Nizwa Fort Circular Tower", "caption": "Oman's largest historic circular defense structure." },
+            { "type": "single", "src": "images/oman/Host_pouring_coffee_into_cup_202608141639.jpeg", "alt": "Omani Coffee Hospitality", "title": "Omani Hospitality Coffee", "caption": "Pouring traditional spiced cardamom coffee into small cups." },
+            { "type": "single", "src": "images/oman/Sunbeams_streaming_into_historic…_202608141639.jpeg", "alt": "Inside Nizwa Fort", "title": "Fort Clay Chambers", "caption": "Beautiful interior rooms inside the Nizwa fort complex." },
+            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Nizwa Town Palms", "title": "Nizwa Town Palms", "caption": "Vast green oases surrounding the historic Nizwa souk." }
           ]
         }
       },
@@ -151,10 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-oman-day6",
           "slides": [
-            { "type": "single", "src": "images/contact_footer.jpg", "alt": "Chedi Long Pool Sunset", "title": "Chedi Long Pool Sunset", "caption": "Arabian lanterns lit alongside the mirror-like long pool." },
-            { "type": "single", "src": "images/oslofjord_sunset.png", "alt": "Spa Treatment Rooms", "title": "Spa Alila Treatment", "caption": "Serene spa interiors offering premium organic therapies." },
-            { "type": "single", "src": "images/fjord_waterways.png", "alt": "Beachfront Diners", "title": "Seaside Beach Restaurant", "caption": "Fine dining with fresh catches right on the Gulf coast." },
-            { "type": "single", "src": "images/road_to_al.png", "alt": "Quiet Gardens", "title": "Symmetrical Courtyards", "caption": "Beautiful fountains and water gardens inside the resort." }
+            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Long Pool Sunset", "title": "Chedi Long Pool Sunset", "caption": "Arabian lanterns lit alongside the mirror-like long pool." },
+            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Dhow Sunset Sailing", "title": "Sunset Dhow Cruise", "caption": "Sailing past Muscat cliffs under a golden twilight sky." },
+            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Chedi Beach Shore", "title": "Chedi Beach Shoreline", "caption": "Lounge beds overlooking the calm shoreline waters." },
+            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Coastal dolphin pods", "title": "Seaside Dolphin Pods", "caption": "Wild dolphins jumping near the coastal safari boat." }
           ]
         }
       },
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-oman-day8",
           "slides": [
-            { "type": "single", "src": "images/contact_footer.jpg", "alt": "Muscat Departure", "title": "Muscat International Airport", "caption": "Modern terminal arches and duty-free lounges." }
+            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Oman Departure", "title": "Muscat Coastal Peaks", "caption": "Ascending above the Gulf coast for your flight home." }
           ]
         }
       }
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": "om-dec20", "label": "Dec 20 – Dec 27", "season": "Holiday Peak", "price_modifier": 480 },
         { "id": "om-feb10", "label": "Feb 10 – Feb 17", "season": "Mild Spring Season", "price_modifier": 150 }
       ],
-      "cabin_options": [
+      "focus_options": [
         { "id": "chedi-deluxe", "name": "Chedi Muscat Deluxe Room", "description": "Elegant design facing the gardens", "price_per_person": 0 },
         { "id": "chedi-club-suite", "name": "Chedi Muscat Club Suite", "description": "Includes VIP lounge access & airport fast-track", "price_per_person": 850 }
       ],
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "phone": "+45 2622 0288",
       "email": "abbey@abbeysroad.dk",
       "web": "www.abbeysroad.com",
-      "contact_image": "images/contact_footer.jpg"
+      "contact_image": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg"
     }
   },
   {
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "subtitle": "4x4 Desert Crossing, Gorges & Bedouin Glamping:",
       "title": "Desert Winds & Emerald Wadis Safari",
       "description": "Cross towering sand dunes, hike through hidden wadi canyons, and sleep under desert stars on this comprehensive Omani safari.",
-      "background_image": "images/baltic_sunset.png",
+      "background_image": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg",
       "cta_book": "Secure Your Safari Adventure",
       "cta_view": "View Itinerary Details"
     },
@@ -249,8 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day1",
           "slides": [
-            { "type": "single", "src": "images/contact_footer.jpg", "alt": "Muscat Cliffs View", "title": "Muscat Seaside Heights", "caption": "Overlooking the pristine sand beaches and cliffs of Muscat." },
-            { "type": "single", "src": "images/oslofjord_sunset.png", "alt": "Hotel Oceanfront Pool", "title": "Seaside Cliff Pool", "caption": "Unwinding pool overlooking the coastal gulf." }
+            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Muscat Cliffs View", "title": "Muscat Seaside Heights", "caption": "Overlooking the pristine sand beaches and cliffs of Muscat." },
+            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Muscat Shoreline", "title": "Seaside Cliff Shoreline", "caption": "Unwinding pools overlooking the coastal gulf." }
           ]
         }
       },
@@ -269,10 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day2",
           "slides": [
-            { "type": "single", "src": "images/fjord_waterways.png", "alt": "Bimmah Sinkhole", "title": "Bimmah Limestone Sinkhole", "caption": "Crystal clear turquoise water tucked inside a limestone crater." },
-            { "type": "single", "src": "images/norway_rivers.png", "alt": "Wadi Shab Entrance", "title": "Wadi Shab Gorge", "caption": "Boarding small outriggers to cross the wadi river mouth." },
-            { "type": "single", "src": "images/page_3_img_3_X24.jpg", "alt": "Wadi Canyon Path", "title": "Canyon Gorge Trails", "caption": "Walking between vertical towering limestone walls." },
-            { "type": "single", "src": "images/page_3_img_2_X23.jpg", "alt": "Hidden Cave Swim", "title": "Hidden Cave Waterfall", "caption": "Swimming through a narrow crack into a dark waterfall cavern." }
+            { "type": "single", "src": "images/oman/River_flowing_through_canyon_202608141630.jpeg", "alt": "River flowing through canyon", "title": "Wadi Shab Gorge River", "caption": "Beautiful freshwater flowing through limestone gorges." },
+            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Travelers wading in pools", "title": "Wading in Canyon Pools", "caption": "Deep pools of clear emerald water welcoming swimmers." },
+            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Wadi Cliff Walls", "title": "Canyon Gorge Walls", "caption": "Walking between vertical towering limestone walls." },
+            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Ocean Life Muscat", "title": "Muscat Sea Life", "caption": "Jumping dolphins seen near coastal wadi trails." }
           ]
         }
       },
@@ -291,10 +291,10 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day3",
           "slides": [
-            { "type": "single", "src": "images/uspenski_cathedral.png", "alt": "Sur Watchtowers", "title": "Al Ayjah Watchtower", "caption": "Historic beacons guarding the entrance to Sur lagoon." },
-            { "type": "single", "src": "images/page_2_img_6_X19.png", "alt": "Wooden Dhow Building", "title": "Wooden Dhow Shipyard", "caption": "Handcrafted wooden ship building in Sur." },
-            { "type": "single", "src": "images/page_1_img_3_X10.jpg", "alt": "Coastline Cliffs", "title": "Ras Al Jinz Protected Coast", "caption": "Dramatically shaped limestone cliffs meeting the Indian Ocean." },
-            { "type": "single", "src": "images/page_2_img_5_X18.jpg", "alt": "Nesting Green Turtle", "title": "Nesting Sea Turtle", "caption": "Spotting wild green turtles laying eggs on the protected beach." }
+            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Dhow Sail", "title": "Sur Dhow Harbor", "caption": "Historic watchtowers and harbors in Sur." },
+            { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle Beach", "title": "Turtle Returning to Ocean", "caption": "Witnessing green turtles walking down the sands at dawn." },
+            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Green Sea Turtle Swimming", "title": "Sea Turtle Swimming", "caption": "Protected turtles swimming in local coral lagoons." },
+            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Wild dolphins Sur", "title": "Sur Coast Dolphins", "caption": "Marine biodiversity along the eastern coastline." }
           ]
         }
       },
@@ -313,10 +313,9 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day4",
           "slides": [
-            { "type": "single", "src": "images/baltic_sunset.png", "alt": "Wahiba Sands Desert", "title": "Endless Wahiba Sands", "caption": "Windswept copper-colored sand ridges stretching to the horizon." },
-            { "type": "single", "src": "images/page_4_img_1_X31.jpg", "alt": "Desert Nights Glamping Tents", "title": "Desert Nights Luxury Camp", "caption": "5-star canvas structures nestled between high dunes." },
-            { "type": "single", "src": "images/page_3_img_5_X26.jpg", "alt": "Dune Sunset Panorama", "title": "Sand Ridge Sunset", "caption": "Golden sunlight bathing the Omani desert." },
-            { "type": "single", "src": "images/page_2_img_4_X16.jpg", "alt": "Camel Ride", "title": "Desert Camel Trek", "caption": "Walking alongside camels as the sun descends." }
+            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Wahiba Sands Desert", "title": "Endless Wahiba Sands", "caption": "Windswept copper-colored sand ridges stretching to the horizon." },
+            { "type": "single", "src": "images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg", "alt": "Desert Nights Glamping Tents", "title": "Desert Nights Luxury Camp", "caption": "5-star canvas structures nestled between high dunes." },
+            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Desert campfire", "title": "Campfire under the Stars", "caption": "Sipping coffee around a warm campfire in the desert dunes." }
           ]
         }
       },
@@ -325,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "Wadi Bani Khalid Oasis Oasis",
         "tagline": "🌴 Natural Pools & Shade Date Palms",
         "vibe_title": "The Vibe",
-        "vibe_text": "Escape the desert heat in Wadi Bani Khalid — a lush oasis of green pools lined with palms hidden deep inside mountain ravines.",
+        "vibe_text": "Escape the desert heat in Wadi Bani Khalid — a luxury oasis of green pools lined with palms hidden deep inside mountain ravines.",
         "highlights": [
           { "icon": "🌴", "title": "Oasis Swimming", "description": "Swim inside refreshing natural pools surrounded by date palms." }
         ],
@@ -334,10 +333,10 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day5",
           "slides": [
-            { "type": "single", "src": "images/fjord_waterways.png", "alt": "Wadi Bani Khalid Pool", "title": "Bani Khalid Main Pool", "caption": "Large freshwater basin tucked inside limestone mountains." },
-            { "type": "single", "src": "images/page_3_img_4_X25.jpg", "alt": "Date Palm Oasis", "title": "Date Palm Groves", "caption": "Green shade palms alongside natural waterways." },
-            { "type": "single", "src": "images/page_2_img_3_X15.jpg", "alt": "Oasis Stream Hike", "title": "Wadi Stream Walk", "caption": "Winding pathways following streams into deep caves." },
-            { "type": "single", "src": "images/page_2_img_2_X14.jpg", "alt": "Desert Night Sky", "title": "Bedouin Star Gazing", "caption": "Crystal clear night skies over the desert camp." }
+            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi Bani Khalid Pool", "title": "Bani Khalid Main Pool", "caption": "Large freshwater basin tucked inside limestone mountains." },
+            { "type": "single", "src": "images/oman/River_flowing_through_canyon_202608141630.jpeg", "alt": "Date Palm Oasis", "title": "Oasis Waterways", "caption": "Green shade palms alongside natural waterways." },
+            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Desert star nights", "title": "Desert Night Sky", "caption": "Bedouin storytelling around the glowing embers." },
+            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Mountain Camels", "title": "Oasis Wildlife", "caption": "Friendly desert camels wandering near wadi oases." }
           ]
         }
       },
@@ -356,10 +355,9 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day6",
           "slides": [
-            { "type": "single", "src": "images/uspenski_cathedral.png", "alt": "Friday Cattle Auction", "title": "Friday Cattle Souk", "caption": "Local Omani farmers trading livestock in the historic circle." },
-            { "type": "single", "src": "images/page_1_img_2_X9.jpg", "alt": "Nizwa Fort Tower", "title": "Nizwa Fort Circular Tower", "caption": "Massive clay watchtower overlooking Nizwa town." },
-            { "type": "single", "src": "images/page_1_img_3_X10.jpg", "alt": "Pottery Souk", "title": "Traditional Clay Ware", "caption": "Displays of handmade water vessels and spice pots." },
-            { "type": "single", "src": "images/page_2_img_1_X13.png", "alt": "Nizwa Souk Gate", "title": "Nizwa Souk Entrance", "caption": "Historic arches welcoming travelers into the marketplace." }
+            { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort Tower", "title": "Nizwa Fort Circular Tower", "caption": "Massive clay watchtower overlooking Nizwa town." },
+            { "type": "single", "src": "images/oman/Host_pouring_coffee_into_cup_202608141639.jpeg", "alt": "Friday Cattle Auction", "title": "Omani Cardamom Coffee", "caption": "Local hospitality welcoming buyers in the Nizwa souks." },
+            { "type": "single", "src": "images/oman/Sunbeams_streaming_into_historic…_202608141639.jpeg", "alt": "Inside Nizwa Fort", "title": "Historic Fort Gateways", "caption": "Sunbeams highlighting clay carvings and massive wooden doors." }
           ]
         }
       },
@@ -377,10 +375,9 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day7",
           "slides": [
-            { "type": "single", "src": "images/road_to_al.png", "alt": "Jebel Shams Gorge", "title": "Wadi Nakhr Grand Canyon", "caption": "Breathtaking 1,000-meter drop-offs into the mountain belly." },
-            { "type": "single", "src": "images/naeroyfjord.png", "alt": "Balcony Path Walkway", "title": "Balcony Walk Cliff Trail", "caption": "Narrow mountain paths carved directly into high shale cliffs." },
-            { "type": "single", "src": "images/page_3_img_6_X27.png", "alt": "Sab Bani Khamis Village", "title": "Abandoned Cliff Village", "caption": "Ruins of a stone village clinging to canyon ledges." },
-            { "type": "single", "src": "images/page_3_img_5_X26.jpg", "alt": "Peak Sunset View", "title": "Peak Sunset Elevation", "caption": "Oman's highest peaks bathed in dramatic twilight colors." }
+            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Wadi Ghul Canyon", "title": "Wadi Ghul Grand Canyon", "caption": "Breathtaking 1,000-meter drop-offs into the mountain belly." },
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Canyon mud brick terraces", "title": "Jebel Shams Balcony Path", "caption": "Narrow mountain paths carved directly into high shale cliffs." },
+            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Camels in Wadi", "title": "High Elevation Wildlife", "caption": "Mountain camels foraging on Jebel Shams canyon slopes." }
           ]
         }
       },
@@ -398,9 +395,8 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day8",
           "slides": [
-            { "type": "single", "src": "images/uspenski_cathedral.png", "alt": "Misfat Mud Houses", "title": "Clay Village Terraces", "caption": "Historic mudbrick houses constructed on steep mountain rock." },
-            { "type": "single", "src": "images/norway_rivers.png", "alt": "Falaj Channels", "title": "Falaj Irrigation Channels", "caption": "Splitting spring water to date palms and orchards." },
-            { "type": "single", "src": "images/contact_footer.jpg", "alt": "Chedi Arrival Lobby", "title": "Chedi Muscat Courtyard", "caption": "Elegant luxury return after an offroad safari." }
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Misfat Mud Houses", "title": "Clay Village Terraces", "caption": "Historic mudbrick houses constructed on steep mountain rock." },
+            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Misfat Palms", "title": "Oasis Spring Systems", "caption": "Date palms irrigated by falaj mountain spring systems." }
           ]
         }
       },
@@ -418,8 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day9",
           "slides": [
-            { "type": "single", "src": "images/contact_footer.jpg", "alt": "Chedi Beach Lounge", "title": "Chedi Shoreline", "caption": "Relaxing sand beds facing calm gulf waters." },
-            { "type": "single", "src": "images/oslofjord_sunset.png", "alt": "Pool Terrace Garden", "title": "Lush Garden Courtyards", "caption": "Water features and quiet palms in the luxury resort." }
+            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Pool Lounge", "title": "Chedi Reflecting Water Gardens", "caption": "Relaxing sand beds and symmetric reflecting ponds." }
           ]
         }
       },
@@ -437,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-safari-day10",
           "slides": [
-            { "type": "single", "src": "images/contact_footer.jpg", "alt": "Takeoff", "title": "Sultanate Farewell", "caption": "Ascending over Muscat's coastline." }
+            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Oman coastline takeoff", "title": "Sultanate Farewell", "caption": "Ascending over Muscat's coastline." }
           ]
         }
       }
@@ -459,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": "om-saf-nov20", "label": "Nov 20 – Nov 30", "season": "Prime Season", "price_modifier": 0 },
         { "id": "om-saf-jan10", "label": "Jan 10 – Jan 20", "season": "Mild Season", "price_modifier": 100 }
       ],
-      "cabin_options": [
+      "focus_options": [
         { "id": "safari-standard", "name": "4-Star Hotels & Safari Tents", "description": "Comfortable room & high-end safari tent", "price_per_person": 0 },
         { "id": "safari-premium-glamp", "name": "5-Star Resorts & Premium Glamping Dome", "description": "Includes Alila mountain suite and magic dome tent", "price_per_person": 980 }
       ],
@@ -474,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "phone": "+45 2622 0288",
       "email": "abbey@abbeysroad.dk",
       "web": "www.abbeysroad.com",
-      "contact_image": "images/contact_footer.jpg"
+      "contact_image": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg"
     }
   }
   ];
