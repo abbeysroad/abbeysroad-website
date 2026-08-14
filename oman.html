@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abbey's Road | Your Oman Travel Concierge | Copenhagen & Muscat</title>
+  <meta name="description" content="Discover the Sultanate of Oman Beyond the Ordinary with Abbey's Road — your Denmark-based Oman travel concierge. Tailor-made luxury desert safaris, 5-star mountain retreats in Jabal Akhdar, and private coastal dhow charters.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Marcellus&family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Core Libraries for Cinematic Hero -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+</head>
+<body class="abbeys-road-theme">
+
+  <!-- THREE.JS WEBGL CANVAS BACKGROUND -->
+  <canvas id="hero-webgl-canvas"></canvas>
+
+  <!-- GLOBAL HEADER & NAVIGATION -->
+  <header id="main-header" class="logo-bg-header-backdrop">
+    <div class="header-container">
+      
+      <!-- Left: Horizontal Logo -->
+      <div class="logo-container">
+        <a href="index.html" class="logo-link" title="Abbey's Road - Your Oman Travel Concierge">
+          <img src="images/philippines/logo_horizontal_cutout.png" alt="Abbey's Road Logo Horizontal" id="header-logo" class="extra-large-logo horizontal-logo">
+        </a>
+      </div>
+
+      <!-- Center Desktop Navigation -->
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-destinations">Destinations ▾</a>
+            <ul class="dropdown-menu" id="destinations-menu">
+              <li><a href="philippines.html">Philippines</a></li>
+              <li><a href="oman.html" class="active">Oman</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-discover">Discover ▾</a>
+            <ul class="dropdown-menu" id="discover-menu">
+              <li><a href="#chapter-muscat">Muscat</a></li>
+              <li><a href="#chapter-akhdar">Jebel Akhdar</a></li>
+              <li><a href="#chapter-wahiba">Wahiba Sands</a></li>
+              <li><a href="#chapter-nizwa">Nizwa</a></li>
+              <li><a href="#chapter-shab">Wadi Shab</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-tours">Itineraries ▾</a>
+            <ul class="dropdown-menu" id="itineraries-menu">
+              <!-- Dynamically populated by oman.js -->
+            </ul>
+          </li>
+          <li><a href="#concierge-section">Concierge</a></li>
+          <li><a href="#about-section">About Us</a></li>
+          <li><a href="#team-section">Team</a></li>
+        </ul>
+      </nav>
+
+      <!-- Center (Mobile) / Right (Desktop): Let's Connect CTA -->
+      <div class="header-center-cta">
+        <button id="book-meeting-btn" class="header-cta-btn open-booking-trigger" data-dest="Private Consultation">
+          Let's Connect
+        </button>
+      </div>
+
+      <!-- Right Mobile Burger Menu Button -->
+      <button class="burger-menu-btn" aria-label="Toggle mobile menu" id="burger-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION FULL-SCREEN OVERLAY DRAWER -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay">
+    <nav class="mobile-nav-content">
+      <ul class="mobile-nav-links">
+        <li class="mobile-section-header-title">SITEMAP</li>
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="philippines.html" class="mobile-nav-link">Philippines Destination</a></li>
+        
+        <li class="mobile-section-header-title">DISCOVER</li>
+        <li><a href="#chapter-muscat" class="mobile-nav-link sub-link">Muscat</a></li>
+        <li><a href="#chapter-akhdar" class="mobile-nav-link sub-link">Jebel Akhdar</a></li>
+        <li><a href="#chapter-wahiba" class="mobile-nav-link sub-link">Wahiba Sands</a></li>
+        <li><a href="#chapter-nizwa" class="mobile-nav-link sub-link">Nizwa</a></li>
+        <li><a href="#chapter-shab" class="mobile-nav-link sub-link">Wadi Shab</a></li>
+        
+        <li class="mobile-section-header-title">EXPLORE</li>
+        <li><a href="#itinerary-viewport" class="mobile-nav-link">Itineraries</a></li>
+        <li><a href="#concierge-section" class="mobile-nav-link">Concierge</a></li>
+        <li><a href="#about-section" class="mobile-nav-link">About Us</a></li>
+        <li><a href="#team-section" class="mobile-nav-link">Our Team</a></li>
+      </ul>
+      <button class="mobile-nav-cta-btn open-booking-trigger" data-dest="Mobile Consultation">
+        LET'S CONNECT
+      </button>
+    </nav>
+  </div>
+
+  <!-- PERSISTENT ACCURATE OMAN REGION MAP INDICATOR -->
+  <aside id="philippines-map-indicator" title="Current Journey Region">
+    <div class="map-indicator-title">SULTANATE TRACKER</div>
+    <div class="map-svg-container">
+      <svg viewBox="0 0 160 210" class="ph-map-svg">
+        
+        <!-- Background Offset Outlines -->
+        <g class="map-outlines" transform="translate(1.8, 1.8)">
+          <path d="M 30,30 L 50,20 L 70,30 L 95,50 L 125,70 L 135,95 L 120,120 L 95,150 L 60,180 L 30,195 L 20,180 L 25,140 L 40,110 L 35,70 Z" class="island-outline-path" />
+        </g>
+
+        <!-- Foreground Interactive Map -->
+        <g class="map-islands">
+          <path d="M 30,30 L 50,20 L 70,30 L 95,50 L 125,70 L 135,95 L 120,120 L 95,150 L 60,180 L 30,195 L 20,180 L 25,140 L 40,110 L 35,70 Z" class="island-path region-oman active-region" id="region-oman" />
+        </g>
+
+        <!-- Active Animated Beacon Pin -->
+        <circle cx="95" cy="50" r="4.5" class="map-beacon" id="map-beacon-dot" />
+      </svg>
+    </div>
+    <div class="map-region-label" id="map-region-name">MUSCAT • CAPITAL</div>
+  </aside>
+
+  <!-- CINEMATIC INTERACTIVE OMAN TRAVEL FILM HERO EXPERIENCE -->
+  <main id="hero-journey" class="hero-film-container">
+
+    <!-- CHAPTER 0: INTRO FILM OVERLAY -->
+    <section class="film-chapter chapter-intro active" id="chapter-intro" data-region="OMAN" data-region-name="SULTANATE OF OMAN" data-beacon-x="95" data-beacon-y="50">
+      <div class="chapter-background-media">
+        <!-- Reusing a gorgeous aerial sunset backdrop -->
+        <img src="images/oslofjord_sunset.png" alt="Oman Desert Mountain Horizon" class="bg-photo zoom-travel-photo" style="filter: hue-rotate(200deg) saturate(0.8) brightness(0.65);">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-container center-aligned">
+        <div class="brand-eyebrow animate-fade-down">ABBEY'S ROAD • YOUR OMAN TRAVEL CONCIERGE | COPENHAGEN</div>
+        <h1 class="giant-editorial-title animate-fade-up">
+          <span class="gold-text">OMANI MAJESTY.</span><br>
+          <span class="cyan-text smaller-headline">DISCOVER THE SULTANATE</span>
+        </h1>
+        <p class="film-subtitle animate-fade-up">
+          Nordic market partners for Oman — crafting bespoke 5-star mountain retreats, luxury Wahiba Sands desert glamping, and private coastal dhow cruises with licensed ground support.
+        </p>
+        <div class="scroll-prompt animate-bounce">
+          <span>SCROLL TO TRAVEL</span>
+          <div class="mouse-icon"><div class="wheel"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 1: MUSCAT -->
+    <section class="film-chapter chapter-muscat" id="chapter-muscat" data-region="OMAN" data-region-name="MUSCAT • CAPITAL" data-beacon-x="95" data-beacon-y="50">
+      <div class="chapter-background-media">
+        <img src="images/contact_footer.jpg" alt="Muscat Grand Mosque and Coastline" class="bg-photo zoom-travel-photo" style="filter: sepia(0.2) contrast(1.1) brightness(0.7);">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid">
+        <div class="info-card-wrapper animate-slide-left">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">PORT OF HERITAGE</div>
+                <h2 class="card-dest-title">MUSCAT</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Muscat details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Capital Municipality · Gulf of Oman</div>
+              <p class="card-desc">Witness a white-walled city nestled between volcanic mountains and the blue sea — featuring the grand marble halls of Sultan Qaboos Mosque and the colorful Muttrah Souk.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Grand Mosque, Muttrah Souk, Opera House</div>
+                <div><strong>Ideal for:</strong> Cultural enthusiasts · Foodies · Walkers</div>
+                <div><strong>Suggested stay:</strong> 2–3 Days</div>
+                <div><strong>Best time:</strong> October – April</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Muscat">EXPLORE MUSCAT →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 2: JEBEL AKHDAR -->
+    <section class="film-chapter chapter-akhdar" id="chapter-akhdar" data-region="OMAN" data-region-name="JEBEL AKHDAR • HEIGHTS" data-beacon-x="70" data-beacon-y="60">
+      <div class="chapter-background-media">
+        <img src="images/road_to_al.png" alt="Al Hajar Mountain Peaks" class="bg-photo zoom-travel-photo" style="filter: sepia(0.15) brightness(0.65) contrast(1.15);">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid right-aligned">
+        <div class="info-card-wrapper animate-slide-right">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">THE GREEN MOUNTAIN</div>
+                <h2 class="card-dest-title">JEBEL AKHDAR</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Jebel Akhdar details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Al Hajar Mountains · 2000m Altitude</div>
+              <p class="card-desc">Escape to cool breezes and canyon edge views. Stay at world-class resorts, hike between stone villages, and breathe the scent of damask rose water farms.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Canyons, Rosewater farming, Mountain treks</div>
+                <div><strong>Ideal for:</strong> Hikers · Luxury seekers · Couples</div>
+                <div><strong>Suggested stay:</strong> 3 Days</div>
+                <div><strong>Best time:</strong> September – May</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Jebel Akhdar">EXPLORE THE HEIGHTS →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 3: WAHIBA SANDS -->
+    <section class="film-chapter chapter-wahiba" id="chapter-wahiba" data-region="OMAN" data-region-name="WAHIBA SANDS • DESERT" data-beacon-x="105" data-beacon-y="90">
+      <div class="chapter-background-media">
+        <img src="images/baltic_sunset.png" alt="Wahiba Sands Sunset Dunes" class="bg-photo zoom-travel-photo" style="filter: hue-rotate(240deg) saturate(1.4) brightness(0.65);">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid">
+        <div class="info-card-wrapper animate-slide-left">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">THE EMPTY QUARTER BORDER</div>
+                <h2 class="card-dest-title">WAHIBA SANDS</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Wahiba Sands details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Sharqiya Region · Desert Wilderness</div>
+              <p class="card-desc">Ride across copper-colored sand ridges, experience dune-bashing, sunset camel rides, and sleep in high-end desert glamping domes under a starry canopy.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Dune safaris, Bedouin camps, Desert stars</div>
+                <div><strong>Ideal for:</strong> Adventurers · Glampers · Families</div>
+                <div><strong>Suggested stay:</strong> 1–2 Nights</div>
+                <div><strong>Best time:</strong> October – March</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Wahiba Sands">EXPLORE THE DUNES →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 4: NIZWA -->
+    <section class="film-chapter chapter-nizwa" id="chapter-nizwa" data-region="OMAN" data-region-name="NIZWA • HEARTLAND" data-beacon-x="65" data-beacon-y="75">
+      <div class="chapter-background-media">
+        <!-- Reusing stone tower theme image -->
+        <img src="images/uspenski_cathedral.png" alt="Nizwa Fort Tower" class="bg-photo zoom-travel-photo" style="filter: sepia(0.4) saturate(0.6) brightness(0.6) contrast(1.15);">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid right-aligned">
+        <div class="info-card-wrapper animate-slide-right">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">HISTORIC ISLAMIC CAPITAL</div>
+                <h2 class="card-dest-title">NIZWA</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Nizwa details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Dakhiliyah Region · Oasis Heartland</div>
+              <p class="card-desc">Step back in time inside Nizwa Fort's circular clay tower, trade in the Friday cattle market, and browse silver khanjar daggers and pottery in the souks.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Nizwa Fort, Friday Cattle Souk, Silver crafts</div>
+                <div><strong>Ideal for:</strong> History lovers · Photographers · Collectors</div>
+                <div><strong>Suggested stay:</strong> 2 Days</div>
+                <div><strong>Best time:</strong> September – April</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Nizwa">EXPLORE NIZWA →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 5: WADI SHAB -->
+    <section class="film-chapter chapter-shab" id="chapter-shab" data-region="OMAN" data-region-name="WADI SHAB • CANYONS" data-beacon-x="115" data-beacon-y="68">
+      <div class="chapter-background-media">
+        <img src="images/fjord_waterways.png" alt="Wadi Shab Gorge Pools" class="bg-photo zoom-travel-photo" style="filter: hue-rotate(30deg) sepia(0.15) brightness(0.65) contrast(1.15);">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid">
+        <div class="info-card-wrapper animate-slide-left">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">EMERALD CANYON CANALS</div>
+                <h2 class="card-dest-title">WADI SHAB</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Wadi Shab details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Sharqiya Region · Coastal Gorges</div>
+              <p class="card-desc">Trek between towering canyon walls, cross freshwater rivers by small boats, and swim through crystal-clear pools to find the hidden waterfall cave.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Canyon hikes, Freshwater caves, Sinkholes</div>
+                <div><strong>Ideal for:</strong> Swimmers · Adventure seekers · Nature lovers</div>
+                <div><strong>Suggested stay:</strong> 1 Day</div>
+                <div><strong>Best time:</strong> November – March</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Wadi Shab">EXPLORE WADI SHAB →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 6: GRAND FINALE MONTAGE & CALL TO ACTION -->
+    <section class="film-chapter chapter-finale" id="chapter-finale" data-region="OMAN" data-region-name="OMAN • YOUR JOURNEY">
+      <div class="chapter-background-media">
+        <img src="images/oslofjord_sunset.png" alt="Oman Sunset Dunes" class="bg-photo zoom-travel-photo" style="filter: sepia(0.2) saturate(0.8) brightness(0.5);">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-container center-aligned">
+        <div class="brand-eyebrow animate-fade-down">DISCOVER THE ARABIAN LEGEND WITH CONCIERGE CARE</div>
+        <h2 class="giant-editorial-title animate-fade-up">
+          YOUR OMAN STORY<br>
+          <span class="cyan-text">STARTS HERE.</span>
+        </h2>
+        <p class="film-subtitle animate-fade-up">
+          Let Abbey's Road design your bespoke journey through canyons, sands, and seas. Hand-selected luxury mountain suites, exclusive desert glamping camps, expert private drivers, and 24/7 client care.
+        </p>
+        
+        <div class="hero-cta-group animate-fade-up">
+          <button class="btn-primary-cyan open-booking-trigger" data-dest="Custom Oman Trip">
+            START PLANNING YOUR JOURNEY →
+          </button>
+          <a href="#itinerary-viewport" class="btn-secondary-gold">
+            EXPLORE ALL ITINERARIES
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BUSINESS PLAN CONCIERGE SERVICES SECTION -->
+  <section class="concierge-section" id="concierge-section">
+    <div class="section-header">
+      <span class="gold-badge">DENMARK'S OMAN REPRESENTATION</span>
+      <h2>THE CONCIERGE EXPERIENCE</h2>
+      <p class="section-tagline">Bespoke luxury travel planning backed by verified local safari ground-handling.</p>
+    </div>
+    <div class="concierge-grid">
+      
+      <div class="concierge-card">
+        <div class="concierge-icon">🐫</div>
+        <h3>Bespoke Safaris</h3>
+        <p>Private 4x4 off-road travel, luxury Wahiba Sands glamping, wadi gorge canyon hiking, and historic fort tours customized to your schedule.</p>
+      </div>
+
+      <div class="concierge-card">
+        <div class="concierge-icon">🏨</div>
+        <h3>Ultra-Luxury Resorts</h3>
+        <p>Hand-picked stays at world-class cliffside hotels like Alila Jabal Akhdar and coastal properties like The Chedi Muscat.</p>
+      </div>
+
+      <div class="concierge-card">
+        <div class="concierge-icon">🤝</div>
+        <h3>Local DMC Handlers</h3>
+        <p>Seamless operations with experienced English-speaking drivers, VIP airport lounges, private camps, and 24/7 on-ground assistance.</p>
+      </div>
+
+      <div class="concierge-card">
+        <div class="concierge-icon">🤖</div>
+        <h3>AI-Optimized Design</h3>
+        <p>Combining modern digital coordination with local expertise to deliver customized travel programs quickly and transparently.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DYNAMIC ITINERARY VIEWPORT SECTION -->
+  <section id="itinerary-viewport" class="itinerary-viewport">
+    <!-- Dynamically rendered by oman.js -->
+  </section>
+
+  <!-- GLOBAL ABOUT US SECTION -->
+  <section class="about-section" id="about-section">
+    <div class="section-header">
+      <h2>ABOUT ABBEY'S ROAD</h2>
+      <p class="section-tagline">Connecting world-class destinations with Nordic travelers | Copenhagen</p>
+    </div>
+    <div class="about-content-grid">
+      <div class="about-text-card">
+        <h3>Our Vision & Mission</h3>
+        <p><strong>Vision:</strong> To serve as the leading commercial distribution and representation partner in the Nordics for high-end, sustainable travel experiences in the Sultanate of Oman.</p>
+        <p><strong>Mission:</strong> To construct reliable linkages between premium local Omani tourism operators, Nordic tour operators, and high-end travelers seeking authentic desert and mountain exploration.</p>
+      </div>
+      <div class="about-text-card">
+        <h3>Operational Excellence</h3>
+        <p>Operating out of Copenhagen, Abbey's Road coordinates with local specialists to ensure all ground services, guides, luxury lodgings, and off-road safety measures meet strict European quality standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL MEET THE TEAM SECTION -->
+  <section class="team-section" id="team-section">
+    <div class="section-header">
+      <h2>MEET THE TEAM</h2>
+      <p>The dedicated travel specialists and operations managers behind your Omani journey.</p>
+    </div>
+    <div class="team-grid team-grid-4">
+      
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Abbey Salvador Placeholder">
+        </div>
+        <div class="team-info">
+          <h4>Abbey</h4>
+          <p class="team-role">Denmark Manager</p>
+          <p class="team-bio">Directs strategic B2B partnerships, operator contracting, and sales and marketing initiatives across the Nordic region.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Lizette Placeholder">
+        </div>
+        <div class="team-info">
+          <h4>Lizette</h4>
+          <p class="team-role">Operations Manager</p>
+          <p class="team-bio">Manages supplier relations, coordinates 4x4 guides, luxury lodging bookings, and oversees 24/7 guest support pipelines.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Michael Placeholder">
+        </div>
+        <div class="team-info">
+          <h4>Michael</h4>
+          <p class="team-role">AI & Itinerary Development</p>
+          <p class="team-bio">Oversees the digital itinerary builder and coordinate tech integrations with travel distribution channels.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Rowela Placeholder">
+        </div>
+        <div class="team-info">
+          <h4>Rowela</h4>
+          <p class="team-role">Accounting & Administration</p>
+          <p class="team-bio">Manages administrative coordination, transparent operator billing, and local currency financial reconciliations.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MEETING MODAL POPUP -->
+  <div id="meeting-modal" class="meeting-modal">
+    <div class="meeting-modal-content">
+      <button class="close-modal-btn" id="close-modal">&times;</button>
+      <div class="modal-profile">
+        <div class="modal-avatar">AR</div>
+        <h2>Abbey's Road Concierge</h2>
+        <p class="modal-title">Copenhagen & Muscat Travel Team</p>
+        <p class="modal-instruction">Schedule a private consultation or inquire about our destination services:</p>
+        <a href="mailto:abbey@abbeysroad.dk?subject=Abbeys%20Road%20Oman%20Concierge%20Inquiry" class="modal-email-btn">
+          📩 abbey@abbeysroad.dk
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER & CONTACT DETAILS -->
+  <footer id="global-footer">
+    <div class="footer-content" id="footer-content-dynamic">
+      <div class="footer-grid">
+        <div>
+          <h4 class="gold-text">ABBEY'S ROAD</h4>
+          <p class="footer-subtext">Your Oman Travel Concierge</p>
+          <p>Discover the Sultanate Beyond the Ordinary.</p>
+        </div>
+        <div>
+          <h4>Copenhagen Office</h4>
+          <p>Borgmestervangen 31, 2200 Copenhagen</p>
+          <p>Email: abbey@abbeysroad.dk</p>
+        </div>
+        <div>
+          <h4>Oman Operations</h4>
+          <p>Oman Safari DMC Partner</p>
+          <p>Shatti Al Qurum • Muscat, Sultanate of Oman</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Abbey's Road — Your Oman Travel Concierge. All rights reserved.</p>
+      <p>Crafted with ❤️ for Denmark & Global Oman Travelers</p>
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script src="oman.js"></script>
+</body>
+</html>

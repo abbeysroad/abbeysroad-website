@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abbey's Road | Your Philippines Travel Concierge | Copenhagen & Manila</title>
-  <meta name="description" content="Discover the Philippines Beyond the Ordinary with Abbey's Road — your Denmark-based Philippines travel concierge. Tailor-made luxury island hopping, 4 & 5-star eco-resorts, private banca charters, and ground support.">
+  <title>Abbey's Road | Destination Market Development & B2B Commercial Distribution | Copenhagen</title>
+  <meta name="description" content="Abbey's Road is the strategic commercial partner connecting world-class destinations to the Nordic travel trade. We develop B2B sales networks and distribution channels in Denmark, Norway, Sweden, and Finland.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Core Libraries for Cinematic Hero -->
+  <!-- Core Libraries for Cinematic Background -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -31,7 +31,7 @@
       
       <!-- Left: Horizontal Logo -->
       <div class="logo-container">
-        <a href="#" class="logo-link" title="Abbey's Road - Your Philippines Travel Concierge">
+        <a href="index.html" class="logo-link" title="Abbey's Road - Destination Market Development">
           <img src="images/philippines/logo_horizontal_cutout.png" alt="Abbey's Road Logo Horizontal" id="header-logo" class="extra-large-logo horizontal-logo">
         </a>
       </div>
@@ -39,32 +39,26 @@
       <!-- Center Desktop Navigation -->
       <nav class="desktop-nav">
         <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
           <li class="dropdown-item">
-            <a href="#" class="dropdown-trigger" id="dropdown-discover">Discover ▾</a>
-            <ul class="dropdown-menu" id="discover-menu">
-              <li><a href="#chapter-palawan">Islands</a></li>
-              <li><a href="#chapter-coron">Adventure</a></li>
-              <li><a href="#chapter-banaue">Mountains</a></li>
-              <li><a href="#chapter-manila">Culture</a></li>
+            <a href="#" class="dropdown-trigger" id="dropdown-destinations">Destinations ▾</a>
+            <ul class="dropdown-menu" id="destinations-menu">
+              <li><a href="philippines.html">Philippines</a></li>
+              <li><a href="oman.html">Oman</a></li>
             </ul>
           </li>
-          <li class="dropdown-item">
-            <a href="#" class="dropdown-trigger" id="dropdown-tours">Itineraries ▾</a>
-            <ul class="dropdown-menu" id="itineraries-menu">
-              <!-- Dynamically populated -->
-            </ul>
-          </li>
-          <li><a href="#concierge-section">Concierge</a></li>
+          <li><a href="#what-we-do">What We Do</a></li>
+          <li><a href="#difference-section">Our Advantage</a></li>
           <li><a href="#about-section">About Us</a></li>
-          <li><a href="#team-section">Team</a></li>
+          <li><a href="#contact-section">Let's Connect</a></li>
         </ul>
       </nav>
 
       <!-- Center (Mobile) / Right (Desktop): Let's Connect CTA -->
       <div class="header-center-cta">
-        <button id="book-meeting-btn" class="header-cta-btn open-booking-trigger" data-dest="Private Consultation">
+        <a href="#contact-section" class="header-cta-btn">
           Let's Connect
-        </button>
+        </a>
       </div>
 
       <!-- Right Mobile Burger Menu Button -->
@@ -81,630 +75,254 @@
   <div id="mobile-nav-overlay" class="mobile-nav-overlay">
     <nav class="mobile-nav-content">
       <ul class="mobile-nav-links">
-        <li class="mobile-section-header-title">DISCOVER</li>
-        <li><a href="#chapter-palawan" class="mobile-nav-link sub-link">Islands</a></li>
-        <li><a href="#chapter-coron" class="mobile-nav-link sub-link">Adventure</a></li>
-        <li><a href="#chapter-banaue" class="mobile-nav-link sub-link">Mountains</a></li>
-        <li><a href="#chapter-manila" class="mobile-nav-link sub-link">Culture</a></li>
+        <li class="mobile-section-header-title">DESTINATIONS</li>
+        <li><a href="philippines.html" class="mobile-nav-link sub-link">Philippines</a></li>
+        <li><a href="oman.html" class="mobile-nav-link sub-link">Oman</a></li>
         
-        <li class="mobile-section-header-title">EXPLORE</li>
-        <li><a href="#itinerary-viewport" class="mobile-nav-link">Itineraries</a></li>
-        <li><a href="#concierge-section" class="mobile-nav-link">Concierge</a></li>
+        <li class="mobile-section-header-title">CORPORATE</li>
+        <li><a href="#what-we-do" class="mobile-nav-link">What We Do</a></li>
+        <li><a href="#difference-section" class="mobile-nav-link">Our Advantage</a></li>
         <li><a href="#about-section" class="mobile-nav-link">About Us</a></li>
-        <li><a href="#team-section" class="mobile-nav-link">Our Team</a></li>
+        <li><a href="#contact-section" class="mobile-nav-link">Let's Connect</a></li>
       </ul>
-      <button class="mobile-nav-cta-btn open-booking-trigger" data-dest="Mobile Consultation">
+      <a href="#contact-section" class="mobile-nav-cta-btn">
         LET'S CONNECT
-      </button>
+      </a>
     </nav>
   </div>
 
-  <!-- PERSISTENT ACCURATE PHILIPPINES ISLAND MAP INDICATOR (ATTACHED IMAGE 3 STYLE) -->
-  <aside id="philippines-map-indicator" title="Current Journey Region">
-    <div class="map-indicator-title">ARCHIPELAGO TRACKER</div>
-    <div class="map-svg-container">
-      <svg viewBox="0 0 160 210" class="ph-map-svg">
-        
-        <!-- Background Offset Outlines -->
-        <g class="map-outlines" transform="translate(1.8, 1.8)">
-          <!-- Luzon Outline -->
-          <path d="M 68,14 L 84,10 L 92,26 L 86,52 L 78,72 L 95,78 L 96,88 L 78,92 L 68,88 L 62,72 L 66,54 L 54,46 L 58,34 Z" class="island-outline-path" />
-          <path d="M 52,86 L 64,84 L 66,98 L 54,106 Z" class="island-outline-path" />
-          <path d="M 98,70 L 105,68 L 103,78 L 97,80 Z" class="island-outline-path" />
-          <!-- Palawan Outline -->
-          <path d="M 22,122 L 44,104 L 48,110 L 26,154 L 16,146 Z" class="island-outline-path" />
-          <path d="M 44,96 L 52,94 L 50,102 L 42,104 Z" class="island-outline-path" />
-          <!-- Visayas Outline -->
-          <path d="M 70,100 L 82,96 L 85,110 L 72,120 L 66,112 Z" class="island-outline-path" />
-          <path d="M 78,118 L 86,115 L 84,138 L 76,140 Z" class="island-outline-path" />
-          <path d="M 88,112 L 94,110 L 92,138 L 86,138 Z" class="island-outline-path" />
-          <path d="M 96,130 L 106,126 L 104,140 L 94,142 Z" class="island-outline-path" />
-          <path d="M 102,94 L 116,90 L 118,116 L 106,126 L 102,110 Z" class="island-outline-path" />
-          <!-- Mindanao Outline -->
-          <path d="M 76,144 L 132,138 L 136,170 L 122,196 L 90,192 L 74,178 L 70,160 L 88,162 Z" class="island-outline-path" />
-          <path d="M 124,136 L 132,134 L 130,144 L 122,146 Z" class="island-outline-path" />
-        </g>
-
-        <!-- Foreground Interactive Islands -->
-        <g class="map-islands">
-          <!-- Luzon Group -->
-          <path d="M 68,14 L 84,10 L 92,26 L 86,52 L 78,72 L 95,78 L 96,88 L 78,92 L 68,88 L 62,72 L 66,54 L 54,46 L 58,34 Z" class="island-path region-luzon active-region" id="region-luzon" />
-          <path d="M 52,86 L 64,84 L 66,98 L 54,106 Z" class="island-path region-luzon" />
-          <path d="M 98,70 L 105,68 L 103,78 L 97,80 Z" class="island-path region-luzon" />
-
-          <!-- Palawan Group -->
-          <path d="M 22,122 L 44,104 L 48,110 L 26,154 L 16,146 Z" class="island-path region-palawan" id="region-palawan" />
-          <path d="M 44,96 L 52,94 L 50,102 L 42,104 Z" class="island-path region-palawan" />
-
-          <!-- Visayas Group -->
-          <path d="M 70,100 L 82,96 L 85,110 L 72,120 L 66,112 Z" class="island-path region-visayas" id="region-visayas" />
-          <path d="M 78,118 L 86,115 L 84,138 L 76,140 Z" class="island-path region-visayas" />
-          <path d="M 88,112 L 94,110 L 92,138 L 86,138 Z" class="island-path region-visayas" />
-          <path d="M 96,130 L 106,126 L 104,140 L 94,142 Z" class="island-path region-visayas" />
-          <path d="M 102,94 L 116,90 L 118,116 L 106,126 L 102,110 Z" class="island-path region-visayas" />
-
-          <!-- Mindanao Group -->
-          <path d="M 76,144 L 132,138 L 136,170 L 122,196 L 90,192 L 74,178 L 70,160 L 88,162 Z" class="island-path region-mindanao" id="region-mindanao" />
-          <path d="M 124,136 L 132,134 L 130,144 L 122,146 Z" class="island-path region-mindanao" />
-        </g>
-
-        <!-- Active Animated Beacon Pin -->
-        <circle cx="72" cy="58" r="4.5" class="map-beacon" id="map-beacon-dot" />
-      </svg>
+  <!-- HERO SECTION -->
+  <section class="film-chapter chapter-intro active" id="chapter-intro" style="min-height: 90vh;">
+    <div class="chapter-background-media">
+      <img src="images/oslofjord_sunset.png" alt="Nordic Ocean Horizon" class="bg-photo zoom-travel-photo" style="filter: saturate(0.65) brightness(0.4);">
+      <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.4) 0%, rgba(32, 43, 34, 0.6) 100%);"></div>
     </div>
-    <div class="map-region-label" id="map-region-name">LUZON • MANILA</div>
-  </aside>
-
-  <!-- CINEMATIC INTERACTIVE PHILIPPINES TRAVEL FILM HERO EXPERIENCE -->
-  <main id="hero-journey" class="hero-film-container">
-
-    <!-- CHAPTER 0: INTRO FILM OVERLAY -->
-    <section class="film-chapter chapter-intro active" id="chapter-intro" data-region="LUZON" data-region-name="LUZON • PHILIPPINES" data-beacon-x="74" data-beacon-y="34">
-      <div class="chapter-background-media">
-        <img src="images/philippines/philippine_islands.png" alt="Philippine Islands Aerial Horizon" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
+    <div class="chapter-content-container center-aligned">
+      <div class="brand-eyebrow animate-fade-down" style="color: var(--accent-gold);">ABBEY'S ROAD • NORDIC MARKET REPRESENTATION</div>
+      <h1 class="giant-editorial-title animate-fade-up" style="color: #FFFFFF;">
+        Connecting Destinations.<br>
+        <span class="cyan-text smaller-headline" style="color: var(--accent-cyan);">Developing Markets. Creating Business.</span>
+      </h1>
+      <p class="film-subtitle animate-fade-up" style="color: #FFFFFF; max-width: 800px; margin: 0 auto 2.5rem;">
+        We are the strategic market-development and commercial distribution partner linking world-class tourism operators, DMCs, and national destinations to the premium outbound travel trade across Denmark, Norway, Sweden, and Finland.
+      </p>
+      
+      <div class="hero-cta-group animate-fade-up">
+        <a href="#featured-destinations" class="btn-primary-cyan" style="text-decoration: none; display: inline-block;">
+          EXPLORE OUR DESTINATIONS
+        </a>
+        <a href="#contact-section" class="btn-secondary-gold">
+          PARTNER WITH US
+        </a>
       </div>
-      <div class="chapter-content-container center-aligned">
-        <div class="brand-eyebrow animate-fade-down">ABBEY'S ROAD • YOUR PHILIPPINES TRAVEL CONCIERGE | COPENHAGEN</div>
-        <h1 class="giant-editorial-title animate-fade-up">
-          <span class="gold-text">BEYOND THE ORDINARY.</span><br>
-          <span class="cyan-text smaller-headline">DISCOVER THE PHILIPPINES</span>
-        </h1>
-        <p class="film-subtitle animate-fade-up">
-          Denmark's premier boutique travel concierge — crafting bespoke 4 & 5-star island hopping journeys, private outrigger banca charters, and authentic out-of-the-beaten-track cultural experiences across 7,641 islands.
-        </p>
-        <div class="scroll-prompt animate-bounce">
-          <span>SCROLL TO TRAVEL</span>
-          <div class="mouse-icon"><div class="wheel"></div></div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CHAPTER 1: MANILA -->
-    <section class="film-chapter chapter-manila" id="chapter-manila" data-region="LUZON" data-region-name="LUZON • MANILA" data-beacon-x="72" data-beacon-y="58">
-      <div class="chapter-background-media">
-        <img src="images/philippines/manila_pedestrians.jpeg" alt="Manila Pedestrian Street Scenes" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-grid">
-        <div class="info-card-wrapper animate-slide-left">
-          <div class="dest-info-card">
-            
-            <div class="dest-card-header-toggle">
-              <div class="card-header-titles">
-                <div class="card-tag">CAPITAL & HERITAGE</div>
-                <h2 class="card-dest-title">MANILA</h2>
-              </div>
-              <button class="card-fold-toggle-btn" aria-label="Toggle Manila details">
-                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-
-            <div class="dest-card-collapsible-body">
-              <div class="card-sub">Luzon · Metro Manila</div>
-              <p class="card-desc">Experience the vibrant heartbeat of the Philippines — from 16th-century Spanish colonial cobblestones in Intramuros to modern sky-high dining in Bonifacio Global City and famous sunset baywalks.</p>
-              <div class="card-meta-list">
-                <div><strong>Best known for:</strong> Intramuros, BGC, Street food, Nightlife</div>
-                <div><strong>Ideal for:</strong> Culture lovers · Foodies · Urban explorers</div>
-                <div><strong>Suggested stay:</strong> 2–3 Days</div>
-                <div><strong>Best time:</strong> November – April</div>
-              </div>
-              <button class="card-cta-btn open-booking-trigger" data-dest="Manila">EXPLORE MANILA →</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 2: PALAWAN / EL NIDO -->
-    <section class="film-chapter chapter-palawan" id="chapter-palawan" data-region="PALAWAN" data-region-name="PALAWAN • EL NIDO" data-beacon-x="36" data-beacon-y="118">
-      <div class="chapter-background-media">
-        <img src="images/philippines/el_nido_boat.jpeg" alt="Palawan El Nido Limestone Cliffs and Banca Boat" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-grid right-aligned">
-        <div class="info-card-wrapper animate-slide-right">
-          <div class="dest-info-card">
-            
-            <div class="dest-card-header-toggle">
-              <div class="card-header-titles">
-                <div class="card-tag">THE LAST FRONTIER</div>
-                <h2 class="card-dest-title">EL NIDO, PALAWAN</h2>
-              </div>
-              <button class="card-fold-toggle-btn" aria-label="Toggle El Nido details">
-                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-
-            <div class="dest-card-collapsible-body">
-              <div class="card-sub">Palawan · Western Philippines</div>
-              <p class="card-desc">Glide through towering karst limestone cathedrals, kayak inside emerald secret lagoons, and discover untouched white sand beaches tucked behind dramatic cliff formations.</p>
-              <div class="card-meta-list">
-                <div><strong>Best known for:</strong> Big Lagoon, Miniloc karst cliffs, Island hopping</div>
-                <div><strong>Ideal for:</strong> Couples · Adventurers · Kayakers</div>
-                <div><strong>Suggested stay:</strong> 3–5 Days</div>
-                <div><strong>Best time:</strong> November – May</div>
-              </div>
-              <button class="card-cta-btn open-booking-trigger" data-dest="El Nido, Palawan">EXPLORE EL NIDO →</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 3: CORON -->
-    <section class="film-chapter chapter-coron" id="chapter-coron" data-region="PALAWAN" data-region-name="PALAWAN • CORON" data-beacon-x="44" data-beacon-y="102">
-      <div class="chapter-background-media">
-        <img src="images/philippines/coron_boats.jpeg" alt="Coron Kayangan Lake & Limestone Bay" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-grid">
-        <div class="info-card-wrapper animate-slide-left">
-          <div class="dest-info-card">
-            
-            <div class="dest-card-header-toggle">
-              <div class="card-header-titles">
-                <div class="card-tag">CRYSTAL LAKES & SHIPWRECKS</div>
-                <h2 class="card-dest-title">CORON</h2>
-              </div>
-              <button class="card-fold-toggle-btn" aria-label="Toggle Coron details">
-                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-
-            <div class="dest-card-collapsible-body">
-              <div class="card-sub">Calamian Islands · Palawan</div>
-              <p class="card-desc">Dive beneath mirror-like waters to explore preserved WWII Japanese shipwrecks, swim through thermocline lakes like Kayangan and Barracuda, and sail past dramatic cliff sanctuaries.</p>
-              <div class="card-meta-list">
-                <div><strong>Best known for:</strong> Kayangan Lake, WWII Wreck Diving, Coral Gardens</div>
-                <div><strong>Ideal for:</strong> Divers · Snorkelers · Underwater Photographers</div>
-                <div><strong>Suggested stay:</strong> 3–4 Days</div>
-                <div><strong>Best time:</strong> October – June</div>
-              </div>
-              <button class="card-cta-btn open-booking-trigger" data-dest="Coron, Palawan">EXPLORE CORON →</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 4: BORACAY -->
-    <section class="film-chapter chapter-boracay" id="chapter-boracay" data-region="VISAYAS" data-region-name="VISAYAS • BORACAY" data-beacon-x="75" data-beacon-y="108">
-      <div class="chapter-background-media">
-        <img src="images/philippines/boracay_beach.jpeg" alt="Boracay White Beach & Paraw Sailboat" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-grid right-aligned">
-        <div class="info-card-wrapper animate-slide-right">
-          <div class="dest-info-card">
-            
-            <div class="dest-card-header-toggle">
-              <div class="card-header-titles">
-                <div class="card-tag">POWDER WHITE SANDS</div>
-                <h2 class="card-dest-title">BORACAY</h2>
-              </div>
-              <button class="card-fold-toggle-btn" aria-label="Toggle Boracay details">
-                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-
-            <div class="dest-card-collapsible-body">
-              <div class="card-sub">Aklan · Western Visayas</div>
-              <p class="card-desc">Feel powdery soft white sand beneath your feet, sail on iconic blue-and-white Paraw boats into flaming golden sunsets, and indulge in beachfront dining under coconut palms.</p>
-              <div class="card-meta-list">
-                <div><strong>Best known for:</strong> 4-Mile White Beach, Paraw Sunset Sailing, Nightlife</div>
-                <div><strong>Ideal for:</strong> Beach lovers · Sunseekers · Couples & Luxury</div>
-                <div><strong>Suggested stay:</strong> 3–5 Days</div>
-                <div><strong>Best time:</strong> November – May</div>
-              </div>
-              <button class="card-cta-btn open-booking-trigger" data-dest="Boracay">EXPLORE BORACAY →</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 5: SIARGAO -->
-    <section class="film-chapter chapter-siargao" id="chapter-siargao" data-region="MINDANAO" data-region-name="MINDANAO • SIARGAO" data-beacon-x="126" data-beacon-y="142">
-      <div class="chapter-background-media">
-        <img src="images/philippines/siargao_banca.jpeg" alt="Siargao Island Hopping Banca" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-grid">
-        <div class="info-card-wrapper animate-slide-left">
-          <div class="dest-info-card">
-            
-            <div class="dest-card-header-toggle">
-              <div class="card-header-titles">
-                <div class="card-tag">SURF & PALM CAPITAL</div>
-                <h2 class="card-dest-title">SIARGAO</h2>
-              </div>
-              <button class="card-fold-toggle-btn" aria-label="Toggle Siargao details">
-                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-
-            <div class="dest-card-collapsible-body">
-              <div class="card-sub">Surigao del Norte · Mindanao</div>
-              <p class="card-desc">Ride world-famous Cloud 9 waves, cruise down endless roads lined with millions of coconut palms, discover natural rock pools, and immerse yourself in laid-back island café culture.</p>
-              <div class="card-meta-list">
-                <div><strong>Best known for:</strong> Cloud 9 Surf Break, Coconut Viewpoint, Sugba Lagoon</div>
-                <div><strong>Ideal for:</strong> Surfers · Digital Nomads · Free Spirits</div>
-                <div><strong>Suggested stay:</strong> 4–7 Days</div>
-                <div><strong>Best time:</strong> March – November</div>
-              </div>
-              <button class="card-cta-btn open-booking-trigger" data-dest="Siargao">EXPLORE SIARGAO →</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 6: CEBU & MOALBOAL -->
-    <section class="film-chapter chapter-cebu" id="chapter-cebu" data-region="VISAYAS" data-region-name="VISAYAS • CEBU" data-beacon-x="92" data-beacon-y="128">
-      <div class="chapter-background-media">
-        <img src="images/philippines/cebu_freediver.jpeg" alt="Cebu Moalboal Sardine Run Freediving" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-grid right-aligned">
-        <div class="info-card-wrapper animate-slide-right">
-          <div class="dest-info-card">
-            
-            <div class="dest-card-header-toggle">
-              <div class="card-header-titles">
-                <div class="card-tag">MARINE WONDERS & HERITAGE</div>
-                <h2 class="card-dest-title">CEBU & MOALBOAL</h2>
-              </div>
-              <button class="card-fold-toggle-btn" aria-label="Toggle Cebu details">
-                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-
-            <div class="dest-card-collapsible-body">
-              <div class="card-sub">Central Visayas</div>
-              <p class="card-desc">Dive into the breathtaking Moalboal sardine run, swim under turquoise waterfalls at Kawasan, explore historic 16th-century Magellan's Cross, and jump across island reefs.</p>
-              <div class="card-meta-list">
-                <div><strong>Best known for:</strong> Sardine Run, Kawasan Canyoneering, Magellan's Cross</div>
-                <div><strong>Ideal for:</strong> Central Visayas · Freedivers · Eco-adventurers</div>
-                <div><strong>Suggested stay:</strong> 3–5 Days</div>
-                <div><strong>Best time:</strong> Year-round</div>
-              </div>
-              <button class="card-cta-btn open-booking-trigger" data-dest="Cebu">EXPLORE CEBU →</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 7: BOHOL -->
-    <section class="film-chapter chapter-bohol" id="chapter-bohol" data-region="VISAYAS" data-region-name="VISAYAS • BOHOL" data-beacon-x="98" data-beacon-y="136">
-      <div class="chapter-background-media">
-        <img src="images/philippines/bohol_hills.jpeg" alt="Bohol Chocolate Hills Countryside Road" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-grid">
-        <div class="info-card-wrapper animate-slide-left">
-          <div class="dest-info-card">
-            
-            <div class="dest-card-header-toggle">
-              <div class="card-header-titles">
-                <div class="card-tag">CHOCOLATE HILLS & COUNTRYSIDE</div>
-                <h2 class="card-dest-title">BOHOL</h2>
-              </div>
-              <button class="card-fold-toggle-btn" aria-label="Toggle Bohol details">
-                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-
-            <div class="dest-card-collapsible-body">
-              <div class="card-sub">Central Visayas</div>
-              <p class="card-desc">Marvel at over 1,200 symmetrical Chocolate Hills, meet the world's smallest primate — the Philippine Tarsier, cruise along the emerald Loboc River, and relax on Panglao Island.</p>
-              <div class="card-meta-list">
-                <div><strong>Best known for:</strong> Chocolate Hills, Tarsier Sanctuary, Loboc River Cruise</div>
-                <div><strong>Ideal for:</strong> Families · Nature Enthusiasts · Countryside Explorers</div>
-                <div><strong>Suggested stay:</strong> 2–3 Days</div>
-                <div><strong>Best time:</strong> November – May</div>
-              </div>
-              <button class="card-cta-btn open-booking-trigger" data-dest="Bohol">EXPLORE BOHOL →</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 8: BANAUE & THE CORDILLERAS -->
-    <section class="film-chapter chapter-banaue" id="chapter-banaue" data-region="LUZON" data-region-name="LUZON • CORDILLERAS" data-beacon-x="74" data-beacon-y="34">
-      <div class="chapter-background-media">
-        <img src="images/philippines/banaue_farmer.jpeg" alt="Banaue Rice Terraces Mountain Farmer" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-grid right-aligned">
-        <div class="info-card-wrapper animate-slide-right">
-          <div class="dest-info-card">
-            
-            <div class="dest-card-header-toggle">
-              <div class="card-header-titles">
-                <div class="card-tag">THE EIGHTH WONDER</div>
-                <h2 class="card-dest-title">BANAUE & CORDILLERAS</h2>
-              </div>
-              <button class="card-fold-toggle-btn" aria-label="Toggle Banaue details">
-                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-
-            <div class="dest-card-collapsible-body">
-              <div class="card-sub">Ifugao · Northern Luzon</div>
-              <p class="card-desc">Trek through 2,000-year-old rice terrace amphitheaters carved by hand into misty green mountain ridges, stay in indigenous villages, and breathe crisp mountain air.</p>
-              <div class="card-meta-list">
-                <div><strong>Best known for:</strong> Batad Rice Terraces, Ifugao Heritage, Mountain Trekking</div>
-                <div><strong>Ideal for:</strong> Hikers · Photographers · Cultural Travelers</div>
-                <div><strong>Suggested stay:</strong> 3–4 Days</div>
-                <div><strong>Best time:</strong> December – May</div>
-              </div>
-              <button class="card-cta-btn open-booking-trigger" data-dest="Banaue">EXPLORE BANAUE →</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 9: MAYON VOLCANO / BICOL -->
-    <section class="film-chapter chapter-mayon" id="chapter-mayon" data-region="LUZON" data-region-name="LUZON • BICOL" data-beacon-x="96" data-beacon-y="78">
-      <div class="chapter-background-media">
-        <img src="images/philippines/mayon_volcano.jpeg" alt="Mayon Volcano and Local Village Life" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-grid">
-        <div class="info-card-wrapper animate-slide-left">
-          <div class="dest-info-card">
-            
-            <div class="dest-card-header-toggle">
-              <div class="card-header-titles">
-                <div class="card-tag">THE PERFECT CONE</div>
-                <h2 class="card-dest-title">MAYON VOLCANO</h2>
-              </div>
-              <button class="card-fold-toggle-btn" aria-label="Toggle Mayon details">
-                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-
-            <div class="dest-card-collapsible-body">
-              <div class="card-sub">Albay · Bicol Region</div>
-              <p class="card-desc">Witness the world's most perfectly symmetrical active volcano rising above green rice fields, ride ATVs across volcanic lava trails, and sample fiery coconut-spiced Bicolano cuisine.</p>
-              <div class="card-meta-list">
-                <div><strong>Best known for:</strong> Perfect Cone Volcano, Lava ATV Trails, Spicy Food</div>
-                <div><strong>Ideal for:</strong> Adventure seekers · Photographers · Foodies</div>
-                <div><strong>Suggested stay:</strong> 2–3 Days</div>
-                <div><strong>Best time:</strong> January – May</div>
-              </div>
-              <button class="card-cta-btn open-booking-trigger" data-dest="Mayon Volcano">EXPLORE MAYON →</button>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAPTER 10: BATANES, SAGADA & SECRET ISLES -->
-    <section class="film-chapter chapter-secret-isles" id="chapter-secret-isles" data-region="PHILIPPINES" data-region-name="PHILIPPINES • BEYOND">
-      <div class="chapter-background-media">
-        <img src="images/philippines/el_nido_kayak.jpeg" alt="Travelers Kayaking in Philippines Secret Lagoon" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-container center-aligned">
-        <div class="brand-eyebrow gold-text">EXPLORE BEYOND THE ORDINARY</div>
-        <h2 class="section-chapter-heading">BATANES • SAGADA • SIQUIJOR • APO ISLAND</h2>
-        <p class="film-subtitle max-width-700">
-          From the windswept rolling green cliffs and stone houses of Batanes to misty mountain coffins in Sagada, enchanted waterfalls in Siquijor, and swimming with sea turtles off Apo Island.
-        </p>
-      </div>
-    </section>
-
-    <!-- CHAPTER 11: GRAND FINALE MONTAGE & CALL TO ACTION -->
-    <section class="film-chapter chapter-finale" id="chapter-finale" data-region="PHILIPPINES" data-region-name="PHILIPPINES • YOUR STORY">
-      <div class="chapter-background-media">
-        <img src="images/philippines/boracay_beach.jpeg" alt="Philippines Sunset Finale" class="bg-photo zoom-travel-photo">
-        <div class="vignette-overlay"></div>
-      </div>
-      <div class="chapter-content-container center-aligned">
-        <div class="brand-eyebrow animate-fade-down">COME FOR THE 7,641 ISLANDS. STAY FOR THE CONCIERGE CARE.</div>
-        <h2 class="giant-editorial-title animate-fade-up">
-          YOUR PHILIPPINE STORY<br>
-          <span class="cyan-text">STARTS HERE.</span>
-        </h2>
-        <p class="film-subtitle animate-fade-up">
-          Let Abbey's Road design your bespoke journey through paradise. Hand-selected 4 & 5-star island resorts, private outrigger banca charters, local expert guides with Baron Travel DMC ground handling, and 24/7 guest care.
-        </p>
-        
-        <div class="hero-cta-group animate-fade-up">
-          <button class="btn-primary-cyan open-booking-trigger" data-dest="Custom Philippines Trip">
-            START PLANNING YOUR JOURNEY →
-          </button>
-          <a href="#itinerary-viewport" class="btn-secondary-gold">
-            EXPLORE ALL ITINERARIES
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- BUSINESS PLAN CONCIERGE SERVICES SECTION -->
-  <section class="concierge-section" id="concierge-section">
+  <!-- WHAT WE DO SECTION -->
+  <section class="concierge-section" id="what-we-do" style="padding-top: 8rem;">
     <div class="section-header">
-      <span class="gold-badge">DENMARK'S PHILIPPINES SPECIALIST</span>
-      <h2>THE CONCIERGE EXPERIENCE</h2>
-      <p class="section-tagline">Bespoke 4 & 5-star travel planning backed by trusted ground-handling partnerships.</p>
+      <span class="gold-badge">WHAT WE DO</span>
+      <h2>B2B COMMERCIAL SERVICES</h2>
+      <p class="section-tagline">Establishing commercial linkages between local destination operators and the Nordic trade.</p>
     </div>
     <div class="concierge-grid">
       
       <div class="concierge-card">
-        <div class="concierge-icon">⛵</div>
-        <h3>Tailor-Made Holidays</h3>
-        <p>Custom island hopping, beach escapes, luxury resort stays, wreck & reef diving adventures, cultural heritage tours, and honeymoon packages tailored to your schedule.</p>
+        <div class="concierge-icon">🏢</div>
+        <h3>Market Representation</h3>
+        <p>Positioning your destination brand with premium outbound operators. We advocate, train, and represent your unique travel products to product managers and contract leads.</p>
       </div>
 
       <div class="concierge-card">
-        <div class="concierge-icon">🏨</div>
-        <h3>Curated Accommodations</h3>
-        <p>Hand-picked portfolio of luxury 4 & 5-star hotels, boutique beachfront eco-resorts, private island villas, and authentic highland mountain lodges.</p>
+        <div class="concierge-icon">⛵</div>
+        <h3>Commercial Distribution</h3>
+        <p>Creating robust distributor networks. We coordinate product selection, contract negotiations, and align pricing structures with the commercial standards of the Nordic market.</p>
       </div>
 
       <div class="concierge-card">
         <div class="concierge-icon">🤝</div>
-        <h3>Baron Travel DMC Partnership</h3>
-        <p>Seamless ground handling across the Philippines with licensed local guides, airport transfers, private banca charters, and 24/7 emergency assistance.</p>
+        <h3>B2B Trade Engagement</h3>
+        <p>Conducting operator sales calls, organizing destination webinars, planning specialized trade fam-trips, and representing suppliers at key Nordic travel exhibitions.</p>
       </div>
 
       <div class="concierge-card">
-        <div class="concierge-icon">🤖</div>
-        <h3>AI-Enhanced Itinerary Design</h3>
-        <p>Combining modern digital automation with deep local destination expertise for swift, transparent, and hyper-personalized travel planning.</p>
+        <div class="concierge-icon">📈</div>
+        <h3>Strategic Sales Operations</h3>
+        <p>Utilizing local market intelligence and digital reporting systems to identify sales trends, volume growth pools, and new product opportunities.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- BUSINESS PLAN SIGNATURE EVENT SECTION -->
-  <section class="events-section" id="events-section">
-    <div class="events-container">
-      <div class="events-content">
-        <span class="gold-badge">COPENHAGEN SIGNATURE EVENT</span>
-        <h2>TRAVEL TASTING EVENT</h2>
-        <p class="event-subtitle">"Introduction to the Philippines" — An immersive destination showcase in Denmark.</p>
-        <p class="event-desc">
-          Experience the culture, warmth, and flavor of the Philippines before you fly! Join Abbey's Road in Copenhagen for destination presentations, authentic Filipino cuisine, cultural dance performances, video showcases, and exclusive travel offers.
-        </p>
-        <button class="btn-primary-cyan open-booking-trigger" data-dest="Travel Tasting Event RSVP">RSVP FOR NEXT EVENT →</button>
-      </div>
-      <div class="events-image-box">
-        <img src="images/philippines/boracay_beach.jpeg" alt="Travel Tasting Event Showcase">
-      </div>
-    </div>
-  </section>
-
-  <!-- DYNAMIC ITINERARY VIEWPORT SECTION -->
-  <section id="itinerary-viewport" class="itinerary-viewport">
-    <!-- Dynamically rendered by app.js -->
-  </section>
-
-  <!-- GLOBAL ABOUT US SECTION -->
-  <section class="about-section" id="about-section">
+  <!-- THE ABBEY'S ROAD DIFFERENCE -->
+  <section class="about-section" id="difference-section" style="background: rgba(16, 76, 113, 0.12); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
     <div class="section-header">
-      <h2>ABOUT ABBEY'S ROAD</h2>
-      <p class="section-tagline">Your Philippines Travel Concierge | Copenhagen, Denmark</p>
+      <span class="gold-badge">OUR ADVANTAGE</span>
+      <h2>THE DISTRIBUTION DIFFERENCE</h2>
+      <p class="section-tagline">We focus on sales distribution, not just marketing impressions.</p>
     </div>
     <div class="about-content-grid">
-      <div class="about-text-card">
-        <h3>Our Vision & Mission</h3>
-        <p><strong>Vision:</strong> To become Denmark's leading travel concierge for the Philippines by creating meaningful, authentic, and unforgettable travel experiences.</p>
-        <p><strong>Mission:</strong> To connect Danish and international travelers with the Philippines through personalized travel planning, trusted local expertise, and exceptional concierge service while supporting sustainable tourism and local island communities.</p>
+      <div class="about-text-card" style="display: flex; flex-direction: column; justify-content: center;">
+        <h3>PR alone does not build pipelines</h3>
+        <p style="margin-bottom: 1.2rem;">While traditional agencies measure success in magazine mentions and media clicks, Abbey’s Road measures success in **commercial contracts signed, bookings generated, and revenue growth**.</p>
+        <p>By connecting verified local DMCs (like Baron Travel in the Philippines and Oman Safari Tours in Oman) directly with product heads at leading outbound operators, we translate traveler interest into structural, long-term B2B trade business.</p>
       </div>
-      <div class="about-text-card">
-        <h3>Denmark Representation & Ground Excellence</h3>
-        <p>Operating from Copenhagen with operational roots in Manila, Abbey's Road provides a seamless bridge between European travelers and local destination management through our partnership with <strong>Baron Travel Philippines</strong> — ensuring safety, luxury, and 24/7 guest support on every island.</p>
+      <div class="about-text-card" style="display: flex; flex-direction: column; justify-content: center; background: rgba(32, 43, 34, 0.98);">
+        <h3>Our B2B Value Flow</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+          <div style="border-left: 3px solid var(--accent-gold); padding-left: 1rem;">
+            <strong style="color: var(--accent-gold); font-size: 0.9rem;">1. LOCAL DMCs & SUPPLIERS</strong>
+            <p style="font-size: 0.88rem; color: #FFFFFF;">We source, vet, and contract with outstanding ground handling operators in destination countries.</p>
+          </div>
+          <div style="border-left: 3px solid var(--accent-cyan); padding-left: 1rem;">
+            <strong style="color: var(--accent-cyan); font-size: 0.9rem;">2. COMMERCIAL ADVOCACY</strong>
+            <p style="font-size: 0.88rem; color: #FFFFFF;">Abbey's Road presents structured, commissionable travel products directly to Nordic tour operator buyers.</p>
+          </div>
+          <div style="border-left: 3px solid var(--accent-gold); padding-left: 1rem;">
+            <strong style="color: var(--accent-gold); font-size: 0.9rem;">3. SUSTAINABLE SALES CHANNELS</strong>
+            <p style="font-size: 0.88rem; color: #FFFFFF;">Nordic travelers book through trusted local operators, generating year-round tourism volume.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- GLOBAL MEET THE TEAM SECTION -->
-  <section class="team-section" id="team-section">
+  <!-- FEATURED DESTINATIONS SECTION -->
+  <section class="concierge-section" id="featured-destinations" style="padding-bottom: 8rem;">
     <div class="section-header">
-      <h2>MEET THE TEAM</h2>
-      <p>The dedicated travel specialists and operations managers behind your Philippines journey.</p>
+      <span class="gold-badge">OUR PORTFOLIO</span>
+      <h2>FEATURED DESTINATIONS</h2>
+      <p class="section-tagline">Vetted destination gateways represented and distributed by Abbey's Road.</p>
     </div>
-    <div class="team-grid team-grid-4">
+    
+    <div class="about-content-grid" style="max-width: 1200px;">
       
-      <div class="team-card">
-        <div class="team-img-container">
-          <img src="images/avatar_placeholder.png" alt="Abbey Salvador Placeholder">
+      <!-- Card 1: Philippines -->
+      <div class="about-text-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 2px solid var(--border-glass);">
+        <div style="position: relative; height: 260px; overflow: hidden;">
+          <img src="images/philippines/el_nido_boat.jpeg" alt="Philippines Archipelago" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; bottom: 1rem; left: 1.5rem; background: var(--btn-blue); color: var(--accent-cyan); padding: 4px 12px; border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 800; border: 1px solid var(--accent-cyan);">7,641 ISLANDS</div>
         </div>
-        <div class="team-info">
-          <h4>Abbey</h4>
-          <p class="team-role">Denmark Manager</p>
-          <p class="team-bio">Leads business development, European client relations, sales, marketing, and bespoke product design for Danish travelers.</p>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-img-container">
-          <img src="images/avatar_placeholder.png" alt="Lizette Placeholder">
-        </div>
-        <div class="team-info">
-          <h4>Lizette</h4>
-          <p class="team-role">Philippines Operations Manager</p>
-          <p class="team-bio">Coordinates local suppliers, confirms luxury resort & banca bookings, oversees quality control, and manages 24/7 guest support in Manila.</p>
+        <div style="padding: 2.2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h3 style="color: var(--accent-gold); font-size: 1.6rem; margin-bottom: 0.5rem;">THE PHILIPPINES</h3>
+            <p style="color: rgba(255,255,255,0.9); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              An archipelago of emerald karst cliffs, hidden lagoons, and rich Spanish-Asian heritage. Supported by our key strategic partnership with Baron Travel DMC in Manila.
+            </p>
+          </div>
+          <a href="philippines.html" class="btn-primary-cyan" style="text-align: center; text-decoration: none; display: block; font-size: 0.88rem; padding: 12px 20px;">
+            EXPLORE PHILIPPINES PORTFOLIO →
+          </a>
         </div>
       </div>
 
-      <div class="team-card">
-        <div class="team-img-container">
-          <img src="images/avatar_placeholder.png" alt="Michael Placeholder">
+      <!-- Card 2: Oman -->
+      <div class="about-text-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; border: 2px solid var(--border-glass);">
+        <div style="position: relative; height: 260px; overflow: hidden;">
+          <img src="images/contact_footer.jpg" alt="Sultanate of Oman" style="width: 100%; height: 100%; object-fit: cover; filter: sepia(0.2) brightness(0.85);">
+          <div style="position: absolute; bottom: 1rem; left: 1.5rem; background: var(--btn-blue); color: var(--accent-cyan); padding: 4px 12px; border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 800; border: 1px solid var(--accent-cyan);">ARABIAN SAFARI</div>
         </div>
-        <div class="team-info">
-          <h4>Michael</h4>
-          <p class="team-role">AI & Itinerary Development</p>
-          <p class="team-bio">Spearheads AI-generated itinerary layouts, travel content automation, package design, and digital concierge automation.</p>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-img-container">
-          <img src="images/avatar_placeholder.png" alt="Rowela Placeholder">
-        </div>
-        <div class="team-info">
-          <h4>Rowela</h4>
-          <p class="team-role">Accounting & Administration</p>
-          <p class="team-bio">Manages accounting, invoicing, financial reporting, supplier payments, and budget control for transparent operations.</p>
+        <div style="padding: 2.2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h3 style="color: var(--accent-gold); font-size: 1.6rem; margin-bottom: 0.5rem;">SULTANATE OF OMAN</h3>
+            <p style="color: rgba(255,255,255,0.9); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              Majestic mountains, copper-duned desert glamping, historical forts, and turquoise wadi gorges. Backed by verified local ground handling with Oman Safari.
+            </p>
+          </div>
+          <a href="oman.html" class="btn-primary-cyan" style="text-align: center; text-decoration: none; display: block; font-size: 0.88rem; padding: 12px 20px;">
+            EXPLORE OMAN PORTFOLIO →
+          </a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- MEETING MODAL POPUP -->
-  <div id="meeting-modal" class="meeting-modal">
-    <div class="meeting-modal-content">
-      <button class="close-modal-btn" id="close-modal">&times;</button>
-      <div class="modal-profile">
-        <div class="modal-avatar">AR</div>
-        <h2>Abbey's Road Concierge</h2>
-        <p class="modal-title">Copenhagen & Manila Travel Team</p>
-        <p class="modal-instruction">Schedule a private consultation or inquire about our Travel Tasting Event:</p>
-        <a href="mailto:abbey@abbeysroad.dk?subject=Abbeys%20Road%20Philippines%20Concierge%20Inquiry" class="modal-email-btn">
-          📩 abbey@abbeysroad.dk
-        </a>
+  <!-- ABOUT US / CORPORATE PROFILES -->
+  <section class="about-section" id="about-section" style="background: rgba(32, 43, 34, 0.95); border-top: 2px solid var(--accent-gold);">
+    <div class="section-header">
+      <h2>ABOUT ABBEY'S ROAD</h2>
+      <p class="section-tagline">Nordic Travel Market Intelligence & Commercial Network</p>
+    </div>
+    <div class="about-content-grid">
+      <div class="about-text-card" style="background: transparent; border: none; padding: 0;">
+        <h3>Strategic Coordination from Copenhagen</h3>
+        <p style="margin-bottom: 1.2rem; color: rgba(255, 255, 255, 0.9);">
+          Operating from our corporate office in Copenhagen, Denmark, Abbey's Road acts as a local representative for international tourism brands. We maintain active pipelines and close personal connections with leading Danish, Norwegian, Swedish, and Finnish tour operators, ensuring efficient contract matching and streamlined communication.
+        </p>
+        <p style="color: rgba(255, 255, 255, 0.9);">
+          Our operations ensure that Omani and Philippine supplier standards align perfectly with European consumer expectations, guest safety requirements, and sustainable tourism criteria.
+        </p>
+      </div>
+      <div class="about-text-card" style="background: rgba(16, 76, 113, 0.35); border: 1px solid var(--accent-cyan); padding: 2rem;">
+        <h4 style="color: var(--accent-gold); margin-bottom: 0.8rem; font-size: 1.15rem;">Our Ground-Handling Alliances</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+          <li>
+            <strong style="color: var(--accent-cyan);">🇵🇭 Baron Travel DMC (Manila, Philippines)</strong>
+            <p style="font-size: 0.88rem; margin-top: 0.2rem; color: rgba(255,255,255,0.85);">One of the Philippines' most respected destination management corporations, offering seamless airport operations, coach fleets, and certified local guides.</p>
+          </li>
+          <li>
+            <strong style="color: var(--accent-cyan);">🇴🇲 Oman Safari DMC (Muscat, Oman)</strong>
+            <p style="font-size: 0.88rem; margin-top: 0.2rem; color: rgba(255,255,255,0.85);">Experts in desert exploration, private mobile tenting camps, 4x4 coordinate guiding, and premium cultural programs.</p>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- B2B LEAD CAPTURE FORM SECTION -->
+  <section class="events-section" id="contact-section" style="background-color: var(--primary-dark);">
+    <div class="events-container" style="grid-template-columns: 1fr;">
+      
+      <div class="booking-card" style="max-width: 650px; margin: 0 auto; background: rgba(32, 43, 34, 0.98); border: 2.5px solid var(--accent-cyan); border-radius: var(--radius-lg); padding: 3rem 2.5rem; text-align: left;">
+        <h3 style="color: var(--accent-gold); text-align: center; margin-bottom: 0.5rem; font-size: 2rem;">LET'S BUILD BUSINESS</h3>
+        <p style="text-align: center; color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 2.5rem;">Partner with Abbey's Road to establish commercial distribution or procure verified destination services.</p>
+        
+        <form id="b2b-contact-form" style="display: flex; flex-direction: column; gap: 1.2rem;">
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">I represent a:</label>
+            <select required style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem;">
+              <option value="Operator" style="background: var(--primary-dark);">Outbound Tour Operator (Nordic Market)</option>
+              <option value="DMC" style="background: var(--primary-dark);">Destination Board / DMC seeking representation</option>
+              <option value="Other" style="background: var(--primary-dark);">Other Industry Affiliate</option>
+            </select>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Full Name</label>
+            <input type="text" required placeholder="John Doe" style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Company Name</label>
+            <input type="text" required placeholder="Travel Agency Ltd." style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Corporate Email</label>
+            <input type="email" required placeholder="john@company.dk" style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem;">
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Message</label>
+            <textarea required rows="4" placeholder="Briefly describe your market expansion plans or B2B inquiry..." style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem; resize: none;"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary-cyan" style="margin-top: 1rem; width: 100%; border: none; font-weight: 800; letter-spacing: 1.5px;">
+            SEND B2B INQUIRY
+          </button>
+        </form>
+        
+        <div id="form-success-msg" style="display: none; text-align: center; color: var(--accent-cyan); font-weight: 700; margin-top: 1.5rem; background: rgba(16,76,113,0.5); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--accent-cyan);">
+          ✓ Thank you. Our B2B coordinator will contact you shortly.
+        </div>
+
+      </div>
+
+    </div>
+  </section>
 
   <!-- FOOTER & CONTACT DETAILS -->
   <footer id="global-footer">
@@ -712,8 +330,8 @@
       <div class="footer-grid">
         <div>
           <h4 class="gold-text">ABBEY'S ROAD</h4>
-          <p class="footer-subtext">Your Philippines Travel Concierge</p>
-          <p>Discover the Philippines Beyond the Ordinary.</p>
+          <p class="footer-subtext">Destination Commercial Partner</p>
+          <p>Connecting World-class Destinations with the Nordic Travel Market.</p>
         </div>
         <div>
           <h4>Copenhagen Office</h4>
@@ -721,19 +339,19 @@
           <p>Email: abbey@abbeysroad.dk</p>
         </div>
         <div>
-          <h4>Manila Operations</h4>
-          <p>Baron Travel Ground DMC Partner</p>
-          <p>BGC High Street • Taguig, Philippines</p>
+          <h4>Strategic Alliances</h4>
+          <p>Baron Travel DMC • Philippines</p>
+          <p>Oman Safari DMC • Oman</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Abbey's Road — Your Philippines Travel Concierge. All rights reserved.</p>
-      <p>Crafted with ❤️ for Denmark & Global Philippines Travelers</p>
+      <p>&copy; 2026 Abbey's Road — Destination Market Development. All rights reserved.</p>
+      <p>Crafted with ❤️ for B2B Nordic Travel Trade</p>
     </div>
   </footer>
 
   <!-- App Script -->
-  <script src="app.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
