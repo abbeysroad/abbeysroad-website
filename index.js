@@ -123,6 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleMenu();
     });
 
+    const closeBtn = document.getElementById('mobile-nav-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeMenu();
+      });
+    }
+
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         closeMenu();

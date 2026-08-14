@@ -1680,3 +1680,45 @@ footer#global-footer {
     margin-bottom: 1.8rem !important;
   }
 }
+
+/* Yellow X Close Button on Mobile Nav Overlay */
+.mobile-nav-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.8rem;
+  background: transparent;
+  border: none;
+  color: var(--accent-gold);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1400;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  /* Remove outer containers and borders for mobile form styling */
+  .events-section {
+    padding: 3rem 0 !important;
+  }
+  .events-container {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+  .booking-card {
+    background: transparent !important;
+    border: none !important;
+    padding: 1.5rem 1rem !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .booking-card h3 {
+    font-size: 1.8rem !important;
+  }
+}
