@@ -1421,9 +1421,8 @@ footer#global-footer {
   #philippines-map-indicator { display: none; }
   .about-content-grid, .events-container, .footer-grid { grid-template-columns: 1fr; }
   .team-grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
 
-@media (max-width: 768px) {
+  /* Mobile Header Trigger Alignment */
   header#main-header.logo-bg-header-backdrop { padding: 0.2rem 0.8rem; }
   
   .header-container {
@@ -1457,6 +1456,9 @@ footer#global-footer {
     border-radius: var(--radius-pill);
     letter-spacing: 0.5px;
   }
+}
+
+@media (max-width: 768px) {
 
   .giant-editorial-title { font-size: 2.2rem; }
   .smaller-headline { font-size: 1.4rem; }
@@ -1612,5 +1614,69 @@ footer#global-footer {
     grid-template-columns: 1fr 1fr !important;
     gap: 1rem !important;
     padding: 0 1rem;
+  }
+}
+
+/* ==========================================================================
+   DESTINATION FEATURE CARDS LAYOUT
+   ========================================================================== */
+.destination-feature-card {
+  padding: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--border-glass);
+  background: rgba(32, 43, 34, 0.95);
+  border-radius: var(--radius-lg);
+  box-sizing: border-box;
+}
+
+.destination-feature-card-image-wrapper {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.destination-feature-card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.destination-feature-card-content {
+  padding: 2.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .destination-feature-card-content {
+    padding: 1.5rem 1.2rem !important;
+  }
+  
+  .booking-card input, 
+  .booking-card select, 
+  .booking-card textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .giant-editorial-title {
+    font-size: 1.8rem !important;
+    line-height: 1.25 !important;
+  }
+  .smaller-headline {
+    font-size: 1.25rem !important;
+  }
+  .film-subtitle {
+    font-size: 0.92rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 1.8rem !important;
   }
 }
