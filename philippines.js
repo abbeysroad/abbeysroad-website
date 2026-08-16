@@ -512,6 +512,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeMenu() {
       burgerBtn.classList.remove('burger-active');
       overlay.classList.remove('mobile-active');
+      const mItineraryToggle = document.getElementById('mobile-itineraries-toggle-btn');
+      const mItineraryMenu = document.getElementById('mobile-itineraries-menu');
+      if (mItineraryMenu) mItineraryMenu.classList.remove('show');
+      if (mItineraryToggle) mItineraryToggle.classList.remove('expanded');
     }
 
     burgerBtn.addEventListener('click', (e) => {
@@ -532,6 +536,18 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMenu();
       });
     });
+
+    // Mobile itineraries dropdown toggle
+    const mItineraryToggle = document.getElementById('mobile-itineraries-toggle-btn');
+    const mItineraryMenu = document.getElementById('mobile-itineraries-menu');
+    if (mItineraryToggle && mItineraryMenu) {
+      mItineraryToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        mItineraryMenu.classList.toggle('show');
+        mItineraryToggle.classList.toggle('expanded');
+      });
+    }
   }
 
   // ==========================================================================
@@ -566,30 +582,63 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   function initItinerariesMenu() {
     const itinerariesMenu = document.getElementById('itineraries-menu');
-    if (!itinerariesMenu) return;
+    const mobileMenu = document.getElementById('mobile-itineraries-menu');
 
-    itinerariesMenu.innerHTML = '';
-    itineraries.forEach(item => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#';
-      a.textContent = item.hero.title;
-      a.dataset.id = item.id;
-      
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        renderItinerary(item.id);
-        itinerariesMenu.classList.remove('show');
+    if (itinerariesMenu) {
+      itinerariesMenu.innerHTML = '';
+      itineraries.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#';
+        a.textContent = item.hero.title;
+        a.dataset.id = item.id;
         
-        const viewport = document.getElementById('itinerary-viewport');
-        if (viewport) {
-          viewport.scrollIntoView({ behavior: 'smooth' });
-        }
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          renderItinerary(item.id);
+          itinerariesMenu.classList.remove('show');
+          
+          const viewport = document.getElementById('itinerary-viewport');
+          if (viewport) {
+            viewport.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+        
+        li.appendChild(a);
+        itinerariesMenu.appendChild(li);
       });
-      
-      li.appendChild(a);
-      itinerariesMenu.appendChild(li);
-    });
+    }
+
+    if (mobileMenu) {
+      mobileMenu.innerHTML = '';
+      itineraries.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#';
+        a.className = 'mobile-menu-itinerary-link';
+        a.textContent = item.hero.title;
+        a.dataset.id = item.id;
+        
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          renderItinerary(item.id);
+          
+          // Close mobile menu overlay after selection
+          const overlay = document.getElementById('mobile-nav-overlay');
+          const burgerBtn = document.getElementById('burger-btn');
+          if (overlay) overlay.classList.remove('mobile-active');
+          if (burgerBtn) burgerBtn.classList.remove('burger-active');
+
+          const viewport = document.getElementById('itinerary-viewport');
+          if (viewport) {
+            viewport.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+        
+        li.appendChild(a);
+        mobileMenu.appendChild(li);
+      });
+    }
   }
 
   function renderItinerary(id) {
