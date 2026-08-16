@@ -1602,18 +1602,56 @@ footer#global-footer {
     padding: 1.5rem 1.2rem;
   }
 
+  .itinerary-details-section {
+    padding: 2rem 0.5rem !important;
+  }
+
   .timeline-container {
-    padding: 1.5rem 0.8rem !important;
+    padding: 1.5rem 0.25rem !important;
   }
 
   .day-card {
-    padding: 1.5rem 1rem !important;
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  .day-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .day-tagline {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .day-vibe {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .highlight-item {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.85rem !important;
   }
 
   .essentials-grid {
     grid-template-columns: 1fr 1fr !important;
-    gap: 1rem !important;
-    padding: 0 1rem;
+    gap: 0.6rem !important;
+    padding: 0 !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  .essential-card {
+    padding: 1rem 0.4rem !important;
+  }
+
+  .essential-card h4 {
+    font-size: 0.9rem !important;
+  }
+
+  .essential-card p {
+    font-size: 0.85rem !important;
   }
 }
 
@@ -1724,7 +1762,8 @@ footer#global-footer {
 
   /* Automated 180 degrees background image walkthrough panning animation */
   .bg-photo.pan-active {
-    animation: mobilePan 24s ease-in-out infinite alternate;
+    animation: mobilePan 20s linear infinite alternate;
+    will-change: object-position;
   }
 }
 
