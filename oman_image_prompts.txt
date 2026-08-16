@@ -1,0 +1,79 @@
+================================================================================
+ABBEY'S ROAD - OMAN & DUBAI IMAGE GENERATION PROMPTS LIST
+================================================================================
+
+This document contains highly descriptive photographic text prompts optimized for 
+AI image generation engines (such as Midjourney, DALL-E 3, or Stable Diffusion). 
+Use these prompts to generate the missing visual assets for the website.
+
+--------------------------------------------------------------------------------
+1. HOTELS & RESORTS
+--------------------------------------------------------------------------------
+
+[HEADLINE] Mandarin Oriental, Muscat (Hotel - Muscat Coast)
+[FILEPATH] images/oman/mandarin_oriental_muscat.jpg
+[PROMPT]   Cinematic wide-angle photograph of the luxury Mandarin Oriental Muscat resort at dusk, reflecting pools, modern Arabian architecture, Gulf of Oman in background, premium warm lighting, ultra-high resolution.
+
+[HEADLINE] Anantara Al Jabal Al Akhdar Resort (Hotel - Mountain Canyon)
+[FILEPATH] images/oman/anantara_jabal_akhdar.jpg
+[PROMPT]   Cinematic wide-angle photo of Anantara Al Jabal Al Akhdar Resort in Oman, showing Diana's Point cliff-edge viewing platform, luxury infinity pool, rugged mountain canyon peaks at sunset, editorial travel photography.
+
+[HEADLINE] St. Regis Al Mouj Muscat Resort (Hotel - Beachfront Luxury)
+[FILEPATH] images/oman/st_regis_al_mouj.jpg
+[PROMPT]   Cinematic photograph of St. Regis Al Mouj Muscat Resort beach club and pool, palm trees, white sand private beach, turquoise Gulf water, ultra-luxury resort design, high-end travel catalog style.
+
+[HEADLINE] W Muscat (Hotel - Lifestyle Resort)
+[FILEPATH] images/oman/w_muscat.jpg
+[PROMPT]   Cinematic wide-angle photograph of W Muscat hotel pool deck, vibrant luxury design, sun loungers, palm trees, modern architecture, sunset lighting, high fashion travel vibe.
+
+[HEADLINE] Kempinski Hotel Muscat (Hotel - Family Beach Resort)
+[FILEPATH] images/oman/kempinski_muscat.jpg
+[PROMPT]   Cinematic photo of Kempinski Hotel Muscat, showing its grand open-air infinity pool, beachfront sun loungers, modern white architecture, sunset, calm waves.
+
+[HEADLINE] Canyon View Lodge, Jebel Shams (Hotel - Mountain Lodge)
+[FILEPATH] images/oman/jabal_shams_lodge.jpg
+[PROMPT]   Cinematic photograph of a rustic mountain stone lodge at Jebel Shams canyon edge, overlooking a deep limestone gorge, clear blue sky, active travel photography.
+
+[HEADLINE] dusitD2 Naseem Resort, Jabal Akhdar (Hotel - Mountain Family Resort)
+[FILEPATH] images/oman/dusit_d2_jabal_akhdar.jpg
+[PROMPT]   Cinematic photograph of dusitD2 Naseem Resort Jabal Akhdar, mountain adventure resort with family pool, high-altitude landscape, clear bright lighting.
+
+[HEADLINE] Six Senses Zighy Bay (Hotel - Musandam Peninsula Luxury)
+[FILEPATH] images/oman/six_senses_zighy_bay.jpg
+[PROMPT]   Cinematic wide-angle photograph of Six Senses Zighy Bay resort in Musandam Oman, rustic luxury stone villas nestled between towering rugged mountains and a pristine sandy beach with turquoise water, organic architecture.
+
+[HEADLINE] Ras Al Jinz Scientific Eco-Lodge (Hotel - Turtle Reserve Lodge)
+[FILEPATH] images/oman/ras_al_jinz_lodge.jpg
+[PROMPT]   Cinematic photograph of the Ras Al Jinz Turtle Reserve eco-lodge exterior at twilight, sandy ground, low-impact sustainable architecture, warm interior lights.
+
+--------------------------------------------------------------------------------
+2. EXPERIENCES & GEOGRAPHIC WADIS
+--------------------------------------------------------------------------------
+
+[HEADLINE] Bimmah Sinkhole (Destination - Coastal Limestone Pool)
+[FILEPATH] images/oman/bimmah_sinkhole.jpg
+[PROMPT]   Cinematic wide-angle landscape photo of Bimmah Sinkhole in Oman, a deep natural limestone sinkhole with clear turquoise water, visitors swimming, natural rock stairs, sunny day.
+
+[HEADLINE] Wadi Bani Awf Mountain Pass (Experience - Offroad 4WD Crossing)
+[FILEPATH] images/oman/wadi_bani_awf.jpg
+[PROMPT]   Cinematic 4x4 off-road vehicle driving through Wadi Bani Awf mountain pass, rugged steep canyon rock walls, gravel track, dust tail, sunset lighting, adventure travel style.
+
+[HEADLINE] Wadi Hawer Canyoning (Experience - Fresh Water Pools & Gorges)
+[FILEPATH] images/oman/wadi_hawer.jpg
+[PROMPT]   Cinematic photo of Wadi Hawer canyon, hikers swimming and wading in crystal clear pools between massive rock walls, lush green vegetation, action adventure capture.
+
+--------------------------------------------------------------------------------
+3. DUBAI PORTFOLIO
+--------------------------------------------------------------------------------
+
+[HEADLINE] Dubai Downtown Skyline (Destination - Armani Hotel Dubai View)
+[FILEPATH] images/oman/dubai_skyline.jpg
+[PROMPT]   Cinematic wide-angle photograph of Dubai Downtown skyline with the Burj Khalifa at sunset, golden hour light, reflecting pools, ultra-luxury city view.
+
+[HEADLINE] Dubai Traditional Souks (Destination - Deira Gold & Spice Markets)
+[FILEPATH] images/oman/dubai_souk.jpg
+[PROMPT]   Close-up cinematic photograph of baskets of spices and hanging gold lamps inside a traditional gold and spice souk in Dubai, warm ambient lighting.
+
+[HEADLINE] Dubai Marina Yacht Cruise (Experience - Private Harbor Sailing)
+[FILEPATH] images/oman/dubai_yacht.jpg
+[PROMPT]   Cinematic photograph of a luxury private white yacht sailing through Dubai Marina canal at sunset, modern towering skyscrapers lining the water, warm golden reflections.
