@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
-  // EMBEDDED OMAN ITINERARIES DATA (5 DISTINCT PORTFOLIOS)
+  // EMBEDDED OMAN ITINERARIES DATA (5 DISTINCT PORTFOLIOS WITH TARGETED PROMPTS)
   // ==========================================================================
   const itineraries = [
   {
@@ -41,10 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-lux-day1",
           "slides": [
+            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "The Chedi Muscat", "title": "The Chedi Muscat Pools", "caption": "Quiet reflecting pools and symmetric resort architecture." },
+            { 
+              "type": "single", 
+              "src": "images/oman/mandarin_oriental_muscat.jpg", 
+              "alt": "Mandarin Oriental, Muscat", 
+              "title": "Mandarin Oriental, Muscat", 
+              "caption": "New ultra-luxury hotel option in Muscat.",
+              "prompt": "Cinematic wide-angle photograph of the luxury Mandarin Oriental Muscat resort at dusk, reflecting pools, modern Arabian architecture, Gulf of Oman in background, premium warm lighting."
+            },
             { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Grand Mosque", "title": "Grand Mosque Exterior", "caption": "The white marble facade and minarets at morning light." },
-            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Gardens", "title": "The Chedi Gardens", "caption": "Quiet reflecting pools and symmetric architecture." },
-            { "type": "single", "src": "images/oman/Frankincense_burning_in_Muttrah_…_202608141639.jpeg", "alt": "Muttrah Souq", "title": "Muttrah Souq Alleys", "caption": "Scents of frankincense and spices filling the narrow corridors." },
-            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Dhow Cruise", "title": "Sunset Dhow Sailing", "caption": "Sailing past Muscat cliffs under a golden twilight sky." }
+            { "type": "single", "src": "images/oman/Frankincense_burning_in_Muttrah_…_202608141639.jpeg", "alt": "Muttrah Souq", "title": "Muttrah Souq Alleys", "caption": "Scents of frankincense and spices filling the narrow corridors." }
           ]
         }
       },
@@ -53,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "Jabal Akhdar Ascent via Nizwa",
         "tagline": "⛰️ Fortresses, Mountain Walks & Spas",
         "vibe_title": "The Vibe",
-        "vibe_text": "Travel by 4x4 to Nizwa Fort and Souq before climbing 2,000m to the Hajar Mountains. Hike along canyon trails, walk through rose terraces, and enjoy cliff-edge spas.",
+        "vibe_text": "Travel privately by 4WD to Nizwa Fort and Souq before climbing 2,000m to the Hajar Mountains. Hike along canyon trails, walk through rose terraces, and enjoy cliff-edge spas.",
         "highlights": [
           { "icon": "🏰", "title": "Nizwa Fort & Souq", "description": "Walk the circular tower and browse silver jewelry and daggers." },
           { "icon": "🥾", "title": "Three Villages Walk", "description": "Gentle cliff walk visiting ancient stone dwellings and rose plantations." }
@@ -63,10 +70,16 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-lux-day3",
           "slides": [
-            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Resort Pool", "title": "Jabal Akhdar Infinity Pool", "caption": "Overlooking sweeping mountain canyons." },
+            { 
+              "type": "single", 
+              "src": "images/oman/anantara_jabal_akhdar.jpg", 
+              "alt": "Anantara Al Jabal Al Akhdar", 
+              "title": "Anantara Al Jabal Al Akhdar Resort", 
+              "caption": "Luxury resort perched on the edge of the canyon.",
+              "prompt": "Cinematic wide-angle photo of Anantara Al Jabal Al Akhdar Resort in Oman, showing Diana's Point cliff-edge viewing platform, luxury infinity pool, rugged mountain canyon peaks at sunset."
+            },
             { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort", "title": "Nizwa Fort Tower", "caption": "The majestic circular clay fort of Nizwa." },
-            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Mountain Village", "title": "Stone Mountain Terraces", "caption": "Village houses built directly into steep limestone cliffs." },
-            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Balcony Walk Path", "title": "Wadi Ghul Mountain Ridges", "caption": "Rugged canyon paths offering dramatic views." }
+            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Alila Pool", "title": "Alila Jabal Akhdar Pool", "caption": "Cliffside infinity pool looking out over deep mountain canyons." }
           ]
         }
       },
@@ -85,10 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-lux-day5",
           "slides": [
-            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Sand Dunes", "title": "Wahiba Sands Desert", "caption": "Windswept copper-colored dunes at sunset." },
             { "type": "single", "src": "images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg", "alt": "Desert Camp", "title": "Desert Nights Glamping Tents", "caption": "Premium canvas domes nestled between tall dunes." },
-            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Campfire", "title": "Campfire Stargazing", "caption": "Relaxing under the stars in the silent sands." },
-            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi Swimming", "title": "Oasis Swimming Pools", "caption": "Deep freshwater pools tucked inside mountain gorges." }
+            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Sand Dunes", "title": "Wahiba Sands Desert", "caption": "Windswept copper-colored dunes at sunset." },
+            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Campfire", "title": "Campfire Stargazing", "caption": "Relaxing under the stars in the silent sands." }
           ]
         }
       },
@@ -107,10 +119,16 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-lux-day6",
           "slides": [
+            { 
+              "type": "single", 
+              "src": "images/oman/st_regis_al_mouj.jpg", 
+              "alt": "St. Regis Al Mouj Muscat", 
+              "title": "St. Regis Al Mouj Muscat Resort", 
+              "caption": "Coastal luxury resort nestled on a private white sand beach.",
+              "prompt": "Cinematic photograph of St. Regis Al Mouj Muscat Resort beach club and pool, palm trees, white sand private beach, turquoise Gulf water, ultra-luxury resort design."
+            },
             { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle", "title": "Ras Al Jinz Green Turtles", "caption": "Watching turtles return to the sea at early dawn." },
-            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Swimming Sea Turtle", "title": "Snorkeling Daymaniyat Islands", "caption": "Clear lagoons with rich coral reef ecosystems." },
-            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Coastal Spray", "title": "Coastal Route Cliffs", "caption": "Waves crashing against coastal rocks near Bimmah Sinkhole." },
-            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Water gardens", "title": "Resort Water Features", "caption": "Symmetric pools and luxury beachfront gardens." }
+            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Swimming Sea Turtle", "title": "Snorkeling Daymaniyat Islands", "caption": "Clear lagoons with rich coral reef ecosystems." }
           ]
         }
       },
@@ -205,9 +223,16 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-nat-day1",
           "slides": [
+            { 
+              "type": "single", 
+              "src": "images/oman/w_muscat.jpg", 
+              "alt": "W Muscat Hotel", 
+              "title": "W Muscat Hotel Pool", 
+              "caption": "Dynamic pool deck and lifestyle accommodations.",
+              "prompt": "Cinematic wide-angle photograph of W Muscat hotel pool deck, vibrant luxury design, sun loungers, palm trees, modern architecture, sunset lighting."
+            },
             { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Sea Turtle Swimming", "title": "Daymaniyat Coral Reefs", "caption": "Snorkeling with endangered sea turtles." },
-            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Dolphins", "title": "Spinner Dolphin Pods", "caption": "Dolphin pods swimming alongside the local dhow charters." },
-            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Sailing boat", "title": "Dhow Sailing Muscat", "caption": "Traditional sailing vessel cruising past rock peaks." }
+            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Dolphins", "title": "Spinner Dolphin Pods", "caption": "Dolphin pods swimming alongside the local dhow charters." }
           ]
         }
       },
@@ -226,8 +251,23 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-nat-day3",
           "slides": [
-            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Balcony Walk", "title": "Jebel Shams Balcony Walk", "caption": "Hiking routes following thin ridges with vertical mountain drops." },
-            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Clay mountain houses", "title": "Abandoned Cliff Dwellings", "caption": "Mudbrick village ruins clinging to mountain shelves." }
+            { 
+              "type": "single", 
+              "src": "images/oman/wadi_bani_awf.jpg", 
+              "alt": "Wadi Bani Awf Off-road Crossing", 
+              "title": "Wadi Bani Awf Mountain Pass", 
+              "caption": "Spectacular off-road crossing through dry rock cliffs.",
+              "prompt": "Cinematic 4x4 off-road vehicle driving through Wadi Bani Awf mountain pass, rugged steep canyon rock walls, gravel track, dust tail, sunset lighting."
+            },
+            { 
+              "type": "single", 
+              "src": "images/oman/jabal_shams_lodge.jpg", 
+              "alt": "Jebel Shams Canyon Lodge", 
+              "title": "Canyon View Lodge", 
+              "caption": "Rustic stone mountain lodge on the canyon rim.",
+              "prompt": "Cinematic photograph of a rustic mountain stone lodge at Jebel Shams canyon edge, overlooking a deep limestone gorge, clear blue sky."
+            },
+            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Balcony Walk Path", "title": "Jebel Shams Balcony Walk", "caption": "Hiking routes following thin ridges with vertical mountain drops." }
           ]
         }
       },
@@ -246,9 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-nat-day4",
           "slides": [
-            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Alila Jabal Akhdar", "title": "Alila Resort Heights", "caption": "Cliffside resort looking over deep gorges." },
+            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Alila Jabal Akhdar Pool", "title": "Alila Resort Heights", "caption": "Cliffside resort looking over deep gorges." },
             { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Terrace Plantation", "title": "Jabal Akhdar Rose Terraces", "caption": "A Falaj water system irrigating local mountain crops." },
-            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Mountain Camels", "title": "Mountain Camels", "caption": "Wild camels walking along mountain gorges." }
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Mountain village", "title": "Misfat Al Abriyeen", "caption": "Quiet paths on mountain rock terraces." }
           ]
         }
       },
@@ -288,8 +328,22 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-nat-day7",
           "slides": [
-            { "type": "single", "src": "images/oman/River_flowing_through_canyon_202608141630.jpeg", "alt": "Wadi river canyon", "title": "Wadi Hawer Water Canyon", "caption": "Pristine freshwater streams inside deep limestone rock canyons." },
-            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi wading", "title": "Wadi Swimming Pools", "caption": "Fresh turquoise pools welcoming active canyoners." },
+            { 
+              "type": "single", 
+              "src": "images/oman/wadi_hawer.jpg", 
+              "alt": "Wadi Hawer Gorge Canyoning", 
+              "title": "Wadi Hawer Canyons", 
+              "caption": "Deep freshwater pools and slot canyon cliffs.",
+              "prompt": "Cinematic photo of Wadi Hawer canyon, hikers swimming and wading in crystal clear pools between massive rock walls, lush green vegetation."
+            },
+            { 
+              "type": "single", 
+              "src": "images/oman/ras_al_jinz_lodge.jpg", 
+              "alt": "Ras Al Jinz Reserve Lodge", 
+              "title": "Ras Al Jinz Eco-Lodge", 
+              "caption": "Sustainable scientific reserve center at the beach.",
+              "prompt": "Cinematic photograph of the Ras Al Jinz Turtle Reserve eco-lodge exterior at twilight, sandy ground, low-impact sustainable architecture, warm interior lights."
+            },
             { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle", "title": "Ras Al Jinz Shore", "caption": "Protected beaches where sea turtles lay eggs." }
           ]
         }
@@ -308,6 +362,14 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-nat-day9",
           "slides": [
+            { 
+              "type": "single", 
+              "src": "images/oman/bimmah_sinkhole.jpg", 
+              "alt": "Bimmah Sinkhole", 
+              "title": "Bimmah Sinkhole Basin", 
+              "caption": "Oman's famous natural collapsed sinkhole pool.",
+              "prompt": "Cinematic wide-angle landscape photo of Bimmah Sinkhole in Oman, a deep natural limestone sinkhole with clear turquoise water, visitors swimming, natural rock stairs, sunny day."
+            },
             { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Coastal waves", "title": "Oman Coastal Drive", "caption": "Ocean sprays crashing near Bimmah Sinkhole." },
             { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Takeoff View", "title": "Gulf Departure Flight", "caption": "Scenic views of coastal mountains from above." }
           ]
@@ -386,10 +448,16 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-well-day1",
           "slides": [
-            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Gardens", "title": "The Chedi Water Gardens", "caption": "Relaxing reflective waterways and palms." },
-            { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Grand Mosque", "title": "Grand Mosque Courtyards", "caption": "Quiet marble pathways for peaceful walks." },
-            { "type": "single", "src": "images/oman/Frankincense_burning_in_Muttrah_…_202608141639.jpeg", "alt": "Frankincense", "title": "Muttrah Incense Burners", "caption": "Soothing aroma of burning organic Omani frankincense." },
-            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Yacht", "title": "Quiet Sunset Cruise", "caption": "Ocean views along Muscat's calm coast." }
+            { 
+              "type": "single", 
+              "src": "images/oman/mandarin_oriental_muscat.jpg", 
+              "alt": "Mandarin Oriental, Muscat", 
+              "title": "Mandarin Oriental, Muscat", 
+              "caption": "Restorative oceanfront oasis in Muscat.",
+              "prompt": "Cinematic wide-angle photograph of the luxury Mandarin Oriental Muscat resort at dusk, reflecting pools, modern Arabian architecture, Gulf of Oman in background, premium warm lighting."
+            },
+            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "The Chedi", "title": "The Chedi Water Gardens", "caption": "Relaxing reflective waterways and palms." },
+            { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Grand Mosque", "title": "Grand Mosque Courtyards", "caption": "Quiet marble pathways for peaceful walks." }
           ]
         }
       },
@@ -408,9 +476,16 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-well-day4",
           "slides": [
-            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Mountain Spa", "title": "Alila Cliffside Pools", "caption": "Warm, peaceful waters in high mountain air." },
-            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Birkat Al Mouz", "title": "Birkat Al Mouz Oasis", "caption": "Date palms irrigated by Falaj spring water systems." },
-            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Mountain mud brick villages", "title": "Misfat Al Abriyeen", "caption": "Quiet paths on mountain rock terraces." }
+            { 
+              "type": "single", 
+              "src": "images/oman/anantara_jabal_akhdar.jpg", 
+              "alt": "Anantara Al Jabal Al Akhdar", 
+              "title": "Anantara Mountain Spa", 
+              "caption": "Cliff-edge resort facilities.",
+              "prompt": "Cinematic wide-angle photo of Anantara Al Jabal Al Akhdar Resort in Oman, showing Diana's Point cliff-edge viewing platform, luxury infinity pool, rugged mountain canyon peaks at sunset."
+            },
+            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Alila Jabal Akhdar", "title": "Alila Cliffside Pools", "caption": "Warm, peaceful waters in high mountain air." },
+            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Birkat Al Mouz", "title": "Birkat Al Mouz Oasis", "caption": "Date palms irrigated by Falaj spring water systems." }
           ]
         }
       },
@@ -448,8 +523,15 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-well-day7",
           "slides": [
-            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi swimming", "title": "Wadi Bani Khalid", "caption": "Clear green pools inside rocky valleys." },
-            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Takeoff View", "title": "Muscat Coastal Peaks", "caption": "Sunset horizon along the Muscat gulf shores." }
+            { 
+              "type": "single", 
+              "src": "images/oman/st_regis_al_mouj.jpg", 
+              "alt": "St. Regis Al Mouj", 
+              "title": "St. Regis Al Mouj Muscat Resort", 
+              "caption": "Elegant oceanfront property with high-end spa spaces.",
+              "prompt": "Cinematic photograph of St. Regis Al Mouj Muscat Resort beach club and pool, palm trees, white sand private beach, turquoise Gulf water, ultra-luxury resort design."
+            },
+            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi swimming", "title": "Wadi Bani Khalid Oasis", "caption": "Clear green pools inside rocky valleys." }
           ]
         }
       },
@@ -544,9 +626,16 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day1",
           "slides": [
+            { 
+              "type": "single", 
+              "src": "images/oman/kempinski_muscat.jpg", 
+              "alt": "Kempinski Hotel Muscat", 
+              "title": "Kempinski Hotel Muscat", 
+              "caption": "Grand beachfront resort with child-friendly swimming facilities.",
+              "prompt": "Cinematic photo of Kempinski Hotel Muscat, showing its grand open-air infinity pool, beachfront sun loungers, modern white architecture, sunset."
+            },
             { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Turtle Snorkeling", "title": "Snorkeling with Sea Turtles", "caption": "Kid-friendly snorkeling in protected shallow waters." },
-            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Dolphins", "title": "Dolphin Spotting Cruises", "caption": "Spotting wild dolphins from the boat deck." },
-            { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Grand Mosque", "title": "Grand Mosque Gardens", "caption": "Symmetric, quiet paths in Muscat." }
+            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Dolphins", "title": "Dolphin Spotting Cruises", "caption": "Spotting wild dolphins from the boat deck." }
           ]
         }
       },
@@ -565,9 +654,16 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day4",
           "slides": [
+            { 
+              "type": "single", 
+              "src": "images/oman/dusit_d2_jabal_akhdar.jpg", 
+              "alt": "dusitD2 Naseem Resort, Jabal Akhdar", 
+              "title": "dusitD2 Naseem Resort", 
+              "caption": "Adventure resort featuring slides and outdoor climbing parks for kids.",
+              "prompt": "Cinematic photograph of dusitD2 Naseem Resort Jabal Akhdar, mountain adventure resort with family pool and high-altitude landscape."
+            },
             { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort", "title": "Nizwa Clay Watchtowers", "caption": "Climbing Nizwa Fort circular tower." },
-            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Clay mountain village", "title": "Misfat Village Walk", "caption": "Ancient stone houses and date palm trees." },
-            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Wild camels", "title": "Desert Camels Grazing", "caption": "Spotting Omani camels along river banks." }
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Clay mountain village", "title": "Misfat Village Walk", "caption": "Ancient stone houses and date palm trees." }
           ]
         }
       },
@@ -608,7 +704,15 @@ document.addEventListener('DOMContentLoaded', () => {
           "id": "carousel-fam-day7",
           "slides": [
             { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi pools", "title": "Wadi Bani Khalid Pool", "caption": "Safe freshwater pools lined with date palms." },
-            { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle", "title": "Nesting Green Sea Turtles", "caption": "Green turtles crawling along Ras Al Jinz beaches." }
+            { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle", "title": "Nesting Green Sea Turtles", "caption": "Green turtles crawling along Ras Al Jinz beaches." },
+            { 
+              "type": "single", 
+              "src": "images/oman/ras_al_jinz_lodge.jpg", 
+              "alt": "Ras Al Jinz Scientific Reserve Lodge", 
+              "title": "Ras Al Jinz Lodge", 
+              "caption": "Eco-friendly lodge cabins near the beach conservation center.",
+              "prompt": "Cinematic photograph of the Ras Al Jinz Turtle Reserve eco-lodge exterior at twilight, sandy ground, low-impact sustainable architecture, warm interior lights."
+            }
           ]
         }
       },
@@ -626,6 +730,14 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day8",
           "slides": [
+            { 
+              "type": "single", 
+              "src": "images/oman/bimmah_sinkhole.jpg", 
+              "alt": "Bimmah Sinkhole Pool", 
+              "title": "Bimmah Sinkhole Basin", 
+              "caption": "Limestone collapsed sinkhole.",
+              "prompt": "Cinematic wide-angle landscape photo of Bimmah Sinkhole in Oman, a deep natural limestone sinkhole with clear turquoise water, visitors swimming, natural rock stairs, sunny day."
+            },
             { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Waves Spraying", "title": "Coastal Route Cliffs", "caption": "Dramatic sea views near Bimmah Sinkhole." },
             { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Departure take-off", "title": "Takeoff Flight Home", "caption": "Oman's pristine coastline from above." }
           ]
@@ -651,7 +763,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       "focus_options": [
         { "id": "family-standard", "name": "Kempinski Deluxe Family Room", "description": "Comfortable family layout facing pools", "price_per_person": 0 },
-        { "id": "family-connecting-suite", "name": "Kempinski Connecting Suite & Alila Villa", "description": "Two connected suites and private villa pool access", "price_per_person": 850 }
+        { "id": "family-connecting-suite", "name": "Kempinski Connecting Suite & Alila Villa", "description": "Two connected suites and private pool decks", "price_per_person": 850 }
       ],
       "supplements": [
         { "id": "om-fam-supp-kids", "name": "Young Explorer Package Discount", "description": "Discount applied per child under 12 years", "price": -450 }
@@ -704,9 +816,30 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-dub-day1",
           "slides": [
-            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Dubai Skyline Placeholder", "title": "Dubai Downtown Horizon", "caption": "Contemporary glass skyscrapers. [PROMPT] Cinematic wide-angle photograph of Dubai Downtown skyline and Burj Khalifa at sunset." },
-            { "type": "single", "src": "images/oman/Sunbeams_streaming_into_historic…_202608141639.jpeg", "alt": "Spice Souk Placeholder", "title": "spice & Gold Souks", "caption": "Old Dubai street alleys. [PROMPT] Close-up of spice bags and gold ornaments inside a traditional Deira souk." },
-            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Yacht Cruise Placeholder", "title": "Marina Yacht Charters", "caption": "Cruisingpast modern harbor designs. [PROMPT] Luxury white yacht sailing past Dubai Marina skyscrapers at golden sunset." }
+            { 
+              "type": "single", 
+              "src": "images/oman/dubai_skyline.jpg", 
+              "alt": "Dubai Skyline", 
+              "title": "Dubai Downtown Horizon", 
+              "caption": "Contemporary glass skyscrapers flanking the Burj Khalifa.",
+              "prompt": "Cinematic wide-angle photograph of Dubai Downtown skyline with the Burj Khalifa at sunset, golden hour light, reflecting pools, ultra-luxury city view."
+            },
+            { 
+              "type": "single", 
+              "src": "images/oman/dubai_souk.jpg", 
+              "alt": "Dubai Souks", 
+              "title": "Gold & Spice Souks", 
+              "caption": "Old Dubai street alley marketplaces.",
+              "prompt": "Close-up cinematic photograph of baskets of spices and hanging gold lamps inside a traditional gold and spice souk in Dubai, warm ambient lighting."
+            },
+            { 
+              "type": "single", 
+              "src": "images/oman/dubai_yacht.jpg", 
+              "alt": "Dubai Yacht Cruise", 
+              "title": "Marina Yacht Charters", 
+              "caption": "Cruising past modern harbor skyscrapers.",
+              "prompt": "Cinematic photograph of a luxury private white yacht sailing through Dubai Marina canal at sunset, modern towering skyscrapers lining the water, warm golden reflections."
+            }
           ]
         }
       },
@@ -727,7 +860,14 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Grand Mosque", "title": "Grand Mosque Archways", "caption": "Beautiful hand-carved pillars and gardens." },
             { "type": "single", "src": "images/oman/Royal_Opera_House_exterior_at_202608141639.jpeg", "alt": "Opera House", "title": "Opera House Gardens", "caption": "White marble facades of Muscat's premier theater." },
-            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Muscat coast", "title": "Muscat Harbor Dhows", "caption": "Sailing past historical forts on the sea cliffs." }
+            { 
+              "type": "single", 
+              "src": "images/oman/mandarin_oriental_muscat.jpg", 
+              "alt": "Mandarin Oriental, Muscat", 
+              "title": "Mandarin Oriental Seaside", 
+              "caption": "Elegant oceanfront retreat in Muscat.",
+              "prompt": "Cinematic wide-angle photograph of the luxury Mandarin Oriental Muscat resort at dusk, reflecting pools, modern Arabian architecture, Gulf of Oman in background, premium warm lighting."
+            }
           ]
         }
       },
@@ -748,7 +888,14 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort", "title": "Nizwa Fort Circular Tower", "caption": "Circular clay battlements in Nizwa." },
             { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Infinity Pool", "title": "Infinity Pool Alila", "caption": "Canyon edge view over Jabal Akhdar." },
-            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Mountain Ruins", "title": "Birkat Al Mouz Ruins", "caption": "Mud ruins surrounded by date palm fields." }
+            { 
+              "type": "single", 
+              "src": "images/oman/anantara_jabal_akhdar.jpg", 
+              "alt": "Anantara Jabal Akhdar", 
+              "title": "Anantara Al Jabal Al Akhdar Resort", 
+              "caption": " Diana's Point canyon lookout terrace.",
+              "prompt": "Cinematic wide-angle photo of Anantara Al Jabal Al Akhdar Resort in Oman, showing Diana's Point cliff-edge viewing platform, luxury infinity pool, rugged mountain canyon peaks at sunset."
+            }
           ]
         }
       },
@@ -768,28 +915,42 @@ document.addEventListener('DOMContentLoaded', () => {
           "id": "carousel-dub-day8",
           "slides": [
             { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi swim", "title": "Wadi Bani Khalid pools", "caption": "Safe freshwater swimming inside mountain ravines." },
-            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Red dunes", "title": "Wahiba Dunes crossing", "caption": "Sunset sand ridges crossing by 4x4." },
-            { "type": "single", "src": "images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg", "alt": "Desert Nights", "title": "Desert Dome Suites", "caption": "5-star en-suite glamping canvas setups." }
+            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Red dunes", "title": "Wahiba Dunes crossing", "caption": "Sunset sand ridges crossing by 4x4." }
           ]
         }
       },
       {
         "day": "9-12",
         "title": "St. Regis Al Mouj Beach Finale",
-        "tagline": "🐠 Snorkeling Daymaniyat & Muscat Departures",
+        "tagline": "🐠 Snorkeling Daymaniyat & Six Senses Musandam Option",
         "vibe_title": "The Vibe",
-        "vibe_text": "Drive back via Sur and Bimmah Sinkhole. Check into St. Regis Al Mouj Muscat for three nights. Enjoy Daymaniyat Islands snorkeling boat trips and free beach days before departures.",
+        "vibe_text": "Return via Sur and Bimmah Sinkhole. Check into St. Regis Al Mouj Muscat for three nights. Enjoy Daymaniyat Islands snorkeling boat trips and free beach days before departures. Opt to stay at Six Senses Zighy Bay Musandam.",
         "highlights": [
-          { "icon": "🐠", "title": "Daymaniyat Snorkeling Excursion", "description": "Snorkel with reef sea life and wild sea turtles." }
+          { "icon": "🐠", "title": "Daymaniyat Snorkeling Excursion", "description": "Snorkel with reef sea life and wild sea turtles." },
+          { "icon": "👑", "title": "Six Senses Zighy Bay Upgrade", "description": "Musandam rustic luxury stone villas option." }
         ],
         "stay": "✈️ Departure",
         "media": {
           "type": "carousel",
           "id": "carousel-dub-day9",
           "slides": [
-            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Snorkeling turtle", "title": "Daymaniyat Islands reef", "caption": "Snorkeling with green turtles inside clear ocean waters." },
-            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Coastal waves", "title": "St. Regis Al Mouj Beach", "caption": "White sand coastline beaches in Muscat." },
-            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Takeoff departure", "title": "Take-off Over Gulf", "caption": "Beautiful farewell views of Omani mountains." }
+            { 
+              "type": "single", 
+              "src": "images/oman/st_regis_al_mouj.jpg", 
+              "alt": "St. Regis Al Mouj", 
+              "title": "St. Regis Al Mouj Muscat Resort", 
+              "caption": "Elegant oceanfront resort with pool access.",
+              "prompt": "Cinematic photograph of St. Regis Al Mouj Muscat Resort beach club and pool, palm trees, white sand private beach, turquoise Gulf water, ultra-luxury resort design."
+            },
+            { 
+              "type": "single", 
+              "src": "images/oman/six_senses_zighy_bay.jpg", 
+              "alt": "Six Senses Zighy Bay Resort", 
+              "title": "Six Senses Zighy Bay", 
+              "caption": "Ultra-luxury Musandam stone villas on the turquoise coast.",
+              "prompt": "Cinematic wide-angle photograph of Six Senses Zighy Bay resort in Musandam Oman, rustic luxury stone villas nestled between towering rugged mountains and a pristine sandy beach with turquoise water."
+            },
+            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Snorkeling turtle", "title": "Daymaniyat Islands reef", "caption": "Snorkeling with green turtles inside clear ocean waters." }
           ]
         }
       }
@@ -1191,10 +1352,15 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div class="carousel-track">
                     ${day.media.slides.map((s, idx) => `
                       <div class="carousel-slide ${idx === 0 ? 'active' : ''}">
-                        <img src="${s.src}" alt="${s.alt}">
+                        <img src="${s.src}" alt="${s.alt}" onerror="this.onerror=null; this.src='images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg';">
                         <div class="carousel-caption">
                           <h4>${s.title}</h4>
                           <p>${s.caption}</p>
+                          ${s.prompt ? `
+                            <div class="image-prompt-badge" style="margin-top: 0.8rem; font-size: 0.78rem; color: #FFD85F; background: rgba(0, 0, 0, 0.75); padding: 0.6rem 0.9rem; border-left: 3px solid #FFD85F; border-radius: 4px; line-height: 1.45; text-align: left;">
+                              <strong>Midjourney Prompt:</strong> <em style="color: #e0e0e0;">${s.prompt}</em>
+                            </div>
+                          ` : ''}
                         </div>
                       </div>
                     `).join('')}
