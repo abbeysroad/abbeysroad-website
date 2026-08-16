@@ -427,6 +427,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Expand active card on mobile
         card.classList.add('expanded');
 
+        const chapter = card.closest('.film-chapter');
+        if (chapter) {
+          const bgPhoto = chapter.querySelector('.bg-photo');
+          if (bgPhoto) {
+            bgPhoto.classList.remove('pan-active');
+          }
+        }
+
         // Clear any existing timer for this card
         if (autoCollapseTimers.has(card)) {
           clearTimeout(autoCollapseTimers.get(card));
@@ -436,6 +444,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const timer = setTimeout(() => {
           card.classList.remove('expanded');
           autoCollapseTimers.delete(card);
+          if (chapter) {
+            const bgPhoto = chapter.querySelector('.bg-photo');
+            if (bgPhoto) {
+              bgPhoto.classList.add('pan-active');
+            }
+          }
         }, 3000);
 
         autoCollapseTimers.set(card, timer);
@@ -462,6 +476,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             card.classList.toggle('expanded');
+
+            const chapter = card.closest('.film-chapter');
+            if (chapter) {
+              const bgPhoto = chapter.querySelector('.bg-photo');
+              if (bgPhoto) {
+                if (card.classList.contains('expanded')) {
+                  bgPhoto.classList.remove('pan-active');
+                } else {
+                  bgPhoto.classList.add('pan-active');
+                }
+              }
+            }
           }
         });
       }

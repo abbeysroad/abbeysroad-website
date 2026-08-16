@@ -1142,6 +1142,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.innerWidth <= 768) {
         card.classList.add('expanded');
 
+        const chapter = card.closest('.film-chapter');
+        if (chapter) {
+          const bgPhoto = chapter.querySelector('.bg-photo');
+          if (bgPhoto) {
+            bgPhoto.classList.remove('pan-active');
+          }
+        }
+
         if (autoCollapseTimers.has(card)) {
           clearTimeout(autoCollapseTimers.get(card));
         }
@@ -1149,6 +1157,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const timer = setTimeout(() => {
           card.classList.remove('expanded');
           autoCollapseTimers.delete(card);
+          if (chapter) {
+            const bgPhoto = chapter.querySelector('.bg-photo');
+            if (bgPhoto) {
+              bgPhoto.classList.add('pan-active');
+            }
+          }
         }, 3000);
 
         autoCollapseTimers.set(card, timer);
@@ -1172,6 +1186,18 @@ document.addEventListener('DOMContentLoaded', () => {
               autoCollapseTimers.delete(card);
             }
             card.classList.toggle('expanded');
+
+            const chapter = card.closest('.film-chapter');
+            if (chapter) {
+              const bgPhoto = chapter.querySelector('.bg-photo');
+              if (bgPhoto) {
+                if (card.classList.contains('expanded')) {
+                  bgPhoto.classList.remove('pan-active');
+                } else {
+                  bgPhoto.classList.add('pan-active');
+                }
+              }
+            }
           }
         });
       }
