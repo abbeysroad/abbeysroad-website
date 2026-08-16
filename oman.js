@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
-  // EMBEDDED OMAN ITINERARIES DATA (5 DISTINCT PORTFOLIOS - CLEAN CHANNELS)
+  // EMBEDDED OMAN ITINERARIES DATA (5 DISTINCT PORTFOLIOS)
   // ==========================================================================
   const itineraries = [
   {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "The Chedi Muscat", "title": "The Chedi Muscat Pools", "caption": "Quiet reflecting pools and symmetric resort architecture." },
             { 
               "type": "single", 
-              "src": "images/oman/mandarin_oriental_muscat.jpg", 
+              "src": "images/oman/oman_mandarin_oriental_muscat.jpg", 
               "alt": "Mandarin Oriental, Muscat", 
               "title": "Mandarin Oriental, Muscat", 
               "caption": "New ultra-luxury hotel option in Muscat."
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/anantara_jabal_akhdar.jpg", 
+              "src": "images/oman/Resort_perched_on_cliff_edge_202608161516.jpeg", 
               "alt": "Anantara Al Jabal Al Akhdar", 
               "title": "Anantara Al Jabal Al Akhdar Resort", 
               "caption": "Luxury resort perched on the edge of the canyon."
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/st_regis_al_mouj.jpg", 
+              "src": "images/oman/St._Regis_Al_Mouj_Muscat_202608161516.jpeg", 
               "alt": "St. Regis Al Mouj Muscat", 
               "title": "St. Regis Al Mouj Muscat Resort", 
               "caption": "Coastal luxury resort nestled on a private white sand beach."
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/w_muscat.jpg", 
+              "src": "images/oman/WET_pool_deck_at_W_202608161516.jpeg", 
               "alt": "W Muscat Hotel", 
               "title": "W Muscat Hotel Pool", 
               "caption": "Dynamic pool deck and lifestyle accommodations."
@@ -249,14 +249,14 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/wadi_bani_awf.jpg", 
+              "src": "images/oman/Vehicle_navigating_rocky_canyon_…_202608161516.jpeg", 
               "alt": "Wadi Bani Awf Off-road Crossing", 
               "title": "Wadi Bani Awf Mountain Pass", 
               "caption": "Spectacular off-road crossing through dry rock cliffs."
             },
             { 
               "type": "single", 
-              "src": "images/oman/jabal_shams_lodge.jpg", 
+              "src": "images/oman/Mountain_lodge_overlooking_canyo…_202608161516.jpeg", 
               "alt": "Jebel Shams Canyon Lodge", 
               "title": "Canyon View Lodge", 
               "caption": "Rustic stone mountain lodge on the canyon rim."
@@ -324,14 +324,14 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/wadi_hawer.jpg", 
+              "src": "images/oman/Travelers_wading_through_freshwa…_202608161516.jpeg", 
               "alt": "Wadi Hawer Gorge Canyoning", 
               "title": "Wadi Hawer Canyons", 
               "caption": "Deep freshwater pools and slot canyon cliffs."
             },
             { 
               "type": "single", 
-              "src": "images/oman/ras_al_jinz_lodge.jpg", 
+              "src": "images/oman/Ras_Al_Jinz_Eco_Lodge_202608161516.jpeg", 
               "alt": "Ras Al Jinz Reserve Lodge", 
               "title": "Ras Al Jinz Eco-Lodge", 
               "caption": "Sustainable scientific reserve center at the beach."
@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/bimmah_sinkhole.jpg", 
+              "src": "images/oman/Limestone_sinkhole_in_Oman_202608161516.jpeg", 
               "alt": "Bimmah Sinkhole", 
               "title": "Bimmah Sinkhole Basin", 
               "caption": "Oman's famous natural collapsed sinkhole pool."
@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/mandarin_oriental_muscat.jpg", 
+              "src": "images/oman/oman_mandarin_oriental_muscat.jpg", 
               "alt": "Mandarin Oriental, Muscat", 
               "title": "Mandarin Oriental, Muscat", 
               "caption": "Restorative oceanfront oasis in Muscat."
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/anantara_jabal_akhdar.jpg", 
+              "src": "images/oman/Resort_perched_on_cliff_edge_202608161516.jpeg", 
               "alt": "Anantara Al Jabal Al Akhdar", 
               "title": "Anantara Mountain Spa", 
               "caption": "Cliff-edge resort facilities."
@@ -514,7 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/st_regis_al_mouj.jpg", 
+              "src": "images/oman/St._Regis_Al_Mouj_Muscat_202608161516.jpeg", 
               "alt": "St. Regis Al Mouj", 
               "title": "St. Regis Al Mouj Muscat Resort", 
               "caption": "Elegant oceanfront property with high-end spa spaces."
@@ -616,7 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/kempinski_muscat.jpg", 
+              "src": "images/oman/Kempinski_Hotel_Muscat_beachfron…_202608161516.jpeg", 
               "alt": "Kempinski Hotel Muscat", 
               "title": "Kempinski Hotel Muscat", 
               "caption": "Grand beachfront resort with child-friendly swimming facilities."
@@ -643,7 +643,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/dusit_d2_jabal_akhdar.jpg", 
+              "src": "images/oman/Resort_pool_surrounded_by_mountains_202608161516.jpeg", 
               "alt": "dusitD2 Naseem Resort, Jabal Akhdar", 
               "title": "dusitD2 Naseem Resort", 
               "caption": "Adventure resort featuring slides and outdoor climbing parks for kids."
@@ -693,7 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle", "title": "Nesting Green Sea Turtles", "caption": "Green turtles crawling along Ras Al Jinz beaches." },
             { 
               "type": "single", 
-              "src": "images/oman/ras_al_jinz_lodge.jpg", 
+              "src": "images/oman/Ras_Al_Jinz_Eco_Lodge_202608161516.jpeg", 
               "alt": "Ras Al Jinz Scientific Reserve Lodge", 
               "title": "Ras Al Jinz Lodge", 
               "caption": "Eco-friendly lodge cabins near the beach conservation center."
@@ -717,7 +717,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/bimmah_sinkhole.jpg", 
+              "src": "images/oman/Limestone_sinkhole_in_Oman_202608161516.jpeg", 
               "alt": "Bimmah Sinkhole Pool", 
               "title": "Bimmah Sinkhole Basin", 
               "caption": "Limestone collapsed sinkhole."
@@ -802,21 +802,21 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/dubai_skyline.jpg", 
+              "src": "images/oman/Burj_Khalifa_at_sunset_202608161516.jpeg", 
               "alt": "Dubai Skyline", 
               "title": "Dubai Downtown Horizon", 
               "caption": "Contemporary glass skyscrapers flanking the Burj Khalifa."
             },
             { 
               "type": "single", 
-              "src": "images/oman/dubai_souk.jpg", 
+              "src": "images/oman/Spices_inside_historic_market_al…_202608161516.jpeg", 
               "alt": "Dubai Souks", 
               "title": "Gold & Spice Souks", 
               "caption": "Old Dubai street alley marketplaces."
             },
             { 
               "type": "single", 
-              "src": "images/oman/dubai_yacht.jpg", 
+              "src": "images/oman/Yacht_cruising_Dubai_Marina_202608161516.jpeg", 
               "alt": "Dubai Yacht Cruise", 
               "title": "Marina Yacht Charters", 
               "caption": "Cruising past modern harbor skyscrapers."
@@ -843,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { "type": "single", "src": "images/oman/Royal_Opera_House_exterior_at_202608141639.jpeg", "alt": "Opera House", "title": "Opera House Gardens", "caption": "White marble facades of Muscat's premier theater." },
             { 
               "type": "single", 
-              "src": "images/oman/mandarin_oriental_muscat.jpg", 
+              "src": "images/oman/oman_mandarin_oriental_muscat.jpg", 
               "alt": "Mandarin Oriental, Muscat", 
               "title": "Mandarin Oriental Seaside", 
               "caption": "Elegant oceanfront retreat in Muscat."
@@ -870,7 +870,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Infinity Pool", "title": "Infinity Pool Alila", "caption": "Canyon edge view over Jabal Akhdar." },
             { 
               "type": "single", 
-              "src": "images/oman/anantara_jabal_akhdar.jpg", 
+              "src": "images/oman/Resort_perched_on_cliff_edge_202608161516.jpeg", 
               "alt": "Anantara Jabal Akhdar", 
               "title": "Anantara Al Jabal Al Akhdar Resort", 
               "caption": "Diana's Point canyon lookout terrace."
@@ -915,14 +915,14 @@ document.addEventListener('DOMContentLoaded', () => {
           "slides": [
             { 
               "type": "single", 
-              "src": "images/oman/st_regis_al_mouj.jpg", 
+              "src": "images/oman/St._Regis_Al_Mouj_Muscat_202608161516.jpeg", 
               "alt": "St. Regis Al Mouj", 
               "title": "St. Regis Al Mouj Muscat Resort", 
               "caption": "Elegant oceanfront resort with pool access."
             },
             { 
               "type": "single", 
-              "src": "images/oman/six_senses_zighy_bay.jpg", 
+              "src": "images/oman/Six_Senses_Zighy_Bay_resort_202608161516.jpeg", 
               "alt": "Six Senses Zighy Bay Resort", 
               "title": "Six Senses Zighy Bay", 
               "caption": "Ultra-luxury Musandam stone villas on the turquoise coast."
@@ -950,8 +950,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": "om-dub-jan", "label": "Jan 15 – Jan 27", "season": "Mild Season", "price_modifier": 150 }
       ],
       "focus_options": [
-        { "id": "dub-lux-standard", "name": "Armani Dubai & St. Regis Standard Room", "description": "Premium 5-star luxury layout", "price_per_person": 0 },
-        { "id": "dub-lux-connecting-villa", "name": "Armani Burj Suite & St. Regis Beachfront Suite", "description": "Upgraded suite views and private pool decks", "price_per_person": 1850 }
+        { "id": "focus-standard-dub", "name": "Armani Dubai & St. Regis Standard Room", "description": "Premium 5-star luxury layout", "price_per_person": 0 },
+        { "id": "focus-connecting-dub", "name": "Armani Burj Suite & St. Regis Beachfront Suite", "description": "Upgraded suite views and private pool decks", "price_per_person": 1850 }
       ],
       "supplements": [
         { "id": "om-dub-supp-single", "name": "Solo Supplement", "description": "Single occupancy rooms & private guides", "price": 1200 }
