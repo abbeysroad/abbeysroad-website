@@ -1469,8 +1469,8 @@ footer#global-footer {
   .film-chapter {
     align-items: flex-start;
     padding-top: 6.5rem;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding-left: 0.6rem !important;
+    padding-right: 0.6rem !important;
   }
 
   .chapter-content-grid {
@@ -1488,7 +1488,7 @@ footer#global-footer {
     background: var(--primary-olive);
     border: 2.5px solid var(--accent-gold);
     border-radius: 22px;
-    padding: 0.9rem 1.2rem;
+    padding: 0.9rem 0.75rem !important;
     width: 100%;
     max-width: 100%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -1523,7 +1523,7 @@ footer#global-footer {
 
   /* Expanded State */
   .dest-info-card.expanded {
-    padding: 1.6rem 1.3rem;
+    padding: 1.25rem 0.8rem !important;
     border-color: var(--accent-cyan);
     background: rgba(32, 43, 34, 0.96);
   }
@@ -1540,7 +1540,7 @@ footer#global-footer {
 
   /* Responsive Contact Form Adaptability */
   .booking-card {
-    padding: 1.8rem 1.2rem !important;
+    padding: 1.5rem 0.75rem !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box;
@@ -1567,8 +1567,8 @@ footer#global-footer {
   }
 
   .chapter-content-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.6rem !important;
+    padding-right: 0.6rem !important;
   }
 
   .hero-cta-group {
@@ -1587,19 +1587,33 @@ footer#global-footer {
   }
 
   .about-content-grid {
-    padding: 1.5rem 1rem !important;
+    padding: 1rem 0.4rem !important;
   }
 
   .about-text-card {
-    padding: 1.5rem 1.2rem !important;
+    padding: 1.25rem 0.75rem !important;
   }
 
   .concierge-grid {
-    padding: 0 1rem;
+    padding: 0 0.4rem !important;
   }
 
   .concierge-card {
-    padding: 1.5rem 1.2rem;
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  .about-section,
+  .team-section,
+  .concierge-section {
+    padding: 3rem 0.5rem !important;
+  }
+
+  .team-card {
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  .destination-feature-card-content {
+    padding: 1.5rem 0.88rem !important;
   }
 
   .itinerary-details-section {
