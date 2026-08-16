@@ -1774,6 +1774,16 @@ footer#global-footer {
     font-size: 1.8rem !important;
   }
 
+  .events-content {
+    text-align: center !important;
+    padding: 0 1rem !important;
+  }
+
+  .events-content .gold-badge {
+    display: inline-block !important;
+    margin-bottom: 1rem !important;
+  }
+
   /* Automated 180 degrees background image walkthrough panning animation */
   .bg-photo.pan-active {
     animation: mobilePan 20s linear infinite alternate;
