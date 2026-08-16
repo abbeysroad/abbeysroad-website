@@ -1,185 +1,141 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
-  // EMBEDDED OMAN ITINERARIES DATA
+  // EMBEDDED OMAN ITINERARIES DATA (5 DISTINCT PORTFOLIOS)
   // ==========================================================================
   const itineraries = [
   {
     "id": "oman_luxury",
     "countries": ["Oman"],
     "meta": {
-      "title": "8-Day Omani Majesty Luxury Mountain & Coast Escape | Abbey's Road",
-      "description": "Indulge in an 8-day luxury adventure in the Sultanate of Oman. Stay at the cliffside Alila Jabal Akhdar and the beachfront Chedi Muscat."
+      "title": "Oman – Luxury, Desert & Mountains | Abbey's Road",
+      "description": "Indulge in an 8-night luxury retreat in the Sultanate of Oman. Stay at Anantara and The Chedi Muscat."
     },
     "hero": {
-      "subtitle": "5-Star Luxury Mountain & Coastal Retreats:",
-      "title": "Omani Majesty: Mountains & Coast",
-      "description": "Escape to the cooling heights of Jabal Akhdar and relax on the pristine beaches of Muscat on this curated 5-star getaway.",
+      "subtitle": "8 Nights / 9 Days · Luxury Escape:",
+      "title": "Oman: Luxury, Desert & Mountains",
+      "description": "Perfect for couples and first-time luxury travelers. Experience Omani culture, mountains, and sand dunes in 5-star style.",
       "background_image": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg",
       "cta_book": "Secure Your Luxury Oman Escape",
       "cta_view": "View Itinerary Details"
     },
     "essentials": [
-      { "icon": "⏱️", "title": "Duration", "value": "8 Refined Days" },
-      { "icon": "🗺️", "title": "Route", "value": "Muscat ➔ Jebel Akhdar ➔ Nizwa ➔ Muscat" },
+      { "icon": "⏱️", "title": "Duration", "value": "8 Nights / 9 Days" },
+      { "icon": "🗺️", "title": "Route", "value": "Muscat ➔ Jabal Akhdar ➔ Desert ➔ Coast ➔ Muscat" },
       { "icon": "🚙", "title": "Travel Style", "value": "Private 4x4 Chauffeur & 5-Star Luxury Resorts" },
       { "icon": "⚡", "title": "Pace", "value": "Curated & Relaxed" }
     ],
     "timeline": [
       {
-        "day": "1",
-        "title": "Arrival in Muscat & Coastal Vibe",
-        "tagline": "🏨 VIP Landing at Gulf of Oman Coast",
+        "day": "1-2",
+        "title": "Muscat Arrival & Historic Culture",
+        "tagline": "🕌 Sultan Qaboos Mosque & Muttrah Souq Alleys",
         "vibe_title": "The Vibe",
-        "vibe_text": "Touch down in the pristine capital city of Muscat. A private VIP escort conducts you from the airport tarmac to your beachfront paradise at The Chedi.",
+        "vibe_text": "Arrive in Muscat via private VIP chauffeur. Settle into the minimalist waterfront oasis of The Chedi Muscat. Explore the Grand Mosque, Muttrah Souq, and sail on a private sunset dhow cruise.",
         "highlights": [
-          { "icon": "✈️", "title": "VIP Airport Meet & Greet", "description": "Fast-track immigration and private luxury chauffeur transfer." },
-          { "icon": "🍹", "title": "Sunset Beach Cocktails", "description": "Enjoy welcoming drinks facing the Gulf of Oman." }
+          { "icon": "🕌", "title": "Sultan Qaboos Grand Mosque", "description": "Marvel at the giant Swarovski chandelier and hand-woven Persian carpet." },
+          { "icon": "⛵", "title": "Sunset Dhow Cruise", "description": "Sailing on a traditional wooden boat past Muscat's dramatic cliffs." }
         ],
-        "stay": "🏨 Stay: The Chedi Muscat 5* (Deluxe Room)",
+        "stay": "🏨 Stay: The Chedi Muscat / Mandarin Oriental, Muscat (5★)",
         "media": {
           "type": "carousel",
-          "id": "carousel-oman-day1",
+          "id": "carousel-lux-day1",
           "slides": [
-            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Muscat Water Gardens", "title": "The Chedi Water Gardens", "caption": "Lush landscape design blending with Arabian minimalist architecture." },
-            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Dhow Sailing Muscat", "title": "Coastal Dhow Sailing", "caption": "Traditional wooden dhows navigating Muscat's clean coast." },
-            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Muscat Ocean Cliffs", "title": "Muscat Coastal Cliffs", "caption": "Turquoise waters spraying along dramatic shoreline rock formations." },
-            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Dolphins Swimming", "title": "Muscat Dolphin Watching", "caption": "Schools of dolphins swimming alongside the local dhow charters." }
+            { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Grand Mosque", "title": "Grand Mosque Exterior", "caption": "The white marble facade and minarets at morning light." },
+            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Gardens", "title": "The Chedi Gardens", "caption": "Quiet reflecting pools and symmetric architecture." },
+            { "type": "single", "src": "images/oman/Frankincense_burning_in_Muttrah_…_202608141639.jpeg", "alt": "Muttrah Souq", "title": "Muttrah Souq Alleys", "caption": "Scents of frankincense and spices filling the narrow corridors." },
+            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Dhow Cruise", "title": "Sunset Dhow Sailing", "caption": "Sailing past Muscat cliffs under a golden twilight sky." }
           ]
         }
       },
       {
-        "day": "2",
-        "title": "Cultural Treasures of the Capital",
-        "tagline": "🕌 Sultan Qaboos Mosque & Muttrah Souk Alleys",
+        "day": "3-4",
+        "title": "Jabal Akhdar Ascent via Nizwa",
+        "tagline": "⛰️ Fortresses, Mountain Walks & Spas",
         "vibe_title": "The Vibe",
-        "vibe_text": "Discover the marble-clad architectural triumph of the Grand Mosque and dive into the scents of frankincense and spices at Muttrah Souk.",
+        "vibe_text": "Travel by 4x4 to Nizwa Fort and Souq before climbing 2,000m to the Hajar Mountains. Hike along canyon trails, walk through rose terraces, and enjoy cliff-edge spas.",
         "highlights": [
-          { "icon": "🕌", "title": "Grand Mosque Tour", "description": "Guided walkthrough of the main hall featuring the massive Persian carpet." },
-          { "icon": "🏺", "title": "Muttrah Souk Search", "description": "Shop for traditional silver daggers, cashmere, and local dates." }
+          { "icon": "🏰", "title": "Nizwa Fort & Souq", "description": "Walk the circular tower and browse silver jewelry and daggers." },
+          { "icon": "🥾", "title": "Three Villages Walk", "description": "Gentle cliff walk visiting ancient stone dwellings and rose plantations." }
         ],
-        "stay": "🏨 Stay: The Chedi Muscat 5* (Deluxe Room)",
+        "stay": "🏨 Stay: Alila Jabal Akhdar / Anantara Al Jabal Al Akhdar Resort (5★)",
         "media": {
           "type": "carousel",
-          "id": "carousel-oman-day2",
+          "id": "carousel-lux-day3",
           "slides": [
-            { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Sultan Qaboos Grand Mosque", "title": "Grand Mosque Exterior", "caption": "Exquisite Islamic hand-carved details and marble pillars." },
-            { "type": "single", "src": "images/oman/Royal_Opera_House_exterior_at_202608141639.jpeg", "alt": "Royal Opera House Muscat", "title": "Royal Opera House", "caption": "Stunning white limestone architecture and pristine geometric gardens." },
-            { "type": "single", "src": "images/oman/Frankincense_burning_in_Muttrah_…_202608141639.jpeg", "alt": "Muttrah Souk Incense", "title": "Incense Souk Stalls", "caption": "Fragrant local frankincense burning in decorative clay vessels." },
-            { "type": "single", "src": "images/oman/Sunbeams_streaming_into_historic…_202608141639.jpeg", "alt": "Sunbeams in Historic Building", "title": "Sultanate Heritage Interiors", "caption": "Warm golden sunbeams illuminating traditional arches and pottery." }
-          ]
-        }
-      },
-      {
-        "day": "3",
-        "title": "Ascent to the Al Hajar Mountains",
-        "tagline": "⛰️ Birkat Al Mouz Ruins & Mountain Ridges",
-        "vibe_title": "The Vibe",
-        "vibe_text": "Ascend 2,000m above sea level to the cool heights of the Jabal Akhdar plateau, stopping to explore abandoned clay mountain villages en route.",
-        "highlights": [
-          { "icon": "🏚️", "title": "Birkat Al Mouz Walkway", "description": "Explore ancient mudbrick dwellings and active Falaj irrigation channels." },
-          { "icon": "⛰️", "title": "Jabal Akhdar Offroad", "description": "Private 4x4 mountain pass drive with dramatic scenic drop-offs." }
-        ],
-        "stay": "🏨 Stay: Alila Jabal Akhdar 5* (Horizon View Suite)",
-        "media": {
-          "type": "carousel",
-          "id": "carousel-oman-day3",
-          "slides": [
-            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Alila Jabal Akhdar Pool", "title": "Cliffside Mountain Pool", "caption": "Infinity pool overlooking sweeping canyon gorges at 2000m altitude." },
-            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Birkat Al Mouz Palms", "title": "Birkat Al Mouz Ruins", "caption": "Historic clay ruins nestled under green date palm plantations." },
-            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Balcony Walk Path", "title": "Wadi Ghul Mountain Ridges", "caption": "Rugged canyons climbing high into the sky." },
-            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Mountain mudbrick village", "title": "Misfat Al Abriyeen Terraces", "caption": "Multi-story clay houses hanging on the steep mountain slopes." }
-          ]
-        }
-      },
-      {
-        "day": "4",
-        "title": "Canyons & Stone Village Hikes",
-        "tagline": "🥾 Three Villages Walk & Rose Water Distilleries",
-        "vibe_title": "The Vibe",
-        "vibe_text": "Breathe the refreshing crisp mountain air while hiking along cliffside paths between ancient villages and rose terraces.",
-        "highlights": [
-          { "icon": "🥾", "title": "Canyon Cliff Walk", "description": "Guided scenic walking path visiting the traditional villages of Al Aqr and Al Ayn." },
-          { "icon": "🌹", "title": "Rosewater Distillery Visit", "description": "Observe local Ifri Rose distilleries utilizing historic clay ovens." }
-        ],
-        "stay": "🏨 Stay: Alila Jabal Akhdar 5* (Horizon View Suite)",
-        "media": {
-          "type": "carousel",
-          "id": "carousel-oman-day4",
-          "slides": [
-            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Wadi Ghul Balcony Walk", "title": "Wadi Ghul Balcony Walk", "caption": "Hiking routes following thin ridges with vertical mountain drops." },
-            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Mountain village stone path", "title": "Mountain Stone Terraces", "caption": "Stone terraces built by local tribes centuries ago." },
-            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Ancient village plantation", "title": "Ancient Terraced Farming", "caption": "Rose water crops watered by mountain streams." },
-            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Camels in mountain river", "title": "Omani Camels Grazing", "caption": "Wild camels roaming down natural mountain river banks." }
+            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Resort Pool", "title": "Jabal Akhdar Infinity Pool", "caption": "Overlooking sweeping mountain canyons." },
+            { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort", "title": "Nizwa Fort Tower", "caption": "The majestic circular clay fort of Nizwa." },
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Mountain Village", "title": "Stone Mountain Terraces", "caption": "Village houses built directly into steep limestone cliffs." },
+            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Balcony Walk Path", "title": "Wadi Ghul Mountain Ridges", "caption": "Rugged canyon paths offering dramatic views." }
           ]
         }
       },
       {
         "day": "5",
-        "title": "Nizwa Fort en Route to the Coast",
-        "tagline": "🏰 Ancient Capital Fortresses & Clay Crafts",
+        "title": "Wadi Bani Khalid & Sharqiyah Desert",
+        "tagline": "🐫 Emerald Oasis Pools & Golden Sand Glamping",
         "vibe_title": "The Vibe",
-        "vibe_text": "Descend from the mountains to explore the ancient Omani capital of Nizwa before returning to Muscat's coastal sands.",
+        "vibe_text": "Swim in the clear emerald pools of Wadi Bani Khalid. Settle into a high-end desert glamping dome in Wahiba Sands. Enjoy sunset dune driving, a camel safari, and stargazing by the campfire.",
         "highlights": [
-          { "icon": "🏰", "title": "Nizwa Fort Exploration", "description": "Climb to the top of the 17th-century circular defense tower." },
-          { "icon": "☕", "title": "Nizwa Souk Coffee", "description": "Taste Omani cardamom coffee and traditional halwa sweets." }
+          { "icon": "🌴", "title": "Wadi Bani Khalid", "description": "Deep canyon swimming surrounded by green date palms." },
+          { "icon": "✨", "title": "Bedouin Stargazing", "description": "Exquisite desert night sky with traditional music and fresh Omani food." }
         ],
-        "stay": "🏨 Stay: The Chedi Muscat 5* (Deluxe Room)",
+        "stay": "⛺ Stay: Desert Nights Camp - Luxury En-suite Dome (5★)",
         "media": {
           "type": "carousel",
-          "id": "carousel-oman-day5",
+          "id": "carousel-lux-day5",
           "slides": [
-            { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort Tower", "title": "Nizwa Fort Circular Tower", "caption": "Oman's largest historic circular defense structure." },
-            { "type": "single", "src": "images/oman/Host_pouring_coffee_into_cup_202608141639.jpeg", "alt": "Omani Coffee Hospitality", "title": "Omani Hospitality Coffee", "caption": "Pouring traditional spiced cardamom coffee into small cups." },
-            { "type": "single", "src": "images/oman/Sunbeams_streaming_into_historic…_202608141639.jpeg", "alt": "Inside Nizwa Fort", "title": "Fort Clay Chambers", "caption": "Beautiful interior rooms inside the Nizwa fort complex." },
-            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Nizwa Town Palms", "title": "Nizwa Town Palms", "caption": "Vast green oases surrounding the historic Nizwa souk." }
+            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Sand Dunes", "title": "Wahiba Sands Desert", "caption": "Windswept copper-colored dunes at sunset." },
+            { "type": "single", "src": "images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg", "alt": "Desert Camp", "title": "Desert Nights Glamping Tents", "caption": "Premium canvas domes nestled between tall dunes." },
+            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Campfire", "title": "Campfire Stargazing", "caption": "Relaxing under the stars in the silent sands." },
+            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi Swimming", "title": "Oasis Swimming Pools", "caption": "Deep freshwater pools tucked inside mountain gorges." }
           ]
         }
       },
       {
         "day": "6-7",
-        "title": "Beachside Indulgence & Spa Sanctuary",
-        "tagline": "💆 Waterfront Relaxation & Sublimely Long Pools",
+        "title": "Maritime Sur, Turtles & St. Regis Beach",
+        "tagline": "🐢 Turtle Nesting Watch & St. Regis Al Mouj",
         "vibe_title": "The Vibe",
-        "vibe_text": "Unwind completely on the private shoreline of Muscat. Enjoy temperature-controlled pools, custom Spa Alila treatments, and oceanfront dining.",
+        "vibe_text": "Travel to Sur maritime town and join an evening turtle-watching tour at Ras Al Jinz. Return via Bimmah Sinkhole to check in at St. Regis Al Mouj. Enjoy private Daymaniyat Islands snorkeling cruises.",
         "highlights": [
-          { "icon": "💆", "title": "Spa Alila Experience", "description": "Complimentary Balinese or Oriental massage treatment." },
-          { "icon": "🏊", "title": "The Chedi Long Pool", "description": "Swim in Muscat's famous 103-meter outdoor pool framed by palm trees." }
+          { "icon": "🐢", "title": "Ras Al Jinz Turtle Walk", "description": "See endangered green turtles nesting under protected ranger supervision." },
+          { "icon": "🐠", "title": "Daymaniyat Islands Cruise", "description": "Snorkel with marine turtles and reef sharks in crystal waters." }
         ],
-        "stay": "🏨 Stay: The Chedi Muscat 5* (Deluxe Room)",
+        "stay": "🏨 Stay: St. Regis Al Mouj Muscat Resort (5★ Luxury)",
         "media": {
           "type": "carousel",
-          "id": "carousel-oman-day6",
+          "id": "carousel-lux-day6",
           "slides": [
-            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Long Pool Sunset", "title": "Chedi Long Pool Sunset", "caption": "Arabian lanterns lit alongside the mirror-like long pool." },
-            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Dhow Sunset Sailing", "title": "Sunset Dhow Cruise", "caption": "Sailing past Muscat cliffs under a golden twilight sky." },
-            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Chedi Beach Shore", "title": "Chedi Beach Shoreline", "caption": "Lounge beds overlooking the calm shoreline waters." },
-            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Coastal dolphin pods", "title": "Seaside Dolphin Pods", "caption": "Wild dolphins jumping near the coastal safari boat." }
+            { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle", "title": "Ras Al Jinz Green Turtles", "caption": "Watching turtles return to the sea at early dawn." },
+            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Swimming Sea Turtle", "title": "Snorkeling Daymaniyat Islands", "caption": "Clear lagoons with rich coral reef ecosystems." },
+            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Coastal Spray", "title": "Coastal Route Cliffs", "caption": "Waves crashing against coastal rocks near Bimmah Sinkhole." },
+            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Water gardens", "title": "Resort Water Features", "caption": "Symmetric pools and luxury beachfront gardens." }
           ]
         }
       },
       {
-        "day": "8",
-        "title": "Departure from Muscat",
-        "tagline": "✈️ Luxury Chauffeur & Flight home",
+        "day": "8-9",
+        "title": "Muscat Leisure & Departure",
+        "tagline": "✈️ Luxury Spa, Beach & Departure Chauffeur",
         "vibe_title": "The Vibe",
-        "vibe_text": "Private luxury transfer conducts you back to Muscat International Airport for your flight back to the Nordic countries.",
+        "vibe_text": "Spend your final day enjoying the golf course, beach club, and spa. Settle your bags for a private airport chauffeur transfer.",
         "highlights": [
-          { "icon": "🚙", "title": "Airport Transfer", "description": "Private chauffeur transfer directly to the departure terminal." }
+          { "icon": "💆", "title": "St. Regis Guerlain Spa", "description": "Optional facial or massage package." }
         ],
         "stay": "✈️ Departure",
         "media": {
           "type": "carousel",
-          "id": "carousel-oman-day8",
+          "id": "carousel-lux-day8",
           "slides": [
-            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Oman Departure", "title": "Muscat Coastal Peaks", "caption": "Ascending above the Gulf coast for your flight home." }
+            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Takeoff View", "title": "Departure Flight Home", "caption": "Beautiful view of mountains and turquoise Gulf coastline." }
           ]
         }
       }
     ],
     "booking": {
       "title": "Book Your Luxury Oman Escape",
-      "description": "Experience premium Omani hospitality. This 8-day package includes luxury resort stays, private 4x4 transfers, expert local guides, and 24/7 guest support.",
+      "description": "Experience premium Omani hospitality. This 8-night package includes luxury resort stays, private 4x4 transfers, expert local guides, and 24/7 guest support.",
       "bullets": [
         "All Luxury Resorts & Mountain Suites Included",
         "Private 4x4 Chauffeur & Guide Included",
@@ -188,19 +144,18 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     "pricing": {
-      "base_price": 3490,
+      "base_price": 3890,
       "currency": "$",
       "dates": [
-        { "id": "om-nov15", "label": "Nov 15 – Nov 22", "season": "Prime Winter Season", "price_modifier": 0 },
-        { "id": "om-dec20", "label": "Dec 20 – Dec 27", "season": "Holiday Peak", "price_modifier": 480 },
-        { "id": "om-feb10", "label": "Feb 10 – Feb 17", "season": "Mild Spring Season", "price_modifier": 150 }
+        { "id": "om-lux-nov", "label": "Nov 15 – Nov 23", "season": "Prime Season", "price_modifier": 0 },
+        { "id": "om-lux-dec", "label": "Dec 20 – Dec 28", "season": "Peak Holidays", "price_modifier": 620 }
       ],
       "focus_options": [
-        { "id": "chedi-deluxe", "name": "Chedi Muscat Deluxe Room", "description": "Elegant design facing the gardens", "price_per_person": 0 },
-        { "id": "chedi-club-suite", "name": "Chedi Muscat Club Suite", "description": "Includes VIP lounge access & airport fast-track", "price_per_person": 850 }
+        { "id": "lux-chedi-standard", "name": "Chedi Serai Room & Alila Suite", "description": "High-end mountain & beach getaway", "price_per_person": 0 },
+        { "id": "lux-mo-suite", "name": "Mandarin Oriental Sea View & Alila Villa", "description": "Ultra-luxury suites and private villa pools", "price_per_person": 1250 }
       ],
       "supplements": [
-        { "id": "om-supp-single", "name": "Private Solo Supplement", "description": "Single occupancy rooms & private 4x4", "price": 790 }
+        { "id": "om-lux-supp-single", "name": "Private Solo Chauffeur Supplement", "description": "Single occupancy rooms & private 4x4", "price": 950 }
       ]
     },
     "contact": {
@@ -214,225 +169,147 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   },
   {
-    "id": "oman_safari",
+    "id": "oman_nature",
     "countries": ["Oman"],
     "meta": {
-      "title": "10-Day Desert Winds & Emerald Wadis Safari Adventure | Abbey's Road",
-      "description": "Embark on an epic 10-day off-road safari through Oman's coastal shipyards, turtle reserves, dunes of Wahiba Sands, and mountain gorges."
+      "title": "Oman – Nature & Adventure | Abbey's Road",
+      "description": "Embark on an active 9-night adventure in Oman. Hike the Grand Canyon, snorkel Daymaniyat, and canyon at Wadi Hawer."
     },
     "hero": {
-      "subtitle": "4x4 Desert Crossing, Gorges & Bedouin Glamping:",
-      "title": "Desert Winds & Emerald Wadis Safari",
-      "description": "Cross towering sand dunes, hike through hidden wadi canyons, and sleep under desert stars on this comprehensive Omani safari.",
+      "subtitle": "9 Nights / 10 Days · Nature & Adventure:",
+      "title": "Oman: Nature & Adventure",
+      "description": "A premium active holiday. Walk the Jebel Shams Grand Canyon, cross wadis, and snorkel with sea turtles in marine sanctuaries.",
       "background_image": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg",
       "cta_book": "Secure Your Safari Adventure",
       "cta_view": "View Itinerary Details"
     },
     "essentials": [
-      { "icon": "⏱️", "title": "Duration", "value": "10 Epic Days" },
-      { "icon": "🗺️", "title": "Route", "value": "Muscat ➔ Sur ➔ Wahiba ➔ Nizwa ➔ Muscat" },
-      { "icon": "⛺", "title": "Travel Style", "value": "4x4 Off-Road Safari, Glamping & Lodges" },
-      { "icon": "⚡", "title": "Pace", "value": "Active & Comprehensive" }
+      { "icon": "⏱️", "title": "Duration", "value": "9 Nights / 10 Days" },
+      { "icon": "🗺️", "title": "Route", "value": "Muscat ➔ Jabal Shams ➔ Jabal Akhdar ➔ Desert ➔ Wadis ➔ Coast" },
+      { "icon": "🧗", "title": "Travel Style", "value": "4x4 Off-Road Safari, Canyon Treks & Active Lodges" },
+      { "icon": "⚡", "title": "Pace", "value": "Active & Immersive" }
     ],
     "timeline": [
       {
-        "day": "1",
-        "title": "Welcome to Muscat",
-        "tagline": "🏨 Oceanfront Base at Muscat Cliffs",
+        "day": "1-2",
+        "title": "Muscat Arrival & Daymaniyat Snorkeling",
+        "tagline": "🐠 Snorkel with Marine Life & Coastal Views",
         "vibe_title": "The Vibe",
-        "vibe_text": "Touch down in Muscat. Meet your private safari guide and driver, and settle into your sea view resort facing the cliffs.",
+        "vibe_text": "Land in Muscat and check into W Muscat. Next morning, board a private boat to the Daymaniyat Islands for snorkeling with sea turtles and colorful coral reefs.",
         "highlights": [
-          { "icon": "🚙", "title": "Meet Your Guide", "description": "Meet your dedicated driver and 4x4 vehicle." }
+          { "icon": "⛵", "title": "Daymaniyat Marine Sanctuary", "description": "Swim through clear turquoise waters beside green sea turtles." },
+          { "icon": "🌊", "title": "Coastal speedboats", "description": "Search for spinner dolphins along Muscat's coastline." }
         ],
-        "stay": "🏨 Stay: Crowne Plaza Muscat 4* (Sea View Room)",
+        "stay": "🏨 Stay: W Muscat / Kempinski Hotel Muscat (5★)",
         "media": {
           "type": "carousel",
-          "id": "carousel-safari-day1",
+          "id": "carousel-nat-day1",
           "slides": [
-            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Muscat Cliffs View", "title": "Muscat Seaside Heights", "caption": "Overlooking the pristine sand beaches and cliffs of Muscat." },
-            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Muscat Shoreline", "title": "Seaside Cliff Shoreline", "caption": "Unwinding pools overlooking the coastal gulf." }
-          ]
-        }
-      },
-      {
-        "day": "2",
-        "title": "Coastal Sinkhole & Wadi Shab Canyons",
-        "tagline": "🥾 Sinkhole Swims & Trekking Hidden Gorges",
-        "vibe_title": "The Vibe",
-        "vibe_text": "Journey south along the rocky coast. Dip into the emerald basin of Bimmah Sinkhole, then cross the river to hike deep into Wadi Shab.",
-        "highlights": [
-          { "icon": "🕳️", "title": "Bimmah Sinkhole Dip", "description": "Swim inside a naturally collapsed limestone sinkhole." },
-          { "icon": "🥾", "title": "Wadi Shab Trekking", "description": "Climb canyon walls to reach hidden emerald pools and a waterfall cave." }
-        ],
-        "stay": "🏨 Stay: Sur Plaza Hotel 4*",
-        "media": {
-          "type": "carousel",
-          "id": "carousel-safari-day2",
-          "slides": [
-            { "type": "single", "src": "images/oman/River_flowing_through_canyon_202608141630.jpeg", "alt": "River flowing through canyon", "title": "Wadi Shab Gorge River", "caption": "Beautiful freshwater flowing through limestone gorges." },
-            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Travelers wading in pools", "title": "Wading in Canyon Pools", "caption": "Deep pools of clear emerald water welcoming swimmers." },
-            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Wadi Cliff Walls", "title": "Canyon Gorge Walls", "caption": "Walking between vertical towering limestone walls." },
-            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Ocean Life Muscat", "title": "Muscat Sea Life", "caption": "Jumping dolphins seen near coastal wadi trails." }
+            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Sea Turtle Swimming", "title": "Daymaniyat Coral Reefs", "caption": "Snorkeling with endangered sea turtles." },
+            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Dolphins", "title": "Spinner Dolphin Pods", "caption": "Dolphin pods swimming alongside the local dhow charters." },
+            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Sailing boat", "title": "Dhow Sailing Muscat", "caption": "Traditional sailing vessel cruising past rock peaks." }
           ]
         }
       },
       {
         "day": "3",
-        "title": "Maritime Sur & Ras Al Jinz Turtle Sanctuary",
-        "tagline": "🐢 Wooden Dhow Shipyards & Night Turtle Nesting",
+        "title": "Wadi Bani Awf & Jebel Shams Canyons",
+        "tagline": "🧗 Offroad Mountain Crossings & Balcony Walks",
         "vibe_title": "The Vibe",
-        "vibe_text": "Explore Sur's traditional shipbuilding heritage, then proceed to the Ras Al Jinz beaches to spot nesting green sea turtles at night.",
+        "vibe_text": "Drive by 4x4 through Nakhal and cross the off-road passes of Wadi Bani Awf. See deep ravines and ancient stone villages. Arrive at Jebel Shams to hike the Balcony Walk.",
         "highlights": [
-          { "icon": "⛵", "title": "Dhow Shipyard Tour", "description": "See craftsmen constructing Omani wooden dhows without nails." },
-          { "icon": "🐢", "title": "Guided Turtle Search", "description": "Walk the protected beaches at night with a ranger to witness nesting sea turtles." }
+          { "icon": "🚙", "title": "Wadi Bani Awf Off-Roading", "description": "Drive winding cliff passes with massive canyon vertical drop-offs." },
+          { "icon": "🥾", "title": "Balcony Walk Hike", "description": "Cliff-edge trail looking down 1,000m into Wadi Nakhr (Grand Canyon)." }
         ],
-        "stay": "🏨 Stay: Ras Al Jinz Turtle Reserve Lodge",
+        "stay": "⛺ Stay: Jebel Shams Resort / Canyon View Lodge (4★)",
         "media": {
           "type": "carousel",
-          "id": "carousel-safari-day3",
+          "id": "carousel-nat-day3",
           "slides": [
-            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Dhow Sail", "title": "Sur Dhow Harbor", "caption": "Historic watchtowers and harbors in Sur." },
-            { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle Beach", "title": "Turtle Returning to Ocean", "caption": "Witnessing green turtles walking down the sands at dawn." },
-            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Green Sea Turtle Swimming", "title": "Sea Turtle Swimming", "caption": "Protected turtles swimming in local coral lagoons." },
-            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Wild dolphins Sur", "title": "Sur Coast Dolphins", "caption": "Marine biodiversity along the eastern coastline." }
+            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Balcony Walk", "title": "Jebel Shams Balcony Walk", "caption": "Hiking routes following thin ridges with vertical mountain drops." },
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Clay mountain houses", "title": "Abandoned Cliff Dwellings", "caption": "Mudbrick village ruins clinging to mountain shelves." }
           ]
         }
       },
       {
-        "day": "4",
-        "title": "Wahiba Desert Crossing",
-        "tagline": "🐫 High Dune Safaris & Luxury Bedouin Glamping",
+        "day": "4-5",
+        "title": "Jabal Akhdar Canyons & Nizwa Market",
+        "tagline": "⛰️ Via Ferrata Climbing & Ancient Villages",
         "vibe_title": "The Vibe",
-        "vibe_text": "Enter the golden expanse of Wahiba Sands. Your 4x4 deflates its tires to bash over sand ridges 100 meters high, culminating in sunset drinks.",
+        "vibe_text": "Travel via Al Hamra and Nizwa Fort to Jabal Akhdar. Try active via ferrata climbing routes, hike canyon paths, and browse silver souks.",
         "highlights": [
-          { "icon": "🚙", "title": "Dune Bashing Safari", "description": "High-adrenaline 4x4 dune traversal with expert guides." },
-          { "icon": "⛺", "title": "Luxury Desert Campfire", "description": "Relax with music and Omani food around the fire." }
+          { "icon": "🧗", "title": "Canyon Via Ferrata", "description": "Climb iron ladders built into cliff face routes (activity based on fitness)." },
+          { "icon": "🏰", "title": "Nizwa Trading Souk", "description": "Meet local pottery craftsmen and spice merchants." }
         ],
-        "stay": "⛺ Stay: Desert Nights Camp (Luxury Desert Tent)",
+        "stay": "🏨 Stay: Alila Jabal Akhdar Resort (5★)",
         "media": {
           "type": "carousel",
-          "id": "carousel-safari-day4",
+          "id": "carousel-nat-day4",
           "slides": [
-            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Wahiba Sands Desert", "title": "Endless Wahiba Sands", "caption": "Windswept copper-colored sand ridges stretching to the horizon." },
-            { "type": "single", "src": "images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg", "alt": "Desert Nights Glamping Tents", "title": "Desert Nights Luxury Camp", "caption": "5-star canvas structures nestled between high dunes." },
-            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Desert campfire", "title": "Campfire under the Stars", "caption": "Sipping coffee around a warm campfire in the desert dunes." }
-          ]
-        }
-      },
-      {
-        "day": "5",
-        "title": "Wadi Bani Khalid Oasis Oasis",
-        "tagline": "🌴 Natural Pools & Shade Date Palms",
-        "vibe_title": "The Vibe",
-        "vibe_text": "Escape the desert heat in Wadi Bani Khalid — a luxury oasis of green pools lined with palms hidden deep inside mountain ravines.",
-        "highlights": [
-          { "icon": "🌴", "title": "Oasis Swimming", "description": "Swim inside refreshing natural pools surrounded by date palms." }
-        ],
-        "stay": "⛺ Stay: Desert Nights Camp (Luxury Desert Tent)",
-        "media": {
-          "type": "carousel",
-          "id": "carousel-safari-day5",
-          "slides": [
-            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi Bani Khalid Pool", "title": "Bani Khalid Main Pool", "caption": "Large freshwater basin tucked inside limestone mountains." },
-            { "type": "single", "src": "images/oman/River_flowing_through_canyon_202608141630.jpeg", "alt": "Date Palm Oasis", "title": "Oasis Waterways", "caption": "Green shade palms alongside natural waterways." },
-            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Desert star nights", "title": "Desert Night Sky", "caption": "Bedouin storytelling around the glowing embers." },
-            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Mountain Camels", "title": "Oasis Wildlife", "caption": "Friendly desert camels wandering near wadi oases." }
+            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Alila Jabal Akhdar", "title": "Alila Resort Heights", "caption": "Cliffside resort looking over deep gorges." },
+            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Terrace Plantation", "title": "Jabal Akhdar Rose Terraces", "caption": "A Falaj water system irrigating local mountain crops." },
+            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Mountain Camels", "title": "Mountain Camels", "caption": "Wild camels walking along mountain gorges." }
           ]
         }
       },
       {
         "day": "6",
-        "title": "Nizwa Fort & Friday Cattle Market",
-        "tagline": "🐏 Historic Trading & Round Clay Towers",
+        "title": "Sharqiyah Sands Dune Bashing",
+        "tagline": "🚙 Sandboarding, Sunset Dune Walks & Campfires",
         "vibe_title": "The Vibe",
-        "vibe_text": "Rise early to experience Nizwa's historic Friday cattle market, where traders bargain for livestock, then explore the clay ramparts.",
+        "vibe_text": "Enter the copper sands of Wahiba Sands. Deflate tires to bash dunes, hike up high ridges, try sandboarding, and dine under the stars.",
         "highlights": [
-          { "icon": "🐏", "title": "Friday Cattle Souk", "description": "Witness the authentic local auction of goats and cows." },
-          { "icon": "🏰", "title": "Nizwa Fort Circular Tower", "description": "Climb the steps of the largest defense tower in the interior." }
+          { "icon": "🏂", "title": "Sandboarding Dunes", "description": "Glide down sand dunes in the golden desert." },
+          { "icon": "⛺", "title": "Desert night campfire", "description": "Sleep in an en-suite Bedouin tent and stargaze." }
         ],
-        "stay": "🏨 Stay: Golden Tulip Nizwa 4*",
+        "stay": "⛺ Stay: Desert Nights Camp / Magic Camps Wahiba (4★)",
         "media": {
           "type": "carousel",
-          "id": "carousel-safari-day6",
+          "id": "carousel-nat-day6",
           "slides": [
-            { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort Tower", "title": "Nizwa Fort Circular Tower", "caption": "Massive clay watchtower overlooking Nizwa town." },
-            { "type": "single", "src": "images/oman/Host_pouring_coffee_into_cup_202608141639.jpeg", "alt": "Friday Cattle Auction", "title": "Omani Cardamom Coffee", "caption": "Local hospitality welcoming buyers in the Nizwa souks." },
-            { "type": "single", "src": "images/oman/Sunbeams_streaming_into_historic…_202608141639.jpeg", "alt": "Inside Nizwa Fort", "title": "Historic Fort Gateways", "caption": "Sunbeams highlighting clay carvings and massive wooden doors." }
+            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Red Desert Dunes", "title": "Wahiba Dunes Crossing", "caption": "Rippled dunes lit by afternoon shadows." },
+            { "type": "single", "src": "images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg", "alt": "Desert dome", "title": "Wahiba Glamping", "caption": "Sleek domes nestled inside dunes." },
+            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Campfire", "title": "Dunes Campfire", "caption": "Traditional coffee and stargazing by the fire." }
           ]
         }
       },
       {
-        "day": "7",
-        "title": "Jebel Shams Grand Canyon Trek",
-        "tagline": "🥾 Grand Canyon Balcony Walk & Canyons",
+        "day": "7-8",
+        "title": "Wadi Hawer Canyoning & Turtle Coast",
+        "tagline": "🥾 Wadi Canyons & Ras Al Jinz Protected Beach",
         "vibe_title": "The Vibe",
-        "vibe_text": "Ascend Oman's highest peak, Jebel Shams, to hike the balcony path looking down into the 1,000m deep Wadi Nakhr canyon.",
+        "vibe_text": "Leave the desert for canyoning at Wadi Hawer: swim, hike, and slide through freshwater canyons. Travel to Sur and watch green sea turtles nest at night in Ras Al Jinz.",
         "highlights": [
-          { "icon": "🥾", "title": "Balcony Walk Hike", "description": "Walk a cliff edge path to the abandoned village of Sab Bani Khamis." }
+          { "icon": "🧗", "title": "Wadi Hawer Canyoning", "description": "Active swim-trek combination through mountain gorges." },
+          { "icon": "🐢", "title": "Ras Al Jinz Protected Reserve", "description": "Watch nesting green turtles at night with an official guide." }
         ],
-        "stay": "⛺ Stay: Jebel Shams Resort / Alila Jabal Akhdar",
+        "stay": "🏨 Stay: Ras Al Jinz Turtle Reserve Lodge (3★)",
         "media": {
           "type": "carousel",
-          "id": "carousel-safari-day7",
+          "id": "carousel-nat-day7",
           "slides": [
-            { "type": "single", "src": "images/oman/Balcony_Walk_along_Wadi_Ghul_202608141639.jpeg", "alt": "Wadi Ghul Canyon", "title": "Wadi Ghul Grand Canyon", "caption": "Breathtaking 1,000-meter drop-offs into the mountain belly." },
-            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Canyon mud brick terraces", "title": "Jebel Shams Balcony Path", "caption": "Narrow mountain paths carved directly into high shale cliffs." },
-            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Camels in Wadi", "title": "High Elevation Wildlife", "caption": "Mountain camels foraging on Jebel Shams canyon slopes." }
+            { "type": "single", "src": "images/oman/River_flowing_through_canyon_202608141630.jpeg", "alt": "Wadi river canyon", "title": "Wadi Hawer Water Canyon", "caption": "Pristine freshwater streams inside deep limestone rock canyons." },
+            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi wading", "title": "Wadi Swimming Pools", "caption": "Fresh turquoise pools welcoming active canyoners." },
+            { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle", "title": "Ras Al Jinz Shore", "caption": "Protected beaches where sea turtles lay eggs." }
           ]
         }
       },
       {
-        "day": "8",
-        "title": "Misfat Al Abriyeen Clay Village",
-        "tagline": "🏡 300-Year-Old Mud Houses & Mountain Springs",
+        "day": "9-10",
+        "title": "Coastal road to Muscat & Departure",
+        "tagline": "🌊 Wadi Tiwi, Bimmah Sinkhole & Takeoff",
         "vibe_title": "The Vibe",
-        "vibe_text": "Stroll the terraced gardens and clay houses of Misfat Al Abriyeen, observing how mountain springs still water their crops.",
+        "vibe_text": "Drive back via Wadi Tiwi and swim in the blue-green water of Bimmah Sinkhole. Settle your bags for your private airport transfer.",
         "highlights": [
-          { "icon": "🏡", "title": "Mudbrick Village Walk", "description": "Guided walking tour through clay alleyways and stone houses." }
-        ],
-        "stay": "🏨 Stay: The Chedi Muscat 5* (Deluxe Room)",
-        "media": {
-          "type": "carousel",
-          "id": "carousel-safari-day8",
-          "slides": [
-            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Misfat Mud Houses", "title": "Clay Village Terraces", "caption": "Historic mudbrick houses constructed on steep mountain rock." },
-            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Misfat Palms", "title": "Oasis Spring Systems", "caption": "Date palms irrigated by falaj mountain spring systems." }
-          ]
-        }
-      },
-      {
-        "day": "9",
-        "title": "Leisurely Day in Muscat",
-        "tagline": "🌊 Beachside Pool & Spa Refurbishment",
-        "vibe_title": "The Vibe",
-        "vibe_text": "Relax alongside the private coastline of The Chedi Muscat. Enjoy fine dining and a custom Spa massage.",
-        "highlights": [
-          { "icon": "🌊", "title": "Beach relaxation", "description": "Relax on loungers facing the Gulf of Oman." }
-        ],
-        "stay": "🏨 Stay: The Chedi Muscat 5*",
-        "media": {
-          "type": "carousel",
-          "id": "carousel-safari-day9",
-          "slides": [
-            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Pool Lounge", "title": "Chedi Reflecting Water Gardens", "caption": "Relaxing sand beds and symmetric reflecting ponds." }
-          ]
-        }
-      },
-      {
-        "day": "10",
-        "title": "Departure from Muscat",
-        "tagline": "✈️ Private Airport Chauffeur",
-        "vibe_title": "The Vibe",
-        "vibe_text": "Your guide transfers you back to Muscat International Airport for your departure flight.",
-        "highlights": [
-          { "icon": "🛫", "title": "Airport Transfer", "description": "Chauffeur transfer directly to the terminal." }
+          { "icon": "🕳️", "title": "Bimmah Sinkhole", "description": "Swim inside a naturally collapsed limestone sinkhole." }
         ],
         "stay": "✈️ Departure",
         "media": {
           "type": "carousel",
-          "id": "carousel-safari-day10",
+          "id": "carousel-nat-day9",
           "slides": [
-            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Oman coastline takeoff", "title": "Sultanate Farewell", "caption": "Ascending over Muscat's coastline." }
+            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Coastal waves", "title": "Oman Coastal Drive", "caption": "Ocean sprays crashing near Bimmah Sinkhole." },
+            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Takeoff View", "title": "Gulf Departure Flight", "caption": "Scenic views of coastal mountains from above." }
           ]
         }
       }
@@ -441,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "title": "Book Your Oman Safari Escape",
       "description": "Experience premium Omani desert safaris. This 10-day package includes hotels & desert glamping, private 4x4 safari vehicles, expert guides, and 24/7 client care.",
       "bullets": [
-        "All Luxury Camps & Hotels Included",
+        "All Adventure Lodges & Luxury Camps Included",
         "Private 4x4 Off-Road Safari Vehicle & Guide Included",
         "Wadi Trekking & Turtle Reserve Entry Included",
         "100% Flexible Dates & Adjustments"
@@ -451,8 +328,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "base_price": 2950,
       "currency": "$",
       "dates": [
-        { "id": "om-saf-nov20", "label": "Nov 20 – Nov 30", "season": "Prime Season", "price_modifier": 0 },
-        { "id": "om-saf-jan10", "label": "Jan 10 – Jan 20", "season": "Mild Season", "price_modifier": 100 }
+        { "id": "om-saf-nov", "label": "Nov 20 – Nov 30", "season": "Prime Season", "price_modifier": 0 },
+        { "id": "om-saf-jan", "label": "Jan 10 – Jan 20", "season": "Mild Season", "price_modifier": 100 }
       ],
       "focus_options": [
         { "id": "safari-standard", "name": "4-Star Hotels & Safari Tents", "description": "Comfortable room & high-end safari tent", "price_per_person": 0 },
@@ -470,6 +347,486 @@ document.addEventListener('DOMContentLoaded', () => {
       "email": "abbey@abbeysroad.dk",
       "web": "www.abbeysroad.com",
       "contact_image": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg"
+    }
+  },
+  {
+    "id": "oman_wellness",
+    "countries": ["Oman"],
+    "meta": {
+      "title": "Wellness & Oman at a slower rhythm | Abbey's Road",
+      "description": "Restore your senses with an 8-night slow-paced wellness journey in Oman. Stay at Mandarin Oriental and Alila."
+    },
+    "hero": {
+      "subtitle": "8 Nights / 9 Days · Wellness & Mindfulness:",
+      "title": "Wellness & Oman at a slower rhythm",
+      "description": "A restorative journey focusing on silence, mindfulness, and spa therapies. Fewer hotel transitions and unstructured days.",
+      "background_image": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg",
+      "cta_book": "Secure Your Wellness Journey",
+      "cta_view": "View Itinerary Details"
+    },
+    "essentials": [
+      { "icon": "⏱️", "title": "Duration", "value": "8 Nights / 9 Days" },
+      { "icon": "🧘", "title": "Route", "value": "Muscat ➔ Jabal Akhdar ➔ Desert ➔ Muscat Coast" },
+      { "icon": "💆", "title": "Travel Style", "value": "Wellness-oriented Transfers, Spa & Luxury Stays" },
+      { "icon": "⚡", "title": "Pace", "value": "Slow & Restorative" }
+    ],
+    "timeline": [
+      {
+        "day": "1-3",
+        "title": "Muscat Shoreline Sanctuary",
+        "tagline": "🧘 Late Starts, Spa Treatments & Sea Cruises",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Arrive privately in Muscat and settle in with no schedule. Day 2 features a late-start cultural walk and an organic lunch. Day 3 is entirely free for spa therapies and sunset cruises.",
+        "highlights": [
+          { "icon": "💆", "title": "Somatic Spa therapies", "description": "Holistic body massage and oil wellness treatments." },
+          { "icon": "⛵", "title": "Private Sunset Yacht", "description": "Unwind facing the silent, golden Gulf coast." }
+        ],
+        "stay": "🏨 Stay: Mandarin Oriental, Muscat / The Chedi Muscat (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-well-day1",
+          "slides": [
+            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Chedi Gardens", "title": "The Chedi Water Gardens", "caption": "Relaxing reflective waterways and palms." },
+            { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Grand Mosque", "title": "Grand Mosque Courtyards", "caption": "Quiet marble pathways for peaceful walks." },
+            { "type": "single", "src": "images/oman/Frankincense_burning_in_Muttrah_…_202608141639.jpeg", "alt": "Frankincense", "title": "Muttrah Incense Burners", "caption": "Soothing aroma of burning organic Omani frankincense." },
+            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Yacht", "title": "Quiet Sunset Cruise", "caption": "Ocean views along Muscat's calm coast." }
+          ]
+        }
+      },
+      {
+        "day": "4-5",
+        "title": "Jabal Akhdar Altitude Spa & Yoga",
+        "tagline": "⛰️ Falaj Streams, Meditation & Altitude Spas",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Transfer through Birkat Al Mouz to check in early at Alila. Day 5 features one single guided activity—a soft village walk. Spend afternoons doing yoga, meditation, and spa treatments.",
+        "highlights": [
+          { "icon": "🧘", "title": "Altitude Yoga & Meditation", "description": "Sunrise meditation classes facing deep limestone gorges." },
+          { "icon": "🥾", "title": "Easy Village Encounter", "description": "Walk paths connecting traditional mountain communities." }
+        ],
+        "stay": "🏨 Stay: Alila Jabal Akhdar Resort / Anantara (5★ Wellness)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-well-day4",
+          "slides": [
+            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Mountain Spa", "title": "Alila Cliffside Pools", "caption": "Warm, peaceful waters in high mountain air." },
+            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Birkat Al Mouz", "title": "Birkat Al Mouz Oasis", "caption": "Date palms irrigated by Falaj spring water systems." },
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Mountain mud brick villages", "title": "Misfat Al Abriyeen", "caption": "Quiet paths on mountain rock terraces." }
+          ]
+        }
+      },
+      {
+        "day": "6",
+        "title": "Sharqiyah sands Silence & Desert Stars",
+        "tagline": "⛺ Desert Dunes, Silence & Stargazing Nights",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Journey deep into the dunes. Settle into camp. Day is structured around quiet landscapes: sunset walks, stargazing, and private dunes campfire dining.",
+        "highlights": [
+          { "icon": "✨", "title": "Silent Dunes Stargazing", "description": "Experience deep silence and clear night skies in the desert." }
+        ],
+        "stay": "⛺ Stay: Desert Nights Camp - Premium Glamping (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-well-day6",
+          "slides": [
+            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Sand Dunes", "title": "Wahiba Dunes Silence", "caption": "Vast sand ridges reflecting twilight shadows." },
+            { "type": "single", "src": "images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg", "alt": "Desert Camp", "title": "Desert Nights Glamping Domes", "caption": "Refined glamping dome layouts." },
+            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Campfire", "title": "Desert Campfire", "caption": "Stargazing beside warm campfire embers." }
+          ]
+        }
+      },
+      {
+        "day": "7-8",
+        "title": "Wadi Pools & St. Regis Beach Rest",
+        "tagline": "🌴 Oasis swim, Beach Spa & Farewell Dinner",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Return via Wadi Bani Khalid for swimming. Spend your final days at St. Regis Al Mouj. Enjoy beach lounge, spa, and optional private yacht charters.",
+        "highlights": [
+          { "icon": "🏊", "title": "Wadi Bani Khalid Oasis", "description": "Restorative swimming in clean, palm-fringed wadi waters." }
+        ],
+        "stay": "🏨 Stay: St. Regis Al Mouj Muscat Resort (5★ Luxury)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-well-day7",
+          "slides": [
+            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi swimming", "title": "Wadi Bani Khalid", "caption": "Clear green pools inside rocky valleys." },
+            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Takeoff View", "title": "Muscat Coastal Peaks", "caption": "Sunset horizon along the Muscat gulf shores." }
+          ]
+        }
+      },
+      {
+        "day": "9",
+        "title": "Muscat Departure",
+        "tagline": "✈️ Private Chauffeur Flight Home",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Relax before your private VIP airport chauffeur transfer for your flight back to the Nordic countries.",
+        "highlights": [
+          { "icon": "🚙", "title": "Private Chauffeur Transfer", "description": "Direct luxury transfer to departures." }
+        ],
+        "stay": "✈️ Departure",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-well-day9",
+          "slides": [
+            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Departing Oman", "title": "Sultanate Farewell", "caption": "Flight takeoff overlooking Muscat gulf coastline." }
+          ]
+        }
+      }
+    ],
+    "booking": {
+      "title": "Book Your Wellness Oman Escape",
+      "description": "Indulge in high-end restorative travel. This 8-night package includes premium wellness resorts, spa treatments, private driver transfers, and 24/7 client care.",
+      "bullets": [
+        "Mandarin Oriental & Alila Stays Included",
+        "Private Somatic Spa & Massage Therapies Included",
+        "Daily Yoga & Meditation Classes Included",
+        "100% Flexible Stays & Booking Customization"
+      ]
+    },
+    "pricing": {
+      "base_price": 3850,
+      "currency": "$",
+      "dates": [
+        { "id": "om-well-nov", "label": "Nov 18 – Nov 26", "season": "Prime Season", "price_modifier": 0 },
+        { "id": "om-well-feb", "label": "Feb 12 – Feb 20", "season": "Spring Mild Season", "price_modifier": 120 }
+      ],
+      "focus_options": [
+        { "id": "wellness-standard", "name": "Alila Mountain Suite & Chedi Deluxe", "description": "High-end resort spa stays", "price_per_person": 0 },
+        { "id": "wellness-deluxe-villa", "name": "Alila Cliff Villa & Mandarin Oriental Beach Villa", "description": "Private villa pool layouts and VIP airport fast-tracks", "price_per_person": 1490 }
+      ],
+      "supplements": [
+        { "id": "om-well-supp-single", "name": "Private Solo Supplement", "description": "Single occupancy rooms & private transfers", "price": 820 }
+      ]
+    },
+    "contact": {
+      "company_name": "Abbey's Road Destinations",
+      "tagline": "Handcrafted Oman & Global Escapes",
+      "address": "Shatti Al Qurum • Muscat, Sultanate of Oman",
+      "phone": "+45 2622 0288",
+      "email": "abbey@abbeysroad.dk",
+      "web": "www.abbeysroad.com",
+      "contact_image": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg"
+    }
+  },
+  {
+    "id": "oman_family",
+    "countries": ["Oman"],
+    "meta": {
+      "title": "Oman – Private Family Discovery | Abbey's Road",
+      "description": "Embark on a private 9-night family adventure in Oman. Features snorkeling, camel rides, sandboarding, and green sea turtles."
+    },
+    "hero": {
+      "subtitle": "9 Nights / 10 Days · Private Family Journey:",
+      "title": "Oman: Private Family Discovery",
+      "description": "Active family adventure with comfortable 4-5★ beach resorts, camel rides, sandboarding, and interactive fort scavenger hunts.",
+      "background_image": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg",
+      "cta_book": "Secure Your Family Adventure",
+      "cta_view": "View Itinerary Details"
+    },
+    "essentials": [
+      { "icon": "⏱️", "title": "Duration", "value": "9 Nights / 10 Days" },
+      { "icon": "🗺️", "title": "Route", "value": "Muscat ➔ Mountains ➔ Desert ➔ Turtles ➔ Beach ➔ Muscat" },
+      { "icon": "🚙", "title": "Travel Style", "value": "Private Chauffeur & Child-Friendly Activity Packages" },
+      { "icon": "⚡", "title": "Pace", "value": "Active & Family-friendly" }
+    ],
+    "timeline": [
+      {
+        "day": "1-3",
+        "title": "Muscat Family Base & Turtle Islands",
+        "tagline": "🐠 Dolphin Cruises & Snorkeling Daymaniyat",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Land in Muscat and check into Kempinski Muscat. Settle the kids, explore Mutrah Souq with our 'Young Explorers' treasure hunt pack, and take a boat to Daymaniyat to snorkel with marine turtles.",
+        "highlights": [
+          { "icon": "🐚", "title": "Daymaniyat snorkeling", "description": "Spot wild sea turtles, clownfish, and marine corals." },
+          { "icon": "🐬", "title": "Dolphin Watching Cruise", "description": "Spot schools of spinner dolphins jumping in the Gulf." }
+        ],
+        "stay": "🏨 Stay: Kempinski Hotel Muscat / St. Regis Al Mouj (5★ Family Resort)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day1",
+          "slides": [
+            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Turtle Snorkeling", "title": "Snorkeling with Sea Turtles", "caption": "Kid-friendly snorkeling in protected shallow waters." },
+            { "type": "single", "src": "images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg", "alt": "Dolphins", "title": "Dolphin Spotting Cruises", "caption": "Spotting wild dolphins from the boat deck." },
+            { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Grand Mosque", "title": "Grand Mosque Gardens", "caption": "Symmetric, quiet paths in Muscat." }
+          ]
+        }
+      },
+      {
+        "day": "4-5",
+        "title": "Interactive Nizwa Fort & Mountain Retreat",
+        "tagline": "🏰 Fort Scavenger Hunts & Mountain Pools",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Travel via Nizwa. Solve clues in our Fort challenge, explore clay villages, and proceed to Jabal Akhdar for easy family village walks and mountain pool swimming.",
+        "highlights": [
+          { "icon": "🏰", "title": "Nizwa Fort Scavenger Hunt", "description": "Solve interactive clues to learn Nizwa Fort history." },
+          { "icon": "🏊", "title": "Mountain Pool Activities", "description": "Resort family pools overlooking deep rock canyons." }
+        ],
+        "stay": "🏨 Stay: dusitD2 Naseem Resort, Jabal Akhdar (4★ Family Retreat)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day4",
+          "slides": [
+            { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort", "title": "Nizwa Clay Watchtowers", "caption": "Climbing Nizwa Fort circular tower." },
+            { "type": "single", "src": "images/oman/Mud-brick_village_on_mountain_cl…_202608141639.jpeg", "alt": "Clay mountain village", "title": "Misfat Village Walk", "caption": "Ancient stone houses and date palm trees." },
+            { "type": "single", "src": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg", "alt": "Wild camels", "title": "Desert Camels Grazing", "caption": "Spotting Omani camels along river banks." }
+          ]
+        }
+      },
+      {
+        "day": "6",
+        "title": "Wahiba Sands Desert Adventures",
+        "tagline": "🐫 Camel Rides, Sandboarding & Dunes Campfires",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Enter Wahiba Sands by 4x4. Try sandboarding down dunes, ride camels, watch the sunset, and enjoy a family dinner under the stars by the fire.",
+        "highlights": [
+          { "icon": "🏂", "title": "Family Sandboarding", "description": "Glide down golden sand dunes." },
+          { "icon": "🐫", "title": "Camel Safari Rides", "description": "Ride camels over sand ridges." }
+        ],
+        "stay": "⛺ Stay: Desert Nights Camp - Luxury Family Suite (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day6",
+          "slides": [
+            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Dunes", "title": "Golden sand dunes", "caption": "Perfect sand ridges for sandboarding." },
+            { "type": "single", "src": "images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg", "alt": "Desert Camp", "title": "Desert Camp Domes", "caption": "Cozy en-suite canvas setups for family nights." },
+            { "type": "single", "src": "images/oman/Campfire_in_Oman_desert_at_202608141639.jpeg", "alt": "Campfire", "title": "Dunes Campfire Night", "caption": "Singing songs and eating around the campfire." }
+          ]
+        }
+      },
+      {
+        "day": "7",
+        "title": "Wadi Bani Khalid Swimming & Turtle Watch",
+        "tagline": "🌴 Oasis swims, Sur Dhows & Hatching Sea Turtles",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Swim in the oasis of Wadi Bani Khalid. Drive to Sur to inspect wooden boat yards, and join an evening guide to see sea turtles laying eggs at Ras Al Jinz.",
+        "highlights": [
+          { "icon": "🏊", "title": "Wadi Oasis Swimming", "description": "Clean, palm-fringed wadi pools suitable for kids." },
+          { "icon": "🐢", "title": "Evening Turtle Tour", "description": "Guided walkthrough to spot nesting sea turtles and baby hatchlings." }
+        ],
+        "stay": "🏨 Stay: Ras Al Jinz Turtle Reserve Lodge (3★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day7",
+          "slides": [
+            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi pools", "title": "Wadi Bani Khalid Pool", "caption": "Safe freshwater pools lined with date palms." },
+            { "type": "single", "src": "images/oman/Green_turtle_returning_to_ocean_202608141639.jpeg", "alt": "Green Turtle", "title": "Nesting Green Sea Turtles", "caption": "Green turtles crawling along Ras Al Jinz beaches." }
+          ]
+        }
+      },
+      {
+        "day": "8-10",
+        "title": "Bimmah Sinkhole & Muscat Beach Farewell",
+        "tagline": "🕳️ Coastal roads, Water Sports & Departure Fly",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Return via Bimmah Sinkhole for swimming. Finish with two nights at a Muscat beach resort. Spend your last day swimming and doing water sports before your departure flight.",
+        "highlights": [
+          { "icon": "🕳️", "title": "Bimmah Sinkhole Dip", "description": "Jump into the natural limestone sinkhole basin." }
+        ],
+        "stay": "✈️ Departure",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day8",
+          "slides": [
+            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Waves Spraying", "title": "Coastal Route Cliffs", "caption": "Dramatic sea views near Bimmah Sinkhole." },
+            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Departure take-off", "title": "Takeoff Flight Home", "caption": "Oman's pristine coastline from above." }
+          ]
+        }
+      }
+    ],
+    "booking": {
+      "title": "Book Your Family Oman Discovery",
+      "description": "Experience family-friendly Omani adventures. Includes child-safe resorts, private transport, guided turtle walks, activity checklists, and 24/7 support.",
+      "bullets": [
+        "All Kid-Friendly Hotels & Camps Included",
+        "Young Explorers Activity Packages Included",
+        "Private Chauffeur & Scavenger Fort Guides Included",
+        "100% Flexible Dates & Child Bed Adjustments"
+      ]
+    },
+    "pricing": {
+      "base_price": 2690,
+      "currency": "$",
+      "dates": [
+        { "id": "om-fam-nov", "label": "Nov 20 – Nov 30", "season": "Prime Season", "price_modifier": 0 },
+        { "id": "om-fam-jan", "label": "Jan 12 – Jan 22", "season": "Mild Season", "price_modifier": 80 }
+      ],
+      "focus_options": [
+        { "id": "family-standard", "name": "Kempinski Deluxe Family Room", "description": "Comfortable family layout facing pools", "price_per_person": 0 },
+        { "id": "family-connecting-suite", "name": "Kempinski Connecting Suite & Alila Villa", "description": "Two connected suites and private villa pool access", "price_per_person": 850 }
+      ],
+      "supplements": [
+        { "id": "om-fam-supp-kids", "name": "Young Explorer Package Discount", "description": "Discount applied per child under 12 years", "price": -450 }
+      ]
+    },
+    "contact": {
+      "company_name": "Abbey's Road Destinations",
+      "tagline": "Handcrafted Oman & Global Escapes",
+      "address": "Shatti Al Qurum • Muscat, Sultanate of Oman",
+      "phone": "+45 2622 0288",
+      "email": "abbey@abbeysroad.dk",
+      "web": "www.abbeysroad.com",
+      "contact_image": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg"
+    }
+  },
+  {
+    "id": "oman_dubai",
+    "countries": ["UAE", "Oman"],
+    "meta": {
+      "title": "Dubai + Oman Premium Journey | Abbey's Road",
+      "description": "Embark on an ultra-luxury 11-night journey combining Dubai's contemporary skyline with Oman's historic forts and dunes."
+    },
+    "hero": {
+      "subtitle": "11 Nights / 12 Days · Ultra-Premium Dual Destination:",
+      "title": "Dubai + Oman Premium Journey",
+      "description": "Contrast Dubai's contemporary skyline with Oman's history, canyons, and desert glamping on this premium 12-day journey.",
+      "background_image": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg",
+      "cta_book": "Secure Your Premium Cross-Border Tour",
+      "cta_view": "View Itinerary Details"
+    },
+    "essentials": [
+      { "icon": "⏱️", "title": "Duration", "value": "11 Nights / 12 Days" },
+      { "icon": "✈️", "title": "Route", "value": "Dubai ➔ Muscat ➔ Jabal Akhdar ➔ Desert ➔ Muscat Coast" },
+      { "icon": "👑", "title": "Travel Style", "value": "Ultra-Luxury Cross-Border Transfers & 5-Star Beach Resorts" },
+      { "icon": "⚡", "title": "Pace", "value": "Curated & Premium" }
+    ],
+    "timeline": [
+      {
+        "day": "1-3",
+        "title": "Dubai Contemporary Skyline Luxury",
+        "tagline": "🏙️ Burj Khalifa, Traditional Gold Souks & Yacht Cruises",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Touch down in Dubai. Settle into your downtown luxury suite. Day 2: Private highlights tour covering Burj Khalifa, Gold Souks, and Downtown. Day 3: Premium yacht cruising around Dubai Marina.",
+        "highlights": [
+          { "icon": "🏙️", "title": "Burj Khalifa Top Entry", "description": "Access the VIP observation decks looking over Dubai's skyline." },
+          { "icon": "⛵", "title": "Private Yacht Cruise", "description": "Sailing past Jumeirah beach villas and modern glass skyscrapers." }
+        ],
+        "stay": "🏨 Stay: Armani Hotel Dubai / Jumeirah Al Naseem (5★ Ultra-Luxury)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-dub-day1",
+          "slides": [
+            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Dubai Skyline Placeholder", "title": "Dubai Downtown Horizon", "caption": "Contemporary glass skyscrapers. [PROMPT] Cinematic wide-angle photograph of Dubai Downtown skyline and Burj Khalifa at sunset." },
+            { "type": "single", "src": "images/oman/Sunbeams_streaming_into_historic…_202608141639.jpeg", "alt": "Spice Souk Placeholder", "title": "spice & Gold Souks", "caption": "Old Dubai street alleys. [PROMPT] Close-up of spice bags and gold ornaments inside a traditional Deira souk." },
+            { "type": "single", "src": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg", "alt": "Yacht Cruise Placeholder", "title": "Marina Yacht Charters", "caption": "Cruisingpast modern harbor designs. [PROMPT] Luxury white yacht sailing past Dubai Marina skyscrapers at golden sunset." }
+          ]
+        }
+      },
+      {
+        "day": "4-5",
+        "title": "Flight to Muscat & Capital Heritage",
+        "tagline": "🕌 Grand Mosque & Waterfront Muttrah Corniche",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Take a short flight to Muscat and settle in at Mandarin Oriental. Next morning: private heritage tour visiting Sultan Qaboos Mosque, Opera House, and Mutrah Corniche.",
+        "highlights": [
+          { "icon": "🕌", "title": "Sultan Qaboos Grand Mosque", "description": "Exquisite Islamic architecture tour with a private guide." },
+          { "icon": "🎭", "title": "Royal Opera House Muscat", "description": "Browse the grand marble theaters and gardens." }
+        ],
+        "stay": "🏨 Stay: Mandarin Oriental, Muscat (5★ Luxury)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-dub-day4",
+          "slides": [
+            { "type": "single", "src": "images/oman/Sultan_Qaboos_Grand_Mosque_exterior_202608141630.jpeg", "alt": "Grand Mosque", "title": "Grand Mosque Archways", "caption": "Beautiful hand-carved pillars and gardens." },
+            { "type": "single", "src": "images/oman/Royal_Opera_House_exterior_at_202608141639.jpeg", "alt": "Opera House", "title": "Opera House Gardens", "caption": "White marble facades of Muscat's premier theater." },
+            { "type": "single", "src": "images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg", "alt": "Muscat coast", "title": "Muscat Harbor Dhows", "caption": "Sailing past historical forts on the sea cliffs." }
+          ]
+        }
+      },
+      {
+        "day": "6-7",
+        "title": "Nizwa Fort & Jabal Akhdar Ascent",
+        "tagline": "⛰️ Circular Clay Forts & Mountain Spa Retreats",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Travel to Nizwa Fort and climb the 17th-century watchtower. Ascend by private 4x4 into the Hajar Mountains for guided village canyon walks and luxury spa treatments.",
+        "highlights": [
+          { "icon": "🏰", "title": "Nizwa Fort Tower", "description": "Historic defensive ramparts and silver souks." },
+          { "icon": "🥾", "title": "Three Villages Canyon Walk", "description": "Meet traditional rose water distillers along cliff paths." }
+        ],
+        "stay": "🏨 Stay: Alila Jabal Akhdar Resort / Anantara (5★ Mountain Retreat)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-dub-day6",
+          "slides": [
+            { "type": "single", "src": "images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg", "alt": "Nizwa Fort", "title": "Nizwa Fort Circular Tower", "caption": "Circular clay battlements in Nizwa." },
+            { "type": "single", "src": "images/oman/Cliffside_infinity_pool_at_resort_202608141630.jpeg", "alt": "Infinity Pool", "title": "Infinity Pool Alila", "caption": "Canyon edge view over Jabal Akhdar." },
+            { "type": "single", "src": "images/oman/Ruins_and_palm_plantation_in_202608141639.jpeg", "alt": "Mountain Ruins", "title": "Birkat Al Mouz Ruins", "caption": "Mud ruins surrounded by date palm fields." }
+          ]
+        }
+      },
+      {
+        "day": "8",
+        "title": "Sharqiyah Sands Dunes Glamping",
+        "tagline": "🌴 Oasis swim, Sunset Camel Safari & Bedouin Dinner",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Swim in the pools of Wadi Bani Khalid. Proceed to Wahiba Sands for private sunset dunes driving, camel rides, and stargazing at the dunes camp.",
+        "highlights": [
+          { "icon": "🏊", "title": "Wadi Bani Khalid swim", "description": "Palm-fringed canyon swimming pools." },
+          { "icon": "⛺", "title": "Luxury Dunes Glamping", "description": "Bedouin dome suite stargazing." }
+        ],
+        "stay": "⛺ Stay: Desert Nights Camp - Luxury Suite (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-dub-day8",
+          "slides": [
+            { "type": "single", "src": "images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg", "alt": "Wadi swim", "title": "Wadi Bani Khalid pools", "caption": "Safe freshwater swimming inside mountain ravines." },
+            { "type": "single", "src": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg", "alt": "Red dunes", "title": "Wahiba Dunes crossing", "caption": "Sunset sand ridges crossing by 4x4." },
+            { "type": "single", "src": "images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg", "alt": "Desert Nights", "title": "Desert Dome Suites", "caption": "5-star en-suite glamping canvas setups." }
+          ]
+        }
+      },
+      {
+        "day": "9-12",
+        "title": "St. Regis Al Mouj Beach Finale",
+        "tagline": "🐠 Snorkeling Daymaniyat & Muscat Departures",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Drive back via Sur and Bimmah Sinkhole. Check into St. Regis Al Mouj Muscat for three nights. Enjoy Daymaniyat Islands snorkeling boat trips and free beach days before departures.",
+        "highlights": [
+          { "icon": "🐠", "title": "Daymaniyat Snorkeling Excursion", "description": "Snorkel with reef sea life and wild sea turtles." }
+        ],
+        "stay": "✈️ Departure",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-dub-day9",
+          "slides": [
+            { "type": "single", "src": "images/oman/Green_sea_turtle_swimming_underw…_202608141639.jpeg", "alt": "Snorkeling turtle", "title": "Daymaniyat Islands reef", "caption": "Snorkeling with green turtles inside clear ocean waters." },
+            { "type": "single", "src": "images/oman/Waves_spraying_near_coastal_cliffs_202608141639.jpeg", "alt": "Coastal waves", "title": "St. Regis Al Mouj Beach", "caption": "White sand coastline beaches in Muscat." },
+            { "type": "single", "src": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg", "alt": "Takeoff departure", "title": "Take-off Over Gulf", "caption": "Beautiful farewell views of Omani mountains." }
+          ]
+        }
+      }
+    ],
+    "booking": {
+      "title": "Book Your Dubai + Oman Premium Journey",
+      "description": "Contrast contemporary skyline luxury with desert heritage. Includes Dubai + Oman 5-star hotel stays, airport flight connections, private 4x4 chauffeurs, and 24/7 support.",
+      "bullets": [
+        "Armani Hotel Dubai & St. Regis Muscat Stays Included",
+        "Inter-Country Flight Connections & Fast-Track Transfers",
+        "Private 4x4 Desert Crossing & Mountain Chauffeurs",
+        "Private Daymaniyat Yacht Snorkeling Cruises Included"
+      ]
+    },
+    "pricing": {
+      "base_price": 4950,
+      "currency": "$",
+      "dates": [
+        { "id": "om-dub-nov", "label": "Nov 12 – Nov 24", "season": "Prime Season", "price_modifier": 0 },
+        { "id": "om-dub-jan", "label": "Jan 15 – Jan 27", "season": "Mild Season", "price_modifier": 150 }
+      ],
+      "focus_options": [
+        { "id": "dub-lux-standard", "name": "Armani Dubai & St. Regis Standard Room", "description": "Premium 5-star luxury layout", "price_per_person": 0 },
+        { "id": "dub-lux-connecting-villa", "name": "Armani Burj Suite & St. Regis Beachfront Suite", "description": "Upgraded suite views and private pool decks", "price_per_person": 1850 }
+      ],
+      "supplements": [
+        { "id": "om-dub-supp-single", "name": "Solo Supplement", "description": "Single occupancy rooms & private guides", "price": 1200 }
+      ]
+    },
+    "contact": {
+      "company_name": "Abbey's Road Destinations",
+      "tagline": "Handcrafted Oman & Global Escapes",
+      "address": "Shatti Al Qurum • Muscat, Sultanate of Oman",
+      "phone": "+45 2622 0288",
+      "email": "abbey@abbeysroad.dk",
+      "web": "www.abbeysroad.com",
+      "contact_image": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg"
     }
   }
   ];
@@ -689,6 +1046,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function initMobileBurgerMenu() {
     const burgerBtn = document.getElementById('burger-btn');
     const overlay = document.getElementById('mobile-nav-overlay');
+    const closeBtn = document.getElementById('mobile-nav-close-btn');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta-btn');
 
     if (!burgerBtn || !overlay) return;
@@ -708,7 +1066,6 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleMenu();
     });
 
-    const closeBtn = document.getElementById('mobile-nav-close-btn');
     if (closeBtn) {
       closeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
