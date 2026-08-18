@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abbey's Road | Premium Nordic Summer Escapes | Copenhagen</title>
+  <meta name="description" content="Embark on an extraordinary summer journey through Denmark, Norway, Sweden, and Finland. Discover Stockholm, Oslo, Copenhagen, Bergen, Helsinki, the Flåm Railway, and majestic fjords on a premium, curated Scandinavian vacation.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Marcellus&family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Core Libraries for Cinematic Hero -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+</head>
+<body class="abbeys-road-theme">
+
+  <!-- THREE.JS WEBGL CANVAS BACKGROUND -->
+  <canvas id="hero-webgl-canvas"></canvas>
+
+  <!-- GLOBAL HEADER & NAVIGATION -->
+  <header id="main-header" class="logo-bg-header-backdrop">
+    <div class="header-container">
+      
+      <!-- Left: Horizontal Logo -->
+      <div class="logo-container">
+        <a href="index.html" class="logo-link" title="Abbey's Road - Premium Nordic Summer Escapes">
+          <img src="images/philippines/logo_horizontal_cutout.png" alt="Abbey's Road Logo Horizontal" id="header-logo" class="extra-large-logo horizontal-logo">
+        </a>
+      </div>
+
+      <!-- Center Desktop Navigation -->
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-destinations">Destinations ▾</a>
+            <ul class="dropdown-menu" id="destinations-menu">
+              <li><a href="philippines.html">Philippines</a></li>
+              <li><a href="oman.html">Oman</a></li>
+              <li><a href="nordic.html" class="active">The Nordic</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-discover">Discover ▾</a>
+            <ul class="dropdown-menu" id="discover-menu">
+              <li><a href="#chapter-stockholm">Stockholm</a></li>
+              <li><a href="#chapter-oslo">Oslo</a></li>
+              <li><a href="#chapter-fjords">Flåm & Fjords</a></li>
+              <li><a href="#chapter-bergen">Bergen</a></li>
+              <li><a href="#chapter-copenhagen">Copenhagen</a></li>
+              <li><a href="#chapter-helsinki">Helsinki</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-tours">Itineraries ▾</a>
+            <ul class="dropdown-menu" id="itineraries-menu">
+              <!-- Dynamically populated by nordic.js -->
+            </ul>
+          </li>
+          <li><a href="#concierge-section">Concierge</a></li>
+          <li><a href="#about-section">About Us</a></li>
+          <li><a href="#team-section">Team</a></li>
+        </ul>
+      </nav>
+
+      <!-- Center (Mobile) / Right (Desktop): Let's Connect CTA -->
+      <div class="header-center-cta">
+        <a href="index.html#contact-section" class="header-cta-btn">
+          Let's Connect
+        </a>
+      </div>
+
+      <!-- Right Mobile Burger Menu Button -->
+      <button class="burger-menu-btn" aria-label="Toggle mobile menu" id="burger-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION FULL-SCREEN OVERLAY DRAWER -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay">
+    <button class="mobile-nav-close-btn" id="mobile-nav-close-btn" aria-label="Close menu">&times;</button>
+    <nav class="mobile-nav-content">
+      <ul class="mobile-nav-links">
+        <li class="mobile-section-header-title">SITEMAP</li>
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="philippines.html" class="mobile-nav-link">Philippines Destination</a></li>
+        <li><a href="oman.html" class="mobile-nav-link">Oman Destination</a></li>
+        
+        <li class="mobile-section-header-title">DISCOVER</li>
+        <li><a href="#chapter-stockholm" class="mobile-nav-link sub-link">Stockholm</a></li>
+        <li><a href="#chapter-oslo" class="mobile-nav-link sub-link">Oslo</a></li>
+        <li><a href="#chapter-fjords" class="mobile-nav-link sub-link">Flåm & Fjords</a></li>
+        <li><a href="#chapter-bergen" class="mobile-nav-link sub-link">Bergen</a></li>
+        <li><a href="#chapter-copenhagen" class="mobile-nav-link sub-link">Copenhagen</a></li>
+        <li><a href="#chapter-helsinki" class="mobile-nav-link sub-link">Helsinki</a></li>
+        
+        <li class="mobile-section-header-title">EXPLORE</li>
+        <li class="mobile-dropdown-container">
+          <div class="mobile-dropdown-header">
+            <a href="#itinerary-viewport" class="mobile-nav-link">Itineraries</a>
+            <button class="mobile-dropdown-toggle-btn" id="mobile-itineraries-toggle-btn" aria-label="Toggle itineraries">
+              &#9662;
+            </button>
+          </div>
+          <ul class="mobile-dropdown-menu" id="mobile-itineraries-menu">
+            <!-- Dynamically populated by JS -->
+          </ul>
+        </li>
+        <li><a href="#concierge-section" class="mobile-nav-link">Concierge</a></li>
+        <li><a href="#about-section" class="mobile-nav-link">About Us</a></li>
+        <li><a href="#team-section" class="mobile-nav-link">Our Team</a></li>
+      </ul>
+      <a href="index.html#contact-section" class="mobile-nav-cta-btn">
+        LET'S CONNECT
+      </a>
+    </nav>
+  </div>
+
+  <!-- PERSISTENT ACCURATE GEOMETRIC NORDIC MAP INDICATOR -->
+  <aside id="philippines-map-indicator" title="Current Journey Region">
+    <div class="map-indicator-title">NORDIC TRACKER</div>
+    <div class="map-svg-container">
+      <svg viewBox="0 0 160 210" class="ph-map-svg">
+        
+        <!-- Background Offset Outlines -->
+        <g class="map-outlines" transform="translate(1.8, 1.8)">
+          <!-- Norway -->
+          <path d="M 30,20 L 50,25 L 60,70 L 65,110 L 55,140 L 45,145 L 35,110 L 25,60 Z" class="island-outline-path" />
+          <!-- Sweden -->
+          <path d="M 52,30 L 68,35 L 85,90 L 80,150 L 68,155 L 60,110 L 55,75 Z" class="island-outline-path" />
+          <!-- Finland -->
+          <path d="M 78,35 L 95,35 L 110,60 L 115,90 L 105,110 L 90,110 L 82,90 Z" class="island-outline-path" />
+          <!-- Denmark -->
+          <path d="M 30,165 L 45,160 L 50,175 L 35,180 Z" class="island-outline-path" />
+        </g>
+        
+        <!-- Interactive Paths representing regions -->
+        <g class="interactive-islands">
+          <!-- Norway -->
+          <path d="M 30,20 L 50,25 L 60,70 L 65,110 L 55,140 L 45,145 L 35,110 L 25,60 Z" class="island-path region-norway" id="region-norway" />
+          <!-- Sweden -->
+          <path d="M 52,30 L 68,35 L 85,90 L 80,150 L 68,155 L 60,110 L 55,75 Z" class="island-path region-sweden" id="region-sweden" />
+          <!-- Finland -->
+          <path d="M 78,35 L 95,35 L 110,60 L 115,90 L 105,110 L 90,110 L 82,90 Z" class="island-path region-finland" id="region-finland" />
+          <!-- Denmark -->
+          <path d="M 30,165 L 45,160 L 50,175 L 35,180 Z" class="island-path region-denmark" id="region-denmark" />
+        </g>
+
+        <!-- Active Animated Beacon Pin -->
+        <circle cx="72" cy="110" r="4.5" class="map-beacon" id="map-beacon-dot" />
+      </svg>
+    </div>
+    <div class="map-region-label" id="map-region-name">STOCKHOLM • SWEDEN</div>
+  </aside>
+
+  <!-- CINEMATIC INTERACTIVE NORDIC TRAVEL FILM HERO EXPERIENCE -->
+  <main id="hero-journey" class="hero-film-container">
+
+    <!-- CHAPTER 0: INTRO FILM OVERLAY -->
+    <section class="film-chapter chapter-intro active" id="chapter-intro" data-region="scandinavia" data-region-name="SCANDINAVIA • NORDIC ESCAPE" data-beacon-x="72" data-beacon-y="110">
+      <div class="chapter-background-media">
+        <img src="images/nordic/tour_hero_fjord.png" alt="Norway Majestic Fjord Horizon" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.15) 0%, rgba(32, 43, 34, 0.35) 100%);"></div>
+      </div>
+      <div class="chapter-content-container center-aligned">
+        <div class="brand-eyebrow animate-fade-down">ABBEY'S ROAD • PREMIUM NORDIC SUMMER ESCAPES | COPENHAGEN</div>
+        <h1 class="giant-editorial-title animate-fade-up">
+          <span class="gold-text">NORDIC MAJESTY.</span><br>
+          <span class="cyan-text smaller-headline">DISCOVER SCANDINAVIA</span>
+        </h1>
+        <p class="film-subtitle animate-fade-up">
+          Nordic market partners — crafting premium scenic rail loops, luxury overnight cruise journeys, and majestic fjord explorations across Sweden, Norway, Denmark, and Finland.
+        </p>
+        <div class="scroll-prompt animate-bounce">
+          <span>SCROLL TO TRAVEL</span>
+          <div class="mouse-icon"><div class="wheel"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 1: STOCKHOLM -->
+    <section class="film-chapter chapter-stockholm" id="chapter-stockholm" data-region="sweden" data-region-name="STOCKHOLM • SWEDEN" data-beacon-x="72" data-beacon-y="110">
+      <div class="chapter-background-media">
+        <img src="images/nordic/day2_stockholm.jpg" alt="Stockholm Gamla Stan Historical Canals" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.15) 0%, rgba(32, 43, 34, 0.35) 100%);"></div>
+      </div>
+      <div class="chapter-content-grid">
+        <div class="info-card-wrapper animate-slide-left">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">VENICE OF THE NORTH</div>
+                <h2 class="card-dest-title">STOCKHOLM</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Stockholm details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Capital Archipelago · Sweden</div>
+              <p class="card-desc">Explore a stunning metropolis built across 14 islands, featuring the grand medieval alleyways of Gamla Stan, the historic royal palaces, and the majestic Vasa museum.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Gamla Stan, Vasa Museum, Stockholm Palace</div>
+                <div><strong>Ideal for:</strong> Cultural enthusiasts · Scenic walkers · Historians</div>
+                <div><strong>Suggested stay:</strong> 2–3 Days</div>
+                <div><strong>Best time:</strong> June – August</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Stockholm">EXPLORE STOCKHOLM →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 2: OSLO -->
+    <section class="film-chapter chapter-oslo" id="chapter-oslo" data-region="norway" data-region-name="OSLO • NORWAY" data-beacon-x="50" data-beacon-y="105">
+      <div class="chapter-background-media">
+        <img src="images/nordic/day3_oslo_vigeland.png" alt="Vigeland Sculpture Park Oslo" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.15) 0%, rgba(32, 43, 34, 0.35) 100%);"></div>
+      </div>
+      <div class="chapter-content-grid right-aligned">
+        <div class="info-card-wrapper animate-slide-right">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">GATEWAY TO THE FJORDLANDS</div>
+                <h2 class="card-dest-title">OSLO</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Oslo details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Capital Municipality · Oslofjord · Norway</div>
+              <p class="card-desc">Transition to the art and design hub of Norway. Walk among the 200+ giant granite statues of Vigeland Sculpture Park, visit Oslo Cathedral, and stand above the Holmenkollen ski jump.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Vigeland Art Park, Holmenkollen Summit, Karl Johans gate</div>
+                <div><strong>Ideal for:</strong> Architecture lovers · Photographers · Art fans</div>
+                <div><strong>Suggested stay:</strong> 1–2 Days</div>
+                <div><strong>Best time:</strong> May – September</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Oslo">EXPLORE OSLO →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 3: FLÅM & FJORDS -->
+    <section class="film-chapter chapter-fjords" id="chapter-fjords" data-region="norway" data-region-name="FLÅM & FJORDS • NORWAY" data-beacon-x="40" data-beacon-y="85">
+      <div class="chapter-background-media">
+        <img src="images/nordic/fjord_waterways.png" alt="Norway Spectacular Fjord Scenic Railroad" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.15) 0%, rgba(32, 43, 34, 0.35) 100%);"></div>
+      </div>
+      <div class="chapter-content-grid">
+        <div class="info-card-wrapper animate-slide-left">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">THE SCENIC CROWN JEWEL</div>
+                <h2 class="card-dest-title">FLÅM & FJORDS</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Flåm details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Aurlandsfjord · Valley & Railways · Norway</div>
+              <p class="card-desc">Ascend sheer canyon walls along the legendary Flåm Mountain Railway. Peer down breathtaking green ravines and cruise deep water bays surrounded by cascading waterfalls.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Flåm Mountain Railway, Nærøyfjord, Aurlandsfjord</div>
+                <div><strong>Ideal for:</strong> Nature seekers · Train lovers · Adventure travelers</div>
+                <div><strong>Suggested stay:</strong> 2 Days</div>
+                <div><strong>Best time:</strong> June – September</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Flam">EXPLORE FLÅM →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 4: BERGEN -->
+    <section class="film-chapter chapter-bergen" id="chapter-bergen" data-region="norway" data-region-name="BERGEN • NORWAY" data-beacon-x="35" data-beacon-y="90">
+      <div class="chapter-background-media">
+        <img src="images/nordic/day4_bergen_bryggen.jpg" alt="Bergen Bryggen Medieval Wharf Houses" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.15) 0%, rgba(32, 43, 34, 0.35) 100%);"></div>
+      </div>
+      <div class="chapter-content-grid right-aligned">
+        <div class="info-card-wrapper animate-slide-right">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">MEDIEVAL TRADING WHARF</div>
+                <h2 class="card-dest-title">BERGEN</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Bergen details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Hanseatic Port · West Coast · Norway</div>
+              <p class="card-desc">Wander among the iconic colorful wooden townhouses of Bryggen, ride the steep Fløibanen funicular for sky-high views, and sample fresh seafood at the local fish market.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Bryggen Wharf, Fløibanen Funicular, Fish Market</div>
+                <div><strong>Ideal for:</strong> Foodies · Hikers · Maritime historians</div>
+                <div><strong>Suggested stay:</strong> 2 Days</div>
+                <div><strong>Best time:</strong> May – August</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Bergen">EXPLORE BERGEN →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 5: COPENHAGEN -->
+    <section class="film-chapter chapter-copenhagen" id="chapter-copenhagen" data-region="denmark" data-region-name="COPENHAGEN • DENMARK" data-beacon-x="42" data-beacon-y="170">
+      <div class="chapter-background-media">
+        <img src="images/nordic/copenhagen_nyhavn.png" alt="Copenhagen Nyhavn colorful townhouses" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.15) 0%, rgba(32, 43, 34, 0.35) 100%);"></div>
+      </div>
+      <div class="chapter-content-grid">
+        <div class="info-card-wrapper animate-slide-left">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">CAPITAL OF HYGGE</div>
+                <h2 class="card-dest-title">COPENHAGEN</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Copenhagen details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Capital Municipality · Oresund Strait · Denmark</div>
+              <p class="card-desc">Wake up in Denmark. Cycle down pedestrian-friendly canals, relax in the glowing lights of Tivoli Gardens, visit Kronborg Castle, and feast on traditional open sandwiches.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Nyhavn Canal, Tivoli Gardens, Kronborg Castle, Smørrebrød</div>
+                <div><strong>Ideal for:</strong> Bicycle lovers · Foodies · Royal historians</div>
+                <div><strong>Suggested stay:</strong> 2–3 Days</div>
+                <div><strong>Best time:</strong> May – September</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Copenhagen">EXPLORE COPENHAGEN →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 6: HELSINKI -->
+    <section class="film-chapter chapter-helsinki" id="chapter-helsinki" data-region="finland" data-region-name="HELSINKI • FINLAND" data-beacon-x="100" data-beacon-y="95">
+      <div class="chapter-background-media">
+        <img src="images/nordic/day5_helsinki_city.jpg" alt="Helsinki Harbor Marketplace" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.15) 0%, rgba(32, 43, 34, 0.35) 100%);"></div>
+      </div>
+      <div class="chapter-content-grid right-aligned">
+        <div class="info-card-wrapper animate-slide-right">
+          <div class="dest-info-card">
+            
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">THE BALTIC SEASIDE CITY</div>
+                <h2 class="card-dest-title">HELSINKI</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Helsinki details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Capital Area · Gulf of Finland</div>
+              <p class="card-desc">Discover the unique design lines of Helsinki. Tour the breathtaking Rock Church carved directly into solid stone, see the red brick walls of Uspenski Cathedral, and relax in seaside saunas.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Rock Church, Uspenski Cathedral, Harbor Market</div>
+                <div><strong>Ideal for:</strong> Architecture fans · Spa lovers · Seafood foodies</div>
+                <div><strong>Suggested stay:</strong> 1–2 Days</div>
+                <div><strong>Best time:</strong> June – September</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Helsinki">EXPLORE HELSINKI →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CONCIERGE & VALUE ADDED DETAILS -->
+  <section class="concierge-section" id="concierge-section">
+    <div class="section-header">
+      <h2>PREMIUM NORDIC CONCIERGE</h2>
+      <p class="section-tagline">Providing seamless, high-fidelity Scandinavian travel management.</p>
+    </div>
+    
+    <div class="concierge-grid">
+      
+      <div class="concierge-card">
+        <div class="concierge-icon">🚂</div>
+        <h3>Bespoke Rail Loops</h3>
+        <p>Premium tickets for the legendary Flåm Mountain Railway loop and comfortable intercity Scandinavian connections customized to your schedule.</p>
+      </div>
+
+      <div class="concierge-card">
+        <div class="concierge-icon">🚢</div>
+        <h3>Scenic Fjord Cruises</h3>
+        <p>Luxury overnight cruise liner accommodations and day cruises through Aurlandsfjord, Nærøyfjord, and Stockholm canals.</p>
+      </div>
+
+      <div class="concierge-card">
+        <div class="concierge-icon">🏰</div>
+        <h3>Royal Castles</h3>
+        <p>Pre-arranged VIP access to Kronborg Castle in Elsinore, Stockholm Royal Palace, and historical Nordic cultural sites.</p>
+      </div>
+
+      <div class="concierge-card">
+        <div class="concierge-icon">🇩🇰</div>
+        <h3>Transparent Coordination</h3>
+        <p>Operations coordinated out of Copenhagen, delivering premium lodgings, local guides, and 24/7 client support pipelines.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DYNAMIC ITINERARY VIEWPORT SECTION -->
+  <section id="itinerary-viewport" class="itinerary-viewport">
+    <!-- Dynamically rendered by nordic.js -->
+  </section>
+
+  <!-- GLOBAL ABOUT US SECTION -->
+  <section class="about-section" id="about-section">
+    <div class="section-header">
+      <h2>ABOUT ABBEY'S ROAD</h2>
+      <p class="section-tagline">Connecting world-class destinations with Nordic travelers | Copenhagen</p>
+    </div>
+    <div class="about-content-grid">
+      <div class="about-text-card">
+        <h3>Our Vision & Mission</h3>
+        <p><strong>Vision:</strong> To serve as the leading commercial distribution and representation partner in the Nordics for high-end, sustainable travel experiences across Northern Europe.</p>
+        <p><strong>Mission:</strong> To construct reliable linkages between premium local hospitality operators, Nordic tour operators, and high-end travelers seeking authentic explorations.</p>
+      </div>
+      <div class="about-text-card">
+        <h3>Operational Excellence</h3>
+        <p>Operating out of Copenhagen, Abbey's Road coordinates with local specialists to ensure all ground services, guides, luxury lodgings, and maritime safety measures meet strict quality standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL MEET THE TEAM SECTION -->
+  <section class="team-section" id="team-section">
+    <div class="section-header">
+      <h2>MEET THE TEAM</h2>
+      <p>The dedicated travel specialists and operations managers behind your Nordic journey.</p>
+    </div>
+    <div class="team-grid team-grid-4">
+      
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Abbey Salvador Placeholder">
+        </div>
+        <div class="team-info">
+          <h4>Abbey</h4>
+          <p class="team-role">Denmark Manager</p>
+          <p class="team-bio">Directs strategic B2B partnerships, operator contracting, and sales and marketing initiatives across the Nordic region.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Lizette Placeholder">
+        </div>
+        <div class="team-info">
+          <h4>Lizette</h4>
+          <p class="team-role">Operations Manager</p>
+          <p class="team-bio">Manages supplier relations, coordinates rail and maritime bookings, and oversees guest support pipelines.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Michael Placeholder">
+        </div>
+        <div class="team-info">
+          <h4>Michael</h4>
+          <p class="team-role">AI & Itinerary Development</p>
+          <p class="team-bio">Oversees the digital itinerary builder and coordinates tech integrations with travel distribution channels.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Rowela Placeholder">
+        </div>
+        <div class="team-info">
+          <h4>Rowela</h4>
+          <p class="team-role">Accounting & Administration</p>
+          <p class="team-bio">Manages administrative coordination, transparent operator billing, and local currency financial reconciliations.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MEETING MODAL POPUP -->
+  <div id="meeting-modal" class="meeting-modal">
+    <div class="meeting-modal-content">
+      <button class="close-modal-btn" id="close-modal">&times;</button>
+      <div class="modal-profile">
+        <div class="modal-avatar">AR</div>
+        <h2>Abbey's Road Concierge</h2>
+        <p class="modal-title">Copenhagen & Nordic Travel Team</p>
+        <p class="modal-instruction">Schedule a private consultation or inquire about our destination services:</p>
+        <a href="mailto:abbey@abbeysroad.dk?subject=Abbeys%20Road%20Nordic%20Concierge%20Inquiry" class="modal-email-btn">
+          📩 abbey@abbeysroad.dk
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER & CONTACT DETAILS -->
+  <footer id="global-footer">
+    <div class="footer-content" id="footer-content-dynamic">
+      <div class="footer-grid">
+        <div>
+          <h4 class="gold-text">ABBEY'S ROAD</h4>
+          <p class="footer-subtext">Your Premium Nordic Travel Concierge</p>
+          <p>Discover Northern Europe Beyond the Ordinary.</p>
+        </div>
+        <div>
+          <h4>Copenhagen Office</h4>
+          <p>Borgmestervangen 31, 2200 Copenhagen</p>
+          <p>Email: abbey@abbeysroad.dk</p>
+        </div>
+        <div>
+          <h4>Nordic Operations</h4>
+          <p>Abbey's Road DMC Partner</p>
+          <p>Vester Voldgade 83, 2 • 1552 København K, Denmark</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Abbey's Road — Your Premium Nordic Travel Concierge. All rights reserved.</p>
+      <p>Crafted with ❤️ in Copenhagen for Global Travelers</p>
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script src="nordic.js"></script>
+</body>
+</html>
