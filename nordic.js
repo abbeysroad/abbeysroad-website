@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "slides": [
               { "src": "images/nordic/day7_smorrebrod.jpg", "alt": "Danish Smørrebrød", "title": "Danish Smørrebrød", "caption": "Topped with fresh seafood, dill, and microgreens." },
               { "src": "images/nordic/day7_kronborg_castle.jpg", "alt": "Kronborg Castle", "title": "Kronborg Castle", "caption": "The real-life coastal fortress of Hamlet." },
-              { "src": "images/nordic/day7_little_mermaid.jpg", "alt": "Little Mermaid Statue", "title": "The Little Mermaid", "caption": "Sitting gracefully in Copenhagen harbor." }
+              { "src": "images/nordic/day7_little_mermaid.jpg", "alt": "Little Mermaid Statue", "title": "The Little Mermaid", "caption": "Sitting gracefully in Copenhagen harbor.", "style": "object-position: center top;" }
             ]
           }
         },
@@ -634,7 +634,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div class="carousel-track">
                     ${day.media.slides.map((s, idx) => `
                       <div class="carousel-slide ${idx === 0 ? 'active' : ''}">
-                        <img src="${s.src}" alt="${s.alt}" onerror="this.onerror=null; this.src='images/nordic/tour_hero_fjord.png';">
+                        <img src="${s.src}" alt="${s.alt}" style="${s.style || ''}" onerror="this.onerror=null; this.src='images/nordic/tour_hero_fjord.png';">
                         <div class="carousel-caption">
                           <h4>${s.title}</h4>
                           <p>${s.caption}</p>
