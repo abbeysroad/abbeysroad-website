@@ -176,68 +176,465 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   },
   {
-    "id": "scandinavia",
-    "countries": ["Sweden", "Norway", "Denmark"],
+    "id": "philippines_family",
+    "countries": ["Philippines"],
     "meta": {
-      "title": "9-Day Nordic Summer Escape | Abbey's Road",
-      "description": "Embark on an extraordinary 9-day summer journey through Sweden, Norway, and Denmark with Abbey's Road."
+      "title": "21-Day Premium Family Journey | Abbey's Road",
+      "description": "Embark on an extraordinary 21-day premium family journey through the Philippines. Discover Manila, Banaue, Sagada, Vigan, Donsol, Bohol, Moalboal, and Cebu City."
     },
     "hero": {
-      "subtitle": "Fjords, Castles & Capitals:",
-      "title": "The Ultimate 9-Day Nordic Escape",
-      "description": "Discover Sweden, Norway, and Denmark on a curated journey through Scandinavia’s most iconic landscapes.",
-      "background_image": "images/oslofjord_sunset.png",
-      "cta_book": "Secure Your Nordic Summer Escape",
+      "subtitle": "21 Days · Mountains, Wildlife & Island Paradises:",
+      "title": "Philippines: 21-Day Premium Family Journey",
+      "description": "Premium slow travel designed for Danish families. Uncover ancient rice terraces, heritage streets, whale sharks, turtles, and luxury beach resorts.",
+      "background_image": "images/philippines/siargao_banca.jpeg",
+      "cta_book": "Secure Your Premium Family Journey",
       "cta_view": "View Itinerary Details"
     },
     "essentials": [
-      { "icon": "⏱️", "title": "Duration", "value": "9 Epic Days" },
-      { "icon": "🗺️", "title": "Route", "value": "Stockholm ➔ Oslo ➔ Copenhagen" },
-      { "icon": "🚌", "title": "Travel Style", "value": "Coach, Rail & Cruise" },
-      { "icon": "⚡", "title": "Pace", "value": "Active & Comprehensive" }
+      { "icon": "⏱️", "title": "Duration", "value": "21 Epic Days" },
+      { "icon": "🗺️", "title": "Route", "value": "Manila ➔ Banaue ➔ Vigan ➔ Donsol ➔ Bohol ➔ Cebu" },
+      { "icon": "⛵", "title": "Travel Style", "value": "Private Transfers, Flights & 5★ Resorts" },
+      { "icon": "⚡", "title": "Pace", "value": "Experience Mornings, Relax Afternoons" }
     ],
     "map_deck": {
-      "title": "THE MAP DECK",
-      "description": "Visualize your journey across Scandinavia.",
-      "background_image": "images/scandinavia_map.png",
-      "route_path": "M 885 458 L 610 475 L 463 399 L 350 350 L 220 290 L 463 399 C 463 560, 547 700, 547 873",
+      "title": "THE 21-DAY JOURNEY MAP",
+      "description": "Track your family's path across Luzon, Bicol, and the Visayas.",
+      "background_image": "images/philippines/siargao_banca.jpeg",
+      "route_path": "M 450 250 L 460 140 L 420 120 L 390 130 L 590 380 L 620 520 L 580 570 L 620 520",
       "pins": [
-        { "id": "pin-stockholm", "day": 2, "cx": 885, "cy": 458, "label": "Stockholm", "label_x": 885, "label_y": 430 },
-        { "id": "pin-oslo", "day": 3, "cx": 463, "cy": 399, "label": "Oslo", "label_x": 463, "label_y": 370 },
-        { "id": "pin-copenhagen", "day": 6, "cx": 547, "cy": 873, "label": "Copenhagen", "label_x": 547, "label_y": 905 }
+        { "id": "pin-f-manila", "day": 1, "cx": 450, "cy": 250, "label": "Manila", "label_x": 450, "label_y": 220 },
+        { "id": "pin-f-banaue", "day": 3, "cx": 460, "cy": 140, "label": "Banaue", "label_x": 460, "label_y": 110 },
+        { "id": "pin-f-sagada", "day": 6, "cx": 420, "cy": 120, "label": "Sagada", "label_x": 420, "label_y": 90 },
+        { "id": "pin-f-vigan", "day": 8, "cx": 390, "cy": 130, "label": "Vigan", "label_x": 390, "label_y": 160 },
+        { "id": "pin-f-donsol", "day": 11, "cx": 590, "cy": 380, "label": "Donsol", "label_x": 590, "label_y": 350 },
+        { "id": "pin-f-bohol", "day": 15, "cx": 620, "cy": 520, "label": "Bohol & Cebu", "label_x": 620, "label_y": 550 }
       ]
     },
     "timeline": [
       {
         "day": "1",
-        "title": "Bound for Scandinavia",
-        "tagline": "✈️ Departure & Arrival in Stockholm",
+        "title": "Arrival in Manila",
+        "tagline": "🌆 Private Welcome & Luxury Hotel Rest",
         "vibe_title": "The Vibe",
-        "vibe_text": "Arrive in Stockholm, the Venice of the North.",
-        "highlights": [{ "icon": "✈️", "title": "Arrival", "description": "Check in to your hotel." }],
-        "stay": "🏨 Stay: Scandic Grand Central",
+        "vibe_text": "Touch down in the Philippine capital. Enjoy a private airport meet-and-greet before checking into your five-star hotel to rest and relax.",
+        "highlights": [
+          { "icon": "🚗", "title": "Premium Transfer", "description": "Meet your private coordinator and transfer to your hotel in a luxury vehicle." },
+          { "icon": "🏊", "title": "Leisurely Afternoon", "description": "Spend your day enjoying hotel pool facilities, spa treatments, or room service." }
+        ],
+        "stay": "🏨 Stay: The Peninsula Manila (5★)",
         "media": {
           "type": "carousel",
-          "id": "carousel-nordic-day1",
-          "slides": [{ "type": "single", "src": "images/day2_stockholm.jpg", "alt": "Stockholm", "title": "Stockholm", "caption": "Old town Gamla Stan." }]
+          "id": "carousel-fam-day1",
+          "slides": [
+            { "src": "images/philippines/bgc.png", "alt": "Manila BGC", "title": "The Peninsula Manila", "caption": "Five-star comfort and world-class luxury to start your trip." }
+          ]
+        }
+      },
+      {
+        "day": "2",
+        "title": "Colonial Heritage of Manila",
+        "tagline": "🏰 Half-Day Private Spanish Quarter Tour",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Step back in time to the 16th century, exploring old walled fortresses, cobblestone streets, and traditional kalesa horse carriages.",
+        "highlights": [
+          { "icon": "⛪", "title": "Historic Walled City", "description": "Tour Intramuros, Fort Santiago, and the stunning San Agustin Church." },
+          { "icon": "🐎", "title": "Kalesa Experience", "description": "Ride a traditional horse-drawn carriage through historic Spanish colonial squares." }
+        ],
+        "stay": "🏨 Stay: The Peninsula Manila (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day2",
+          "slides": [
+            { "src": "images/philippines/intramuros.png", "alt": "Intramuros", "title": "Spanish Walled City", "caption": "Intramuros represents centuries of history in the heart of Manila." }
+          ]
+        }
+      },
+      {
+        "day": "3",
+        "title": "Manila to Banaue Mountain Drive",
+        "tagline": "⛰️ Journey Into the Cordillera Highlands",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Travel directly into the mountain ranges of Northern Luzon, passing scenic viewpoints, local villages, and green foothills.",
+        "highlights": [
+          { "icon": "🚙", "title": "Private Trans-Mountain Drive", "description": "A long, premium transfer where the highway landscapes become part of the experience." },
+          { "icon": "🌾", "title": "Scenic Stopovers", "description": "Pause at mountain view ridges and enjoy a local countryside lunch along the route." }
+        ],
+        "stay": "🏨 Stay: Banaue Premium Boutique Lodge",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day3",
+          "slides": [
+            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Banaue Mountains", "title": "The Cordillera Range", "caption": "Breathtaking landscapes as you climb towards the clouds." }
+          ]
+        }
+      },
+      {
+        "day": "4",
+        "title": "UNESCO Batad Rice Terraces",
+        "tagline": "🌾 Ifugao Culture & Ancient Stone Terraces",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Embark on an immersive cultural excursion to Batad, marveling at the giant amphitheater of stone-walled terraces built over 2,000 years ago.",
+        "highlights": [
+          { "icon": "🚶", "title": "Batad Terraces Trek", "description": "Hike through the terraces with your private guide and visit local villages." },
+          { "icon": "🏡", "title": "Ifugao Traditions", "description": "Learn about traditional stilt houses, rice cultivation, and native traditions." }
+        ],
+        "stay": "🏨 Stay: Banaue Premium Boutique Lodge",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day4",
+          "slides": [
+            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Batad Terraces", "title": "Batad Amphitheater", "caption": "UNESCO World Heritage Cordillera rice terraces." }
+          ]
+        }
+      },
+      {
+        "day": "5",
+        "title": "Banaue Relaxation Day",
+        "tagline": "☕ Spectacular Views & Leisurely Walks",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Enjoy a free day without organized tours. Read a book, admire the terrace views, or take a short leisurely walk with the family.",
+        "highlights": [
+          { "icon": "💆", "title": "Slow Living", "description": "Relax at the lodge, breathe the fresh mountain air, and savor local coffee." },
+          { "icon": "🚶", "title": "Optional Village Stroll", "description": "Explore the local marketplace and nearby viewpoints at your own pace." }
+        ],
+        "stay": "🏨 Stay: Banaue Premium Boutique Lodge",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day5",
+          "slides": [
+            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Banaue Valley", "title": "Highland Peace", "caption": "Slow down and enjoy panoramic vistas from your lodge balcony." }
+          ]
+        }
+      },
+      {
+        "day": "6",
+        "title": "Banaue to Sagada Highlands",
+        "tagline": "🚙 Trans-Cordillera Scenic Highway",
+        "vibe_title": "The Vibe",
+        "vibe_text": "A short, scenic mountain transfer from Banaue to Sagada, passing pine forests and limestone gorges. Afternoon completely free.",
+        "highlights": [
+          { "icon": "🏞️", "title": "Scenic Transfer", "description": "Observe how the terrain shifts into Benguet pine forests and limestone cliffs." },
+          { "icon": "🛏️", "title": "Leisurely Check-in", "description": "Settle into your premium boutique inn and enjoy the cool mountain air." }
+        ],
+        "stay": "🏨 Stay: Sagada Premium Boutique Inn",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day6",
+          "slides": [
+            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Sagada Hills", "title": "Sagada Pine Forests", "caption": "Cooler climates and dense pine valleys in Northern Luzon." }
+          ]
+        }
+      },
+      {
+        "day": "7",
+        "title": "Sagada Caves & Hanging Coffins",
+        "tagline": "🏔️ Limestone Caves & Hanging Coffins",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Explore Sagada's mystical Echo Valley hanging coffins or venture inside the massive Sumaguing Cave formations.",
+        "highlights": [
+          { "icon": "⚰️", "title": "Echo Valley & Hanging Coffins", "description": "Witness the ancient burial site on limestone cliff walls with local guidance." },
+          { "icon": "🔦", "title": "Sumaguing Cave Exploration", "description": "Optionally tour the dramatic subterranean chambers and flowstones." }
+        ],
+        "stay": "🏨 Stay: Sagada Premium Boutique Inn",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day7",
+          "slides": [
+            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Hanging Coffins", "title": "Echo Valley Coffins", "caption": "A centuries-old indigenous Kankanaey burial tradition." }
+          ]
+        }
+      },
+      {
+        "day": "8",
+        "title": "Sagada to Vigan Heritage City",
+        "tagline": "🚙 Descent to the Ilocos Coastline",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Descend from the mountains down to the coast. Check into Vigan's Hotel Luna and spend the afternoon resting by the pool.",
+        "highlights": [
+          { "icon": "🛣️", "title": "Coastal Drive", "description": "Travel from Cordillera heights down to the historic Ilocos Sur coastline." },
+          { "icon": "🏨", "title": "Luna Museum Hotel", "description": "Check in to a premium boutique hotel displaying authentic Spanish heritage." }
+        ],
+        "stay": "🏨 Stay: Hotel Luna Vigan (4★+ Boutique)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day8",
+          "slides": [
+            { "src": "images/philippines/intramuros.png", "alt": "Vigan Hotel", "title": "Historic Hotel Luna", "caption": "A beautifully restored colonial mansion displaying rare artwork." }
+          ]
+        }
+      },
+      {
+        "day": "9",
+        "title": "Historic Vigan Heritage Tour",
+        "tagline": "🏛️ Calle Crisologo Cobblestones & Weaving",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Explore a UNESCO-listed Spanish trading town, riding a kalesa under tiled roofs and learning about local crafts.",
+        "highlights": [
+          { "icon": "🚲", "title": "Calle Crisologo Kalesa Tour", "description": "Stroll cobblestone streets lined with Spanish colonial heritage homes." },
+          { "icon": "🧶", "title": "Inabel Handweaving", "description": "Visit a weaving shop to see traditional Ilocano cotton handweaving." }
+        ],
+        "stay": "🏨 Stay: Hotel Luna Vigan (4★+ Boutique)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day9",
+          "slides": [
+            { "src": "images/philippines/intramuros.png", "alt": "Calle Crisologo", "title": "Calle Crisologo Vigan", "caption": "Cobblestone streets and colonial houses preserved since the Spanish era." }
+          ]
+        }
+      },
+      {
+        "day": "10",
+        "title": "Vigan Free Day",
+        "tagline": "⛪ Leisurely Walks & Traditional Treats",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Enjoy a completely free day to do as much or as little as you wish. Perfect for strolls and tasting street food.",
+        "highlights": [
+          { "icon": "🍿", "title": "Vigan Empanada Tasting", "description": "Try the crispy local empanadas at the Plaza Salcedo food stands." },
+          { "icon": "🛍️", "title": "Souvenir Exploration", "description": "Explore the local shops for handmade pottery, textiles, and snacks." }
+        ],
+        "stay": "🏨 Stay: Hotel Luna Vigan (4★+ Boutique)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day10",
+          "slides": [
+            { "src": "images/philippines/intramuros.png", "alt": "Vigan Plaza", "title": "Plaza Salcedo", "caption": "The neoclassical heart of Vigan Heritage City." }
+          ]
+        }
+      },
+      {
+        "day": "11",
+        "title": "Vigan to Donsol Beachfront",
+        "tagline": "✈️ Flight & Transfer to the Bicol Region",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Fly to Legazpi in the Bicol region. Check into your beachfront resort and relax by the water.",
+        "highlights": [
+          { "icon": "✈️", "title": "Transit to Bicol", "description": "Private airport transfer followed by domestic flight connects to Legazpi." },
+          { "icon": "🏖️", "title": "Beachfront Check-in", "description": "Arrive at your boutique resort on the Donsol coastline." }
+        ],
+        "stay": "🏨 Stay: Donsol Premium Beachfront Resort",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day11",
+          "slides": [
+            { "src": "images/philippines/mayon_volcano.jpeg", "alt": "Bicol Horizon", "title": "Mount Mayon Silhouette", "caption": "The perfect volcanic cone of Mount Mayon visible in Bicol." }
+          ]
+        }
+      },
+      {
+        "day": "12",
+        "title": "Whale Shark Snorkeling in Donsol",
+        "tagline": "🐋 Swim with the Gentle Giants of Bicol",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Wake up early for a private boat excursion to responsibly snorkel alongside the massive whale sharks that congregate in Donsol.",
+        "highlights": [
+          { "icon": "🐋", "title": "Gentle Giants Encounter", "description": "Snorkel next to massive, plankton-eating whale sharks under professional supervision." },
+          { "icon": "⛵", "title": "Private Outrigger Boat", "description": "Cruise the coastal waters on your family's private outrigger banca." }
+        ],
+        "stay": "🏨 Stay: Donsol Premium Beachfront Resort",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day12",
+          "slides": [
+            { "src": "images/philippines/donsol_whale_shark.jpg", "alt": "Whale Shark", "title": "Donsol Whale Shark", "caption": "Swim next to the world's largest fish in their natural habitat." }
+          ]
+        }
+      },
+      {
+        "day": "13",
+        "title": "Donsol Resort Day",
+        "tagline": "🌴 Pristine Beach & Spa Relaxation",
+        "vibe_title": "The Vibe",
+        "vibe_text": "No excursions planned. A full day to read under coconut trees, swim in the resort pool, or indulge in a spa massage.",
+        "highlights": [
+          { "icon": "💆", "title": "Beachfront Wellness", "description": "Unwind with an authentic hilot massage at the resort's beachfront spa." },
+          { "icon": "🥥", "title": "Family Beach Lounge", "description": "Build sandcastles, swim in warm tropical waters, and relax together." }
+        ],
+        "stay": "🏨 Stay: Donsol Premium Beachfront Resort",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day13",
+          "slides": [
+            { "src": "images/philippines/boracay_beach.jpeg", "alt": "Beachfront", "title": "Beachfront Resort", "caption": "Pristine sandy shores and warm tropical seas." }
+          ]
+        }
+      },
+      {
+        "day": "14",
+        "title": "Mangroves & Reefs Day",
+        "tagline": "🛶 Firefly River Cruise or Reef Snorkeling",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Choose to relax at the resort, snorkel on nearby shallow reefs, or take a twilight kayak cruise to see glowing fireflies in the mangroves.",
+        "highlights": [
+          { "icon": "✨", "title": "Firefly River Cruise", "description": "Witness thousands of fireflies illuminating the Bicol river mangroves at night." },
+          { "icon": "🐠", "title": "Reef Explorer Snorkel", "description": "Explore nearby coral beds teeming with colorful tropical fish." }
+        ],
+        "stay": "🏨 Stay: Donsol Premium Beachfront Resort",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day14",
+          "slides": [
+            { "src": "images/philippines/el_nido_boat.jpeg", "alt": "Outrigger Cruise", "title": "Mangrove Canopy", "caption": "Paddling through tranquil riverways under dense green mangrove vaults." }
+          ]
+        }
+      },
+      {
+        "day": "15",
+        "title": "Donsol to Bohol Island",
+        "tagline": "✈️ Luxury Resort Check-in at Alona Beach",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Fly to Bohol. Settle into the five-star Amorita Resort and enjoy its cliffside infinity pools overlooking Alona Beach.",
+        "highlights": [
+          { "icon": "🌴", "title": "Amorita Resort Check-in", "description": "Arrive at one of Bohol's premier luxury beachfront properties." },
+          { "icon": "🏊", "title": "Cliffside Pools", "description": "Spend the afternoon lounging in infinity pools overlooking the Visayan Sea." }
+        ],
+        "stay": "🏨 Stay: Amorita Resort Bohol (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day15",
+          "slides": [
+            { "src": "images/philippines/boracay_beach.jpeg", "alt": "Amorita Beach", "title": "Amorita Resort View", "caption": "Pristine sands and cliffside panoramas in Bohol." }
+          ]
+        }
+      },
+      {
+        "day": "16",
+        "title": "Chocolate Hills & Tarsiers",
+        "tagline": "🐒 Dome-shaped Hills & Tiny Primates",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Embark on a half-day private countryside tour to witness the symmetrical Chocolate Hills and spot tiny tarsiers in their forest sanctuary.",
+        "highlights": [
+          { "icon": "⛰️", "title": "Chocolate Hills Tour", "description": "See the iconic geological formations spreading across a vast tropical plain." },
+          { "icon": "👁️", "title": "Tarsier Sanctuary", "description": "Spot the world's smallest primates clinging to branches in the forest reserve." }
+        ],
+        "stay": "🏨 Stay: Amorita Resort Bohol (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day16",
+          "slides": [
+            { "src": "images/philippines/bohol_hills.jpeg", "alt": "Chocolate Hills", "title": "Chocolate Hills", "caption": "Spectacular symmetrical geological mounds in the center of Bohol." }
+          ]
+        }
+      },
+      {
+        "day": "17",
+        "title": "Bohol Resort Leisure",
+        "tagline": "🛶 Beach Kayaking & Reef Swimming",
+        "vibe_title": "The Vibe",
+        "vibe_text": "No tours scheduled. Explore the clear waters of Alona Beach, go sea kayaking, or relax at the cliffside spa.",
+        "highlights": [
+          { "icon": "🚣", "title": "Sea Kayaking & SUP", "description": "Paddle along Alona Beach's calm coves with resort-provided equipment." },
+          { "icon": "🏊", "title": "Poolside Sunset", "description": "Enjoy family poolside cocktails and fruit juices as the sun sets over Bohol." }
+        ],
+        "stay": "🏨 Stay: Amorita Resort Bohol (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day17",
+          "slides": [
+            { "src": "images/philippines/el_nido_kayak.jpeg", "alt": "Bohol Cove", "title": "Alona Beach Coastline", "caption": "Turquoise waters perfect for swimming and ocean sports." }
+          ]
+        }
+      },
+      {
+        "day": "18",
+        "title": "Moalboal Marine Adventure",
+        "tagline": "🤿 Sardine Run & Sea Turtles Reef",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Take a private boat transfer to Moalboal. Snorkel or dive within a swirling vortex of millions of sardines and spot green sea turtles.",
+        "highlights": [
+          { "icon": "🐟", "title": "Sardine Run Swim", "description": "Snorkel directly inside the swirling mass of sardines situated just off the reef." },
+          { "icon": "🐢", "title": "Sea Turtle Spotting", "description": "Observe giant reef sea turtles feeding on sea grasses in Moalboal's shallow waters." }
+        ],
+        "stay": "🏨 Stay: Moalboal Premium Beachfront Resort",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day18",
+          "slides": [
+            { "src": "images/philippines/moalboal_sardine_run.jpg", "alt": "Sardine Run", "title": "Moalboal Sardine Run", "caption": "An extraordinary marine phenomenon right on Moalboal's reef." }
+          ]
+        }
+      },
+      {
+        "day": "19",
+        "title": "Moalboal to Cebu City",
+        "tagline": "🏙️ Check-in at Shangri-La Mactan Resort",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Transfer to Cebu City. Check into the iconic Shangri-La Mactan resort beach cove to spend the day at leisure.",
+        "highlights": [
+          { "icon": "🚙", "title": "Private City Transfer", "description": "A comfortable private transfer from Moalboal back to Metro Cebu." },
+          { "icon": "🍹", "title": "Resort Cove Check-in", "description": "Arrive at Mactan's premier luxury resort with private sandy beach coves." }
+        ],
+        "stay": "🏨 Stay: Shangri-La Mactan, Cebu (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day19",
+          "slides": [
+            { "src": "images/philippines/siargao_banca.jpeg", "alt": "Mactan Cove", "title": "Shangri-La Mactan Resort", "caption": "Relax in tropical seaside luxury before your flight home." }
+          ]
+        }
+      },
+      {
+        "day": "20",
+        "title": "Cebu City Shopping & Culture",
+        "tagline": "🛍️ Magellan's Cross & Farewell Dinner",
+        "vibe_title": "The Vibe",
+        "vibe_text": "A light final day. Tour Magellan's Cross, then enjoy boutique shopping at Ayala Center, followed by a farewell dinner.",
+        "highlights": [
+          { "icon": "⛪", "title": "Heritage Stroll", "description": "Visit Basilica del Santo Niño and the historical Magellan's Cross." },
+          { "icon": "🛍️", "title": "Boutique Shopping", "description": "Browse local handicrafts, dried mangoes, and souvenirs at SM City Cebu." }
+        ],
+        "stay": "🏨 Stay: Shangri-La Mactan, Cebu (5★)",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day20",
+          "slides": [
+            { "src": "images/philippines/cebu_freediver.jpeg", "alt": "Cebu Heritage", "title": "Magellan's Cross Cebu", "caption": "Magellan's Cross represents Cebu City's rich Spanish historical roots." }
+          ]
+        }
+      },
+      {
+        "day": "21",
+        "title": "Cebu to Denmark",
+        "tagline": "✈️ Private Transfer & International Flight Home",
+        "vibe_title": "The Vibe",
+        "vibe_text": "Savor your final breakfast, enjoy late check-out, and transfer to Mactan-Cebu Airport for your flight back to Copenhagen.",
+        "highlights": [
+          { "icon": "🚗", "title": "Airport Transfer", "description": "Board your private shuttle timed perfectly with your international departure." },
+          { "icon": "🛫", "title": "Flight to Copenhagen", "description": "Arrive back in Denmark with a lifetime of spectacular family memories." }
+        ],
+        "stay": "🏨 Transit: Return Flight",
+        "media": {
+          "type": "carousel",
+          "id": "carousel-fam-day21",
+          "slides": [
+            { "src": "images/philippines/bgc.png", "alt": "Departure", "title": "Mactan Airport Terminal", "caption": "Modern wooden arches at Cebu's award-winning international terminal." }
+          ]
         }
       }
     ],
     "booking": {
-      "title": "Secure Your Nordic Escape",
-      "description": "Book your Scandinavia tour with Abbey's Road.",
-      "bullets": ["Hotels & Rail Included", "24/7 Guest Support"]
+      "title": "Secure Your Premium Family Journey",
+      "description": "Book your 21-day family vacation through the Philippines with Abbey's Road.",
+      "bullets": ["All Private Transfers & Flights Included", "5★ & Best Available Stays", "24/7 Guest Care Support Line"]
     },
     "pricing": {
-      "base_price": 2450,
+      "base_price": 5890,
       "currency": "€",
-      "dates": [{ "id": "jul10", "label": "Jul 10 – Jul 18", "season": "Peak", "price_modifier": 0 }],
-      "inside": [{ "id": "inside", "name": "Standard Room", "description": "Comfortable room", "price_per_person": 0 }],
-      "supplements": []
+      "dates": [
+        { "id": "fam-nov10", "label": "Nov 15 – Dec 06", "season": "Prime Dry Season", "price_modifier": 0 },
+        { "id": "fam-dec18", "label": "Dec 18 – Jan 08", "season": "Holiday Peak Season", "price_modifier": 650 },
+        { "id": "fam-jan20", "label": "Jan 20 – Feb 10", "season": "Dry Sun Season", "price_modifier": 150 }
+      ],
+      "inside": [
+        { "id": "fam-resort-villa", "name": "Banaue Suite & Amorita Cliff Pool Villa", "description": "Standard rooming with premium suites/villas included", "price_per_person": 0 },
+        { "id": "fam-luxury-two-bedroom", "name": "Amorita Two-Bedroom Pool Villa & Shangri-La Ocean Suite", "description": "Maximum comfort, larger villa setups, and airport fast-tracks", "price_per_person": 1950 }
+      ],
+      "supplements": [
+        { "id": "fam-supp-scuba", "name": "Family Scuba & Snorkeling Coral Explorer Pass", "description": "Includes boat gear hire & marine sanctuary passes", "price": 280 }
+      ]
     },
     "contact": {
       "company_name": "Abbey's Road Destinations",
-      "tagline": "Destinations That Connect",
+      "tagline": "Journeys That Connect",
       "address": "Borgmestervangen 31, 2200 Copenhagen",
       "phone": "+45 2622 0288",
       "email": "abbey@abbeysroad.dk",

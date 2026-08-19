@@ -1,0 +1,128 @@
+# ABBEY'S ROAD - PHILIPPINES 21-DAY PREMIUM FAMILY JOURNEY
+## IMAGE GENERATION PROMPTS FOR HIGH-FIDELITY ASSETS
+
+### DAY 1 — ARRIVAL (MANILA)
+- **Headline**: The Peninsula Manila Hotel Lobby
+  - **Prompt**: A grand, ultra-luxury hotel lobby with a massive brass sunburst ceiling sculpture, polished marble floors, lush tropical plants, and warm ambient lighting. Photorealistic, 8k resolution, 16:9 aspect ratio.
+- **Headline**: Premium Pool Relaxation
+  - **Prompt**: A stunning resort-style outdoor swimming pool surrounded by towering palm trees, comfortable sun loungers, and classical white columns under a soft afternoon sun. Photorealistic, 8k, 16:9.
+
+### DAY 2 — MANILA (COLONIAL HISTORIC TOUR)
+- **Headline**: Intramuros Fort Santiago
+  - **Prompt**: A historic stone gate at Fort Santiago in Intramuros, Manila, covered in green moss, under a bright blue sky with a traditional horse-drawn kalesa carriage in the foreground. Photorealistic, 8k, 16:9.
+- **Headline**: San Agustin Church Interior
+  - **Prompt**: Inside the majestic San Agustin Baroque Church in Manila, featuring intricate trompe l'oeil ceilings, golden chandeliers, and historic wooden pews. Photorealistic, 8k, 16:9.
+
+### DAY 3 — MANILA ➔ BANAUE (SCENIC ROAD TO CORDILLERA)
+- **Headline**: Dalton Pass Mountain Viewpoint
+  - **Prompt**: A breathtaking mountain pass view from Dalton Pass in the Cordilleras, looking over green valleys and winding asphalt roads under a clear sky. Photorealistic, 8k, 16:9.
+- **Headline**: Scenic Village Stopover
+  - **Prompt**: A small rustic mountain village nestled in the green valley slopes of Nueva Vizcaya, surrounded by banana trees and vegetable fields. Photorealistic, 8k, 16:9.
+
+### DAY 4 — BATAD / IFUGAO (UNESCO RICE TERRACES)
+- **Headline**: Batad Rice Terraces Amphitheater
+  - **Prompt**: A spectacular amphitheater of ancient stone-walled green rice terraces in Batad, curving around a steep mountain chasm under a bright day. Photorealistic, 8k, 16:9.
+- **Headline**: Traditional Ifugao House
+  - **Prompt**: A traditional Ifugao native stilt house made of dark wood and steep cogon grass roofs, nestled on the edge of a rice terrace in Batad. Photorealistic, 8k, 16:9.
+
+### DAY 5 — BANAUE RELAXATION (MOUNTAIN CHILL)
+- **Headline**: Misty Banaue Morning View
+  - **Prompt**: A peaceful morning view from a luxury boutique resort terrace in Banaue, overlooking misty green mountains and ancient pine trees. Photorealistic, 8k, 16:9.
+- **Headline**: Village Valley Walk
+  - **Prompt**: A family walking along a quiet rustic dirt path between stone walls and green terraced mountain farms in Banaue. Photorealistic, 8k, 16:9.
+
+### DAY 6 — BANAUE ➔ SAGADA (TRANS-MOUNTAIN PASS)
+- **Headline**: Mountain Road to Sagada
+  - **Prompt**: A private premium vehicle driving along a winding scenic mountain highway bordered by tall pine trees and sheer rocky cliffs in Northern Luzon. Photorealistic, 8k, 16:9.
+- **Headline**: Sagada Pine Valley
+  - **Prompt**: A wide scenic photo of a valley of towering green Benguet pine trees under a clear, cool mountain sky in Sagada. Photorealistic, 8k, 16:9.
+
+### DAY 7 — SAGADA (CULTURE & CAVES)
+- **Headline**: Echo Valley Hanging Coffins
+  - **Prompt**: The famous ancient wooden hanging coffins attached to a vertical limestone cliff face in Echo Valley, Sagada, surrounded by lush green foliage. Photorealistic, 8k, 16:9.
+- **Headline**: Sumaguing Cave Formations
+  - **Prompt**: Inside Sumaguing Cave in Sagada, showing massive golden limestone flowstone formations, stalactites, and pools of clear subterranean water. Photorealistic, 8k, 16:9.
+
+### DAY 8 — SAGADA ➔ VIGAN (TRANSIT TO HERITAGE TOWN)
+- **Headline**: Hotel Luna Art Lobby (Vigan)
+  - **Prompt**: A high-end luxury museum hotel lobby in Vigan, showing Spanish colonial brick arches, modern Filipino paintings on display, and plush seating. Photorealistic, 8k, 16:9.
+- **Headline**: Vigan Hotel Pool
+  - **Prompt**: A clean, reflective swimming pool inside a Spanish-style courtyard of a boutique hotel, surrounded by brick walls and arches at twilight. Photorealistic, 8k, 16:9.
+
+### DAY 9 — VIGAN (SPANISH COLONIAL HERITAGE)
+- **Headline**: Calle Crisologo Cobblestone Street
+  - **Prompt**: A beautiful morning shot of the historic Calle Crisologo in Vigan, with cobblestone streets, preserved Spanish colonial houses, tiled roofs, and a kalesa. Photorealistic, 8k, 16:9.
+- **Headline**: Inabel Handloom Weaving
+  - **Prompt**: A close-up of a local weaver using a traditional large wooden handloom to weave colorful geometric Inabel fabrics in Vigan. Photorealistic, 8k, 16:9.
+
+### DAY 10 — VIGAN FREE DAY (PROVINCIAL VIBES)
+- **Headline**: Plaza Salcedo Sunset Fountain
+  - **Prompt**: Plaza Salcedo in Vigan at sunset, with a grand neoclassical fountain reflecting the orange and purple evening sky. Photorealistic, 8k, 16:9.
+- **Headline**: Making Vigan Empanada
+  - **Prompt**: A close-up of a cook deep-frying crispy orange Vigan empanadas in a large wok on a local street food stall. Photorealistic, 8k, 16:9.
+
+### DAY 11 — VIGAN ➔ DONSOL (BICOL BEACH RESORT)
+- **Headline**: Donsol Beach Resort Front
+  - **Prompt**: A premium beachfront resort in Donsol, with modern tropical villas, manicured green lawns, and direct access to white sand beaches. Photorealistic, 8k, 16:9.
+- **Headline**: Mt. Mayon Sunset Horizon
+  - **Prompt**: A beautiful sunset over the sea in Bicol, with the perfect conical silhouette of Mount Mayon volcano rising in the distant mist. Photorealistic, 8k, 16:9.
+
+### DAY 12 — DONSOL (WHALE SHARK ENCOUNTER)
+- **Headline**: Swimming with Whale Sharks
+  - **Prompt**: A stunning underwater photo of a massive, gentle whale shark swimming in clear blue coastal water with snorkelelrs alongside it. Photorealistic, 8k, 16:9.
+- **Headline**: Donsol Outrigger Boat
+  - **Prompt**: A traditional large wooden outrigger banca boat cruising on calm crystal waters in Donsol under a sunny sky. Photorealistic, 8k, 16:9.
+
+### DAY 13 — DONSOL RESORT DAY (BEACHFRONT BLISS)
+- **Headline**: Donsol Beachfront Spa
+  - **Prompt**: An outdoor massage bed under a wooden thatch cabana on the white sand beach of a luxury resort in Donsol, looking over clear blue sea. Photorealistic, 8k, 16:9.
+- **Headline**: Infinity Pool at Sunset
+  - **Prompt**: A luxury infinity swimming pool reflecting a vibrant orange Bicol sunset over the calm open ocean. Photorealistic, 8k, 16:9.
+
+### DAY 14 — DONSOL OPTIONAL SEA DAY (MANGROVES & REEFS)
+- **Headline**: Donsol Mangrove Firefly Kayaking
+  - **Prompt**: A family kayaking in tandem on a calm river between dense green mangrove forests at dusk, with hundreds of tiny glowing fireflies illuminating the trees. Photorealistic, 8k, 16:9.
+- **Headline**: Snorkeling Bicol Reefs
+  - **Prompt**: A vibrant underwater photo of coral reefs teeming with colorful tropical fish and sea anemones in clear turquoise ocean. Photorealistic, 8k, 16:9.
+
+### DAY 15 — DONSOL ➔ BOHOL (AMORITA RESORT)
+- **Headline**: Amorita Resort Cliffside Pool
+  - **Prompt**: An infinity pool situated on a cliff edge at Amorita Resort Bohol, looking down over the white sands of Alona Beach and deep blue ocean. Photorealistic, 8k, 16:9.
+- **Headline**: Alona Beach White Sand
+  - **Prompt**: A wide landscape photo of the beautiful white sand coastline of Alona Beach in Bohol, with crystal clear turquoise sea. Photorealistic, 8k, 16:9.
+
+### DAY 16 — BOHOL (CHOCOLATE HILLS & TARSIERS)
+- **Headline**: Bohol Chocolate Hills
+  - **Prompt**: The famous symmetrical, dome-shaped green limestone Chocolate Hills of Bohol spreading across a vast tropical valley under a sunny sky. Photorealistic, 8k, 16:9.
+- **Headline**: Tiny Philippine Tarsier
+  - **Prompt**: A tiny, cute Philippine tarsier with huge round eyes clinging onto a green branch in a lush tropical forest in Bohol. Photorealistic, 8k, 16:9.
+
+### DAY 17 — BOHOL RESORT DAY (LEISURE TIME)
+- **Headline**: Kayaking in Alona Cove
+  - **Prompt**: A family paddling colorful sea kayaks in a calm, shallow turquoise water cove in Bohol near coconut palm trees. Photorealistic, 8k, 16:9.
+- **Headline**: Premium Beach Lounge
+  - **Prompt**: A luxury double beach daybed under a large white umbrella on a private resort beach in Bohol, sunny day. Photorealistic, 8k, 16:9.
+
+### DAY 18 — MOALBOAL (SARDINES & REEF TURTLES)
+- **Headline**: Moalboal Sardine Run Snorkeling
+  - **Prompt**: A snorkeler swimming inside a massive swirling wall of millions of shiny silver sardines in clear blue ocean water in Moalboal, Cebu. Photorealistic, 8k, 16:9.
+- **Headline**: Moalboal Reef Sea Turtle
+  - **Prompt**: A large green sea turtle gliding gracefully over a vibrant coral reef wall in the clear waters of Moalboal. Photorealistic, 8k, 16:9.
+
+### DAY 19 — MOALBOAL ➔ CEBU CITY (SHANGRI-LA MACTAN)
+- **Headline**: Shangri-La Mactan Beach Cove
+  - **Prompt**: A private white-sand beach cove with pristine turquoise waters inside a luxury tropical resort, surrounded by green cliffs and palms. Photorealistic, 8k, 16:9.
+- **Headline**: Shangri-La Tropical Gardens
+  - **Prompt**: A huge swimming pool winding through lush tropical botanical gardens with wooden bridges and sun pavilions. Photorealistic, 8k, 16:9.
+
+### DAY 20 — CEBU CITY (MAGELLAN'S HISTORY & SHOPPING)
+- **Headline**: Magellan's Cross Dome Mural
+  - **Prompt**: The historic wooden Magellan's Cross inside a stone octagonal pavilion in Cebu City, showing the colorful painted ceiling mural of Spanish landing. Photorealistic, 8k, 16:9.
+- **Headline**: Basilica del Santo Niño Cebu
+  - **Prompt**: The neoclassical stone facade of the historic Basilica Minore del Santo Niño church in Cebu City, with pilgrims walking outside. Photorealistic, 8k, 16:9.
+
+### DAY 21 — CEBU ➔ DENMARK DEPARTURE (FAREWELL PHILIPPINES)
+- **Headline**: Mactan-Cebu Airport Wood Terminal
+  - **Prompt**: The beautiful modern interior of Mactan-Cebu International Airport, featuring majestic soaring arches made of light laminated wood under bright lights. Photorealistic, 8k, 16:9.
+- **Headline**: Flight over Visayas Islands
+  - **Prompt**: An aerial view from an airplane window showing a white passenger jet wing flying over small emerald green islands scattered in a turquoise sea. Photorealistic, 8k, 16:9.
