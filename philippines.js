@@ -618,8 +618,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "bullets": ["All Private Transfers & Flights Included", "5★ & Best Available Stays", "24/7 Guest Care Support Line"]
     },
     "pricing": {
-      "base_price": 5890,
-      "currency": "€",
+      "base_price": 6830,
+      "currency": "$",
       "dates": [
         { "id": "fam-nov10", "label": "Nov 15 – Dec 06", "season": "Prime Dry Season", "price_modifier": 0 },
         { "id": "fam-dec18", "label": "Dec 18 – Jan 08", "season": "Holiday Peak Season", "price_modifier": 650 },
