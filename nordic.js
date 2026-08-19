@@ -827,7 +827,7 @@ document.addEventListener('DOMContentLoaded', () => {
           trigger: destChapters[0],
           endTrigger: destChapters[destChapters.length - 1],
           start: 'top 80%',
-          end: 'bottom 20%',
+          end: 'bottom 95%',
           onEnter: () => gsap.to(mapIndicator, { opacity: 1, scale: 1, pointerEvents: 'auto', duration: 0.3 }),
           onLeave: () => gsap.to(mapIndicator, { opacity: 0, scale: 0.8, pointerEvents: 'none', duration: 0.3 }),
           onEnterBack: () => gsap.to(mapIndicator, { opacity: 1, scale: 1, pointerEvents: 'auto', duration: 0.3 }),
