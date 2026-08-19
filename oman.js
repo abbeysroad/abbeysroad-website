@@ -1079,6 +1079,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     gsap.registerPlugin(ScrollTrigger);
 
+    const mapIndicator = document.getElementById('philippines-map-indicator');
+    if (mapIndicator) {
+      gsap.set(mapIndicator, { opacity: 0, scale: 0.8, pointerEvents: 'none' });
+      const destChapters = document.querySelectorAll('.film-chapter:not(.chapter-intro)');
+      if (destChapters.length > 0) {
+        ScrollTrigger.create({
+          trigger: destChapters[0],
+          endTrigger: destChapters[destChapters.length - 1],
+          start: 'top 80%',
+          end: 'bottom 20%',
+          onEnter: () => gsap.to(mapIndicator, { opacity: 1, scale: 1, pointerEvents: 'auto', duration: 0.3 }),
+          onLeave: () => gsap.to(mapIndicator, { opacity: 0, scale: 0.8, pointerEvents: 'none', duration: 0.3 }),
+          onEnterBack: () => gsap.to(mapIndicator, { opacity: 1, scale: 1, pointerEvents: 'auto', duration: 0.3 }),
+          onLeaveBack: () => gsap.to(mapIndicator, { opacity: 0, scale: 0.8, pointerEvents: 'none', duration: 0.3 })
+        });
+      }
+    }
+
     const chapters = document.querySelectorAll('.film-chapter');
     const regionLabel = document.getElementById('map-region-name');
 
@@ -1512,6 +1530,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  function bindExploreItineraryTriggers() {
+    const triggers = document.querySelectorAll('.explore-itinerary-trigger');
+    triggers.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const itineraryId = btn.getAttribute('data-itinerary');
+        if (itineraryId) {
+          renderItinerary(itineraryId);
+          const viewport = document.getElementById('itinerary-viewport');
+          if (viewport) {
+            viewport.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  }
+
   // Initialize features
   initThreeWebGL();
   initGSAPScrollTrigger();
@@ -1521,5 +1556,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initItinerariesMenu();
   renderItinerary(itineraries[0].id);
   bindBookingTriggers();
+  bindExploreItineraryTriggers();
 
 });
