@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day1",
           "slides": [
-            { "src": "images/philippines/peninsula_manila.jpg", "alt": "Manila BGC", "title": "The Peninsula Manila", "caption": "Five-star comfort and world-class luxury to start your trip." }
+            { "src": "images/philippines/peninsula_manila_lobby.jpg", "alt": "Manila BGC", "title": "The Peninsula Manila", "caption": "Five-star comfort and world-class luxury to start your trip." }
           ]
         }
       },
