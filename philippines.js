@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day1",
           "slides": [
-            { "src": "images/philippines/bgc.png", "alt": "Manila BGC", "title": "The Peninsula Manila", "caption": "Five-star comfort and world-class luxury to start your trip." }
+            { "src": "images/philippines/intramuros_residents.jpg", "alt": "Manila BGC", "title": "The Peninsula Manila", "caption": "Five-star comfort and world-class luxury to start your trip." }
           ]
         }
       },
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day2",
           "slides": [
-            { "src": "images/philippines/intramuros.png", "alt": "Intramuros", "title": "Spanish Walled City", "caption": "Intramuros represents centuries of history in the heart of Manila." }
+            { "src": "images/philippines/intramuros_residents.jpg", "alt": "Intramuros", "title": "Spanish Walled City", "caption": "Intramuros represents centuries of history in the heart of Manila." }
           ]
         }
       },
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day3",
           "slides": [
-            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Banaue Mountains", "title": "The Cordillera Range", "caption": "Breathtaking landscapes as you climb towards the clouds." }
+            { "src": "images/philippines/cordillera_range.jpg", "alt": "Banaue Mountains", "title": "The Cordillera Range", "caption": "Breathtaking landscapes as you climb towards the clouds." }
           ]
         }
       },
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day4",
           "slides": [
-            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Batad Terraces", "title": "Batad Amphitheater", "caption": "UNESCO World Heritage Cordillera rice terraces." }
+            { "src": "images/philippines/banaue_hikers.jpg", "alt": "Batad Terraces", "title": "Batad Amphitheater", "caption": "UNESCO World Heritage Cordillera rice terraces." }
           ]
         }
       },
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day5",
           "slides": [
-            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Banaue Valley", "title": "Highland Peace", "caption": "Slow down and enjoy panoramic vistas from your lodge balcony." }
+            { "src": "images/philippines/highland_peace.jpg", "alt": "Banaue Valley", "title": "Highland Peace", "caption": "Slow down and enjoy panoramic vistas from your lodge balcony." }
           ]
         }
       },
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day6",
           "slides": [
-            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Sagada Hills", "title": "Sagada Pine Forests", "caption": "Cooler climates and dense pine valleys in Northern Luzon." }
+            { "src": "images/philippines/sagada_pine.jpg", "alt": "Sagada Hills", "title": "Sagada Pine Forests", "caption": "Cooler climates and dense pine valleys in Northern Luzon." }
           ]
         }
       },
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day7",
           "slides": [
-            { "src": "images/philippines/banaue_farmer.jpeg", "alt": "Hanging Coffins", "title": "Echo Valley Coffins", "caption": "A centuries-old indigenous Kankanaey burial tradition." }
+            { "src": "images/philippines/sagada_hanging_coffins.jpg", "alt": "Hanging Coffins", "title": "Echo Valley Coffins", "caption": "A centuries-old indigenous Kankanaey burial tradition." }
           ]
         }
       },
@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day8",
           "slides": [
-            { "src": "images/philippines/intramuros.png", "alt": "Vigan Hotel", "title": "Historic Hotel Luna", "caption": "A beautifully restored colonial mansion displaying rare artwork." }
+            { "src": "images/philippines/vigan_calle_crisologo.jpg", "alt": "Vigan Hotel", "title": "Historic Hotel Luna", "caption": "A beautifully restored colonial mansion displaying rare artwork." }
           ]
         }
       },
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day9",
           "slides": [
-            { "src": "images/philippines/intramuros.png", "alt": "Calle Crisologo", "title": "Calle Crisologo Vigan", "caption": "Cobblestone streets and colonial houses preserved since the Spanish era." }
+            { "src": "images/philippines/vigan_calle_crisologo.jpg", "alt": "Calle Crisologo", "title": "Calle Crisologo Vigan", "caption": "Cobblestone streets and colonial houses preserved since the Spanish era." }
           ]
         }
       },
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day10",
           "slides": [
-            { "src": "images/philippines/intramuros.png", "alt": "Vigan Plaza", "title": "Plaza Salcedo", "caption": "The neoclassical heart of Vigan Heritage City." }
+            { "src": "images/philippines/filipino_meal.jpg", "alt": "Vigan Plaza", "title": "Local Gastronomy", "caption": "A wonderful assortment of traditional Ilocano and Filipino dishes." }
           ]
         }
       },
@@ -549,7 +549,8 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day18",
           "slides": [
-            { "src": "images/philippines/moalboal_sardine_run.jpg", "alt": "Sardine Run", "title": "Moalboal Sardine Run", "caption": "An extraordinary marine phenomenon right on Moalboal's reef." }
+            { "src": "images/philippines/moalboal_sardine_run.jpg", "alt": "Sardine Run", "title": "Moalboal Sardine Run", "caption": "An extraordinary marine phenomenon right on Moalboal's reef." },
+            { "src": "images/philippines/moalboal_turtle.jpg", "alt": "Sea Turtle", "title": "Reef Sea Turtles", "caption": "Observe graceful sea turtles grazing on shallow coral gardens." }
           ]
         }
       },
