@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day1",
           "slides": [
-            { "src": "images/philippines/intramuros_residents.jpg", "alt": "Manila BGC", "title": "The Peninsula Manila", "caption": "Five-star comfort and world-class luxury to start your trip." }
+            { "src": "images/philippines/peninsula_manila.jpg", "alt": "Manila BGC", "title": "The Peninsula Manila", "caption": "Five-star comfort and world-class luxury to start your trip." }
           ]
         }
       },
@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day8",
           "slides": [
-            { "src": "images/philippines/vigan_calle_crisologo.jpg", "alt": "Vigan Hotel", "title": "Historic Hotel Luna", "caption": "A beautifully restored colonial mansion displaying rare artwork." }
+            { "src": "images/philippines/hotel_luna_vigan.jpg", "alt": "Vigan Hotel", "title": "Historic Hotel Luna", "caption": "A beautifully restored colonial mansion displaying rare artwork." }
           ]
         }
       },
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day9",
           "slides": [
-            { "src": "images/philippines/vigan_calle_crisologo.jpg", "alt": "Calle Crisologo", "title": "Calle Crisologo Vigan", "caption": "Cobblestone streets and colonial houses preserved since the Spanish era." }
+            { "src": "images/philippines/calle_crisologo_vigan.jpg", "alt": "Calle Crisologo", "title": "Calle Crisologo Vigan", "caption": "Cobblestone streets and colonial houses preserved since the Spanish era." }
           ]
         }
       },
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day13",
           "slides": [
-            { "src": "images/philippines/boracay_beach.jpeg", "alt": "Beachfront", "title": "Beachfront Resort", "caption": "Pristine sandy shores and warm tropical seas." }
+            { "src": "images/philippines/donsol_beachfront_resort.jpg", "alt": "Beachfront", "title": "Beachfront Resort", "caption": "Pristine sandy shores and warm tropical seas." }
           ]
         }
       },
@@ -492,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day15",
           "slides": [
-            { "src": "images/philippines/boracay_beach.jpeg", "alt": "Amorita Beach", "title": "Amorita Resort View", "caption": "Pristine sands and cliffside panoramas in Bohol." }
+            { "src": "images/philippines/amorita_resort_bohol.jpg", "alt": "Amorita Beach", "title": "Amorita Resort View", "caption": "Pristine sands and cliffside panoramas in Bohol." }
           ]
         }
       },
@@ -530,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day17",
           "slides": [
-            { "src": "images/philippines/el_nido_kayak.jpeg", "alt": "Bohol Cove", "title": "Alona Beach Coastline", "caption": "Turquoise waters perfect for swimming and ocean sports." }
+            { "src": "images/philippines/alona_beach_bohol.jpg", "alt": "Bohol Cove", "title": "Alona Beach Coastline", "caption": "Turquoise waters perfect for swimming and ocean sports." }
           ]
         }
       },
@@ -569,7 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day19",
           "slides": [
-            { "src": "images/philippines/siargao_banca.jpeg", "alt": "Mactan Cove", "title": "Shangri-La Mactan Resort", "caption": "Relax in tropical seaside luxury before your flight home." }
+            { "src": "images/philippines/shangrila_mactan.jpg", "alt": "Mactan Cove", "title": "Shangri-La Mactan Resort", "caption": "Relax in tropical seaside luxury before your flight home." }
           ]
         }
       },
@@ -588,7 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
           "type": "carousel",
           "id": "carousel-fam-day20",
           "slides": [
-            { "src": "images/philippines/cebu_freediver.jpeg", "alt": "Cebu Heritage", "title": "Magellan's Cross Cebu", "caption": "Magellan's Cross represents Cebu City's rich Spanish historical roots." }
+            { "src": "images/philippines/cebu_landscape.jpg", "alt": "Cebu Heritage", "title": "Cebu City Landscape", "caption": "Explore Cebu City's surrounding green mountains and coastal heritage sites." }
           ]
         }
       },
