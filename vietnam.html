@@ -477,67 +477,46 @@
     </div>
   </section>
 
-  <!-- MEETING BOOKING MODAL -->
-  <div id="meeting-modal" class="modal-overlay">
-    <div class="modal-card">
+  <!-- MEETING MODAL POPUP -->
+  <div id="meeting-modal" class="meeting-modal">
+    <div class="meeting-modal-content">
       <button class="close-modal-btn" id="close-modal">&times;</button>
-      <h3>Handcraft Your Escape</h3>
-      <p>Schedule a private consulting session with our Copenhagen travel planners to customize your dream itinerary.</p>
-      
-      <form id="b2b-contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="client-name">Your Name</label>
-            <input type="text" id="client-name" required placeholder="e.g. Michael Nielsen">
-          </div>
-          <div class="form-group">
-            <label for="client-email">Email Address</label>
-            <input type="email" id="client-email" required placeholder="e.g. michael@example.dk">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="travel-dates">Preferred Travel Dates</label>
-          <input type="text" id="travel-dates" placeholder="e.g. Winter 2026 / 2027">
-        </div>
-        <div class="form-group">
-          <label for="notes">Notes / Tailor-made requests</label>
-          <textarea id="notes" rows="4" placeholder="Mention preferred cabin types, specific dietary requests, or custom dates..."></textarea>
-        </div>
-        <button type="submit" class="btn-primary-cyan">Submit Tailor-made Request</button>
-      </form>
-      <div id="form-success-msg" class="success-message" style="display: none; color: var(--accent-cyan); text-align: center; margin-top: 1rem; font-weight: 600;">
-        ✓ Request received! We will contact you within 24 hours.
+      <div class="modal-profile">
+        <div class="modal-avatar">AR</div>
+        <h2>Abbey's Road Concierge</h2>
+        <p class="modal-title">Copenhagen & Indochina Travel Team</p>
+        <p class="modal-instruction">Schedule a private consultation or inquire about our Travel Tasting Event:</p>
+        <a href="mailto:hello@abbeysroad.dk?subject=Abbeys%20Road%20Vietnam%20Concierge%20Inquiry" class="modal-email-btn">
+          📩 hello@abbeysroad.dk
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="main-footer" style="background: #111e14; border-top: 2px solid var(--accent-gold); padding: 5rem 2rem 2rem;">
-    <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
-      <div>
-        <img src="images/philippines/logo_horizontal_cutout.png" alt="Abbey's Road Logo" style="height: 35px; margin-bottom: 1.5rem;">
-        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">Your gateway to bespoke luxury travel across Southeast Asia. Bridging Nordic convenience with exceptional local hospitality.</p>
-      </div>
-      <div>
-        <h4 style="color: var(--accent-gold); margin-bottom: 1.2rem; font-size: 0.95rem; letter-spacing: 1px;">OUR PORTFOLIO</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-          <li><a href="philippines.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.88rem;">Philippines</a></li>
-          <li><a href="oman.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.88rem;">Oman</a></li>
-          <li><a href="vietnam.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.88rem;">Vietnam & Indochina</a></li>
-          <li><a href="nordic.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.88rem;">The Nordic</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 style="color: var(--accent-gold); margin-bottom: 1.2rem; font-size: 0.95rem; letter-spacing: 1px;">COPENHAGEN OFFICE</h4>
-        <p style="font-size: 0.88rem; line-height: 1.8; color: rgba(255,255,255,0.7);">
-          Abbey's Road ApS<br>
-          Copenhagen, Denmark<br>
-          Email: <a href="mailto:hello@abbeysroad.dk" style="color: var(--accent-cyan); text-decoration: none;">hello@abbeysroad.dk</a>
-        </p>
+  <!-- FOOTER & CONTACT DETAILS -->
+  <footer id="global-footer">
+    <div class="footer-content" id="footer-content-dynamic">
+      <div class="footer-grid">
+        <div>
+          <h4 class="gold-text">ABBEY'S ROAD</h4>
+          <p class="footer-subtext">Your Indochina Travel Concierge</p>
+          <p>Discover Vietnam & Indochina Beyond the Ordinary.</p>
+        </div>
+        <div>
+          <h4>Copenhagen Office</h4>
+          <p>Borgmestervangen 31, 2200 Copenhagen</p>
+          <p>Email: hello@abbeysroad.dk</p>
+        </div>
+        <div>
+          <h4>Indochina Operations</h4>
+          <p>Abbey's Road Handcrafted DMC Partner</p>
+          <p>Vietnam, Cambodia & Thailand</p>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom" style="max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.5);">
-      <p>&copy; 2026 Abbey's Road. All rights reserved. Vetted Partner of Premium Destination Management.</p>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Abbey's Road — Your Indochina Travel Concierge. All rights reserved.</p>
+      <p>Crafted with ❤️ for Denmark & Global Indochina Travelers</p>
     </div>
   </footer>
 
