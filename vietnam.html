@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abbey's Road | Your Vietnam & Indochina Travel Concierge | Copenhagen</title>
+  <meta name="description" content="Embark on an extraordinary luxury journey across Vietnam, Cambodia, and Thailand. Hand-crafted itineraries, top-tier boutique hotels, cruises, and 24/7 guest support.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Marcellus&family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Core Libraries for Cinematic Hero -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+</head>
+<body class="abbeys-road-theme">
+
+  <!-- THREE.JS WEBGL CANVAS BACKGROUND -->
+  <canvas id="hero-webgl-canvas"></canvas>
+
+  <!-- GLOBAL HEADER & NAVIGATION -->
+  <header id="main-header" class="logo-bg-header-backdrop">
+    <div class="header-container">
+      
+      <!-- Left: Horizontal Logo -->
+      <div class="logo-container">
+        <a href="index.html" class="logo-link" title="Abbey's Road - Your Vietnam Travel Concierge">
+          <img src="images/philippines/logo_horizontal_cutout.png" alt="Abbey's Road Logo Horizontal" id="header-logo" class="extra-large-logo horizontal-logo">
+        </a>
+      </div>
+
+      <!-- Center Desktop Navigation -->
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-destinations">Destinations ▾</a>
+            <ul class="dropdown-menu" id="destinations-menu">
+              <li><a href="philippines.html">Philippines</a></li>
+              <li><a href="oman.html">Oman</a></li>
+              <li><a href="vietnam.html" class="active">Vietnam</a></li>
+              <li><a href="nordic.html">The Nordic</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-discover">Discover ▾</a>
+            <ul class="dropdown-menu" id="discover-menu">
+              <li><a href="#chapter-hanoi">Hanoi</a></li>
+              <li><a href="#chapter-ninhbinh">Ninh Binh & Ha Long</a></li>
+              <li><a href="#chapter-hoian">Hoi An</a></li>
+              <li><a href="#chapter-saigon">Saigon</a></li>
+              <li><a href="#chapter-siemreap">Siem Reap</a></li>
+              <li><a href="#chapter-bangkok">Bangkok & Islands</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-tours">Itineraries ▾</a>
+            <ul class="dropdown-menu" id="itineraries-menu">
+              <!-- Dynamically populated -->
+            </ul>
+          </li>
+          <li><a href="#concierge-section">Concierge</a></li>
+          <li><a href="#about-section">About Us</a></li>
+          <li><a href="#team-section">Team</a></li>
+        </ul>
+      </nav>
+
+      <!-- Center (Mobile) / Right (Desktop): Let's Connect CTA -->
+      <div class="header-center-cta">
+        <a href="index.html#contact-section" class="header-cta-btn">
+          Let's Connect
+        </a>
+      </div>
+
+      <!-- Right Mobile Burger Menu Button -->
+      <button class="burger-menu-btn" aria-label="Toggle mobile menu" id="burger-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION FULL-SCREEN OVERLAY DRAWER -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay">
+    <button class="mobile-nav-close-btn" id="mobile-nav-close-btn" aria-label="Close menu">&times;</button>
+    <nav class="mobile-nav-content">
+      <ul class="mobile-nav-links">
+        <li class="mobile-section-header-title">SITEMAP</li>
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="philippines.html" class="mobile-nav-link">Philippines Destination</a></li>
+        <li><a href="oman.html" class="mobile-nav-link">Oman Destination</a></li>
+        <li><a href="vietnam.html" class="mobile-nav-link">Vietnam Destination</a></li>
+        <li><a href="nordic.html" class="mobile-nav-link">The Nordic Destination</a></li>
+        
+        <li class="mobile-section-header-title">DISCOVER</li>
+        <li><a href="#chapter-hanoi" class="mobile-nav-link sub-link">Hanoi</a></li>
+        <li><a href="#chapter-ninhbinh" class="mobile-nav-link sub-link">Ninh Binh & Ha Long</a></li>
+        <li><a href="#chapter-hoian" class="mobile-nav-link sub-link">Hoi An</a></li>
+        <li><a href="#chapter-saigon" class="mobile-nav-link sub-link">Saigon</a></li>
+        <li><a href="#chapter-siemreap" class="mobile-nav-link sub-link">Siem Reap</a></li>
+        <li><a href="#chapter-bangkok" class="mobile-nav-link sub-link">Bangkok & Islands</a></li>
+        
+        <li class="mobile-section-header-title">EXPLORE</li>
+        <li class="mobile-dropdown-container">
+          <div class="mobile-dropdown-header">
+            <a href="#itinerary-viewport" class="mobile-nav-link">Itineraries</a>
+            <button class="mobile-dropdown-toggle-btn" id="mobile-itineraries-toggle-btn" aria-label="Toggle itineraries">
+              &#9662;
+            </button>
+          </div>
+          <ul class="mobile-dropdown-menu" id="mobile-itineraries-menu">
+            <!-- Dynamically populated -->
+          </ul>
+        </li>
+        <li><a href="#concierge-section" class="mobile-nav-link">Concierge</a></li>
+        <li><a href="#about-section" class="mobile-nav-link">About Us</a></li>
+        <li><a href="#team-section" class="mobile-nav-link">Our Team</a></li>
+      </ul>
+      <a href="index.html#contact-section" class="mobile-nav-cta-btn">
+        LET'S CONNECT
+      </a>
+    </nav>
+  </div>
+
+  <!-- PERSISTENT ACCURATE INDOCHINA REGION MAP INDICATOR -->
+  <aside id="philippines-map-indicator" title="Current Journey Region">
+    <div class="map-indicator-title">INDOCHINA TRACKER</div>
+    <div class="map-svg-container">
+      <svg viewBox="0 0 160 210" class="ph-map-svg">
+        <!-- Background Offset Outlines -->
+        <g class="map-outlines" transform="translate(1.8, 1.8)">
+          <!-- Vietnam North & Central & South -->
+          <path d="M 102,18 L 112,18 L 116,28 L 110,48 L 118,65 L 126,80 L 122,95 L 122,110 L 118,135 L 110,135 L 105,122 L 112,105 L 118,95 L 110,95 L 100,48 L 94,36 Z" class="island-outline-path" />
+          <!-- Cambodia -->
+          <path d="M 92,105 L 112,105 L 105,122 L 95,122 L 86,115 Z" class="island-outline-path" />
+          <!-- Thailand -->
+          <path d="M 56,65 L 92,65 L 92,105 L 86,115 L 72,115 L 70,145 L 62,175 L 56,175 L 52,145 Z" class="island-outline-path" />
+        </g>
+
+        <!-- Foreground Interactive Map -->
+        <g class="map-islands">
+          <!-- North Vietnam -->
+          <path d="M 102,18 L 112,18 L 116,28 L 110,48 L 100,48 L 94,36 Z" class="island-path region-north-vietnam" id="region-north-vietnam" />
+          <!-- Central Vietnam -->
+          <path d="M 110,48 L 118,65 L 126,80 L 122,95 L 118,95 L 110,95 Z" class="island-path region-central-vietnam" id="region-central-vietnam" />
+          <!-- South Vietnam -->
+          <path d="M 118,95 L 122,110 L 118,135 L 110,135 L 105,122 L 112,105 Z" class="island-path region-south-vietnam" id="region-south-vietnam" />
+          <!-- Cambodia -->
+          <path d="M 92,105 L 112,105 L 105,122 L 95,122 L 86,115 Z" class="island-path region-cambodia" id="region-cambodia" />
+          <!-- Thailand -->
+          <path d="M 56,65 L 92,65 L 92,105 L 86,115 L 72,115 L 70,145 L 62,175 L 56,175 L 52,145 Z" class="island-path region-thailand" id="region-thailand" />
+        </g>
+
+        <!-- Active Animated Beacon Pin -->
+        <circle cx="108" cy="30" r="4.5" class="map-beacon" id="map-beacon-dot" />
+      </svg>
+    </div>
+    <div class="map-region-label" id="map-region-name">NORTH • HANOI</div>
+  </aside>
+
+  <!-- CINEMATIC INTERACTIVE VIETNAM & INDOCHINA TRAVEL FILM HERO EXPERIENCE -->
+  <main id="hero-journey" class="hero-film-container">
+
+    <!-- CHAPTER 0: INTRO FILM OVERLAY -->
+    <section class="film-chapter chapter-intro active" id="chapter-intro" data-region="north-vietnam" data-region-name="INDOCHINA RETREAT" data-beacon-x="108" data-beacon-y="30">
+      <div class="chapter-background-media">
+        <img src="images/vietnam/13_Ha_Long_Bay_and_Lan_Ha_Bay_Cruise_Panorama.jpeg" alt="Vietnam Lan Ha Bay Cruise" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.15) 0%, rgba(32, 43, 34, 0.35) 100%);"></div>
+      </div>
+      <div class="chapter-content-container center-aligned">
+        <div class="brand-eyebrow animate-fade-down">ABBEY'S ROAD • LUXURY ASIA REPRESENTATION | COPENHAGEN</div>
+        <h1 class="giant-editorial-title animate-fade-up">
+          <span class="gold-text">THE MAJESTY OF ASIA.</span><br>
+          <span class="cyan-text smaller-headline">DISCOVER VIETNAM & INDOCHINA</span>
+        </h1>
+        <p class="film-subtitle animate-fade-up">
+          Handcrafted luxury travel spanning Vietnam's emerald karsts, Cambodia's sacred jungle temples, and Thailand's turquoise sea sanctuaries. Curated specifically for the discerning Nordic traveler.
+        </p>
+        <div class="scroll-prompt animate-bounce">
+          <span>SCROLL TO BEGIN THE JOURNEY</span>
+          <div class="mouse-icon"><div class="wheel"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 1: HANOI -->
+    <section class="film-chapter chapter-hanoi" id="chapter-hanoi" data-region="north-vietnam" data-region-name="NORTH • HANOI" data-beacon-x="108" data-beacon-y="30">
+      <div class="chapter-background-media">
+        <img src="images/vietnam/01_Hanoi_Hoan_Kiem_Lake_Turtle_Tower.jpeg" alt="Hanoi Hoan Kiem Lake Turtle Tower" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid">
+        <div class="info-card-wrapper animate-slide-left">
+          <div class="dest-info-card">
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">CAPITAL & TRADITION</div>
+                <h2 class="card-dest-title">HANOI</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Hanoi details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Tonkin Region · Northern Vietnam</div>
+              <p class="card-desc">Navigate the intricate, energy-filled streets of Hanoi's Old Quarter. Experience historical landmarks, quiet lakeside walkways, and local street gastronomy from the sidecar of a vintage Minsk motorcycle.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Hoan Kiem Lake, Old Quarter, Sidecar tours, Egg coffee</div>
+                <div><strong>Ideal for:</strong> Cultural explorers · Food enthusiasts · Historians</div>
+                <div><strong>Suggested stay:</strong> 2-3 Days</div>
+                <div><strong>Best time:</strong> October – April</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Hanoi">EXPLORE HANOI →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 2: NINH BINH & HA LONG BAY -->
+    <section class="film-chapter chapter-ninhbinh" id="chapter-ninhbinh" data-region="north-vietnam" data-region-name="NORTH • VALLEY & BAYS" data-beacon-x="110" data-beacon-y="45">
+      <div class="chapter-background-media">
+        <img src="images/vietnam/06_Ninh_Binh_Green_Rice_Fields_Aerial_View.jpeg" alt="Ninh Binh valley view" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid right-aligned">
+        <div class="info-card-wrapper animate-slide-right">
+          <div class="dest-info-card">
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">LIMESTONE MAJESTY</div>
+                <h2 class="card-dest-title">NINH BINH & HA LONG</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Ninh Binh & Lan Ha Bay · Northern Vietnam</div>
+              <p class="card-desc">Hike Mua Cave peak, board a hand-paddled boat through Tam Coc's karst valleys, and board a premium luxury cruise across Lan Ha and Halong Bay's dramatic, emerald waters.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Mua Cave hikes, Lan Ha Bay cruising, Tam Coc waterways</div>
+                <div><strong>Ideal for:</strong> Nature lovers · Hikers · Luxury cruisers</div>
+                <div><strong>Suggested stay:</strong> 3-4 Days</div>
+                <div><strong>Best time:</strong> September – May</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Ninh Binh & Ha Long">EXPLORE THE VALLEYS →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 3: HOI AN -->
+    <section class="film-chapter chapter-hoian" id="chapter-hoian" data-region="central-vietnam" data-region-name="CENTRAL • HOI AN" data-beacon-x="122" data-beacon-y="78">
+      <div class="chapter-background-media">
+        <img src="images/vietnam/16_Hoi_An_Romantic_Dinner_in_Rice_Fields.jpeg" alt="Hoi An romantic dinner in rice fields" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid">
+        <div class="info-card-wrapper animate-slide-left">
+          <div class="dest-info-card">
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">ANCIENT LANTERNS</div>
+                <h2 class="card-dest-title">HOI AN</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Hoi An details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Quang Nam Province · Central Vietnam</div>
+              <p class="card-desc">Walk the lantern-lit cobblestones of a historic trading port. Taste modern local gastronomy, bike through organic eco-villages, and enjoy private, romantic dinners in lush green rice fields.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Yellow ancient walls, Lantern festivals, Rice field dining</div>
+                <div><strong>Ideal for:</strong> Couples · Gourmet foodies · Art collectors</div>
+                <div><strong>Suggested stay:</strong> 2-3 Days</div>
+                <div><strong>Best time:</strong> February – August</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Hoi An">EXPLORE HOI AN →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 4: SAIGON -->
+    <section class="film-chapter chapter-saigon" id="chapter-saigon" data-region="south-vietnam" data-region-name="SOUTH • SAIGON" data-beacon-x="118" data-beacon-y="115">
+      <div class="chapter-background-media">
+        <img src="images/vietnam/23_Saigon_Cu _Chi_Tunnels.jpeg" alt="Saigon Cu Chi Tunnels" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid right-aligned">
+        <div class="info-card-wrapper animate-slide-right">
+          <div class="dest-info-card">
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">METROPOLIS & ARCHITECTURE</div>
+                <h2 class="card-dest-title">SAIGON</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Saigon details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Ho Chi Minh City · Southern Vietnam</div>
+              <p class="card-desc">Contrast contemporary art gallery spaces with the historic Cu Chi Tunnels. Explore local artisanal gin distilleries and experience modern culinary masterclasses in hidden urban spaces.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Cu Chi Tunnels, Contemporary art, Craft gin scene, Rooftop dining</div>
+                <div><strong>Ideal for:</strong> Urban adventurers · Gin tasting · History buffs</div>
+                <div><strong>Suggested stay:</strong> 3 Days</div>
+                <div><strong>Best time:</strong> December – April</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Saigon">EXPLORE SAIGON →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 5: SIEM REAP -->
+    <section class="film-chapter chapter-siemreap" id="chapter-siemreap" data-region="cambodia" data-region-name="CAMBODIA • SIEM REAP" data-beacon-x="98" data-beacon-y="112">
+      <div class="chapter-background-media">
+        <img src="images/vietnam/20_Angkor_Wat_Panorama_Siem_Reap.jpeg" alt="Angkor Wat Siem Reap Cambodia" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid">
+        <div class="info-card-wrapper animate-slide-left">
+          <div class="dest-info-card">
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">SACRED ANGKOR TEMPLES</div>
+                <h2 class="card-dest-title">SIEM REAP, CAMBODIA</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle Siem Reap details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Angkor Archaeological Park · Cambodia</div>
+              <p class="card-desc">Stand before the towering spires of Angkor Wat. Explore jungle-clad ruins of Ta Prohm and Bayon temple, cruise Tonle Sap at sunset, and dine under starlit Cambodian rice valleys.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Angkor Wat, Ta Prohm jungle temple, Tonle Sap cruises</div>
+                <div><strong>Ideal for:</strong> Temple historians · Photographers · Romantics</div>
+                <div><strong>Suggested stay:</strong> 3-4 Days</div>
+                <div><strong>Best time:</strong> November – February</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Siem Reap">EXPLORE SIEM REAP →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 6: BANGKOK & ISLANDS -->
+    <section class="film-chapter chapter-bangkok" id="chapter-bangkok" data-region="thailand" data-region-name="THAILAND • RETREAT" data-beacon-x="74" data-beacon-y="92">
+      <div class="chapter-background-media">
+        <img src="images/vietnam/30_Koh_Yao_Yai_Island_Aerial_View.jpeg" alt="Koh Yao Yai aerial view" class="bg-photo zoom-travel-photo">
+        <div class="vignette-overlay"></div>
+      </div>
+      <div class="chapter-content-grid right-aligned">
+        <div class="info-card-wrapper animate-slide-right">
+          <div class="dest-info-card">
+            <div class="dest-card-header-toggle">
+              <div class="card-header-titles">
+                <div class="card-tag">METROPOLIS & SANCTUARY</div>
+                <h2 class="card-dest-title">BANGKOK & KOH YAO YAI</h2>
+              </div>
+              <button class="card-fold-toggle-btn" aria-label="Toggle details">
+                <svg viewBox="0 0 24 24" class="gold-chevron-icon"><path d="M 6 9 L 12 15 L 18 9" stroke="#FFD85F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="dest-card-collapsible-body">
+              <div class="card-sub">Bangkok & Phang Nga Bay · Thailand</div>
+              <p class="card-desc">Savor the buzzing energetic alleys of Bangkok's Chinatown and the Grand Palace. Then fly south to Phang Nga Bay, retreating to a luxury pool villa on the serene shores of Koh Yao Yai.</p>
+              <div class="card-meta-list">
+                <div><strong>Best known for:</strong> Grand Palace, Chao Phraya canals, Koh Yao Yai lagoon pool villas</div>
+                <div><strong>Ideal for:</strong> Urban explorers · Beach relaxers · Island hoppers</div>
+                <div><strong>Suggested stay:</strong> 5-6 Days</div>
+                <div><strong>Best time:</strong> November – March</div>
+              </div>
+              <button class="card-cta-btn open-booking-trigger" data-dest="Bangkok & Koh Yao Yai">EXPLORE THAILAND →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- DYNAMIC ITINERARY VIEWPORT SECTION -->
+  <section id="itinerary-viewport" class="itinerary-viewport">
+    <!-- Dynamically rendered by vietnam.js -->
+  </section>
+
+  <!-- GLOBAL ABOUT US SECTION -->
+  <section class="about-section" id="about-section">
+    <div class="section-header">
+      <h2>ABOUT ABBEY'S ROAD</h2>
+      <p class="section-tagline">Your Indochina Travel Concierge | Copenhagen, Denmark</p>
+    </div>
+    <div class="about-content-grid">
+      <div class="about-text-card">
+        <h3>Our Vision & Mission</h3>
+        <p><strong>Vision:</strong> To become Denmark's leading boutique travel concierge for Indochina by creating meaningful, authentic, and hyper-premium travel experiences.</p>
+        <p><strong>Mission:</strong> To connect Nordic travelers with local expertise, vetted high-luxury accommodation, and flawless private transits, promoting responsible travel throughout Southeast Asia.</p>
+      </div>
+      <div class="about-text-card">
+        <h3>Nordic Trade Coordination</h3>
+        <p>Operating from our Copenhagen base with specialized ground networks across Vietnam, Cambodia, and Thailand, Abbey's Road guarantees safety, exceptional hotel standards, and 24/7 client support at every phase of the journey.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL MEET THE TEAM SECTION -->
+  <section class="team-section" id="team-section">
+    <div class="section-header">
+      <h2>MEET THE TEAM</h2>
+      <p>The dedicated travel specialists and operations managers behind your Indochina journey.</p>
+    </div>
+    <div class="team-grid team-grid-4">
+      
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Abbey Salvador">
+        </div>
+        <div class="team-info">
+          <h4>Abbey</h4>
+          <p class="team-role">Denmark Manager</p>
+          <p class="team-bio">Leads business development, European client relations, sales, marketing, and bespoke product design for Danish travelers.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Lizette">
+        </div>
+        <div class="team-info">
+          <h4>Lizette</h4>
+          <p class="team-role">Indochina Operations Manager</p>
+          <p class="team-bio">Coordinates local operators, confirms luxury resort & cruise bookings, and oversees ground guest support networks.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Michael">
+        </div>
+        <div class="team-info">
+          <h4>Michael</h4>
+          <p class="team-role">AI & Itinerary Development</p>
+          <p class="team-bio">Spearheads AI-generated itinerary layouts, travel content automation, package design, and digital concierge automation.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-img-container">
+          <img src="images/avatar_placeholder.png" alt="Rowela">
+        </div>
+        <div class="team-info">
+          <h4>Rowela</h4>
+          <p class="team-role">Guest Services Coordinator</p>
+          <p class="team-bio">Manages daily guest satisfaction, handles real-time flight changes, and coordinates custom excursions on the ground.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MEETING BOOKING MODAL -->
+  <div id="meeting-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="close-modal-btn" id="close-modal">&times;</button>
+      <h3>Handcraft Your Escape</h3>
+      <p>Schedule a private consulting session with our Copenhagen travel planners to customize your dream itinerary.</p>
+      
+      <form id="b2b-contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="client-name">Your Name</label>
+            <input type="text" id="client-name" required placeholder="e.g. Michael Nielsen">
+          </div>
+          <div class="form-group">
+            <label for="client-email">Email Address</label>
+            <input type="email" id="client-email" required placeholder="e.g. michael@example.dk">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="travel-dates">Preferred Travel Dates</label>
+          <input type="text" id="travel-dates" placeholder="e.g. Winter 2026 / 2027">
+        </div>
+        <div class="form-group">
+          <label for="notes">Notes / Tailor-made requests</label>
+          <textarea id="notes" rows="4" placeholder="Mention preferred cabin types, specific dietary requests, or custom dates..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary-cyan">Submit Tailor-made Request</button>
+      </form>
+      <div id="form-success-msg" class="success-message" style="display: none; color: var(--accent-cyan); text-align: center; margin-top: 1rem; font-weight: 600;">
+        ✓ Request received! We will contact you within 24 hours.
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="main-footer" style="background: #111e14; border-top: 2px solid var(--accent-gold); padding: 5rem 2rem 2rem;">
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
+      <div>
+        <img src="images/philippines/logo_horizontal_cutout.png" alt="Abbey's Road Logo" style="height: 35px; margin-bottom: 1.5rem;">
+        <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(255,255,255,0.7);">Your gateway to bespoke luxury travel across Southeast Asia. Bridging Nordic convenience with exceptional local hospitality.</p>
+      </div>
+      <div>
+        <h4 style="color: var(--accent-gold); margin-bottom: 1.2rem; font-size: 0.95rem; letter-spacing: 1px;">OUR PORTFOLIO</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+          <li><a href="philippines.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.88rem;">Philippines</a></li>
+          <li><a href="oman.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.88rem;">Oman</a></li>
+          <li><a href="vietnam.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.88rem;">Vietnam & Indochina</a></li>
+          <li><a href="nordic.html" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.88rem;">The Nordic</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: var(--accent-gold); margin-bottom: 1.2rem; font-size: 0.95rem; letter-spacing: 1px;">COPENHAGEN OFFICE</h4>
+        <p style="font-size: 0.88rem; line-height: 1.8; color: rgba(255,255,255,0.7);">
+          Abbey's Road ApS<br>
+          Copenhagen, Denmark<br>
+          Email: <a href="mailto:hello@abbeysroad.dk" style="color: var(--accent-cyan); text-decoration: none;">hello@abbeysroad.dk</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom" style="max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.5);">
+      <p>&copy; 2026 Abbey's Road. All rights reserved. Vetted Partner of Premium Destination Management.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="vietnam.js"></script>
+</body>
+</html>
