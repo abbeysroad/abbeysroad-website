@@ -50,12 +50,11 @@
     bindModalEvents();
 
     window.addEventListener('resize', debounce(() => {
-      const wasMobile = EBookState.isMobile;
       EBookState.isMobile = window.innerWidth <= 768;
-      if (EBookState.pdfDoc) {
-        renderFlipbook();
+      if (EBookState.pdfDoc && document.getElementById('ebook-modal-overlay')?.classList.contains('active')) {
+        recalculateAndRender();
       }
-    }, 250));
+    }, 200));
   }
 
   function debounce(fn, delay) {
@@ -97,7 +96,7 @@
 
           <!-- TOP CONTROL HEADER BAR -->
           <header id="ebook-top-bar" class="ebook-top-bar">
-            <!-- Left: Title & Logo -->
+            <!-- Left: Title & Logo (Desktop Only) -->
             <div class="ebook-header-title-box">
               <svg class="ebook-header-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -111,7 +110,7 @@
               <!-- Flip Direction Switcher Button (Mobile/Tablet Only) -->
               <button id="ebook-flip-mode-btn" class="ebook-btn-icon-text ebook-flip-mode-btn" title="Choose page flip movement">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
+                  <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L13 16"/>
                 </svg>
                 <span id="ebook-flip-mode-label">Flip: Upward</span>
               </button>
@@ -308,14 +307,12 @@
       });
     }
 
-    // Flip Mode Selector Modal
     if (flipModeBtn) {
       flipModeBtn.addEventListener('click', function () {
         openGestureModal();
       });
     }
 
-    // Gesture option card selection
     document.querySelectorAll('.ebook-gesture-option-card').forEach(card => {
       card.addEventListener('click', function () {
         document.querySelectorAll('.ebook-gesture-option-card').forEach(c => c.classList.remove('selected'));
@@ -341,7 +338,6 @@
       });
     }
 
-    // Auto-hide Top Header in Fullscreen Mode
     function revealTopBar() {
       if (modalContainer.classList.contains('is-fullscreen')) {
         topBar.classList.add('header-visible');
@@ -356,7 +352,6 @@
     if (hotspot) hotspot.addEventListener('touchstart', revealTopBar);
     if (topBar) topBar.addEventListener('mousemove', revealTopBar);
 
-    // Text selection listener for bookmarking text quotes
     document.addEventListener('selectionchange', handleTextSelection);
   }
 
@@ -375,7 +370,7 @@
     if (!EBookState.pdfDoc) {
       loadPDFDocument();
     } else {
-      renderFlipbook();
+      recalculateAndRender();
     }
   }
 
@@ -396,8 +391,8 @@
     const container = document.getElementById('ebook-flip-container');
     container.innerHTML = `
       <div style="color: #FFD85F; font-family: 'Marcellus', serif; text-align: center; padding: 40px;">
-        <div style="font-size: 1.4rem; margin-bottom: 12px;">Loading Philippines Travel Guide...</div>
-        <div style="font-size: 0.88rem; color: #C3F8FE;">Preparing realistic 3D flipbook pages...</div>
+        <div style="font-size: 1.3rem; margin-bottom: 12px;">Loading Philippines Travel Guide...</div>
+        <div style="font-size: 0.85rem; color: #C3F8FE;">Preparing realistic 3D flipbook pages...</div>
       </div>
     `;
 
@@ -420,8 +415,51 @@
 
 
   /* ==========================================================================
-     3. RENDER ALL PDF PAGES TO CANVAS & TEXT LAYERS WITH NO DISTORTION
+     3. CALCULATE EXACT BOUNDS & RENDER PDF PAGES WITHOUT CLIPPING OR DISTORTION
      ========================================================================== */
+  function computePageDimensions() {
+    const viewport = document.getElementById('ebook-viewport');
+    if (!viewport) return;
+
+    const box = viewport.getBoundingClientRect();
+    const isFS = EBookState.isFullscreen;
+    
+    // Safety padding so page height NEVER exceeds available height
+    const paddingY = isFS ? 16 : 24;
+    const paddingX = EBookState.isMobile ? 12 : 120; // 120px for desktop side arrows
+
+    let availableH = box.height - paddingY;
+    let availableW = box.width - paddingX;
+
+    if (!EBookState.isMobile) {
+      // 2-page spread
+      let maxPageW = availableW / 2;
+      let maxPageH = availableH;
+
+      if (maxPageW / maxPageH > EBookState.pageAspect) {
+        // Height constraint
+        EBookState.pageHeight = Math.floor(maxPageH);
+        EBookState.pageWidth = Math.floor(maxPageH * EBookState.pageAspect);
+      } else {
+        // Width constraint
+        EBookState.pageWidth = Math.floor(maxPageW);
+        EBookState.pageHeight = Math.floor(maxPageW / EBookState.pageAspect);
+      }
+    } else {
+      // Mobile single page
+      let maxPageW = availableW;
+      let maxPageH = availableH;
+
+      if (maxPageW / maxPageH > EBookState.pageAspect) {
+        EBookState.pageHeight = Math.floor(maxPageH);
+        EBookState.pageWidth = Math.floor(maxPageH * EBookState.pageAspect);
+      } else {
+        EBookState.pageWidth = Math.floor(maxPageW);
+        EBookState.pageHeight = Math.floor(maxPageW / EBookState.pageAspect);
+      }
+    }
+  }
+
   async function renderAllPages() {
     const container = document.getElementById('ebook-flip-container');
     container.innerHTML = '';
@@ -429,46 +467,12 @@
     EBookState.pageCanvases = [];
     EBookState.pageTextLayers = [];
 
-    // Measure stage dimensions to fill viewport without black space
-    const viewportBox = document.getElementById('ebook-viewport').getBoundingClientRect();
-    const isFS = EBookState.isFullscreen;
-    
-    // First page to determine exact aspect ratio
+    // Get natural page aspect ratio from first page
     const firstPage = await EBookState.pdfDoc.getPage(1);
     const vp = firstPage.getViewport({ scale: 1.0 });
     EBookState.pageAspect = vp.width / vp.height;
 
-    // Calculate dimensions to maximize size and fill screen
-    let availableH = viewportBox.height - (isFS ? 20 : 30);
-    let availableW = viewportBox.width - (EBookState.isMobile ? 16 : 120); // account for side arrows on desktop
-
-    if (!EBookState.isMobile) {
-      // 2-page spread: double width
-      let maxPageW = availableW / 2;
-      let maxPageH = availableH;
-
-      if (maxPageW / maxPageH > EBookState.pageAspect) {
-        // Height is constraint
-        EBookState.pageHeight = maxPageH;
-        EBookState.pageWidth = maxPageH * EBookState.pageAspect;
-      } else {
-        // Width is constraint
-        EBookState.pageWidth = maxPageW;
-        EBookState.pageHeight = maxPageW / EBookState.pageAspect;
-      }
-    } else {
-      // Single page view for mobile
-      let maxPageW = availableW;
-      let maxPageH = availableH;
-
-      if (maxPageW / maxPageH > EBookState.pageAspect) {
-        EBookState.pageHeight = maxPageH;
-        EBookState.pageWidth = maxPageH * EBookState.pageAspect;
-      } else {
-        EBookState.pageWidth = maxPageW;
-        EBookState.pageHeight = maxPageW / EBookState.pageAspect;
-      }
-    }
+    computePageDimensions();
 
     const renderPromises = [];
 
@@ -476,9 +480,8 @@
       const pageCard = document.createElement('div');
       pageCard.className = 'ebook-page-card';
       pageCard.dataset.pageNumber = pageNum;
-      pageCard.style.width = `${Math.round(EBookState.pageWidth)}px`;
-      pageCard.style.height = `${Math.round(EBookState.pageHeight)}px`;
-      pageCard.style.aspectRatio = `${EBookState.pageAspect}`;
+      pageCard.style.width = `${EBookState.pageWidth}px`;
+      pageCard.style.height = `${EBookState.pageHeight}px`;
 
       const canvas = document.createElement('canvas');
       const textLayerDiv = document.createElement('div');
@@ -512,7 +515,6 @@
 
     await page.render(renderContext).promise;
 
-    // Render Text Layer for native selection
     try {
       const textContent = await page.getTextContent();
       window.pdfjsLib.renderTextLayer({
@@ -524,6 +526,16 @@
     } catch (e) {
       console.warn(`Text layer render warning for page ${pageNum}:`, e);
     }
+  }
+
+  function recalculateAndRender() {
+    computePageDimensions();
+    const pages = document.querySelectorAll('.ebook-page-card');
+    pages.forEach(p => {
+      p.style.width = `${EBookState.pageWidth}px`;
+      p.style.height = `${EBookState.pageHeight}px`;
+    });
+    renderFlipbook();
   }
 
 
@@ -548,7 +560,6 @@
     updateNavArrowVisibility();
   }
 
-  // DESKTOP & TABLET: 2-PAGE SPREAD 3D FLIPBOOK
   function setupDesktopSpreadStage() {
     const container = document.getElementById('ebook-flip-container');
     container.className = 'stpageflip-stage';
@@ -559,6 +570,8 @@
       p.style.position = '';
       p.style.transform = '';
       p.style.margin = '';
+      p.style.width = `${EBookState.pageWidth}px`;
+      p.style.height = `${EBookState.pageHeight}px`;
     });
 
     if (window.StPageFlip && window.StPageFlip.PageFlip) {
@@ -566,10 +579,10 @@
         width: Math.round(EBookState.pageWidth),
         height: Math.round(EBookState.pageHeight),
         size: 'fixed',
-        minWidth: 300,
-        maxWidth: 1200,
-        minHeight: 400,
-        maxHeight: 1400,
+        minWidth: 200,
+        maxWidth: 1400,
+        minHeight: 300,
+        maxHeight: 1600,
         drawShadow: true,
         maxShadowOpacity: 0.8,
         showCover: true,
@@ -607,17 +620,17 @@
     });
   }
 
-  // MOBILE: DUAL MODE (UPWARD FLIP OR SIDEWAYS FLIP)
   function setupMobileStage() {
     const container = document.getElementById('ebook-flip-container');
 
     if (EBookState.mobileFlipMode === 'vertical') {
-      // UPWARD SCROLL / FLIP MODE
       container.className = 'ebook-mobile-vertical-stage';
       const pages = container.querySelectorAll('.ebook-page-card');
       pages.forEach(p => {
         p.style.display = 'block';
         p.style.position = 'relative';
+        p.style.width = `${EBookState.pageWidth}px`;
+        p.style.height = `${EBookState.pageHeight}px`;
       });
 
       const observer = new IntersectionObserver((entries) => {
@@ -632,12 +645,13 @@
       pages.forEach(p => observer.observe(p));
 
     } else {
-      // SIDEWAYS FLIP MODE
       container.className = 'ebook-mobile-horizontal-stage';
       const pages = Array.from(container.querySelectorAll('.ebook-page-card'));
       
       pages.forEach((p, idx) => {
         p.style.position = 'absolute';
+        p.style.width = `${EBookState.pageWidth}px`;
+        p.style.height = `${EBookState.pageHeight}px`;
         if (idx === EBookState.currentPage - 1) {
           p.style.transform = 'translateX(0) scale(1)';
           p.style.opacity = '1';
@@ -731,7 +745,7 @@
 
 
   /* ==========================================================================
-     6. FULLSCREEN MODE, ICON TOGGLE & AUTO-HIDING TOP BAR
+     6. SEAMLESS FULLSCREEN MODE & DIMENSION RECALCULATION
      ========================================================================== */
   function toggleFullscreen() {
     const container = document.getElementById('ebook-modal-container');
@@ -754,8 +768,8 @@
       const topBar = document.getElementById('ebook-top-bar');
       topBar.classList.remove('header-visible');
 
-      // Re-render pages to fill full screen with zero black space
-      setTimeout(() => renderAllPages(), 150);
+      // Smooth recalculation & re-render after CSS transition completes
+      setTimeout(() => recalculateAndRender(), 360);
 
     } else {
       container.classList.remove('is-fullscreen');
@@ -766,7 +780,8 @@
         document.exitFullscreen().catch(err => console.log(err));
       }
 
-      setTimeout(() => renderAllPages(), 150);
+      // Smooth recalculation & re-render after CSS transition completes
+      setTimeout(() => recalculateAndRender(), 360);
     }
   }
 
@@ -775,7 +790,6 @@
     if (!btn) return;
 
     if (isFS) {
-      // Minimize Icon (Collapse)
       btn.title = "Exit Full Screen";
       btn.innerHTML = `
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
@@ -783,7 +797,6 @@
         </svg>
       `;
     } else {
-      // Expand Icon
       btn.title = "Toggle Full Screen";
       btn.innerHTML = `
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
