@@ -2,7 +2,7 @@
  * ABBEY'S ROAD - INTERACTIVE 3D PDF E-BOOK READER ENGINE
  * PDF.js Canvas + Text Layer Rendering, Desktop 3D Page Flip,
  * Mobile Vertical/Horizontal Flip Modes with Gesture Overlays,
- * Mobile Text/Photo Split Pages, Text Highlight Bookmarking & Auto-Hiding Header.
+ * Text Highlight Bookmarking & Auto-Hiding Fullscreen Header.
  */
 
 (function () {
@@ -51,14 +51,9 @@
     bindModalEvents();
 
     window.addEventListener('resize', debounce(() => {
-      const wasMobile = EBookState.isMobile;
       EBookState.isMobile = window.innerWidth <= 768;
       if (EBookState.pdfDoc && document.getElementById('ebook-modal-overlay')?.classList.contains('active')) {
-        if (wasMobile !== EBookState.isMobile) {
-          renderAllPages();
-        } else {
-          recalculateAndRender();
-        }
+        recalculateAndRender();
       }
     }, 150));
   }
@@ -247,7 +242,7 @@
     let lastHandled = 0;
     function handleTrigger(e) {
       const now = Date.now();
-      if (now - lastHandled < 300) return;
+      if (now - lastHandled < 300) return; // Prevent double trigger on touchend + click
       const trigger = e.target.closest('#open-ebook-btn, .ebook-trigger-btn');
       if (trigger) {
         lastHandled = now;
@@ -424,6 +419,7 @@
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
+    // Pause Lenis smooth scroll if present to prevent page scrolling behind modal
     if (window.lenis && typeof window.lenis.stop === 'function') {
       window.lenis.stop();
     }
@@ -445,6 +441,7 @@
     modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
 
+    // Resume Lenis smooth scroll if present
     if (window.lenis && typeof window.lenis.start === 'function') {
       window.lenis.start();
     }
@@ -459,6 +456,7 @@
     }
     updateFullscreenIcon(false);
 
+    // Clean up popovers / drawers / gesture overlays
     const popover = document.getElementById('ebook-text-popover');
     if (popover) popover.remove();
 
@@ -489,6 +487,8 @@
 
     window.pdfjsLib.getDocument(EBookState.pdfUrl).promise.then(pdf => {
       EBookState.pdfDoc = pdf;
+      EBookState.totalPages = pdf.numPages;
+      updatePageCounter();
       renderAllPages();
     }).catch(err => {
       console.error("Error loading PDF:", err);
@@ -498,7 +498,7 @@
 
 
   /* ==========================================================================
-     3. CALCULATE EXACT BOUNDS & RENDER PDF PAGES (MOBILE TEXT/PHOTO SPLIT)
+     3. CALCULATE EXACT BOUNDS & RENDER PDF PAGES WITHOUT CLIPPING OR DISTORTION
      ========================================================================== */
   function computePageDimensions() {
     const viewport = document.getElementById('ebook-viewport');
@@ -551,46 +551,14 @@
 
     computePageDimensions();
 
-    const rawPdfPages = EBookState.pdfDoc.numPages;
-    
-    if (EBookState.isMobile) {
-      // Mobile/Tablet: Split each PDF page into (1) Zoomed Text Page & (2) Background Photo Page
-      EBookState.totalPages = rawPdfPages * 2;
-    } else {
-      // Desktop: Standard PDF pages
-      EBookState.totalPages = rawPdfPages;
-    }
-
-    updatePageCounter();
-
     const renderPromises = [];
 
-    for (let cardIdx = 1; cardIdx <= EBookState.totalPages; cardIdx++) {
-      let pdfPageNum, viewType;
-
-      if (EBookState.isMobile) {
-        pdfPageNum = Math.ceil(cardIdx / 2);
-        viewType = (cardIdx % 2 === 1) ? 'text' : 'photo';
-      } else {
-        pdfPageNum = cardIdx;
-        viewType = 'full';
-      }
-
+    for (let pageNum = 1; pageNum <= EBookState.totalPages; pageNum++) {
       const pageCard = document.createElement('div');
       pageCard.className = 'ebook-page-card';
-      pageCard.dataset.pageNumber = cardIdx;
-      pageCard.dataset.pdfPageNumber = pdfPageNum;
-      pageCard.dataset.viewType = viewType;
+      pageCard.dataset.pageNumber = pageNum;
       pageCard.style.width = `${EBookState.pageWidth}px`;
       pageCard.style.height = `${EBookState.pageHeight}px`;
-
-      // Add badge for Mobile & Tablet view
-      if (EBookState.isMobile) {
-        const badge = document.createElement('div');
-        badge.className = 'ebook-page-type-badge';
-        badge.textContent = viewType === 'text' ? `PAGE ${pdfPageNum} • TEXT VIEW` : `PAGE ${pdfPageNum} • PHOTO VIEW`;
-        pageCard.appendChild(badge);
-      }
 
       const canvas = document.createElement('canvas');
       const textLayerDiv = document.createElement('div');
@@ -600,97 +568,40 @@
       pageCard.appendChild(textLayerDiv);
       container.appendChild(pageCard);
 
-      renderPromises.push(renderSinglePage(pdfPageNum, canvas, textLayerDiv, viewType));
+      renderPromises.push(renderSinglePage(pageNum, canvas, textLayerDiv));
     }
 
     await Promise.all(renderPromises);
     renderFlipbook();
   }
 
-  async function renderSinglePage(pdfPageNum, canvas, textLayerDiv, viewType) {
-    const page = await EBookState.pdfDoc.getPage(pdfPageNum);
+  async function renderSinglePage(pageNum, canvas, textLayerDiv) {
+    const page = await EBookState.pdfDoc.getPage(pageNum);
     const unscaledVp = page.getViewport({ scale: 1.0 });
-    
-    const baseScale = EBookState.pageHeight / unscaledVp.height;
-    const dpr = window.devicePixelRatio || 1.5;
+    const scale = (EBookState.pageHeight / unscaledVp.height) * (window.devicePixelRatio || 1.5);
+    const viewport = page.getViewport({ scale: scale });
 
-    if (viewType === 'text') {
-      // Zoomed-in Text View: Render top 65% text section zoomed in to fill full page height
-      const zoomFactor = 1.75;
-      const renderScale = baseScale * zoomFactor * dpr;
-      const fullVp = page.getViewport({ scale: renderScale });
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
 
-      const tempCanvas = document.createElement('canvas');
-      tempCanvas.width = fullVp.width;
-      tempCanvas.height = fullVp.height;
-      const tempCtx = tempCanvas.getContext('2d');
+    const ctx = canvas.getContext('2d');
+    const renderContext = {
+      canvasContext: ctx,
+      viewport: viewport
+    };
 
-      await page.render({ canvasContext: tempCtx, viewport: fullVp }).promise;
+    await page.render(renderContext).promise;
 
-      canvas.width = Math.round(EBookState.pageWidth * dpr);
-      canvas.height = Math.round(EBookState.pageHeight * dpr);
-
-      const ctx = canvas.getContext('2d');
-      // Crop top 60% of PDF page and scale to fit card canvas
-      const cropH = fullVp.height * 0.60;
-      ctx.drawImage(tempCanvas, 0, 0, fullVp.width, cropH, 0, 0, canvas.width, canvas.height);
-
-      try {
-        const textContent = await page.getTextContent();
-        window.pdfjsLib.renderTextLayer({
-          textContentSource: textContent,
-          container: textLayerDiv,
-          viewport: page.getViewport({ scale: baseScale * zoomFactor }),
-          textDivs: []
-        });
-      } catch (e) {
-        console.warn(`Text layer render warning for page ${pdfPageNum}:`, e);
-      }
-
-    } else if (viewType === 'photo') {
-      // Background Image View: Render photo/scenery section zoomed & centered
-      const zoomFactor = 1.75;
-      const renderScale = baseScale * zoomFactor * dpr;
-      const fullVp = page.getViewport({ scale: renderScale });
-
-      const tempCanvas = document.createElement('canvas');
-      tempCanvas.width = fullVp.width;
-      tempCanvas.height = fullVp.height;
-      const tempCtx = tempCanvas.getContext('2d');
-
-      await page.render({ canvasContext: tempCtx, viewport: fullVp }).promise;
-
-      canvas.width = Math.round(EBookState.pageWidth * dpr);
-      canvas.height = Math.round(EBookState.pageHeight * dpr);
-
-      const ctx = canvas.getContext('2d');
-      // Crop bottom 65% of PDF page (photo area)
-      const cropY = fullVp.height * 0.35;
-      const cropH = fullVp.height * 0.65;
-      ctx.drawImage(tempCanvas, 0, cropY, fullVp.width, cropH, 0, 0, canvas.width, canvas.height);
-
-    } else {
-      // Desktop Full View
-      const renderScale = baseScale * dpr;
-      const viewport = page.getViewport({ scale: renderScale });
-
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-
-      const ctx = canvas.getContext('2d');
-      await page.render({ canvasContext: ctx, viewport: viewport }).promise;
-
-      try {
-        const textContent = await page.getTextContent();
-        window.pdfjsLib.renderTextLayer({
-          textContentSource: textContent,
-          container: textLayerDiv,
-          viewport: page.getViewport({ scale: baseScale }),
-          textDivs: []
-        });
-      } catch (e) {
-        console.warn(`Text layer render warning for page ${pdfPageNum}:`, e);
-      }
+    try {
+      const textContent = await page.getTextContent();
+      window.pdfjsLib.renderTextLayer({
+        textContentSource: textContent,
+        container: textLayerDiv,
+        viewport: page.getViewport({ scale: EBookState.pageHeight / unscaledVp.height }),
+        textDivs: []
+      });
+    } catch (e) {
+      console.warn(`Text layer render warning for page ${pageNum}:`, e);
     }
   }
 
@@ -1015,8 +926,7 @@
       if (!textLayer) return;
 
       const pageCard = textLayer.closest('.ebook-page-card');
-      const cardNum = pageCard ? parseInt(pageCard.dataset.pageNumber, 10) : EBookState.currentPage;
-      const pdfNum = pageCard ? parseInt(pageCard.dataset.pdfPageNumber, 10) : EBookState.currentPage;
+      const pageNum = pageCard ? parseInt(pageCard.dataset.pageNumber, 10) : EBookState.currentPage;
 
       const popover = document.createElement('div');
       popover.id = 'ebook-text-popover';
@@ -1035,8 +945,7 @@
         e.stopPropagation();
         addBookmark({
           type: 'text',
-          page: cardNum,
-          pdfPage: pdfNum,
+          page: pageNum,
           snippet: `"${selectedText.substring(0, 110)}${selectedText.length > 110 ? '...' : ''}"`,
           date: new Date().toLocaleDateString()
         });
@@ -1049,15 +958,10 @@
   }
 
   function bookmarkCurrentPage() {
-    const currentCard = document.querySelector(`.ebook-page-card[data-page-number="${EBookState.currentPage}"]`);
-    const pdfNum = currentCard ? parseInt(currentCard.dataset.pdfPageNumber, 10) : EBookState.currentPage;
-    const viewType = currentCard ? currentCard.dataset.viewType : 'full';
-
     addBookmark({
       type: 'page',
       page: EBookState.currentPage,
-      pdfPage: pdfNum,
-      snippet: EBookState.isMobile ? `Page ${pdfNum} (${viewType.toUpperCase()} VIEW)` : `Page ${EBookState.currentPage} - Full Page`,
+      snippet: `Page ${EBookState.currentPage} - Full Page Bookmark`,
       date: new Date().toLocaleDateString()
     });
   }
@@ -1132,14 +1036,7 @@
   function updatePageCounter() {
     const counter = document.getElementById('ebook-page-counter');
     if (counter) {
-      if (EBookState.isMobile) {
-        const currentCard = document.querySelector(`.ebook-page-card[data-page-number="${EBookState.currentPage}"]`);
-        const viewType = currentCard ? (currentCard.dataset.viewType === 'text' ? 'Text' : 'Photo') : '';
-        const pdfNum = currentCard ? currentCard.dataset.pdfPageNumber : Math.ceil(EBookState.currentPage / 2);
-        counter.textContent = `Page ${EBookState.currentPage} of ${EBookState.totalPages} (P.${pdfNum} ${viewType})`;
-      } else {
-        counter.textContent = `Page ${EBookState.currentPage} of ${EBookState.totalPages || '--'}`;
-      }
+      counter.textContent = `${EBookState.currentPage} of ${EBookState.totalPages || '--'}`;
     }
   }
 

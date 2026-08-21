@@ -109,7 +109,7 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
+  pointer-events: none; /* CRITICAL: Prevent inactive overlay from blocking page clicks! */
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 16px;
   box-sizing: border-box;
@@ -118,7 +118,7 @@
 .ebook-modal-overlay.active {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
+  pointer-events: auto; /* Enable touch & click events ONLY when modal is active */
 }
 
 .ebook-modal-container {
@@ -437,25 +437,6 @@
   object-fit: contain;
   display: block;
   pointer-events: none;
-}
-
-/* Mobile & Tablet Page Type Badge (Text View vs Photo View) */
-.ebook-page-type-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  z-index: 25;
-  background: rgba(16, 76, 113, 0.92);
-  border: 1px solid var(--accent-gold, #FFD85F);
-  color: var(--accent-gold, #FFD85F);
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 12px;
-  letter-spacing: 0.8px;
-  pointer-events: none;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* PDF Text Layer (Enables native highlighting) */
