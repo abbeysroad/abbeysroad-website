@@ -92,9 +92,6 @@
       <div id="ebook-modal-overlay" class="ebook-modal-overlay" aria-hidden="true">
         <div id="ebook-modal-container" class="ebook-modal-container">
           
-          <!-- Fullscreen Hotspot Trigger Area -->
-          <div id="ebook-fullscreen-hotspot" class="ebook-fullscreen-top-hotspot"></div>
-
           <!-- TOP CONTROL HEADER BAR -->
           <header id="ebook-top-bar" class="ebook-top-bar">
             <!-- Left: Title & Logo (Desktop Only) -->
@@ -111,7 +108,7 @@
               <!-- Flip Direction Switcher Button (Mobile/Tablet Only) -->
               <button id="ebook-flip-mode-btn" class="ebook-btn-icon-text ebook-flip-mode-btn" title="Choose page flip movement">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
+                  <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L13 16"/>
                 </svg>
                 <span id="ebook-flip-mode-label">Flip: Upward</span>
               </button>
@@ -256,22 +253,61 @@
     const fullscreenBtn = document.getElementById('ebook-fullscreen-btn');
     const bookmarkPageBtn = document.getElementById('ebook-bookmark-page-btn');
     const bookmarksListBtn = document.getElementById('ebook-bookmarks-list-btn');
-    const drawerCloseBtn = document.getElementById('ebook-drawer-close-btn');
     const flipModeBtn = document.getElementById('ebook-flip-mode-btn');
+
+    const drawerCloseBtn = document.getElementById('ebook-drawer-close-btn');
     const gestureModal = document.getElementById('ebook-gesture-modal');
     const gestureConfirmBtn = document.getElementById('ebook-gesture-confirm-btn');
     const tutorialCloseBtn = document.getElementById('ebook-tutorial-close-btn');
     const navPrevBtn = document.getElementById('ebook-nav-prev');
     const navNextBtn = document.getElementById('ebook-nav-next');
-    const hotspot = document.getElementById('ebook-fullscreen-hotspot');
-    const topBar = document.getElementById('ebook-top-bar');
     const modalContainer = document.getElementById('ebook-modal-container');
+    const topBar = document.getElementById('ebook-top-bar');
 
-    if (closeBtn) closeBtn.addEventListener('click', closeEBookModal);
-    if (fullscreenBtn) fullscreenBtn.addEventListener('click', toggleFullscreen);
+    // Direct, highly reliable listeners for each action button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeEBookModal();
+      });
+    }
+
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleFullscreen();
+      });
+    }
+
+    if (bookmarkPageBtn) {
+      bookmarkPageBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        bookmarkCurrentPage();
+      });
+    }
+
+    if (bookmarksListBtn) {
+      bookmarksListBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleBookmarksDrawer();
+      });
+    }
+
+    if (flipModeBtn) {
+      flipModeBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        openGestureModal();
+      });
+    }
 
     if (navPrevBtn) {
-      navPrevBtn.addEventListener('click', function () {
+      navPrevBtn.addEventListener('click', function (e) {
+        e.preventDefault();
         if (EBookState.flipBookInstance && EBookState.flipBookInstance.flipPrev) {
           EBookState.flipBookInstance.flipPrev();
         } else if (EBookState.currentPage > 1) {
@@ -281,7 +317,8 @@
     }
 
     if (navNextBtn) {
-      navNextBtn.addEventListener('click', function () {
+      navNextBtn.addEventListener('click', function (e) {
+        e.preventDefault();
         if (EBookState.flipBookInstance && EBookState.flipBookInstance.flipNext) {
           EBookState.flipBookInstance.flipNext();
         } else if (EBookState.currentPage < EBookState.totalPages) {
@@ -290,27 +327,9 @@
       });
     }
 
-    if (bookmarkPageBtn) {
-      bookmarkPageBtn.addEventListener('click', function () {
-        bookmarkCurrentPage();
-      });
-    }
-
-    if (bookmarksListBtn) {
-      bookmarksListBtn.addEventListener('click', function () {
-        toggleBookmarksDrawer();
-      });
-    }
-
     if (drawerCloseBtn) {
       drawerCloseBtn.addEventListener('click', function () {
         document.getElementById('ebook-bookmarks-drawer').classList.remove('open');
-      });
-    }
-
-    if (flipModeBtn) {
-      flipModeBtn.addEventListener('click', function () {
-        openGestureModal();
       });
     }
 
@@ -339,32 +358,44 @@
       });
     }
 
-    // FULLSCREEN TAP PROTECTION: First tap on top hotspot ONLY reveals header and blocks button press
-    function revealTopBar(e) {
-      if (modalContainer.classList.contains('is-fullscreen')) {
-        if (e && e.type === 'touchstart') {
-          // Consume first tap event so no underlying button gets triggered
-          e.preventDefault();
-          e.stopPropagation();
-        }
-        topBar.classList.add('header-visible');
-        clearTimeout(EBookState.headerHideTimer);
-        EBookState.headerHideTimer = setTimeout(() => {
-          topBar.classList.remove('header-visible');
-        }, 3500);
+    // Top edge mouse/touch reveal in Fullscreen Mode
+    function handleFullscreenTopHover(clientY) {
+      if (modalContainer.classList.contains('is-fullscreen') && clientY <= 48) {
+        revealTopBar();
       }
     }
 
-    if (hotspot) {
-      hotspot.addEventListener('mousemove', revealTopBar);
-      hotspot.addEventListener('touchstart', revealTopBar, { passive: false });
-      hotspot.addEventListener('click', revealTopBar);
+    if (modalContainer) {
+      modalContainer.addEventListener('mousemove', function (e) {
+        handleFullscreenTopHover(e.clientY);
+      });
+
+      modalContainer.addEventListener('touchstart', function (e) {
+        if (e.touches && e.touches[0]) {
+          handleFullscreenTopHover(e.touches[0].clientY);
+        }
+      }, { passive: true });
     }
+
     if (topBar) {
-      topBar.addEventListener('mousemove', revealTopBar);
+      topBar.addEventListener('mouseenter', revealTopBar);
+      topBar.addEventListener('touchstart', revealTopBar, { passive: true });
     }
 
     document.addEventListener('selectionchange', handleTextSelection);
+  }
+
+  function revealTopBar() {
+    const topBar = document.getElementById('ebook-top-bar');
+    if (!topBar) return;
+    topBar.classList.add('header-visible');
+    clearTimeout(EBookState.headerHideTimer);
+    EBookState.headerHideTimer = setTimeout(() => {
+      // Only hide if the cursor is not currently hovering over the header
+      if (!topBar.matches(':hover')) {
+        topBar.classList.remove('header-visible');
+      }
+    }, 4000);
   }
 
 
@@ -443,7 +474,6 @@
     let availableW = box.width - paddingX;
 
     if (!EBookState.isMobile) {
-      // 2-page spread
       let maxPageW = availableW / 2;
       let maxPageH = availableH;
 
@@ -455,7 +485,6 @@
         EBookState.pageHeight = Math.floor(maxPageW / EBookState.pageAspect);
       }
     } else {
-      // Mobile single page
       let maxPageW = availableW;
       let maxPageH = availableH;
 
@@ -638,12 +667,10 @@
     });
   }
 
-  // MOBILE: DUAL MODE WITH ABSOLUTE CLEAN STATE RESET FOR RELIABLE UPWARDS/SIDEWAYS FLIP
   function setupMobileStage() {
     const container = document.getElementById('ebook-flip-container');
     const pages = Array.from(container.querySelectorAll('.ebook-page-card'));
 
-    // COMPLETE STATE RESET on all page elements to prevent missing pages or sticky transforms
     pages.forEach(p => {
       p.style.position = '';
       p.style.transform = 'none';
@@ -659,7 +686,6 @@
     });
 
     if (EBookState.mobileFlipMode === 'vertical') {
-      // UPWARD SCROLL / FLIP MODE
       container.className = 'ebook-mobile-vertical-stage';
       container.scrollTop = 0;
 
@@ -674,7 +700,6 @@
 
       pages.forEach(p => EBookState.mobileObserver.observe(p));
 
-      // Scroll to active page element cleanly
       if (EBookState.currentPage > 1 && pages[EBookState.currentPage - 1]) {
         setTimeout(() => {
           pages[EBookState.currentPage - 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -682,7 +707,6 @@
       }
 
     } else {
-      // SIDEWAYS FLIP MODE
       container.className = 'ebook-mobile-horizontal-stage';
       
       pages.forEach((p, idx) => {
@@ -805,7 +829,6 @@
       const topBar = document.getElementById('ebook-top-bar');
       topBar.classList.remove('header-visible');
 
-      // Immediate hardware-accelerated recalculation & smooth scale
       recalculateAndRender();
       requestAnimationFrame(() => recalculateAndRender());
 
@@ -818,7 +841,6 @@
         document.exitFullscreen().catch(err => console.log(err));
       }
 
-      // Immediate hardware-accelerated recalculation & smooth scale
       recalculateAndRender();
       requestAnimationFrame(() => recalculateAndRender());
     }
