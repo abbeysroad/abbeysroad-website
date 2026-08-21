@@ -105,7 +105,7 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 16px;
   box-sizing: border-box;
 }
@@ -128,14 +128,14 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
-              height 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
-              border-radius 0.35s ease, 
-              box-shadow 0.35s ease;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-radius 0.3s ease;
   box-sizing: border-box;
+  will-change: width, height;
 }
 
-/* Fullscreen Mode Override - Smooth seamless screen takeover */
+/* Fullscreen Mode Override - Fast liquid-smooth screen takeover */
 .ebook-modal-container.is-fullscreen {
   width: 100vw !important;
   height: 100vh !important;
@@ -149,7 +149,7 @@
 
 
 /* --------------------------------------------------------------------------
-   3. E-BOOK TOP CONTROL HEADER BAR
+   3. E-BOOK TOP CONTROL HEADER BAR & TAP PROTECTION IN FULLSCREEN
    -------------------------------------------------------------------------- */
 .ebook-top-bar {
   height: 56px;
@@ -162,32 +162,44 @@
   padding: 0 16px;
   z-index: 1000;
   position: relative;
-  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease;
   box-sizing: border-box;
   flex-shrink: 0;
   width: 100%;
 }
 
-/* Auto-hide behavior strictly limited to FULLSCREEN Mode */
-.ebook-modal-container.is-fullscreen .ebook-top-bar {
+/* FULLSCREEN TAP PROTECTION: Disable button presses on top bar when header is hidden! */
+.ebook-modal-container.is-fullscreen .ebook-top-bar:not(.header-visible) {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   transform: translateY(-100%);
   opacity: 0;
+  pointer-events: none !important;
 }
 
+.ebook-modal-container.is-fullscreen .ebook-top-bar:not(.header-visible) * {
+  pointer-events: none !important;
+}
+
+/* Enable pointer events ONLY after header becomes visible */
 .ebook-modal-container.is-fullscreen .ebook-top-bar.header-visible {
   transform: translateY(0);
   opacity: 1;
+  pointer-events: auto !important;
 }
 
-/* Ensure top bar is ALWAYS fully visible in normal popup window mode */
+.ebook-modal-container.is-fullscreen .ebook-top-bar.header-visible * {
+  pointer-events: auto !important;
+}
+
+/* Ensure top bar is ALWAYS fully visible and interactive in normal popup window mode */
 .ebook-modal-container:not(.is-fullscreen) .ebook-top-bar {
   transform: translateY(0) !important;
   opacity: 1 !important;
   position: relative !important;
+  pointer-events: auto !important;
 }
 
 /* Hotspot Trigger Area at top in Fullscreen Mode */
@@ -196,8 +208,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 30px;
-  z-index: 999;
+  height: 36px;
+  z-index: 9999;
   display: none;
   cursor: pointer;
 }
@@ -378,7 +390,7 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 216, 95, 0.2);
-  transition: all 0.28s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   backdrop-filter: blur(8px);
 }
 
@@ -408,7 +420,7 @@
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
   user-select: text;
-  transition: width 0.3s ease, height 0.3s ease;
+  transition: width 0.25s ease, height 0.25s ease;
 }
 
 /* Individual Page Styling - Strict Aspect Ratio Preservation */
@@ -420,7 +432,7 @@
   box-sizing: border-box;
 }
 
-/* PDF Canvas Layer - Fully contain inside card without clipping */
+/* PDF Canvas Layer */
 .ebook-page-card canvas {
   width: 100%;
   height: 100%;
@@ -479,6 +491,9 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
   margin: 0 auto;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 /* Mobile Horizontal Sideways Flip Container */
@@ -498,7 +513,7 @@
   position: absolute;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
   border-radius: 6px;
-  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.32s ease;
 }
 
 
@@ -517,7 +532,7 @@
   padding: 16px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .ebook-gesture-modal-overlay.active {
@@ -594,7 +609,6 @@
   justify-content: center;
 }
 
-/* Upwards Swipe Animation */
 .anim-finger-up {
   width: 20px;
   height: 20px;
@@ -619,7 +633,6 @@
   100% { transform: translateY(-18px); opacity: 0; }
 }
 
-/* Sideways Swipe Animation */
 .anim-finger-side {
   width: 20px;
   height: 20px;
@@ -690,7 +703,7 @@
   padding: 20px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .ebook-fullscreen-tutorial-overlay.active {
@@ -779,7 +792,7 @@
   border-left: 1px solid rgba(195, 248, 254, 0.2);
   z-index: 995;
   transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
@@ -915,7 +928,7 @@
 
 
 /* --------------------------------------------------------------------------
-   9. MOBILE & TABLET FULLY DYNAMIC RESPONSIVE TOP MENU FIXES (SCREENSHOT 1 FIX)
+   9. MOBILE & TABLET FULLY DYNAMIC RESPONSIVE TOP MENU FIXES
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .ebook-modal-overlay {
@@ -953,7 +966,7 @@
   }
 
   .ebook-header-title-box {
-    display: none !important; /* Hide logo & title text on mobile to ensure all menu items fit 100% dynamically */
+    display: none !important;
   }
 
   .ebook-header-controls {

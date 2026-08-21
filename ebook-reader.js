@@ -21,6 +21,7 @@
     pageWidth: 0,
     pageHeight: 0,
     flipBookInstance: null,
+    mobileObserver: null,
     
     // Viewport & Mode Settings
     isMobile: window.innerWidth <= 768,
@@ -54,7 +55,7 @@
       if (EBookState.pdfDoc && document.getElementById('ebook-modal-overlay')?.classList.contains('active')) {
         recalculateAndRender();
       }
-    }, 200));
+    }, 150));
   }
 
   function debounce(fn, delay) {
@@ -110,7 +111,7 @@
               <!-- Flip Direction Switcher Button (Mobile/Tablet Only) -->
               <button id="ebook-flip-mode-btn" class="ebook-btn-icon-text ebook-flip-mode-btn" title="Choose page flip movement">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L13 16"/>
+                  <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
                 </svg>
                 <span id="ebook-flip-mode-label">Flip: Upward</span>
               </button>
@@ -338,8 +339,14 @@
       });
     }
 
-    function revealTopBar() {
+    // FULLSCREEN TAP PROTECTION: First tap on top hotspot ONLY reveals header and blocks button press
+    function revealTopBar(e) {
       if (modalContainer.classList.contains('is-fullscreen')) {
+        if (e && e.type === 'touchstart') {
+          // Consume first tap event so no underlying button gets triggered
+          e.preventDefault();
+          e.stopPropagation();
+        }
         topBar.classList.add('header-visible');
         clearTimeout(EBookState.headerHideTimer);
         EBookState.headerHideTimer = setTimeout(() => {
@@ -348,9 +355,14 @@
       }
     }
 
-    if (hotspot) hotspot.addEventListener('mousemove', revealTopBar);
-    if (hotspot) hotspot.addEventListener('touchstart', revealTopBar);
-    if (topBar) topBar.addEventListener('mousemove', revealTopBar);
+    if (hotspot) {
+      hotspot.addEventListener('mousemove', revealTopBar);
+      hotspot.addEventListener('touchstart', revealTopBar, { passive: false });
+      hotspot.addEventListener('click', revealTopBar);
+    }
+    if (topBar) {
+      topBar.addEventListener('mousemove', revealTopBar);
+    }
 
     document.addEventListener('selectionchange', handleTextSelection);
   }
@@ -424,9 +436,8 @@
     const box = viewport.getBoundingClientRect();
     const isFS = EBookState.isFullscreen;
     
-    // Safety padding so page height NEVER exceeds available height
-    const paddingY = isFS ? 16 : 24;
-    const paddingX = EBookState.isMobile ? 12 : 120; // 120px for desktop side arrows
+    const paddingY = isFS ? 12 : 20;
+    const paddingX = EBookState.isMobile ? 10 : 110;
 
     let availableH = box.height - paddingY;
     let availableW = box.width - paddingX;
@@ -437,11 +448,9 @@
       let maxPageH = availableH;
 
       if (maxPageW / maxPageH > EBookState.pageAspect) {
-        // Height constraint
         EBookState.pageHeight = Math.floor(maxPageH);
         EBookState.pageWidth = Math.floor(maxPageH * EBookState.pageAspect);
       } else {
-        // Width constraint
         EBookState.pageWidth = Math.floor(maxPageW);
         EBookState.pageHeight = Math.floor(maxPageW / EBookState.pageAspect);
       }
@@ -467,7 +476,6 @@
     EBookState.pageCanvases = [];
     EBookState.pageTextLayers = [];
 
-    // Get natural page aspect ratio from first page
     const firstPage = await EBookState.pdfDoc.getPage(1);
     const vp = firstPage.getViewport({ scale: 1.0 });
     EBookState.pageAspect = vp.width / vp.height;
@@ -540,7 +548,7 @@
 
 
   /* ==========================================================================
-     4. STPAGEFLIP 3D FLIPBOOK & MOBILE MODES
+     4. STPAGEFLIP 3D FLIPBOOK & MOBILE STAGE WITH CLEAN STATE RESET
      ========================================================================== */
   function renderFlipbook() {
     const container = document.getElementById('ebook-flip-container');
@@ -549,6 +557,11 @@
     if (EBookState.flipBookInstance) {
       try { EBookState.flipBookInstance.destroy(); } catch (e) {}
       EBookState.flipBookInstance = null;
+    }
+
+    if (EBookState.mobileObserver) {
+      EBookState.mobileObserver.disconnect();
+      EBookState.mobileObserver = null;
     }
 
     if (EBookState.isMobile) {
@@ -569,6 +582,11 @@
     pages.forEach(p => {
       p.style.position = '';
       p.style.transform = '';
+      p.style.opacity = '1';
+      p.style.zIndex = '';
+      p.style.display = 'block';
+      p.style.top = '';
+      p.style.left = '';
       p.style.margin = '';
       p.style.width = `${EBookState.pageWidth}px`;
       p.style.height = `${EBookState.pageHeight}px`;
@@ -608,32 +626,44 @@
     const container = document.getElementById('ebook-flip-container');
     container.style.display = 'flex';
     container.style.gap = '4px';
-    container.style.perspective = '2000px';
 
     const pages = Array.from(container.querySelectorAll('.ebook-page-card'));
     pages.forEach((p, idx) => {
       if (idx === EBookState.currentPage - 1 || idx === EBookState.currentPage) {
         p.style.display = 'block';
+        p.style.opacity = '1';
       } else {
         p.style.display = 'none';
       }
     });
   }
 
+  // MOBILE: DUAL MODE WITH ABSOLUTE CLEAN STATE RESET FOR RELIABLE UPWARDS/SIDEWAYS FLIP
   function setupMobileStage() {
     const container = document.getElementById('ebook-flip-container');
+    const pages = Array.from(container.querySelectorAll('.ebook-page-card'));
+
+    // COMPLETE STATE RESET on all page elements to prevent missing pages or sticky transforms
+    pages.forEach(p => {
+      p.style.position = '';
+      p.style.transform = 'none';
+      p.style.opacity = '1';
+      p.style.visibility = 'visible';
+      p.style.zIndex = '';
+      p.style.display = 'block';
+      p.style.top = '';
+      p.style.left = '';
+      p.style.margin = '0 auto';
+      p.style.width = `${EBookState.pageWidth}px`;
+      p.style.height = `${EBookState.pageHeight}px`;
+    });
 
     if (EBookState.mobileFlipMode === 'vertical') {
+      // UPWARD SCROLL / FLIP MODE
       container.className = 'ebook-mobile-vertical-stage';
-      const pages = container.querySelectorAll('.ebook-page-card');
-      pages.forEach(p => {
-        p.style.display = 'block';
-        p.style.position = 'relative';
-        p.style.width = `${EBookState.pageWidth}px`;
-        p.style.height = `${EBookState.pageHeight}px`;
-      });
+      container.scrollTop = 0;
 
-      const observer = new IntersectionObserver((entries) => {
+      EBookState.mobileObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             EBookState.currentPage = parseInt(entry.target.dataset.pageNumber, 10);
@@ -642,11 +672,18 @@
         });
       }, { root: container, threshold: 0.6 });
 
-      pages.forEach(p => observer.observe(p));
+      pages.forEach(p => EBookState.mobileObserver.observe(p));
+
+      // Scroll to active page element cleanly
+      if (EBookState.currentPage > 1 && pages[EBookState.currentPage - 1]) {
+        setTimeout(() => {
+          pages[EBookState.currentPage - 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 50);
+      }
 
     } else {
+      // SIDEWAYS FLIP MODE
       container.className = 'ebook-mobile-horizontal-stage';
-      const pages = Array.from(container.querySelectorAll('.ebook-page-card'));
       
       pages.forEach((p, idx) => {
         p.style.position = 'absolute';
@@ -745,7 +782,7 @@
 
 
   /* ==========================================================================
-     6. SEAMLESS FULLSCREEN MODE & DIMENSION RECALCULATION
+     6. FAST, LIQUID-SMOOTH FULLSCREEN TRANSITIONS
      ========================================================================== */
   function toggleFullscreen() {
     const container = document.getElementById('ebook-modal-container');
@@ -768,8 +805,9 @@
       const topBar = document.getElementById('ebook-top-bar');
       topBar.classList.remove('header-visible');
 
-      // Smooth recalculation & re-render after CSS transition completes
-      setTimeout(() => recalculateAndRender(), 360);
+      // Immediate hardware-accelerated recalculation & smooth scale
+      recalculateAndRender();
+      requestAnimationFrame(() => recalculateAndRender());
 
     } else {
       container.classList.remove('is-fullscreen');
@@ -780,8 +818,9 @@
         document.exitFullscreen().catch(err => console.log(err));
       }
 
-      // Smooth recalculation & re-render after CSS transition completes
-      setTimeout(() => recalculateAndRender(), 360);
+      // Immediate hardware-accelerated recalculation & smooth scale
+      recalculateAndRender();
+      requestAnimationFrame(() => recalculateAndRender());
     }
   }
 
