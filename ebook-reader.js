@@ -2,47 +2,243 @@
  * ABBEY'S ROAD - INTERACTIVE 3D PDF E-BOOK READER ENGINE
  * PDF.js Canvas + Text Layer Rendering, Desktop 3D Page Flip,
  * Mobile Vertical/Horizontal Flip Modes with Gesture Overlays,
- * Text Highlight Bookmarking & Auto-Hiding Fullscreen Header.
+ * Native Mobile Editorial Text Cards & Captioned Photo Showcase Pages.
  */
 
 (function () {
   'use strict';
 
-  // State Management
+  // Pre-extracted Destination Content for Native Mobile Editorial Cards & Photo Captions
+  const MOBILE_EDITORIAL_CARDS = [
+    {
+      page: 1,
+      badge: "A 21-DAY IMMERSION",
+      title: "Beyond the Ordinary: Discover the Philippines",
+      subtitle: "A cinematic passage through living mountain cultures, storied streets, wild encounters and restorative island days.",
+      sections: [
+        { heading: "PHILOSOPHY", body: "Travel deeper. Return changed. An archipelago best understood not by ticking off islands, but by noticing how landscape, language and hospitality change from one crossing to the next." }
+      ],
+      photoCaption: { title: "📍 THE PHILIPPINE ARCHIPELAGO", desc: "Emerald karst islands, crystal lagoons, and tropical passages across Luzon, Visayas, and Mindanao." }
+    },
+    {
+      page: 2,
+      badge: "START HERE",
+      title: "The Philippines, at a Glance",
+      subtitle: "An archipelago best understood by noticing how landscape, language and hospitality change from one crossing to the next.",
+      facts: [
+        { label: "ARCHIPELAGO", val: "More than 7,600 islands across Luzon, Visayas and Mindanao." },
+        { label: "LANGUAGE", val: "Filipino and English are official; many regional languages spoken." },
+        { label: "CURRENCY", val: "Philippine peso (PHP). Cards in cities; cash in remote areas." },
+        { label: "CLIMATE", val: "Tropical & maritime. Dry season Dec-May." }
+      ],
+      sections: [
+        { heading: "THE FEELING", body: "Warm welcomes, long road journeys, salt on your skin, and a pace that invites conversation. Build in pauses: the unscheduled hours are part of the destination." }
+      ],
+      photoCaption: { title: "📍 ARCHIPELAGO PANORAMA", desc: "Over 7,600 tropical islands encircled by vibrant coral reefs and turquoise ocean." }
+    },
+    {
+      page: 3,
+      badge: "TRAVEL WELL",
+      title: "Before the First Crossing",
+      subtitle: "Key preparation notes and essential advice for smooth island journeys.",
+      facts: [
+        { label: "ENTRY", val: "30-day visa waiver for many visitors. Passport valid 6+ months." },
+        { label: "GETTING AROUND", val: "Private vehicles, domestic flights, ferries and traditional bancas." },
+        { label: "BUDGET", val: "Privately coordinated journey tailored by season & luxury category." },
+        { label: "CONNECTIVITY", val: "eSIM or local SIM useful; download offline documents." }
+      ],
+      sections: [
+        { heading: "ESSENTIAL CHECK", body: "Travel insurance, prescribed medication, light layers, sturdy walking shoes, dry bag, and modest church clothing." }
+      ],
+      photoCaption: { title: "📍 COASTAL PASSAGES", desc: "Traditional outrigger banca boats gliding through clear coastal waters." }
+    },
+    {
+      page: 4,
+      badge: "ITINERARY ARC",
+      title: "Twenty-One Days, Held Loosely",
+      subtitle: "The route moves from city energy into mountain stillness, along a heritage coast, and toward open water.",
+      facts: [
+        { label: "MANILA", val: "2 Nights • Arrival + Living History" },
+        { label: "BANAUE", val: "3 Nights • Terraces + Time" },
+        { label: "SAGADA", val: "2 Nights • Ritual Landscape" },
+        { label: "VIGAN", val: "3 Nights • Heritage + Free Day" },
+        { label: "DONSOL", val: "4 Nights • Wildlife + Sea Air" },
+        { label: "BOHOL", val: "3 Nights • Geology + Resort Ease" },
+        { label: "MOALBOAL", val: "1 Night • Marine Immersion" },
+        { label: "CEBU", val: "2 Nights • Soft Landing + Farewell" }
+      ],
+      sections: [
+        { heading: "DESIGN PRINCIPLE", body: "No sightseeing for sightseeing's sake. Every active day is answered by space to swim, read, linger over lunch or simply watch the weather move." }
+      ],
+      photoCaption: { title: "📍 THE JOURNEY ROUTE", desc: "A cinematic passage connecting high mountain terraces, heritage towns, and marine havens." }
+    },
+    {
+      page: 5,
+      badge: "MANILA • 2 NIGHTS",
+      title: "The Threshold: Begin in Motion",
+      subtitle: "The city arrives as jeepney chrome, tropical shade, polished hotel calm and the old stone walls of Intramuros.",
+      sections: [
+        { heading: "LOOK CLOSER", body: "Fort Santiago and San Agustin Church frame stories of empire, faith and resistance; a kalesa slows the city to hoofbeats." },
+        { heading: "THE PAUSE", body: "Return to The Peninsula early. Pool, spa and a quiet dinner let the body arrive before the route begins." },
+        { heading: "TASTE", body: "Let lunch introduce sour, smoky and savoury Filipino notes - then follow curiosity, not a checklist." }
+      ],
+      photoCaption: { title: "📍 MANILA INTRAMUROS", desc: "Historic Spanish colonial stone walls, cobblestone plazas, and Fort Santiago." }
+    },
+    {
+      page: 6,
+      badge: "BANAUE • 3 NIGHTS",
+      title: "A Living Landscape: Where Mountains Remember",
+      subtitle: "At Batad, the path bends with the contours. Water, forest, stone and cultivation form a system that is cultural knowledge as much as scenery.",
+      sections: [
+        { heading: "UNESCO CONTEXT", body: "Batad is one of five inscribed terrace clusters in the Rice Terraces of the Philippine Cordilleras, a living Ifugao cultural landscape." },
+        { heading: "EXPERIENCE", body: "Walk with a local guide, notice traditional houses and irrigation, and listen before photographing." },
+        { heading: "ROOM TO BREATHE", body: "The third day is deliberately open: breakfast with mountain views, reading, family time, perhaps a short village walk." }
+      ],
+      photoCaption: { title: "📍 BATAD RICE TERRACES", desc: "Ancient UNESCO World Heritage amphitheater rice terraces carved into green mountain ridges." }
+    },
+    {
+      page: 7,
+      badge: "SAGADA • 2 NIGHTS",
+      title: "High Country: Listen to the Silence",
+      subtitle: "Morning gathers slowly in Sagada. Pine air, clouded ridges and Kankanaey stories give this highland stop an atmosphere entirely its own.",
+      sections: [
+        { heading: "CHOOSE YOUR PACE", body: "Follow Echo Valley toward the hanging coffins with cultural interpretation, or choose an active cave and mountain walk." },
+        { heading: "TRAVEL WITH CARE", body: "Burial traditions are not spectacle. Follow local rules, keep voices low, and ask before photographing people or sacred places." },
+        { heading: "AFTERWARDS", body: "Return early. Tea, cool air and an unhurried evening are part of why Sagada stays with you." }
+      ],
+      photoCaption: { title: "📍 SAGADA HIGHLANDS", desc: "Mist-shrouded pine ridges and sacred ancestral hanging coffins of Echo Valley." }
+    },
+    {
+      page: 8,
+      badge: "VIGAN • 3 NIGHTS",
+      title: "Streets of Memory: History at Walking Pace",
+      subtitle: "Calle Crisologo is most evocative at the edges of the day, when stone streets, timber houses and capiz-shell windows begin to hold the light.",
+      sections: [
+        { heading: "WHY IT MATTERS", body: "UNESCO describes Vigan as Asia’s best-preserved example of a planned Spanish colonial town, shaped by Philippine, Chinese and European influences." },
+        { heading: "MEET THE CRAFT", body: "Go beyond façades: seek inabel weaving, ancestral-house details and an Ilocano lunch." },
+        { heading: "YOUR DAY", body: "One full day remains unscripted. Do as much or as little as you wish." }
+      ],
+      photoCaption: { title: "📍 VIGAN CALLE CRISOLOGO", desc: "Lantern-lit cobblestone streets and Spanish-Chinese colonial heritage architecture." }
+    },
+    {
+      page: 9,
+      badge: "DONSOL • 4 NIGHTS",
+      title: "Wild Encounter: Follow the Butanding",
+      subtitle: "Before sunrise, the boat slips into open water. The encounter is never guaranteed - and that uncertainty is precisely what keeps it wild.",
+      sections: [
+        { heading: "ETHICAL ENCOUNTER", body: "Donsol’s whale-shark interactions take place without artificial feeding and are led by trained interaction officers." },
+        { heading: "IN THE WATER", body: "Follow the briefing, keep respectful distance and let the animal set the rhythm." },
+        { heading: "FOUR-NIGHT EXHALE", body: "Balance one early marine morning with beach time, pool time, and an optional mangrove firefly cruise." }
+      ],
+      photoCaption: { title: "📍 DONSOL WHALE SHARKS", desc: "Ethical swimming with gentle wild whale sharks (butanding) in open coastal waters." }
+    },
+    {
+      page: 10,
+      badge: "BOHOL • 3 NIGHTS",
+      title: "Geology & Grace: An Island Raised from the Sea",
+      subtitle: "The Chocolate Hills appear almost imagined: smooth cones across the green interior, formed from limestone linked to ancient coral reef deposits.",
+      sections: [
+        { heading: "UNESCO GEOPARK", body: "Bohol became the Philippines’ first UNESCO Global Geopark in 2023, recognising an island story shaped by more than 150 million years of geology." },
+        { heading: "GENTLE HALF-DAY", body: "Pair the hills with responsible tarsier conservation, countryside roads and a local lunch." },
+        { heading: "RESORT RHYTHM", body: "Back at Amorita, the afternoon belongs to shade, saltwater and family time." }
+      ],
+      photoCaption: { title: "📍 BOHOL CHOCOLATE HILLS", desc: "Conical limestone hills and protected Philippine tarsier sanctuary rainforests." }
+    },
+    {
+      page: 11,
+      badge: "MOALBOAL • 1 NIGHT",
+      title: "Beneath the Surface: Enter the Silver Current",
+      subtitle: "A dense ribbon of sardines turns as one body. From below, the water flickers; from above, the shoal seems to redraw the sea.",
+      sections: [
+        { heading: "ONE MARINE DAY", body: "Certified divers can take a private reef dive; non-divers and children can snorkel the sardine run and look for turtles." },
+        { heading: "GOOD PRACTICE", body: "Choose trained local operators, never touch wildlife or coral, and use fins with care in shallow water." },
+        { heading: "THE POINT", body: "This is not a race for sightings. It is a chance to feel briefly inside a living system." }
+      ],
+      photoCaption: { title: "📍 MOALBOAL SARDINE RUN", desc: "Swirling silver sardine run underwater spectacle and sea turtle reef habitats." }
+    },
+    {
+      page: 12,
+      badge: "CEBU • 2 NIGHTS",
+      title: "The Soft Landing: End with Ease",
+      subtitle: "The final chapter is comfortable by design: a private transfer, a restorative hotel, perhaps a little history, then time to choose what the last day needs.",
+      sections: [
+        { heading: "OPTIONAL CULTURE", body: "The Basilica Minore del Santo Niño and Magellan’s Cross connect Cebu to the early history of Christianity in Asia." },
+        { heading: "CITY OR RESORT", body: "Choose Shangri-La Mactan for a final resort mood, or Radisson Blu for city access and shopping." },
+        { heading: "FAREWELL", body: "A relaxed Filipino dinner, late check-out where possible, and an unhurried airport transfer." }
+      ],
+      photoCaption: { title: "📍 CEBU RESORT & HERITAGE", desc: "Relaxed beachfront luxury at Shangri-La Mactan and Cebu historic basilicas." }
+    },
+    {
+      page: 13,
+      badge: "CULINARY TRAIL",
+      title: "The Thread Between Places: Come to the Table",
+      subtitle: "Travel becomes personal over shared dishes: the explanation of a recipe, the second helping, the story that would never fit inside a tour commentary.",
+      sections: [
+        { heading: "EAT REGIONALLY", body: "Taste Ilocano cooking in Vigan, highland produce in the Cordillera, seafood in Bicol and Visayan flavours in Bohol and Cebu." },
+        { heading: "ASK, THEN LISTEN", body: "A few words of Filipino - salamat for thank you - are welcomed. English is widely spoken, but warmth travels further than fluency." },
+        { heading: "LEAVE SPACE", body: "Not every meal needs to be 'the best.' A simple bowl, eaten where daily life is happening, may become the one you remember." }
+      ],
+      photoCaption: { title: "📍 FILIPINO CULINARY FEAST", desc: "Traditional regional dishes served on fresh banana leaves showcasing rich local flavors." }
+    },
+    {
+      page: 14,
+      badge: "OFFICIAL NOTES",
+      title: "Travel Notes: Useful, Current, Considered",
+      subtitle: "Checked against official sources. Entry, weather and operating conditions can change; Abbey’s Road reconfirms all details.",
+      facts: [
+        { label: "ENTRY & VISAS", val: "Philippine Bureau of Immigration (immigration.gov.ph)" },
+        { label: "WEATHER", val: "DOST-PAGASA Climate Services (pagasa.dost.gov.ph)" },
+        { label: "HERITAGE", val: "UNESCO World Heritage Centre (whc.unesco.org)" },
+        { label: "GEOPARK", val: "UNESCO Global Geoparks Bohol Island" }
+      ],
+      sections: [
+        { heading: "BEFORE YOU GO", body: "Verify passport and entry eligibility, purchase comprehensive insurance, review weather outlooks and accept that wildlife and sea conditions remain beautifully beyond anyone's control." }
+      ],
+      photoCaption: { title: "📍 PHILIPPINE HORIZONS", desc: "Tranquil coastal horizon and departure planning resources." }
+    },
+    {
+      page: 15,
+      badge: "TRAVEL CONCIERGE",
+      title: "Your Philippines, Designed Around You",
+      subtitle: "Tell us how you like to move, what your family is curious about, and where you want more stillness.",
+      sections: [
+        { heading: "BESPOKE JOURNEYS", body: "We will shape the route, stays and private logistics into one seamless journey." },
+        { heading: "CONTACT CONCIERGE", body: "Email: abbey@abbeysroad.dk • Phone: +45 2622 0288 • Web: abbeysroad.vercel.app" }
+      ],
+      photoCaption: { title: "📍 ABBEY'S ROAD CONCIERGE", desc: "Private luxury travel planning tailored around your pace and curiosity." }
+    }
+  ];
+
+  // Main Reader State
   const EBookState = {
     pdfDoc: null,
     pdfUrl: 'beyond-the-ordinary-discover-the-philippines_compressed.pdf',
     bookTitle: "Beyond the Ordinary: Discover the Philippines",
     totalPages: 0,
     currentPage: 1,
-    pageAspect: 0.707, // Width / Height ratio (standard book page ratio)
-    pageCanvases: [],
-    pageTextLayers: [],
+    pageAspect: 0.707,
     pageWidth: 0,
     pageHeight: 0,
     flipBookInstance: null,
     mobileObserver: null,
     
-    // Viewport & Mode Settings
     isMobile: window.innerWidth <= 768,
-    mobileFlipMode: 'vertical', // 'vertical' (Upwards) or 'horizontal' (Sideways)
+    mobileFlipMode: 'vertical', // 'vertical' (Upward) or 'horizontal' (Sideways)
     isFullscreen: false,
     headerHideTimer: null,
     
-    // Bookmarks Storage
     bookmarks: [],
     storageKey: 'abbey_ebook_bookmarks_philippines',
     fullscreenIntroKey: 'abbey_ebook_fullscreen_intro_seen'
   };
 
-  // Ensure PDF.js worker is properly configured
   if (window.pdfjsLib) {
     window.pdfjsLib.GlobalWorkerOptions.workerSrc =
       'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
   }
 
   /* ==========================================================================
-     1. INITIALIZE & BUILD E-BOOK READER DOM STRUCTURE
+     1. INITIALIZE & DOM BUILDER
      ========================================================================== */
   function initEBookReader() {
     loadBookmarksFromStorage();
@@ -51,9 +247,14 @@
     bindModalEvents();
 
     window.addEventListener('resize', debounce(() => {
+      const wasMobile = EBookState.isMobile;
       EBookState.isMobile = window.innerWidth <= 768;
       if (EBookState.pdfDoc && document.getElementById('ebook-modal-overlay')?.classList.contains('active')) {
-        recalculateAndRender();
+        if (wasMobile !== EBookState.isMobile) {
+          renderAllPages();
+        } else {
+          recalculateAndRender();
+        }
       }
     }, 150));
   }
@@ -69,11 +270,9 @@
   function loadBookmarksFromStorage() {
     try {
       const stored = localStorage.getItem(EBookState.storageKey);
-      if (stored) {
-        EBookState.bookmarks = JSON.parse(stored);
-      }
+      if (stored) EBookState.bookmarks = JSON.parse(stored);
     } catch (e) {
-      console.warn("Could not load bookmarks from storage:", e);
+      console.warn("Could not load bookmarks:", e);
     }
   }
 
@@ -81,7 +280,7 @@
     try {
       localStorage.setItem(EBookState.storageKey, JSON.stringify(EBookState.bookmarks));
     } catch (e) {
-      console.warn("Could not save bookmarks to storage:", e);
+      console.warn("Could not save bookmarks:", e);
     }
   }
 
@@ -94,7 +293,6 @@
           
           <!-- TOP CONTROL HEADER BAR -->
           <header id="ebook-top-bar" class="ebook-top-bar">
-            <!-- Left: Title & Logo (Desktop Only) -->
             <div class="ebook-header-title-box">
               <svg class="ebook-header-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -103,9 +301,7 @@
               <span class="ebook-header-title">${EBookState.bookTitle}</span>
             </div>
 
-            <!-- Center: Controls & Mode Switcher -->
             <div class="ebook-header-controls">
-              <!-- Flip Direction Switcher Button (Mobile/Tablet Only) -->
               <button id="ebook-flip-mode-btn" class="ebook-btn-icon-text ebook-flip-mode-btn" title="Choose page flip movement">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
@@ -113,11 +309,9 @@
                 <span id="ebook-flip-mode-label">Flip: Upward</span>
               </button>
 
-              <!-- Page Counter Indicator -->
               <div id="ebook-page-counter" class="ebook-page-counter">Page 1 of --</div>
             </div>
 
-            <!-- Right Actions: Bookmark, Fullscreen, Close -->
             <div class="ebook-header-right-actions">
               <button id="ebook-bookmark-page-btn" class="ebook-action-btn" title="Bookmark current page">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
@@ -153,16 +347,13 @@
 
           <!-- MAIN EBOOK STAGE / VIEWPORT -->
           <main id="ebook-viewport" class="ebook-viewport">
-            <!-- DESKTOP SIDE NAVIGATION ARROWS -->
             <button id="ebook-nav-prev" class="ebook-nav-arrow ebook-nav-prev" aria-label="Previous Page" title="Previous Page">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
 
-            <div id="ebook-flip-container" class="stpageflip-stage">
-              <!-- Rendered pages injected dynamically -->
-            </div>
+            <div id="ebook-flip-container" class="stpageflip-stage"></div>
 
             <button id="ebook-nav-next" class="ebook-nav-arrow ebook-nav-next" aria-label="Next Page" title="Next Page">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -177,9 +368,7 @@
               <span class="ebook-drawer-title">Saved Bookmarks</span>
               <button id="ebook-drawer-close-btn" class="ebook-drawer-close">&times;</button>
             </div>
-            <div id="ebook-bookmarks-list" class="ebook-bookmarks-list">
-              <!-- Bookmark items dynamically injected -->
-            </div>
+            <div id="ebook-bookmarks-list" class="ebook-bookmarks-list"></div>
           </aside>
 
           <!-- ANIMATED GESTURE MOVEMENT SELECTION OVERLAY -->
@@ -189,7 +378,6 @@
               <p class="ebook-gesture-subtitle">Select how you'd like to flip through pages on mobile or tablet</p>
               
               <div class="ebook-gesture-options-grid">
-                <!-- Option 1: Vertical Upwards Flip -->
                 <div id="gesture-opt-vertical" class="ebook-gesture-option-card selected" data-mode="vertical">
                   <div class="gesture-anim-box">
                     <div class="anim-arrow-up"></div>
@@ -199,7 +387,6 @@
                   <div class="gesture-opt-sub">Swipe up to flip pages</div>
                 </div>
 
-                <!-- Option 2: Horizontal Sideways Flip -->
                 <div id="gesture-opt-horizontal" class="ebook-gesture-option-card" data-mode="horizontal">
                   <div class="gesture-anim-box">
                     <div class="anim-arrow-side"></div>
@@ -242,7 +429,7 @@
     let lastHandled = 0;
     function handleTrigger(e) {
       const now = Date.now();
-      if (now - lastHandled < 300) return; // Prevent double trigger on touchend + click
+      if (now - lastHandled < 300) return;
       const trigger = e.target.closest('#open-ebook-btn, .ebook-trigger-btn');
       if (trigger) {
         lastHandled = now;
@@ -410,7 +597,7 @@
 
 
   /* ==========================================================================
-     2. OPEN & CLOSE E-BOOK MODAL
+     2. OPEN & CLOSE MODAL POPUP
      ========================================================================== */
   function openEBookModal() {
     const modalOverlay = document.getElementById('ebook-modal-overlay');
@@ -419,7 +606,6 @@
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
-    // Pause Lenis smooth scroll if present to prevent page scrolling behind modal
     if (window.lenis && typeof window.lenis.stop === 'function') {
       window.lenis.stop();
     }
@@ -441,7 +627,6 @@
     modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
 
-    // Resume Lenis smooth scroll if present
     if (window.lenis && typeof window.lenis.start === 'function') {
       window.lenis.start();
     }
@@ -456,7 +641,6 @@
     }
     updateFullscreenIcon(false);
 
-    // Clean up popovers / drawers / gesture overlays
     const popover = document.getElementById('ebook-text-popover');
     if (popover) popover.remove();
 
@@ -487,8 +671,6 @@
 
     window.pdfjsLib.getDocument(EBookState.pdfUrl).promise.then(pdf => {
       EBookState.pdfDoc = pdf;
-      EBookState.totalPages = pdf.numPages;
-      updatePageCounter();
       renderAllPages();
     }).catch(err => {
       console.error("Error loading PDF:", err);
@@ -498,7 +680,7 @@
 
 
   /* ==========================================================================
-     3. CALCULATE EXACT BOUNDS & RENDER PDF PAGES WITHOUT CLIPPING OR DISTORTION
+     3. RENDER ALL PAGES (DESKTOP SPREADS VS MOBILE TEXT & PHOTO CARDS)
      ========================================================================== */
   function computePageDimensions() {
     const viewport = document.getElementById('ebook-viewport');
@@ -542,55 +724,141 @@
     const container = document.getElementById('ebook-flip-container');
     container.innerHTML = '';
 
-    EBookState.pageCanvases = [];
-    EBookState.pageTextLayers = [];
-
     const firstPage = await EBookState.pdfDoc.getPage(1);
     const vp = firstPage.getViewport({ scale: 1.0 });
     EBookState.pageAspect = vp.width / vp.height;
 
     computePageDimensions();
 
+    const rawPdfPages = EBookState.pdfDoc.numPages;
+
+    if (EBookState.isMobile) {
+      EBookState.totalPages = rawPdfPages * 2; // 1 Text Card + 1 Photo Card per PDF page
+    } else {
+      EBookState.totalPages = rawPdfPages;
+    }
+
+    updatePageCounter();
+
     const renderPromises = [];
 
-    for (let pageNum = 1; pageNum <= EBookState.totalPages; pageNum++) {
-      const pageCard = document.createElement('div');
-      pageCard.className = 'ebook-page-card';
-      pageCard.dataset.pageNumber = pageNum;
-      pageCard.style.width = `${EBookState.pageWidth}px`;
-      pageCard.style.height = `${EBookState.pageHeight}px`;
+    for (let cardIdx = 1; cardIdx <= EBookState.totalPages; cardIdx++) {
+      if (EBookState.isMobile) {
+        const pdfPageNum = Math.ceil(cardIdx / 2);
+        const isTextPage = (cardIdx % 2 === 1);
+        const cardData = MOBILE_EDITORIAL_CARDS[pdfPageNum - 1] || MOBILE_EDITORIAL_CARDS[0];
 
-      const canvas = document.createElement('canvas');
-      const textLayerDiv = document.createElement('div');
-      textLayerDiv.className = 'ebook-text-layer';
+        const pageCard = document.createElement('div');
+        pageCard.className = 'ebook-page-card';
+        pageCard.dataset.pageNumber = cardIdx;
+        pageCard.dataset.pdfPageNumber = pdfPageNum;
+        pageCard.dataset.cardType = isTextPage ? 'text' : 'photo';
+        pageCard.style.width = `${EBookState.pageWidth}px`;
+        pageCard.style.height = `${EBookState.pageHeight}px`;
 
-      pageCard.appendChild(canvas);
-      pageCard.appendChild(textLayerDiv);
-      container.appendChild(pageCard);
+        if (isTextPage) {
+          // Render Native HTML Editorial Text Card
+          pageCard.innerHTML = renderNativeTextCardHTML(cardData, cardIdx);
+        } else {
+          // Render Captioned Full Photo Card
+          const photoWrapper = document.createElement('div');
+          photoWrapper.className = 'ebook-photo-card-wrapper';
 
-      renderPromises.push(renderSinglePage(pageNum, canvas, textLayerDiv));
+          const canvas = document.createElement('canvas');
+          photoWrapper.appendChild(canvas);
+
+          const captionBar = document.createElement('div');
+          captionBar.className = 'ebook-photo-caption-bar';
+          captionBar.innerHTML = `
+            <div class="ebook-photo-caption-title">${cardData.photoCaption.title}</div>
+            <div class="ebook-photo-caption-desc">${cardData.photoCaption.desc}</div>
+          `;
+          photoWrapper.appendChild(captionBar);
+          pageCard.appendChild(photoWrapper);
+
+          renderPromises.push(renderPhotoCanvas(pdfPageNum, canvas));
+        }
+
+        container.appendChild(pageCard);
+
+      } else {
+        // Desktop Full PDF Page
+        const pageCard = document.createElement('div');
+        pageCard.className = 'ebook-page-card';
+        pageCard.dataset.pageNumber = cardIdx;
+        pageCard.style.width = `${EBookState.pageWidth}px`;
+        pageCard.style.height = `${EBookState.pageHeight}px`;
+
+        const canvas = document.createElement('canvas');
+        const textLayerDiv = document.createElement('div');
+        textLayerDiv.className = 'ebook-text-layer';
+
+        pageCard.appendChild(canvas);
+        pageCard.appendChild(textLayerDiv);
+        container.appendChild(pageCard);
+
+        renderPromises.push(renderDesktopPage(cardIdx, canvas, textLayerDiv));
+      }
     }
 
     await Promise.all(renderPromises);
     renderFlipbook();
   }
 
-  async function renderSinglePage(pageNum, canvas, textLayerDiv) {
-    const page = await EBookState.pdfDoc.getPage(pageNum);
+  function renderNativeTextCardHTML(card, cardIdx) {
+    let html = `<div class="ebook-mobile-text-card">`;
+    html += `<div class="ebook-card-badge">${card.badge} • PAGE ${card.page}</div>`;
+    html += `<h2 class="ebook-card-title">${card.title}</h2>`;
+    if (card.subtitle) html += `<div class="ebook-card-subtitle">${card.subtitle}</div>`;
+
+    if (card.facts && card.facts.length > 0) {
+      html += `<div class="ebook-card-fact-grid">`;
+      card.facts.forEach(f => {
+        html += `<div class="ebook-card-fact-item"><div class="ebook-card-fact-label">${f.label}</div><div class="ebook-card-fact-val">${f.val}</div></div>`;
+      });
+      html += `</div>`;
+    }
+
+    if (card.sections && card.sections.length > 0) {
+      card.sections.forEach(s => {
+        html += `<div class="ebook-card-section-block">`;
+        if (s.heading) html += `<div class="ebook-card-section-heading">${s.heading}</div>`;
+        html += `<p class="ebook-card-body-text">${s.body}</p>`;
+        html += `</div>`;
+      });
+    }
+
+    html += `</div>`;
+    return html;
+  }
+
+  async function renderPhotoCanvas(pdfPageNum, canvas) {
+    const page = await EBookState.pdfDoc.getPage(pdfPageNum);
     const unscaledVp = page.getViewport({ scale: 1.0 });
-    const scale = (EBookState.pageHeight / unscaledVp.height) * (window.devicePixelRatio || 1.5);
+    const dpr = window.devicePixelRatio || 1.5;
+    
+    const scale = (EBookState.pageHeight / unscaledVp.height) * dpr;
     const viewport = page.getViewport({ scale: scale });
 
     canvas.height = viewport.height;
     canvas.width = viewport.width;
 
     const ctx = canvas.getContext('2d');
-    const renderContext = {
-      canvasContext: ctx,
-      viewport: viewport
-    };
+    await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+  }
 
-    await page.render(renderContext).promise;
+  async function renderDesktopPage(pageNum, canvas, textLayerDiv) {
+    const page = await EBookState.pdfDoc.getPage(pageNum);
+    const unscaledVp = page.getViewport({ scale: 1.0 });
+    const dpr = window.devicePixelRatio || 1.5;
+    const scale = (EBookState.pageHeight / unscaledVp.height) * dpr;
+    const viewport = page.getViewport({ scale: scale });
+
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport: viewport }).promise;
 
     try {
       const textContent = await page.getTextContent();
@@ -617,7 +885,7 @@
 
 
   /* ==========================================================================
-     4. STPAGEFLIP 3D FLIPBOOK & MOBILE STAGE WITH CLEAN STATE RESET
+     4. STPAGEFLIP 3D FLIPBOOK & MOBILE STAGE
      ========================================================================== */
   function renderFlipbook() {
     const container = document.getElementById('ebook-flip-container');
@@ -922,12 +1190,6 @@
       const range = selection.getRangeAt(0);
       const rect = range.getBoundingClientRect();
 
-      const textLayer = range.commonAncestorContainer.parentElement?.closest('.ebook-text-layer');
-      if (!textLayer) return;
-
-      const pageCard = textLayer.closest('.ebook-page-card');
-      const pageNum = pageCard ? parseInt(pageCard.dataset.pageNumber, 10) : EBookState.currentPage;
-
       const popover = document.createElement('div');
       popover.id = 'ebook-text-popover';
       popover.className = 'ebook-text-selection-popover';
@@ -945,7 +1207,7 @@
         e.stopPropagation();
         addBookmark({
           type: 'text',
-          page: pageNum,
+          page: EBookState.currentPage,
           snippet: `"${selectedText.substring(0, 110)}${selectedText.length > 110 ? '...' : ''}"`,
           date: new Date().toLocaleDateString()
         });
@@ -961,7 +1223,7 @@
     addBookmark({
       type: 'page',
       page: EBookState.currentPage,
-      snippet: `Page ${EBookState.currentPage} - Full Page Bookmark`,
+      snippet: EBookState.isMobile ? `Page ${EBookState.currentPage}` : `Page ${EBookState.currentPage} - Full Page`,
       date: new Date().toLocaleDateString()
     });
   }
@@ -1036,7 +1298,13 @@
   function updatePageCounter() {
     const counter = document.getElementById('ebook-page-counter');
     if (counter) {
-      counter.textContent = `${EBookState.currentPage} of ${EBookState.totalPages || '--'}`;
+      if (EBookState.isMobile) {
+        const isTextPage = (EBookState.currentPage % 2 === 1);
+        const pdfNum = Math.ceil(EBookState.currentPage / 2);
+        counter.textContent = `Page ${EBookState.currentPage} of ${EBookState.totalPages} (P.${pdfNum} ${isTextPage ? 'Text' : 'Photo'})`;
+      } else {
+        counter.textContent = `Page ${EBookState.currentPage} of ${EBookState.totalPages || '--'}`;
+      }
     }
   }
 

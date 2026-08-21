@@ -109,7 +109,7 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none; /* CRITICAL: Prevent inactive overlay from blocking page clicks! */
+  pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 16px;
   box-sizing: border-box;
@@ -118,7 +118,7 @@
 .ebook-modal-overlay.active {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto; /* Enable touch & click events ONLY when modal is active */
+  pointer-events: auto;
 }
 
 .ebook-modal-container {
@@ -465,7 +465,149 @@
 
 
 /* --------------------------------------------------------------------------
-   5. MOBILE VIEWPORT MODES (UPWARD FLIP & SIDEWAYS FLIP)
+   5. NATIVE MOBILE EDITORIAL TEXT CARDS & CAPTIONED PHOTO PAGES
+   -------------------------------------------------------------------------- */
+.ebook-mobile-text-card {
+  width: 100%;
+  height: 100%;
+  padding: 22px 18px;
+  background: #141C16;
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  color: #E2E8F0;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid rgba(255, 216, 95, 0.2);
+}
+
+.ebook-card-badge {
+  align-self: flex-start;
+  background: rgba(16, 76, 113, 0.85);
+  border: 1px solid var(--accent-gold, #FFD85F);
+  color: var(--accent-gold, #FFD85F);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.ebook-card-title {
+  font-family: var(--font-serif, 'Marcellus', serif);
+  color: var(--accent-gold, #FFD85F);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin: 0 0 6px 0;
+}
+
+.ebook-card-subtitle {
+  font-size: 0.88rem;
+  color: var(--accent-cyan, #C3F8FE);
+  font-style: italic;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  border-bottom: 1px solid rgba(195, 248, 254, 0.15);
+  padding-bottom: 10px;
+}
+
+.ebook-card-section-block {
+  margin-bottom: 14px;
+}
+
+.ebook-card-section-heading {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-gold, #FFD85F);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.ebook-card-body-text {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #CBD5E0;
+  margin: 0 0 8px 0;
+}
+
+.ebook-card-fact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.ebook-card-fact-item {
+  background: rgba(32, 43, 34, 0.7);
+  border: 1px solid rgba(195, 248, 254, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.ebook-card-fact-label {
+  font-size: 0.68rem;
+  color: var(--accent-cyan, #C3F8FE);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ebook-card-fact-val {
+  font-size: 0.78rem;
+  color: #FFFFFF;
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+/* Photo Page Floating Bottom Caption Bar */
+.ebook-photo-card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000000;
+}
+
+.ebook-photo-card-wrapper canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ebook-photo-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(8, 12, 10, 0.96), rgba(8, 12, 10, 0.75) 75%, transparent);
+  padding: 18px 14px 14px;
+  color: #FFFFFF;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.ebook-photo-caption-title {
+  font-family: var(--font-serif, 'Marcellus', serif);
+  color: var(--accent-gold, #FFD85F);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.ebook-photo-caption-desc {
+  font-size: 0.78rem;
+  color: var(--accent-cyan, #C3F8FE);
+  line-height: 1.35;
+}
+
+
+/* --------------------------------------------------------------------------
+   6. MOBILE VIEWPORT MODES (UPWARD FLIP & SIDEWAYS FLIP)
    -------------------------------------------------------------------------- */
 .ebook-mobile-vertical-stage {
   width: 100%;
@@ -514,7 +656,7 @@
 
 
 /* --------------------------------------------------------------------------
-   6. ANIMATED GESTURE MOVEMENT SELECTOR OVERLAY
+   7. ANIMATED GESTURE MOVEMENT SELECTOR OVERLAY
    -------------------------------------------------------------------------- */
 .ebook-gesture-modal-overlay {
   position: absolute;
@@ -686,7 +828,7 @@
 
 
 /* --------------------------------------------------------------------------
-   7. FIRST-TIME FULLSCREEN INSTRUCTION OVERLAY
+   8. FIRST-TIME FULLSCREEN INSTRUCTION OVERLAY
    -------------------------------------------------------------------------- */
 .ebook-fullscreen-tutorial-overlay {
   position: absolute;
@@ -779,7 +921,7 @@
 
 
 /* --------------------------------------------------------------------------
-   8. BOOKMARKS DRAWER & FLOATING HIGHLIGHT SELECTION POPOVER
+   9. BOOKMARKS DRAWER & FLOATING HIGHLIGHT SELECTION POPOVER
    -------------------------------------------------------------------------- */
 .ebook-bookmarks-drawer {
   position: absolute;
@@ -927,7 +1069,7 @@
 
 
 /* --------------------------------------------------------------------------
-   9. MOBILE & TABLET FULLY DYNAMIC RESPONSIVE TOP MENU FIXES
+   10. MOBILE & TABLET FULLY DYNAMIC RESPONSIVE TOP MENU FIXES
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .ebook-modal-overlay {
