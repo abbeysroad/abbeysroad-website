@@ -108,7 +108,7 @@
               <!-- Flip Direction Switcher Button (Mobile/Tablet Only) -->
               <button id="ebook-flip-mode-btn" class="ebook-btn-icon-text ebook-flip-mode-btn" title="Choose page flip movement">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L13 16"/>
+                  <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
                 </svg>
                 <span id="ebook-flip-mode-label">Flip: Upward</span>
               </button>
@@ -239,13 +239,21 @@
   }
 
   function bindTriggerEvents() {
-    document.addEventListener('click', function (e) {
+    let lastHandled = 0;
+    function handleTrigger(e) {
+      const now = Date.now();
+      if (now - lastHandled < 300) return; // Prevent double trigger on touchend + click
       const trigger = e.target.closest('#open-ebook-btn, .ebook-trigger-btn');
       if (trigger) {
+        lastHandled = now;
         e.preventDefault();
+        e.stopPropagation();
         openEBookModal();
       }
-    });
+    }
+
+    document.addEventListener('click', handleTrigger);
+    document.addEventListener('touchend', handleTrigger, { passive: false });
   }
 
   function bindModalEvents() {
@@ -264,9 +272,13 @@
     const modalContainer = document.getElementById('ebook-modal-container');
     const topBar = document.getElementById('ebook-top-bar');
 
-    // Direct, highly reliable listeners for each action button
     if (closeBtn) {
       closeBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeEBookModal();
+      });
+      closeBtn.addEventListener('touchend', function (e) {
         e.preventDefault();
         e.stopPropagation();
         closeEBookModal();
@@ -358,7 +370,6 @@
       });
     }
 
-    // Top edge mouse/touch reveal in Fullscreen Mode
     function handleFullscreenTopHover(clientY) {
       if (modalContainer.classList.contains('is-fullscreen') && clientY <= 48) {
         revealTopBar();
@@ -391,7 +402,6 @@
     topBar.classList.add('header-visible');
     clearTimeout(EBookState.headerHideTimer);
     EBookState.headerHideTimer = setTimeout(() => {
-      // Only hide if the cursor is not currently hovering over the header
       if (!topBar.matches(':hover')) {
         topBar.classList.remove('header-visible');
       }
@@ -400,12 +410,19 @@
 
 
   /* ==========================================================================
-     2. OPEN & LOAD PDF DOCUMENT
+     2. OPEN & CLOSE E-BOOK MODAL
      ========================================================================== */
   function openEBookModal() {
     const modalOverlay = document.getElementById('ebook-modal-overlay');
+    if (!modalOverlay) return;
+
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Pause Lenis smooth scroll if present to prevent page scrolling behind modal
+    if (window.lenis && typeof window.lenis.stop === 'function') {
+      window.lenis.stop();
+    }
 
     EBookState.isMobile = window.innerWidth <= 768;
     updateFlipModeLabel();
@@ -419,15 +436,38 @@
 
   function closeEBookModal() {
     const modalOverlay = document.getElementById('ebook-modal-overlay');
+    if (!modalOverlay) return;
+
     modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
+
+    // Resume Lenis smooth scroll if present
+    if (window.lenis && typeof window.lenis.start === 'function') {
+      window.lenis.start();
+    }
 
     if (document.fullscreenElement) {
       document.exitFullscreen().catch(err => console.log(err));
     }
+
     const container = document.getElementById('ebook-modal-container');
-    container.classList.remove('is-fullscreen');
+    if (container) {
+      container.classList.remove('is-fullscreen');
+    }
     updateFullscreenIcon(false);
+
+    // Clean up popovers / drawers / gesture overlays
+    const popover = document.getElementById('ebook-text-popover');
+    if (popover) popover.remove();
+
+    const drawer = document.getElementById('ebook-bookmarks-drawer');
+    if (drawer) drawer.classList.remove('open');
+
+    const gestureModal = document.getElementById('ebook-gesture-modal');
+    if (gestureModal) gestureModal.classList.remove('active');
+
+    const tutorialOverlay = document.getElementById('ebook-tutorial-overlay');
+    if (tutorialOverlay) tutorialOverlay.classList.remove('active');
   }
 
   function loadPDFDocument() {
