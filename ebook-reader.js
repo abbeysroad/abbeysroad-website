@@ -15,10 +15,9 @@
     bookTitle: "Beyond the Ordinary: Discover the Philippines",
     totalPages: 0,
     currentPage: 1,
-    pageAspect: 0.707, // Width / Height ratio (approx A4 / standard book)
+    pageAspect: 0.707, // Width / Height ratio (standard book page ratio)
     pageCanvases: [],
     pageTextLayers: [],
-    pageImages: [],
     pageWidth: 0,
     pageHeight: 0,
     flipBookInstance: null,
@@ -49,6 +48,22 @@
     createModalDOM();
     bindTriggerEvents();
     bindModalEvents();
+
+    window.addEventListener('resize', debounce(() => {
+      const wasMobile = EBookState.isMobile;
+      EBookState.isMobile = window.innerWidth <= 768;
+      if (EBookState.pdfDoc) {
+        renderFlipbook();
+      }
+    }, 250));
+  }
+
+  function debounce(fn, delay) {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(this, args), delay);
+    };
   }
 
   function loadBookmarksFromStorage() {
@@ -93,7 +108,7 @@
 
             <!-- Center: Controls & Mode Switcher -->
             <div class="ebook-header-controls">
-              <!-- Flip Direction Switcher Button (Mobile/Tablet Mode Selector) -->
+              <!-- Flip Direction Switcher Button (Mobile/Tablet Only) -->
               <button id="ebook-flip-mode-btn" class="ebook-btn-icon-text ebook-flip-mode-btn" title="Choose page flip movement">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
@@ -108,13 +123,13 @@
             <!-- Right Actions: Bookmark, Fullscreen, Close -->
             <div class="ebook-header-right-actions">
               <button id="ebook-bookmark-page-btn" class="ebook-action-btn" title="Bookmark current page">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                 </svg>
               </button>
 
               <button id="ebook-bookmarks-list-btn" class="ebook-action-btn" title="Saved Bookmarks">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="8" y1="6" x2="21" y2="6"></line>
                   <line x1="8" y1="12" x2="21" y2="12"></line>
                   <line x1="8" y1="18" x2="21" y2="18"></line>
@@ -125,13 +140,13 @@
               </button>
 
               <button id="ebook-fullscreen-btn" class="ebook-action-btn" title="Toggle Full Screen">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <svg id="ebook-fullscreen-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
                 </svg>
               </button>
 
               <button id="ebook-close-btn" class="ebook-action-btn ebook-close-btn" title="Close eBook Reader">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
@@ -141,9 +156,22 @@
 
           <!-- MAIN EBOOK STAGE / VIEWPORT -->
           <main id="ebook-viewport" class="ebook-viewport">
+            <!-- DESKTOP SIDE NAVIGATION ARROWS -->
+            <button id="ebook-nav-prev" class="ebook-nav-arrow ebook-nav-prev" aria-label="Previous Page" title="Previous Page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
             <div id="ebook-flip-container" class="stpageflip-stage">
               <!-- Rendered pages injected dynamically -->
             </div>
+
+            <button id="ebook-nav-next" class="ebook-nav-arrow ebook-nav-next" aria-label="Next Page" title="Next Page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
           </main>
 
           <!-- BOOKMARKS SIDE DRAWER -->
@@ -233,12 +261,34 @@
     const gestureModal = document.getElementById('ebook-gesture-modal');
     const gestureConfirmBtn = document.getElementById('ebook-gesture-confirm-btn');
     const tutorialCloseBtn = document.getElementById('ebook-tutorial-close-btn');
+    const navPrevBtn = document.getElementById('ebook-nav-prev');
+    const navNextBtn = document.getElementById('ebook-nav-next');
     const hotspot = document.getElementById('ebook-fullscreen-hotspot');
     const topBar = document.getElementById('ebook-top-bar');
     const modalContainer = document.getElementById('ebook-modal-container');
 
     if (closeBtn) closeBtn.addEventListener('click', closeEBookModal);
     if (fullscreenBtn) fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+    if (navPrevBtn) {
+      navPrevBtn.addEventListener('click', function () {
+        if (EBookState.flipBookInstance && EBookState.flipBookInstance.flipPrev) {
+          EBookState.flipBookInstance.flipPrev();
+        } else if (EBookState.currentPage > 1) {
+          jumpToPage(EBookState.currentPage - (EBookState.isMobile ? 1 : 2));
+        }
+      });
+    }
+
+    if (navNextBtn) {
+      navNextBtn.addEventListener('click', function () {
+        if (EBookState.flipBookInstance && EBookState.flipBookInstance.flipNext) {
+          EBookState.flipBookInstance.flipNext();
+        } else if (EBookState.currentPage < EBookState.totalPages) {
+          jumpToPage(EBookState.currentPage + (EBookState.isMobile ? 1 : 2));
+        }
+      });
+    }
 
     if (bookmarkPageBtn) {
       bookmarkPageBtn.addEventListener('click', function () {
@@ -319,7 +369,6 @@
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
-    // Update state mobile status
     EBookState.isMobile = window.innerWidth <= 768;
     updateFlipModeLabel();
 
@@ -340,14 +389,15 @@
     }
     const container = document.getElementById('ebook-modal-container');
     container.classList.remove('is-fullscreen');
+    updateFullscreenIcon(false);
   }
 
   function loadPDFDocument() {
     const container = document.getElementById('ebook-flip-container');
     container.innerHTML = `
       <div style="color: #FFD85F; font-family: 'Marcellus', serif; text-align: center; padding: 40px;">
-        <div style="font-size: 1.5rem; margin-bottom: 12px;">Loading Philippines Travel Guide...</div>
-        <div style="font-size: 0.9rem; color: #C3F8FE;">Preparing realistic 3D flipbook pages...</div>
+        <div style="font-size: 1.4rem; margin-bottom: 12px;">Loading Philippines Travel Guide...</div>
+        <div style="font-size: 0.88rem; color: #C3F8FE;">Preparing realistic 3D flipbook pages...</div>
       </div>
     `;
 
@@ -370,7 +420,7 @@
 
 
   /* ==========================================================================
-     3. RENDER ALL PDF PAGES TO CANVAS & TEXT LAYERS
+     3. RENDER ALL PDF PAGES TO CANVAS & TEXT LAYERS WITH NO DISTORTION
      ========================================================================== */
   async function renderAllPages() {
     const container = document.getElementById('ebook-flip-container');
@@ -379,17 +429,46 @@
     EBookState.pageCanvases = [];
     EBookState.pageTextLayers = [];
 
-    // Calculate dimensions
+    // Measure stage dimensions to fill viewport without black space
     const viewportBox = document.getElementById('ebook-viewport').getBoundingClientRect();
-    const targetHeight = Math.min(viewportBox.height - 40, 850);
+    const isFS = EBookState.isFullscreen;
     
-    // First page to determine aspect ratio
+    // First page to determine exact aspect ratio
     const firstPage = await EBookState.pdfDoc.getPage(1);
     const vp = firstPage.getViewport({ scale: 1.0 });
     EBookState.pageAspect = vp.width / vp.height;
 
-    EBookState.pageHeight = targetHeight;
-    EBookState.pageWidth = targetHeight * EBookState.pageAspect;
+    // Calculate dimensions to maximize size and fill screen
+    let availableH = viewportBox.height - (isFS ? 20 : 30);
+    let availableW = viewportBox.width - (EBookState.isMobile ? 16 : 120); // account for side arrows on desktop
+
+    if (!EBookState.isMobile) {
+      // 2-page spread: double width
+      let maxPageW = availableW / 2;
+      let maxPageH = availableH;
+
+      if (maxPageW / maxPageH > EBookState.pageAspect) {
+        // Height is constraint
+        EBookState.pageHeight = maxPageH;
+        EBookState.pageWidth = maxPageH * EBookState.pageAspect;
+      } else {
+        // Width is constraint
+        EBookState.pageWidth = maxPageW;
+        EBookState.pageHeight = maxPageW / EBookState.pageAspect;
+      }
+    } else {
+      // Single page view for mobile
+      let maxPageW = availableW;
+      let maxPageH = availableH;
+
+      if (maxPageW / maxPageH > EBookState.pageAspect) {
+        EBookState.pageHeight = maxPageH;
+        EBookState.pageWidth = maxPageH * EBookState.pageAspect;
+      } else {
+        EBookState.pageWidth = maxPageW;
+        EBookState.pageHeight = maxPageW / EBookState.pageAspect;
+      }
+    }
 
     const renderPromises = [];
 
@@ -397,8 +476,9 @@
       const pageCard = document.createElement('div');
       pageCard.className = 'ebook-page-card';
       pageCard.dataset.pageNumber = pageNum;
-      pageCard.style.width = `${EBookState.pageWidth}px`;
-      pageCard.style.height = `${EBookState.pageHeight}px`;
+      pageCard.style.width = `${Math.round(EBookState.pageWidth)}px`;
+      pageCard.style.height = `${Math.round(EBookState.pageHeight)}px`;
+      pageCard.style.aspectRatio = `${EBookState.pageAspect}`;
 
       const canvas = document.createElement('canvas');
       const textLayerDiv = document.createElement('div');
@@ -417,7 +497,8 @@
 
   async function renderSinglePage(pageNum, canvas, textLayerDiv) {
     const page = await EBookState.pdfDoc.getPage(pageNum);
-    const scale = (EBookState.pageHeight / page.getViewport({ scale: 1.0 }).height) * (window.devicePixelRatio || 1.5);
+    const unscaledVp = page.getViewport({ scale: 1.0 });
+    const scale = (EBookState.pageHeight / unscaledVp.height) * (window.devicePixelRatio || 1.5);
     const viewport = page.getViewport({ scale: scale });
 
     canvas.height = viewport.height;
@@ -437,7 +518,7 @@
       window.pdfjsLib.renderTextLayer({
         textContentSource: textContent,
         container: textLayerDiv,
-        viewport: page.getViewport({ scale: EBookState.pageHeight / page.getViewport({ scale: 1.0 }).height }),
+        viewport: page.getViewport({ scale: EBookState.pageHeight / unscaledVp.height }),
         textDivs: []
       });
     } catch (e) {
@@ -463,9 +544,11 @@
     } else {
       setupDesktopSpreadStage();
     }
+
+    updateNavArrowVisibility();
   }
 
-  // DESKTOP & TABLET: 2-PAGE SPREAD 3D FLIPBOOK (MATCHING REFERENCE VIDEO)
+  // DESKTOP & TABLET: 2-PAGE SPREAD 3D FLIPBOOK
   function setupDesktopSpreadStage() {
     const container = document.getElementById('ebook-flip-container');
     container.className = 'stpageflip-stage';
@@ -484,14 +567,14 @@
         height: Math.round(EBookState.pageHeight),
         size: 'fixed',
         minWidth: 300,
-        maxWidth: 1000,
+        maxWidth: 1200,
         minHeight: 400,
-        maxHeight: 1200,
+        maxHeight: 1400,
         drawShadow: true,
         maxShadowOpacity: 0.8,
         showCover: true,
         usePortrait: false,
-        flippingTime: 800,
+        flippingTime: 750,
         startPage: EBookState.currentPage - 1
       });
 
@@ -501,9 +584,9 @@
       pageFlip.on('flip', (e) => {
         EBookState.currentPage = e.data + 1;
         updatePageCounter();
+        updateNavArrowVisibility();
       });
     } else {
-      // Fallback CSS 3D Double Page Flip Engine
       setupCSSDoublePageFallback();
     }
   }
@@ -537,7 +620,6 @@
         p.style.position = 'relative';
       });
 
-      // Observer for active page in vertical scroll
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -571,7 +653,6 @@
         }
       });
 
-      // Touch swipe handler for horizontal flip
       setupTouchSwipe(container);
     }
   }
@@ -591,18 +672,31 @@
 
       if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
         if (diffX < 0 && EBookState.currentPage < EBookState.totalPages) {
-          // Swipe Left -> Next Page
           EBookState.currentPage++;
           setupMobileStage();
           updatePageCounter();
         } else if (diffX > 0 && EBookState.currentPage > 1) {
-          // Swipe Right -> Prev Page
           EBookState.currentPage--;
           setupMobileStage();
           updatePageCounter();
         }
       }
     };
+  }
+
+  function updateNavArrowVisibility() {
+    const prevBtn = document.getElementById('ebook-nav-prev');
+    const nextBtn = document.getElementById('ebook-nav-next');
+    if (!prevBtn || !nextBtn) return;
+
+    if (EBookState.isMobile) {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      return;
+    }
+
+    prevBtn.style.display = EBookState.currentPage <= 1 ? 'none' : 'flex';
+    nextBtn.style.display = EBookState.currentPage >= EBookState.totalPages ? 'none' : 'flex';
   }
 
 
@@ -637,7 +731,7 @@
 
 
   /* ==========================================================================
-     6. FULLSCREEN MODE & AUTO-HIDING TOP BAR
+     6. FULLSCREEN MODE, ICON TOGGLE & AUTO-HIDING TOP BAR
      ========================================================================== */
   function toggleFullscreen() {
     const container = document.getElementById('ebook-modal-container');
@@ -646,28 +740,56 @@
     if (!isFS) {
       container.classList.add('is-fullscreen');
       EBookState.isFullscreen = true;
+      updateFullscreenIcon(true);
 
-      // Trigger fullscreen API if available
       if (container.requestFullscreen) {
         container.requestFullscreen().catch(err => console.log("Fullscreen request:", err));
       }
 
-      // Check first time instructions
       const seenIntro = localStorage.getItem(EBookState.fullscreenIntroKey);
       if (!seenIntro) {
         document.getElementById('ebook-tutorial-overlay').classList.add('active');
       }
 
-      // Auto-hide top bar after 3s
       const topBar = document.getElementById('ebook-top-bar');
       topBar.classList.remove('header-visible');
+
+      // Re-render pages to fill full screen with zero black space
+      setTimeout(() => renderAllPages(), 150);
 
     } else {
       container.classList.remove('is-fullscreen');
       EBookState.isFullscreen = false;
+      updateFullscreenIcon(false);
+
       if (document.fullscreenElement) {
         document.exitFullscreen().catch(err => console.log(err));
       }
+
+      setTimeout(() => renderAllPages(), 150);
+    }
+  }
+
+  function updateFullscreenIcon(isFS) {
+    const btn = document.getElementById('ebook-fullscreen-btn');
+    if (!btn) return;
+
+    if (isFS) {
+      // Minimize Icon (Collapse)
+      btn.title = "Exit Full Screen";
+      btn.innerHTML = `
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"></path>
+        </svg>
+      `;
+    } else {
+      // Expand Icon
+      btn.title = "Toggle Full Screen";
+      btn.innerHTML = `
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+        </svg>
+      `;
     }
   }
 
@@ -679,7 +801,6 @@
     const selection = window.getSelection();
     const selectedText = selection ? selection.toString().trim() : '';
 
-    // Remove existing popover
     const existing = document.getElementById('ebook-text-popover');
     if (existing) existing.remove();
 
@@ -687,7 +808,6 @@
       const range = selection.getRangeAt(0);
       const rect = range.getBoundingClientRect();
 
-      // Ensure selection is inside reader
       const textLayer = range.commonAncestorContainer.parentElement?.closest('.ebook-text-layer');
       if (!textLayer) return;
 
@@ -733,7 +853,6 @@
   }
 
   function addBookmark(item) {
-    // Avoid duplicate page bookmarks
     const exists = EBookState.bookmarks.some(b => b.type === item.type && b.page === item.page && b.snippet === item.snippet);
     if (!exists) {
       EBookState.bookmarks.unshift(item);
@@ -770,7 +889,6 @@
       </div>
     `).join('');
 
-    // Jump to page on click
     listContainer.querySelectorAll('.ebook-bookmark-card').forEach(card => {
       card.addEventListener('click', function (e) {
         if (e.target.classList.contains('ebook-bm-delete')) return;
@@ -780,7 +898,6 @@
       });
     });
 
-    // Delete bookmark button
     listContainer.querySelectorAll('.ebook-bm-delete').forEach(btn => {
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -793,9 +910,9 @@
   }
 
   function jumpToPage(pageNum) {
-    EBookState.currentPage = pageNum;
+    EBookState.currentPage = Math.max(1, Math.min(pageNum, EBookState.totalPages));
     if (EBookState.flipBookInstance && EBookState.flipBookInstance.flip) {
-      EBookState.flipBookInstance.flip(pageNum - 1);
+      EBookState.flipBookInstance.flip(EBookState.currentPage - 1);
     } else {
       renderFlipbook();
     }
@@ -805,7 +922,7 @@
   function updatePageCounter() {
     const counter = document.getElementById('ebook-page-counter');
     if (counter) {
-      counter.textContent = `Page ${EBookState.currentPage} of ${EBookState.totalPages || '--'}`;
+      counter.textContent = `${EBookState.currentPage} of ${EBookState.totalPages || '--'}`;
     }
   }
 
@@ -831,7 +948,6 @@
     setTimeout(() => toast.remove(), 2500);
   }
 
-  // Initialize on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initEBookReader);
   } else {
