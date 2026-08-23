@@ -1,6 +1,7 @@
 /* ==========================================================================
-   PANDORA TRAVEL E-BOOK READER TOOL STYLESHEET
+   ABBEY'S ROAD E-BOOK READER TOOL STYLESHEET
    Supports Desktop 2-Page Spread, Mobile Vertical/Horizontal Flip Modes,
+   Tablet Dual-View Segmented Selector (Desktop Spread vs Mobile Edition),
    Animated Gesture Selection Overlay, Text Highlighting & Bookmarks Drawer
    ========================================================================== */
 
@@ -109,7 +110,7 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none; /* CRITICAL: Prevent inactive overlay from blocking page clicks! */
+  pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 16px;
   box-sizing: border-box;
@@ -118,7 +119,7 @@
 .ebook-modal-overlay.active {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto; /* Enable touch & click events ONLY when modal is active */
+  pointer-events: auto;
 }
 
 .ebook-modal-container {
@@ -228,12 +229,63 @@
   max-width: 280px;
 }
 
-/* Center Controls (Page nav & mode) */
+/* Center Controls (Page nav & mode & Tablet selector) */
 .ebook-header-controls {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+}
+
+/* Tablet Segmented View Selector */
+.ebook-tablet-view-selector {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(10, 15, 12, 0.85);
+  border: 1px solid rgba(195, 248, 254, 0.3);
+  border-radius: 20px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.ebook-tab-btn {
+  background: transparent;
+  border: none;
+  color: #A0AEC0;
+  padding: 5px 12px;
+  border-radius: 16px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.ebook-tab-btn.active {
+  background: rgba(16, 76, 113, 0.95);
+  color: var(--accent-gold, #FFD85F);
+  border: 1px solid var(--accent-gold, #FFD85F);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.ebook-tab-btn:hover:not(.active) {
+  color: #FFFFFF;
+}
+
+.ebook-tab-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+}
+
+/* HIDE TABLET SELECTOR ON MOBILE & DESKTOP (Only show on Tablet) */
+@media (max-width: 768px), (min-width: 1025px) {
+  .ebook-tablet-view-selector {
+    display: none !important;
+  }
 }
 
 .ebook-btn-icon-text {
@@ -267,7 +319,7 @@
 }
 
 /* HIDE FLIP MODE BUTTON ON DESKTOP */
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .ebook-flip-mode-btn {
     display: none !important;
   }
@@ -927,7 +979,7 @@
 
 
 /* --------------------------------------------------------------------------
-   9. MOBILE & TABLET FULLY DYNAMIC RESPONSIVE TOP MENU FIXES
+   9. MOBILE & TABLET RESPONSIVE FIXES
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .ebook-modal-overlay {

@@ -1,31 +1,41 @@
 /**
- * PANDORA TRAVEL - INTERACTIVE 3D PDF E-BOOK READER ENGINE
- * PDF.js Canvas + Text Layer Rendering, Desktop 3D Page Flip,
- * Mobile Vertical/Horizontal Flip Modes with Gesture Overlays,
- * Text Highlight Bookmarking & Auto-Hiding Fullscreen Header.
+ * ABBEY'S ROAD - INTERACTIVE 3D PDF E-BOOK READER ENGINE
+ * Supports Desktop 2-Page Spread, Mobile Vertical/Horizontal Flip Modes,
+ * Tablet Dual-View Mode Selector (Desktop Spread vs Mobile Edition),
+ * PDF.js Canvas + Text Layer Rendering, Text Highlighting & Bookmarks.
  */
 
 (function () {
   'use strict';
 
-  // State Management
+  // Reader State & PDF Configuration
   const EBookState = {
+    // PDF URLs
+    desktopPdfUrl: 'beyond-the-ordinary-discover-the-philippines_desktop_compressed.pdf',
+    mobilePdfUrl: 'beyond-the-ordinary-mobile_compressed.pdf',
+
+    // PDF Documents Cache
+    pdfCache: {
+      desktop: null,
+      mobile: null
+    },
+
+    // Active Reader State
     pdfDoc: null,
-    pdfUrl: 'beyond-the-ordinary-discover-the-philippines_compressed.pdf',
+    activePdfType: 'desktop', // 'desktop' or 'mobile'
     bookTitle: "Beyond the Ordinary: Discover the Philippines",
     totalPages: 0,
     currentPage: 1,
-    pageAspect: 0.707, // Width / Height ratio (standard book page ratio)
-    pageCanvases: [],
-    pageTextLayers: [],
+    pageAspect: 0.707, // Computed dynamically from PDF viewport
     pageWidth: 0,
     pageHeight: 0,
     flipBookInstance: null,
     mobileObserver: null,
     
     // Viewport & Mode Settings
-    isMobile: window.innerWidth <= 768,
-    mobileFlipMode: 'vertical', // 'vertical' (Upwards) or 'horizontal' (Sideways)
+    deviceType: 'desktop', // 'desktop', 'tablet', or 'mobile'
+    tabletViewMode: 'desktop', // 'desktop' or 'mobile' on tablet
+    mobileFlipMode: 'vertical', // 'vertical' (Upward) or 'horizontal' (Sideways)
     isFullscreen: false,
     headerHideTimer: null,
     
@@ -46,16 +56,43 @@
      ========================================================================== */
   function initEBookReader() {
     loadBookmarksFromStorage();
+    detectDeviceType();
     createModalDOM();
     bindTriggerEvents();
     bindModalEvents();
 
     window.addEventListener('resize', debounce(() => {
-      EBookState.isMobile = window.innerWidth <= 768;
+      const prevDevice = EBookState.deviceType;
+      detectDeviceType();
       if (EBookState.pdfDoc && document.getElementById('ebook-modal-overlay')?.classList.contains('active')) {
-        recalculateAndRender();
+        if (prevDevice !== EBookState.deviceType) {
+          switchPdfViewMode(getRequiredPdfType());
+        } else {
+          recalculateAndRender();
+        }
       }
     }, 150));
+  }
+
+  function detectDeviceType() {
+    const w = window.innerWidth;
+    if (w <= 768) {
+      EBookState.deviceType = 'mobile';
+    } else if (w <= 1024) {
+      EBookState.deviceType = 'tablet';
+    } else {
+      EBookState.deviceType = 'desktop';
+    }
+  }
+
+  function getRequiredPdfType() {
+    if (EBookState.deviceType === 'mobile') {
+      return 'mobile';
+    } else if (EBookState.deviceType === 'tablet') {
+      return EBookState.tabletViewMode;
+    } else {
+      return 'desktop';
+    }
   }
 
   function debounce(fn, delay) {
@@ -69,11 +106,9 @@
   function loadBookmarksFromStorage() {
     try {
       const stored = localStorage.getItem(EBookState.storageKey);
-      if (stored) {
-        EBookState.bookmarks = JSON.parse(stored);
-      }
+      if (stored) EBookState.bookmarks = JSON.parse(stored);
     } catch (e) {
-      console.warn("Could not load bookmarks from storage:", e);
+      console.warn("Could not load bookmarks:", e);
     }
   }
 
@@ -81,7 +116,7 @@
     try {
       localStorage.setItem(EBookState.storageKey, JSON.stringify(EBookState.bookmarks));
     } catch (e) {
-      console.warn("Could not save bookmarks to storage:", e);
+      console.warn("Could not save bookmarks:", e);
     }
   }
 
@@ -94,7 +129,7 @@
           
           <!-- TOP CONTROL HEADER BAR -->
           <header id="ebook-top-bar" class="ebook-top-bar">
-            <!-- Left: Title & Logo (Desktop Only) -->
+            <!-- Left: Title & Logo (Desktop & Tablet) -->
             <div class="ebook-header-title-box">
               <svg class="ebook-header-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -103,9 +138,21 @@
               <span class="ebook-header-title">${EBookState.bookTitle}</span>
             </div>
 
-            <!-- Center: Controls & Mode Switcher -->
+            <!-- Center: Controls, Tablet Selector & Mode Switcher -->
             <div class="ebook-header-controls">
-              <!-- Flip Direction Switcher Button (Mobile/Tablet Only) -->
+              <!-- Tablet Segmented View Selector (Desktop Spread vs Mobile Edition) -->
+              <div id="ebook-tablet-selector" class="ebook-tablet-view-selector">
+                <button id="tab-view-desktop" class="ebook-tab-btn active" title="View Desktop 2-Page Spread">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                  <span>Desktop Spread</span>
+                </button>
+                <button id="tab-view-mobile" class="ebook-tab-btn" title="View Mobile Portrait Edition">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                  <span>Mobile View</span>
+                </button>
+              </div>
+
+              <!-- Flip Direction Switcher Button (Mobile View Mode) -->
               <button id="ebook-flip-mode-btn" class="ebook-btn-icon-text ebook-flip-mode-btn" title="Choose page flip movement">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/>
@@ -189,7 +236,6 @@
               <p class="ebook-gesture-subtitle">Select how you'd like to flip through pages on mobile or tablet</p>
               
               <div class="ebook-gesture-options-grid">
-                <!-- Option 1: Vertical Upwards Flip -->
                 <div id="gesture-opt-vertical" class="ebook-gesture-option-card selected" data-mode="vertical">
                   <div class="gesture-anim-box">
                     <div class="anim-arrow-up"></div>
@@ -199,7 +245,6 @@
                   <div class="gesture-opt-sub">Swipe up to flip pages</div>
                 </div>
 
-                <!-- Option 2: Horizontal Sideways Flip -->
                 <div id="gesture-opt-horizontal" class="ebook-gesture-option-card" data-mode="horizontal">
                   <div class="gesture-anim-box">
                     <div class="anim-arrow-side"></div>
@@ -242,7 +287,7 @@
     let lastHandled = 0;
     function handleTrigger(e) {
       const now = Date.now();
-      if (now - lastHandled < 300) return; // Prevent double trigger on touchend + click
+      if (now - lastHandled < 300) return;
       const trigger = e.target.closest('#open-ebook-btn, .ebook-trigger-btn');
       if (trigger) {
         lastHandled = now;
@@ -263,6 +308,9 @@
     const bookmarksListBtn = document.getElementById('ebook-bookmarks-list-btn');
     const flipModeBtn = document.getElementById('ebook-flip-mode-btn');
 
+    const tabDesktopBtn = document.getElementById('tab-view-desktop');
+    const tabMobileBtn = document.getElementById('tab-view-mobile');
+
     const drawerCloseBtn = document.getElementById('ebook-drawer-close-btn');
     const gestureModal = document.getElementById('ebook-gesture-modal');
     const gestureConfirmBtn = document.getElementById('ebook-gesture-confirm-btn');
@@ -271,6 +319,29 @@
     const navNextBtn = document.getElementById('ebook-nav-next');
     const modalContainer = document.getElementById('ebook-modal-container');
     const topBar = document.getElementById('ebook-top-bar');
+
+    // Tablet Segmented View Switching Listeners
+    if (tabDesktopBtn) {
+      tabDesktopBtn.addEventListener('click', function () {
+        if (EBookState.tabletViewMode !== 'desktop') {
+          EBookState.tabletViewMode = 'desktop';
+          tabDesktopBtn.classList.add('active');
+          if (tabMobileBtn) tabMobileBtn.classList.remove('active');
+          switchPdfViewMode('desktop');
+        }
+      });
+    }
+
+    if (tabMobileBtn) {
+      tabMobileBtn.addEventListener('click', function () {
+        if (EBookState.tabletViewMode !== 'mobile') {
+          EBookState.tabletViewMode = 'mobile';
+          tabMobileBtn.classList.add('active');
+          if (tabDesktopBtn) tabDesktopBtn.classList.remove('active');
+          switchPdfViewMode('mobile');
+        }
+      });
+    }
 
     if (closeBtn) {
       closeBtn.addEventListener('click', function (e) {
@@ -323,7 +394,7 @@
         if (EBookState.flipBookInstance && EBookState.flipBookInstance.flipPrev) {
           EBookState.flipBookInstance.flipPrev();
         } else if (EBookState.currentPage > 1) {
-          jumpToPage(EBookState.currentPage - (EBookState.isMobile ? 1 : 2));
+          jumpToPage(EBookState.currentPage - (EBookState.activePdfType === 'desktop' ? 2 : 1));
         }
       });
     }
@@ -334,7 +405,7 @@
         if (EBookState.flipBookInstance && EBookState.flipBookInstance.flipNext) {
           EBookState.flipBookInstance.flipNext();
         } else if (EBookState.currentPage < EBookState.totalPages) {
-          jumpToPage(EBookState.currentPage + (EBookState.isMobile ? 1 : 2));
+          jumpToPage(EBookState.currentPage + (EBookState.activePdfType === 'desktop' ? 2 : 1));
         }
       });
     }
@@ -410,7 +481,7 @@
 
 
   /* ==========================================================================
-     2. OPEN & CLOSE E-BOOK MODAL
+     2. OPEN & CLOSE MODAL POPUP & VIEW SWITCHER
      ========================================================================== */
   function openEBookModal() {
     const modalOverlay = document.getElementById('ebook-modal-overlay');
@@ -419,19 +490,15 @@
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
-    // Pause Lenis smooth scroll if present to prevent page scrolling behind modal
     if (window.lenis && typeof window.lenis.stop === 'function') {
       window.lenis.stop();
     }
 
-    EBookState.isMobile = window.innerWidth <= 768;
+    detectDeviceType();
     updateFlipModeLabel();
 
-    if (!EBookState.pdfDoc) {
-      loadPDFDocument();
-    } else {
-      recalculateAndRender();
-    }
+    const targetType = getRequiredPdfType();
+    switchPdfViewMode(targetType);
   }
 
   function closeEBookModal() {
@@ -441,7 +508,6 @@
     modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
 
-    // Resume Lenis smooth scroll if present
     if (window.lenis && typeof window.lenis.start === 'function') {
       window.lenis.start();
     }
@@ -456,7 +522,6 @@
     }
     updateFullscreenIcon(false);
 
-    // Clean up popovers / drawers / gesture overlays
     const popover = document.getElementById('ebook-text-popover');
     if (popover) popover.remove();
 
@@ -470,11 +535,37 @@
     if (tutorialOverlay) tutorialOverlay.classList.remove('active');
   }
 
-  function loadPDFDocument() {
+  function switchPdfViewMode(pdfType) {
+    EBookState.activePdfType = pdfType;
+    EBookState.currentPage = 1;
+
+    // Toggle Flip Direction button visibility on Tablet
+    const flipModeBtn = document.getElementById('ebook-flip-mode-btn');
+    if (flipModeBtn) {
+      if (pdfType === 'mobile' && EBookState.deviceType !== 'desktop') {
+        flipModeBtn.style.display = 'inline-flex';
+      } else if (EBookState.deviceType === 'desktop') {
+        flipModeBtn.style.display = 'none';
+      }
+    }
+
+    if (EBookState.pdfCache[pdfType]) {
+      EBookState.pdfDoc = EBookState.pdfCache[pdfType];
+      EBookState.totalPages = EBookState.pdfDoc.numPages;
+      updatePageCounter();
+      renderAllPages();
+    } else {
+      loadPDFDocument(pdfType);
+    }
+  }
+
+  function loadPDFDocument(pdfType) {
     const container = document.getElementById('ebook-flip-container');
+    const targetUrl = pdfType === 'desktop' ? EBookState.desktopPdfUrl : EBookState.mobilePdfUrl;
+
     container.innerHTML = `
       <div style="color: #FFD85F; font-family: 'Marcellus', serif; text-align: center; padding: 40px;">
-        <div style="font-size: 1.3rem; margin-bottom: 12px;">Loading Philippines Travel Guide...</div>
+        <div style="font-size: 1.3rem; margin-bottom: 12px;">Loading ${pdfType === 'desktop' ? 'Desktop' : 'Mobile'} Philippines Guide...</div>
         <div style="font-size: 0.85rem; color: #C3F8FE;">Preparing realistic 3D flipbook pages...</div>
       </div>
     `;
@@ -485,20 +576,21 @@
       return;
     }
 
-    window.pdfjsLib.getDocument(EBookState.pdfUrl).promise.then(pdf => {
+    window.pdfjsLib.getDocument(targetUrl).promise.then(pdf => {
+      EBookState.pdfCache[pdfType] = pdf;
       EBookState.pdfDoc = pdf;
       EBookState.totalPages = pdf.numPages;
       updatePageCounter();
       renderAllPages();
     }).catch(err => {
-      console.error("Error loading PDF:", err);
+      console.error(`Error loading ${pdfType} PDF:`, err);
       container.innerHTML = `<div style="color:#F87171; padding:20px;">Failed to load PDF file: ${err.message}</div>`;
     });
   }
 
 
   /* ==========================================================================
-     3. CALCULATE EXACT BOUNDS & RENDER PDF PAGES WITHOUT CLIPPING OR DISTORTION
+     3. CALCULATE EXACT BOUNDS & RENDER PDF PAGES
      ========================================================================== */
   function computePageDimensions() {
     const viewport = document.getElementById('ebook-viewport');
@@ -507,13 +599,14 @@
     const box = viewport.getBoundingClientRect();
     const isFS = EBookState.isFullscreen;
     
+    const isSpreadMode = (EBookState.activePdfType === 'desktop');
     const paddingY = isFS ? 12 : 20;
-    const paddingX = EBookState.isMobile ? 10 : 110;
+    const paddingX = isSpreadMode ? 110 : 10;
 
     let availableH = box.height - paddingY;
     let availableW = box.width - paddingX;
 
-    if (!EBookState.isMobile) {
+    if (isSpreadMode) {
       let maxPageW = availableW / 2;
       let maxPageH = availableH;
 
@@ -541,9 +634,6 @@
   async function renderAllPages() {
     const container = document.getElementById('ebook-flip-container');
     container.innerHTML = '';
-
-    EBookState.pageCanvases = [];
-    EBookState.pageTextLayers = [];
 
     const firstPage = await EBookState.pdfDoc.getPage(1);
     const vp = firstPage.getViewport({ scale: 1.0 });
@@ -578,19 +668,15 @@
   async function renderSinglePage(pageNum, canvas, textLayerDiv) {
     const page = await EBookState.pdfDoc.getPage(pageNum);
     const unscaledVp = page.getViewport({ scale: 1.0 });
-    const scale = (EBookState.pageHeight / unscaledVp.height) * (window.devicePixelRatio || 1.5);
+    const dpr = window.devicePixelRatio || 1.5;
+    const scale = (EBookState.pageHeight / unscaledVp.height) * dpr;
     const viewport = page.getViewport({ scale: scale });
 
     canvas.height = viewport.height;
     canvas.width = viewport.width;
 
     const ctx = canvas.getContext('2d');
-    const renderContext = {
-      canvasContext: ctx,
-      viewport: viewport
-    };
-
-    await page.render(renderContext).promise;
+    await page.render({ canvasContext: ctx, viewport: viewport }).promise;
 
     try {
       const textContent = await page.getTextContent();
@@ -617,11 +703,11 @@
 
 
   /* ==========================================================================
-     4. STPAGEFLIP 3D FLIPBOOK & MOBILE STAGE WITH CLEAN STATE RESET
+     4. STPAGEFLIP 3D FLIPBOOK & MOBILE STAGE
      ========================================================================== */
   function renderFlipbook() {
     const container = document.getElementById('ebook-flip-container');
-    EBookState.isMobile = window.innerWidth <= 768;
+    const isSpreadMode = (EBookState.activePdfType === 'desktop');
 
     if (EBookState.flipBookInstance) {
       try { EBookState.flipBookInstance.destroy(); } catch (e) {}
@@ -633,10 +719,10 @@
       EBookState.mobileObserver = null;
     }
 
-    if (EBookState.isMobile) {
-      setupMobileStage();
-    } else {
+    if (isSpreadMode) {
       setupDesktopSpreadStage();
+    } else {
+      setupMobileStage();
     }
 
     updateNavArrowVisibility();
@@ -804,7 +890,7 @@
     const nextBtn = document.getElementById('ebook-nav-next');
     if (!prevBtn || !nextBtn) return;
 
-    if (EBookState.isMobile) {
+    if (EBookState.activePdfType !== 'desktop') {
       prevBtn.style.display = 'none';
       nextBtn.style.display = 'none';
       return;
@@ -922,12 +1008,6 @@
       const range = selection.getRangeAt(0);
       const rect = range.getBoundingClientRect();
 
-      const textLayer = range.commonAncestorContainer.parentElement?.closest('.ebook-text-layer');
-      if (!textLayer) return;
-
-      const pageCard = textLayer.closest('.ebook-page-card');
-      const pageNum = pageCard ? parseInt(pageCard.dataset.pageNumber, 10) : EBookState.currentPage;
-
       const popover = document.createElement('div');
       popover.id = 'ebook-text-popover';
       popover.className = 'ebook-text-selection-popover';
@@ -945,7 +1025,8 @@
         e.stopPropagation();
         addBookmark({
           type: 'text',
-          page: pageNum,
+          page: EBookState.currentPage,
+          pdfType: EBookState.activePdfType,
           snippet: `"${selectedText.substring(0, 110)}${selectedText.length > 110 ? '...' : ''}"`,
           date: new Date().toLocaleDateString()
         });
@@ -961,7 +1042,8 @@
     addBookmark({
       type: 'page',
       page: EBookState.currentPage,
-      snippet: `Page ${EBookState.currentPage} - Full Page Bookmark`,
+      pdfType: EBookState.activePdfType,
+      snippet: `Page ${EBookState.currentPage} (${EBookState.activePdfType.toUpperCase()} VIEW)`,
       date: new Date().toLocaleDateString()
     });
   }
@@ -1036,7 +1118,7 @@
   function updatePageCounter() {
     const counter = document.getElementById('ebook-page-counter');
     if (counter) {
-      counter.textContent = `${EBookState.currentPage} of ${EBookState.totalPages || '--'}`;
+      counter.textContent = `Page ${EBookState.currentPage} of ${EBookState.totalPages || '--'}`;
     }
   }
 
