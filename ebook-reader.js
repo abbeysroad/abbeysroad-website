@@ -285,21 +285,58 @@
   }
 
   function bindTriggerEvents() {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartTime = 0;
+    let isScrollGesture = false;
     let lastHandled = 0;
-    function handleTrigger(e) {
-      const now = Date.now();
-      if (now - lastHandled < 300) return;
+
+    document.addEventListener('touchstart', function (e) {
+      const trigger = e.target.closest('#open-ebook-btn, .ebook-trigger-btn');
+      if (trigger && e.touches && e.touches[0]) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+        isScrollGesture = false;
+      }
+    }, { passive: true });
+
+    document.addEventListener('touchmove', function (e) {
+      if (e.touches && e.touches[0]) {
+        const moveX = Math.abs(e.touches[0].clientX - touchStartX);
+        const moveY = Math.abs(e.touches[0].clientY - touchStartY);
+        if (moveX > 8 || moveY > 8) {
+          isScrollGesture = true;
+        }
+      }
+    }, { passive: true });
+
+    document.addEventListener('touchend', function (e) {
       const trigger = e.target.closest('#open-ebook-btn, .ebook-trigger-btn');
       if (trigger) {
-        lastHandled = now;
-        e.preventDefault();
-        e.stopPropagation();
-        openEBookModal();
+        const touchDuration = Date.now() - touchStartTime;
+        const now = Date.now();
+        if (!isScrollGesture && touchDuration < 350 && (now - lastHandled > 300)) {
+          lastHandled = now;
+          e.preventDefault();
+          e.stopPropagation();
+          openEBookModal();
+        }
       }
-    }
+    });
 
-    document.addEventListener('click', handleTrigger);
-    document.addEventListener('touchend', handleTrigger, { passive: false });
+    document.addEventListener('click', function (e) {
+      const trigger = e.target.closest('#open-ebook-btn, .ebook-trigger-btn');
+      if (trigger) {
+        const now = Date.now();
+        if (now - lastHandled > 300) {
+          lastHandled = now;
+          e.preventDefault();
+          e.stopPropagation();
+          openEBookModal();
+        }
+      }
+    });
   }
 
   function bindModalEvents() {
