@@ -1,7 +1,7 @@
 /* ==========================================================================
    ABBEY'S ROAD E-BOOK READER TOOL STYLESHEET
    Supports Desktop 2-Page Spread, Mobile Vertical/Horizontal Flip Modes,
-   Tablet Dual-View Segmented Selector (Desktop Spread vs Mobile Edition),
+   Tablet Dual-View Segmented Selector (Tablet View vs Mobile Side-by-Side View),
    Animated Gesture Selection Overlay, Text Highlighting & Bookmarks Drawer
    ========================================================================== */
 
@@ -420,9 +420,10 @@
   overflow: hidden;
   padding: 8px;
   box-sizing: border-box;
+  touch-action: pan-y pinch-zoom;
 }
 
-/* DESKTOP SIDE NAVIGATION ARROWS */
+/* DESKTOP & TABLET SIDE NAVIGATION ARROWS */
 .ebook-nav-arrow {
   position: absolute;
   top: 50%;
