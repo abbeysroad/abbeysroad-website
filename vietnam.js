@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "id": "vietnam_indochina_escape",
       "countries": ["Vietnam", "Cambodia", "Thailand"],
       "meta": {
-        "title": "20-Day Luxury Indochina & Thailand Escape | Abbey's Road",
+        "title": "20-Day Luxury Indochina & Thailand Escape | Pandora Travel",
         "description": "Embark on an extraordinary 20-day journey from the historic streets of Hanoi and bays of Ha Long, to the ruins of Angkor Wat and pristine waters of Koh Yao Yai."
       },
       "hero": {

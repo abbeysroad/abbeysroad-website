@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     "id": "philippines",
     "countries": ["Philippines"],
     "meta": {
-      "title": "12-Day Ultimate Philippines Archipelago Discovery | Abbey's Road",
-      "description": "Embark on an extraordinary 12-day journey across the Philippines with Abbey's Road. Discover Manila, El Nido, Coron, Boracay, Siargao, Cebu, Bohol, and Banaue."
+      "title": "12-Day Ultimate Philippines Archipelago Discovery | Pandora Travel",
+      "description": "Embark on an extraordinary 12-day journey across the Philippines with Pandora Travel. Discover Manila, El Nido, Coron, Boracay, Siargao, Cebu, Bohol, and Banaue."
     },
     "hero": {
       "subtitle": "7,641 Islands • Pristine Lagoons & Culture:",
       "title": "The Ultimate 12-Day Philippines Escape",
-      "description": "Discover emerald lagoons, white sand beaches, volcanic peaks, ancient rice terraces, and warm local hospitality with Abbey's Road.",
+      "description": "Discover emerald lagoons, white sand beaches, volcanic peaks, ancient rice terraces, and warm local hospitality with Pandora Travel.",
       "background_image": "images/philippines/el_nido_boat.jpeg",
       "cta_book": "Secure Your Philippines Adventure",
       "cta_view": "View Itinerary Details"
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "booking": {
-      "title": "Secure Your Abbey's Road Philippines Escape",
+      "title": "Secure Your Pandora Travel Philippines Escape",
       "description": "Book your handcrafted island hopping adventure. Package includes private outrigger banca charters, domestic intra-island flights, boutique eco-resorts, highlight meals, and 24/7 guest support.",
       "bullets": [
         "All Luxury Resorts & Private Banca Charters Included",
@@ -166,12 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     "contact": {
-      "company_name": "Abbey's Road Destinations",
+      "company_name": "Pandora Travel",
       "tagline": "Handcrafted Philippines & Global Escapes",
       "address": "BGC High Street, Taguig • Metro Manila, Philippines",
       "phone": "+63 917 888 2622",
-      "email": "abbey@abbeysroad.dk",
-      "web": "www.abbeysroad.com",
+      "email": "info@pandoratravel.dk",
+      "web": "www.pandoratravel.dk",
       "contact_image": "images/philippines/el_nido_boat.jpeg"
     }
   },
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "id": "philippines_family",
     "countries": ["Philippines"],
     "meta": {
-      "title": "21-Day Premium Family Journey | Abbey's Road",
+      "title": "21-Day Premium Family Journey | Pandora Travel",
       "description": "Embark on an extraordinary 21-day premium family journey through the Philippines. Discover Manila, Banaue, Sagada, Vigan, Donsol, Bohol, Moalboal, and Cebu City."
     },
     "hero": {
@@ -614,7 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     "booking": {
       "title": "Secure Your Premium Family Journey",
-      "description": "Book your 21-day family vacation through the Philippines with Abbey's Road.",
+      "description": "Book your 21-day family vacation through the Philippines with Pandora Travel.",
       "bullets": ["All Private Transfers & Flights Included", "5★ & Best Available Stays", "24/7 Guest Care Support Line"]
     },
     "pricing": {
@@ -634,12 +634,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     "contact": {
-      "company_name": "Abbey's Road Destinations",
+      "company_name": "Pandora Travel",
       "tagline": "Journeys That Connect",
       "address": "Borgmestervangen 31, 2200 Copenhagen",
       "phone": "+45 2622 0288",
-      "email": "abbey@abbeysroad.dk",
-      "web": "www.abbeysroad.com",
+      "email": "info@pandoratravel.dk",
+      "web": "www.pandoratravel.dk",
       "contact_image": "images/contact_footer.jpg"
     }
   }

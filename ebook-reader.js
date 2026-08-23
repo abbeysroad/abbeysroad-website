@@ -1,5 +1,5 @@
 /**
- * ABBEY'S ROAD - INTERACTIVE 3D PDF E-BOOK READER ENGINE
+ * PANDORA TRAVEL - INTERACTIVE 3D PDF E-BOOK READER ENGINE
  * PDF.js Canvas + Text Layer Rendering, Desktop 3D Page Flip,
  * Mobile Vertical/Horizontal Flip Modes with Gesture Overlays,
  * Text Highlight Bookmarking & Auto-Hiding Fullscreen Header.

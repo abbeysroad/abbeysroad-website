@@ -8,22 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
     "id": "oman_luxury",
     "countries": ["Oman"],
     "meta": {
-      "title": "Oman – Luxury, Desert & Mountains | Abbey's Road",
-      "description": "Indulge in an 8-night luxury retreat in the Sultanate of Oman. Stay at Anantara and The Chedi Muscat."
+      "title": "Oman – Luxury, Desert & Mountains | Pandora Travel",
+      "description": "Customized 9-day luxury itinerary through Muscat, Jabal Akhdar, Wahiba Sands, and Nizwa."
     },
     "hero": {
-      "subtitle": "8 Nights / 9 Days · Luxury Escape:",
-      "title": "Oman: Luxury, Desert & Mountains",
-      "description": "Perfect for couples and first-time luxury travelers. Experience Omani culture, mountains, and sand dunes in 5-star style.",
+      "subtitle": "Canyons, Sands & Arabian Sea:",
+      "title": "Oman – Luxury, Desert & Mountains",
+      "description": "Experience private 4x4 transfers, canyon infinity pool resorts, and luxury dune camps across Oman.",
       "background_image": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg",
-      "cta_book": "Secure Your Luxury Oman Escape",
-      "cta_view": "View Itinerary Details"
+      "cta_book": "Inquire About This Trip",
+      "cta_view": "View Full Itinerary"
     },
     "essentials": [
-      { "icon": "⏱️", "title": "Duration", "value": "8 Nights / 9 Days" },
-      { "icon": "🗺️", "title": "Route", "value": "Muscat ➔ Jabal Akhdar ➔ Desert ➔ Coast ➔ Muscat" },
-      { "icon": "🚙", "title": "Travel Style", "value": "Private 4x4 Chauffeur & 5-Star Luxury Resorts" },
-      { "icon": "⚡", "title": "Pace", "value": "Curated & Relaxed" }
+      { "icon": "⏱️", "title": "Duration", "value": "9 Days / 8 Nights" },
+      { "icon": "🗺️", "title": "Route", "value": "Muscat ➔ Jabal Akhdar ➔ Wahiba ➔ Nizwa" },
+      { "icon": "🚘", "title": "Travel Style", "value": "Private 4x4 & 5-Star Resorts" },
+      { "icon": "⚡", "title": "Pace", "value": "Relaxed Luxury" }
     ],
     "timeline": [
       {
@@ -174,12 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     "contact": {
-      "company_name": "Abbey's Road Destinations",
+      "company_name": "Pandora Travel",
       "tagline": "Handcrafted Oman & Global Escapes",
       "address": "Shatti Al Qurum • Muscat, Sultanate of Oman",
       "phone": "+45 2622 0288",
-      "email": "abbey@abbeysroad.dk",
-      "web": "www.abbeysroad.com",
+      "email": "info@pandoratravel.dk",
+      "web": "www.pandoratravel.dk",
       "contact_image": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg"
     }
   },
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "id": "oman_nature",
     "countries": ["Oman"],
     "meta": {
-      "title": "Oman – Nature & Adventure | Abbey's Road",
+      "title": "Oman – Nature & Adventure | Pandora Travel",
       "description": "Embark on an active 9-night adventure in Oman. Hike the Grand Canyon, snorkel Daymaniyat, and canyon at Wadi Hawer."
     },
     "hero": {
@@ -393,20 +393,20 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     "contact": {
-      "company_name": "Abbey's Road Destinations",
+      "company_name": "Pandora Travel",
       "tagline": "Handcrafted Oman & Global Escapes",
       "address": "Shatti Al Qurum • Muscat, Sultanate of Oman",
       "phone": "+45 2622 0288",
-      "email": "abbey@abbeysroad.dk",
-      "web": "www.abbeysroad.com",
-      "contact_image": "images/oman/Red_sand_dunes_in_desert_202608141639.jpeg"
+      "email": "info@pandoratravel.dk",
+      "web": "www.pandoratravel.dk",
+      "contact_image": "images/oman/River_flowing_through_canyon_202608141630.jpeg"
     }
   },
   {
     "id": "oman_wellness",
     "countries": ["Oman"],
     "meta": {
-      "title": "Wellness & Oman at a slower rhythm | Abbey's Road",
+      "title": "Wellness & Oman at a slower rhythm | Pandora Travel",
       "description": "Restore your senses with an 8-night slow-paced wellness journey in Oman. Stay at Mandarin Oriental and Alila."
     },
     "hero": {
@@ -568,12 +568,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     "contact": {
-      "company_name": "Abbey's Road Destinations",
+      "company_name": "Pandora Travel",
       "tagline": "Handcrafted Oman & Global Escapes",
       "address": "Shatti Al Qurum • Muscat, Sultanate of Oman",
       "phone": "+45 2622 0288",
-      "email": "abbey@abbeysroad.dk",
-      "web": "www.abbeysroad.com",
+      "email": "info@pandoratravel.dk",
+      "web": "www.pandoratravel.dk",
       "contact_image": "images/oman/Pool_and_reflecting_water_gardens_202608141639.jpeg"
     }
   },
@@ -581,7 +581,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "id": "oman_family",
     "countries": ["Oman"],
     "meta": {
-      "title": "Oman – Private Family Discovery | Abbey's Road",
+      "title": "Oman – Private Family Discovery | Pandora Travel",
       "description": "Embark on a private 9-night family adventure in Oman. Features snorkeling, camel rides, sandboarding, and green sea turtles."
     },
     "hero": {
@@ -754,12 +754,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     "contact": {
-      "company_name": "Abbey's Road Destinations",
+      "company_name": "Pandora Travel",
       "tagline": "Handcrafted Oman & Global Escapes",
       "address": "Shatti Al Qurum • Muscat, Sultanate of Oman",
       "phone": "+45 2622 0288",
-      "email": "abbey@abbeysroad.dk",
-      "web": "www.abbeysroad.com",
+      "email": "info@pandoratravel.dk",
+      "web": "www.pandoratravel.dk",
       "contact_image": "images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg"
     }
   },
@@ -767,7 +767,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "id": "oman_dubai",
     "countries": ["UAE", "Oman"],
     "meta": {
-      "title": "Dubai + Oman Premium Journey | Abbey's Road",
+      "title": "Dubai + Oman Premium Journey | Pandora Travel",
       "description": "Embark on an ultra-luxury 11-night journey combining Dubai's contemporary skyline with Oman's historic forts and dunes."
     },
     "hero": {
@@ -958,12 +958,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     "contact": {
-      "company_name": "Abbey's Road Destinations",
+      "company_name": "Pandora Travel",
       "tagline": "Handcrafted Oman & Global Escapes",
       "address": "Shatti Al Qurum • Muscat, Sultanate of Oman",
       "phone": "+45 2622 0288",
-      "email": "abbey@abbeysroad.dk",
-      "web": "www.abbeysroad.com",
+      "email": "info@pandoratravel.dk",
+      "web": "www.pandoratravel.dk",
       "contact_image": "images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg"
     }
   }

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Marcellus&family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* ==========================================================================
-   ABBEY'S ROAD BRANDING & DESIGN SYSTEM (WITH NEW FONTS)
+   PANDORA TRAVEL BRANDING & DESIGN SYSTEM (WITH NEW FONTS)
    Main Background / Primary: #202B22 (Dark Tropical Green)
    Header Logo Background: #FAF5F0 (Warm Cream / Off-White)
    Accent / Sun Gold: #FFD85F
@@ -67,7 +67,7 @@ html {
   background-color: var(--primary-dark);
 }
 
-body.abbeys-road-theme {
+body.abbeys-road-theme, body.pandora-travel-theme {
   background-color: var(--primary-dark);
   color: var(--text-white);
   font-family: var(--font-sans), sans-serif;
@@ -152,9 +152,9 @@ header#main-header.scrolled {
   align-items: center;
 }
 
-/* Horizontal Cutout Logo Blending Seamlessly into #FAF5F0 Header */
+/* Horizontal Cutout Logo Blending Seamlessly into Header */
 .logo-link img.extra-large-logo.horizontal-logo {
-  height: 72px;
+  height: 90px;
   width: auto;
   object-fit: contain;
   filter: none;
@@ -164,7 +164,7 @@ header#main-header.scrolled {
 }
 
 header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
-  height: 58px;
+  height: 73px;
 }
 
 /* Center Desktop Navigation - Styled for #FAF5F0 Backdrop */
@@ -1506,12 +1506,12 @@ footer#global-footer {
   }
 
   .logo-link img.extra-large-logo.horizontal-logo {
-    height: 48px;
+    height: 60px;
     margin-top: 0;
   }
 
   header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
-    height: 38px;
+    height: 48px;
   }
 
   .header-center-cta {

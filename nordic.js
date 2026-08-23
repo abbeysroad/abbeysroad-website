@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "id": "scandinavia_escape",
       "countries": ["Sweden", "Norway", "Denmark"],
       "meta": {
-        "title": "Nordic Summer Escape | Abbey's Road",
+        "title": "Nordic Summer Escape | Pandora Travel",
         "description": "Embark on an extraordinary 9-day summer journey through Sweden, Norway, and Denmark. Discover Stockholm, Oslo, Copenhagen, the Flåm Railway, and majestic fjords on a premium, curated Scandinavian vacation."
       },
       "hero": {
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "id": "classic_scandinavia",
       "countries": ["Denmark", "Norway", "Finland", "Sweden"],
       "meta": {
-        "title": "Classic Scandinavia w/ Fjords | Abbey's Road",
+        "title": "Classic Scandinavia w/ Fjords | Pandora Travel",
         "description": "Embark on an extraordinary 8-day summer journey through Denmark, Norway, Finland, and Sweden. Discover Copenhagen, Oslo, Flåm, Bergen, Helsinki, and Stockholm on a premium, curated Scandinavian vacation."
       },
       "hero": {
