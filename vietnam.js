@@ -607,12 +607,8 @@ document.addEventListener('DOMContentLoaded', () => {
         beacon.setAttribute('cy', by);
       }
 
-      if (code === 'north-vietnam') {
-        document.getElementById('region-north-vietnam')?.classList.add('active-region');
-      } else if (code === 'central-vietnam') {
-        document.getElementById('region-central-vietnam')?.classList.add('active-region');
-      } else if (code === 'south-vietnam') {
-        document.getElementById('region-south-vietnam')?.classList.add('active-region');
+      if (code === 'north-vietnam' || code === 'central-vietnam' || code === 'south-vietnam') {
+        document.getElementById('region-vietnam')?.classList.add('active-region');
       } else if (code === 'cambodia') {
         document.getElementById('region-cambodia')?.classList.add('active-region');
       } else if (code === 'thailand') {
