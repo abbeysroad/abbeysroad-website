@@ -511,9 +511,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "type": "carousel",
             "id": "carousel-gt-day5",
             "slides": [
-              { "type": "single", "src": "images/vietnam/days5-6_thegoldentriangle_1.jpeg", "alt": "Chiang Saen Ruins", "title": "Chiang Saen Ancient Ruins", "caption": "Historic brick stupas along the banks of the Mekong." },
-              { "type": "single", "src": "images/vietnam/days5-6_thegoldentriangle_2.jpeg", "alt": "Golden Triangle Viewpoint", "title": "Golden Triangle View", "caption": "The scenic confluence where Thailand, Laos, and Myanmar meet." },
-              { "type": "single", "src": "images/vietnam/days5-6_thegoldentriangle_3.jpeg", "alt": "Mekong River Cruise", "title": "Mekong River Boat", "caption": "Cruise the waters dividing three neighboring nations." }
+              { "type": "single", "src": "images/vietnam/days5-6_thegoldentriangle_1.jpeg", "alt": "Golden Triangle Viewpoint", "title": "Golden Triangle View", "caption": "The scenic confluence where Thailand, Laos, and Myanmar meet." },
+              { "type": "single", "src": "images/vietnam/days5-6_thegoldentriangle_2.jpeg", "alt": "Mekong River Cruise", "title": "Mekong River Boat", "caption": "Cruise the waters dividing three neighboring nations." },
+              { "type": "single", "src": "images/vietnam/days5-6_thegoldentriangle_3.jpeg", "alt": "Chiang Saen Ruins", "title": "Chiang Saen Ancient Ruins", "caption": "Historic brick stupas along the banks of the Mekong." }
             ]
           }
         },
