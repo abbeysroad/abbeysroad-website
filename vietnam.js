@@ -415,6 +415,14 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       ],
+      "booking": {
+        "title": "Secure Your Handcrafted Indochina Escape",
+        "description": "Book your bespoke multi-country luxury honeymoon adventure. Package includes private speedboat transfers, regional flights, 5-star heritage hotels, romantic rice field dinners, and 24/7 client support.",
+        "bullets": [
+          "All 5-Star Premium Resorts & Luxury Cruise Suites Included",
+          "All Regional Flights & Fast Track Airport Services Included",
+          "24/7 Local Ground Handling & Certified English Guides",
+          "100% Tailor-made & Flexible Departure Dates"
         ]
       }
     },
