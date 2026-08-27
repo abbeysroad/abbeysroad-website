@@ -467,22 +467,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "type": "carousel",
             "id": "carousel-gt-day1",
             "slides": [
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Chiang_Mai_-_Wat_Phra_Singh_-_0001.jpg/1280px-Chiang_Mai_-_Wat_Phra_Singh_-_0001.jpg",
-                "alt": "Wat Phra Singh, Chiang Mai",
-                "title": "Wat Phra Singh, Chiang Mai",
-                "caption": "Wat Phra Singh in Chiang Mai's historic old city.",
-                "credit": "Wat Phra Singh, Chiang Mai — Stefan Fussan — CC BY-SA 3.0 — <a href='https://commons.wikimedia.org/wiki/File:Chiang_Mai_-_Wat_Phra_Singh_-_0001.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              },
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Wat_Phra_That_Doi_Suthep_Chaing_Mai.jpg/1280px-Wat_Phra_That_Doi_Suthep_Chaing_Mai.jpg",
-                "alt": "Wat Phra That Doi Suthep, Chiang Mai",
-                "title": "Wat Phra That Doi Suthep, Chiang Mai",
-                "caption": "Golden chedi and Lanna details at Wat Phra That Doi Suthep.",
-                "credit": "Wat Phra That Doi Suthep, Chiang Mai — KOSIN SUKHUM — CC BY-SA 4.0 — <a href='https://commons.wikimedia.org/wiki/File:Wat_Phra_That_Doi_Suthep_Chaing_Mai.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              }
+              { "type": "single", "src": "images/vietnam/day1-2_chiangmai_1.jpeg", "alt": "Chiang Mai", "title": "Chiang Mai Old City", "caption": "Experience historical Lanna culture and golden temples in Northern Thailand." },
+              { "type": "single", "src": "images/vietnam/day1-2_chiangmai_2.jpeg", "alt": "Wat Phra That Doi Suthep", "title": "Doi Suthep Sunrise", "caption": "Admire mountain vistas and Buddhist relics from Doi Suthep." },
+              { "type": "single", "src": "images/vietnam/day1-2_chiangmai_3.jpeg", "alt": "Lanna Food Tour", "title": "Lanna Gastronomy", "caption": "Savor traditional Northern Thai cuisine and market delicacies." }
             ]
           }
         },
@@ -502,22 +489,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "type": "carousel",
             "id": "carousel-gt-day3",
             "slides": [
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Chiang_Rai_Thailand_Wat-Rong-Khun-01.jpg/1280px-Chiang_Rai_Thailand_Wat-Rong-Khun-01.jpg",
-                "alt": "Wat Rong Khun — White Temple",
-                "title": "Wat Rong Khun — White Temple",
-                "caption": "The highly detailed white exterior of Wat Rong Khun in Chiang Rai.",
-                "credit": "Wat Rong Khun — White Temple — CEphoto, Uwe Aranas — CC BY-SA 4.0 — <a href='https://commons.wikimedia.org/wiki/File:Chiang_Rai_Thailand_Wat-Rong-Khun-01.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              },
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Wat_Rong_Suea_Ten_%2849725339177%29.jpg/960px-Wat_Rong_Suea_Ten_%2849725339177%29.jpg",
-                "alt": "Wat Rong Suea Ten — Blue Temple",
-                "title": "Wat Rong Suea Ten — Blue Temple",
-                "caption": "Blue sculptural detail at Wat Rong Suea Ten.",
-                "credit": "Wat Rong Suea Ten — Blue Temple — Nina R — CC BY 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Wat_Rong_Suea_Ten_(49725339177).jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              }
+              { "type": "single", "src": "images/vietnam/days3-4_chiang_rai_1.jpeg", "alt": "Wat Rong Khun", "title": "Wat Rong Khun", "caption": "The modern artistic White Temple in Chiang Rai." },
+              { "type": "single", "src": "images/vietnam/days3-4_chiang_rai_2.jpeg", "alt": "Wat Rong Suea Ten", "title": "Wat Rong Suea Ten", "caption": "Gaze at the vibrant blue designs of the Blue Temple." },
+              { "type": "single", "src": "images/vietnam/days3-4_chiang_rai_3.jpeg", "alt": "Tea Plantations", "title": "Tea Plantation Walks", "caption": "Scenic green hills and tea harvesting in the North." }
             ]
           }
         },
@@ -537,14 +511,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "type": "carousel",
             "id": "carousel-gt-day5",
             "slides": [
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Chiang_Saen%2C_Golden_Triangle%2C_Mekong_River%2C_Thailand.jpg/1280px-Chiang_Saen%2C_Golden_Triangle%2C_Mekong_River%2C_Thailand.jpg",
-                "alt": "Golden Triangle — Mekong River",
-                "title": "Golden Triangle — Mekong River",
-                "caption": "The Golden Triangle landscape around Chiang Saen where Thailand, Laos and Myanmar meet.",
-                "credit": "Golden Triangle — Mekong River — Vyacheslav Argenberg — CC BY 4.0 — <a href='https://commons.wikimedia.org/wiki/File:Chiang_Saen,_Golden_Triangle,_Mekong_River,_Thailand.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              }
+              { "type": "single", "src": "images/vietnam/days5-6_thegoldentriangle_1.jpeg", "alt": "Chiang Saen Ruins", "title": "Chiang Saen Ancient Ruins", "caption": "Historic brick stupas along the banks of the Mekong." },
+              { "type": "single", "src": "images/vietnam/days5-6_thegoldentriangle_2.jpeg", "alt": "Golden Triangle Viewpoint", "title": "Golden Triangle View", "caption": "The scenic confluence where Thailand, Laos, and Myanmar meet." },
+              { "type": "single", "src": "images/vietnam/days5-6_thegoldentriangle_3.jpeg", "alt": "Mekong River Cruise", "title": "Mekong River Boat", "caption": "Cruise the waters dividing three neighboring nations." }
             ]
           }
         },
@@ -564,14 +533,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "type": "carousel",
             "id": "carousel-gt-day7",
             "slides": [
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Pakbeng_from_Mekong_River_Northern_Laos.jpg/1280px-Pakbeng_from_Mekong_River_Northern_Laos.jpg",
-                "alt": "Pakbeng from the Mekong",
-                "title": "Pakbeng from the Mekong",
-                "caption": "Pakbeng on the Mekong route between Huay Xai and Luang Prabang.",
-                "credit": "Pakbeng from the Mekong — Grossbildjaeger — CC BY-SA 3.0 — <a href='https://commons.wikimedia.org/wiki/File:Pakbeng_from_Mekong_River_Northern_Laos.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              }
+              { "type": "single", "src": "images/vietnam/day7_goldentriangle_1.jpeg", "alt": "Mekong Crossing", "title": "Crossing the Mekong", "caption": "Cross the border from Chiang Khong into Huay Xai." },
+              { "type": "single", "src": "images/vietnam/day7_goldentriangle_2.jpeg", "alt": "Slow Boat Dock", "title": "Huay Xai Pier", "caption": "Board your private or comfortable Mekong slow boat." },
+              { "type": "single", "src": "images/vietnam/day7_goldentriangle_3.jpeg", "alt": "Rural Laos Villages", "title": "Scenic Riverside Life", "caption": "Watch tranquil villages along the Mekong hillsides." }
             ]
           }
         },
@@ -591,22 +555,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "type": "carousel",
             "id": "carousel-gt-day9",
             "slides": [
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Luang_Prabang_-_Wat_Xieng_Thong.jpg/1280px-Luang_Prabang_-_Wat_Xieng_Thong.jpg",
-                "alt": "Wat Xieng Thong, Luang Prabang",
-                "title": "Wat Xieng Thong, Luang Prabang",
-                "caption": "The sweeping rooflines of Wat Xieng Thong in Luang Prabang.",
-                "credit": "Wat Xieng Thong, Luang Prabang — xiquinhosilva / Xiquinho Silva — CC BY 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Luang_Prabang_-_Wat_Xieng_Thong.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              },
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Kuang_Si_Falls_%2812236561856%29.jpg/1280px-Kuang_Si_Falls_%2812236561856%29.jpg",
-                "alt": "Kuang Si Falls",
-                "title": "Kuang Si Falls",
-                "caption": "Turquoise pools and forest cascades at Kuang Si Falls.",
-                "credit": "Kuang Si Falls — Clay Gilliland — CC BY-SA 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Kuang_Si_Falls_(12236561856).jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              }
+              { "type": "single", "src": "images/vietnam/days9-11_luangprabang_1.jpeg", "alt": "Wat Xieng Thong", "title": "Wat Xieng Thong", "caption": "The elegant signature temple of Luang Prabang." },
+              { "type": "single", "src": "images/vietnam/days9-11_luangprabang_2.jpeg", "alt": "Alms-Giving Ceremony", "title": "Tak Bat Alms-Giving", "caption": "Witness saffron-robed monks collecting morning alms." },
+              { "type": "single", "src": "images/vietnam/days9-11_luangprabang_3.jpeg", "alt": "Kuang Si Falls", "title": "Kuang Si Falls Cascades", "caption": "Cool turquoise water pools in the lush green jungle." }
             ]
           }
         },
@@ -625,14 +576,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "type": "carousel",
             "id": "carousel-gt-day12",
             "slides": [
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/c/cb/VangVieng.jpg",
-                "alt": "Vang Vieng Karst Landscape",
-                "title": "Vang Vieng Karst Landscape",
-                "caption": "Limestone karsts at sunset in Vang Vieng.",
-                "credit": "Vang Vieng Karst Landscape — Jean-Marie Hullot — CC BY-SA 3.0 — <a href='https://commons.wikimedia.org/wiki/File:VangVieng.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              }
+              { "type": "single", "src": "images/vietnam/day12_luangprabang_1.jpeg", "alt": "Colonial Architecture", "title": "Colonial Architecture", "caption": "Dine in historic restored villas and cafes." },
+              { "type": "single", "src": "images/vietnam/day12_luangprabang_2.jpeg", "alt": "Royal Palace", "title": "Royal Palace Museum", "caption": "Wander the beautiful botanical gardens and royal chambers." },
+              { "type": "single", "src": "images/vietnam/day12_luangprabang_3.jpeg", "alt": "Sunset Mekong Sail", "title": "Sunset Mekong Sail", "caption": "Enjoy cold drinks as the sun slips behind the mountains." }
             ]
           }
         },
@@ -652,14 +598,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "type": "carousel",
             "id": "carousel-gt-day13",
             "slides": [
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Pha_That_Luang_Vientiane.jpg/1280px-Pha_That_Luang_Vientiane.jpg",
-                "alt": "Pha That Luang, Vientiane",
-                "title": "Pha That Luang, Vientiane",
-                "caption": "Pha That Luang, the landmark golden stupa in Vientiane.",
-                "credit": "Pha That Luang, Vientiane — taylorandayumi — CC BY 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Pha_That_Luang_Vientiane.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              }
+              { "type": "single", "src": "images/vietnam/day13_vangvieng_1.jpeg", "alt": "Vang Vieng Karst Peaks", "title": "Vang Vieng Karst Peaks", "caption": "Spectacular vertical limestone hills reflecting in the river." },
+              { "type": "single", "src": "images/vietnam/day13_vangvieng_2.jpeg", "alt": "Nam Song River", "title": "Nam Song River & Lagoons", "caption": "Dive into refreshing hidden limestone spring lagoons." },
+              { "type": "single", "src": "images/vietnam/day13_vangvieng_3.jpeg", "alt": "Tham Chang Cave", "title": "Tham Chang Cave", "caption": "Explore hollowed karst interiors containing sacred shrines." }
             ]
           }
         },
@@ -678,14 +619,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "type": "carousel",
             "id": "carousel-gt-day14",
             "slides": [
-              {
-                "type": "single",
-                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Pha_That_Luang_Vientiane.jpg/1280px-Pha_That_Luang_Vientiane.jpg",
-                "alt": "Departure",
-                "title": "Departure",
-                "caption": "Taking home unforgettable memories of the Golden Triangle.",
-                "credit": "Pha That Luang, Vientiane — taylorandayumi — CC BY 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Pha_That_Luang_Vientiane.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
-              }
+              { "type": "single", "src": "images/vietnam/day12_luangprabang_3.jpeg", "alt": "Departure", "title": "Departure", "caption": "Taking home unforgettable memories of the Golden Triangle." }
             ]
           }
         }
