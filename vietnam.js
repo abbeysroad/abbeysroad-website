@@ -415,14 +415,281 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       ],
+        ]
+      }
+    },
+    {
+      "id": "golden_triangle_journey",
+      "countries": ["Thailand", "Laos"],
+      "meta": {
+        "title": "14-Day Golden Triangle Journey | Pandora Travel",
+        "description": "Premium Northern Thailand, the Golden Triangle, a Mekong slow-journey, and Northern Laos. Explore Chiang Mai, Chiang Rai, Pakbeng, Luang Prabang, Vang Vieng, and Vientiane."
+      },
+      "hero": {
+        "title": "14-Day Golden Triangle Journey",
+        "description": "Premium Northern Thailand, the Golden Triangle, a Mekong slow-journey and Northern Laos. Experience Lanna culture, riverside temples, and scenic river cruises.",
+        "background_image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Chiang_Saen%2C_Golden_Triangle%2C_Mekong_River%2C_Thailand.jpg/1280px-Chiang_Saen%2C_Golden_Triangle%2C_Mekong_River%2C_Thailand.jpg",
+        "cta_book": "Secure Your Golden Triangle Journey",
+        "cta_view": "View Itinerary Details"
+      },
+      "essentials": [
+        { "icon": "⏱️", "title": "Duration", "value": "14 Epic Days" },
+        { "icon": "🗺️", "title": "Route", "value": "Chiang Mai ➔ Chiang Rai ➔ Golden Triangle ➔ Mekong River / Pakbeng ➔ Luang Prabang ➔ Vang Vieng ➔ Vientiane" },
+        { "icon": "⛵", "title": "Travel Style", "value": "Private Transfers, Mekong Slow Boat, Scenic Drives" },
+        { "icon": "⚡", "title": "Pace", "value": "Immersive & Relaxed" }
+      ],
+      "pricing": {
+        "currency": "$",
+        "base_price": 3850
+      },
+      "timeline": [
+        {
+          "day": "1-2",
+          "title": "Chiang Mai",
+          "tagline": "🛕 Lanna Temples & Sunset at Doi Suthep",
+          "vibe_title": "The Vibe",
+          "vibe_text": "Touch down in Chiang Mai. Enjoy private transfer to your luxury hotel and explore the ancient Old City temples before catching a spectacular sunset over the mountains at Doi Suthep.",
+          "highlights": [
+            { "icon": "🚗", "title": "Airport Transfer", "description": "Private airport transfer and premium hotel check-in." },
+            { "icon": "🛕", "title": "Old City Temples", "description": "Visit Wat Phra Singh and the historical quarters of Chiang Mai." },
+            { "icon": "🌅", "title": "Doi Suthep Sunset", "description": "Witness golden Lanna details and panoramas from Wat Phra That Doi Suthep." }
+          ],
+          "stay": "🏨 Stay: Premium Chiang Mai Resort",
+          "media": {
+            "type": "carousel",
+            "id": "carousel-gt-day1",
+            "slides": [
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Chiang_Mai_-_Wat_Phra_Singh_-_0001.jpg/1280px-Chiang_Mai_-_Wat_Phra_Singh_-_0001.jpg",
+                "alt": "Wat Phra Singh, Chiang Mai",
+                "title": "Wat Phra Singh, Chiang Mai",
+                "caption": "Wat Phra Singh in Chiang Mai's historic old city.",
+                "credit": "Wat Phra Singh, Chiang Mai — Stefan Fussan — CC BY-SA 3.0 — <a href='https://commons.wikimedia.org/wiki/File:Chiang_Mai_-_Wat_Phra_Singh_-_0001.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              },
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Wat_Phra_That_Doi_Suthep_Chaing_Mai.jpg/1280px-Wat_Phra_That_Doi_Suthep_Chaing_Mai.jpg",
+                "alt": "Wat Phra That Doi Suthep, Chiang Mai",
+                "title": "Wat Phra That Doi Suthep, Chiang Mai",
+                "caption": "Golden chedi and Lanna details at Wat Phra That Doi Suthep.",
+                "credit": "Wat Phra That Doi Suthep, Chiang Mai — KOSIN SUKHUM — CC BY-SA 4.0 — <a href='https://commons.wikimedia.org/wiki/File:Wat_Phra_That_Doi_Suthep_Chaing_Mai.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              }
+            ]
+          }
+        },
+        {
+          "day": "3-4",
+          "title": "Chiang Rai",
+          "tagline": "🎨 White & Blue Temples of the North",
+          "vibe_title": "The Vibe",
+          "vibe_text": "Travel north to Chiang Rai. Explore the modern architectural marvels of the White Temple (Wat Rong Khun) and the Blue Temple (Wat Rong Suea Ten), followed by tea plantation walks.",
+          "highlights": [
+            { "icon": "🚙", "title": "Scenic Transfer", "description": "Private scenic transfer from Chiang Mai through Northern hills." },
+            { "icon": "🏛️", "title": "Wat Rong Khun", "description": "Marvel at the highly detailed white exterior designed by Chalermchai Kositpipat." },
+            { "icon": "🌀", "title": "Wat Rong Suea Ten", "description": "Admire the deep blue sculptural detail and paintings." }
+          ],
+          "stay": "🏨 Stay: Luxury Riverside Resort Chiang Rai",
+          "media": {
+            "type": "carousel",
+            "id": "carousel-gt-day3",
+            "slides": [
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Chiang_Rai_Thailand_Wat-Rong-Khun-01.jpg/1280px-Chiang_Rai_Thailand_Wat-Rong-Khun-01.jpg",
+                "alt": "Wat Rong Khun — White Temple",
+                "title": "Wat Rong Khun — White Temple",
+                "caption": "The highly detailed white exterior of Wat Rong Khun in Chiang Rai.",
+                "credit": "Wat Rong Khun — White Temple — CEphoto, Uwe Aranas — CC BY-SA 4.0 — <a href='https://commons.wikimedia.org/wiki/File:Chiang_Rai_Thailand_Wat-Rong-Khun-01.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              },
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Wat_Rong_Suea_Ten_%2849725339177%29.jpg/960px-Wat_Rong_Suea_Ten_%2849725339177%29.jpg",
+                "alt": "Wat Rong Suea Ten — Blue Temple",
+                "title": "Wat Rong Suea Ten — Blue Temple",
+                "caption": "Blue sculptural detail at Wat Rong Suea Ten.",
+                "credit": "Wat Rong Suea Ten — Blue Temple — Nina R — CC BY 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Wat_Rong_Suea_Ten_(49725339177).jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              }
+            ]
+          }
+        },
+        {
+          "day": "5-6",
+          "title": "Golden Triangle",
+          "tagline": "⛵ The Mekong Confluence where Three Nations Meet",
+          "vibe_title": "The Vibe",
+          "vibe_text": "Explore the historic ruins of Chiang Saen ancient city and board a private long-tail boat on the Mekong River. Visit the Hall of Opium to understand the region's complex history.",
+          "highlights": [
+            { "icon": "⛵", "title": "Mekong Boat ride", "description": "Cruise the waters dividing Thailand, Laos, and Myanmar." },
+            { "icon": "🏛️", "title": "Hall of Opium", "description": "Immersive exhibition detailing the historical opium trade." },
+            { "icon": "🧘", "title": "Resort Day", "description": "Enjoy a slow luxury resort day with spa therapies and scenic views." }
+          ],
+          "stay": "🏨 Stay: Golden Triangle Luxury Resort",
+          "media": {
+            "type": "carousel",
+            "id": "carousel-gt-day5",
+            "slides": [
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Chiang_Saen%2C_Golden_Triangle%2C_Mekong_River%2C_Thailand.jpg/1280px-Chiang_Saen%2C_Golden_Triangle%2C_Mekong_River%2C_Thailand.jpg",
+                "alt": "Golden Triangle — Mekong River",
+                "title": "Golden Triangle — Mekong River",
+                "caption": "The Golden Triangle landscape around Chiang Saen where Thailand, Laos and Myanmar meet.",
+                "credit": "Golden Triangle — Mekong River — Vyacheslav Argenberg — CC BY 4.0 — <a href='https://commons.wikimedia.org/wiki/File:Chiang_Saen,_Golden_Triangle,_Mekong_River,_Thailand.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              }
+            ]
+          }
+        },
+        {
+          "day": "7-8",
+          "title": "Mekong River / Pakbeng",
+          "tagline": "🚢 Slow Boat Journey Downstream through Laos",
+          "vibe_title": "The Vibe",
+          "vibe_text": "Cross the border into Laos at Huay Xai. Board your comfortable Mekong slow boat, passing rural riverside villages before overnighting in the peaceful transit outpost of Pakbeng.",
+          "highlights": [
+            { "icon": "🛂", "title": "Laos Border Crossing", "description": "Cross the Friendship Bridge into Huay Xai, Laos." },
+            { "icon": "🚢", "title": "Mekong Slow Boat", "description": "Settle into custom cushioned seats for a panoramic cruise down the Mekong." },
+            { "icon": "🛕", "title": "Pak Ou Caves", "description": "Stop downstream near Luang Prabang to see thousands of Buddha statues." }
+          ],
+          "stay": "🏨 Stay: Pakbeng Sanctuary Lodge",
+          "media": {
+            "type": "carousel",
+            "id": "carousel-gt-day7",
+            "slides": [
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Pakbeng_from_Mekong_River_Northern_Laos.jpg/1280px-Pakbeng_from_Mekong_River_Northern_Laos.jpg",
+                "alt": "Pakbeng from the Mekong",
+                "title": "Pakbeng from the Mekong",
+                "caption": "Pakbeng on the Mekong route between Huay Xai and Luang Prabang.",
+                "credit": "Pakbeng from the Mekong — Grossbildjaeger — CC BY-SA 3.0 — <a href='https://commons.wikimedia.org/wiki/File:Pakbeng_from_Mekong_River_Northern_Laos.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              }
+            ]
+          }
+        },
+        {
+          "day": "9-11",
+          "title": "Luang Prabang",
+          "tagline": "🧘 UNESCO Heritage Architecture & Kuang Si Cascades",
+          "vibe_title": "The Vibe",
+          "vibe_text": "Immerse yourself in Luang Prabang's tranquil old town. Tour historical French-Lao fusion architecture, hike Mount Phousi, and excursion to the spectacular multi-tiered turquoise Kuang Si Falls.",
+          "highlights": [
+            { "icon": "🚶", "title": "UNESCO Walking Tour", "description": "See sweeping rooflines of Wat Xieng Thong and the Royal Palace Museum." },
+            { "icon": "🌊", "title": "Kuang Si Falls", "description": "Private excursion to swim in the cool turquoise forest pools." },
+            { "icon": "🌇", "title": "Mount Phousi Sunset", "description": "Climb Mount Phousi for panoramas over the Mekong and Nam Khan rivers." }
+          ],
+          "stay": "🏨 Stay: Premium Luang Prabang Boutique Hotel",
+          "media": {
+            "type": "carousel",
+            "id": "carousel-gt-day9",
+            "slides": [
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Luang_Prabang_-_Wat_Xieng_Thong.jpg/1280px-Luang_Prabang_-_Wat_Xieng_Thong.jpg",
+                "alt": "Wat Xieng Thong, Luang Prabang",
+                "title": "Wat Xieng Thong, Luang Prabang",
+                "caption": "The sweeping rooflines of Wat Xieng Thong in Luang Prabang.",
+                "credit": "Wat Xieng Thong, Luang Prabang — xiquinhosilva / Xiquinho Silva — CC BY 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Luang_Prabang_-_Wat_Xieng_Thong.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              },
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Kuang_Si_Falls_%2812236561856%29.jpg/1280px-Kuang_Si_Falls_%2812236561856%29.jpg",
+                "alt": "Kuang Si Falls",
+                "title": "Kuang Si Falls",
+                "caption": "Turquoise pools and forest cascades at Kuang Si Falls.",
+                "credit": "Kuang Si Falls — Clay Gilliland — CC BY-SA 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Kuang_Si_Falls_(12236561856).jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              }
+            ]
+          }
+        },
+        {
+          "day": "12",
+          "title": "Vang Vieng",
+          "tagline": "⛰️ Majestic Limestone Karsts & Nam Song River Views",
+          "vibe_title": "The Vibe",
+          "vibe_text": "Journey south through breathtaking mountain passes. Relax in a premium riverside resort in Vang Vieng, taking in the dramatic karst peaks at golden hour sunset.",
+          "highlights": [
+            { "icon": "⛰️", "title": "Limestone Karst Landscapes", "description": "Pass spectacular jagged vertical cliffs lining the valley." },
+            { "icon": "🍹", "title": "Riverside Sunset", "description": "Watch hot air balloons drift over the karsts at sunset." }
+          ],
+          "stay": "🏨 Stay: Riverside Resort Vang Vieng",
+          "media": {
+            "type": "carousel",
+            "id": "carousel-gt-day12",
+            "slides": [
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/c/cb/VangVieng.jpg",
+                "alt": "Vang Vieng Karst Landscape",
+                "title": "Vang Vieng Karst Landscape",
+                "caption": "Limestone karsts at sunset in Vang Vieng.",
+                "credit": "Vang Vieng Karst Landscape — Jean-Marie Hullot — CC BY-SA 3.0 — <a href='https://commons.wikimedia.org/wiki/File:VangVieng.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              }
+            ]
+          }
+        },
+        {
+          "day": "13",
+          "title": "Vientiane",
+          "tagline": "🕌 Landmark Golden Stupas & Mekong Promenades",
+          "vibe_title": "The Vibe",
+          "vibe_text": "Drive to Laos' quiet capital city, Vientiane. Tour the imposing golden spires of Pha That Luang and Patuxai monument before enjoying a farewell Lao dinner on the riverside.",
+          "highlights": [
+            { "icon": "🕌", "title": "Pha That Luang", "description": "The national symbol of Laos, a massive gold-covered Buddhist stupa." },
+            { "icon": "🏛️", "title": "Patuxai Victory Gate", "description": "Climb Vientiane's archway for views over the city's tree-lined avenues." },
+            { "icon": "🍽️", "title": "Farewell Dinner", "description": "Traditional Lao gastronomy overlooking the Mekong." }
+          ],
+          "stay": "🏨 Stay: Luxury Boutique Hotel Vientiane",
+          "media": {
+            "type": "carousel",
+            "id": "carousel-gt-day13",
+            "slides": [
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Pha_That_Luang_Vientiane.jpg/1280px-Pha_That_Luang_Vientiane.jpg",
+                "alt": "Pha That Luang, Vientiane",
+                "title": "Pha That Luang, Vientiane",
+                "caption": "Pha That Luang, the landmark golden stupa in Vientiane.",
+                "credit": "Pha That Luang, Vientiane — taylorandayumi — CC BY 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Pha_That_Luang_Vientiane.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              }
+            ]
+          }
+        },
+        {
+          "day": "14",
+          "title": "Departure",
+          "tagline": "✈️ Private Airport Transfer",
+          "vibe_title": "The Vibe",
+          "vibe_text": "Enjoy a relaxed breakfast and free morning in Vientiane. Your private driver will transfer you to Vientiane International Airport for your departure flight.",
+          "highlights": [
+            { "icon": "🍳", "title": "Relaxed Breakfast", "description": "Final morning breakfast at the hotel." },
+            { "icon": "✈️", "title": "Airport Transfer", "description": "Private transfer to Vientiane Airport (VTE) for your departure." }
+          ],
+          "stay": "✈️ Departure (End of Services)",
+          "media": {
+            "type": "carousel",
+            "id": "carousel-gt-day14",
+            "slides": [
+              {
+                "type": "single",
+                "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Pha_That_Luang_Vientiane.jpg/1280px-Pha_That_Luang_Vientiane.jpg",
+                "alt": "Departure",
+                "title": "Departure",
+                "caption": "Taking home unforgettable memories of the Golden Triangle.",
+                "credit": "Pha That Luang, Vientiane — taylorandayumi — CC BY 2.0 — <a href='https://commons.wikimedia.org/wiki/File:Pha_That_Luang_Vientiane.jpg' target='_blank' rel='noopener' style='color:#c3f8fe; text-decoration:underline;'>Source</a>"
+              }
+            ]
+          }
+        }
+      ],
       "booking": {
-        "title": "Secure Your Handcrafted Indochina Escape",
-        "description": "Book your bespoke multi-country luxury honeymoon adventure. Package includes private speedboat transfers, regional flights, 5-star heritage hotels, romantic rice field dinners, and 24/7 client support.",
+        "title": "Secure Your Handcrafted Golden Triangle Journey",
+        "description": "Book your premium Northern Thailand and Mekong slow boat adventure. Package includes private transfers, custom slow boat seats, 5-star heritage hotels, guided city walks, and 24/7 client support.",
         "bullets": [
-          "All 5-Star Premium Resorts & Luxury Cruise Suites Included",
-          "All Regional Flights & Fast Track Airport Services Included",
-          "24/7 Local Ground Handling & Certified English Guides",
-          "100% Tailor-made & Flexible Departure Dates"
+          "All 5-Star Boutique Lodges & Pakbeng overnight stay included",
+          "Private Mekong slow boat transit, transfers & border coordination",
+          "Certified English guides & private wats/monument entry fees",
+          "100% custom dates & options available"
         ]
       }
     }
@@ -874,6 +1141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="carousel-caption">
                           <h4>${s.title}</h4>
                           <p>${s.caption}</p>
+                          ${s.credit ? `<span class="photo-credit" style="display: block; font-size: 0.62rem; opacity: 0.65; margin-top: 5px; color: #ccc;">${s.credit}</span>` : ''}
                         </div>
                       </div>
                     `).join('')}
