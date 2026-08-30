@@ -432,17 +432,30 @@
 
           <div style="display: flex; flex-direction: column; gap: 0.4rem;">
             <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Message</label>
-            <textarea required rows="4" placeholder="Briefly describe your market expansion plans or B2B inquiry..." style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem; resize: none;"></textarea>
+            <textarea id="b2b-message-input" required rows="4" placeholder="Briefly describe your travel inquiry or destination interest..." style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem; resize: none;"></textarea>
           </div>
 
           <button type="submit" class="btn-primary-cyan" style="margin-top: 1rem; width: 100%; border: none; font-weight: 800; letter-spacing: 1.5px;">
-            SEND B2B INQUIRY
+            SEND INQUIRY
           </button>
         </form>
         
         <div id="form-success-msg" style="display: none; text-align: center; color: var(--accent-cyan); font-weight: 700; margin-top: 1.5rem; background: rgba(16,76,113,0.5); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--accent-cyan);">
-          ✓ Thank you. Our B2B coordinator will contact you shortly.
+          ✓ Thank you. Our concierge team will contact you shortly.
         </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const inquiryContext = urlParams.get('inquiry') || sessionStorage.getItem('inquiryContext');
+            if (inquiryContext) {
+              const msgInput = document.getElementById('b2b-message-input');
+              if (msgInput) {
+                msgInput.value = "I'd like to know more about " + decodeURIComponent(inquiryContext) + ".";
+              }
+            }
+          });
+        </script>
 
       </div>
 
