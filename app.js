@@ -564,20 +564,38 @@ document.addEventListener('DOMContentLoaded', () => {
   // MULTI-DROPDOWN MENU CLICK TOGGLE CONTROLLER
   // ==========================================================================
   function initDropdownMenus() {
-    const triggers = document.querySelectorAll('.dropdown-trigger');
-    triggers.forEach(trigger => {
+    const items = document.querySelectorAll('.dropdown-item');
+    items.forEach(item => {
+      const trigger = item.querySelector('.dropdown-trigger');
+      const menu = item.querySelector('.dropdown-menu');
+
+      if (!trigger || !menu) return;
+
+      // Desktop Hover Activate & Shrink on Mouse Out
+      item.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 1024) {
+          document.querySelectorAll('.dropdown-menu').forEach(m => {
+            if (m !== menu) m.classList.remove('show');
+          });
+          menu.classList.add('show');
+        }
+      });
+
+      item.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 1024) {
+          menu.classList.remove('show');
+        }
+      });
+
+      // Mobile / Touch Click Toggle Fallback
       trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const menu = trigger.nextElementSibling;
-        
-        // Close all other dropdown menus
-        document.querySelectorAll('.dropdown-menu').forEach(m => {
-          if (m !== menu) m.classList.remove('show');
-        });
-        
-        if (menu) menu.classList.toggle('show');
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          e.stopPropagation();
+          const isOpen = menu.classList.contains('show');
+          document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+          if (!isOpen) menu.classList.add('show');
+        }
       });
     });
 

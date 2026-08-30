@@ -261,6 +261,20 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   display: block;
 }
 
+@media (min-width: 1025px) {
+  .dropdown-item {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+  }
+
+  .dropdown-item:hover > .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
 .dropdown-menu li a {
   display: block;
   padding: 0.7rem 1.4rem;
