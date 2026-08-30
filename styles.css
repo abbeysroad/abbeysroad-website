@@ -767,6 +767,10 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   cursor: pointer;
   transition: var(--transition-fast);
   font-family: var(--font-sans), sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .card-cta-btn:hover {
