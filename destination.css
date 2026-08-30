@@ -41,17 +41,67 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: 0.5px;
 }
 
-/* --- SUB-NAV BREADCRUMBS & SINGLE GO BACK BUTTON BAR BELOW FIXED HEADER --- */
+/* --- DROPDOWN MENUS SHOW ON HOVER & CLICK --- */
+.dropdown-item {
+  position: relative;
+}
+
+.dropdown-item:hover .dropdown-menu,
+.dropdown-menu.show {
+  display: block !important;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #FFFFFF;
+  border: 2px solid var(--gold-primary);
+  border-radius: 12px;
+  padding: 0.8rem 0;
+  min-width: 280px;
+  list-style: none;
+  display: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  z-index: 1100;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.7rem 1.4rem;
+  color: #202B22 !important;
+  font-size: 0.9rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 700;
+  transition: color 0.15s ease, background 0.15s ease;
+  font-family: var(--font-sans), sans-serif;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background: #104C71;
+  color: #FFFFFF !important;
+}
+
+/* --- SUB-NAV BREADCRUMBS & STICKY GO BACK BUTTON BAR --- */
 .dest-sub-nav-bar {
-  margin-top: 95px;
+  position: fixed;
+  top: 95px;
+  left: 0;
+  width: 100%;
+  height: 52px;
   background: #0b132b;
   border-bottom: 1px solid var(--border-gold);
-  padding: 14px 32px;
+  padding: 0 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 90;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
 }
 
 .dest-breadcrumbs {
@@ -79,23 +129,27 @@ h1, h2, h3, h4, h5, h6,
   color: rgba(255, 255, 255, 0.3);
 }
 
-/* PROMINENT SINGLE GO BACK BUTTON */
+/* PROMINENT VERTICALLY CENTERED SINGLE GO BACK BUTTON */
 .go-back-header-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: linear-gradient(135deg, var(--gold-primary), var(--gold-accent));
   color: #0b132b;
   border: none;
-  padding: 10px 22px;
+  height: 34px;
+  padding: 0 20px;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 1.2px;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.2s ease;
   box-shadow: 0 4px 15px rgba(255, 216, 95, 0.35);
+  margin: 0;
+  line-height: 1;
 }
 
 .go-back-header-btn:hover {
@@ -103,10 +157,11 @@ h1, h2, h3, h4, h5, h6,
   box-shadow: 0 6px 20px rgba(255, 216, 95, 0.55);
 }
 
-/* --- HERO BANNER --- */
+/* --- HERO BANNER (OFFSET FOR FIXED MAIN HEADER + SUB-NAV BAR = 147px) --- */
 .dest-hero-section {
+  margin-top: 147px;
   position: relative;
-  min-height: 70vh;
+  min-height: 65vh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -374,13 +429,19 @@ h1, h2, h3, h4, h5, h6,
   box-shadow: 0 4px 15px rgba(78, 240, 208, 0.4);
 }
 
-/* --- PROMINENT ITINERARY ADVERTISEMENT BANNER --- */
+/* --- MULTI-ITINERARY FEATURED LUXURY JOURNEYS SECTION --- */
+.itineraries-ad-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
 .itinerary-ad-banner {
   background: linear-gradient(135deg, rgba(28, 37, 65, 0.95), rgba(11, 19, 43, 0.98));
   border: 1px solid var(--gold-primary);
   border-radius: 16px;
-  padding: 40px;
-  margin-bottom: 60px;
+  padding: 36px;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 32px;
@@ -412,16 +473,16 @@ h1, h2, h3, h4, h5, h6,
 
 .itinerary-ad-title {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: #ffffff;
-  margin: 0 0 16px 0;
+  margin: 0 0 14px 0;
 }
 
 .itinerary-ad-desc {
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: 0.98rem;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .itinerary-highlights-list {
@@ -435,7 +496,7 @@ h1, h2, h3, h4, h5, h6,
 
 .itinerary-highlights-list li {
   color: #ffffff;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -456,9 +517,9 @@ h1, h2, h3, h4, h5, h6,
   background: linear-gradient(135deg, var(--gold-primary), var(--gold-accent));
   color: #0b132b;
   border: none;
-  padding: 14px 28px;
+  padding: 12px 24px;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   letter-spacing: 1px;
   border-radius: 6px;
   cursor: pointer;
@@ -477,9 +538,9 @@ h1, h2, h3, h4, h5, h6,
   background: transparent;
   color: var(--cyan-accent);
   border: 1px solid var(--cyan-accent);
-  padding: 14px 28px;
+  padding: 12px 24px;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   letter-spacing: 1px;
   border-radius: 6px;
   cursor: pointer;
@@ -498,7 +559,7 @@ h1, h2, h3, h4, h5, h6,
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  height: 260px;
+  height: 240px;
   border: 1px solid var(--border-gold);
 }
 
@@ -680,6 +741,10 @@ h1, h2, h3, h4, h5, h6,
     grid-template-columns: 1fr;
   }
   .dest-sub-nav-bar {
-    margin-top: 75px;
+    top: 75px;
+    padding: 0 16px;
+  }
+  .dest-hero-section {
+    margin-top: 127px;
   }
 }
