@@ -41,52 +41,27 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: 0.5px;
 }
 
-/* --- GO BACK BUTTON STYLING IN HEADER --- */
-.go-back-header-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: transparent;
-  color: var(--gold-primary);
-  border: 1px solid var(--border-gold);
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 0.2s ease;
-  margin-right: 12px;
-}
-
-.go-back-header-btn:hover {
-  background: var(--gold-primary);
-  color: #0b132b;
-  border-color: var(--gold-primary);
-  transform: translateX(-3px);
-  box-shadow: 0 4px 15px rgba(255, 216, 95, 0.3);
-}
-
+/* --- SUB-NAV BREADCRUMBS & SINGLE GO BACK BUTTON BAR --- */
 .dest-sub-nav-bar {
-  background: rgba(11, 19, 43, 0.95);
+  background: #0b132b;
   border-bottom: 1px solid var(--border-gold);
-  padding: 10px 24px;
+  padding: 12px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 100;
+  z-index: 90;
 }
 
 .dest-breadcrumbs {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
 }
 
 .dest-breadcrumbs a {
@@ -101,6 +76,30 @@ h1, h2, h3, h4, h5, h6,
 
 .dest-breadcrumbs .separator {
   color: rgba(255, 255, 255, 0.3);
+}
+
+/* PROMINENT SINGLE GO BACK BUTTON */
+.go-back-header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-accent));
+  color: #0b132b;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(255, 216, 95, 0.35);
+}
+
+.go-back-header-btn:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 6px 20px rgba(255, 216, 95, 0.55);
 }
 
 /* --- HERO BANNER --- */

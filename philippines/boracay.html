@@ -9,8 +9,8 @@
 </head>
 <body class="destination-page">
 
-    <!-- TOP GLOBAL HEADER (MATCHING MAIN SITE) -->
-  <header class="global-header sticky-header" id="main-header">
+      <!-- TOP GLOBAL HEADER (MATCHING MAIN SITE IMAGE 2) -->
+  <header id="main-header" class="global-header">
     <div class="header-container">
       
       <!-- Left: Horizontal Logo -->
@@ -33,25 +33,38 @@
               <li><a href="../nordic.html">The Nordic</a></li>
             </ul>
           </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-discover">Discover ▾</a>
+            <ul class="dropdown-menu" id="discover-menu">
+              <li><a href="../philippines.html#chapter-palawan">Islands</a></li>
+              <li><a href="../philippines.html#chapter-coron">Adventure</a></li>
+              <li><a href="../philippines.html#chapter-banaue">Mountains</a></li>
+              <li><a href="../philippines.html#chapter-manila">Culture</a></li>
+            </ul>
+          </li>
           <li><a href="../philippines.html#concierge-section">Concierge</a></li>
           <li><a href="../philippines.html#about-section">About Us</a></li>
         </ul>
       </nav>
 
-      <!-- Right Desktop Action: CLEAR "← GO BACK" BUTTON & CONNECT -->
-      <div class="header-center-cta" style="display: flex; align-items: center; gap: 10px;">
-        <a href="../philippines.html" class="go-back-header-btn" onclick="if(document.referrer && document.referrer.includes(window.location.host)){history.back();return false;}">
-          ← Go Back
-        </a>
+      <!-- Right Desktop Action: Let's Connect -->
+      <div class="header-center-cta">
         <a href="../index.html#contact-section" class="header-cta-btn">
           Let's Connect
         </a>
       </div>
 
+      <!-- Right Mobile Burger Menu Button -->
+      <button class="burger-menu-btn" aria-label="Toggle mobile menu" id="burger-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
     </div>
   </header>
 
-  <!-- SUB-NAV BREADCRUMBS & GO BACK BAR -->
+    <!-- SUB-NAV BREADCRUMBS & SINGLE GO BACK BUTTON BAR BELOW HEADER -->
   <div class="dest-sub-nav-bar">
     <nav class="dest-breadcrumbs">
       <a href="../philippines.html">Home</a>
@@ -60,11 +73,9 @@
       <span class="separator">/</span>
       <span>Boracay</span>
     </nav>
-    <div>
-      <a href="../philippines.html" class="go-back-header-btn" onclick="if(document.referrer && document.referrer.includes(window.location.host)){history.back();return false;}">
-        ← Go Back
-      </a>
-    </div>
+    <a href="../philippines.html" class="go-back-header-btn" onclick="if(document.referrer && document.referrer.includes(window.location.host)){history.back();return false;}">
+      ← Go Back
+    </a>
   </div>
 
   <!-- HERO SECTION -->
