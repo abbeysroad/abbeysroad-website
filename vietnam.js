@@ -788,19 +788,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Exaggerated smooth zoom & vertical parallax scroll effect
+      // Smooth zoom / parallax scroll effect (matching destination standards)
       if (bgPhoto) {
         gsap.fromTo(bgPhoto, 
-          { scale: 1.0, yPercent: -4 }, 
+          { scale: 1.0, yPercent: 0 }, 
           {
-            scale: 1.40,
-            yPercent: 12,
+            scale: 1.28,
+            yPercent: 6,
             ease: 'none',
             scrollTrigger: {
               trigger: chapter,
               start: 'top bottom',
               end: 'bottom top',
-              scrub: 0.5
+              scrub: 1
             }
           }
         );
