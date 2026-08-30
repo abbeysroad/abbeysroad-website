@@ -41,11 +41,12 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: 0.5px;
 }
 
-/* --- SUB-NAV BREADCRUMBS & SINGLE GO BACK BUTTON BAR --- */
+/* --- SUB-NAV BREADCRUMBS & SINGLE GO BACK BUTTON BAR BELOW FIXED HEADER --- */
 .dest-sub-nav-bar {
+  margin-top: 95px;
   background: #0b132b;
   border-bottom: 1px solid var(--border-gold);
-  padding: 12px 32px;
+  padding: 14px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -677,5 +678,8 @@ h1, h2, h3, h4, h5, h6,
   }
   .itinerary-ad-banner {
     grid-template-columns: 1fr;
+  }
+  .dest-sub-nav-bar {
+    margin-top: 75px;
   }
 }
