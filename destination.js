@@ -27,19 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
   });
 
-  // 2. Populate Itineraries Dropdown Menu if present
+  // 2. Populate Itineraries Dropdown Menu matching exact official itineraries (Image 3)
   const itinerariesMenu = document.getElementById('itineraries-menu');
-  if (itinerariesMenu && itinerariesMenu.children.length === 0) {
-    const featuredList = [
-      { name: '14-Day Ultimate Philippines Island & Heritage Odyssey', link: '../philippines.html#itinerary-viewport' },
-      { name: '12-Day Palawan Coral & Secret Lagoon Sanctuary Escape', link: '../philippines.html#itinerary-viewport' },
-      { name: '12-Day Central Visayas Marine & Heritage Odyssey', link: '../philippines.html#itinerary-viewport' },
-      { name: '10-Day Siargao Barefoot Luxury & Lagoon Escape', link: '../philippines.html#itinerary-viewport' },
-      { name: '12-Day Northern Luzon & Cordillera Mountain Trail', link: '../philippines.html#itinerary-viewport' },
-      { name: '10-Day Mayon Volcano & Donsol Eco-Adventure', link: '../philippines.html#itinerary-viewport' }
+  if (itinerariesMenu) {
+    itinerariesMenu.innerHTML = '';
+    const officialItineraries = [
+      { name: 'The Ultimate 12-Day Philippines Escape', link: '../philippines.html#itinerary-viewport' },
+      { name: 'Philippines: 21-Day Premium Family Journey', link: '../philippines.html#itinerary-viewport' }
     ];
 
-    featuredList.forEach(it => {
+    officialItineraries.forEach(it => {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.href = it.link;
