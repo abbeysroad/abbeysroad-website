@@ -961,8 +961,27 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .concierge-icon {
-  font-size: 2.5rem;
   margin-bottom: 1rem;
+}
+
+.concierge-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1.5px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.concierge-card:hover .concierge-icon-box {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.25);
+  transform: translateY(-2px);
 }
 
 .concierge-card h3 {
