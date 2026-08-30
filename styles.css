@@ -1519,13 +1519,19 @@ footer#global-footer {
   .team-grid-4 { grid-template-columns: repeat(2, 1fr); }
 
   /* Mobile Header Trigger Alignment */
-  header#main-header.logo-bg-header-backdrop { padding: 0.2rem 0.8rem; }
+  header#main-header.logo-bg-header-backdrop { padding: 0.2rem 1rem; }
   
   .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    box-sizing: border-box;
+  }
+
+  .burger-menu-btn {
+    margin-right: 0.4rem;
+    flex-shrink: 0;
   }
 
   .logo-link img.extra-large-logo.horizontal-logo {
