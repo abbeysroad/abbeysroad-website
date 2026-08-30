@@ -2,6 +2,8 @@
    PANDORA TRAVEL — DEDICATED DESTINATION PAGES STYLESHEET
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
+
 :root {
   --bg-dark: #0b132b;
   --bg-card: rgba(28, 37, 65, 0.85);
@@ -14,37 +16,74 @@
   --border-gold: rgba(255, 216, 95, 0.25);
   --border-cyan: rgba(78, 240, 208, 0.3);
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
-  --font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-heading: 'Marcellus', serif;
+  --font-sans: 'Work Sans', sans-serif;
 }
 
 body.destination-page {
   background-color: var(--bg-dark);
   color: var(--text-main);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
-/* --- STICKY DESTINATION HEADER & BREADCRUMBS --- */
-.dest-nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(11, 19, 43, 0.92);
-  backdrop-filter: blur(12px);
+/* --- HEADLINE FONT UNIFICATION ('Marcellus', serif) --- */
+h1, h2, h3, h4, h5, h6,
+.dest-hero-title,
+.section-main-heading,
+.exp-title,
+.itinerary-ad-title,
+.hotel-name,
+.contact-info-side h3 {
+  font-family: var(--font-heading) !important;
+  letter-spacing: 0.5px;
+}
+
+/* --- GO BACK BUTTON STYLING IN HEADER --- */
+.go-back-header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--gold-primary);
+  border: 1px solid var(--border-gold);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  margin-right: 12px;
+}
+
+.go-back-header-btn:hover {
+  background: var(--gold-primary);
+  color: #0b132b;
+  border-color: var(--gold-primary);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 15px rgba(255, 216, 95, 0.3);
+}
+
+.dest-sub-nav-bar {
+  background: rgba(11, 19, 43, 0.95);
   border-bottom: 1px solid var(--border-gold);
-  padding: 12px 24px;
+  padding: 10px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 100;
 }
 
 .dest-breadcrumbs {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -62,31 +101,6 @@ body.destination-page {
 
 .dest-breadcrumbs .separator {
   color: rgba(255, 255, 255, 0.3);
-}
-
-.dest-nav-actions {
-  display: flex;
-  gap: 12px;
-}
-
-.btn-nav-cta {
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-accent));
-  color: #0b132b;
-  border: none;
-  padding: 8px 18px;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-decoration: none;
-}
-
-.btn-nav-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 216, 95, 0.4);
 }
 
 /* --- HERO BANNER --- */
@@ -126,7 +140,7 @@ body.destination-page {
 .dest-hero-title {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 5vw, 4.2rem);
-  font-weight: 800;
+  font-weight: 700;
   color: #ffffff;
   margin: 0 0 16px 0;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
@@ -259,6 +273,7 @@ body.destination-page {
 }
 
 .highlight-body h3 {
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   color: var(--gold-primary);
   margin: 0 0 8px 0;
@@ -324,6 +339,7 @@ body.destination-page {
 }
 
 .exp-title {
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   color: #ffffff;
   margin: 0 0 12px 0;
@@ -348,6 +364,8 @@ body.destination-page {
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-exp-cta:hover {
@@ -538,6 +556,7 @@ body.destination-page {
 }
 
 .hotel-name {
+  font-family: var(--font-heading);
   font-size: 1.2rem;
   color: #ffffff;
   margin: 0 0 6px 0;
@@ -578,6 +597,7 @@ body.destination-page {
 }
 
 .guide-card h4 {
+  font-family: var(--font-heading);
   color: var(--gold-primary);
   font-size: 1.1rem;
   margin: 0 0 8px 0;
@@ -588,111 +608,6 @@ body.destination-page {
   font-size: 0.92rem;
   line-height: 1.5;
   margin: 0;
-}
-
-/* --- DIRECT CONTACT & INQUIRY FORM SECTION --- */
-.contact-section {
-  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(11, 19, 43, 0.98) 100%);
-  border: 1px solid var(--border-gold);
-  border-radius: 20px;
-  padding: 48px 32px;
-  margin-bottom: 60px;
-  box-shadow: var(--shadow-lg);
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.contact-info-side h3 {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  color: #ffffff;
-  margin: 0 0 16px 0;
-}
-
-.contact-info-side p {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-.contact-perks {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.contact-perks li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #ffffff;
-  font-size: 0.95rem;
-}
-
-.contact-form-side form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  box-sizing: border-box;
-  background: rgba(11, 19, 43, 0.8);
-  border: 1px solid var(--border-gold);
-  border-radius: 6px;
-  padding: 12px 16px;
-  color: #ffffff;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--cyan-accent);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.btn-submit-inquiry {
-  background: linear-gradient(135deg, var(--cyan-accent), #2596be);
-  color: #0b132b;
-  border: none;
-  padding: 14px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
-  border-radius: 6px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-submit-inquiry:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(78, 240, 208, 0.4);
 }
 
 /* --- BOTTOM NEIGHBORING DESTINATIONS --- */
@@ -762,12 +677,6 @@ body.destination-page {
     direction: ltr;
   }
   .itinerary-ad-banner {
-    grid-template-columns: 1fr;
-  }
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .form-row {
     grid-template-columns: 1fr;
   }
 }
