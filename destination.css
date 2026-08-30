@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PANDORA TRAVEL — DEDICATED DESTINATION PAGES STYLESHEET
+   PANDORA TRAVEL — B2B DESTINATION ENABLEMENT GUIDE STYLESHEET
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6,
   border: 2px solid var(--gold-primary);
   border-radius: 12px;
   padding: 0.8rem 0;
-  min-width: 320px;
+  min-width: 340px;
   list-style: none;
   display: none;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6,
   color: #FFFFFF !important;
 }
 
-/* --- SUB-NAV BREADCRUMBS & STICKY GO BACK BUTTON BAR --- */
+/* --- SUB-NAV BREADCRUMBS & STICKY BAR --- */
 .dest-sub-nav-bar {
   position: fixed;
   top: 95px;
@@ -115,6 +115,9 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: 1.5px;
   font-weight: 600;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dest-breadcrumbs a {
@@ -131,7 +134,7 @@ h1, h2, h3, h4, h5, h6,
   color: rgba(255, 255, 255, 0.3);
 }
 
-/* PERFECTLY VERTICALLY CENTERED SINGLE GO BACK BUTTON */
+/* PERFECTLY VERTICALLY CENTERED GO BACK BUTTON (DESKTOP) */
 .go-back-header-btn {
   display: inline-flex;
   align-items: center;
@@ -160,6 +163,37 @@ h1, h2, h3, h4, h5, h6,
   box-shadow: 0 6px 20px rgba(255, 216, 95, 0.55);
 }
 
+/* HERO CENTERED GO BACK BUTTON (DISPLAYED PROMINENTLY ON MOBILE & HERO) */
+.dest-hero-go-back {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.go-back-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-accent));
+  color: #0b132b;
+  border: 1px solid var(--border-gold);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease;
+}
+
+.go-back-hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 216, 95, 0.5);
+}
+
 /* --- HERO BANNER (OFFSET FOR FIXED MAIN HEADER + SUB-NAV BAR = 151px) --- */
 .dest-hero-section {
   margin-top: 151px;
@@ -176,7 +210,7 @@ h1, h2, h3, h4, h5, h6,
 .dest-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 19, 43, 0.3) 0%, rgba(11, 19, 43, 0.75) 70%, var(--bg-dark) 100%);
+  background: linear-gradient(180deg, rgba(11, 19, 43, 0.4) 0%, rgba(11, 19, 43, 0.8) 70%, var(--bg-dark) 100%);
 }
 
 .dest-hero-content {
@@ -188,10 +222,10 @@ h1, h2, h3, h4, h5, h6,
 
 .dest-hero-tag {
   color: var(--cyan-accent);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
@@ -208,17 +242,17 @@ h1, h2, h3, h4, h5, h6,
 .dest-hero-subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-muted);
-  max-width: 750px;
+  max-width: 780px;
   margin: 0 auto 28px auto;
   line-height: 1.6;
 }
 
-/* --- FAST FACTS BAR --- */
+/* --- B2B AGENT METRICS BAR --- */
 .dest-facts-bar {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
-  background: rgba(28, 37, 65, 0.9);
+  background: rgba(28, 37, 65, 0.92);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-gold);
   border-radius: 12px;
@@ -244,6 +278,7 @@ h1, h2, h3, h4, h5, h6,
   color: var(--gold-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: 700;
 }
 
 .fact-value {
@@ -287,7 +322,7 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.6;
 }
 
-/* --- OVERVIEW & HIGHLIGHTS GRID --- */
+/* --- B2B SELLING POINTS & HIGHLIGHTS GRID --- */
 .highlights-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -432,7 +467,7 @@ h1, h2, h3, h4, h5, h6,
   box-shadow: 0 4px 15px rgba(78, 240, 208, 0.4);
 }
 
-/* --- MULTI-ITINERARY FEATURED LUXURY JOURNEYS SECTION --- */
+/* --- B2B WHOLESALE ITINERARY FEATURED SECTION --- */
 .itineraries-ad-grid {
   display: flex;
   flex-direction: column;
@@ -640,7 +675,7 @@ h1, h2, h3, h4, h5, h6,
   flex-grow: 1;
 }
 
-/* --- CONCIERGE TRAVEL GUIDE GRID --- */
+/* --- AGENT OPERATIONAL GUIDE GRID --- */
 .guide-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -733,27 +768,37 @@ h1, h2, h3, h4, h5, h6,
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* --- RESPONSIVE MEDIA QUERIES --- */
-@media (max-width: 900px) {
+/* --- RESPONSIVE MEDIA QUERIES & MOBILE GO BACK FIX --- */
+@media (max-width: 768px) {
+  /* HIDE GO BACK IN SUB-NAV BAR TO PREVENT OVERLAPPING BREADCRUMBS ON MOBILE */
+  .dest-sub-nav-bar .go-back-header-btn {
+    display: none !important;
+  }
+  
+  .dest-sub-nav-bar {
+    top: 75px;
+    padding: 0 16px;
+    height: 46px;
+    justify-content: center;
+  }
+  
+  .dest-breadcrumbs {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .dest-hero-section {
+    margin-top: 121px;
+    padding-top: 40px;
+  }
+
   .experience-item,
   .experience-item.reverse {
     grid-template-columns: 1fr;
     direction: ltr;
   }
+
   .itinerary-ad-banner {
     grid-template-columns: 1fr;
-  }
-  .dest-sub-nav-bar {
-    top: 75px;
-    padding: 0 16px;
-    height: 50px;
-  }
-  .go-back-header-btn {
-    height: 28px;
-    padding: 0 16px;
-    font-size: 0.75rem;
-  }
-  .dest-hero-section {
-    margin-top: 125px;
   }
 }
