@@ -27,10 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
           <li><a href="../philippines.html#chapter-banaue" class="mobile-nav-link sub-link">Mountains</a></li>
           <li><a href="../philippines.html#chapter-manila" class="mobile-nav-link sub-link">Culture</a></li>
           
-          <li class="mobile-section-header-title">EXPLORE</li>
-          <li><a href="../philippines.html#itinerary-viewport" class="mobile-nav-link">The Ultimate 12-Day Escape</a></li>
-          <li><a href="../philippines.html#itinerary-viewport" class="mobile-nav-link">21-Day Premium Family Journey</a></li>
-          <li><a href="../philippines.html#concierge-section" class="mobile-nav-link">Concierge</a></li>
+          <li class="mobile-section-header-title">ITINERARIES</li>
+          <li><a href="../philippines.html#itinerary-viewport" class="mobile-nav-link sub-link">The Ultimate 12-Day Escape</a></li>
+          <li><a href="../philippines.html#itinerary-viewport" class="mobile-nav-link sub-link">21-Day Premium Family Journey</a></li>
+          
+          <li><a href="../philippines.html#concierge-section" class="mobile-nav-link" style="margin-top: 0.6rem;">Concierge</a></li>
           <li><a href="../philippines.html#about-section" class="mobile-nav-link">About Us</a></li>
           <li><a href="../philippines.html#team-section" class="mobile-nav-link">Our Team</a></li>
         </ul>
