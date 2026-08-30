@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6,
   box-shadow: 0 8px 25px rgba(255, 216, 95, 0.5);
 }
 
-/* --- HERO BANNER (OFFSET FOR FIXED MAIN HEADER + SUB-NAV BAR = 151px) --- */
+/* --- HERO BANNER --- */
 .dest-hero-section {
   margin-top: 151px;
   position: relative;
@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5, h6,
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 60px 24px;
+  padding: 60px 24px 30px 24px;
   background-size: cover;
   background-position: center;
 }
@@ -218,13 +218,14 @@ h1, h2, h3, h4, h5, h6,
 .dest-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 19, 43, 0.4) 0%, rgba(11, 19, 43, 0.8) 70%, var(--bg-dark) 100%);
+  background: linear-gradient(180deg, rgba(11, 19, 43, 0.35) 0%, rgba(11, 19, 43, 0.75) 75%, var(--bg-dark) 100%);
 }
 
 .dest-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1140px;
   text-align: center;
 }
 
@@ -251,48 +252,61 @@ h1, h2, h3, h4, h5, h6,
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-muted);
   max-width: 780px;
-  margin: 0 auto 28px auto;
+  margin: 0 auto 36px auto;
   line-height: 1.6;
 }
 
-/* --- FAST FACTS BAR --- */
+/* --- FAST FACTS OVERVIEW BAR (SLIM, WIDE, SINGLE LINE ON DESKTOP) --- */
 .dest-facts-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
   background: rgba(28, 37, 65, 0.92);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-gold);
   border-radius: 12px;
-  padding: 20px;
-  margin-top: 24px;
+  padding: 12px 28px;
+  margin-top: 36px;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: var(--shadow-lg);
+  box-sizing: border-box;
 }
 
 .fact-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-align: left;
+  flex: 1;
+  min-width: 0;
 }
 
 .fact-icon {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .fact-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--gold-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .fact-value {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* --- MAIN CONTENT LAYOUT --- */
@@ -777,6 +791,15 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 990px) {
+  .dest-facts-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+}
+
 @media (max-width: 768px) {
   /* HIDE SUB-NAV GO BACK ON MOBILE TO PREVENT OVERLAP */
   .dest-sub-nav-bar .go-back-header-btn {
