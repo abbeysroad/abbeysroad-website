@@ -24,6 +24,7 @@
   /* --accent-gold: #FFD85F; /* Original Bright Yellow */
   --accent-gold: #cfaa5c; /* New Warm Gold */
   --accent-gold-hover: #ba9447;
+  --accent-gold-bright: #FFD85F; /* Brighter yellow for high-contrast writing on top of images */
   --accent-gold-rgb: 207, 170, 92;
   
   --btn-blue: #104C71;
@@ -1953,4 +1954,37 @@ footer#global-footer {
 }
 .partner-logo-item-link:hover span {
   color: #0d9488 !important;
+}
+
+
+/* ==========================================================================
+   BRIGHTER YELLOW WRITING FOR TEXT OVER IMAGES & HERO OVERLAYS
+   High-contrast bright yellow (#FFD85F) for legibility over photography
+   ========================================================================== */
+.hero-film-container .gold-text,
+.hero-section .gold-text,
+.hero-film-slide .gold-text,
+.card-overlay .gold-text,
+.card-image-wrapper .gold-text,
+.dest-card .gold-text,
+.dest-info-card .gold-text,
+.dest-info-card .card-tag,
+.card-tag,
+.card-dest-title,
+.ebook-trigger-text,
+.image-overlay .gold-text,
+.hero-cta-group .gold-badge,
+.hero-eyebrow,
+.hero-tag,
+.brand-eyebrow.gold-text,
+.text-on-image-gold {
+  color: var(--accent-gold-bright, #FFD85F);
+}
+
+.card-tag {
+  color: var(--accent-gold-bright, #FFD85F);
+}
+
+.card-dest-title {
+  color: var(--accent-gold-bright, #FFD85F);
 }

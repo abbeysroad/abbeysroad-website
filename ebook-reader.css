@@ -63,6 +63,7 @@
 }
 
 .ebook-trigger-text {
+  color: var(--accent-gold-bright, #FFD85F);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -72,6 +73,7 @@
 }
 
 .ebook-trigger-btn:hover .ebook-trigger-text {
+  color: var(--accent-gold-bright, #FFD85F);
   color: #202B22;
 }
 
@@ -1049,4 +1051,16 @@
     width: 100% !important;
     top: 48px !important;
   }
+}
+
+
+/* ==========================================================================
+   BRIGHTER YELLOW WRITING FOR E-BOOK READER IMAGE OVERLAYS & HERO TRIGGER
+   ========================================================================== */
+.ebook-trigger-text,
+.ebook-overlay-text,
+.ebook-gesture-label,
+.ebook-bookmark-card .gold-text,
+.text-on-image-gold {
+  color: var(--accent-gold-bright, #FFD85F);
 }

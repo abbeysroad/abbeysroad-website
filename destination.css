@@ -10,6 +10,7 @@
   --bg-card-hover: rgba(36, 48, 83, 0.95);
   --gold-primary: var(--accent-gold, #cfaa5c);
   --gold-accent: var(--accent-gold-hover, #ba9447);
+  --gold-bright: var(--accent-gold-bright, #FFD85F);
   --cyan-accent: #4ef0d0;
   --text-main: #f8fafc;
   --text-muted: #cbd5e1;
@@ -921,4 +922,18 @@ h1, h2, h3, h4, h5, h6,
   .fact-value {
     font-size: 0.74rem;
   }
+}
+
+
+/* ==========================================================================
+   BRIGHTER YELLOW WRITING FOR DESTINATION HERO & IMAGE OVERLAYS
+   ========================================================================== */
+.dest-hero-tag,
+.dest-hero-section .gold-text,
+.dest-hero-content .gold-text,
+.section-badge,
+.guide-card h4,
+.highlight-card .gold-text,
+.text-on-image-gold {
+  color: var(--gold-bright, #FFD85F);
 }
