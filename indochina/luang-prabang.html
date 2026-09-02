@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luang Prabang & Laos – Travel Destination Guide | Pandora Travel</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../destination.css">
+</head>
+<body class="destination-page">
+
+  <!-- MAIN SITE HEADER -->
+  <header id="main-header" class="logo-bg-header-backdrop">
+    <div class="header-container">
+      
+      <!-- Left: Horizontal Logo -->
+      <div class="logo-container">
+        <a href="../index.html" class="logo-link" title="Pandora Travel - Your Indochina Travel Concierge">
+          <img src="../images/PandoraTravel_Logo_Transparent.png" alt="Pandora Travel Logo Horizontal" id="header-logo" class="extra-large-logo horizontal-logo">
+        </a>
+      </div>
+
+      <!-- Center Desktop Navigation -->
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-destinations">Destinations ▾</a>
+            <ul class="dropdown-menu" id="destinations-menu">
+              <li><a href="../philippines.html">Philippines</a></li>
+              <li><a href="../oman.html">Oman</a></li>
+              <li><a href="../indochina.html" class="active">Indochina</a></li>
+              <li><a href="../nordic.html">The Nordic</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-discover">Discover ▾</a>
+            <ul class="dropdown-menu" id="discover-menu">
+              <li><a href="hanoi.html">Hanoi</a></li>
+              <li><a href="ninh-binh.html">Ninh Binh & Ha Long</a></li>
+              <li><a href="hoi-an.html">Hoi An</a></li>
+              <li><a href="saigon.html">Saigon</a></li>
+              <li><a href="siem-reap.html">Siem Reap</a></li>
+              <li><a href="bangkok.html">Bangkok & Islands</a></li>
+              <li><a href="luang-prabang.html">Luang Prabang</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-tours">Itineraries ▾</a>
+            <ul class="dropdown-menu" id="itineraries-menu">
+              <!-- Dynamically populated -->
+            </ul>
+          </li>
+          <li><a href="../indochina.html#concierge-section">Concierge</a></li>
+          <li><a href="../indochina.html#about-section">About Us</a></li>
+          <li><a href="../indochina.html#team-section">Team</a></li>
+        </ul>
+      </nav>
+
+      <!-- Center (Mobile) / Right (Desktop): Let's Connect CTA -->
+      <div class="header-center-cta">
+        <a href="../index.html#contact-section" class="header-cta-btn">
+          Let's Connect
+        </a>
+      </div>
+
+      <!-- Right Mobile Burger Menu Button -->
+      <button class="burger-menu-btn" aria-label="Toggle mobile menu" id="burger-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- SUB-NAV BREADCRUMBS & STICKY BAR BELOW FIXED HEADER -->
+  <div class="dest-sub-nav-bar">
+    <nav class="dest-breadcrumbs">
+      <a href="../indochina.html">Home</a>
+      <span class="separator">/</span>
+      <a href="../indochina.html">Indochina</a>
+      <span class="separator">/</span>
+      <span>Luang Prabang & Laos</span>
+    </nav>
+    <a href="../indochina.html" class="go-back-header-btn" onclick="if(document.referrer && document.referrer.includes(window.location.host)){history.back();return false;}">
+      <svg class="triangle-arrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 4L6 12L16 20V4Z"/></svg>
+      Go Back
+    </a>
+  </div>
+
+  <!-- HERO SECTION WITH TOP CENTERED HERO GO BACK BUTTON (PREVENTS MOBILE OVERLAP) -->
+  <section class="dest-hero-section" style="background-image: url('../images/vietnam/days9-11_luangprabang_1.jpeg');">
+    <div class="dest-hero-overlay"></div>
+    <div class="dest-hero-content">
+      
+      <!-- TOP CENTERED HERO GO BACK BUTTON FOR MOBILE ACCESSIBILITY -->
+      <div class="dest-hero-go-back">
+        <a href="../indochina.html" class="go-back-hero-btn" onclick="if(document.referrer && document.referrer.includes(window.location.host)){history.back();return false;}">
+          <svg class="triangle-arrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 4L6 12L16 20V4Z"/></svg>
+          Go Back
+        </a>
+      </div>
+
+      <div class="dest-hero-tag">UNESCO MONASTERIES & MEKONG CRUISE • LAOS</div>
+      <h1 class="dest-hero-title">LUANG PRABANG & LAOS</h1>
+      <p class="dest-hero-subtitle">The spiritual mountain sanctuary of Laos. Golden UNESCO Buddhist temples, morning Tak Bat alms-giving, Kuang Si turquoise waterfalls, and scenic Mekong river cruises.</p>
+
+      <!-- DESTINATION FAST FACTS BAR -->
+      <div class="dest-facts-bar">
+        <div class="fact-item">
+          <span class="fact-icon">⏱️</span>
+          <div>
+            <div class="fact-label">Suggested Stay</div>
+            <div class="fact-value">3 – 4 Days</div>
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">👤</span>
+          <div>
+            <div class="fact-label">Ideal Travelers</div>
+            <div class="fact-value">Spirituality & Mountain Enthusiasts</div>
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">☀️</span>
+          <div>
+            <div class="fact-label">Best Season</div>
+            <div class="fact-value">Nov – March (Dry/Cool)</div>
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">✈️</span>
+          <div>
+            <div class="fact-label">Gateway Airport</div>
+            <div class="fact-value">Luang Prabang (LPQ)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <div class="dest-container">
+
+    <!-- DESTINATION HIGHLIGHTS -->
+    <section class="section-title-wrap">
+      <span class="section-badge">WHY RECOMMEND THIS DESTINATION</span>
+      <h2 class="section-main-heading">Essential Highlights & Selling Points</h2>
+      <p class="section-subtext">Key regional features, luxury accommodation standards, and seamless logistics that make Luang Prabang & Laos an effortless recommendation for your travelers.</p>
+    </section>
+
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-img-wrap">
+          <img src="../images/vietnam/day12_luangprabang_1.jpeg" alt="UNESCO Buddhist Monasteries & Alms Rituals">
+        </div>
+        <div class="highlight-body">
+          <h3>UNESCO Buddhist Monasteries & Alms Rituals</h3>
+          <p>Experience saffron-robed monks collecting alms at dawn along serene French colonial streets.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-img-wrap">
+          <img src="../images/vietnam/day13_vangvieng_1.jpeg" alt="Kuang Si Waterfalls & Vang Vieng Karsts">
+        </div>
+        <div class="highlight-body">
+          <h3>Kuang Si Waterfalls & Vang Vieng Karsts</h3>
+          <p>Cascading turquoise limestone pools surrounded by lush jungle and limestone mountain peaks.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-img-wrap">
+          <img src="../images/vietnam/day8_pakbeng_1.jpeg" alt="Mekong River Slow Boat Cruise to Pakbeng">
+        </div>
+        <div class="highlight-body">
+          <h3>Mekong River Slow Boat Cruise to Pakbeng</h3>
+          <p>Private wooden boat journey gliding past mountain riverbanks, Pak Ou cave shrines, and traditional villages.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNATURE UNFORGETTABLE MOMENTS -->
+    <section class="section-title-wrap">
+      <span class="section-badge">SIGNATURE EXPERIENCES</span>
+      <h2 class="section-main-heading">Unforgettable Excursions in Luang Prabang & Laos</h2>
+    </section>
+
+    <div class="experience-list">
+      <div class="experience-item ">
+        <div class="exp-media">
+          <img src="../images/vietnam/day12_luangprabang_2.jpeg" alt="Dawn Tak Bat Alms-Giving & Mount Phousi Summit">
+        </div>
+        <div class="exp-content">
+          <div class="exp-tag">CULTURAL IMMERSION</div>
+          <h3 class="exp-title">Dawn Tak Bat Alms-Giving & Mount Phousi Summit</h3>
+          <p class="exp-desc">Participate respectfully in morning alms-giving followed by a sunset summit hike over the Mekong and Nam Khan rivers.</p>
+          <a href="../index.html?inquiry=the%20Indochina%2C%20Luang%20Prabang%20%26%20Laos%20%E2%80%93%20Dawn%20Tak%20Bat%20Alms-Giving%20%26%20Mount%20Phousi%20Summit#contact-section" class="btn-exp-cta" onclick="sessionStorage.setItem('inquiryContext', 'the Indochina, Luang Prabang & Laos – Dawn Tak Bat Alms-Giving & Mount Phousi Summit');">Inquire for more details →</a>
+        </div>
+      </div>
+      <div class="experience-item reverse">
+        <div class="exp-media">
+          <img src="../images/vietnam/day8_pakbeng_2.jpeg" alt="Private Mekong Cruise to Pak Ou Caves & Pakbeng">
+        </div>
+        <div class="exp-content">
+          <div class="exp-tag">MEKONG RIVER VOYAGE</div>
+          <h3 class="exp-title">Private Mekong Cruise to Pak Ou Caves & Pakbeng</h3>
+          <p class="exp-desc">Full-day private wooden boat cruise visiting thousands of Buddha statues inside limestone cliff caves.</p>
+          <a href="../index.html?inquiry=the%20Indochina%2C%20Luang%20Prabang%20%26%20Laos%20%E2%80%93%20Private%20Mekong%20Cruise%20to%20Pak%20Ou%20Caves%20%26%20Pakbeng#contact-section" class="btn-exp-cta" onclick="sessionStorage.setItem('inquiryContext', 'the Indochina, Luang Prabang & Laos – Private Mekong Cruise to Pak Ou Caves & Pakbeng');">Inquire for more details →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROMINENT FEATURED JOURNEYS -->
+    <section class="section-title-wrap" style="margin-top: 60px; margin-bottom: 24px;">
+      <span class="section-badge">FEATURED JOURNEYS</span>
+      <h2 class="section-main-heading">Curated Indochina Itineraries</h2>
+    </section>
+
+    <div class="itineraries-ad-grid">
+      <div class="itinerary-ad-banner">
+        <div>
+          <div class="itinerary-ad-tag">FEATURED LUXURY JOURNEY</div>
+          <h3 class="itinerary-ad-title">20-Day Luxury Indochina & Thailand Escape</h3>
+          <p class="itinerary-ad-desc">Discover Hanoi, Ninh Binh, Ha Long Bay, Hoi An, Saigon, Siem Reap, Bangkok, and Koh Yao Yai across Vietnam, Cambodia, and Thailand.</p>
+          <ul class="itinerary-highlights-list">
+            <li>VIP Airport Fast-Track Arrival & Sofitel Metropole Heritage Stay</li>
+            <li>Lan Ha Bay Private Sundeck Cruise & Mua Cave Karst Panoramas</li>
+            <li>Angkor Wat Archaeologist Tour & Koh Yao Yai Lagoon Pool Villa</li>
+          </ul>
+          <div class="itinerary-ad-cta-group">
+            <a href="../index.html?inquiry=the%20Indochina%2C%20Luang%20Prabang%20%26%20Laos%20%E2%80%93%2020-Day%20Luxury%20Indochina%20%26%20Thailand%20Escape#contact-section" class="btn-primary-gold" onclick="sessionStorage.setItem('inquiryContext', 'the Indochina, Luang Prabang & Laos – 20-Day Luxury Indochina & Thailand Escape');">Inquire for more details →</a>
+            <a href="../indochina.html#itinerary-viewport" class="btn-secondary-cyan">View Full Itinerary Details</a>
+          </div>
+        </div>
+        <div class="itinerary-ad-media">
+          <img src="../images/vietnam/13_Ha_Long_Bay_and_Lan_Ha_Bay_Cruise_Panorama.jpeg" alt="20-Day Luxury Indochina & Thailand Escape">
+        </div>
+      </div>
+    </div>
+
+    <!-- HANDPICKED ACCOMMODATIONS -->
+    <section class="section-title-wrap">
+      <span class="section-badge">WHERE TO STAY</span>
+      <h2 class="section-main-heading">Handpicked Hotel & Resort Portfolio</h2>
+    </section>
+
+    <div class="hotels-grid">
+      <div class="hotel-card">
+        <div class="highlight-img-wrap" style="height:210px; position:relative;">
+          <img src="../images/vietnam/days9-11_luangprabang_2.jpeg" alt="Rosewood Luang Prabang" style="width:100%; height:100%; object-fit:cover;">
+          <span class="hotel-stars">5★ LUXURY TENTED RESORT</span>
+        </div>
+        <div class="hotel-body">
+          <h3 class="hotel-name">Rosewood Luang Prabang</h3>
+          <div class="hotel-location">Nam Khan River • Luang Prabang</div>
+          <p class="hotel-desc">5-star luxury hilltop tented villas and waterfall suites surrounded by tropical rainforest.</p>
+          <a href="../index.html?inquiry=the%20Indochina%2C%20Luang%20Prabang%20%26%20Laos%20%E2%80%93%20Rosewood%20Luang%20Prabang#contact-section" class="btn-exp-cta" onclick="sessionStorage.setItem('inquiryContext', 'the Indochina, Luang Prabang & Laos – Rosewood Luang Prabang');">Inquire for more details →</a>
+        </div>
+      </div>
+      <div class="hotel-card">
+        <div class="highlight-img-wrap" style="height:210px; position:relative;">
+          <img src="../images/vietnam/days9-11_luangprabang_3.jpeg" alt="Amantaka Luang Prabang" style="width:100%; height:100%; object-fit:cover;">
+          <span class="hotel-stars">5★ HERITAGE SANCTUARY</span>
+        </div>
+        <div class="hotel-body">
+          <h3 class="hotel-name">Amantaka Luang Prabang</h3>
+          <div class="hotel-location">Town Center • Luang Prabang</div>
+          <p class="hotel-desc">Ultra-exclusive 5-star Aman estate housed in historic French colonial buildings near Mount Phousi.</p>
+          <a href="../index.html?inquiry=the%20Indochina%2C%20Luang%20Prabang%20%26%20Laos%20%E2%80%93%20Amantaka%20Luang%20Prabang#contact-section" class="btn-exp-cta" onclick="sessionStorage.setItem('inquiryContext', 'the Indochina, Luang Prabang & Laos – Amantaka Luang Prabang');">Inquire for more details →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRAVEL ADVISOR LOGISTICAL ESSENTIALS -->
+    <section class="section-title-wrap">
+      <span class="section-badge">TRAVEL ADVISOR ESSENTIALS</span>
+      <h2 class="section-main-heading">Logistics & Operational Insider Tips</h2>
+    </section>
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-icon">✈️</div>
+        <h4>Transfers & Arrival</h4>
+        <p>Pandora Travel provides VIP tarmac fast-tracks, luxury chauffeured MPVs, and private boat charters across Southeast Asia.</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">🌤️</div>
+        <h4>Seasonality & Weather</h4>
+        <p>Optimal travel window runs October through April with dry, pleasant temperatures across Vietnam, Cambodia, and Thailand.</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">🍽️</div>
+        <h4>Client Dining & USPs</h4>
+        <p>Private rice field candlelit dinners, rooftop mixology masterclasses, and curated street gastronomy crawls with expert hosts.</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">💡</div>
+        <h4>Concierge Itinerary Tip</h4>
+        <p>Combine Luang Prabang & Laos with direct regional flights or private river cruises to maximize seamless transit across Indochina highlights.</p>
+      </div>
+    </div>
+
+    <!-- CLEAN CTA BANNER LINKING DIRECTLY TO HOME PAGE FORM -->
+    <section class="dest-contact-banner" style="background: linear-gradient(135deg, rgba(28, 37, 65, 0.95), rgba(11, 19, 43, 0.98)); border: 1px solid var(--border-gold); border-radius: 16px; padding: 48px 32px; margin-bottom: 60px; text-align: center; box-shadow: var(--shadow-lg);">
+      <h3 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--gold-primary); margin-bottom: 12px;">LET'S BUILD BUSINESS</h3>
+      <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 650px; margin: 0 auto 28px auto; line-height: 1.6;">
+        Partner with Pandora Travel to establish bespoke Indochina itineraries or private travel concierge services for your clients.
+      </p>
+      <a href="../index.html?inquiry=the%20Indochina%2C%20Luang%20Prabang%20%26%20Laos%20%E2%80%93%20General%20Destination%20Inquiry#contact-section" class="btn-primary-gold" style="padding: 16px 36px; font-size: 0.95rem; text-decoration: none;" onclick="sessionStorage.setItem('inquiryContext', 'the Indochina, Luang Prabang & Laos – General Destination Inquiry');">
+        INQUIRE FOR MORE DETAILS →
+      </a>
+    </section>
+
+    <!-- BOTTOM NEIGHBORING DESTINATIONS CAROUSEL -->
+    <section class="dest-carousel-section">
+      <div class="section-title-wrap">
+        <span class="section-badge">EXPLORE NEXT DESTINATION</span>
+        <h3 style="color:#fff; margin-top:6px;">Other Indochina Destination Guides</h3>
+      </div>
+      <div class="dest-links-grid">
+        <a href="hanoi.html" class="dest-link-card">
+          <img src="../images/vietnam/01_Hanoi_Hoan_Kiem_Lake_Turtle_Tower.jpeg" alt="Hanoi">
+          <span class="dest-link-title">Hanoi</span>
+        </a>
+        <a href="ninh-binh.html" class="dest-link-card">
+          <img src="../images/vietnam/13_Ha_Long_Bay_and_Lan_Ha_Bay_Cruise_Panorama.jpeg" alt="Ninh Binh & Ha Long">
+          <span class="dest-link-title">Ninh Binh & Ha Long</span>
+        </a>
+        <a href="hoi-an.html" class="dest-link-card">
+          <img src="../images/vietnam/16_Hoi_An_Romantic_Dinner_in_Rice_Fields.jpeg" alt="Hoi An">
+          <span class="dest-link-title">Hoi An</span>
+        </a>
+        <a href="saigon.html" class="dest-link-card">
+          <img src="../images/vietnam/23_Saigon_Cu _Chi_Tunnels.jpeg" alt="Saigon">
+          <span class="dest-link-title">Saigon</span>
+        </a>
+        <a href="siem-reap.html" class="dest-link-card">
+          <img src="../images/vietnam/20_Angkor_Wat_Panorama_Siem_Reap.jpeg" alt="Siem Reap">
+          <span class="dest-link-title">Siem Reap</span>
+        </a>
+        <a href="bangkok.html" class="dest-link-card">
+          <img src="../images/vietnam/30_Koh_Yao_Yai_Island_Aerial_View.jpeg" alt="Bangkok & Islands">
+          <span class="dest-link-title">Bangkok</span>
+        </a>
+        <a href="luang-prabang.html" class="dest-link-card">
+          <img src="../images/vietnam/days9-11_luangprabang_1.jpeg" alt="Luang Prabang">
+          <span class="dest-link-title">Luang Prabang</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="../destination.js"></script>
+</body>
+</html>
