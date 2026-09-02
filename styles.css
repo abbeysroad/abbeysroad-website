@@ -4,7 +4,7 @@
    PANDORA TRAVEL BRANDING & DESIGN SYSTEM (WITH NEW FONTS)
    Main Background / Primary: #202B22 (Dark Tropical Green)
    Header Logo Background: #FAF5F0 (Warm Cream / Off-White)
-   Accent / Sun Gold: #FFD85F
+   Accent / Sun Gold: #cfaa5c (Original Yellow: #FFD85F)
    Buttons / Deep Ocean Blue: #104C71 (Hover: #0D3A57)
    Sub-elements / Soft Lagoon Cyan: #C3F8FE
    ========================================================================== */
@@ -16,8 +16,15 @@
   --primary-dark-solid: #1B261D;
   --header-logo-bg: #FAF5F0;
   
-  --accent-gold: #FFD85F;
-  --accent-gold-hover: #E5C04A;
+  /* ==========================================================================
+     BRAND ACCENT / GOLD THEME COLOR
+     - Active Theme Color: #cfaa5c (Warm Gold)
+     - To roll back to original bright yellow (#FFD85F), swap comments on lines below.
+     ========================================================================== */
+  /* --accent-gold: #FFD85F; /* Original Bright Yellow */
+  --accent-gold: #cfaa5c; /* New Warm Gold */
+  --accent-gold-hover: #ba9447;
+  --accent-gold-rgb: 207, 170, 92;
   
   --btn-blue: #104C71;
   --btn-blue-hover: #0D3A57;
@@ -31,11 +38,11 @@
   --text-dark: #202B22;
   --text-light: #6E7E70;
   --text-white: #FFFFFF;
-  --text-gold: #FFD85F;
+  --text-gold: var(--accent-gold);
   --text-cyan: #C3F8FE;
   
   --border-glass: rgba(195, 248, 254, 0.35);
-  --border-gold: rgba(255, 216, 95, 0.6);
+  --border-gold: rgba(var(--accent-gold-rgb, 207, 170, 92), 0.6);
   
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
   --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.25);
@@ -233,7 +240,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   background: var(--accent-gold);
   color: var(--primary-dark);
   border-color: var(--accent-gold);
-  box-shadow: 0 4px 15px rgba(255, 216, 95, 0.4);
+  box-shadow: 0 4px 15px rgba(207, 170, 92, 0.4);
   transform: translateY(-2px);
 }
 
@@ -556,7 +563,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   fill: var(--accent-gold);
   stroke: #FFFFFF;
   stroke-width: 2.2;
-  filter: drop-shadow(0 0 12px rgba(255, 216, 95, 0.95));
+  filter: drop-shadow(0 0 12px rgba(207, 170, 92, 0.95));
 }
 
 /* Double Outline Shadow Path matching Image 3 offset outline */
@@ -812,7 +819,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   background: var(--accent-gold);
   color: var(--primary-dark);
   border-color: var(--accent-gold);
-  box-shadow: 0 0 20px rgba(255, 216, 95, 0.4);
+  box-shadow: 0 0 20px rgba(207, 170, 92, 0.4);
 }
 
 /* Editorial Typography */
@@ -928,7 +935,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
   background: var(--accent-gold);
   color: var(--primary-dark);
   border-color: var(--accent-gold);
-  box-shadow: 0 0 30px rgba(255, 216, 95, 0.5);
+  box-shadow: 0 0 30px rgba(207, 170, 92, 0.5);
   transform: translateY(-3px);
 }
 
@@ -1935,4 +1942,15 @@ footer#global-footer {
   100% {
     object-position: 100% 50%;
   }
+}
+
+.partner-logo-item-link {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+  cursor: pointer;
+}
+.partner-logo-item-link:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+.partner-logo-item-link:hover span {
+  color: #0d9488 !important;
 }
