@@ -934,6 +934,10 @@ h1, h2, h3, h4, h5, h6,
 .section-badge,
 .guide-card h4,
 .highlight-card .gold-text,
+.exp-tag,
+.itinerary-ad-tag,
+.card-tag,
+.card-dest-title,
 .text-on-image-gold {
-  color: var(--gold-bright, #FFD85F);
+  color: var(--gold-bright, #FFD85F) !important;
 }
