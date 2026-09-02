@@ -73,8 +73,101 @@
 }
 
 .ebook-trigger-btn:hover .ebook-trigger-text {
-  color: var(--accent-gold-bright, #FFD85F);
   color: #202B22;
+}
+
+/* --------------------------------------------------------------------------
+   1B. DESKTOP PARALLAX & STICKY DOCKED RIGHT-SIDE BOOKMARK WIDGET
+   -------------------------------------------------------------------------- */
+@media (min-width: 1025px) {
+  /* Smooth transition for hero content travelling down during scroll */
+  .hero-film-container .chapter-intro .chapter-content-container,
+  .chapter-intro .chapter-content-container.center-aligned {
+    will-change: transform;
+    transition: transform 0.05s linear;
+  }
+
+  /* Docked Sticky Side Bookmark (Right Edge) */
+  .ebook-trigger-btn.docked-bookmark {
+    position: fixed !important;
+    right: 0 !important;
+    top: 50% !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    z-index: 9999 !important;
+    margin: 0 !important;
+    padding: 12px 14px !important;
+    border-radius: 14px 0 0 14px !important;
+    border: 1.5px solid var(--accent-gold, #cfaa5c) !important;
+    border-right: none !important;
+    background: rgba(16, 76, 113, 0.95) !important;
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(207, 170, 92, 0.35) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    width: 58px !important;
+    min-width: 58px !important;
+    height: 58px !important;
+    box-sizing: border-box !important;
+    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                padding 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                background 0.3s ease, 
+                box-shadow 0.3s ease, 
+                transform 0.3s ease !important;
+  }
+
+  /* Docked Side Bookmark: Icon sizing */
+  .ebook-trigger-btn.docked-bookmark .ebook-custom-icon-img {
+    width: 32px !important;
+    height: 32px !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.3s ease, filter 0.3s ease !important;
+  }
+
+  /* Collapsed Docked State: Hide title text */
+  .ebook-trigger-btn.docked-bookmark:not(.expanded) .ebook-trigger-text {
+    max-width: 0 !important;
+    opacity: 0 !important;
+    margin-left: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, margin-left 0.35s ease !important;
+  }
+
+  /* Expanded Docked State: Slides out left and reveals "PDF FLIPBOOK" text */
+  .ebook-trigger-btn.docked-bookmark.expanded {
+    width: 190px !important;
+    padding: 12px 20px 12px 16px !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    box-shadow: -12px 0 35px rgba(0, 0, 0, 0.75), 0 0 30px rgba(207, 170, 92, 0.5) !important;
+  }
+
+  .ebook-trigger-btn.docked-bookmark.expanded .ebook-trigger-text {
+    max-width: 130px !important;
+    opacity: 1 !important;
+    margin-left: 6px !important;
+    font-size: 0.8rem !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease 0.1s, margin-left 0.35s ease !important;
+  }
+
+  /* Hover styling for docked side bookmark */
+  .ebook-trigger-btn.docked-bookmark:hover {
+    background: rgba(207, 170, 92, 0.98) !important;
+    color: #202B22 !important;
+    transform: translateY(-50%) translateX(-4px) !important;
+  }
+
+  .ebook-trigger-btn.docked-bookmark:hover .ebook-trigger-text {
+    color: #202B22 !important;
+  }
 }
 
 

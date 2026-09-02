@@ -282,6 +282,88 @@
     `;
 
     document.body.insertAdjacentHTML('beforeend', modalHTML);
+    bindViewportTouchSwipes();
+    initHeroParallaxAndBookmark();
+
+    window.addEventListener('resize', debounce(() => {
+      const prevDevice = EBookState.deviceType;
+      detectDeviceType();
+      if (EBookState.pdfDoc && document.getElementById('ebook-modal-overlay')?.classList.contains('active')) {
+        if (prevDevice !== EBookState.deviceType) {
+          switchPdfViewMode(getRequiredPdfType());
+        } else {
+          recalculateAndRender();
+        }
+      }
+    }, 150));
+  }
+
+  /* ==========================================================================
+     HERO PARALLAX & STICKY DOCKED SIDE BOOKMARK ENGINE (DESKTOP ONLY)
+     ========================================================================== */
+  function initHeroParallaxAndBookmark() {
+    const heroSection = document.getElementById('chapter-intro') || document.querySelector('.chapter-intro');
+    const heroContent = document.querySelector('.chapter-intro .chapter-content-container') || document.querySelector('.chapter-content-container.center-aligned');
+    const triggerBtn = document.getElementById('open-ebook-btn') || document.querySelector('.ebook-trigger-btn');
+    const triggerWrapper = document.querySelector('.ebook-hero-trigger-wrapper');
+
+    if (!heroSection || !triggerBtn) return;
+
+    let isDocked = false;
+
+    function handleScroll() {
+      if (window.innerWidth <= 1024) {
+        if (isDocked) {
+          isDocked = false;
+          triggerBtn.classList.remove('docked-bookmark', 'expanded');
+          if (heroContent) heroContent.style.transform = 'none';
+          if (triggerWrapper && !triggerWrapper.contains(triggerBtn)) {
+            triggerWrapper.appendChild(triggerBtn);
+          }
+        }
+        return;
+      }
+
+      const heroHeight = heroSection.offsetHeight || window.innerHeight;
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+
+      // Calculate threshold where flipbook icon reaches the bottom border of hero image
+      const threshold = Math.max(100, heroHeight - 160);
+
+      if (scrollY < threshold) {
+        // Hero section parallax: content travels down together with scroll
+        const travelTranslateY = Math.min(scrollY * 0.45, threshold * 0.45);
+        if (heroContent) {
+          heroContent.style.transform = `translate3d(0, ${travelTranslateY}px, 0)`;
+        }
+
+        if (isDocked) {
+          isDocked = false;
+          triggerBtn.classList.remove('docked-bookmark', 'expanded');
+          if (triggerWrapper && !triggerWrapper.contains(triggerBtn)) {
+            triggerWrapper.appendChild(triggerBtn);
+          }
+        }
+      } else {
+        // Scrolled past hero bottom edge: Dock flipbook icon as sticky right-side bookmark!
+        if (heroContent) {
+          heroContent.style.transform = `translate3d(0, ${threshold * 0.45}px, 0)`;
+        }
+
+        if (!isDocked) {
+          isDocked = true;
+          triggerBtn.classList.add('docked-bookmark');
+          triggerBtn.classList.remove('expanded');
+          document.body.appendChild(triggerBtn);
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    if (window.lenis && typeof window.lenis.on === 'function') {
+      window.lenis.on('scroll', handleScroll);
+    }
+    handleScroll();
   }
 
   function bindTriggerEvents() {
@@ -320,7 +402,7 @@
           lastHandled = now;
           e.preventDefault();
           e.stopPropagation();
-          openEBookModal();
+          handleTriggerClick(trigger);
         }
       }
     });
@@ -333,10 +415,31 @@
           lastHandled = now;
           e.preventDefault();
           e.stopPropagation();
-          openEBookModal();
+          handleTriggerClick(trigger);
+        }
+      } else {
+        const dockedBtn = document.querySelector('.ebook-trigger-btn.docked-bookmark.expanded');
+        if (dockedBtn && !dockedBtn.contains(e.target)) {
+          dockedBtn.classList.remove('expanded');
         }
       }
     });
+
+    function handleTriggerClick(trigger) {
+      if (trigger.classList.contains('docked-bookmark')) {
+        if (!trigger.classList.contains('expanded')) {
+          // First click on side bookmark: Expand leftward to reveal "PDF FLIPBOOK" text
+          trigger.classList.add('expanded');
+        } else {
+          // Second click on side bookmark: Open 3D E-Book modal
+          trigger.classList.remove('expanded');
+          openEBookModal();
+        }
+      } else {
+        // Normal inline click: Open modal directly
+        openEBookModal();
+      }
+    }
   }
 
   function bindModalEvents() {
