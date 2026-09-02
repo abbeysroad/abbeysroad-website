@@ -941,3 +941,11 @@ h1, h2, h3, h4, h5, h6,
 .text-on-image-gold {
   color: var(--gold-bright, #FFD85F) !important;
 }
+
+/* Hero Main Titles in White Font */
+.dest-hero-title,
+.dest-hero-title span,
+.giant-editorial-title,
+.giant-editorial-title .gold-text {
+  color: #FFFFFF !important;
+}

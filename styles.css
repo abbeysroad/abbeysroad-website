@@ -1982,3 +1982,18 @@ footer#global-footer {
 .text-on-image-gold {
   color: var(--accent-gold-bright, #FFD85F) !important;
 }
+
+
+/* ==========================================================================
+   HERO MAIN HEADLINES IN PURE WHITE FONT OVER HERO IMAGES
+   (e.g., OMANI MAJESTY., BEYOND THE ORDINARY., THE MAJESTY OF ASIA., NORDIC ESCAPE.)
+   ========================================================================== */
+.giant-editorial-title,
+.giant-editorial-title .gold-text,
+.giant-editorial-title span:not(.cyan-text),
+.hero-film-container h1,
+.hero-film-container h1 .gold-text,
+.dest-hero-title,
+.dest-hero-title span {
+  color: #FFFFFF !important;
+}
