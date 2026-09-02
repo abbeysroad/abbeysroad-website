@@ -652,7 +652,7 @@
     const targetUrl = pdfType === 'desktop' ? EBookState.desktopPdfUrl : EBookState.mobilePdfUrl;
 
     container.innerHTML = `
-      <div style="color: #FFD85F; font-family: 'Marcellus', serif; text-align: center; padding: 40px;">
+      <div style="color: #cfaa5c; font-family: 'Marcellus', serif; text-align: center; padding: 40px;">
         <div style="font-size: 1.3rem; margin-bottom: 12px;">Loading ${pdfType === 'desktop' ? 'Desktop' : 'Mobile'} Philippines Guide...</div>
         <div style="font-size: 0.85rem; color: #C3F8FE;">Preparing realistic 3D flipbook pages...</div>
       </div>
@@ -1233,7 +1233,7 @@
       bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      background: #FFD85F;
+      background: #cfaa5c;
       color: #202B22;
       font-weight: 700;
       padding: 10px 24px;

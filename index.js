@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const positions = new Float32Array(particlesCount * 3);
     const colors = new Float32Array(particlesCount * 3);
 
-    const colorGold = new THREE.Color('#FFD85F');
+    const colorGold = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--accent-gold').trim() || '#cfaa5c');
     const colorCyan = new THREE.Color('#C3F8FE');
     const colorWhite = new THREE.Color('#FFFFFF');
 

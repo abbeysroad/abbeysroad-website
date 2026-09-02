@@ -8,12 +8,12 @@
   --bg-dark: #0b132b;
   --bg-card: rgba(28, 37, 65, 0.85);
   --bg-card-hover: rgba(36, 48, 83, 0.95);
-  --gold-primary: #ffd85f;
-  --gold-accent: #c5a059;
+  --gold-primary: var(--accent-gold, #cfaa5c);
+  --gold-accent: var(--accent-gold-hover, #ba9447);
   --cyan-accent: #4ef0d0;
   --text-main: #f8fafc;
   --text-muted: #cbd5e1;
-  --border-gold: rgba(255, 216, 95, 0.25);
+  --border-gold: rgba(207, 170, 92, 0.25);
   --border-cyan: rgba(78, 240, 208, 0.3);
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
   --font-heading: 'Marcellus', serif;
@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6,
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(255, 216, 95, 0.35);
+  box-shadow: 0 4px 15px rgba(207, 170, 92, 0.35);
   margin: auto 0;
   line-height: 1;
   flex-shrink: 0;
@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6,
 
 .go-back-header-btn:hover {
   transform: translateX(-4px);
-  box-shadow: 0 6px 20px rgba(255, 216, 95, 0.55);
+  box-shadow: 0 6px 20px rgba(207, 170, 92, 0.55);
 }
 
 /* HERO GO BACK WRAPPER (HIDDEN ON DESKTOP BY DEFAULT) */
@@ -199,7 +199,7 @@ h1, h2, h3, h4, h5, h6,
 
 .go-back-hero-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 216, 95, 0.5);
+  box-shadow: 0 8px 25px rgba(207, 170, 92, 0.5);
 }
 
 /* --- HERO BANNER --- */
@@ -518,7 +518,7 @@ h1, h2, h3, h4, h5, h6,
   right: -20%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(255, 216, 95, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(207, 170, 92, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -591,7 +591,7 @@ h1, h2, h3, h4, h5, h6,
 
 .btn-primary-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 216, 95, 0.4);
+  box-shadow: 0 6px 20px rgba(207, 170, 92, 0.4);
 }
 
 .btn-secondary-cyan {

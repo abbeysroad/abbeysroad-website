@@ -24,13 +24,13 @@
   justify-content: center;
   gap: 8px;
   background: rgba(16, 76, 113, 0.88);
-  border: 1.5px solid var(--accent-gold, #FFD85F);
+  border: 1.5px solid var(--accent-gold, #cfaa5c);
   color: var(--text-white, #FFFFFF);
   padding: 14px 28px;
   border-radius: 20px;
   font-family: var(--font-sans, 'Work Sans', sans-serif);
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 18px rgba(255, 216, 95, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 18px rgba(207, 170, 92, 0.25);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
@@ -41,11 +41,11 @@
 }
 
 .ebook-trigger-btn:hover {
-  background: rgba(255, 216, 95, 0.95);
+  background: rgba(207, 170, 92, 0.95);
   color: #202B22;
   border-color: #FFFFFF;
   transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 12px 35px rgba(255, 216, 95, 0.5), 0 0 25px rgba(255, 216, 95, 0.6);
+  box-shadow: 0 12px 35px rgba(207, 170, 92, 0.5), 0 0 25px rgba(207, 170, 92, 0.6);
 }
 
 .ebook-custom-icon-img {
@@ -67,7 +67,7 @@
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--accent-gold, #FFD85F);
+  color: var(--accent-gold, #cfaa5c);
   pointer-events: none;
 }
 
@@ -115,9 +115,9 @@
   height: 92dvh;
   max-width: 1550px;
   background: #141C16;
-  border: 1.5px solid rgba(255, 216, 95, 0.35);
+  border: 1.5px solid rgba(207, 170, 92, 0.35);
   border-radius: 16px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(255, 216, 95, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(207, 170, 92, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -201,14 +201,14 @@
 .ebook-header-logo-icon {
   width: 22px;
   height: 22px;
-  color: var(--accent-gold, #FFD85F);
+  color: var(--accent-gold, #cfaa5c);
   flex-shrink: 0;
 }
 
 .ebook-header-title {
   font-family: var(--font-serif, 'Marcellus', serif);
   font-size: 0.95rem;
-  color: var(--accent-gold, #FFD85F);
+  color: var(--accent-gold, #cfaa5c);
   letter-spacing: 0.5px;
   white-space: nowrap;
   overflow: hidden;
@@ -253,8 +253,8 @@
 
 .ebook-tab-btn.active {
   background: rgba(16, 76, 113, 0.95);
-  color: var(--accent-gold, #FFD85F);
-  border: 1px solid var(--accent-gold, #FFD85F);
+  color: var(--accent-gold, #cfaa5c);
+  border: 1px solid var(--accent-gold, #cfaa5c);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -294,8 +294,8 @@
 
 .ebook-btn-icon-text:hover {
   background: rgba(16, 76, 113, 0.9);
-  border-color: var(--accent-gold, #FFD85F);
-  color: var(--accent-gold, #FFD85F);
+  border-color: var(--accent-gold, #cfaa5c);
+  color: var(--accent-gold, #cfaa5c);
 }
 
 .ebook-btn-icon-text svg {
@@ -314,13 +314,13 @@
 
 /* Flip Direction Mode Button (Mobile/Tablet) */
 .ebook-flip-mode-btn {
-  background: rgba(255, 216, 95, 0.14);
-  border: 1.5px solid var(--accent-gold, #FFD85F);
-  color: var(--accent-gold, #FFD85F);
+  background: rgba(207, 170, 92, 0.14);
+  border: 1.5px solid var(--accent-gold, #cfaa5c);
+  color: var(--accent-gold, #cfaa5c);
 }
 
 .ebook-flip-mode-btn:hover {
-  background: rgba(255, 216, 95, 0.28);
+  background: rgba(207, 170, 92, 0.28);
   color: #FFFFFF;
 }
 
@@ -374,8 +374,8 @@
 
 .ebook-action-btn:hover {
   background: var(--btn-blue, #104C71);
-  border-color: var(--accent-gold, #FFD85F);
-  color: var(--accent-gold, #FFD85F);
+  border-color: var(--accent-gold, #cfaa5c);
+  color: var(--accent-gold, #cfaa5c);
   transform: scale(1.08);
 }
 
@@ -420,22 +420,22 @@
   height: 46px;
   border-radius: 50%;
   background: rgba(20, 28, 22, 0.88);
-  border: 1.5px solid var(--accent-gold, #FFD85F);
-  color: var(--accent-gold, #FFD85F);
+  border: 1.5px solid var(--accent-gold, #cfaa5c);
+  color: var(--accent-gold, #cfaa5c);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 216, 95, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(207, 170, 92, 0.2);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   backdrop-filter: blur(8px);
 }
 
 .ebook-nav-arrow:hover {
-  background: var(--accent-gold, #FFD85F);
+  background: var(--accent-gold, #cfaa5c);
   color: #202B22;
   transform: translateY(-50%) scale(1.12);
-  box-shadow: 0 12px 30px rgba(255, 216, 95, 0.5);
+  box-shadow: 0 12px 30px rgba(207, 170, 92, 0.5);
 }
 
 .ebook-nav-arrow svg {
@@ -499,7 +499,7 @@
 }
 
 .ebook-text-layer ::selection {
-  background: rgba(255, 216, 95, 0.45);
+  background: rgba(207, 170, 92, 0.45);
   color: transparent;
 }
 
@@ -580,7 +580,7 @@
 
 .ebook-gesture-modal-card {
   background: #1C271E;
-  border: 1.5px solid var(--accent-gold, #FFD85F);
+  border: 1.5px solid var(--accent-gold, #cfaa5c);
   border-radius: 20px;
   padding: 24px 20px;
   max-width: 420px;
@@ -591,7 +591,7 @@
 
 .ebook-gesture-title {
   font-family: var(--font-serif, 'Marcellus', serif);
-  color: var(--accent-gold, #FFD85F);
+  color: var(--accent-gold, #cfaa5c);
   font-size: 1.2rem;
   margin-bottom: 6px;
 }
@@ -623,13 +623,13 @@
 
 .ebook-gesture-option-card:hover,
 .ebook-gesture-option-card.selected {
-  border-color: var(--accent-gold, #FFD85F);
+  border-color: var(--accent-gold, #cfaa5c);
   background: rgba(16, 76, 113, 0.6);
-  box-shadow: 0 0 20px rgba(255, 216, 95, 0.3);
+  box-shadow: 0 0 20px rgba(207, 170, 92, 0.3);
 }
 
 .ebook-gesture-option-card.selected {
-  outline: 2px solid var(--accent-gold, #FFD85F);
+  outline: 2px solid var(--accent-gold, #cfaa5c);
 }
 
 .gesture-anim-box {
@@ -649,11 +649,11 @@
 .anim-finger-up {
   width: 20px;
   height: 20px;
-  background: var(--accent-gold, #FFD85F);
+  background: var(--accent-gold, #cfaa5c);
   border-radius: 50%;
   position: absolute;
   animation: swipeUpAnim 1.8s infinite ease-in-out;
-  box-shadow: 0 0 10px var(--accent-gold, #FFD85F);
+  box-shadow: 0 0 10px var(--accent-gold, #cfaa5c);
 }
 
 .anim-arrow-up {
@@ -673,11 +673,11 @@
 .anim-finger-side {
   width: 20px;
   height: 20px;
-  background: var(--accent-gold, #FFD85F);
+  background: var(--accent-gold, #cfaa5c);
   border-radius: 50%;
   position: absolute;
   animation: swipeSideAnim 1.8s infinite ease-in-out;
-  box-shadow: 0 0 10px var(--accent-gold, #FFD85F);
+  box-shadow: 0 0 10px var(--accent-gold, #cfaa5c);
 }
 
 .anim-arrow-side {
@@ -709,7 +709,7 @@
 .ebook-gesture-confirm-btn {
   width: 100%;
   padding: 11px;
-  background: var(--accent-gold, #FFD85F);
+  background: var(--accent-gold, #cfaa5c);
   color: #202B22;
   border: none;
   border-radius: 30px;
@@ -721,7 +721,7 @@
 }
 
 .ebook-gesture-confirm-btn:hover {
-  background: #E5C04A;
+  background: #ba9447;
 }
 
 
@@ -777,7 +777,7 @@
 .ebook-tutorial-top-icon svg {
   width: 24px;
   height: 24px;
-  stroke: var(--accent-gold, #FFD85F);
+  stroke: var(--accent-gold, #cfaa5c);
 }
 
 @keyframes pulseTopTap {
@@ -788,7 +788,7 @@
 
 .ebook-tutorial-title {
   font-family: var(--font-serif, 'Marcellus', serif);
-  color: var(--accent-gold, #FFD85F);
+  color: var(--accent-gold, #cfaa5c);
   font-size: 1.25rem;
   margin-bottom: 10px;
 }
@@ -803,7 +803,7 @@
 .ebook-tutorial-btn {
   background: var(--btn-blue, #104C71);
   color: #FFFFFF;
-  border: 1px solid var(--accent-gold, #FFD85F);
+  border: 1px solid var(--accent-gold, #cfaa5c);
   padding: 9px 24px;
   border-radius: 30px;
   font-weight: 600;
@@ -813,7 +813,7 @@
 }
 
 .ebook-tutorial-btn:hover {
-  background: var(--accent-gold, #FFD85F);
+  background: var(--accent-gold, #cfaa5c);
   color: #202B22;
 }
 
@@ -851,7 +851,7 @@
 
 .ebook-drawer-title {
   font-family: var(--font-serif, 'Marcellus', serif);
-  color: var(--accent-gold, #FFD85F);
+  color: var(--accent-gold, #cfaa5c);
   font-size: 0.95rem;
 }
 
@@ -887,7 +887,7 @@
 }
 
 .ebook-bookmark-card:hover {
-  border-color: var(--accent-gold, #FFD85F);
+  border-color: var(--accent-gold, #cfaa5c);
   background: rgba(16, 76, 113, 0.4);
 }
 
@@ -934,7 +934,7 @@
   position: fixed;
   z-index: 99999;
   background: #104C71;
-  border: 1px solid var(--accent-gold, #FFD85F);
+  border: 1px solid var(--accent-gold, #cfaa5c);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   padding: 5px 12px;
@@ -955,7 +955,7 @@
 }
 
 .ebook-text-selection-popover:hover {
-  background: var(--accent-gold, #FFD85F);
+  background: var(--accent-gold, #cfaa5c);
   color: #202B22;
 }
 
