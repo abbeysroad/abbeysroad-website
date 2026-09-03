@@ -1252,7 +1252,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Hero Overlay Scroll Pin Logic
+  // Mobile Hero Overlay Scroll Pin Logic (NATIVE GPU CSS STICKY)
   function initMobileHeroScrollPin() {
     const heroSection = document.querySelector('.film-chapter.chapter-intro, .hero-film-container, .dest-hero-section, #chapter-intro');
     if (!heroSection) return;
@@ -1260,39 +1260,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroContent = heroSection.querySelector('.chapter-content-container, .dest-hero-content');
     if (!heroContent) return;
 
-    const headerHeight = 72;
-
     const updatePin = () => {
-      if (window.innerWidth > 1024) {
-        heroContent.style.transform = '';
-        return;
-      }
-
-      const scrollY = window.scrollY || window.pageYOffset;
-      const heroRect = heroSection.getBoundingClientRect();
-      const heroTop = heroRect.top + scrollY;
-      const heroHeight = heroSection.offsetHeight;
-      const heroBottom = heroTop + heroHeight;
-
-      const contentHeight = heroContent.offsetHeight;
-      const contentInitialTop = heroContent.offsetTop;
-
-      // Max scroll translation before bottom of overlay content reaches bottom of hero image section
-      const maxTranslate = Math.max(0, heroBottom - (heroTop + contentInitialTop + contentHeight));
-
-      // Calculate translation: ensure top of overlay content NEVER goes above header bar
-      const minTranslateForHeader = Math.max(0, scrollY + headerHeight - contentInitialTop);
-      let translateY = Math.min(scrollY, maxTranslate);
-      translateY = Math.max(translateY, Math.min(minTranslateForHeader, maxTranslate));
-
-      if (translateY > 0) {
-        heroContent.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0)`;
-      } else {
-        heroContent.style.transform = 'translate3d(0, 0px, 0)';
+      if (window.innerWidth <= 1024) {
+        heroContent.style.transform = 'none';
       }
     };
 
-    window.addEventListener('scroll', updatePin, { passive: true });
     window.addEventListener('resize', updatePin, { passive: true });
     updatePin();
   }

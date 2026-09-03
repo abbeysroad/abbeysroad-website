@@ -176,19 +176,19 @@
   .ebook-trigger-btn.mobile-docked-flipbook {
     position: fixed !important;
     top: 75px !important;
-    right: 16px !important;
+    right: 14px !important;
     left: auto !important;
     bottom: auto !important;
     z-index: 99999 !important;
     margin: 0 !important;
     padding: 0 !important;
-    width: 52px !important;
-    min-width: 52px !important;
-    height: 52px !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 48px !important;
     border-radius: 50% !important;
-    background: rgba(16, 76, 113, 0.95) !important;
+    background: #104C71 !important;
     border: 1.5px solid var(--accent-gold, #FFD85F) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(255, 216, 95, 0.35) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 216, 95, 0.35) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     display: flex !important;
@@ -197,20 +197,25 @@
     justify-content: center !important;
     gap: 0 !important;
     box-sizing: border-box !important;
-    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-                padding 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                background 0.3s ease, 
-                box-shadow 0.3s ease !important;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                padding 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-radius 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.2s ease, 
+                box-shadow 0.2s ease !important;
     pointer-events: auto !important;
     touch-action: manipulation !important;
   }
 
-  .ebook-trigger-btn.mobile-docked-flipbook .ebook-custom-icon-img {
-    width: 28px !important;
-    height: 28px !important;
+  /* ICON ENFORCED PURE WHITE ON BLUE BACKGROUND AT ALL TIMES */
+  .ebook-trigger-btn.mobile-docked-flipbook .ebook-custom-icon-img,
+  .ebook-trigger-btn.mobile-docked-flipbook:hover .ebook-custom-icon-img,
+  .ebook-trigger-btn.mobile-docked-flipbook.mobile-expanded .ebook-custom-icon-img {
+    width: 24px !important;
+    height: 24px !important;
     flex-shrink: 0 !important;
     margin: 0 !important;
+    filter: brightness(0) invert(1) !important; /* Pure white icon */
+    transform: none !important;
   }
 
   /* Collapsed Docked State: Hide title text */
@@ -221,31 +226,35 @@
     overflow: hidden !important;
     white-space: nowrap !important;
     display: inline-block !important;
-    transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+    transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease !important;
   }
 
-  /* Expanded State on Mobile: Expands pill to show "FLIPBOOK" text */
+  /* Expanded State on Mobile: Fits cleanly inside viewport without overflowing right edge */
   .ebook-trigger-btn.mobile-docked-flipbook.mobile-expanded {
-    width: 145px !important;
-    border-radius: 26px !important;
-    padding: 0 16px !important;
-    justify-content: flex-start !important;
-    gap: 8px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 25px rgba(255, 216, 95, 0.45) !important;
+    width: auto !important;
+    max-width: 130px !important;
+    height: 44px !important;
+    border-radius: 22px !important;
+    padding: 0 14px 0 10px !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 216, 95, 0.4) !important;
   }
 
   .ebook-trigger-btn.mobile-docked-flipbook.mobile-expanded .ebook-trigger-text {
-    max-width: 90px !important;
+    max-width: 80px !important;
     opacity: 1 !important;
-    margin-left: 4px !important;
-    font-size: 0.8rem !important;
-    font-weight: 800 !important;
-    letter-spacing: 1.5px !important;
-    overflow: visible !important;
+    margin-left: 2px !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
     white-space: nowrap !important;
     display: inline-block !important;
-    color: var(--accent-gold-bright, #FFD85F) !important;
-    transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease 0.1s !important;
+    color: #FFFFFF !important;
+    transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease 0.05s !important;
   }
 }
 

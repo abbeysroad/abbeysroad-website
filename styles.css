@@ -2138,17 +2138,21 @@ footer#global-footer {
     stroke-linejoin: round;
   }
 
-  /* Mobile Hero Overlay Scroll Pin Styling */
+  /* Mobile Hero Overlay Smooth Sticky Scroll Engine (Native GPU Compositor 120Hz) */
   .film-chapter.chapter-intro,
   .hero-film-container,
   .dest-hero-section {
-    overflow: hidden !important;
+    overflow: visible !important;
     position: relative !important;
   }
 
   .chapter-content-container,
   .dest-hero-content {
-    will-change: transform;
-    transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1);
+    position: sticky !important;
+    top: 85px !important;
+    z-index: 5 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: position, top;
   }
 }
