@@ -266,7 +266,7 @@ body.flipbook-page-body {
 }
 
 /* ==========================================================================
-   PANDORA TRAVEL EXACT CARD UI COMPONENTS (MORE TRANSPARENT GLASSMORPHISM)
+   PANDORA TRAVEL EXACT CARD UI COMPONENTS (TRANSLUCENT GLASSMORPHISM)
    ========================================================================== */
 .pandora-card {
   background: var(--color-card-bg);
@@ -350,24 +350,32 @@ body.flipbook-page-body {
 }
 
 /* ==========================================================================
-   TOP LOGO BANNER (MATCHING WEBSITE HEADER STYLE)
+   TOP LOGO BANNER (WIDE TOP BANNER MATCHING BACK COVER)
    ========================================================================== */
+.cover-top-banner-wrapper {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  z-index: 25;
+}
+
 .cover-logo-banner {
   background-color: var(--color-nav-bg);
-  border: 1px solid var(--color-brand-gold);
+  border: 1.5px solid var(--color-brand-gold);
   border-radius: 12px;
   padding: 8px 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-  margin-bottom: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   width: 100%;
 }
 
 .cover-logo-banner img {
-  height: 36px;
+  height: 34px;
   width: auto;
+  max-width: 90%;
   object-fit: contain;
 }
 
@@ -397,7 +405,7 @@ body.flipbook-page-body {
 
 .cover-content {
   position: absolute;
-  top: 50%;
+  top: 56%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 88%;
@@ -643,7 +651,7 @@ body.flipbook-page-body {
   object-fit: cover;
 }
 
-/* PAGES 08-09: FIESTAS (FULLY CONTAINED IN VIEWPORT) */
+/* PAGES 08-09: FIESTAS */
 .page-dark-bg {
   background-color: var(--color-dark-bg);
   height: 100%;
@@ -732,7 +740,7 @@ body.flipbook-page-body {
   height: 100%;
   border: 1.5px solid var(--color-brand-gold);
   border-radius: 14px;
-  padding: 24px 16px;
+  padding: 18px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -747,6 +755,14 @@ body.flipbook-page-body {
   align-items: center;
   gap: 8px;
   width: 100%;
+}
+
+.back-cover-brand-title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
 }
 
 .back-cover-brand-title {
