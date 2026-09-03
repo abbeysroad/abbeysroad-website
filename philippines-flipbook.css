@@ -66,23 +66,44 @@ body.flipbook-page-body {
 
 .flipbook-back-btn {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  color: var(--color-text-dark);
+  justify-content: center;
+  gap: 1px;
+  background-color: var(--color-ocean-blue);
+  color: #FFFFFF;
+  border: 1.5px solid var(--color-brand-gold);
+  border-radius: 20px;
+  padding: 6px 16px;
   text-decoration: none;
   font-family: var(--font-sans-headline);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 8px 14px;
-  border-radius: 20px;
-  background-color: rgba(22, 78, 99, 0.08);
   transition: all 0.2s ease;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 .flipbook-back-btn:hover {
-  background-color: var(--color-ocean-blue);
+  background-color: var(--color-ocean-blue-hover);
   color: #FFFFFF;
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.back-btn-top {
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+
+.back-btn-sub {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-brand-gold-warm);
+  white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .flipbook-header-title-box {
