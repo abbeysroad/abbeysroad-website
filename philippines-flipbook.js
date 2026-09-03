@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const stageWidth = stage ? stage.clientWidth : window.innerWidth;
     const stageHeight = stage ? stage.clientHeight : window.innerHeight * 0.8;
 
-    let pageHeight = Math.min(stageHeight, 760);
+    let pageHeight = Math.min(stageHeight, 740);
     let pageWidth = Math.round(pageHeight * (8 / 9.5));
 
     if (pageWidth * 2 > stageWidth * 0.95) {
@@ -190,6 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Click Left / Right side of book stage to turn pages
   function bindPageSurfaceEvents() {
     stage.addEventListener('click', (e) => {
+      // Avoid duplicate flips when StPageFlip's internal click listener is active
+      if (!isFallbackMode) return;
+
       // Ignore clicks on buttons/links/inputs
       if (e.target.closest('button, a, input, select, .pandora-btn')) return;
 
