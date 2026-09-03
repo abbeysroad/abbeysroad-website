@@ -169,6 +169,86 @@
   }
 }
 
+/* --------------------------------------------------------------------------
+   1C. MOBILE DOCKED STICKY FLIPBOOK FLOATING ICON (TOP RIGHT BELOW BURGER MENU)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .ebook-trigger-btn.mobile-docked-flipbook {
+    position: fixed !important;
+    top: 75px !important;
+    right: 16px !important;
+    left: auto !important;
+    bottom: auto !important;
+    z-index: 99999 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 52px !important;
+    min-width: 52px !important;
+    height: 52px !important;
+    border-radius: 50% !important;
+    background: rgba(16, 76, 113, 0.95) !important;
+    border: 1.5px solid var(--accent-gold, #FFD85F) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(255, 216, 95, 0.35) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    box-sizing: border-box !important;
+    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                padding 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-radius 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.3s ease, 
+                box-shadow 0.3s ease !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+
+  .ebook-trigger-btn.mobile-docked-flipbook .ebook-custom-icon-img {
+    width: 28px !important;
+    height: 28px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Collapsed Docked State: Hide title text */
+  .ebook-trigger-btn.mobile-docked-flipbook:not(.mobile-expanded) .ebook-trigger-text {
+    max-width: 0 !important;
+    opacity: 0 !important;
+    margin-left: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease !important;
+  }
+
+  /* Expanded State on Mobile: Expands pill to show "FLIPBOOK" text */
+  .ebook-trigger-btn.mobile-docked-flipbook.mobile-expanded {
+    width: 145px !important;
+    border-radius: 26px !important;
+    padding: 0 16px !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 25px rgba(255, 216, 95, 0.45) !important;
+  }
+
+  .ebook-trigger-btn.mobile-docked-flipbook.mobile-expanded .ebook-trigger-text {
+    max-width: 90px !important;
+    opacity: 1 !important;
+    margin-left: 4px !important;
+    font-size: 0.8rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    color: var(--accent-gold-bright, #FFD85F) !important;
+    transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease 0.1s !important;
+  }
+}
+
 
 /* --------------------------------------------------------------------------
    2. MAIN E-BOOK MODAL POPUP & CONTAINER

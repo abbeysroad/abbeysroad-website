@@ -1579,7 +1579,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Hero Overlay Scroll Pin Logic (SILKY rAF LERP SMOOTHING)
+  // Mobile Hero Overlay Scroll Pin Logic
   function initMobileHeroScrollPin() {
     const heroSection = document.querySelector('.film-chapter.chapter-intro, .hero-film-container, .dest-hero-section, #chapter-intro');
     if (!heroSection) return;
@@ -1587,11 +1587,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroContent = heroSection.querySelector('.chapter-content-container, .dest-hero-content');
     if (!heroContent) return;
 
-    let currentY = 0;
-    let targetY = 0;
-    let isAnimating = false;
+    const headerHeight = 72;
 
-    const calculateTargetY = () => {
+    const updatePin = () => {
+      if (window.innerWidth > 1024) {
+        heroContent.style.transform = '';
+        return;
+      }
+
       const scrollY = window.scrollY || window.pageYOffset;
       const heroRect = heroSection.getBoundingClientRect();
       const heroTop = heroRect.top + scrollY;
@@ -1601,44 +1604,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const contentHeight = heroContent.offsetHeight;
       const contentInitialTop = heroContent.offsetTop;
 
+      // Max scroll translation before bottom of overlay content reaches bottom of hero image section
       const maxTranslate = Math.max(0, heroBottom - (heroTop + contentInitialTop + contentHeight));
-      return Math.min(Math.max(0, scrollY), maxTranslate);
-    };
 
-    const animate = () => {
-      if (window.innerWidth > 1024) {
-        heroContent.style.transform = '';
-        isAnimating = false;
-        return;
-      }
+      // Calculate translation: ensure top of overlay content NEVER goes above header bar
+      const minTranslateForHeader = Math.max(0, scrollY + headerHeight - contentInitialTop);
+      let translateY = Math.min(scrollY, maxTranslate);
+      translateY = Math.max(translateY, Math.min(minTranslateForHeader, maxTranslate));
 
-      const diff = targetY - currentY;
-      if (Math.abs(diff) > 0.05) {
-        currentY += diff * 0.15;
-        heroContent.style.transform = `translate3d(0, ${currentY.toFixed(2)}px, 0)`;
-        requestAnimationFrame(animate);
+      if (translateY > 0) {
+        heroContent.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0)`;
       } else {
-        currentY = targetY;
-        heroContent.style.transform = `translate3d(0, ${currentY.toFixed(2)}px, 0)`;
-        isAnimating = false;
+        heroContent.style.transform = 'translate3d(0, 0px, 0)';
       }
     };
 
-    const onScrollOrResize = () => {
-      if (window.innerWidth > 1024) {
-        heroContent.style.transform = '';
-        return;
-      }
-      targetY = calculateTargetY();
-      if (!isAnimating) {
-        isAnimating = true;
-        requestAnimationFrame(animate);
-      }
-    };
-
-    window.addEventListener('scroll', onScrollOrResize, { passive: true });
-    window.addEventListener('resize', onScrollOrResize, { passive: true });
-    onScrollOrResize();
+    window.addEventListener('scroll', updatePin, { passive: true });
+    window.addEventListener('resize', updatePin, { passive: true });
+    updatePin();
   }
 
   // Initialize features
