@@ -1,0 +1,739 @@
+/* ==========================================================================
+   PANDORA TRAVEL - PHILIPPINES EXACT FLIPBOOK DESIGN SYSTEM TOKENS & STYLES
+   ========================================================================== */
+
+:root {
+  /* Typography Tokens */
+  --font-serif-display: 'Cinzel', 'Trajan Pro', 'Cormorant Garamond', serif;
+  --font-sans-headline: 'Montserrat', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Color Tokens */
+  --color-brand-gold: #D4AF37;
+  --color-brand-gold-warm: #E2BC5A;
+  --color-ocean-blue: #164E63;
+  --color-ocean-blue-hover: #0E3B4D;
+  --color-card-bg: rgba(22, 34, 30, 0.88);
+  --color-card-border: #D4AF37;
+  --color-nav-bg: #F7F5EE;
+  --color-text-light: #FFFFFF;
+  --color-text-subtle: #E2E8F0;
+  --color-text-dark: #1E293B;
+  --color-tag-gold: #F59E0B;
+  --color-dark-bg: #16221E;
+  --color-linen-bg: #F7F5EE;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.flipbook-page-body {
+  font-family: var(--font-sans-body);
+  background-color: #0A110F;
+  color: var(--color-text-light);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   TOP CONTROL BAR
+   ========================================================================== */
+.flipbook-header-bar {
+  height: 64px;
+  background-color: var(--color-nav-bg);
+  border-bottom: 1px solid var(--color-brand-gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.flipbook-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.flipbook-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  font-family: var(--font-sans-headline);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background-color: rgba(22, 78, 99, 0.08);
+  transition: all 0.2s ease;
+}
+
+.flipbook-back-btn:hover {
+  background-color: var(--color-ocean-blue);
+  color: #FFFFFF;
+}
+
+.flipbook-header-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.flipbook-header-eyebrow {
+  font-family: var(--font-sans-headline);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #78350F;
+  text-transform: uppercase;
+}
+
+.flipbook-header-title {
+  font-family: var(--font-serif-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  letter-spacing: 0.05em;
+}
+
+.flipbook-header-center {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flipbook-nav-btn {
+  background: var(--color-ocean-blue);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-brand-gold);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flipbook-nav-btn:hover {
+  background: var(--color-ocean-blue-hover);
+  transform: scale(1.05);
+}
+
+.flipbook-page-counter {
+  font-family: var(--font-sans-headline);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  min-width: 90px;
+  text-align: center;
+}
+
+.flipbook-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flipbook-action-btn {
+  background-color: transparent;
+  color: var(--color-text-dark);
+  border: 1px solid rgba(30, 41, 59, 0.2);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-family: var(--font-sans-headline);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.flipbook-action-btn:hover {
+  border-color: var(--color-brand-gold);
+  background-color: #FFFFFF;
+  color: var(--color-ocean-blue);
+}
+
+/* ==========================================================================
+   FLIPBOOK MAIN VIEWPORT STAGE
+   ========================================================================== */
+.flipbook-viewport {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #1B2E28 0%, #080D0B 100%);
+}
+
+.flipbook-stage-container {
+  width: 100%;
+  max-width: 1440px;
+  height: 82vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* PageFlip Wrapper */
+#flipbook-book {
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   PAGE STYLING & SAFETY GUTTER
+   ========================================================================== */
+.flip-page {
+  background-color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.flip-page-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 6% Safety Gutter for center fold */
+.flip-page-left .flip-page-inner {
+  padding-right: 3%;
+}
+
+.flip-page-right .flip-page-inner {
+  padding-left: 3%;
+}
+
+/* Fold Shadow Effect */
+.flip-page-left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+  z-index: 50;
+}
+
+.flip-page-right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* ==========================================================================
+   PANDORA TRAVEL EXACT CARD UI COMPONENTS
+   ========================================================================== */
+.pandora-card {
+  background: rgba(22, 34, 30, 0.90);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid #D4AF37;
+  border-radius: 16px;
+  padding: 24px 28px;
+  color: #FFFFFF;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+.pandora-tag {
+  color: #D4AF37;
+  font-family: var(--font-sans-headline);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.pandora-title {
+  font-family: var(--font-sans-headline);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.pandora-title-gold {
+  color: #E2BC5A;
+  font-family: var(--font-serif-display);
+}
+
+.pandora-subtext {
+  font-family: var(--font-sans-body);
+  font-size: 12px;
+  color: #E2E8F0;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.pandora-body {
+  font-family: var(--font-sans-body);
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #E2E8F0;
+}
+
+.pandora-btn {
+  background-color: #164E63;
+  color: #FFFFFF;
+  border: 1.5px solid #D4AF37;
+  border-radius: 24px;
+  padding: 10px 22px;
+  font-family: var(--font-sans-headline);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pandora-btn:hover {
+  background-color: #0E3B4D;
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   PAGE SPECIFIC LAYOUTS
+   ========================================================================== */
+
+/* PAGE 1: COVER */
+.page-cover {
+  background-color: #0F1916;
+}
+
+.cover-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cover-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+}
+
+.cover-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  max-width: 620px;
+  text-align: center;
+  z-index: 10;
+}
+
+.cover-content .pandora-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cover-display-title {
+  font-family: var(--font-serif-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: #E2BC5A;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cover-secondary-title {
+  font-family: var(--font-sans-headline);
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.08em;
+}
+
+/* PAGES 02-03: PANORAMA */
+.panorama-half-left {
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.panorama-half-right {
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.page-overlay-bottom-left {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  width: 88%;
+  max-width: 440px;
+  z-index: 20;
+}
+
+.archipelago-tracker-badge {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  background: rgba(22, 34, 30, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-brand-gold);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 20;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.archipelago-map-icon {
+  width: 36px;
+  height: 48px;
+}
+
+.archipelago-tracker-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.archipelago-tracker-title {
+  font-family: var(--font-sans-headline);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--color-brand-gold);
+  letter-spacing: 0.12em;
+}
+
+.archipelago-tracker-location {
+  font-family: var(--font-sans-headline);
+  font-size: 12px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+/* PAGES 04-05: CORDILLERAS */
+.page-linen-bg {
+  background-color: var(--color-linen-bg);
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--color-text-dark);
+}
+
+.hero-full-bleed-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inset-pair-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.square-inset-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-brand-gold);
+  position: relative;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.square-inset-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.square-inset-label {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  background: rgba(22, 34, 30, 0.85);
+  color: #FFFFFF;
+  font-family: var(--font-sans-headline);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 6px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.trade-matrix-card {
+  background-color: var(--color-dark-bg);
+  border: 1px solid var(--color-brand-gold);
+  border-radius: 12px;
+  padding: 14px;
+  color: #FFFFFF;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.trade-matrix-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trade-matrix-label {
+  font-family: var(--font-sans-headline);
+  font-size: 8.5px;
+  font-weight: 700;
+  color: var(--color-brand-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.trade-matrix-val {
+  font-family: var(--font-sans-body);
+  font-size: 10px;
+  color: var(--color-text-subtle);
+  line-height: 1.35;
+}
+
+/* PAGES 06-07: MANO PO & BAYANIHAN */
+.framed-photo-container {
+  height: 100%;
+  padding: 20px;
+  background-color: var(--color-linen-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gold-framed-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid var(--color-brand-gold);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.capabilities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.capability-item {
+  font-family: var(--font-sans-body);
+  font-size: 10.5px;
+  color: #E2E8F0;
+}
+
+.capability-item strong {
+  color: var(--color-brand-gold-warm);
+}
+
+.horizontal-candid-inset {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-brand-gold);
+  height: 130px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.horizontal-candid-inset img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PAGES 08-09: FIESTAS */
+.page-dark-bg {
+  background-color: var(--color-dark-bg);
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.craft-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  flex: 1;
+}
+
+.craft-grid-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.craft-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.craft-grid-item-label {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  background: rgba(10, 17, 15, 0.85);
+  color: var(--color-brand-gold-warm);
+  font-family: var(--font-sans-headline);
+  font-size: 8.5px;
+  font-weight: 700;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.trade-advisory-box {
+  background: rgba(22, 78, 99, 0.25);
+  border-top: 1px solid var(--color-brand-gold);
+  margin-top: 8px;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trade-advisory-item {
+  font-size: 10px;
+  color: #E2E8F0;
+}
+
+.trade-advisory-item strong {
+  color: var(--color-brand-gold);
+}
+
+/* PAGE 10: BACK COVER */
+.page-back-cover {
+  background-color: var(--color-dark-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.back-cover-border-frame {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid var(--color-brand-gold);
+  border-radius: 16px;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(22,78,99,0.15) 0%, rgba(22,34,30,0.95) 100%);
+}
+
+.back-cover-logo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-cover-logo-img {
+  width: 160px;
+  height: auto;
+}
+
+.back-cover-brand-title {
+  font-family: var(--font-serif-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-brand-gold);
+  letter-spacing: 0.15em;
+}
+
+.back-cover-tagline {
+  font-family: var(--font-sans-headline);
+  font-size: 10px;
+  font-weight: 700;
+  color: #E2E8F0;
+  letter-spacing: 0.12em;
+}
+
+.back-cover-contact-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-sans-body);
+  font-size: 11px;
+  color: #E2E8F0;
+}
+
+.back-cover-contact-box a {
+  color: var(--color-brand-gold-warm);
+  text-decoration: none;
+}
+
+.back-cover-contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .trade-matrix-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
