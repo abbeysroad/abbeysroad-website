@@ -941,9 +941,9 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .btn-secondary-gold {
-  background: var(--accent-gold);
+  background: var(--accent-gold-bright, #FFD85F);
   color: var(--primary-dark);
-  border: 2px solid var(--accent-gold);
+  border: 2px solid var(--accent-gold-bright, #FFD85F);
   padding: 16px 36px;
   border-radius: var(--radius-pill);
   font-weight: 700;
