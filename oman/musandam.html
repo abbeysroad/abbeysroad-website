@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musandam – Travel Destination Guide | Pandora Travel</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../destination.css">
+</head>
+<body class="destination-page">
+
+  <!-- MAIN SITE HEADER -->
+  <header id="main-header" class="logo-bg-header-backdrop">
+    <div class="header-container">
+      
+      <!-- Left: Horizontal Logo -->
+      <div class="logo-container">
+        <a href="../index.html" class="logo-link" title="Pandora Travel - Your Oman Travel Concierge">
+          <img src="../images/PandoraTravel_Logo_Transparent.png" alt="Pandora Travel Logo Horizontal" id="header-logo" class="extra-large-logo horizontal-logo">
+        </a>
+      </div>
+
+      <!-- Center Desktop Navigation -->
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-destinations">Destinations ▾</a>
+            <ul class="dropdown-menu" id="destinations-menu">
+              <li><a href="../philippines.html">Philippines</a></li>
+              <li><a href="../oman.html" class="active">Oman</a></li>
+              <li><a href="../indochina.html">Indochina</a></li>
+              <li><a href="../nordic.html">The Nordic</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-discover">Discover ▾</a>
+            <ul class="dropdown-menu" id="discover-menu">
+              <li><a href="muscat.html">Muscat</a></li>
+              <li><a href="jebel-akhdar.html">Jebel Akhdar</a></li>
+              <li><a href="wahiba-sands.html">Wahiba Sands</a></li>
+              <li><a href="nizwa.html">Nizwa</a></li>
+              <li><a href="wadi-shab.html">Wadi Shab</a></li>
+              <li><a href="musandam.html">Musandam</a></li>
+              <li><a href="salalah.html">Salalah</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#" class="dropdown-trigger" id="dropdown-tours">Itineraries ▾</a>
+            <ul class="dropdown-menu" id="itineraries-menu">
+              <!-- Dynamically populated -->
+            </ul>
+          </li>
+          <li><a href="../oman.html#concierge-section">Concierge</a></li>
+          <li><a href="../oman.html#about-section">About Us</a></li>
+          <li><a href="../oman.html#team-section">Team</a></li>
+        </ul>
+      </nav>
+
+      <!-- Center (Mobile) / Right (Desktop): Let's Connect CTA -->
+      <div class="header-center-cta">
+        <a href="../index.html#contact-section" class="header-cta-btn">
+          Let's Connect
+        </a>
+      </div>
+
+      <!-- Right Mobile Burger Menu Button -->
+      <button class="burger-menu-btn" aria-label="Toggle mobile menu" id="burger-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- SUB-NAV BREADCRUMBS & STICKY BAR BELOW FIXED HEADER -->
+  <div class="dest-sub-nav-bar">
+    <nav class="dest-breadcrumbs">
+      <a href="../oman.html">Home</a>
+      <span class="separator">/</span>
+      <a href="../oman.html">Oman</a>
+      <span class="separator">/</span>
+      <span>Musandam</span>
+    </nav>
+    <a href="../oman.html" class="go-back-header-btn" onclick="if(document.referrer && document.referrer.includes(window.location.host)){history.back();return false;}">
+      <svg class="triangle-arrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 4L6 12L16 20V4Z"/></svg>
+      Go Back
+    </a>
+  </div>
+
+  <!-- HERO SECTION WITH TOP CENTERED HERO GO BACK BUTTON (PREVENTS MOBILE OVERLAP) -->
+  <section class="dest-hero-section" style="background-image: url('../images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg');">
+    <div class="dest-hero-overlay"></div>
+    <div class="dest-hero-content">
+      
+      <!-- TOP CENTERED HERO GO BACK BUTTON FOR MOBILE ACCESSIBILITY -->
+      <div class="dest-hero-go-back">
+        <a href="../oman.html" class="go-back-hero-btn" onclick="if(document.referrer && document.referrer.includes(window.location.host)){history.back();return false;}">
+          <svg class="triangle-arrow-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 4L6 12L16 20V4Z"/></svg>
+          Go Back
+        </a>
+      </div>
+
+      <div class="dest-hero-tag">THE NORWAY OF ARABIA • MUSANDAM PENINSULA</div>
+      <h1 class="dest-hero-title">MUSANDAM</h1>
+      <p class="dest-hero-subtitle">Dramatic fjord-like mountain inlets meeting turquoise waters. Experience dhow sailing with wild dolphins, paragliding, and Six Senses Zighy Bay luxury.</p>
+
+      <!-- DESTINATION FAST FACTS BAR -->
+      <div class="dest-facts-bar">
+        <div class="fact-item">
+          <span class="fact-icon">⏱️</span>
+          <div>
+            <div class="fact-label">Suggested Stay</div>
+            <div class="fact-value">2 – 3 Days</div>
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">👤</span>
+          <div>
+            <div class="fact-label">Ideal Travelers</div>
+            <div class="fact-value">Fjord Cruisers & Eco-Luxury</div>
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">☀️</span>
+          <div>
+            <div class="fact-label">Best Season</div>
+            <div class="fact-value">Nov – March (Calm Seas)</div>
+          </div>
+        </div>
+        <div class="fact-item">
+          <span class="fact-icon">✈️</span>
+          <div>
+            <div class="fact-label">Gateway Airport</div>
+            <div class="fact-value">Khasab (KHS) / Dubai (DXB)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <div class="dest-container">
+
+    <!-- DESTINATION HIGHLIGHTS -->
+    <section class="section-title-wrap">
+      <span class="section-badge">WHY RECOMMEND THIS DESTINATION</span>
+      <h2 class="section-main-heading">Essential Highlights & Selling Points</h2>
+      <p class="section-subtext">Key regional features, luxury accommodation standards, and seamless logistics that make Musandam an effortless recommendation for your travelers.</p>
+    </section>
+
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-img-wrap">
+          <img src="../images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg" alt="Dramatic Musandam Fjord Sea Fjords">
+        </div>
+        <div class="highlight-body">
+          <h3>Dramatic Musandam Fjord Sea Fjords</h3>
+          <p>Sheer 1,000-meter cliffs rising straight out of turquoise marine waters in the Strait of Hormuz.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-img-wrap">
+          <img src="../images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg" alt="Wild Dolphin Spotting & Snorkeling">
+        </div>
+        <div class="highlight-body">
+          <h3>Wild Dolphin Spotting & Snorkeling</h3>
+          <p>Cruising alongside playful humpback dolphins aboard a traditional Omani wooden dhow.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-img-wrap">
+          <img src="../images/oman/Six_Senses_Zighy_Bay_resort_202608161516.jpeg" alt="Six Senses Zighy Bay Pool Villas">
+        </div>
+        <div class="highlight-body">
+          <h3>Six Senses Zighy Bay Pool Villas</h3>
+          <p>Ultra-exclusive luxury village featuring private infinity pool villas, paragliding arrivals, and marina dining.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNATURE UNFORGETTABLE MOMENTS -->
+    <section class="section-title-wrap">
+      <span class="section-badge">SIGNATURE EXPERIENCES</span>
+      <h2 class="section-main-heading">Unforgettable Excursions in Musandam</h2>
+    </section>
+
+    <div class="experience-list">
+      <div class="experience-item ">
+        <div class="exp-media">
+          <img src="../images/oman/Dolphins_swimming_near_wooden_boat_202608141639.jpeg" alt="Full-Day Musandam Fjord Dhow Cruise & Dolphin Swim">
+        </div>
+        <div class="exp-content">
+          <div class="exp-tag">FJORD DHOW VOYAGE</div>
+          <h3 class="exp-title">Full-Day Musandam Fjord Dhow Cruise & Dolphin Swim</h3>
+          <p class="exp-desc">Private wooden dhow cruise through Khor Sham fjords with snorkeling at Telegraph Island and dolphin watching.</p>
+          <a href="../index.html?inquiry=the%20Oman%2C%20Musandam%20%E2%80%93%20Full-Day%20Musandam%20Fjord%20Dhow%20Cruise%20%26%20Dolphin%20Swim#contact-section" class="btn-exp-cta" onclick="sessionStorage.setItem('inquiryContext', 'the Oman, Musandam – Full-Day Musandam Fjord Dhow Cruise & Dolphin Swim');">Inquire for more details →</a>
+        </div>
+      </div>
+      <div class="experience-item reverse">
+        <div class="exp-media">
+          <img src="../images/oman/Six_Senses_Zighy_Bay_resort_202608161516.jpeg" alt="Six Senses Zighy Bay Paraglide & Beach Villa Stay">
+        </div>
+        <div class="exp-content">
+          <div class="exp-tag">ULTRA LUXURY</div>
+          <h3 class="exp-title">Six Senses Zighy Bay Paraglide & Beach Villa Stay</h3>
+          <p class="exp-desc">Arrive at Zighy Bay via tandem paraglide down from the mountain peak into a private pool villa.</p>
+          <a href="../index.html?inquiry=the%20Oman%2C%20Musandam%20%E2%80%93%20Six%20Senses%20Zighy%20Bay%20Paraglide%20%26%20Beach%20Villa%20Stay#contact-section" class="btn-exp-cta" onclick="sessionStorage.setItem('inquiryContext', 'the Oman, Musandam – Six Senses Zighy Bay Paraglide & Beach Villa Stay');">Inquire for more details →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROMINENT FEATURED JOURNEYS -->
+    <section class="section-title-wrap" style="margin-top: 60px; margin-bottom: 24px;">
+      <span class="section-badge">FEATURED JOURNEYS</span>
+      <h2 class="section-main-heading">Curated Omani Itineraries</h2>
+    </section>
+
+    <div class="itineraries-ad-grid">
+      <div class="itinerary-ad-banner">
+        <div>
+          <div class="itinerary-ad-tag">FEATURED LUXURY JOURNEY</div>
+          <h3 class="itinerary-ad-title">Oman – Luxury, Desert & Mountains</h3>
+          <p class="itinerary-ad-desc">Discover Muscat, Jebel Akhdar, Wahiba Sands, and Nizwa in ultimate 5-star luxury with private 4x4 transfers and cliffside infinity pools.</p>
+          <ul class="itinerary-highlights-list">
+            <li>The Chedi Muscat & Sultan Qaboos Grand Mosque Tour</li>
+            <li>Anantara Jebel Akhdar Cliffside Canyon Villa & Balcony Walk</li>
+            <li>Wahiba Sands Luxury Bedouin Glamping & Sunset Dune Bashing</li>
+          </ul>
+          <div class="itinerary-ad-cta-group">
+            <a href="../index.html?inquiry=the%20Oman%2C%20Musandam%20%E2%80%93%20Oman%20%E2%80%93%20Luxury%2C%20Desert%20%26%20Mountains#contact-section" class="btn-primary-gold" onclick="sessionStorage.setItem('inquiryContext', 'the Oman, Musandam – Oman – Luxury, Desert & Mountains');">Inquire for more details →</a>
+            <a href="../oman.html#itinerary-viewport" class="btn-secondary-cyan">View Full Itinerary Details</a>
+          </div>
+        </div>
+        <div class="itinerary-ad-media">
+          <img src="../images/oman/Resort_perched_on_cliff_edge_202608161516.jpeg" alt="Oman – Luxury, Desert & Mountains">
+        </div>
+      </div>
+    </div>
+
+    <!-- HANDPICKED ACCOMMODATIONS -->
+    <section class="section-title-wrap">
+      <span class="section-badge">WHERE TO STAY</span>
+      <h2 class="section-main-heading">Handpicked Hotel & Resort Portfolio</h2>
+    </section>
+
+    <div class="hotels-grid">
+      <div class="hotel-card">
+        <div class="highlight-img-wrap" style="height:210px; position:relative;">
+          <img src="../images/oman/Six_Senses_Zighy_Bay_resort_202608161516.jpeg" alt="Six Senses Zighy Bay" style="width:100%; height:100%; object-fit:cover;">
+          <span class="hotel-stars">5★ ULTRA LUXURY RESORT</span>
+        </div>
+        <div class="hotel-body">
+          <h3 class="hotel-name">Six Senses Zighy Bay</h3>
+          <div class="hotel-location">Musandam Peninsula • Oman</div>
+          <p class="hotel-desc">Ultra-exclusive 5-star resort nestled between rugged mountains and a private sandy bay with private pool villas.</p>
+          <a href="../index.html?inquiry=the%20Oman%2C%20Musandam%20%E2%80%93%20Six%20Senses%20Zighy%20Bay#contact-section" class="btn-exp-cta" onclick="sessionStorage.setItem('inquiryContext', 'the Oman, Musandam – Six Senses Zighy Bay');">Inquire for more details →</a>
+        </div>
+      </div>
+      <div class="hotel-card">
+        <div class="highlight-img-wrap" style="height:210px; position:relative;">
+          <img src="../images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg" alt="Atana Musandam Resort" style="width:100%; height:100%; object-fit:cover;">
+          <span class="hotel-stars">4★ WATERFRONT RESORT</span>
+        </div>
+        <div class="hotel-body">
+          <h3 class="hotel-name">Atana Musandam Resort</h3>
+          <div class="hotel-location">Khasab • Musandam</div>
+          <p class="hotel-desc">Boutique waterfront resort offering authentic Omani architecture overlooking Khasab harbor.</p>
+          <a href="../index.html?inquiry=the%20Oman%2C%20Musandam%20%E2%80%93%20Atana%20Musandam%20Resort#contact-section" class="btn-exp-cta" onclick="sessionStorage.setItem('inquiryContext', 'the Oman, Musandam – Atana Musandam Resort');">Inquire for more details →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRAVEL ADVISOR LOGISTICAL ESSENTIALS -->
+    <section class="section-title-wrap">
+      <span class="section-badge">TRAVEL ADVISOR ESSENTIALS</span>
+      <h2 class="section-main-heading">Logistics & Operational Insider Tips</h2>
+    </section>
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-icon">✈️</div>
+        <h4>Transfers & Arrival</h4>
+        <p>Pandora Travel provides VIP airport fast-tracks, luxury chauffeured 4x4 Land Cruisers, and private dhow charters.</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">🌤️</div>
+        <h4>Seasonality & Weather</h4>
+        <p>Optimal travel months run October through April with sunny pleasant weather across Muscat, deserts, and mountains.</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">🍽️</div>
+        <h4>Client Dining & USPs</h4>
+        <p>Bedouin dune campfires, cliffside candlelit dining over grand canyons, and frankincense-infused gastronomy.</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">💡</div>
+        <h4>Concierge Itinerary Tip</h4>
+        <p>Combine Musandam with 4x4 mountain drives and desert luxury glamping to create a seamless Oman circuit.</p>
+      </div>
+    </div>
+
+    <!-- CLEAN CTA BANNER LINKING DIRECTLY TO HOME PAGE FORM -->
+    <section class="dest-contact-banner" style="background: linear-gradient(135deg, rgba(28, 37, 65, 0.95), rgba(11, 19, 43, 0.98)); border: 1px solid var(--border-gold); border-radius: 16px; padding: 48px 32px; margin-bottom: 60px; text-align: center; box-shadow: var(--shadow-lg);">
+      <h3 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--gold-primary); margin-bottom: 12px;">LET'S BUILD BUSINESS</h3>
+      <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 650px; margin: 0 auto 28px auto; line-height: 1.6;">
+        Partner with Pandora Travel to establish bespoke Oman itineraries or private concierge services for your clients.
+      </p>
+      <a href="../index.html?inquiry=the%20Oman%2C%20Musandam%20%E2%80%93%20General%20Destination%20Inquiry#contact-section" class="btn-primary-gold" style="padding: 16px 36px; font-size: 0.95rem; text-decoration: none;" onclick="sessionStorage.setItem('inquiryContext', 'the Oman, Musandam – General Destination Inquiry');">
+        INQUIRE FOR MORE DETAILS →
+      </a>
+    </section>
+
+    <!-- BOTTOM NEIGHBORING DESTINATIONS CAROUSEL -->
+    <section class="dest-carousel-section">
+      <div class="section-title-wrap">
+        <span class="section-badge">EXPLORE NEXT DESTINATION</span>
+        <h3 style="color:#fff; margin-top:6px;">Other Oman Destination Guides</h3>
+      </div>
+      <div class="dest-links-grid">
+        <a href="muscat.html" class="dest-link-card">
+          <img src="../images/oman/Dhow_boat_sailing_Muscat_coast_202608141630.jpeg" alt="Muscat">
+          <span class="dest-link-title">Muscat</span>
+        </a>
+        <a href="jebel-akhdar.html" class="dest-link-card">
+          <img src="../images/oman/Resort_perched_on_cliff_edge_202608161516.jpeg" alt="Jebel Akhdar">
+          <span class="dest-link-title">Jebel Akhdar</span>
+        </a>
+        <a href="wahiba-sands.html" class="dest-link-card">
+          <img src="../images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg" alt="Wahiba Sands">
+          <span class="dest-link-title">Wahiba Sands</span>
+        </a>
+        <a href="nizwa.html" class="dest-link-card">
+          <img src="../images/oman/Nizwa_Fort_tower_and_palms_202608141630.jpeg" alt="Nizwa">
+          <span class="dest-link-title">Nizwa</span>
+        </a>
+        <a href="wadi-shab.html" class="dest-link-card">
+          <img src="../images/oman/Travelers_wading_in_natural_pools_202608141639.jpeg" alt="Wadi Shab">
+          <span class="dest-link-title">Wadi Shab</span>
+        </a>
+        <a href="musandam.html" class="dest-link-card">
+          <img src="../images/oman/Landscape_mountains_meeting_turq…_202608141639.jpeg" alt="Musandam">
+          <span class="dest-link-title">Musandam</span>
+        </a>
+        <a href="salalah.html" class="dest-link-card">
+          <img src="../images/oman/Camels_grazing_by_river_waterfalls_202608141639.jpeg" alt="Salalah">
+          <span class="dest-link-title">Salalah</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="../destination.js"></script>
+</body>
+</html>
