@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         <li><a href="../${currentDest}.html#concierge-section" class="mobile-nav-link" style="margin-top: 0.6rem;">Concierge</a></li>
         <li><a href="../${currentDest}.html#about-section" class="mobile-nav-link">About Us</a></li>
-        <li><a href="../${currentDest}.html#team-section" class="mobile-nav-link">Our Team</a></li>
       </ul>
       <a href="../index.html#contact-section" class="mobile-nav-cta-btn">
         LET'S CONNECT
