@@ -13,7 +13,9 @@
   --color-brand-gold-warm: #E2BC5A;
   --color-ocean-blue: #164E63;
   --color-ocean-blue-hover: #0E3B4D;
-  --color-card-bg: rgba(22, 34, 30, 0.88);
+  
+  /* Semi-Transparent Glassmorphic Card Fill */
+  --color-card-bg: rgba(18, 30, 26, 0.58);
   --color-card-border: #D4AF37;
   --color-nav-bg: #F7F5EE;
   --color-text-light: #FFFFFF;
@@ -176,7 +178,7 @@ body.flipbook-page-body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 16px;
+  padding: 16px;
   position: relative;
   overflow: hidden;
   background: radial-gradient(circle at center, #1B2E28 0%, #080D0B 100%);
@@ -185,7 +187,7 @@ body.flipbook-page-body {
 .flipbook-stage-container {
   width: 100%;
   max-width: 1440px;
-  height: 82vh;
+  height: 84vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,6 +227,8 @@ body.flipbook-page-body {
   height: 100%;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 6% Safety Gutter for center fold */
@@ -262,17 +266,17 @@ body.flipbook-page-body {
 }
 
 /* ==========================================================================
-   PANDORA TRAVEL EXACT CARD UI COMPONENTS
+   PANDORA TRAVEL EXACT CARD UI COMPONENTS (MORE TRANSPARENT GLASSMORPHISM)
    ========================================================================== */
 .pandora-card {
-  background: rgba(22, 34, 30, 0.90);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--color-card-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1.5px solid #D4AF37;
   border-radius: 16px;
-  padding: 24px 28px;
+  padding: 18px 22px;
   color: #FFFFFF;
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
 }
 
 .pandora-tag {
@@ -282,17 +286,17 @@ body.flipbook-page-body {
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .pandora-title {
   font-family: var(--font-sans-headline);
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 800;
   letter-spacing: 0.04em;
   color: #FFFFFF;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   line-height: 1.2;
 }
 
@@ -303,16 +307,16 @@ body.flipbook-page-body {
 
 .pandora-subtext {
   font-family: var(--font-sans-body);
-  font-size: 12px;
+  font-size: 11px;
   color: #E2E8F0;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   letter-spacing: 0.02em;
 }
 
 .pandora-body {
   font-family: var(--font-sans-body);
-  font-size: 11.5px;
-  line-height: 1.6;
+  font-size: 11px;
+  line-height: 1.5;
   color: #E2E8F0;
 }
 
@@ -321,7 +325,7 @@ body.flipbook-page-body {
   color: #FFFFFF;
   border: 1.5px solid #D4AF37;
   border-radius: 24px;
-  padding: 10px 22px;
+  padding: 9px 20px;
   font-family: var(--font-sans-headline);
   font-size: 11px;
   font-weight: 700;
@@ -335,12 +339,36 @@ body.flipbook-page-body {
   text-decoration: none;
   text-transform: uppercase;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 30;
+  position: relative;
 }
 
 .pandora-btn:hover {
   background-color: #0E3B4D;
   border-color: #FFFFFF;
   transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   TOP LOGO BANNER (MATCHING WEBSITE HEADER STYLE)
+   ========================================================================== */
+.cover-logo-banner {
+  background-color: var(--color-nav-bg);
+  border: 1px solid var(--color-brand-gold);
+  border-radius: 12px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.cover-logo-banner img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* ==========================================================================
@@ -364,7 +392,7 @@ body.flipbook-page-body {
 .cover-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+  background: radial-gradient(circle at center, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%);
 }
 
 .cover-content {
@@ -372,8 +400,8 @@ body.flipbook-page-body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 85%;
-  max-width: 620px;
+  width: 88%;
+  max-width: 580px;
   text-align: center;
   z-index: 10;
 }
@@ -382,12 +410,13 @@ body.flipbook-page-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  padding: 20px 24px;
 }
 
 .cover-display-title {
   font-family: var(--font-serif-display);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: #E2BC5A;
   letter-spacing: 0.06em;
@@ -397,7 +426,7 @@ body.flipbook-page-body {
 
 .cover-secondary-title {
   font-family: var(--font-sans-headline);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   color: #FFFFFF;
   letter-spacing: 0.08em;
@@ -424,32 +453,32 @@ body.flipbook-page-body {
 
 .page-overlay-bottom-left {
   position: absolute;
-  bottom: 32px;
-  left: 32px;
+  bottom: 20px;
+  left: 20px;
   width: 88%;
-  max-width: 440px;
+  max-width: 400px;
   z-index: 20;
 }
 
 .archipelago-tracker-badge {
   position: absolute;
-  bottom: 32px;
-  right: 32px;
-  background: rgba(22, 34, 30, 0.92);
+  bottom: 20px;
+  right: 20px;
+  background: rgba(22, 34, 30, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid var(--color-brand-gold);
   border-radius: 12px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   z-index: 20;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 
 .archipelago-map-icon {
-  width: 36px;
-  height: 48px;
+  width: 32px;
+  height: 42px;
 }
 
 .archipelago-tracker-text {
@@ -467,7 +496,7 @@ body.flipbook-page-body {
 
 .archipelago-tracker-location {
   font-family: var(--font-sans-headline);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   color: #FFFFFF;
 }
@@ -476,11 +505,17 @@ body.flipbook-page-body {
 .page-linen-bg {
   background-color: var(--color-linen-bg);
   height: 100%;
-  padding: 24px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  justify-content: space-between;
+  gap: 10px;
   color: var(--color-text-dark);
+  overflow: hidden;
+}
+
+.page-linen-bg .pandora-card {
+  padding: 14px 18px;
 }
 
 .hero-full-bleed-img {
@@ -492,16 +527,16 @@ body.flipbook-page-body {
 .inset-pair-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .square-inset-card {
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--color-brand-gold);
   position: relative;
-  aspect-ratio: 1 / 1;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  aspect-ratio: 16 / 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .square-inset-card img {
@@ -517,9 +552,9 @@ body.flipbook-page-body {
   background: rgba(22, 34, 30, 0.85);
   color: #FFFFFF;
   font-family: var(--font-sans-headline);
-  font-size: 9px;
+  font-size: 8.5px;
   font-weight: 700;
-  padding: 6px;
+  padding: 4px;
   text-align: center;
   letter-spacing: 0.05em;
 }
@@ -527,41 +562,41 @@ body.flipbook-page-body {
 .trade-matrix-card {
   background-color: var(--color-dark-bg);
   border: 1px solid var(--color-brand-gold);
-  border-radius: 12px;
-  padding: 14px;
+  border-radius: 10px;
+  padding: 12px;
   color: #FFFFFF;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  gap: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
 .trade-matrix-col {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .trade-matrix-label {
   font-family: var(--font-sans-headline);
-  font-size: 8.5px;
+  font-size: 8px;
   font-weight: 700;
   color: var(--color-brand-gold);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .trade-matrix-val {
   font-family: var(--font-sans-body);
-  font-size: 10px;
+  font-size: 9.5px;
   color: var(--color-text-subtle);
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
 /* PAGES 06-07: MANO PO & BAYANIHAN */
 .framed-photo-container {
   height: 100%;
-  padding: 20px;
+  padding: 16px;
   background-color: var(--color-linen-bg);
   display: flex;
   align-items: center;
@@ -580,13 +615,13 @@ body.flipbook-page-body {
 .capabilities-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 10px;
+  gap: 4px;
+  margin-top: 6px;
 }
 
 .capability-item {
   font-family: var(--font-sans-body);
-  font-size: 10.5px;
+  font-size: 10px;
   color: #E2E8F0;
 }
 
@@ -595,11 +630,11 @@ body.flipbook-page-body {
 }
 
 .horizontal-candid-inset {
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--color-brand-gold);
-  height: 130px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  height: 110px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .horizontal-candid-inset img {
@@ -608,22 +643,25 @@ body.flipbook-page-body {
   object-fit: cover;
 }
 
-/* PAGES 08-09: FIESTAS */
+/* PAGES 08-09: FIESTAS (FULLY CONTAINED IN VIEWPORT) */
 .page-dark-bg {
   background-color: var(--color-dark-bg);
   height: 100%;
-  padding: 20px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 10px;
+  overflow: hidden;
 }
 
 .craft-grid-2x2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  flex: 1;
+  gap: 8px;
+  height: 52%;
+  min-height: 0;
 }
 
 .craft-grid-item {
@@ -631,7 +669,7 @@ body.flipbook-page-body {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgba(212, 175, 55, 0.6);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .craft-grid-item img {
@@ -647,24 +685,32 @@ body.flipbook-page-body {
   background: rgba(10, 17, 15, 0.85);
   color: var(--color-brand-gold-warm);
   font-family: var(--font-sans-headline);
-  font-size: 8.5px;
+  font-size: 8px;
   font-weight: 700;
-  padding: 4px 6px;
+  padding: 3px 4px;
   text-align: center;
+}
+
+.page-dark-bg .pandora-card {
+  padding: 14px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .trade-advisory-box {
   background: rgba(22, 78, 99, 0.25);
   border-top: 1px solid var(--color-brand-gold);
-  margin-top: 8px;
-  padding-top: 8px;
+  margin-top: 6px;
+  padding-top: 6px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .trade-advisory-item {
-  font-size: 10px;
+  font-size: 9.5px;
   color: #E2E8F0;
 }
 
@@ -678,15 +724,15 @@ body.flipbook-page-body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
 }
 
 .back-cover-border-frame {
   width: 100%;
   height: 100%;
   border: 1.5px solid var(--color-brand-gold);
-  border-radius: 16px;
-  padding: 32px 20px;
+  border-radius: 14px;
+  padding: 24px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -699,17 +745,13 @@ body.flipbook-page-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-}
-
-.back-cover-logo-img {
-  width: 160px;
-  height: auto;
+  gap: 8px;
+  width: 100%;
 }
 
 .back-cover-brand-title {
   font-family: var(--font-serif-display);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--color-brand-gold);
   letter-spacing: 0.15em;
@@ -726,9 +768,9 @@ body.flipbook-page-body {
 .back-cover-contact-box {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   font-family: var(--font-sans-body);
-  font-size: 11px;
+  font-size: 10.5px;
   color: #E2E8F0;
 }
 

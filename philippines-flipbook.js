@@ -230,9 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // Event Listeners for Header Controls
+  // Event Listeners for Header Controls & Cover Button
   if (prevBtn) prevBtn.addEventListener('click', flipPrev);
   if (nextBtn) nextBtn.addEventListener('click', flipNext);
+
+  const tradeBtn = document.getElementById('trade-portfolio-btn');
+  if (tradeBtn) {
+    tradeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      flipNext();
+    });
+  }
 
   if (fullscreenBtn) {
     fullscreenBtn.addEventListener('click', () => {
