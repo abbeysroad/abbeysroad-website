@@ -1256,7 +1256,7 @@ header.scrolled .logo-link img.extra-large-logo.horizontal-logo {
 }
 
 .carousel-caption h4 {
-  color: var(--accent-gold);
+  color: var(--accent-gold-bright, #FFD85F);
   font-size: 1.2rem;
 }
 
@@ -1958,9 +1958,17 @@ footer#global-footer {
 
 
 /* ==========================================================================
-   BRIGHTER YELLOW WRITING FOR TEXT OVER IMAGES & HERO OVERLAYS
+   BRIGHTER YELLOW WRITING FOR TEXT OVER IMAGES, MEDIA GALLERIES & OVERLAYS
    High-contrast bright yellow (#FFD85F) for legibility over photography
    ========================================================================== */
+.carousel-caption h4,
+.carousel-caption h3,
+.carousel-caption h5,
+.carousel-caption .gold-text,
+.gallery-overlay h4,
+.gallery-overlay .gold-text,
+.media-caption h4,
+.day-media .carousel-caption h4,
 .brand-eyebrow,
 .hero-film-container .gold-text,
 .hero-section .gold-text,
@@ -1973,6 +1981,8 @@ footer#global-footer {
 .card-tag,
 .card-dest-title,
 .destination-feature-card-content h3,
+.map-indicator-title,
+.scroll-prompt,
 .ebook-trigger-text,
 .image-overlay .gold-text,
 .hero-cta-group .gold-badge,

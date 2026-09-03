@@ -926,8 +926,11 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* ==========================================================================
-   BRIGHTER YELLOW WRITING FOR DESTINATION HERO & IMAGE OVERLAYS
+   BRIGHTER YELLOW WRITING FOR DESTINATION HERO, MEDIA GALLERIES & IMAGE OVERLAYS
    ========================================================================== */
+.carousel-caption h4,
+.carousel-caption h3,
+.carousel-caption h5,
 .dest-hero-tag,
 .dest-hero-section .gold-text,
 .dest-hero-content .gold-text,
@@ -938,9 +941,11 @@ h1, h2, h3, h4, h5, h6,
 .itinerary-ad-tag,
 .card-tag,
 .card-dest-title,
+.hotel-stars,
 .text-on-image-gold {
   color: var(--gold-bright, #FFD85F) !important;
 }
+
 
 /* Hero Main Titles in White Font */
 .dest-hero-title,

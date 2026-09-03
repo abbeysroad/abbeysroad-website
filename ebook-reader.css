@@ -68,7 +68,6 @@
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--accent-gold, #cfaa5c);
   pointer-events: none;
 }
 
