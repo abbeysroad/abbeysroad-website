@@ -274,14 +274,19 @@ body.flipbook-page-body {
 
   .flipbook-top-actions-dark {
     display: flex !important;
+    margin-top: 2px;
+    margin-bottom: 4px;
   }
 
   .flipbook-bottom-nav-dark {
     display: flex !important;
+    margin-top: auto;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
   }
 
   .flipbook-header-bar {
-    height: 50px;
+    height: 48px;
     padding: 0 12px;
   }
 
@@ -290,22 +295,24 @@ body.flipbook-page-body {
   }
 
   .flipbook-header-title {
-    font-size: 13px;
+    font-size: 12.5px;
   }
 
   .flipbook-back-btn {
     font-size: 11px;
-    padding: 6px 10px;
+    padding: 5px 10px;
   }
 
   .flipbook-viewport {
-    padding: 10px 6px;
+    padding: 6px 6px 12px 6px;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .flipbook-stage-container {
-    height: 70vh;
+    height: 68vh;
+    margin-top: 2px;
+    margin-bottom: 6px;
   }
 }
 
