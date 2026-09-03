@@ -56,6 +56,7 @@ body.flipbook-page-body {
   z-index: 100;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   position: relative;
+  flex-shrink: 0;
 }
 
 .flipbook-header-left {
@@ -199,22 +200,24 @@ body.flipbook-page-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px;
+  justify-content: center;
+  padding: 20px;
   position: relative;
   overflow: hidden;
   background: radial-gradient(circle at center, #1B2E28 0%, #080D0B 100%);
+  min-height: calc(100vh - 64px);
 }
 
 .flipbook-stage-container {
   width: 100%;
   max-width: 1440px;
-  height: 82vh;
+  height: calc(100vh - 124px);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   cursor: pointer;
+  margin-top: 14px;
 }
 
 /* PageFlip Wrapper */
@@ -391,11 +394,12 @@ body.flipbook-page-body {
   }
 
   .flipbook-viewport {
-    padding: 6px 6px 6px 6px;
+    padding: 6px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 4px;
+    min-height: calc(100vh - 48px);
   }
 
   .flipbook-stage-container {

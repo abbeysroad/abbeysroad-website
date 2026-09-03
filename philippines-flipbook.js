@@ -23,9 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getDimensions() {
     const stageWidth = stage ? stage.clientWidth : window.innerWidth;
-    const stageHeight = stage ? stage.clientHeight : window.innerHeight * 0.8;
+    const stageHeight = stage ? stage.clientHeight : (window.innerHeight - 100);
 
-    let pageHeight = Math.min(stageHeight, 740);
+    // Reserve 24px vertical padding inside stage container
+    let maxAvailableHeight = Math.max(320, stageHeight - 28);
+    let pageHeight = Math.min(maxAvailableHeight, 680);
     let pageWidth = Math.round(pageHeight * (8 / 9.5));
 
     if (pageWidth * 2 > stageWidth * 0.95) {
@@ -34,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     return {
-      pageWidth: Math.max(280, pageWidth),
-      pageHeight: Math.max(380, pageHeight)
+      pageWidth: Math.max(260, pageWidth),
+      pageHeight: Math.max(350, pageHeight)
     };
   }
 
@@ -60,9 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
           width: dims.pageWidth,
           height: dims.pageHeight,
           size: 'stretch',
-          minWidth: 260,
+          minWidth: 250,
           maxWidth: 900,
-          minHeight: 350,
+          minHeight: 340,
           maxHeight: 1200,
           drawShadow: true,
           maxShadowOpacity: 0.7,
