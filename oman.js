@@ -1579,7 +1579,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Hero Overlay Scroll Pin Logic (NATIVE GPU CSS STICKY)
+  // Mobile Hero Overlay Scroll Pin Logic (FULL HERO IMAGE BOTTOM REACH)
   function initMobileHeroScrollPin() {
     const heroSection = document.querySelector('.film-chapter.chapter-intro, .hero-film-container, .dest-hero-section, #chapter-intro');
     if (!heroSection) return;
@@ -1587,13 +1587,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroContent = heroSection.querySelector('.chapter-content-container, .dest-hero-content');
     if (!heroContent) return;
 
+    let ticking = false;
+
     const updatePin = () => {
-      if (window.innerWidth <= 1024) {
-        heroContent.style.transform = 'none';
+      if (window.innerWidth > 1024) {
+        heroContent.style.transform = '';
+        ticking = false;
+        return;
+      }
+
+      const scrollY = window.scrollY || window.pageYOffset;
+      const heroRect = heroSection.getBoundingClientRect();
+      const heroTop = heroRect.top + scrollY;
+      const heroHeight = heroSection.offsetHeight;
+
+      const contentRect = heroContent.getBoundingClientRect();
+      const contentHeight = heroContent.offsetHeight;
+
+      if (!heroContent.dataset.initialTopOffset) {
+        const currentMatrix = new DOMMatrix(getComputedStyle(heroContent).transform);
+        const currentTy = currentMatrix.m42 || 0;
+        heroContent.dataset.initialTopOffset = (contentRect.top + scrollY - heroTop - currentTy);
+      }
+      const initialTopOffset = parseFloat(heroContent.dataset.initialTopOffset);
+
+      // Max scroll translation before bottom of overlay elements touch exact bottom edge of hero image
+      const maxTranslate = Math.max(0, heroHeight - (initialTopOffset + contentHeight));
+
+      const translateY = Math.min(Math.max(0, scrollY), maxTranslate);
+
+      heroContent.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0)`;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updatePin);
+        ticking = true;
       }
     };
 
-    window.addEventListener('resize', updatePin, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => {
+      if (heroContent) delete heroContent.dataset.initialTopOffset;
+      updatePin();
+    }, { passive: true });
     updatePin();
   }
 

@@ -2138,21 +2138,20 @@ footer#global-footer {
     stroke-linejoin: round;
   }
 
-  /* Mobile Hero Overlay Smooth Sticky Scroll Engine (Native GPU Compositor 120Hz) */
+  /* Mobile Hero Overlay Scroll Pin Engine (Extends to absolute bottom edge of hero image) */
   .film-chapter.chapter-intro,
   .hero-film-container,
   .dest-hero-section {
-    overflow: visible !important;
+    overflow: hidden !important;
     position: relative !important;
+    padding-bottom: 0 !important;
   }
 
   .chapter-content-container,
   .dest-hero-content {
-    position: sticky !important;
-    top: 85px !important;
-    z-index: 5 !important;
-    transform: none !important;
-    transition: none !important;
-    will-change: position, top;
+    position: relative !important;
+    top: auto !important;
+    will-change: transform;
+    transition: transform 0.05s linear !important;
   }
 }
