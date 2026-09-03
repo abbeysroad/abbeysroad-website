@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'Philippines Destination', link: '../philippines.html', key: 'philippines' },
     { name: 'Oman Destination', link: '../oman.html', key: 'oman' },
     { name: 'Indochina Destination', link: '../indochina.html', key: 'indochina' },
-    { name: 'The Nordic Destination', link: '../nordic.html', key: 'nordic' }
+    { name: 'The Nordics Destination', link: '../nordic.html', key: 'nordic' }
   ];
 
   mobileNavOverlay.innerHTML = `
@@ -281,9 +281,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
           </div>
 
-          <!-- THE NORDIC -->
+          <!-- THE NORDICS -->
           <div class="footer-dir-col">
-            <h5><a href="../nordic.html">The Nordic ▾</a></h5>
+            <h5><a href="../nordic.html">The Nordics ▾</a></h5>
             <ul>
               <li><a href="../nordic/copenhagen.html">Copenhagen & Nyhavn</a></li>
               <li><a href="../nordic/stockholm.html">Stockholm & Vasa Museum</a></li>
