@@ -354,6 +354,18 @@ body.flipbook-page-body {
   .back-cover-contact-box {
     font-size: 11.5px;
   }
+
+  .editorial-feature-col {
+    padding: 10px 14px;
+  }
+
+  .feature-col-title {
+    font-size: 11px;
+  }
+
+  .feature-col-text {
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -551,6 +563,48 @@ body.flipbook-page-body {
 }
 
 /* ==========================================================================
+   EDITORIAL MULTI-COLUMN FEATURE BLOCKS (INSPIRED BY IMAGE 2)
+   ========================================================================== */
+.editorial-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.editorial-feature-col {
+  background: rgba(22, 78, 99, 0.2);
+  border-left: 3px solid var(--color-brand-gold);
+  padding: 8px 10px;
+  border-radius: 0 8px 8px 0;
+}
+
+.feature-col-title {
+  font-family: var(--font-sans-headline);
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--color-brand-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.feature-col-text {
+  font-family: var(--font-sans-body);
+  font-size: 10px;
+  color: #E2E8F0;
+  line-height: 1.35;
+}
+
+.page-linen-bg .editorial-feature-col {
+  background: rgba(22, 78, 99, 0.08);
+}
+
+.page-linen-bg .feature-col-text {
+  color: var(--color-text-dark);
+}
+
+/* ==========================================================================
    TOP LOGO BANNER (WIDE TOP BANNER MATCHING BACK COVER)
    ========================================================================== */
 .cover-top-banner-wrapper {
@@ -669,6 +723,15 @@ body.flipbook-page-body {
   z-index: 20;
 }
 
+.page-overlay-top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 85%;
+  max-width: 380px;
+  z-index: 20;
+}
+
 .archipelago-tracker-badge {
   position: absolute;
   bottom: 20px;
@@ -731,6 +794,15 @@ body.flipbook-page-body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.hero-caption-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 88%;
+  max-width: 380px;
+  z-index: 20;
 }
 
 .inset-pair-row {
