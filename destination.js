@@ -207,4 +207,102 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', () => {
     document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
   });
+
+  // 8. DYNAMICALLY INJECT GLOBAL FOOTER WITH DESTINATIONS DIRECTORY ON ALL SUB-PAGES
+  if (!document.getElementById('global-footer')) {
+    const footerElem = document.createElement('footer');
+    footerElem.id = 'global-footer';
+    footerElem.innerHTML = `
+    <div class="footer-content" id="footer-content-dynamic">
+      <div class="footer-grid">
+        <div>
+          <h4 class="gold-text">PANDORA TRAVEL</h4>
+          <p class="footer-subtext">Destination Commercial Partner</p>
+          <p>Connecting World-class Destinations with the Nordic Travel Market.</p>
+        </div>
+        <div>
+          <h4>Copenhagen Office</h4>
+          <p>Borgmestervangen 31, 2200 Copenhagen</p>
+          <p>Email: info@pandoratravel.dk</p>
+        </div>
+        <div>
+          <h4>Strategic Alliances</h4>
+          <p>Baron Travel DMC • Philippines</p>
+          <p>Oman Safari DMC • Oman</p>
+        </div>
+      </div>
+
+      <!-- DESTINATIONS & HIGHLIGHTED PLACES DIRECTORY -->
+      <div class="footer-destinations-directory">
+        <div class="footer-directory-title">EXPLORE OUR DESTINATIONS & HIGHLIGHTED PLACES</div>
+        <div class="footer-directory-grid">
+          
+          <!-- PHILIPPINES -->
+          <div class="footer-dir-col">
+            <h5><a href="../philippines.html">The Philippines ▾</a></h5>
+            <ul>
+              <li><a href="../philippines/manila.html">Manila & Intramuros</a></li>
+              <li><a href="../philippines/banaue.html">Banaue & Rice Terraces</a></li>
+              <li><a href="../philippines/bohol.html">Bohol & Chocolate Hills</a></li>
+              <li><a href="../philippines/cebu.html">Cebu & Visayas</a></li>
+              <li><a href="../philippines/boracay.html">Boracay White Beach</a></li>
+              <li><a href="../philippines/el-nido.html">El Nido & Bacuit Bay</a></li>
+              <li><a href="../philippines/coron.html">Coron & Kayangan Lake</a></li>
+              <li><a href="../philippines/siargao.html">Siargao Island</a></li>
+              <li><a href="../philippines/mayon.html">Mount Mayon & Bicol</a></li>
+            </ul>
+          </div>
+
+          <!-- OMAN -->
+          <div class="footer-dir-col">
+            <h5><a href="../oman.html">Sultanate of Oman ▾</a></h5>
+            <ul>
+              <li><a href="../oman/muscat.html">Muscat & Grand Mosque</a></li>
+              <li><a href="../oman/nizwa.html">Nizwa & Historic Forts</a></li>
+              <li><a href="../oman/jebel-akhdar.html">Jebel Akhdar Mountains</a></li>
+              <li><a href="../oman/wahiba-sands.html">Wahiba Sands Desert</a></li>
+              <li><a href="../oman/wadi-shab.html">Wadi Shab & Gorges</a></li>
+              <li><a href="../oman/salalah.html">Salalah & Dhofar Coast</a></li>
+              <li><a href="../oman/musandam.html">Musandam Fjords</a></li>
+            </ul>
+          </div>
+
+          <!-- INDOCHINA -->
+          <div class="footer-dir-col">
+            <h5><a href="../indochina.html">Indochina ▾</a></h5>
+            <ul>
+              <li><a href="../indochina/hanoi.html">Hanoi & Old Quarter</a></li>
+              <li><a href="../indochina/ninh-binh.html">Ninh Binh & Ha Long Bay</a></li>
+              <li><a href="../indochina/hoi-an.html">Hoi An Ancient Town</a></li>
+              <li><a href="../indochina/saigon.html">Saigon / Ho Chi Minh City</a></li>
+              <li><a href="../indochina/siem-reap.html">Siem Reap & Angkor Wat</a></li>
+              <li><a href="../indochina/luang-prabang.html">Luang Prabang</a></li>
+              <li><a href="../indochina/bangkok.html">Bangkok & Thai Retreats</a></li>
+            </ul>
+          </div>
+
+          <!-- THE NORDIC -->
+          <div class="footer-dir-col">
+            <h5><a href="../nordic.html">The Nordic ▾</a></h5>
+            <ul>
+              <li><a href="../nordic/copenhagen.html">Copenhagen & Nyhavn</a></li>
+              <li><a href="../nordic/stockholm.html">Stockholm & Vasa Museum</a></li>
+              <li><a href="../nordic/oslo.html">Oslo & Vigeland Park</a></li>
+              <li><a href="../nordic/bergen.html">Bergen & Bryggen</a></li>
+              <li><a href="../nordic/fjords.html">Norwegian Fjords & Flåm</a></li>
+              <li><a href="../nordic/helsinki.html">Helsinki & Baltic Coast</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Pandora Travel — Destination Market Development. All rights reserved.</p>
+      <p>Crafted with ❤️ for B2B Nordic Travel Trade</p>
+    </div>
+    `;
+    document.body.appendChild(footerElem);
+  }
 });

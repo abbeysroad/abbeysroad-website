@@ -1549,6 +1549,84 @@ footer#global-footer {
   color: var(--accent-cyan);
 }
 
+/* Footer Destinations Directory */
+.footer-destinations-directory {
+  max-width: 1200px;
+  margin: 2.5rem auto 1rem;
+  border-top: 1px dashed rgba(195, 248, 254, 0.25);
+  padding-top: 2.2rem;
+  text-align: left;
+}
+
+.footer-directory-title {
+  color: var(--accent-gold);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  text-align: center;
+}
+
+.footer-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.footer-dir-col h5 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--accent-cyan);
+}
+
+.footer-dir-col h5 a {
+  color: var(--accent-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-dir-col h5 a:hover {
+  color: #FFFFFF;
+}
+
+.footer-dir-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-dir-col ul li {
+  margin-bottom: 0.45rem;
+}
+
+.footer-dir-col ul li a {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.footer-dir-col ul li a:hover {
+  color: var(--accent-gold);
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .footer-directory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .footer-directory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==========================================================================
    RESPONSIVE & MOBILE OLIVE GREEN FOLDING CARD STYLES
    ========================================================================== */
