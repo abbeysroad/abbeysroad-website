@@ -2085,3 +2085,56 @@ footer#global-footer {
 .dest-hero-title span {
   color: #FFFFFF !important;
 }
+
+/* ==========================================================================
+   MOBILE FLOATING SCROLL-TO-TOP BUTTON (#FFD85F WITH WHITE ARROW)
+   ========================================================================== */
+#mobile-back-to-top {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #mobile-back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background-color: #FFD85F;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    z-index: 99999;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #mobile-back-to-top.show-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  #mobile-back-to-top:active {
+    transform: scale(0.92);
+    background-color: #f5c842;
+  }
+
+  #mobile-back-to-top svg {
+    width: 24px;
+    height: 24px;
+    stroke: #FFFFFF;
+    stroke-width: 3.2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}

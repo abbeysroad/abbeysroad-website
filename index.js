@@ -211,11 +211,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Mobile Floating Scroll-to-Top Button (#FFD85F with White Arrow)
+  function initMobileBackToTop() {
+    if (document.getElementById('mobile-back-to-top')) return;
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.id = 'mobile-back-to-top';
+    backToTopBtn.setAttribute('aria-label', 'Scroll to top');
+    backToTopBtn.innerHTML = `
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    `;
+    document.body.appendChild(backToTopBtn);
+
+    const toggleBtnVisibility = () => {
+      if (window.scrollY > 250) {
+        backToTopBtn.classList.add('show-btn');
+      } else {
+        backToTopBtn.classList.remove('show-btn');
+      }
+    };
+
+    window.addEventListener('scroll', toggleBtnVisibility, { passive: true });
+    toggleBtnVisibility();
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   // Initialize features
   initThreeWebGL();
   initMobileBurgerMenu();
   initDropdownMenus();
   initB2BForm();
   initHeroSlideshow();
+  initMobileBackToTop();
 
 });
