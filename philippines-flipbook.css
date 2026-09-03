@@ -176,8 +176,9 @@ body.flipbook-page-body {
 .flipbook-viewport {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 16px;
   position: relative;
   overflow: hidden;
@@ -187,7 +188,7 @@ body.flipbook-page-body {
 .flipbook-stage-container {
   width: 100%;
   max-width: 1440px;
-  height: 84vh;
+  height: 82vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,6 +209,104 @@ body.flipbook-page-body {
 #flipbook-book.fallback-spread-mode .flip-page {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: opacity 0.3s ease;
+}
+
+/* ==========================================================================
+   MOBILE CONTROLS IN DARK VIEWPORT SPACE
+   ========================================================================== */
+.flipbook-top-actions-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  z-index: 40;
+  width: 100%;
+}
+
+.flipbook-bottom-nav-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+  z-index: 40;
+  width: 100%;
+}
+
+.flipbook-action-btn.dark-theme {
+  color: #FFFFFF;
+  background: rgba(22, 34, 30, 0.85);
+  border: 1px solid var(--color-brand-gold);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.flipbook-action-btn.dark-theme:hover {
+  background: var(--color-ocean-blue);
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.flipbook-page-counter.dark-theme {
+  color: #FFFFFF;
+  font-family: var(--font-sans-headline);
+  font-size: 13px;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 769px) {
+  /* On desktop: use header controls */
+  .flipbook-top-actions-dark,
+  .flipbook-bottom-nav-dark {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* On mobile: hide header center & right, show dark space top actions and bottom nav */
+  .flipbook-header-center,
+  .flipbook-header-right {
+    display: none !important;
+  }
+
+  .flipbook-top-actions-dark {
+    display: flex !important;
+  }
+
+  .flipbook-bottom-nav-dark {
+    display: flex !important;
+  }
+
+  .flipbook-header-bar {
+    height: 50px;
+    padding: 0 12px;
+  }
+
+  .flipbook-header-eyebrow {
+    display: none;
+  }
+
+  .flipbook-header-title {
+    font-size: 13px;
+  }
+
+  .flipbook-back-btn {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .flipbook-viewport {
+    padding: 10px 6px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .flipbook-stage-container {
+    height: 70vh;
+  }
 }
 
 /* ==========================================================================

@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const stage = document.querySelector('.flipbook-stage-container');
   const container = document.getElementById('flipbook-book');
-  const prevBtn = document.getElementById('prev-page-btn');
-  const nextBtn = document.getElementById('next-page-btn');
-  const counter = document.getElementById('page-counter-text');
-  const fullscreenBtn = document.getElementById('fullscreen-btn');
+  
+  const prevBtns = document.querySelectorAll('.prev-page-btn');
+  const nextBtns = document.querySelectorAll('.next-page-btn');
+  const counters = document.querySelectorAll('.page-counter-text');
+  const fullscreenBtns = document.querySelectorAll('.fullscreen-btn');
+  const tradeBtns = document.querySelectorAll('.trade-portfolio-btn');
 
   function getDimensions() {
     const stageWidth = stage ? stage.clientWidth : window.innerWidth;
@@ -145,16 +147,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updatePageCounter(currentPage) {
-    if (!counter) return;
+    if (!counters || counters.length === 0) return;
+
+    let text = '';
     if (currentPage === 1) {
-      counter.textContent = `Cover (1/${totalPages})`;
+      text = `Cover (1/${totalPages})`;
     } else if (currentPage >= totalPages) {
-      counter.textContent = `Back (${totalPages}/${totalPages})`;
+      text = `Back (${totalPages}/${totalPages})`;
     } else {
       const left = currentPage % 2 === 0 ? currentPage : currentPage - 1;
       const right = left + 1;
-      counter.textContent = `Pages ${left}-${right} of ${totalPages}`;
+      text = `Pages ${left}-${right} of ${totalPages}`;
     }
+
+    counters.forEach(c => {
+      c.textContent = text;
+    });
   }
 
   function flipNext() {
@@ -233,21 +241,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // Event Listeners for Header Controls & Cover Button
-  if (prevBtn) prevBtn.addEventListener('click', flipPrev);
-  if (nextBtn) nextBtn.addEventListener('click', flipNext);
+  // Event Listeners for Header Controls & Mobile Controls
+  prevBtns.forEach(btn => btn.addEventListener('click', flipPrev));
+  nextBtns.forEach(btn => btn.addEventListener('click', flipNext));
 
-  const tradeBtn = document.getElementById('trade-portfolio-btn');
-  if (tradeBtn) {
-    tradeBtn.addEventListener('click', (e) => {
+  tradeBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
       e.stopPropagation();
       e.preventDefault();
       flipNext();
     });
-  }
+  });
 
-  if (fullscreenBtn) {
-    fullscreenBtn.addEventListener('click', () => {
+  fullscreenBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(err => console.log(err));
       } else {
@@ -256,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-  }
+  });
 
   // Keyboard Arrow Navigation
   document.addEventListener('keydown', (e) => {
