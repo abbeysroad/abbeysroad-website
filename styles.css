@@ -2137,4 +2137,17 @@ footer#global-footer {
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+
+  /* Mobile Hero Overlay Scroll Pin Styling */
+  .film-chapter.chapter-intro,
+  .hero-film-container,
+  .dest-hero-section {
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .chapter-content-container,
+  .dest-hero-content {
+    will-change: transform;
+  }
 }

@@ -243,6 +243,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile Hero Overlay Scroll Pin Logic
+  function initMobileHeroScrollPin() {
+    const heroSection = document.querySelector('.film-chapter.chapter-intro, .hero-film-container, .dest-hero-section, #chapter-intro');
+    if (!heroSection) return;
+
+    const heroContent = heroSection.querySelector('.chapter-content-container, .dest-hero-content');
+    if (!heroContent) return;
+
+    const updatePin = () => {
+      if (window.innerWidth > 1024) {
+        heroContent.style.transform = '';
+        return;
+      }
+
+      const scrollY = window.scrollY || window.pageYOffset;
+      const heroRect = heroSection.getBoundingClientRect();
+      const heroTop = heroRect.top + scrollY;
+      const heroHeight = heroSection.offsetHeight;
+      const heroBottom = heroTop + heroHeight;
+
+      const contentHeight = heroContent.offsetHeight;
+      const contentInitialTop = heroContent.offsetTop;
+
+      // Max scroll translation before bottom of overlay content reaches bottom of hero image section
+      const maxTranslate = Math.max(0, heroBottom - (heroTop + contentInitialTop + contentHeight));
+
+      const translateY = Math.min(scrollY, maxTranslate);
+
+      if (translateY > 0) {
+        heroContent.style.transform = `translate3d(0, ${translateY}px, 0)`;
+      } else {
+        heroContent.style.transform = 'translate3d(0, 0px, 0)';
+      }
+    };
+
+    window.addEventListener('scroll', updatePin, { passive: true });
+    window.addEventListener('resize', updatePin, { passive: true });
+    updatePin();
+  }
+
   // Initialize features
   initThreeWebGL();
   initMobileBurgerMenu();
@@ -250,5 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initB2BForm();
   initHeroSlideshow();
   initMobileBackToTop();
+  initMobileHeroScrollPin();
 
 });
