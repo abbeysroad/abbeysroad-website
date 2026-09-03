@@ -284,10 +284,77 @@ body.flipbook-page-body {
   .flipbook-bottom-nav-dark {
     display: none !important;
   }
+
+  /* Desktop Typography Scaling (Larger Text) */
+  .pandora-card {
+    padding: 22px 26px;
+  }
+
+  .pandora-tag {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .pandora-title {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .cover-display-title {
+    font-size: 34px;
+  }
+
+  .cover-secondary-title {
+    font-size: 22px;
+  }
+
+  .pandora-subtext {
+    font-size: 12.5px;
+    margin-bottom: 10px;
+  }
+
+  .pandora-body {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  .pandora-btn {
+    font-size: 12px;
+    padding: 10px 22px;
+  }
+
+  .trade-matrix-label {
+    font-size: 9px;
+  }
+
+  .trade-matrix-val {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .capability-item {
+    font-size: 11.5px;
+  }
+
+  .trade-advisory-item {
+    font-size: 11px;
+  }
+
+  .back-cover-brand-title {
+    font-size: 26px;
+  }
+
+  .back-cover-tagline {
+    font-size: 11px;
+  }
+
+  .back-cover-contact-box {
+    font-size: 11.5px;
+  }
 }
 
 @media (max-width: 768px) {
-  /* On mobile: hide header center & right, show dark space top actions and bottom nav */
+  /* On mobile: position controls right above and right below flipbook page */
   .flipbook-header-center,
   .flipbook-header-right {
     display: none !important;
@@ -295,15 +362,14 @@ body.flipbook-page-body {
 
   .flipbook-top-actions-dark {
     display: flex !important;
-    margin-top: 2px;
-    margin-bottom: 4px;
+    margin-top: 0;
+    margin-bottom: 2px;
   }
 
   .flipbook-bottom-nav-dark {
     display: flex !important;
-    margin-top: auto;
-    margin-bottom: 6px;
-    padding-bottom: 4px;
+    margin-top: 6px !important;
+    margin-bottom: 4px !important;
   }
 
   .flipbook-header-bar {
@@ -325,15 +391,19 @@ body.flipbook-page-body {
   }
 
   .flipbook-viewport {
-    padding: 6px 6px 12px 6px;
+    padding: 6px 6px 6px 6px;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
   }
 
   .flipbook-stage-container {
-    height: 68vh;
-    margin-top: 2px;
-    margin-bottom: 6px;
+    height: auto;
+    max-height: 72vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex: 0 1 auto;
   }
 }
 

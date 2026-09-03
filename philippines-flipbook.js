@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalPages = 10;
   const totalSpreads = 6;
   let isFallbackMode = false;
+  let isFlipping = false; // Debounce guard to ensure single page turn per gesture
 
   const stage = document.querySelector('.flipbook-stage-container');
   const container = document.getElementById('flipbook-book');
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
           maxShadowOpacity: 0.7,
           showCover: true,
           usePortrait: window.innerWidth < 768,
-          flippingTime: 700,
+          flippingTime: 650,
           startPage: 0,
           clickEventForward: true,
           useMouseEvents: true
@@ -78,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pageFlip.on('flip', (e) => {
           const pageIndex = e.data + 1;
           updatePageCounter(pageIndex);
+          setTimeout(() => { isFlipping = false; }, 200);
         });
 
         updatePageCounter(1);
@@ -166,6 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function flipNext() {
+    if (isFlipping) return;
+    isFlipping = true;
+
     if (pageFlip) {
       if (typeof pageFlip.flipNext === 'function') {
         pageFlip.flipNext();
@@ -178,9 +183,14 @@ document.addEventListener('DOMContentLoaded', () => {
         renderFallbackSpread();
       }
     }
+
+    setTimeout(() => { isFlipping = false; }, 500);
   }
 
   function flipPrev() {
+    if (isFlipping) return;
+    isFlipping = true;
+
     if (pageFlip) {
       if (typeof pageFlip.flipPrev === 'function') {
         pageFlip.flipPrev();
@@ -193,15 +203,17 @@ document.addEventListener('DOMContentLoaded', () => {
         renderFallbackSpread();
       }
     }
+
+    setTimeout(() => { isFlipping = false; }, 500);
   }
 
   // Click Left / Right side of book stage to turn pages
   function bindPageSurfaceEvents() {
-    stage.addEventListener('click', (e) => {
-      // Avoid duplicate flips when StPageFlip's internal click listener is active
-      if (!isFallbackMode) return;
+    // Only bind custom touch/click handlers if in Fallback Mode.
+    // In StPageFlip mode, StPageFlip handles single-page touch gestures natively!
+    if (!isFallbackMode) return;
 
-      // Ignore clicks on buttons/links/inputs
+    stage.addEventListener('click', (e) => {
       if (e.target.closest('button, a, input, select, .pandora-btn')) return;
 
       const rect = stage.getBoundingClientRect();
@@ -214,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Touch Swipe Gestures
+    // Touch Swipe Gestures for Fallback Mode
     let touchStartX = 0;
     let touchStartY = 0;
 
@@ -230,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const deltaX = e.changedTouches[0].clientX - touchStartX;
         const deltaY = e.changedTouches[0].clientY - touchStartY;
 
-        if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (Math.abs(deltaX) > 35 && Math.abs(deltaX) > Math.abs(deltaY)) {
           if (deltaX < 0) {
             flipNext();
           } else {
