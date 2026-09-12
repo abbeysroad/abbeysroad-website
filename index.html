@@ -3,35 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pandora Travel | Destination Market Development & B2B Commercial Distribution | Copenhagen</title>
-  <meta name="description" content="Pandora Travel is the strategic commercial partner connecting world-class destinations to the Nordic travel trade. We develop B2B sales networks and distribution channels in Denmark, Norway, Sweden, and Finland.">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Marcellus&family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
+  <title>Pandora Travel — Your Philippines Specialist in the Nordics</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Core Libraries for Cinematic Background -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <link rel="stylesheet" href="destination.css">
 </head>
-<body class="pandora-travel-theme abbeys-road-theme">
+<body class="homepage">
 
-  <!-- THREE.JS WEBGL CANVAS BACKGROUND -->
-  <canvas id="hero-webgl-canvas"></canvas>
-
-  <!-- GLOBAL HEADER & NAVIGATION -->
+  <!-- MAIN SITE HEADER -->
   <header id="main-header" class="logo-bg-header-backdrop">
     <div class="header-container">
       
       <!-- Left: Horizontal Logo -->
       <div class="logo-container">
-        <a href="index.html" class="logo-link" title="Pandora Travel - Destination Market Development">
+        <a href="index.html" class="logo-link" title="Pandora Travel - Your Philippines Specialist in the Nordics">
           <img src="images/PandoraTravel_Logo_Transparent.png" alt="Pandora Travel Logo Horizontal" id="header-logo" class="extra-large-logo horizontal-logo">
         </a>
       </div>
@@ -40,20 +24,33 @@
       <nav class="desktop-nav">
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
+          
+          <!-- MAIN DESTINATION MENU ITEM (PHILIPPINES FOCUS) -->
           <li class="dropdown-item">
-            <a href="#" class="dropdown-trigger" id="dropdown-destinations">Destinations ▾</a>
+            <a href="philippines.html" class="dropdown-trigger" id="dropdown-destinations">Philippines ▾</a>
             <ul class="dropdown-menu" id="destinations-menu">
-              <li><a href="philippines.html">Philippines</a></li>
-              <!-- DESTINATION_PAUSED: Re-enable when ready
+              <li><a href="philippines/manila.html">Manila</a></li>
+              <li><a href="philippines/el-nido.html">El Nido</a></li>
+              <li><a href="philippines/coron.html">Coron</a></li>
+              <li><a href="philippines/boracay.html">Boracay</a></li>
+              <li><a href="philippines/siargao.html">Siargao</a></li>
+              <li><a href="philippines/cebu.html">Cebu & Moalboal</a></li>
+              <li><a href="philippines/bohol.html">Bohol</a></li>
+              <li><a href="philippines/banaue.html">Banaue</a></li>
+              <li><a href="philippines/mayon.html">Mayon Volcano</a></li>
+              
+              <!-- ROLLBACK_MARKER: Multi-destination dropdown (Uncomment to restore multi-country view)
+              <li><a href="philippines.html">Philippines Overview</a></li>
               <li><a href="oman.html">Oman</a></li>
               <li><a href="indochina.html">Indochina</a></li>
               <li><a href="nordic.html">The Nordics</a></li>
               -->
             </ul>
           </li>
-          <li><a href="#what-we-do">What We Do</a></li>
-          <li><a href="#concierge-section">Concierge</a></li>
-          <li><a href="#about-section">About Us</a></li>
+
+          <li><a href="#why-philippines">Why Philippines</a></li>
+          <li><a href="#our-advantage">Our Advantage</a></li>
+          <li><a href="#contact-section">Let's Connect</a></li>
         </ul>
       </nav>
 
@@ -79,18 +76,27 @@
     <button class="mobile-nav-close-btn" id="mobile-nav-close-btn" aria-label="Close menu">&times;</button>
     <nav class="mobile-nav-content">
       <ul class="mobile-nav-links">
-        <li class="mobile-section-header-title">DESTINATIONS</li>
-        <li><a href="philippines.html" class="mobile-nav-link sub-link">Philippines</a></li>
-        <!-- DESTINATION_PAUSED: Re-enable when ready
-        <li><a href="oman.html" class="mobile-nav-link sub-link">Oman</a></li>
-        <li><a href="indochina.html" class="mobile-nav-link sub-link">Indochina</a></li>
-        <li><a href="nordic.html" class="mobile-nav-link sub-link">The Nordics</a></li>
-        -->
+        <li class="mobile-section-header-title">PHILIPPINES DESTINATIONS</li>
+        <li><a href="philippines.html" class="mobile-nav-link active">Philippines Overview</a></li>
+        <li><a href="philippines/manila.html" class="mobile-nav-link sub-link">Manila</a></li>
+        <li><a href="philippines/el-nido.html" class="mobile-nav-link sub-link">El Nido</a></li>
+        <li><a href="philippines/coron.html" class="mobile-nav-link sub-link">Coron</a></li>
+        <li><a href="philippines/boracay.html" class="mobile-nav-link sub-link">Boracay</a></li>
+        <li><a href="philippines/siargao.html" class="mobile-nav-link sub-link">Siargao</a></li>
+        <li><a href="philippines/cebu.html" class="mobile-nav-link sub-link">Cebu & Moalboal</a></li>
+        <li><a href="philippines/bohol.html" class="mobile-nav-link sub-link">Bohol</a></li>
+        <li><a href="philippines/banaue.html" class="mobile-nav-link sub-link">Banaue</a></li>
+        <li><a href="philippines/mayon.html" class="mobile-nav-link sub-link">Mayon Volcano</a></li>
         
-        <li class="mobile-section-header-title">CORPORATE</li>
-        <li><a href="#what-we-do" class="mobile-nav-link">What We Do</a></li>
-        <li><a href="#concierge-section" class="mobile-nav-link">Concierge</a></li>
-        <li><a href="#about-section" class="mobile-nav-link">About Us</a></li>
+        <!-- ROLLBACK_MARKER: Multi-destination sitemap (Uncomment to restore multi-country view)
+        <li><a href="oman.html" class="mobile-nav-link">Oman</a></li>
+        <li><a href="indochina.html" class="mobile-nav-link">Indochina</a></li>
+        <li><a href="nordic.html" class="mobile-nav-link">The Nordics</a></li>
+        -->
+
+        <li class="mobile-section-header-title">PARTNERSHIP</li>
+        <li><a href="#why-philippines" class="mobile-nav-link">Why Philippines</a></li>
+        <li><a href="#our-advantage" class="mobile-nav-link">Our Advantage</a></li>
         <li><a href="#contact-section" class="mobile-nav-link">Let's Connect</a></li>
       </ul>
       <a href="#contact-section" class="mobile-nav-cta-btn">
@@ -99,501 +105,306 @@
     </nav>
   </div>
 
-  <!-- HERO SECTION -->
-  <section class="film-chapter chapter-intro active" id="chapter-intro" style="min-height: 90vh;">
+  <!-- HERO SECTION WITH EXPANDED PHILIPPINES SLIDESHOW & HIGH-CONTRAST VIGNETTE -->
+  <section class="film-chapter chapter-intro active" id="chapter-intro" style="min-height: 92vh; position: relative;">
     <div class="chapter-background-media" id="hero-slideshow-container">
-      <img src="images/philippines/el_nido_boat.jpeg" alt="Philippines El Nido Limestone Cliffs" class="bg-photo zoom-travel-photo hero-slide active">
-      <img src="images/vietnam/16_Hoi_An_Romantic_Dinner_in_Rice_Fields.jpeg" alt="Hoi An Romantic Dinner in Rice Fields" class="bg-photo zoom-travel-photo hero-slide">
-      <img src="images/philippines/Woman_gazing_Bohol_chocolatehills_2K_202608131535.jpeg" alt="Woman gazing Bohol Chocolate Hills" class="bg-photo zoom-travel-photo hero-slide">
-      <img src="images/oman/Desert_camp_amid_sand_dunes_202608141630.jpeg" alt="Oman Desert Dunes Glamping" class="bg-photo zoom-travel-photo hero-slide">
-      <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(32, 43, 34, 0.15) 0%, rgba(32, 43, 34, 0.35) 100%);"></div>
+      <img src="images/philippines/el_nido_boat.jpeg" alt="El Nido Palawan Lagoon Cliffs" class="bg-photo zoom-travel-photo hero-slide active">
+      <img src="images/philippines/boracay_beach.jpeg" alt="Boracay White Beach Sunset Paraw" class="bg-photo zoom-travel-photo hero-slide">
+      <img src="images/philippines/banaue_terraces_dawn.jpg" alt="Banaue Rice Terraces Dawn" class="bg-photo zoom-travel-photo hero-slide">
+      <img src="images/philippines/coron_boats.jpeg" alt="Coron Kayangan Lake Emerald Waters" class="bg-photo zoom-travel-photo hero-slide">
+      <img src="images/philippines/bohol_hills.jpeg" alt="Bohol Chocolate Hills Panorama" class="bg-photo zoom-travel-photo hero-slide">
+      <img src="images/philippines/mayon_volcano.jpeg" alt="Mayon Volcano Majestic Cone" class="bg-photo zoom-travel-photo hero-slide">
+      
+      <!-- HIGH-CONTRAST VIGNETTE OVERLAY TO ENSURE WHITE/CYAN/GOLD TEXT STANDS OUT -->
+      <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(11, 19, 43, 0.60) 0%, rgba(11, 19, 43, 0.75) 50%, rgba(11, 19, 43, 0.94) 100%);"></div>
     </div>
-    <div class="chapter-content-container center-aligned">
-      <div class="brand-eyebrow animate-fade-down" style="color: var(--accent-gold-bright, #FFD85F);">PANDORA TRAVEL • NORDIC MARKET REPRESENTATION</div>
-      <h1 class="giant-editorial-title animate-fade-up" style="color: #FFFFFF;">
-        Connecting Nordic Tourism<br>
-        <span class="cyan-text" style="color: var(--accent-cyan);">Development & Partnerships</span>
+    
+    <div class="chapter-content-container center-aligned" style="z-index: 10;">
+      <div class="brand-eyebrow animate-fade-down" style="color: var(--accent-gold-bright, #FFD85F); letter-spacing: 2px; font-weight: 800;">
+        PANDORA TRAVEL • YOUR PHILIPPINES SPECIALIST IN THE NORDICS
+      </div>
+      
+      <h1 class="giant-editorial-title animate-fade-up" style="color: #FFFFFF; text-shadow: 0 4px 18px rgba(0,0,0,0.85);">
+        Bringing the Philippines<br>
+        <span class="cyan-text" style="color: var(--accent-cyan, #4ef0d0);">Closer to the Nordics</span>
       </h1>
-      <p class="film-subtitle animate-fade-up" style="color: #FFFFFF; max-width: 850px; margin: 0 auto 2.5rem; line-height: 1.6;">
-        Pandora Travel acts as a bridge connecting Nordic travel businesses with international destinations and tourism partners, while developing products and partnerships that create new opportunities in the Nordic market.
+      
+      <p class="film-subtitle animate-fade-up" style="color: #FFFFFF; max-width: 850px; margin: 0 auto 1.5rem; line-height: 1.65; font-size: 1.15rem; font-weight: 600; text-shadow: 0 2px 10px rgba(0,0,0,0.9);">
+        <em>Your specialist partner for promoting and selling the Philippines in the Nordic travel market.</em>
+      </p>
+
+      <p class="film-subtitle animate-fade-up" style="color: rgba(255,255,255,0.95); max-width: 880px; margin: 0 auto 2.5rem; line-height: 1.6; font-size: 0.98rem; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
+        Pandora Travel works closely with trusted Destination Management Companies (DMCs) across the Philippines, representing their destinations, experiences, and expertise to outbound travel agencies throughout the Nordic countries. Our mission is simple: <strong>to put the Philippines firmly on the Nordic travel map.</strong>
       </p>
       
       <div class="hero-cta-group animate-fade-up">
-        <a href="#featured-destinations" class="btn-primary-cyan" style="text-decoration: none; display: inline-block;">
-          EXPLORE OUR DESTINATIONS
+        <a href="philippines.html" class="btn-primary-cyan" style="text-decoration: none; display: inline-block; padding: 14px 32px; font-size: 0.95rem;">
+          EXPLORE PHILIPPINES DESTINATIONS →
         </a>
-        <a href="#contact-section" class="btn-secondary-gold">
-          PARTNER WITH US
+        <a href="#connecting-partners" class="btn-secondary-gold" style="text-decoration: none; display: inline-block; padding: 14px 32px; font-size: 0.95rem;">
+          OUR B2B PARTNERSHIPS
         </a>
       </div>
     </div>
   </section>
 
-  <!-- WHAT WE DO SECTION -->
-  <section class="concierge-section" id="what-we-do" style="padding-top: 8rem;">
+  <!-- SECTION 1: PHILIPPINE SPECIALISTS. NORDIC MARKET EXPERTS -->
+  <section class="about-section" id="specialists-section" style="background: rgba(16, 76, 113, 0.15); border-bottom: 1px solid var(--border-glass);">
     <div class="section-header">
-      <span class="gold-badge">WHAT WE DO</span>
-      <h2>B2B COMMERCIAL SERVICES</h2>
-      <p class="section-tagline">Establishing commercial linkages between local destination operators and the Nordic trade.</p>
+      <span class="gold-badge">EXPERTISE & DEDICATION</span>
+      <h2>PHILIPPINE SPECIALISTS. NORDIC MARKET EXPERTS.</h2>
+      <p class="section-tagline">More than a decade of dedicated destination building and market advocacy.</p>
     </div>
-    <div class="concierge-grid">
+    
+    <div class="about-content-grid" style="max-width: 1100px;">
+      <div class="about-text-card" style="display: flex; flex-direction: column; justify-content: center; padding: 2.5rem;">
+        <h3>Understanding Both Sides of the Journey</h3>
+        <p style="margin-bottom: 1.2rem; line-height: 1.7; color: var(--text-muted);">
+          The team behind Pandora Travel brings <strong>more than a decade of experience in promoting Philippine destinations</strong>. Our specialists understand both sides of the journey — the diverse possibilities of the Philippines and the needs, expectations, and travel preferences of the Nordic market.
+        </p>
+        <p style="line-height: 1.7; color: var(--text-muted);">
+          With an exclusive focus on the Philippines, we are dedicated to inspiring Nordic travelers and travel professionals to discover the country's extraordinary islands, cultures, nature, and experiences.
+        </p>
+      </div>
       
-      <div class="concierge-card">
-        <div class="concierge-icon-box" style="background: transparent; border: none; width: 72px; height: 72px; padding: 0;">
-          <img src="images/icons/Icon_Connecting.png" alt="Connecting Icon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-        </div>
-        <h3>Connecting</h3>
-        <p>We connect Nordic travel businesses with international destinations and tourism partners.</p>
-      </div>
-
-      <div class="concierge-card">
-        <div class="concierge-icon-box" style="background: transparent; border: none; width: 72px; height: 72px; padding: 0;">
-          <img src="images/icons/Icon_NordicTourism.png" alt="Nordic Tourism Icon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-        </div>
-        <h3>Nordic Tourism</h3>
-        <p>Our focus is the Nordic travel market, especially Denmark and the Nordic countries.</p>
-      </div>
-
-      <div class="concierge-card">
-        <div class="concierge-icon-box" style="background: transparent; border: none; width: 72px; height: 72px; padding: 0;">
-          <img src="images/icons/Icon_Development.png" alt="Development Icon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-        </div>
-        <h3>Development</h3>
-        <p>We help develop destinations, travel products, experiences and business opportunities for the Nordic market.</p>
-      </div>
-
-      <div class="concierge-card">
-        <div class="concierge-icon-box" style="background: transparent; border: none; width: 72px; height: 72px; padding: 0;">
-          <img src="images/icons/Icon_Partnership.png" alt="Partnership Icon" style="width: 100%; height: 100%; object-fit: contain; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
-        </div>
-        <h3>Partnership</h3>
-        <p>We build long-term B2B relationships between travel agencies, tour operators, DMCs, tourism boards and other tourism partners.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- THE PANDORA TRAVEL DIFFERENCE (OUR ADVANTAGE) - HIDDEN FOR NOW -->
-  <!--
-  <section class="about-section" id="difference-section" style="background: rgba(16, 76, 113, 0.12); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
-    <div class="section-header">
-      <span class="gold-badge">OUR ADVANTAGE</span>
-      <h2>THE DISTRIBUTION DIFFERENCE</h2>
-      <p class="section-tagline">We focus on sales distribution, not just marketing impressions.</p>
-    </div>
-    <div class="about-content-grid">
-      <div class="about-text-card" style="display: flex; flex-direction: column; justify-content: center;">
-        <h3>PR alone does not build pipelines</h3>
-        <p style="margin-bottom: 1.2rem;">While traditional agencies measure success in magazine mentions and media clicks, Pandora Travel measures success in <strong>commercial contracts signed, bookings generated, and revenue growth</strong>.</p>
-        <p>By connecting verified local DMCs (like Baron Travel in the Philippines and Oman Safari Tours in Oman) directly with product heads at leading outbound operators, we translate traveler interest into structural, long-term B2B trade business.</p>
-      </div>
-      <div class="about-text-card" style="display: flex; flex-direction: column; justify-content: center; background: rgba(32, 43, 34, 0.98);">
-        <h3>Our B2B Value Flow</h3>
-        
-        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
-          <div style="border-left: 3px solid var(--accent-gold); padding-left: 1rem;">
-            <strong style="color: var(--accent-gold); font-size: 0.9rem;">1. LOCAL DMCs & SUPPLIERS</strong>
-            <p style="font-size: 0.88rem; color: #FFFFFF;">We source, vet, and contract with outstanding ground handling operators in destination countries.</p>
-          </div>
-          <div style="border-left: 3px solid var(--accent-cyan); padding-left: 1rem;">
-            <strong style="color: var(--accent-cyan); font-size: 0.9rem;">2. COMMERCIAL ADVOCACY</strong>
-            <p style="font-size: 0.88rem; color: #FFFFFF;">Pandora Travel presents structured, commissionable travel products directly to Nordic tour operator buyers.</p>
-          </div>
-          <div style="border-left: 3px solid var(--accent-gold); padding-left: 1rem;">
-            <strong style="color: var(--accent-gold); font-size: 0.9rem;">3. SUSTAINABLE SALES CHANNELS</strong>
-            <p style="font-size: 0.88rem; color: #FFFFFF;">Nordic travelers book through trusted local operators, generating year-round tourism volume.</p>
-          </div>
-        </div>
-
+      <div class="about-text-card" style="display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, rgba(28, 37, 65, 0.95), rgba(11, 19, 43, 0.98)); border: 1px solid var(--border-gold); padding: 2.5rem;">
+        <h3 style="color: var(--accent-gold-bright, #FFD85F); margin-bottom: 1rem;">We Don't Simply Sell a Destination</h3>
+        <blockquote style="font-family: var(--font-heading); font-size: 1.35rem; color: #FFFFFF; font-style: italic; line-height: 1.6; margin: 0 0 1.2rem 0; border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem;">
+          "We know it. We believe in it. And we know how to make it relevant to the Nordic traveler."
+        </blockquote>
+        <p style="font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.6;">
+          Our focus allows us to provide deep local destination knowledge, verified supplier security, and strategic B2B market positioning tailored to Nordic outbound travel agencies.
+        </p>
       </div>
     </div>
   </section>
-  -->
 
-  <!-- FEATURED DESTINATIONS SECTION -->
-  <section class="concierge-section" id="featured-destinations" style="padding-bottom: 8rem;">
+  <!-- SECTION 2: CONNECTING THE RIGHT PARTNERS -->
+  <section class="concierge-section" id="connecting-partners">
     <div class="section-header">
-      <span class="gold-badge">OUR PORTFOLIO</span>
-      <h2>FEATURED DESTINATIONS</h2>
-      <p class="section-tagline">Vetted destination gateways represented and distributed by Pandora Travel.</p>
+      <span class="gold-badge">B2B BRIDGE</span>
+      <h2>CONNECTING THE RIGHT PARTNERS</h2>
+      <p class="section-tagline">Linking Philippine DMCs with Nordic Outbound Travel Agencies.</p>
     </div>
     
     <div class="about-content-grid" style="max-width: 1200px;">
-      
-      <!-- Card 1: Philippines -->
-      <div class="destination-feature-card">
-        <div class="destination-feature-card-image-wrapper">
-          <img src="images/philippines/el_nido_boat.jpeg" alt="Philippines Archipelago">
-          <div style="position: absolute; bottom: 1rem; left: 1.5rem; background: var(--btn-blue); color: var(--accent-cyan); padding: 4px 12px; border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 800; border: 1px solid var(--accent-cyan);">7,641 ISLANDS</div>
-        </div>
-        <div class="destination-feature-card-content">
-          <div>
-            <h3 style="color: var(--accent-gold-bright, #FFD85F); font-size: 1.6rem; margin-bottom: 0.5rem;">THE PHILIPPINES</h3>
-            <p style="color: rgba(255,255,255,0.9); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem;">
-              An archipelago of emerald karst cliffs, hidden lagoons, and rich Spanish-Asian heritage. Supported by our key strategic partnerships with local DMCs and travel agents in the Philippines.
-            </p>
+      <div class="about-text-card" style="grid-column: 1 / -1; padding: 2.5rem; background: rgba(32, 43, 34, 0.6); border: 1px solid rgba(78, 240, 208, 0.2);">
+        <p style="font-size: 1.05rem; line-height: 1.8; color: #FFFFFF; margin-bottom: 1.5rem;">
+          We act as a dedicated link between <strong>Philippine DMCs and Nordic outbound travel agencies</strong>, helping bring the right destinations and travel experiences to the right market.
+        </p>
+        <p style="font-size: 0.98rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 1.5rem;">
+          Through our DMC partnerships, we showcase a wide range of Philippine destinations and tailor-made travel possibilities — from iconic islands and pristine beaches to authentic cultural encounters, adventure, nature, wellness, and unforgettable island-hopping experiences.
+        </p>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+          <div style="border-left: 3px solid var(--accent-gold); padding-left: 1rem;">
+            <strong style="color: var(--accent-gold); font-size: 0.95rem; display: block; margin-bottom: 4px;">CREATE AWARENESS</strong>
+            <span style="font-size: 0.88rem; color: var(--text-muted);">Showcasing destination highlights and commissionable itineraries to Nordic trade buyers.</span>
           </div>
-          <a href="philippines.html" class="btn-primary-cyan" style="text-align: center; text-decoration: none; display: block; font-size: 0.88rem; padding: 12px 20px;">
-            EXPLORE PHILIPPINES PORTFOLIO →
-          </a>
+          <div style="border-left: 3px solid var(--accent-cyan); padding-left: 1rem;">
+            <strong style="color: var(--accent-cyan); font-size: 0.95rem; display: block; margin-bottom: 4px;">BUILD RELATIONSHIPS</strong>
+            <span style="font-size: 0.88rem; color: var(--text-muted);">Facilitating direct contracts between verified Philippine DMCs and Nordic outbound agencies.</span>
+          </div>
+          <div style="border-left: 3px solid var(--accent-gold); padding-left: 1rem;">
+            <strong style="color: var(--accent-gold); font-size: 0.95rem; display: block; margin-bottom: 4px;">GENERATE DEMAND</strong>
+            <span style="font-size: 0.88rem; color: var(--text-muted);">Turning destination inspiration into year-round bookings and commercial growth for our partners.</span>
+          </div>
         </div>
       </div>
-
-      <!-- DESTINATION_PAUSED: Oman, Indochina, The Nordics (Uncomment to re-enable)
-      <!-- Card 2: Oman -->
-      ...
-      -->
-      </div>
-
     </div>
   </section>
 
-  <!-- GLOBAL CONCIERGE SERVICES SECTION -->
-  <section class="concierge-section" id="concierge-section" style="padding-top: 6rem;">
+  <!-- SECTION 3: WHY THE PHILIPPINES? -->
+  <section class="about-section" id="why-philippines" style="background: rgba(16, 76, 113, 0.12); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
     <div class="section-header">
-      <span class="gold-badge">BESPOKE DESTINATION CARE</span>
-      <h2>CONCIERGE SERVICES</h2>
-      <p class="section-tagline">Comprehensive destination management, B2B market representation, and tailored itinerary design across all represented regions.</p>
+      <span class="gold-badge">UNBEATABLE POTENTIAL</span>
+      <h2>WHY THE PHILIPPINES?</h2>
+      <p class="section-tagline">More than beautiful beaches — a destination of 7,000+ extraordinary islands.</p>
     </div>
-    <div class="concierge-grid">
-      
+
+    <div class="concierge-grid" style="max-width: 1200px;">
       <div class="concierge-card">
-        <div class="concierge-icon">⛵</div>
-        <h3>Bespoke Tailor-Made Itineraries</h3>
-        <p>Custom travel design spanning luxury island hopping, desert safaris, cultural heritage expeditions, and Nordic fjord cruises tailored specifically for discerning Nordic travelers.</p>
+        <div class="concierge-icon">🏝️</div>
+        <h3>7,000+ Islands</h3>
+        <p>Emerald karst cliffs, secret lagoons, white sand coves, and pristine marine sanctuaries stretching across an incredible archipelago.</p>
       </div>
 
       <div class="concierge-card">
-        <div class="concierge-icon">🏨</div>
-        <h3>Verified Ground Handling & Resorts</h3>
-        <p>Hand-picked 4 & 5-star resort portfolios, boutique eco-lodges, private charters, and vetted local DMC partners delivering seamless destination experiences.</p>
+        <div class="concierge-icon">🤿</div>
+        <h3>World-Class Marine Life</h3>
+        <p>Tubbataha reefs, Moalboal sardine runs, Donsol whale shark encounters, and famous diving spots celebrated globally.</p>
       </div>
 
       <div class="concierge-card">
         <div class="concierge-icon">🤝</div>
-        <h3>Copenhagen & 24/7 Global Guest Care</h3>
-        <p>Strategic B2B market coordination operating from Copenhagen, backed by 24/7 round-the-clock emergency support and guest assistance across all destinations.</p>
+        <h3>Warm Hospitality</h3>
+        <p>Famous for genuine warmth, English fluency, and rich cultural traditions that make Nordic travelers feel welcomed like family.</p>
       </div>
 
-    </div>
-  </section>
-
-  <!-- COPENHAGEN SIGNATURE EVENT SECTION (HIDDEN UNTIL FURTHER NOTICE) -->
-  <section class="events-section" id="events-section" style="display: none !important;">
-    <div class="events-container">
-      <div class="events-content">
-        <span class="gold-badge">COPENHAGEN SIGNATURE EVENT</span>
-        <h2>TRAVEL TASTING EVENT</h2>
-        <p class="event-subtitle">"Introduction to Our Destinations" — An immersive showcase in Denmark.</p>
-        <p class="event-desc">
-          Experience the culture, warmth, and flavor of our global destinations before you fly! Join Pandora Travel in Copenhagen for destination presentations, authentic culinary tastings, cultural showcases, video presentations, and exclusive B2B trade offers.
-        </p>
-        <button class="btn-primary-cyan open-booking-trigger" data-dest="Travel Tasting Event RSVP">RSVP FOR NEXT EVENT →</button>
-      </div>
-      <div class="events-image-box">
-        <img src="images/philippines/boracay_beach.jpeg" alt="Travel Tasting Event Showcase">
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT US / CORPORATE PROFILES -->
-  <section class="about-section" id="about-section" style="background: rgba(32, 43, 34, 0.95); border-top: 2px solid var(--accent-gold);">
-    <div class="section-header">
-      <h2>ABOUT PANDORA TRAVEL</h2>
-      <p class="section-tagline">Nordic Travel Market Intelligence & Commercial Network</p>
-    </div>
-    <div class="about-content-grid">
-      <div class="about-text-card" style="background: transparent; border: none; padding: 0;">
-        <h3>Strategic Coordination from Copenhagen</h3>
-        <p style="margin-bottom: 1.2rem; color: rgba(255, 255, 255, 0.9);">
-          Operating from our corporate office in Copenhagen, Denmark, Pandora Travel acts as a local representative for international tourism brands. We maintain active pipelines and close personal connections with leading Danish, Norwegian, Swedish, and Finnish tour operators, ensuring efficient contract matching and streamlined communication.
-        </p>
-        <p style="color: rgba(255, 255, 255, 0.9);">
-          Our operations ensure that all our destination supplier standards align perfectly with European consumer expectations, guest safety requirements, and sustainable tourism criteria.
-        </p>
-      </div>
-      <div class="about-text-card" style="background: rgba(16, 76, 113, 0.35); border: 1px solid var(--accent-cyan); padding: 2rem;">
-        <h4 style="color: var(--accent-gold); margin-bottom: 0.8rem; font-size: 1.15rem;">Our Ground-Handling Alliances</h4>
-        <p style="font-size: 0.95rem; line-height: 1.65; color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem;">
-          We partner with carefully selected DMCs and inbound tour operators at each destination. We choose and represent varies partners on each destinations, providing support in showcasing their products and services. Our partners are therefore chosen based on their local expertise, destination knowledge, and ability to provide the right level of service and experiences for each type of stay.
-        </p>
+      <div class="concierge-card">
+        <div class="concierge-icon">🌾</div>
+        <h3>Authentic Encounters</h3>
+        <p>2,000-year-old Banaue Rice Terraces, Sagada hanging coffins, Spanish colonial cobblestones in Vigan, and vibrant local gastronomy.</p>
       </div>
     </div>
 
-    <!-- STANDALONE PARTNER COLLABORATION CONTAINER (#faf5f0 WARM CREAM TRANSLUCENT) -->
-    <div class="partner-collaboration-container" style="background: rgba(250, 245, 240, 0.52); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: var(--radius-lg); padding: 2.2rem 2rem; max-width: 1100px; margin: 2.5rem auto 0; width: 100%; box-sizing: border-box; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);">
-      <p style="font-size: 1.02rem; line-height: 1.6; color: #1f2937; text-align: center; margin-bottom: 2rem; font-weight: 600; max-width: 980px; margin-left: auto; margin-right: auto;">
-        We closely collaborate with <strong>DOT - OMAN HERITAGE AND TOURISM AUTHORITY, NORDIC CHAMBERS OF COMMERCE, ASEAN DMCs & TOs ASSOCIATION</strong> to promote the destinations, regulations, travel updates and trends.
+    <div style="max-width: 900px; margin: 3rem auto 0 auto; text-align: center; padding: 0 1.5rem;">
+      <p style="font-size: 1.1rem; line-height: 1.7; color: #FFFFFF;">
+        For Nordic travelers looking beyond the traditional holiday destinations, the Philippines offers something truly special — <em>authentic experiences combined with breathtaking natural beauty and the warmth of its people.</em>
       </p>
-      
-      <!-- PARTNER LOGOS GRID WITH UNIFORM CIRCULAR DIAMETERS & CLICKABLE LINKS -->
-      <div class="partner-logos-grid" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.2rem 2.8rem; padding-top: 0.5rem;">
-        
-        <a href="https://beta.tourism.gov.ph/" target="_blank" rel="noopener noreferrer" class="partner-logo-item-link" style="text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 160px;">
-          <img src="images/logo_dot_philippines.svg" alt="DOT Philippines Department of Tourism" style="height: 80px; width: 80px; object-fit: contain; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12));" title="DOT - Department of Tourism Philippines">
-          <span style="display: block; font-size: 0.92rem; color: #111827; margin-top: 10px; font-weight: 800; letter-spacing: 0.5px;">DOT PH</span>
-        </a>
-
-        <a href="https://experienceoman.om/" target="_blank" rel="noopener noreferrer" class="partner-logo-item-link" style="text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 160px;">
-          <img src="images/logo_oman_tourism.svg" alt="Oman Heritage and Tourism Authority" style="height: 80px; width: auto; max-width: 140px; object-fit: contain; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12));" title="Oman Heritage & Tourism Authority">
-          <span style="display: block; font-size: 0.92rem; color: #111827; margin-top: 10px; font-weight: 800; letter-spacing: 0.5px;">OMAN TOURISM</span>
-        </a>
-
-        <a href="https://nordcham.com.ph/" target="_blank" rel="noopener noreferrer" class="partner-logo-item-link" style="text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 160px;">
-          <img src="images/logo_nordic_chamber.svg" alt="Nordic Chambers of Commerce" style="height: 80px; width: 80px; object-fit: contain; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12));" title="Nordic Chambers of Commerce">
-          <span style="display: block; font-size: 0.92rem; color: #111827; margin-top: 10px; font-weight: 800; letter-spacing: 0.5px;">NORDIC CHAMBER</span>
-        </a>
-
-        <a href="https://asean.org/our-communities/asean-economic-community/asean-tourism/" target="_blank" rel="noopener noreferrer" class="partner-logo-item-link" style="text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 160px;">
-          <img src="images/logo_asean_circular.png" alt="ASEAN DMCs & TOs Association" style="height: 80px; width: 80px; object-fit: contain; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.12));" title="ASEAN DMCs & TOs Association">
-          <span style="display: block; font-size: 0.92rem; color: #111827; margin-top: 10px; font-weight: 800; letter-spacing: 0.5px;">ASEAN DMCs</span>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- MEET THE TEAM SUB-SECTION -->
-    <div class="team-section" id="team-section" style="padding: 4rem 2rem 0; border-top: 1px dashed var(--border-glass); margin-top: 3rem;">
-      <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-        <span class="gold-badge">OUR REPRESENTATIVES</span>
-        <h2>MEET THE TEAM</h2>
-        <p style="color: rgba(255,255,255,0.85);">The dedicated travel representation and trade operations specialists at Pandora Travel.</p>
-      </div>
-      <div class="team-grid team-grid-4">
-        
-        <div class="team-card">
-          <div class="team-img-container">
-            <img src="images/avatar_placeholder.png" alt="Abbey Salvador Placeholder">
-          </div>
-          <div class="team-info">
-            <h4>Abbey</h4>
-            <p class="team-role">Head of Nordic Tourism Development & Partnerships</p>
-            <p class="team-bio">Leads business development, European client relations, sales, marketing, and B2B destination representation for the Nordic travel market.</p>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-img-container">
-            <img src="images/avatar_placeholder.png" alt="Lizette Placeholder">
-          </div>
-          <div class="team-info">
-            <h4>Lizette</h4>
-            <p class="team-role">Philippines Operations Manager</p>
-            <p class="team-bio">Coordinates local suppliers, confirms luxury resort & banca bookings, oversees quality control, and manages 24/7 guest support in Manila.</p>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-img-container">
-            <img src="images/avatar_placeholder.png" alt="Michael Placeholder">
-          </div>
-          <div class="team-info">
-            <h4>Michael</h4>
-            <p class="team-role">AI & Itinerary Development</p>
-            <p class="team-bio">Spearheads AI-generated itinerary layouts, travel content automation, package design, and digital concierge automation.</p>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-img-container">
-            <img src="images/avatar_placeholder.png" alt="Vicky Placeholder">
-          </div>
-          <div class="team-info">
-            <h4>Vicky</h4>
-            <p class="team-role">Indochina Operations Manager</p>
-            <p class="team-bio">Oversees local supplier contracting, ground handling, hotel & cruise operations, and guest logistics across Vietnam and Indochina.</p>
-          </div>
-        </div>
-
-      </div>
+      <p style="font-size: 1.05rem; font-weight: 700; color: var(--accent-gold-bright, #FFD85F); margin-top: 1rem;">
+        And Pandora Travel is here to tell that story.
+      </p>
     </div>
   </section>
 
-  <!-- B2B LEAD CAPTURE FORM SECTION -->
-  <section class="events-section" id="contact-section" style="background-color: var(--primary-dark);">
-    <div class="events-container" style="grid-template-columns: 1fr;">
+  <!-- SECTION 4: OUR FOCUS. OUR EXPERTISE. YOUR ADVANTAGE. -->
+  <section class="concierge-section" id="our-advantage">
+    <div class="section-header">
+      <span class="gold-badge">THE PANDORA ADVANTAGE</span>
+      <h2>OUR FOCUS. OUR EXPERTISE. YOUR ADVANTAGE.</h2>
+      <p class="section-tagline">Why travel professionals partner with Pandora Travel.</p>
+    </div>
+
+    <div class="about-content-grid" style="max-width: 1200px;">
       
-      <div class="booking-card" style="max-width: 650px; margin: 0 auto; background: rgba(32, 43, 34, 0.98); border: 2.5px solid var(--accent-cyan); border-radius: var(--radius-lg); padding: 3rem 2.5rem; text-align: left;">
-        <h3 style="color: var(--accent-gold); text-align: center; margin-bottom: 0.5rem; font-size: 2rem;">LET'S BUILD BUSINESS</h3>
-        <p style="text-align: center; color: var(--accent-cyan); font-size: 0.95rem; margin-bottom: 2.5rem;">Partner with Pandora Travel to establish commercial distribution or procure verified destination services.</p>
-        
-        <form id="b2b-contact-form" style="display: flex; flex-direction: column; gap: 1.2rem;">
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">I represent a:</label>
-            <select required style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem;">
-              <option value="Operator" style="background: var(--primary-dark);">Outbound Tour Operator (Nordic Market)</option>
-              <option value="DMC" style="background: var(--primary-dark);">Destination Board / DMC seeking representation</option>
-              <option value="Other" style="background: var(--primary-dark);">Other Industry Affiliate</option>
-            </select>
-          </div>
-          
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Full Name</label>
-            <input type="text" required placeholder="John Doe" style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem;">
-          </div>
+      <div class="about-text-card" style="padding: 2rem;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇵🇭</div>
+        <h3 style="color: var(--accent-gold-bright, #FFD85F); margin-bottom: 0.5rem;">100% Philippines-Focused</h3>
+        <p style="font-size: 0.92rem; line-height: 1.65; color: var(--text-muted);">
+          Our dedication is centered on one destination: the Philippines. We do not dilute our expertise across dozens of regions.
+        </p>
+      </div>
 
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Company Name</label>
-            <input type="text" required placeholder="Travel Agency Ltd." style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem;">
-          </div>
+      <div class="about-text-card" style="padding: 2rem;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⏳</div>
+        <h3 style="color: var(--accent-gold-bright, #FFD85F); margin-bottom: 0.5rem;">10+ Years of Experience</h3>
+        <p style="font-size: 0.92rem; line-height: 1.65; color: var(--text-muted);">
+          Our team has extensive experience promoting Philippine destinations and understands how to position them successfully in the Nordic market.
+        </p>
+      </div>
 
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Corporate Email</label>
-            <input type="email" required placeholder="john@company.dk" style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem;">
-          </div>
+      <div class="about-text-card" style="padding: 2rem;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤝</div>
+        <h3 style="color: var(--accent-gold-bright, #FFD85F); margin-bottom: 0.5rem;">Strong DMC Partnerships</h3>
+        <p style="font-size: 0.92rem; line-height: 1.65; color: var(--text-muted);">
+          We collaborate with professional DMCs throughout the Philippines to bring high-quality destinations and experiences to Nordic travel agencies.
+        </p>
+      </div>
 
-          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-            <label style="font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase;">Message</label>
-            <textarea id="b2b-message-input" required rows="4" placeholder="Briefly describe your travel inquiry or destination interest..." style="background: rgba(16, 76, 113, 0.45); color: #FFFFFF; border: 1.5px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 0.9rem; resize: none;"></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary-cyan" style="margin-top: 1rem; width: 100%; border: none; font-weight: 800; letter-spacing: 1.5px;">
-            SEND INQUIRY
-          </button>
-        </form>
-        
-        <div id="form-success-msg" style="display: none; text-align: center; color: var(--accent-cyan); font-weight: 700; margin-top: 1.5rem; background: rgba(16,76,113,0.5); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--accent-cyan);">
-          ✓ Thank you. Our concierge team will contact you shortly.
-        </div>
-
-        <script>
-          document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const inquiryContext = urlParams.get('inquiry') || sessionStorage.getItem('inquiryContext');
-            if (inquiryContext) {
-              const msgInput = document.getElementById('b2b-message-input');
-              if (msgInput) {
-                msgInput.value = "I'd like to know more about " + decodeURIComponent(inquiryContext) + ".";
-              }
-            }
-          });
-        </script>
-
+      <div class="about-text-card" style="padding: 2rem;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇩🇰</div>
+        <h3 style="color: var(--accent-gold-bright, #FFD85F); margin-bottom: 0.5rem;">Nordic Market Knowledge</h3>
+        <p style="font-size: 0.92rem; line-height: 1.65; color: var(--text-muted);">
+          We understand the Nordic travel trade, its business culture, traveler expectations, and what it takes to turn destination inspiration into bookings.
+        </p>
       </div>
 
     </div>
   </section>
 
-  <!-- FOOTER & CONTACT DETAILS -->
+  <!-- PHILIPPINES FEATURED SUB-PAGES GRID -->
+  <section class="concierge-section" id="featured-destinations" style="padding-top: 0; padding-bottom: 6rem;">
+    <div class="section-header">
+      <span class="gold-badge">DESTINATION GUIDES</span>
+      <h2>EXPLORE THE PHILIPPINES</h2>
+      <p class="section-tagline">Discover our dedicated destination guides and experience portfolios.</p>
+    </div>
+
+    <div class="dest-links-grid" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 0 1.5rem;">
+      <a href="philippines/manila.html" class="dest-link-card" style="height: 180px;">
+        <img src="images/philippines/manila_pedestrians.jpeg" alt="Manila">
+        <span class="dest-link-title">Manila & Intramuros</span>
+      </a>
+      <a href="philippines/el-nido.html" class="dest-link-card" style="height: 180px;">
+        <img src="images/philippines/el_nido_boat.jpeg" alt="El Nido">
+        <span class="dest-link-title">El Nido & Bacuit Bay</span>
+      </a>
+      <a href="philippines/coron.html" class="dest-link-card" style="height: 180px;">
+        <img src="images/philippines/coron_boats.jpeg" alt="Coron">
+        <span class="dest-link-title">Coron & Kayangan Lake</span>
+      </a>
+      <a href="philippines/boracay.html" class="dest-link-card" style="height: 180px;">
+        <img src="images/philippines/boracay_beach.jpeg" alt="Boracay">
+        <span class="dest-link-title">Boracay White Beach</span>
+      </a>
+      <a href="philippines/siargao.html" class="dest-link-card" style="height: 180px;">
+        <img src="images/philippines/siargao_banca.jpeg" alt="Siargao">
+        <span class="dest-link-title">Siargao & Sugba Lagoon</span>
+      </a>
+      <a href="philippines/cebu.html" class="dest-link-card" style="height: 180px;">
+        <img src="images/philippines/cebu_landscape.jpg" alt="Cebu">
+        <span class="dest-link-title">Cebu & Moalboal</span>
+      </a>
+      <a href="philippines/bohol.html" class="dest-link-card" style="height: 180px;">
+        <img src="images/philippines/bohol_hills.jpeg" alt="Bohol">
+        <span class="dest-link-title">Bohol Chocolate Hills</span>
+      </a>
+      <a href="philippines/banaue.html" class="dest-link-card" style="height: 180px;">
+        <img src="images/philippines/banaue_terraces_dawn.jpg" alt="Banaue">
+        <span class="dest-link-title">Banaue Rice Terraces</span>
+      </a>
+      <a href="philippines/mayon.html" class="dest-link-card" style="height: 180px;">
+        <img src="images/philippines/mayon_volcano.jpeg" alt="Mayon Volcano">
+        <span class="dest-link-title">Mayon Volcano & Donsol</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 5: LET'S GROW THE PHILIPPINES TOGETHER (B2B CTA BANNER) -->
+  <section class="dest-contact-banner" id="contact-section" style="background: linear-gradient(135deg, rgba(28, 37, 65, 0.98), rgba(11, 19, 43, 0.99)); border: 1px solid var(--border-gold); border-radius: 16px; padding: 56px 32px; max-width: 1100px; margin: 0 auto 80px auto; text-align: center; box-shadow: var(--shadow-lg);">
+    <span class="gold-badge" style="margin-bottom: 1rem;">PARTNERSHIP INVITATION</span>
+    <h2 style="font-family: var(--font-heading); font-size: 2.4rem; color: var(--gold-primary); margin-bottom: 1rem;">LET'S GROW THE PHILIPPINES TOGETHER</h2>
+    <p style="color: rgba(255,255,255,0.92); font-size: 1.1rem; max-width: 780px; margin: 0 auto 2.5rem auto; line-height: 1.7;">
+      Whether you are a <strong>Philippine DMC looking to expand your presence in the Nordic market</strong> or a <strong>Nordic travel agency looking for new and inspiring Philippine products</strong>, Pandora Travel is here to connect the dots.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto 2.5rem auto; text-align: left;">
+      <div style="background: rgba(255,255,255,0.05); padding: 1.8rem; border-radius: 12px; border-left: 4px solid var(--accent-gold);">
+        <h4 style="color: var(--accent-gold); font-size: 1.15rem; margin-bottom: 0.5rem;">For DMCs</h4>
+        <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">Grow your destination and reach the Nordic travel trade with expert B2B representation and market advocacy.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.05); padding: 1.8rem; border-radius: 12px; border-left: 4px solid var(--accent-cyan);">
+        <h4 style="color: var(--accent-cyan); font-size: 1.15rem; margin-bottom: 0.5rem;">For Travel Agencies</h4>
+        <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">Discover Philippine destinations, high-margin experiences, and trusted local partners for your client portfolio.</p>
+      </div>
+    </div>
+
+    <p style="font-size: 1.15rem; font-style: italic; color: #FFFFFF; margin-bottom: 2rem;">
+      Together, let's inspire more Nordic travelers to discover the Philippines.
+    </p>
+
+    <a href="mailto:info@pandoratravel.dk?subject=Pandora%20Travel%20Philippines%20Partnership%20Inquiry" class="btn-primary-gold" style="padding: 16px 40px; font-size: 1rem; text-decoration: none;">
+      CONNECT WITH OUR PHILIPPINES TEAM →
+    </a>
+  </section>
+
+  <!-- GLOBAL FOOTER (ALIGNED TO PHILIPPINES SPECIALIST IN THE NORDICS) -->
   <footer id="global-footer">
-    <div class="footer-content" id="footer-content-dynamic">
+    <div class="footer-content">
       <div class="footer-grid">
         <div>
           <h4 class="gold-text">PANDORA TRAVEL</h4>
-          
-          <div style="margin-top: 0.6rem; line-height: 1.5; font-size: 0.88rem;">
-            <strong style="color: var(--accent-gold); display: block; margin-bottom: 0.1rem;">Copenhagen Office</strong>
-            <p style="margin-bottom: 0.2rem; color: rgba(255,255,255,0.85);">Borgmestervangen 31, 2200 Copenhagen</p>
-            <p style="margin-bottom: 0.6rem; color: rgba(255,255,255,0.85);">Email: <a href="mailto:info@pandoratravel.dk" style="color: var(--accent-cyan); text-decoration: none;">info@pandoratravel.dk</a></p>
-            
-            <strong style="color: var(--accent-gold); display: block; margin-bottom: 0.1rem;">Philippines / Manila Office</strong>
-            <p style="margin-bottom: 0.6rem; color: rgba(255,255,255,0.85);">Email: <a href="mailto:info@pandoratravel.dk" style="color: var(--accent-cyan); text-decoration: none;">info@pandoratravel.dk</a></p>
-            
-            <strong style="color: var(--accent-gold); display: block; margin-bottom: 0.1rem;">Indochina / China Office</strong>
-            <p style="margin-bottom: 0.2rem; color: rgba(255,255,255,0.85);">Email: <a href="mailto:info@pandoratravel.dk" style="color: var(--accent-cyan); text-decoration: none;">info@pandoratravel.dk</a></p>
-          </div>
+          <p class="footer-subtext">Your Philippines Specialist in the Nordics</p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Bringing the Philippines Closer to the Nordics through dedicated DMC partnerships and trade advocacy.</p>
         </div>
-
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-          <h4 style="margin-bottom: 0.4rem;">Terms & Conditions</h4>
-          <p style="margin-bottom: 0.3rem;"><a href="#" onclick="alert('Terms & Conditions: All bookings, DMC partnerships, and itinerary reservations governed under Danish commercial travel regulations.'); return false;" style="color: rgba(255,255,255,0.85); text-decoration: none;">Terms of Service</a></p>
-          <p style="margin-bottom: 1.2rem;"><a href="#" onclick="alert('Privacy Policy: Pandora Travel respects your data privacy under EU GDPR guidelines.'); return false;" style="color: rgba(255,255,255,0.85); text-decoration: none;">Privacy Policy</a></p>
-
-          <h4 style="margin-bottom: 0.4rem;">FAQ</h4>
-          <p style="margin-bottom: 0.3rem;"><a href="#" onclick="alert('FAQ: Pandora Travel acts as a B2B commercial representative and destination concierge for Nordic outbound tour operators.'); return false;" style="color: rgba(255,255,255,0.85); text-decoration: none;">General FAQ</a></p>
-          <p style="margin-bottom: 0;"><a href="#" onclick="alert('B2B Trade FAQ: For tour operator inquiries and DMC representation, contact info@pandoratravel.dk'); return false;" style="color: rgba(255,255,255,0.85); text-decoration: none;">B2B Trade FAQ</a></p>
+        <div>
+          <h4>Nordic Representation</h4>
+          <p>Copenhagen, Denmark</p>
+          <p>Email: info@pandoratravel.dk</p>
+          <p>Web: www.pandoratravel.dk</p>
         </div>
-
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-          <h4>Social Media</h4>
-          <p style="margin-bottom: 0.8rem; font-size: 0.88rem; color: rgba(255,255,255,0.85);">Follow Pandora Travel online:</p>
-          <div class="footer-social-icons" style="display: flex; gap: 0.8rem; align-items: center;">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(16, 76, 113, 0.45); border: 1.5px solid var(--accent-cyan); border-radius: 50%; color: var(--accent-cyan); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='var(--accent-cyan)'; this.style.color='#0A192F';" onmouseout="this.style.background='rgba(16, 76, 113, 0.45)'; this.style.color='var(--accent-cyan)';">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.48 1.48 0 1 0 0 2.95 1.48 1.48 0 0 0 0-2.95Z"/></svg>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(16, 76, 113, 0.45); border: 1.5px solid var(--accent-cyan); border-radius: 50%; color: var(--accent-cyan); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='var(--accent-cyan)'; this.style.color='#0A192F';" onmouseout="this.style.background='rgba(16, 76, 113, 0.45)'; this.style.color='var(--accent-cyan)';">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
-            </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(16, 76, 113, 0.45); border: 1.5px solid var(--accent-cyan); border-radius: 50%; color: var(--accent-cyan); transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='var(--accent-cyan)'; this.style.color='#0A192F';" onmouseout="this.style.background='rgba(16, 76, 113, 0.45)'; this.style.color='var(--accent-cyan)';">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-          </div>
+        <div>
+          <h4>Philippine Destinations</h4>
+          <p>Manila · El Nido · Coron · Boracay</p>
+          <p>Siargao · Cebu · Bohol · Banaue · Mayon</p>
         </div>
       </div>
-
-      <!-- DESTINATIONS & HIGHLIGHTED PLACES DIRECTORY -->
-      <div class="footer-destinations-directory">
-        <div class="footer-directory-title">EXPLORE OUR DESTINATIONS & HIGHLIGHTED PLACES</div>
-        <div class="footer-directory-grid">
-          
-          <!-- PHILIPPINES -->
-          <div class="footer-dir-col">
-            <h5><a href="philippines.html">The Philippines ▾</a></h5>
-            <ul>
-              <li><a href="philippines/manila.html">Manila & Intramuros</a></li>
-              <li><a href="philippines/banaue.html">Banaue & Rice Terraces</a></li>
-              <li><a href="philippines/bohol.html">Bohol & Chocolate Hills</a></li>
-              <li><a href="philippines/cebu.html">Cebu & Visayas</a></li>
-              <li><a href="philippines/boracay.html">Boracay White Beach</a></li>
-              <li><a href="philippines/el-nido.html">El Nido & Bacuit Bay</a></li>
-              <li><a href="philippines/coron.html">Coron & Kayangan Lake</a></li>
-              <li><a href="philippines/siargao.html">Siargao Island</a></li>
-              <li><a href="philippines/mayon.html">Mount Mayon & Bicol</a></li>
-            </ul>
-          </div>
-
-          <!-- OMAN -->
-          <div class="footer-dir-col">
-            <h5><a href="oman.html">Sultanate of Oman ▾</a></h5>
-            <ul>
-              <li><a href="oman/muscat.html">Muscat & Grand Mosque</a></li>
-              <li><a href="oman/nizwa.html">Nizwa & Historic Forts</a></li>
-              <li><a href="oman/jebel-akhdar.html">Jebel Akhdar Mountains</a></li>
-              <li><a href="oman/wahiba-sands.html">Wahiba Sands Desert</a></li>
-              <li><a href="oman/wadi-shab.html">Wadi Shab & Gorges</a></li>
-              <li><a href="oman/salalah.html">Salalah & Dhofar Coast</a></li>
-              <li><a href="oman/musandam.html">Musandam Fjords</a></li>
-            </ul>
-          </div>
-
-          <!-- INDOCHINA -->
-          <div class="footer-dir-col">
-            <h5><a href="indochina.html">Indochina ▾</a></h5>
-            <ul>
-              <li><a href="indochina/hanoi.html">Hanoi & Old Quarter</a></li>
-              <li><a href="indochina/ninh-binh.html">Ninh Binh & Ha Long Bay</a></li>
-              <li><a href="indochina/hoi-an.html">Hoi An Ancient Town</a></li>
-              <li><a href="indochina/saigon.html">Saigon / Ho Chi Minh City</a></li>
-              <li><a href="indochina/siem-reap.html">Siem Reap & Angkor Wat</a></li>
-              <li><a href="indochina/luang-prabang.html">Luang Prabang</a></li>
-              <li><a href="indochina/bangkok.html">Bangkok & Thai Retreats</a></li>
-            </ul>
-          </div>
-
-          <!-- THE NORDICS -->
-          <div class="footer-dir-col">
-            <h5><a href="nordic.html">The Nordics ▾</a></h5>
-            <ul>
-              <li><a href="nordic/copenhagen.html">Copenhagen & Nyhavn</a></li>
-              <li><a href="nordic/stockholm.html">Stockholm & Vasa Museum</a></li>
-              <li><a href="nordic/oslo.html">Oslo & Vigeland Park</a></li>
-              <li><a href="nordic/bergen.html">Bergen & Bryggen</a></li>
-              <li><a href="nordic/fjords.html">Norwegian Fjords & Flåm</a></li>
-              <li><a href="nordic/helsinki.html">Helsinki & Baltic Coast</a></li>
-            </ul>
-          </div>
-
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pandora Travel. All rights reserved. Your Philippines Specialist in the Nordics.</p>
       </div>
-
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Pandora Travel — Destination Market Development. All rights reserved.</p>
-      <p>Crafted with ❤️ for B2B Nordic Travel Trade</p>
     </div>
   </footer>
 
-  <!-- App Script -->
-  <script src="index.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

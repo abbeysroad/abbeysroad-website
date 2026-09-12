@@ -832,6 +832,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Automated Hero Image Slideshow
+  function initHeroSlideshow() {
+    const container = document.getElementById('hero-slideshow-container');
+    if (!container) return;
+    const slides = container.querySelectorAll('.hero-slide');
+    if (slides.length <= 1) return;
+
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+  }
+
   // Initialize features
   initThreeWebGL();
   initGSAPScrollTrigger();
@@ -839,6 +854,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileBurgerMenu();
   initDropdownMenus();
   initItinerariesMenu();
+  initHeroSlideshow();
   renderItinerary(itineraries[0].id);
   bindBookingTriggers();
 
