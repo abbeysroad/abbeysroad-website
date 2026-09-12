@@ -449,9 +449,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleScroll() {
       const isMobile = window.innerWidth <= 1024;
-      const heroHeight = heroSection ? (heroSection.offsetHeight || window.innerHeight) : 350;
       const scrollY = window.scrollY || window.pageYOffset || 0;
-      const threshold = 200;
+      const threshold = 180;
 
       if (scrollY >= threshold) {
         if (!isDocked) {
@@ -463,7 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('docked-bookmark');
             btn.classList.remove('mobile-docked-flipbook');
           }
-          if (!document.body.contains(btn)) {
+          if (btn.parentNode !== document.body) {
             document.body.appendChild(btn);
           }
         }
@@ -473,8 +472,8 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.classList.remove('docked-bookmark', 'mobile-docked-flipbook');
           if (triggerWrapper) {
             if (!triggerWrapper.contains(btn)) triggerWrapper.appendChild(btn);
-          } else {
-            if (document.body.contains(btn)) document.body.removeChild(btn);
+          } else if (btn.parentNode === document.body) {
+            document.body.removeChild(btn);
           }
         }
       }
