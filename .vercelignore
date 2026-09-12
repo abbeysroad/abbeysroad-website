@@ -1,0 +1,27 @@
+# ==========================================================================
+# VERCEL DEPLOYMENT EXCLUSION RULES (.vercelignore)
+# Focus deployment payload strictly on active Philippines destination assets
+# ==========================================================================
+
+# Exclude paused destination image folders from Vercel upload
+images/oman/
+images/vietnam/
+images/nordic/
+Images Oman/
+Images Vietnam/
+Images Nordic/
+Images Philippines/
+
+# Exclude paused sub-page HTML folders from Vercel upload
+oman/
+indochina/
+nordic/
+oman.html
+indochina.html
+nordic.html
+
+# Exclude raw media and temporary scratch files
+*.mp4
+pdf_extracted_text.txt
+pdf_pages_1_4.txt
+copy_philippines_images.js

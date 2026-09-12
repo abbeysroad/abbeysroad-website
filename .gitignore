@@ -1,3 +1,12 @@
 .DS_Store
 node_modules/
 .gemini/
+
+Images Philippines/
+Images Oman/
+Images Vietnam/
+Images Nordic/
+*.mp4
+pdf_extracted_text.txt
+pdf_pages_1_4.txt
+copy_philippines_images.js

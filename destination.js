@@ -91,10 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const sitemapItems = [
     { name: 'Home', link: '../index.html' },
-    { name: 'Philippines Destination', link: '../philippines.html', key: 'philippines' },
-    { name: 'Oman Destination', link: '../oman.html', key: 'oman' },
-    { name: 'Indochina Destination', link: '../indochina.html', key: 'indochina' },
-    { name: 'The Nordics Destination', link: '../nordic.html', key: 'nordic' }
+    { name: 'Philippines Destination', link: '../philippines.html', key: 'philippines' }
   ];
 
   mobileNavOverlay.innerHTML = `
