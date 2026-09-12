@@ -98,17 +98,22 @@ document.addEventListener('DOMContentLoaded', () => {
     <button class="mobile-nav-close-btn" id="mobile-nav-close-btn" aria-label="Close menu">&times;</button>
     <nav class="mobile-nav-content">
       <ul class="mobile-nav-links">
-        <li class="mobile-section-header-title">SITEMAP</li>
-        ${sitemapItems.map(item => `<li><a href="${item.link}" class="mobile-nav-link ${item.key === currentDest ? 'active' : ''}">${item.name}</a></li>`).join('')}
+        <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="../index.html#why-philippines" class="mobile-nav-link">Why Philippines</a></li>
         
         <li class="mobile-section-header-title">DISCOVER</li>
-        ${activeDiscover.map(d => `<li><a href="${d.link}" class="mobile-nav-link sub-link">${d.name}</a></li>`).join('')}
+        <li><a href="../philippines.html" class="mobile-nav-link sub-link">Philippines Overview</a></li>
+        <li><a href="manila.html" class="mobile-nav-link sub-link ${path.includes('manila') ? 'active' : ''}">Manila</a></li>
+        <li><a href="el-nido.html" class="mobile-nav-link sub-link ${path.includes('el-nido') ? 'active' : ''}">El Nido</a></li>
+        <li><a href="coron.html" class="mobile-nav-link sub-link ${path.includes('coron') ? 'active' : ''}">Coron</a></li>
+        <li><a href="boracay.html" class="mobile-nav-link sub-link ${path.includes('boracay') ? 'active' : ''}">Boracay</a></li>
+        <li><a href="siargao.html" class="mobile-nav-link sub-link ${path.includes('siargao') ? 'active' : ''}">Siargao</a></li>
+        <li><a href="cebu.html" class="mobile-nav-link sub-link ${path.includes('cebu') ? 'active' : ''}">Cebu & Moalboal</a></li>
+        <li><a href="bohol.html" class="mobile-nav-link sub-link ${path.includes('bohol') ? 'active' : ''}">Bohol</a></li>
+        <li><a href="banaue.html" class="mobile-nav-link sub-link ${path.includes('banaue') ? 'active' : ''}">Banaue</a></li>
+        <li><a href="mayon.html" class="mobile-nav-link sub-link ${path.includes('mayon') ? 'active' : ''}">Mayon Volcano</a></li>
         
-        <li class="mobile-section-header-title">ITINERARIES</li>
-        ${activeItineraries.map(it => `<li><a href="${it.link}" class="mobile-nav-link sub-link">${it.name}</a></li>`).join('')}
-        
-        <li><a href="../${currentDest}.html#concierge-section" class="mobile-nav-link" style="margin-top: 0.6rem;">Concierge</a></li>
-        <li><a href="../${currentDest}.html#about-section" class="mobile-nav-link">About Us</a></li>
+        <li><a href="../index.html#our-advantage" class="mobile-nav-link" style="margin-top: 0.8rem;">Our Expertise</a></li>
       </ul>
       <a href="../index.html#contact-section" class="mobile-nav-cta-btn">
         LET'S CONNECT
