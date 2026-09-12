@@ -607,10 +607,25 @@ body.flipbook-page-body {
 /* Side-by-side Image + Info Box Row */
 .image-explainer-row {
   display: grid;
-  grid-template-columns: 125px 1fr;
+  grid-template-columns: 190px 1fr;
   gap: 12px;
   align-items: center;
   margin-top: 8px;
+}
+
+@media (min-width: 769px) {
+  .image-explainer-row {
+    grid-template-columns: 215px 1fr;
+    gap: 14px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .image-explainer-row {
+    grid-template-columns: 125px 1fr;
+    gap: 8px;
+  }
 }
 
 .aspect-4x3-thumb {
