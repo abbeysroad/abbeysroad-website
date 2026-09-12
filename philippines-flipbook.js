@@ -306,6 +306,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Dynamic Return Button Handler
+  function initReturnButton() {
+    const returnBtn = document.querySelector('.flipbook-back-btn');
+    const returnLabel = document.querySelector('.back-btn-sub');
+    if (!returnBtn) return;
+
+    let returnUrl = '';
+    let rawTitle = '';
+
+    try {
+      returnUrl = sessionStorage.getItem('flipbook_return_url') || '';
+      rawTitle = sessionStorage.getItem('flipbook_return_title') || '';
+    } catch (e) {}
+
+    if (!returnUrl && document.referrer && document.referrer.includes(window.location.host)) {
+      returnUrl = document.referrer;
+    }
+
+    let subText = 'Philippine Destination';
+
+    if (returnUrl) {
+      const path = returnUrl.toLowerCase();
+      if (path.includes('manila')) subText = 'Manila Destination';
+      else if (path.includes('el-nido')) subText = 'El Nido Destination';
+      else if (path.includes('coron')) subText = 'Coron Destination';
+      else if (path.includes('boracay')) subText = 'Boracay Destination';
+      else if (path.includes('siargao')) subText = 'Siargao Destination';
+      else if (path.includes('cebu')) subText = 'Cebu Destination';
+      else if (path.includes('bohol')) subText = 'Bohol Destination';
+      else if (path.includes('banaue')) subText = 'Banaue Destination';
+      else if (path.includes('mayon')) subText = 'Mayon Destination';
+      else if (path.includes('philippines.html')) subText = 'Philippine Destination';
+      else if (path.includes('index.html') || path.endsWith('/')) subText = 'Home Page';
+      else if (rawTitle) {
+        let cleaned = rawTitle.replace(/–.*$/i, '').replace(/\|.*$/i, '').trim();
+        if (cleaned) subText = cleaned;
+      }
+    } else {
+      returnUrl = 'philippines.html';
+    }
+
+    returnBtn.href = returnUrl;
+    if (returnLabel) {
+      returnLabel.textContent = subText;
+    }
+
+    returnBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (document.referrer && document.referrer.includes(window.location.host) && window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = returnUrl;
+      }
+    });
+  }
+
+  initReturnButton();
+
   // Start initialization
   setTimeout(initFlipbook, 100);
 });

@@ -373,8 +373,12 @@
     });
 
     function handleTriggerClick(trigger) {
-    window.location.href = 'philippines-flipbook.html';
-  }
+      try {
+        sessionStorage.setItem('flipbook_return_url', window.location.href);
+        sessionStorage.setItem('flipbook_return_title', document.title || 'Philippine Destination');
+      } catch (err) {}
+      window.location.href = 'philippines-flipbook.html';
+    }
 
   function bindModalEvents() {
     const closeBtn = document.getElementById('ebook-close-btn');

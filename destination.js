@@ -481,8 +481,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let collapseTimer = null;
 
-    // MOBILE 2-TAP INTERACTION: 1st tap expands pill, 2nd tap opens E-Book
+    // Save return URL and handle mobile 2-tap interaction
     btn.addEventListener('click', (e) => {
+      try {
+        sessionStorage.setItem('flipbook_return_url', window.location.href);
+        sessionStorage.setItem('flipbook_return_title', document.title || 'Philippine Destination');
+      } catch (err) {}
+
       const isMobile = window.innerWidth <= 1024;
       if (isMobile && btn.classList.contains('mobile-docked-flipbook')) {
         if (!btn.classList.contains('mobile-expanded')) {
@@ -500,6 +505,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('#open-ebook-btn, .ebook-trigger-btn, a[href*="flipbook"]');
+      if (trigger) {
+        try {
+          sessionStorage.setItem('flipbook_return_url', window.location.href);
+          sessionStorage.setItem('flipbook_return_title', document.title || 'Philippine Destination');
+        } catch (err) {}
+      }
       if (btn.classList.contains('mobile-expanded') && !btn.contains(e.target)) {
         btn.classList.remove('mobile-expanded');
       }
