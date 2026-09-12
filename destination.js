@@ -416,4 +416,69 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initMobileHeroScrollPin();
+
+  // 5. FLOATING E-BOOK BUTTON SCROLL DOCKING (WORKS ON MAIN & SUB-PAGES)
+  function initFloatingEbookButton() {
+    let btn = document.getElementById('open-ebook-btn') || document.querySelector('.ebook-trigger-btn');
+    const heroSection = document.querySelector('.film-chapter.chapter-intro') || document.querySelector('.dest-hero-section') || document.querySelector('.chapter-intro');
+
+    const isSubpage = window.location.pathname.toLowerCase().includes('/philippines/');
+    const targetHref = isSubpage ? '../philippines-flipbook.html' : 'philippines-flipbook.html';
+    const iconSrc = isSubpage ? '../Ebook_icon_white.png' : 'Ebook_icon_white.png';
+
+    if (!btn) {
+      btn = document.createElement('a');
+      btn.id = 'open-ebook-btn';
+      btn.className = 'ebook-trigger-btn';
+      btn.href = targetHref;
+      btn.setAttribute('aria-label', 'Open Philippines Trade Portfolio E-Book');
+      btn.style.textDecoration = 'none';
+      btn.innerHTML = `
+        <img src="${iconSrc}" alt="PDF E-Book Icon" class="ebook-custom-icon-img" />
+        <span class="ebook-trigger-text">E-Book</span>
+      `;
+    }
+
+    const triggerWrapper = document.querySelector('.ebook-hero-trigger-wrapper');
+    let isDocked = false;
+
+    function handleScroll() {
+      const isMobile = window.innerWidth <= 1024;
+      const heroHeight = heroSection ? (heroSection.offsetHeight || window.innerHeight) : 350;
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+      const threshold = Math.max(100, heroHeight - 160);
+
+      if (scrollY >= threshold) {
+        if (!isDocked) {
+          isDocked = true;
+          if (isMobile) {
+            btn.classList.add('mobile-docked-flipbook');
+            btn.classList.remove('docked-bookmark');
+          } else {
+            btn.classList.add('docked-bookmark');
+            btn.classList.remove('mobile-docked-flipbook');
+          }
+          if (!document.body.contains(btn)) {
+            document.body.appendChild(btn);
+          }
+        }
+      } else {
+        if (isDocked) {
+          isDocked = false;
+          btn.classList.remove('docked-bookmark', 'mobile-docked-flipbook');
+          if (triggerWrapper) {
+            if (!triggerWrapper.contains(btn)) triggerWrapper.appendChild(btn);
+          } else {
+            if (document.body.contains(btn)) document.body.removeChild(btn);
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  initFloatingEbookButton();
 });
