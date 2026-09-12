@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const isMobile = window.innerWidth <= 1024;
       const heroHeight = heroSection ? (heroSection.offsetHeight || window.innerHeight) : 350;
       const scrollY = window.scrollY || window.pageYOffset || 0;
-      const threshold = Math.max(100, heroHeight - 160);
+      const threshold = 200;
 
       if (scrollY >= threshold) {
         if (!isDocked) {

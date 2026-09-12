@@ -305,66 +305,7 @@
      HERO PARALLAX & STICKY DOCKED SIDE BOOKMARK ENGINE (DESKTOP & MOBILE)
      ========================================================================== */
   function initHeroParallaxAndBookmark() {
-    const heroSection = document.getElementById('chapter-intro') || document.querySelector('.chapter-intro') || document.querySelector('.dest-hero-section');
-    const heroContent = document.querySelector('.chapter-intro .chapter-content-container') || document.querySelector('.chapter-content-container.center-aligned') || document.querySelector('.dest-hero-content');
-    const triggerBtn = document.getElementById('open-ebook-btn') || document.querySelector('.ebook-trigger-btn');
-    const triggerWrapper = document.querySelector('.ebook-hero-trigger-wrapper');
-
-    if (!heroSection || !triggerBtn) return;
-
-    let isDocked = false;
-
-    function handleScroll() {
-      const isMobile = window.innerWidth <= 1024;
-      const heroHeight = heroSection.offsetHeight || window.innerHeight;
-      const scrollY = window.scrollY || window.pageYOffset || 0;
-      const threshold = Math.max(100, heroHeight - 160);
-
-      if (isMobile) {
-        // MOBILE DOCKED FLIPBOOK ICON (TOP RIGHT BELOW BURGER MENU)
-        if (scrollY >= threshold) {
-          if (!isDocked) {
-            isDocked = true;
-            triggerBtn.classList.add('mobile-docked-flipbook');
-            triggerBtn.classList.remove('mobile-expanded', 'docked-bookmark', 'expanded');
-            document.body.appendChild(triggerBtn);
-          }
-        } else {
-          if (isDocked) {
-            isDocked = false;
-            triggerBtn.classList.remove('mobile-docked-flipbook', 'mobile-expanded');
-            if (triggerWrapper && !triggerWrapper.contains(triggerBtn)) {
-              triggerWrapper.appendChild(triggerBtn);
-            }
-          }
-        }
-        return;
-      }
-
-      // DESKTOP DOCKED SIDE BOOKMARK
-      if (scrollY < threshold) {
-        if (isDocked) {
-          isDocked = false;
-          triggerBtn.classList.remove('docked-bookmark', 'expanded', 'mobile-docked-flipbook', 'mobile-expanded');
-          if (triggerWrapper && !triggerWrapper.contains(triggerBtn)) {
-            triggerWrapper.appendChild(triggerBtn);
-          }
-        }
-      } else {
-        if (!isDocked) {
-          isDocked = true;
-          triggerBtn.classList.add('docked-bookmark');
-          triggerBtn.classList.remove('expanded', 'mobile-docked-flipbook', 'mobile-expanded');
-          document.body.appendChild(triggerBtn);
-        }
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    if (window.lenis && typeof window.lenis.on === 'function') {
-      window.lenis.on('scroll', handleScroll);
-    }
-    handleScroll();
+    // Handled centrally in destination.js
   }
 
   function bindTriggerEvents() {
