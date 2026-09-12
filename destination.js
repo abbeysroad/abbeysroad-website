@@ -479,6 +479,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    let collapseTimer = null;
+
+    // MOBILE 2-TAP INTERACTION: 1st tap expands pill, 2nd tap opens E-Book
+    btn.addEventListener('click', (e) => {
+      const isMobile = window.innerWidth <= 1024;
+      if (isMobile && btn.classList.contains('mobile-docked-flipbook')) {
+        if (!btn.classList.contains('mobile-expanded')) {
+          e.preventDefault();
+          e.stopPropagation();
+          btn.classList.add('mobile-expanded');
+
+          if (collapseTimer) clearTimeout(collapseTimer);
+          collapseTimer = setTimeout(() => {
+            btn.classList.remove('mobile-expanded');
+          }, 4000);
+          return false;
+        }
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (btn.classList.contains('mobile-expanded') && !btn.contains(e.target)) {
+        btn.classList.remove('mobile-expanded');
+      }
+    });
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll();

@@ -956,6 +956,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
+
 /* ==========================================================================
    FLOATING SIDE/TOP E-BOOK BUTTON (DESKTOP & MOBILE)
    ========================================================================== */
@@ -965,21 +966,23 @@ h1, h2, h3, h4, h5, h6,
   top: 50% !important;
   left: auto !important;
   transform: translateY(-50%) !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important;
   margin: 0 !important;
-  padding: 12px 16px !important;
-  border-radius: 14px 0 0 14px !important;
-  border: 1.5px solid var(--accent-gold, #cfaa5c) !important;
+  padding: 12px 24px 12px 18px !important;
+  border-radius: 28px 0 0 28px !important;
+  border: 1.5px solid var(--accent-gold, #FFD85F) !important;
   border-right: none !important;
-  background: rgba(16, 76, 113, 0.95) !important;
-  box-shadow: -8px 0 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(207, 170, 92, 0.35) !important;
+  background: rgba(16, 76, 113, 0.98) !important;
+  box-shadow: -8px 0 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 216, 95, 0.35) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  width: auto !important;
+  min-width: 145px !important;
   height: 54px !important;
   box-sizing: border-box !important;
   text-decoration: none !important;
@@ -996,16 +999,19 @@ h1, h2, h3, h4, h5, h6,
 .ebook-trigger-btn.docked-bookmark .ebook-trigger-text {
   color: #FFFFFF !important;
   font-family: var(--font-heading, sans-serif) !important;
-  font-size: 0.85rem !important;
+  font-size: 0.92rem !important;
   font-weight: 700 !important;
-  letter-spacing: 1px !important;
+  letter-spacing: 1.2px !important;
   white-space: nowrap !important;
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  padding-right: 4px !important;
 }
 
 .ebook-trigger-btn.docked-bookmark:hover {
   background: var(--accent-gold-bright, #FFD85F) !important;
-  color: #0b132b !important;
-  transform: translateY(-50%) translateX(-4px) !important;
+  transform: translateY(-50%) translateX(-6px) !important;
 }
 
 .ebook-trigger-btn.docked-bookmark:hover .ebook-trigger-text {
@@ -1019,41 +1025,73 @@ h1, h2, h3, h4, h5, h6,
 @media (max-width: 1024px) {
   .ebook-trigger-btn.mobile-docked-flipbook {
     position: fixed !important;
-    top: 75px !important;
-    right: 14px !important;
+    top: 80px !important;
+    right: 16px !important;
     left: auto !important;
     bottom: auto !important;
     z-index: 99999 !important;
     margin: 0 !important;
-    padding: 0 14px !important;
-    height: 44px !important;
-    border-radius: 22px !important;
+    padding: 0 !important;
+    width: 50px !important;
+    min-width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
     background: #104C71 !important;
     border: 1.5px solid var(--accent-gold, #FFD85F) !important;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 216, 95, 0.35) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     display: flex !important;
-    flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 6px !important;
+    gap: 0 !important;
     box-sizing: border-box !important;
     text-decoration: none !important;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                padding 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-radius 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.2s ease, 
+                box-shadow 0.2s ease !important;
   }
 
   .ebook-trigger-btn.mobile-docked-flipbook .ebook-custom-icon-img {
-    width: 24px !important;
-    height: 24px !important;
+    width: 26px !important;
+    height: 26px !important;
     flex-shrink: 0 !important;
     filter: brightness(0) invert(1) !important;
+    margin: 0 !important;
   }
 
-  .ebook-trigger-btn.mobile-docked-flipbook .ebook-trigger-text {
-    color: #FFFFFF !important;
-    font-size: 0.75rem !important;
+  .ebook-trigger-btn.mobile-docked-flipbook:not(.mobile-expanded) .ebook-trigger-text {
+    max-width: 0 !important;
+    opacity: 0 !important;
+    margin-left: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease !important;
+  }
+
+  .ebook-trigger-btn.mobile-docked-flipbook.mobile-expanded {
+    width: auto !important;
+    min-width: 135px !important;
+    height: 48px !important;
+    border-radius: 24px !important;
+    padding: 0 16px 0 12px !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 216, 95, 0.45) !important;
+  }
+
+  .ebook-trigger-btn.mobile-docked-flipbook.mobile-expanded .ebook-trigger-text {
+    max-width: 100px !important;
+    opacity: 1 !important;
+    margin-left: 4px !important;
+    font-size: 0.8rem !important;
     font-weight: 700 !important;
     letter-spacing: 1px !important;
+    color: #FFFFFF !important;
     white-space: nowrap !important;
+    display: inline-block !important;
   }
 }
