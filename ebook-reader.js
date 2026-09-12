@@ -432,29 +432,7 @@
     });
 
     function handleTriggerClick(trigger) {
-      if (trigger.classList.contains('mobile-docked-flipbook')) {
-        if (!trigger.classList.contains('mobile-expanded')) {
-          // First tap on mobile floating icon: Expand to reveal "Flipbook" text label
-          trigger.classList.add('mobile-expanded');
-        } else {
-          // Second tap when expanded: Open Flipbook modal reader
-          trigger.classList.remove('mobile-expanded');
-          openEBookModal();
-        }
-      } else if (trigger.classList.contains('docked-bookmark')) {
-        if (!trigger.classList.contains('expanded')) {
-          // First click on desktop side bookmark: Expand leftward to reveal text
-          trigger.classList.add('expanded');
-        } else {
-          // Second click on desktop side bookmark: Open 3D E-Book modal
-          trigger.classList.remove('expanded');
-          openEBookModal();
-        }
-      } else {
-        // Normal inline click: Open modal directly
-        openEBookModal();
-      }
-    }
+    window.location.href = 'philippines-flipbook.html';
   }
 
   function bindModalEvents() {
