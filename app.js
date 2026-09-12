@@ -847,6 +847,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000);
   }
 
+  // B2B Contact Form Handler & Pre-fill
+  function initB2BContactForm() {
+    const form = document.getElementById('b2b-contact-form');
+    const msgField = document.getElementById('b2b-message');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const inquiryParam = urlParams.get('inquiry');
+    const storedContext = sessionStorage.getItem('inquiryContext');
+
+    if (msgField) {
+      if (inquiryParam) {
+        msgField.value = `I'd like to know more about ${inquiryParam}.`;
+      } else if (storedContext) {
+        msgField.value = `I'd like to know more about ${storedContext}.`;
+        sessionStorage.removeItem('inquiryContext');
+      }
+    }
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('b2b-name')?.value || 'Partner';
+        const company = document.getElementById('b2b-company')?.value || '';
+        const email = document.getElementById('b2b-email')?.value || '';
+        const type = document.getElementById('b2b-type')?.value || 'General Inquiry';
+        const message = document.getElementById('b2b-message')?.value || '';
+
+        const subject = encodeURIComponent(`Pandora Travel B2B Inquiry: ${type} - ${company}`);
+        const body = encodeURIComponent(
+          `Name: ${name}\n` +
+          `Company/Agency: ${company}\n` +
+          `Email: ${email}\n` +
+          `Partnership Type: ${type}\n\n` +
+          `Message / Details:\n${message}\n`
+        );
+
+        window.location.href = `mailto:info@pandoratravel.dk?subject=${subject}&body=${body}`;
+        alert(`Thank you, ${name}! Your inquiry has been prepared. Opening your email client to send to info@pandoratravel.dk.`);
+      });
+    }
+  }
+
   // Initialize features
   initThreeWebGL();
   initGSAPScrollTrigger();
@@ -855,6 +897,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDropdownMenus();
   initItinerariesMenu();
   initHeroSlideshow();
+  initB2BContactForm();
   renderItinerary(itineraries[0].id);
   bindBookingTriggers();
 

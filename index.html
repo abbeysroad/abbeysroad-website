@@ -49,8 +49,8 @@
           </li>
 
           <li><a href="#why-philippines">Why Philippines</a></li>
-          <li><a href="#our-advantage">Our Advantage</a></li>
-          <li><a href="#contact-section">Let's Connect</a></li>
+          <li><a href="#our-advantage">Our Expertise</a></li>
+          
         </ul>
       </nav>
 
@@ -96,7 +96,7 @@
 
         <li class="mobile-section-header-title">PARTNERSHIP</li>
         <li><a href="#why-philippines" class="mobile-nav-link">Why Philippines</a></li>
-        <li><a href="#our-advantage" class="mobile-nav-link">Our Advantage</a></li>
+        <li><a href="#our-advantage" class="mobile-nav-link">Our Expertise</a></li>
         <li><a href="#contact-section" class="mobile-nav-link">Let's Connect</a></li>
       </ul>
       <a href="#contact-section" class="mobile-nav-cta-btn">
@@ -116,7 +116,7 @@
       <img src="images/philippines/mayon_volcano.jpeg" alt="Mayon Volcano Majestic Cone" class="bg-photo zoom-travel-photo hero-slide">
       
       <!-- HIGH-CONTRAST VIGNETTE OVERLAY TO ENSURE WHITE/CYAN/GOLD TEXT STANDS OUT -->
-      <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(11, 19, 43, 0.60) 0%, rgba(11, 19, 43, 0.75) 50%, rgba(11, 19, 43, 0.94) 100%);"></div>
+      <div class="vignette-overlay" style="background: linear-gradient(180deg, rgba(11, 19, 43, 0.35) 0%, rgba(11, 19, 43, 0.50) 50%, rgba(11, 19, 43, 0.78) 100%);"></div>
     </div>
     
     <div class="chapter-content-container center-aligned" style="z-index: 10;">
@@ -351,31 +351,55 @@
   </section>
 
   <!-- SECTION 5: LET'S GROW THE PHILIPPINES TOGETHER (B2B CTA BANNER) -->
-  <section class="dest-contact-banner" id="contact-section" style="background: linear-gradient(135deg, rgba(28, 37, 65, 0.98), rgba(11, 19, 43, 0.99)); border: 1px solid var(--border-gold); border-radius: 16px; padding: 56px 32px; max-width: 1100px; margin: 0 auto 80px auto; text-align: center; box-shadow: var(--shadow-lg);">
-    <span class="gold-badge" style="margin-bottom: 1rem;">PARTNERSHIP INVITATION</span>
-    <h2 style="font-family: var(--font-heading); font-size: 2.4rem; color: var(--gold-primary); margin-bottom: 1rem;">LET'S GROW THE PHILIPPINES TOGETHER</h2>
-    <p style="color: rgba(255,255,255,0.92); font-size: 1.1rem; max-width: 780px; margin: 0 auto 2.5rem auto; line-height: 1.7;">
-      Whether you are a <strong>Philippine DMC looking to expand your presence in the Nordic market</strong> or a <strong>Nordic travel agency looking for new and inspiring Philippine products</strong>, Pandora Travel is here to connect the dots.
-    </p>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto 2.5rem auto; text-align: left;">
-      <div style="background: rgba(255,255,255,0.05); padding: 1.8rem; border-radius: 12px; border-left: 4px solid var(--accent-gold);">
-        <h4 style="color: var(--accent-gold); font-size: 1.15rem; margin-bottom: 0.5rem;">For DMCs</h4>
-        <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">Grow your destination and reach the Nordic travel trade with expert B2B representation and market advocacy.</p>
-      </div>
-      <div style="background: rgba(255,255,255,0.05); padding: 1.8rem; border-radius: 12px; border-left: 4px solid var(--accent-cyan);">
-        <h4 style="color: var(--accent-cyan); font-size: 1.15rem; margin-bottom: 0.5rem;">For Travel Agencies</h4>
-        <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">Discover Philippine destinations, high-margin experiences, and trusted local partners for your client portfolio.</p>
-      </div>
+  <section class="dest-contact-banner" id="contact-section" style="background: linear-gradient(135deg, rgba(28, 37, 65, 0.98), rgba(11, 19, 43, 0.99)); border: 1px solid var(--border-gold); border-radius: 16px; padding: 48px 32px; max-width: 1100px; margin: 0 auto 80px auto; box-shadow: var(--shadow-lg);">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span class="gold-badge" style="margin-bottom: 0.8rem;">PARTNERSHIP INVITATION</span>
+      <h2 style="font-family: var(--font-heading); font-size: 2.4rem; color: var(--gold-primary); margin-bottom: 0.8rem;">LET'S GROW THE PHILIPPINES TOGETHER</h2>
+      <p style="color: rgba(255,255,255,0.92); font-size: 1.05rem; max-width: 780px; margin: 0 auto; line-height: 1.7;">
+        Whether you are a <strong>Philippine DMC looking to expand your presence in the Nordic market</strong> or a <strong>Nordic travel agency looking for new and inspiring Philippine products</strong>, Pandora Travel is here to connect the dots.
+      </p>
     </div>
 
-    <p style="font-size: 1.15rem; font-style: italic; color: #FFFFFF; margin-bottom: 2rem;">
-      Together, let's inspire more Nordic travelers to discover the Philippines.
-    </p>
+    <!-- INTERACTIVE B2B CONTACT FORM -->
+    <form id="b2b-contact-form" style="max-width: 800px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+        <div>
+          <label style="display: block; color: var(--accent-gold); font-size: 0.88rem; font-weight: 700; margin-bottom: 6px;">YOUR NAME *</label>
+          <input type="text" id="b2b-name" required placeholder="e.g. Lars Mikkelsen" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #fff; font-size: 0.95rem;">
+        </div>
+        <div>
+          <label style="display: block; color: var(--accent-gold); font-size: 0.88rem; font-weight: 700; margin-bottom: 6px;">COMPANY / AGENCY NAME *</label>
+          <input type="text" id="b2b-company" required placeholder="e.g. Nordic Travels A/S" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #fff; font-size: 0.95rem;">
+        </div>
+      </div>
 
-    <a href="mailto:info@pandoratravel.dk?subject=Pandora%20Travel%20Philippines%20Partnership%20Inquiry" class="btn-primary-gold" style="padding: 16px 40px; font-size: 1rem; text-decoration: none;">
-      CONNECT WITH OUR PHILIPPINES TEAM →
-    </a>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem;">
+        <div>
+          <label style="display: block; color: var(--accent-gold); font-size: 0.88rem; font-weight: 700; margin-bottom: 6px;">EMAIL ADDRESS *</label>
+          <input type="email" id="b2b-email" required placeholder="lars@nordictravels.dk" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #fff; font-size: 0.95rem;">
+        </div>
+        <div>
+          <label style="display: block; color: var(--accent-gold); font-size: 0.88rem; font-weight: 700; margin-bottom: 6px;">PARTNERSHIP INTEREST *</label>
+          <select id="b2b-type" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(11, 19, 43, 0.95); color: #fff; font-size: 0.95rem;">
+            <option value="Nordic Travel Agency">Nordic Outbound Travel Agency</option>
+            <option value="Philippine DMC">Philippine DMC / Ground Handler</option>
+            <option value="Destination Consultation">Destination Product Consultation</option>
+            <option value="General Inquiry">General Partnership Inquiry</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; color: var(--accent-gold); font-size: 0.88rem; font-weight: 700; margin-bottom: 6px;">MESSAGE / INQUIRY DETAILS *</label>
+        <textarea id="b2b-message" rows="4" required placeholder="Tell us about your organization or product requirements..." style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #fff; font-size: 0.95rem; resize: vertical;"></textarea>
+      </div>
+
+      <div style="text-align: center;">
+        <button type="submit" class="btn-primary-gold" style="padding: 16px 48px; font-size: 1rem; border: none; cursor: pointer;">
+          SEND B2B INQUIRY →
+        </button>
+      </div>
+    </form>
   </section>
 
   <!-- GLOBAL FOOTER (ALIGNED TO PHILIPPINES SPECIALIST IN THE NORDICS) -->
